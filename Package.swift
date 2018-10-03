@@ -1,8 +1,15 @@
+// swift-tools-version:4.0
 import PackageDescription
+
 let package = Package(
     name: "POGOProtos",
-    targets: [],
+    products: [
+        .library(name: "POGOProtos", targets: ["POGOProtos"])
+    ],
     dependencies: [
-        .Package(url: "https://github.com/apple/swift-protobuf.git", majorVersion: 1)
+        .package(url: "https://github.com/apple/swift-protobuf.git", from: "1.1.0")    
+    ],
+    targets: [
+        .target(name: "POGOProtos", dependencies: ["SwiftProtobuf"])
     ]
 )
