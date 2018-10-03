@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_SocialTelemetry {
+public struct POGOProtos_Data_Telemetry_SocialTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var socialClickID: POGOProtos_Enums_SocialTelemetryIds = .undefinedSocial
+  public var socialClickID: POGOProtos_Enums_SocialTelemetryIds = .undefinedSocial
 
-  var pagesScrolledInFriendsList: Int32 = 0
+  public var pagesScrolledInFriendsList: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Data_Telemetry_SocialTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_SocialTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SocialTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".SocialTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "social_click_id"),
     2: .standard(proto: "pages_scrolled_in_friends_list"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.socialClickID)
@@ -54,7 +54,7 @@ extension POGOProtos_Data_Telemetry_SocialTelemetry: SwiftProtobuf.Message, Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.socialClickID != .undefinedSocial {
       try visitor.visitSingularEnumField(value: self.socialClickID, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Data_Telemetry_SocialTelemetry: SwiftProtobuf.Message, Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_SocialTelemetry, rhs: POGOProtos_Data_Telemetry_SocialTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_SocialTelemetry, rhs: POGOProtos_Data_Telemetry_SocialTelemetry) -> Bool {
     if lhs.socialClickID != rhs.socialClickID {return false}
     if lhs.pagesScrolledInFriendsList != rhs.pagesScrolledInFriendsList {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

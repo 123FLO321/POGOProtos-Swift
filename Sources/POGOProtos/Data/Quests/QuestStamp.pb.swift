@@ -15,33 +15,33 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Quests_QuestStamp {
+public struct POGOProtos_Data_Quests_QuestStamp {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var context: POGOProtos_Data_Quests_QuestStamp.Context = .unset
+  public var context: POGOProtos_Data_Quests_QuestStamp.Context = .unset
 
-  var timestampMs: UInt64 = 0
+  public var timestampMs: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Context: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Context: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case storyQuest // = 1
     case challengeQuest // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .storyQuest
@@ -50,7 +50,7 @@ struct POGOProtos_Data_Quests_QuestStamp {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .storyQuest: return 1
@@ -61,7 +61,7 @@ struct POGOProtos_Data_Quests_QuestStamp {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -82,13 +82,13 @@ extension POGOProtos_Data_Quests_QuestStamp.Context: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Data.Quests"
 
 extension POGOProtos_Data_Quests_QuestStamp: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QuestStamp"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".QuestStamp"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "context"),
     2: .standard(proto: "timestamp_ms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.context)
@@ -98,7 +98,7 @@ extension POGOProtos_Data_Quests_QuestStamp: SwiftProtobuf.Message, SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.context != .unset {
       try visitor.visitSingularEnumField(value: self.context, fieldNumber: 1)
     }
@@ -108,7 +108,7 @@ extension POGOProtos_Data_Quests_QuestStamp: SwiftProtobuf.Message, SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestStamp, rhs: POGOProtos_Data_Quests_QuestStamp) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestStamp, rhs: POGOProtos_Data_Quests_QuestStamp) -> Bool {
     if lhs.context != rhs.context {return false}
     if lhs.timestampMs != rhs.timestampMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -117,7 +117,7 @@ extension POGOProtos_Data_Quests_QuestStamp: SwiftProtobuf.Message, SwiftProtobu
 }
 
 extension POGOProtos_Data_Quests_QuestStamp.Context: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "STORY_QUEST"),
     2: .same(proto: "CHALLENGE_QUEST"),

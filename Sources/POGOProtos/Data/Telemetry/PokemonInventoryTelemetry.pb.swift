@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_PokemonInventoryTelemetry {
+public struct POGOProtos_Data_Telemetry_PokemonInventoryTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonInventoryClickIds: POGOProtos_Enums_PokemonInventoryTelemetryIds = .undefinedPokemonInventoryEvent
+  public var pokemonInventoryClickIds: POGOProtos_Enums_PokemonInventoryTelemetryIds = .undefinedPokemonInventoryEvent
 
-  var sortID: String = String()
+  public var sortID: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Data_Telemetry_PokemonInventoryTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_PokemonInventoryTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PokemonInventoryTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PokemonInventoryTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_inventory_click_ids"),
     2: .standard(proto: "sort_id"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.pokemonInventoryClickIds)
@@ -54,7 +54,7 @@ extension POGOProtos_Data_Telemetry_PokemonInventoryTelemetry: SwiftProtobuf.Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemonInventoryClickIds != .undefinedPokemonInventoryEvent {
       try visitor.visitSingularEnumField(value: self.pokemonInventoryClickIds, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Data_Telemetry_PokemonInventoryTelemetry: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry, rhs: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry, rhs: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry) -> Bool {
     if lhs.pokemonInventoryClickIds != rhs.pokemonInventoryClickIds {return false}
     if lhs.sortID != rhs.sortID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

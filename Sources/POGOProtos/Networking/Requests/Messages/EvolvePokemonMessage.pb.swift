@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage {
+public struct POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonID: UInt64 = 0
+  public var pokemonID: UInt64 = 0
 
-  var evolutionItemRequirement: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+  public var evolutionItemRequirement: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EvolvePokemonMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EvolvePokemonMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_id"),
     2: .standard(proto: "evolution_item_requirement"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFixed64Field(value: &self.pokemonID)
@@ -54,7 +54,7 @@ extension POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage: SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemonID != 0 {
       try visitor.visitSingularFixed64Field(value: self.pokemonID, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage: SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage, rhs: POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage, rhs: POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage) -> Bool {
     if lhs.pokemonID != rhs.pokemonID {return false}
     if lhs.evolutionItemRequirement != rhs.evolutionItemRequirement {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_CurrencyQuantity {
+public struct POGOProtos_Data_CurrencyQuantity {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var currencyType: String = String()
+  public var currencyType: String = String()
 
-  var quantity: Int32 = 0
+  public var quantity: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Data_CurrencyQuantity {
 fileprivate let _protobuf_package = "POGOProtos.Data"
 
 extension POGOProtos_Data_CurrencyQuantity: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CurrencyQuantity"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CurrencyQuantity"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "currency_type"),
     2: .same(proto: "quantity"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.currencyType)
@@ -54,7 +54,7 @@ extension POGOProtos_Data_CurrencyQuantity: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.currencyType.isEmpty {
       try visitor.visitSingularStringField(value: self.currencyType, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Data_CurrencyQuantity: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_CurrencyQuantity, rhs: POGOProtos_Data_CurrencyQuantity) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_CurrencyQuantity, rhs: POGOProtos_Data_CurrencyQuantity) -> Bool {
     if lhs.currencyType != rhs.currencyType {return false}
     if lhs.quantity != rhs.quantity {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

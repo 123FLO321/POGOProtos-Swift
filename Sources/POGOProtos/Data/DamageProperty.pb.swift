@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_DamageProperty {
+public struct POGOProtos_Data_DamageProperty {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var superEffectiveChargeMove: Bool = false
+  public var superEffectiveChargeMove: Bool = false
 
-  var weatherBoosted: Bool = false
+  public var weatherBoosted: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Data_DamageProperty {
 fileprivate let _protobuf_package = "POGOProtos.Data"
 
 extension POGOProtos_Data_DamageProperty: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DamageProperty"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".DamageProperty"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "super_effective_charge_move"),
     2: .standard(proto: "weather_boosted"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.superEffectiveChargeMove)
@@ -54,7 +54,7 @@ extension POGOProtos_Data_DamageProperty: SwiftProtobuf.Message, SwiftProtobuf._
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.superEffectiveChargeMove != false {
       try visitor.visitSingularBoolField(value: self.superEffectiveChargeMove, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Data_DamageProperty: SwiftProtobuf.Message, SwiftProtobuf._
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_DamageProperty, rhs: POGOProtos_Data_DamageProperty) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_DamageProperty, rhs: POGOProtos_Data_DamageProperty) -> Bool {
     if lhs.superEffectiveChargeMove != rhs.superEffectiveChargeMove {return false}
     if lhs.weatherBoosted != rhs.weatherBoosted {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -15,48 +15,48 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_MoveSettings {
+public struct POGOProtos_Settings_Master_MoveSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var movementID: POGOProtos_Enums_PokemonMove = .moveUnset
+  public var movementID: POGOProtos_Enums_PokemonMove = .moveUnset
 
-  var animationID: Int32 = 0
+  public var animationID: Int32 = 0
 
-  var pokemonType: POGOProtos_Enums_PokemonType = .none
+  public var pokemonType: POGOProtos_Enums_PokemonType = .none
 
-  var power: Float = 0
+  public var power: Float = 0
 
-  var accuracyChance: Float = 0
+  public var accuracyChance: Float = 0
 
-  var criticalChance: Float = 0
+  public var criticalChance: Float = 0
 
-  var healScalar: Float = 0
+  public var healScalar: Float = 0
 
-  var staminaLossScalar: Float = 0
+  public var staminaLossScalar: Float = 0
 
-  var trainerLevelMin: Int32 = 0
+  public var trainerLevelMin: Int32 = 0
 
-  var trainerLevelMax: Int32 = 0
+  public var trainerLevelMax: Int32 = 0
 
-  var vfxName: String = String()
+  public var vfxName: String = String()
 
-  var durationMs: Int32 = 0
+  public var durationMs: Int32 = 0
 
-  var damageWindowStartMs: Int32 = 0
+  public var damageWindowStartMs: Int32 = 0
 
-  var damageWindowEndMs: Int32 = 0
+  public var damageWindowEndMs: Int32 = 0
 
-  var energyDelta: Int32 = 0
+  public var energyDelta: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -64,8 +64,8 @@ struct POGOProtos_Settings_Master_MoveSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_MoveSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".MoveSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".MoveSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "movement_id"),
     2: .standard(proto: "animation_id"),
     3: .standard(proto: "pokemon_type"),
@@ -83,7 +83,7 @@ extension POGOProtos_Settings_Master_MoveSettings: SwiftProtobuf.Message, SwiftP
     15: .standard(proto: "energy_delta"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.movementID)
@@ -106,7 +106,7 @@ extension POGOProtos_Settings_Master_MoveSettings: SwiftProtobuf.Message, SwiftP
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.movementID != .moveUnset {
       try visitor.visitSingularEnumField(value: self.movementID, fieldNumber: 1)
     }
@@ -155,7 +155,7 @@ extension POGOProtos_Settings_Master_MoveSettings: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_MoveSettings, rhs: POGOProtos_Settings_Master_MoveSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_MoveSettings, rhs: POGOProtos_Settings_Master_MoveSettings) -> Bool {
     if lhs.movementID != rhs.movementID {return false}
     if lhs.animationID != rhs.animationID {return false}
     if lhs.pokemonType != rhs.pokemonType {return false}

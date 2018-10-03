@@ -15,30 +15,30 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_LoginActionTelemetry {
+public struct POGOProtos_Data_Telemetry_LoginActionTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var loginActionID: POGOProtos_Enums_LoginActionTelemetryIds = .undefinedLoginAction
+  public var loginActionID: POGOProtos_Enums_LoginActionTelemetryIds = .undefinedLoginAction
 
-  var firstTime: Bool = false
+  public var firstTime: Bool = false
 
-  var success: String = String()
+  public var success: String = String()
 
-  var error: String = String()
+  public var error: String = String()
 
-  var intentExisting: String = String()
+  public var intentExisting: String = String()
 
-  var authStatus: String = String()
+  public var authStatus: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -46,8 +46,8 @@ struct POGOProtos_Data_Telemetry_LoginActionTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_LoginActionTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".LoginActionTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".LoginActionTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "login_action_id"),
     2: .standard(proto: "first_time"),
     3: .same(proto: "success"),
@@ -56,7 +56,7 @@ extension POGOProtos_Data_Telemetry_LoginActionTelemetry: SwiftProtobuf.Message,
     6: .standard(proto: "auth_status"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.loginActionID)
@@ -70,7 +70,7 @@ extension POGOProtos_Data_Telemetry_LoginActionTelemetry: SwiftProtobuf.Message,
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.loginActionID != .undefinedLoginAction {
       try visitor.visitSingularEnumField(value: self.loginActionID, fieldNumber: 1)
     }
@@ -92,7 +92,7 @@ extension POGOProtos_Data_Telemetry_LoginActionTelemetry: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_LoginActionTelemetry, rhs: POGOProtos_Data_Telemetry_LoginActionTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_LoginActionTelemetry, rhs: POGOProtos_Data_Telemetry_LoginActionTelemetry) -> Bool {
     if lhs.loginActionID != rhs.loginActionID {return false}
     if lhs.firstTime != rhs.firstTime {return false}
     if lhs.success != rhs.success {return false}

@@ -15,50 +15,50 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_GymBattleSettings {
+public struct POGOProtos_Settings_Master_GymBattleSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var energyPerSec: Float = 0
+  public var energyPerSec: Float = 0
 
-  var dodgeEnergyCost: Float = 0
+  public var dodgeEnergyCost: Float = 0
 
-  var retargetSeconds: Float = 0
+  public var retargetSeconds: Float = 0
 
-  var enemyAttackInterval: Float = 0
+  public var enemyAttackInterval: Float = 0
 
-  var attackServerInterval: Float = 0
+  public var attackServerInterval: Float = 0
 
-  var roundDurationSeconds: Float = 0
+  public var roundDurationSeconds: Float = 0
 
-  var bonusTimePerAllySeconds: Float = 0
+  public var bonusTimePerAllySeconds: Float = 0
 
-  var maximumAttackersPerBattle: Int32 = 0
+  public var maximumAttackersPerBattle: Int32 = 0
 
-  var sameTypeAttackBonusMultiplier: Float = 0
+  public var sameTypeAttackBonusMultiplier: Float = 0
 
-  var maximumEnergy: Int32 = 0
+  public var maximumEnergy: Int32 = 0
 
-  var energyDeltaPerHealthLost: Float = 0
+  public var energyDeltaPerHealthLost: Float = 0
 
-  var dodgeDurationMs: Int32 = 0
+  public var dodgeDurationMs: Int32 = 0
 
-  var minimumPlayerLevel: Int32 = 0
+  public var minimumPlayerLevel: Int32 = 0
 
-  var swapDurationMs: Int32 = 0
+  public var swapDurationMs: Int32 = 0
 
-  var dodgeDamageReductionPercent: Float = 0
+  public var dodgeDamageReductionPercent: Float = 0
 
-  var minimumRaidPlayerLevel: Int32 = 0
+  public var minimumRaidPlayerLevel: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -66,8 +66,8 @@ struct POGOProtos_Settings_Master_GymBattleSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_GymBattleSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GymBattleSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GymBattleSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "energy_per_sec"),
     2: .standard(proto: "dodge_energy_cost"),
     3: .standard(proto: "retarget_seconds"),
@@ -86,7 +86,7 @@ extension POGOProtos_Settings_Master_GymBattleSettings: SwiftProtobuf.Message, S
     16: .standard(proto: "minimum_raid_player_level"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.energyPerSec)
@@ -110,7 +110,7 @@ extension POGOProtos_Settings_Master_GymBattleSettings: SwiftProtobuf.Message, S
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.energyPerSec != 0 {
       try visitor.visitSingularFloatField(value: self.energyPerSec, fieldNumber: 1)
     }
@@ -162,7 +162,7 @@ extension POGOProtos_Settings_Master_GymBattleSettings: SwiftProtobuf.Message, S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_GymBattleSettings, rhs: POGOProtos_Settings_Master_GymBattleSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_GymBattleSettings, rhs: POGOProtos_Settings_Master_GymBattleSettings) -> Bool {
     if lhs.energyPerSec != rhs.energyPerSec {return false}
     if lhs.dodgeEnergyCost != rhs.dodgeEnergyCost {return false}
     if lhs.retargetSeconds != rhs.retargetSeconds {return false}

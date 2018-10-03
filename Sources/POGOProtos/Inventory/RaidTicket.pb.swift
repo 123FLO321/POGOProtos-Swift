@@ -15,37 +15,37 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Inventory_RaidTicket {
+public struct POGOProtos_Inventory_RaidTicket {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var ticketID: String {
+  public var ticketID: String {
     get {return _storage._ticketID}
     set {_uniqueStorage()._ticketID = newValue}
   }
 
-  var item: POGOProtos_Inventory_Item_ItemId {
+  public var item: POGOProtos_Inventory_Item_ItemId {
     get {return _storage._item}
     set {_uniqueStorage()._item = newValue}
   }
 
-  var exclusiveInfo: POGOProtos_Inventory_ExclusiveTicketInfo {
+  public var exclusiveInfo: POGOProtos_Inventory_ExclusiveTicketInfo {
     get {return _storage._exclusiveInfo ?? POGOProtos_Inventory_ExclusiveTicketInfo()}
     set {_uniqueStorage()._exclusiveInfo = newValue}
   }
   /// Returns true if `exclusiveInfo` has been explicitly set.
-  var hasExclusiveInfo: Bool {return _storage._exclusiveInfo != nil}
+  public var hasExclusiveInfo: Bool {return _storage._exclusiveInfo != nil}
   /// Clears the value of `exclusiveInfo`. Subsequent reads from it will return its default value.
-  mutating func clearExclusiveInfo() {_uniqueStorage()._exclusiveInfo = nil}
+  public mutating func clearExclusiveInfo() {_uniqueStorage()._exclusiveInfo = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -55,23 +55,23 @@ struct POGOProtos_Inventory_RaidTicket {
 fileprivate let _protobuf_package = "POGOProtos.Inventory"
 
 extension POGOProtos_Inventory_RaidTicket: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RaidTicket"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RaidTicket"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "ticket_id"),
     2: .same(proto: "item"),
     4: .standard(proto: "exclusive_info"),
   ]
 
   fileprivate class _StorageClass {
-    var _ticketID: String = String()
-    var _item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    var _exclusiveInfo: POGOProtos_Inventory_ExclusiveTicketInfo? = nil
+    public var _ticketID: String = String()
+    public var _item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    public var _exclusiveInfo: POGOProtos_Inventory_ExclusiveTicketInfo? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _ticketID = source._ticketID
       _item = source._item
       _exclusiveInfo = source._exclusiveInfo
@@ -85,7 +85,7 @@ extension POGOProtos_Inventory_RaidTicket: SwiftProtobuf.Message, SwiftProtobuf.
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -99,7 +99,7 @@ extension POGOProtos_Inventory_RaidTicket: SwiftProtobuf.Message, SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._ticketID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._ticketID, fieldNumber: 1)
@@ -114,7 +114,7 @@ extension POGOProtos_Inventory_RaidTicket: SwiftProtobuf.Message, SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Inventory_RaidTicket, rhs: POGOProtos_Inventory_RaidTicket) -> Bool {
+  public static func ==(lhs: POGOProtos_Inventory_RaidTicket, rhs: POGOProtos_Inventory_RaidTicket) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

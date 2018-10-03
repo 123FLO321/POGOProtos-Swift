@@ -15,28 +15,28 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessage {
+public struct POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var avatarType: POGOProtos_Data_Player_PlayerAvatarType = .playerAvatarMale
+  public var avatarType: POGOProtos_Data_Player_PlayerAvatarType = .playerAvatarMale
 
-  var slot: [POGOProtos_Data_Avatar_AvatarCustomization.Slot] = []
+  public var slot: [POGOProtos_Data_Avatar_AvatarCustomization.Slot] = []
 
-  var filters: [POGOProtos_Enums_Filter] = []
+  public var filters: [POGOProtos_Enums_Filter] = []
 
-  var start: Int32 = 0
+  public var start: Int32 = 0
 
-  var limit: Int32 = 0
+  public var limit: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,8 +44,8 @@ struct POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ListAvatarCustomizationsMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ListAvatarCustomizationsMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "avatar_type"),
     2: .same(proto: "slot"),
     3: .same(proto: "filters"),
@@ -53,7 +53,7 @@ extension POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessag
     5: .same(proto: "limit"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.avatarType)
@@ -66,7 +66,7 @@ extension POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.avatarType != .playerAvatarMale {
       try visitor.visitSingularEnumField(value: self.avatarType, fieldNumber: 1)
     }
@@ -85,7 +85,7 @@ extension POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessage, rhs: POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessage, rhs: POGOProtos_Networking_Requests_Messages_ListAvatarCustomizationsMessage) -> Bool {
     if lhs.avatarType != rhs.avatarType {return false}
     if lhs.slot != rhs.slot {return false}
     if lhs.filters != rhs.filters {return false}

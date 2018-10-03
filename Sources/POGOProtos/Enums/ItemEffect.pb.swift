@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_ItemEffect: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_ItemEffect: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case none // = 0
   case capNoFlee // = 1000
   case capNoMovement // = 1002
@@ -40,11 +40,11 @@ enum POGOProtos_Enums_ItemEffect: SwiftProtobuf.Enum {
   case fullMotivation // = 1016
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .none
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .none
     case 1000: self = .capNoFlee
@@ -67,7 +67,7 @@ enum POGOProtos_Enums_ItemEffect: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .none: return 0
     case .capNoFlee: return 1000
@@ -122,7 +122,7 @@ extension POGOProtos_Enums_ItemEffect: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_ItemEffect: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "ITEM_EFFECT_NONE"),
     1000: .same(proto: "ITEM_EFFECT_CAP_NO_FLEE"),
     1002: .same(proto: "ITEM_EFFECT_CAP_NO_MOVEMENT"),

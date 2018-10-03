@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Player_UserIssueWeatherReport {
+public struct POGOProtos_Data_Player_UserIssueWeatherReport {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var gameplayerWeather: String = String()
+  public var gameplayerWeather: String = String()
 
-  var alertActive: Bool = false
+  public var alertActive: Bool = false
 
-  var severity: Int32 = 0
+  public var severity: Int32 = 0
 
-  var userReport: Int32 = 0
+  public var userReport: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Data_Player_UserIssueWeatherReport {
 fileprivate let _protobuf_package = "POGOProtos.Data.Player"
 
 extension POGOProtos_Data_Player_UserIssueWeatherReport: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UserIssueWeatherReport"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".UserIssueWeatherReport"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "gameplayer_weather"),
     2: .standard(proto: "alert_active"),
     3: .same(proto: "severity"),
     4: .standard(proto: "user_report"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.gameplayerWeather)
@@ -62,7 +62,7 @@ extension POGOProtos_Data_Player_UserIssueWeatherReport: SwiftProtobuf.Message, 
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.gameplayerWeather.isEmpty {
       try visitor.visitSingularStringField(value: self.gameplayerWeather, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Data_Player_UserIssueWeatherReport: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Player_UserIssueWeatherReport, rhs: POGOProtos_Data_Player_UserIssueWeatherReport) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Player_UserIssueWeatherReport, rhs: POGOProtos_Data_Player_UserIssueWeatherReport) -> Bool {
     if lhs.gameplayerWeather != rhs.gameplayerWeather {return false}
     if lhs.alertActive != rhs.alertActive {return false}
     if lhs.severity != rhs.severity {return false}

@@ -15,62 +15,62 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Quests_ClientQuest {
+public struct POGOProtos_Data_Quests_ClientQuest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var quest: POGOProtos_Data_Quests_Quest {
+  public var quest: POGOProtos_Data_Quests_Quest {
     get {return _storage._quest ?? POGOProtos_Data_Quests_Quest()}
     set {_uniqueStorage()._quest = newValue}
   }
   /// Returns true if `quest` has been explicitly set.
-  var hasQuest: Bool {return _storage._quest != nil}
+  public var hasQuest: Bool {return _storage._quest != nil}
   /// Clears the value of `quest`. Subsequent reads from it will return its default value.
-  mutating func clearQuest() {_uniqueStorage()._quest = nil}
+  public mutating func clearQuest() {_uniqueStorage()._quest = nil}
 
-  var questDisplay: POGOProtos_Data_Quests_ClientQuest.QuestDisplay {
+  public var questDisplay: POGOProtos_Data_Quests_ClientQuest.QuestDisplay {
     get {return _storage._questDisplay ?? POGOProtos_Data_Quests_ClientQuest.QuestDisplay()}
     set {_uniqueStorage()._questDisplay = newValue}
   }
   /// Returns true if `questDisplay` has been explicitly set.
-  var hasQuestDisplay: Bool {return _storage._questDisplay != nil}
+  public var hasQuestDisplay: Bool {return _storage._questDisplay != nil}
   /// Clears the value of `questDisplay`. Subsequent reads from it will return its default value.
-  mutating func clearQuestDisplay() {_uniqueStorage()._questDisplay = nil}
+  public mutating func clearQuestDisplay() {_uniqueStorage()._questDisplay = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct QuestDisplay {
+  public struct QuestDisplay {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var questID: String = String()
+    public var questID: String = String()
 
-    var dialog: [POGOProtos_Data_Quests_QuestDialog] = []
+    public var dialog: [POGOProtos_Data_Quests_QuestDialog] = []
 
-    var description_p: String = String()
+    public var description_p: String = String()
 
-    var title: String = String()
+    public var title: String = String()
 
-    var slot: Int32 = 0
+    public var slot: Int32 = 0
 
-    var subdisplay: [POGOProtos_Data_Quests_ClientQuest.QuestDisplay] = []
+    public var subdisplay: [POGOProtos_Data_Quests_ClientQuest.QuestDisplay] = []
 
-    var storyEndingQuest: Bool = false
+    public var storyEndingQuest: Bool = false
 
-    var storyEndingDescription: String = String()
+    public var storyEndingDescription: String = String()
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -80,21 +80,21 @@ struct POGOProtos_Data_Quests_ClientQuest {
 fileprivate let _protobuf_package = "POGOProtos.Data.Quests"
 
 extension POGOProtos_Data_Quests_ClientQuest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ClientQuest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ClientQuest"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "quest"),
     2: .standard(proto: "quest_display"),
   ]
 
   fileprivate class _StorageClass {
-    var _quest: POGOProtos_Data_Quests_Quest? = nil
-    var _questDisplay: POGOProtos_Data_Quests_ClientQuest.QuestDisplay? = nil
+    public var _quest: POGOProtos_Data_Quests_Quest? = nil
+    public var _questDisplay: POGOProtos_Data_Quests_ClientQuest.QuestDisplay? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _quest = source._quest
       _questDisplay = source._questDisplay
     }
@@ -107,7 +107,7 @@ extension POGOProtos_Data_Quests_ClientQuest: SwiftProtobuf.Message, SwiftProtob
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -120,7 +120,7 @@ extension POGOProtos_Data_Quests_ClientQuest: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._quest {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -132,7 +132,7 @@ extension POGOProtos_Data_Quests_ClientQuest: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_ClientQuest, rhs: POGOProtos_Data_Quests_ClientQuest) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_ClientQuest, rhs: POGOProtos_Data_Quests_ClientQuest) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -149,8 +149,8 @@ extension POGOProtos_Data_Quests_ClientQuest: SwiftProtobuf.Message, SwiftProtob
 }
 
 extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_ClientQuest.protoMessageName + ".QuestDisplay"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_ClientQuest.protoMessageName + ".QuestDisplay"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "quest_id"),
     2: .same(proto: "dialog"),
     3: .same(proto: "description"),
@@ -161,7 +161,7 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
     8: .standard(proto: "story_ending_description"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.questID)
@@ -177,7 +177,7 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.questID.isEmpty {
       try visitor.visitSingularStringField(value: self.questID, fieldNumber: 1)
     }
@@ -205,7 +205,7 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_ClientQuest.QuestDisplay, rhs: POGOProtos_Data_Quests_ClientQuest.QuestDisplay) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_ClientQuest.QuestDisplay, rhs: POGOProtos_Data_Quests_ClientQuest.QuestDisplay) -> Bool {
     if lhs.questID != rhs.questID {return false}
     if lhs.dialog != rhs.dialog {return false}
     if lhs.description_p != rhs.description_p {return false}

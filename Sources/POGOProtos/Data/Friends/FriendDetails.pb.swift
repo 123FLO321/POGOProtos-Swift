@@ -15,42 +15,42 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Friends_FriendDetails {
+public struct POGOProtos_Data_Friends_FriendDetails {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var player: POGOProtos_Data_Player_PlayerSummary {
+  public var player: POGOProtos_Data_Player_PlayerSummary {
     get {return _storage._player ?? POGOProtos_Data_Player_PlayerSummary()}
     set {_uniqueStorage()._player = newValue}
   }
   /// Returns true if `player` has been explicitly set.
-  var hasPlayer: Bool {return _storage._player != nil}
+  public var hasPlayer: Bool {return _storage._player != nil}
   /// Clears the value of `player`. Subsequent reads from it will return its default value.
-  mutating func clearPlayer() {_uniqueStorage()._player = nil}
+  public mutating func clearPlayer() {_uniqueStorage()._player = nil}
 
-  var friendVisibleData: Data {
+  public var friendVisibleData: Data {
     get {return _storage._friendVisibleData}
     set {_uniqueStorage()._friendVisibleData = newValue}
   }
 
-  var score: Int32 {
+  public var score: Int32 {
     get {return _storage._score}
     set {_uniqueStorage()._score = newValue}
   }
 
-  var dataWithMe: Data {
+  public var dataWithMe: Data {
     get {return _storage._dataWithMe}
     set {_uniqueStorage()._dataWithMe = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -60,8 +60,8 @@ struct POGOProtos_Data_Friends_FriendDetails {
 fileprivate let _protobuf_package = "POGOProtos.Data.Friends"
 
 extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FriendDetails"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FriendDetails"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "player"),
     2: .standard(proto: "friend_visible_data"),
     3: .same(proto: "score"),
@@ -69,16 +69,16 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
   ]
 
   fileprivate class _StorageClass {
-    var _player: POGOProtos_Data_Player_PlayerSummary? = nil
-    var _friendVisibleData: Data = SwiftProtobuf.Internal.emptyData
-    var _score: Int32 = 0
-    var _dataWithMe: Data = SwiftProtobuf.Internal.emptyData
+    public var _player: POGOProtos_Data_Player_PlayerSummary? = nil
+    public var _friendVisibleData: Data = SwiftProtobuf.Internal.emptyData
+    public var _score: Int32 = 0
+    public var _dataWithMe: Data = SwiftProtobuf.Internal.emptyData
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _player = source._player
       _friendVisibleData = source._friendVisibleData
       _score = source._score
@@ -93,7 +93,7 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -108,7 +108,7 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._player {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -126,7 +126,7 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Friends_FriendDetails, rhs: POGOProtos_Data_Friends_FriendDetails) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Friends_FriendDetails, rhs: POGOProtos_Data_Friends_FriendDetails) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

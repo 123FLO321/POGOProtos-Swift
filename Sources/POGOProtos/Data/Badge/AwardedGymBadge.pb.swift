@@ -15,101 +15,101 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Badge_AwardedGymBadge {
+public struct POGOProtos_Data_Badge_AwardedGymBadge {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var fortID: String {
+  public var fortID: String {
     get {return _storage._fortID}
     set {_uniqueStorage()._fortID = newValue}
   }
 
-  var gymBadgeType: POGOProtos_Enums_GymBadgeType {
+  public var gymBadgeType: POGOProtos_Enums_GymBadgeType {
     get {return _storage._gymBadgeType}
     set {_uniqueStorage()._gymBadgeType = newValue}
   }
 
-  var score: UInt32 {
+  public var score: UInt32 {
     get {return _storage._score}
     set {_uniqueStorage()._score = newValue}
   }
 
-  var gymBadgeStats: POGOProtos_Data_Badge_GymBadgeStats {
+  public var gymBadgeStats: POGOProtos_Data_Badge_GymBadgeStats {
     get {return _storage._gymBadgeStats ?? POGOProtos_Data_Badge_GymBadgeStats()}
     set {_uniqueStorage()._gymBadgeStats = newValue}
   }
   /// Returns true if `gymBadgeStats` has been explicitly set.
-  var hasGymBadgeStats: Bool {return _storage._gymBadgeStats != nil}
+  public var hasGymBadgeStats: Bool {return _storage._gymBadgeStats != nil}
   /// Clears the value of `gymBadgeStats`. Subsequent reads from it will return its default value.
-  mutating func clearGymBadgeStats() {_uniqueStorage()._gymBadgeStats = nil}
+  public mutating func clearGymBadgeStats() {_uniqueStorage()._gymBadgeStats = nil}
 
-  var lastUpdateTimestampMs: UInt64 {
+  public var lastUpdateTimestampMs: UInt64 {
     get {return _storage._lastUpdateTimestampMs}
     set {_uniqueStorage()._lastUpdateTimestampMs = newValue}
   }
 
-  var lastCheckTimestampMs: UInt64 {
+  public var lastCheckTimestampMs: UInt64 {
     get {return _storage._lastCheckTimestampMs}
     set {_uniqueStorage()._lastCheckTimestampMs = newValue}
   }
 
-  var earnedPoints: UInt32 {
+  public var earnedPoints: UInt32 {
     get {return _storage._earnedPoints}
     set {_uniqueStorage()._earnedPoints = newValue}
   }
 
-  var progress: Float {
+  public var progress: Float {
     get {return _storage._progress}
     set {_uniqueStorage()._progress = newValue}
   }
 
-  var levelUp: Bool {
+  public var levelUp: Bool {
     get {return _storage._levelUp}
     set {_uniqueStorage()._levelUp = newValue}
   }
 
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
-  var imageURL: String {
+  public var imageURL: String {
     get {return _storage._imageURL}
     set {_uniqueStorage()._imageURL = newValue}
   }
 
-  var description_p: String {
+  public var description_p: String {
     get {return _storage._description_p}
     set {_uniqueStorage()._description_p = newValue}
   }
 
-  var latitude: Double {
+  public var latitude: Double {
     get {return _storage._latitude}
     set {_uniqueStorage()._latitude = newValue}
   }
 
-  var longitude: Double {
+  public var longitude: Double {
     get {return _storage._longitude}
     set {_uniqueStorage()._longitude = newValue}
   }
 
-  var raids: POGOProtos_Data_Raid_PlayerRaidInfo {
+  public var raids: POGOProtos_Data_Raid_PlayerRaidInfo {
     get {return _storage._raids ?? POGOProtos_Data_Raid_PlayerRaidInfo()}
     set {_uniqueStorage()._raids = newValue}
   }
   /// Returns true if `raids` has been explicitly set.
-  var hasRaids: Bool {return _storage._raids != nil}
+  public var hasRaids: Bool {return _storage._raids != nil}
   /// Clears the value of `raids`. Subsequent reads from it will return its default value.
-  mutating func clearRaids() {_uniqueStorage()._raids = nil}
+  public mutating func clearRaids() {_uniqueStorage()._raids = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -119,8 +119,8 @@ struct POGOProtos_Data_Badge_AwardedGymBadge {
 fileprivate let _protobuf_package = "POGOProtos.Data.Badge"
 
 extension POGOProtos_Data_Badge_AwardedGymBadge: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AwardedGymBadge"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".AwardedGymBadge"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "fort_id"),
     2: .standard(proto: "gym_badge_type"),
     3: .same(proto: "score"),
@@ -139,27 +139,27 @@ extension POGOProtos_Data_Badge_AwardedGymBadge: SwiftProtobuf.Message, SwiftPro
   ]
 
   fileprivate class _StorageClass {
-    var _fortID: String = String()
-    var _gymBadgeType: POGOProtos_Enums_GymBadgeType = .gymBadgeUnset
-    var _score: UInt32 = 0
-    var _gymBadgeStats: POGOProtos_Data_Badge_GymBadgeStats? = nil
-    var _lastUpdateTimestampMs: UInt64 = 0
-    var _lastCheckTimestampMs: UInt64 = 0
-    var _earnedPoints: UInt32 = 0
-    var _progress: Float = 0
-    var _levelUp: Bool = false
-    var _name: String = String()
-    var _imageURL: String = String()
-    var _description_p: String = String()
-    var _latitude: Double = 0
-    var _longitude: Double = 0
-    var _raids: POGOProtos_Data_Raid_PlayerRaidInfo? = nil
+    public var _fortID: String = String()
+    public var _gymBadgeType: POGOProtos_Enums_GymBadgeType = .gymBadgeUnset
+    public var _score: UInt32 = 0
+    public var _gymBadgeStats: POGOProtos_Data_Badge_GymBadgeStats? = nil
+    public var _lastUpdateTimestampMs: UInt64 = 0
+    public var _lastCheckTimestampMs: UInt64 = 0
+    public var _earnedPoints: UInt32 = 0
+    public var _progress: Float = 0
+    public var _levelUp: Bool = false
+    public var _name: String = String()
+    public var _imageURL: String = String()
+    public var _description_p: String = String()
+    public var _latitude: Double = 0
+    public var _longitude: Double = 0
+    public var _raids: POGOProtos_Data_Raid_PlayerRaidInfo? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _fortID = source._fortID
       _gymBadgeType = source._gymBadgeType
       _score = source._score
@@ -185,7 +185,7 @@ extension POGOProtos_Data_Badge_AwardedGymBadge: SwiftProtobuf.Message, SwiftPro
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -211,7 +211,7 @@ extension POGOProtos_Data_Badge_AwardedGymBadge: SwiftProtobuf.Message, SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._fortID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._fortID, fieldNumber: 1)
@@ -262,7 +262,7 @@ extension POGOProtos_Data_Badge_AwardedGymBadge: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Badge_AwardedGymBadge, rhs: POGOProtos_Data_Badge_AwardedGymBadge) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Badge_AwardedGymBadge, rhs: POGOProtos_Data_Badge_AwardedGymBadge) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

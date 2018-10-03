@@ -15,28 +15,28 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_PokemonTelemetry {
+public struct POGOProtos_Data_Telemetry_PokemonTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonID: Int32 = 0
+  public var pokemonID: Int32 = 0
 
-  var cp: Int32 = 0
+  public var cp: Int32 = 0
 
-  var weightKg: Float = 0
+  public var weightKg: Float = 0
 
-  var heightM: Float = 0
+  public var heightM: Float = 0
 
-  var pokemonLevel: Int32 = 0
+  public var pokemonLevel: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,8 +44,8 @@ struct POGOProtos_Data_Telemetry_PokemonTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_PokemonTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PokemonTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PokemonTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_id"),
     2: .same(proto: "cp"),
     3: .standard(proto: "weight_kg"),
@@ -53,7 +53,7 @@ extension POGOProtos_Data_Telemetry_PokemonTelemetry: SwiftProtobuf.Message, Swi
     5: .standard(proto: "pokemon_level"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.pokemonID)
@@ -66,7 +66,7 @@ extension POGOProtos_Data_Telemetry_PokemonTelemetry: SwiftProtobuf.Message, Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemonID != 0 {
       try visitor.visitSingularInt32Field(value: self.pokemonID, fieldNumber: 1)
     }
@@ -85,7 +85,7 @@ extension POGOProtos_Data_Telemetry_PokemonTelemetry: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_PokemonTelemetry, rhs: POGOProtos_Data_Telemetry_PokemonTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_PokemonTelemetry, rhs: POGOProtos_Data_Telemetry_PokemonTelemetry) -> Bool {
     if lhs.pokemonID != rhs.pokemonID {return false}
     if lhs.cp != rhs.cp {return false}
     if lhs.weightKg != rhs.weightKg {return false}

@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_Item_BattleAttributes {
+public struct POGOProtos_Settings_Master_Item_BattleAttributes {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var staPercent: Float = 0
+  public var staPercent: Float = 0
 
-  var atkPercent: Float = 0
+  public var atkPercent: Float = 0
 
-  var defPercent: Float = 0
+  public var defPercent: Float = 0
 
-  var durationS: Float = 0
+  public var durationS: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Settings_Master_Item_BattleAttributes {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master.Item"
 
 extension POGOProtos_Settings_Master_Item_BattleAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BattleAttributes"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BattleAttributes"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "sta_percent"),
     2: .standard(proto: "atk_percent"),
     3: .standard(proto: "def_percent"),
     4: .standard(proto: "duration_s"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.staPercent)
@@ -62,7 +62,7 @@ extension POGOProtos_Settings_Master_Item_BattleAttributes: SwiftProtobuf.Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.staPercent != 0 {
       try visitor.visitSingularFloatField(value: self.staPercent, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Settings_Master_Item_BattleAttributes: SwiftProtobuf.Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_Item_BattleAttributes, rhs: POGOProtos_Settings_Master_Item_BattleAttributes) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Item_BattleAttributes, rhs: POGOProtos_Settings_Master_Item_BattleAttributes) -> Bool {
     if lhs.staPercent != rhs.staPercent {return false}
     if lhs.atkPercent != rhs.atkPercent {return false}
     if lhs.defPercent != rhs.defPercent {return false}

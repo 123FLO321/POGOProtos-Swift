@@ -15,131 +15,131 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_PlayerData {
+public struct POGOProtos_Data_PlayerData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var creationTimestampMs: Int64 {
+  public var creationTimestampMs: Int64 {
     get {return _storage._creationTimestampMs}
     set {_uniqueStorage()._creationTimestampMs = newValue}
   }
 
-  var username: String {
+  public var username: String {
     get {return _storage._username}
     set {_uniqueStorage()._username = newValue}
   }
 
-  var team: POGOProtos_Enums_TeamColor {
+  public var team: POGOProtos_Enums_TeamColor {
     get {return _storage._team}
     set {_uniqueStorage()._team = newValue}
   }
 
-  var tutorialState: [POGOProtos_Enums_TutorialState] {
+  public var tutorialState: [POGOProtos_Enums_TutorialState] {
     get {return _storage._tutorialState}
     set {_uniqueStorage()._tutorialState = newValue}
   }
 
-  var avatar: POGOProtos_Data_Player_PlayerAvatar {
+  public var avatar: POGOProtos_Data_Player_PlayerAvatar {
     get {return _storage._avatar ?? POGOProtos_Data_Player_PlayerAvatar()}
     set {_uniqueStorage()._avatar = newValue}
   }
   /// Returns true if `avatar` has been explicitly set.
-  var hasAvatar: Bool {return _storage._avatar != nil}
+  public var hasAvatar: Bool {return _storage._avatar != nil}
   /// Clears the value of `avatar`. Subsequent reads from it will return its default value.
-  mutating func clearAvatar() {_uniqueStorage()._avatar = nil}
+  public mutating func clearAvatar() {_uniqueStorage()._avatar = nil}
 
-  var maxPokemonStorage: Int32 {
+  public var maxPokemonStorage: Int32 {
     get {return _storage._maxPokemonStorage}
     set {_uniqueStorage()._maxPokemonStorage = newValue}
   }
 
-  var maxItemStorage: Int32 {
+  public var maxItemStorage: Int32 {
     get {return _storage._maxItemStorage}
     set {_uniqueStorage()._maxItemStorage = newValue}
   }
 
-  var dailyBonus: POGOProtos_Data_Player_DailyBonus {
+  public var dailyBonus: POGOProtos_Data_Player_DailyBonus {
     get {return _storage._dailyBonus ?? POGOProtos_Data_Player_DailyBonus()}
     set {_uniqueStorage()._dailyBonus = newValue}
   }
   /// Returns true if `dailyBonus` has been explicitly set.
-  var hasDailyBonus: Bool {return _storage._dailyBonus != nil}
+  public var hasDailyBonus: Bool {return _storage._dailyBonus != nil}
   /// Clears the value of `dailyBonus`. Subsequent reads from it will return its default value.
-  mutating func clearDailyBonus() {_uniqueStorage()._dailyBonus = nil}
+  public mutating func clearDailyBonus() {_uniqueStorage()._dailyBonus = nil}
 
-  var equippedBadge: POGOProtos_Data_Player_EquippedBadge {
+  public var equippedBadge: POGOProtos_Data_Player_EquippedBadge {
     get {return _storage._equippedBadge ?? POGOProtos_Data_Player_EquippedBadge()}
     set {_uniqueStorage()._equippedBadge = newValue}
   }
   /// Returns true if `equippedBadge` has been explicitly set.
-  var hasEquippedBadge: Bool {return _storage._equippedBadge != nil}
+  public var hasEquippedBadge: Bool {return _storage._equippedBadge != nil}
   /// Clears the value of `equippedBadge`. Subsequent reads from it will return its default value.
-  mutating func clearEquippedBadge() {_uniqueStorage()._equippedBadge = nil}
+  public mutating func clearEquippedBadge() {_uniqueStorage()._equippedBadge = nil}
 
-  var contactSettings: POGOProtos_Data_Player_ContactSettings {
+  public var contactSettings: POGOProtos_Data_Player_ContactSettings {
     get {return _storage._contactSettings ?? POGOProtos_Data_Player_ContactSettings()}
     set {_uniqueStorage()._contactSettings = newValue}
   }
   /// Returns true if `contactSettings` has been explicitly set.
-  var hasContactSettings: Bool {return _storage._contactSettings != nil}
+  public var hasContactSettings: Bool {return _storage._contactSettings != nil}
   /// Clears the value of `contactSettings`. Subsequent reads from it will return its default value.
-  mutating func clearContactSettings() {_uniqueStorage()._contactSettings = nil}
+  public mutating func clearContactSettings() {_uniqueStorage()._contactSettings = nil}
 
-  var currencies: [POGOProtos_Data_Player_Currency] {
+  public var currencies: [POGOProtos_Data_Player_Currency] {
     get {return _storage._currencies}
     set {_uniqueStorage()._currencies = newValue}
   }
 
-  var remainingCodenameClaims: Int32 {
+  public var remainingCodenameClaims: Int32 {
     get {return _storage._remainingCodenameClaims}
     set {_uniqueStorage()._remainingCodenameClaims = newValue}
   }
 
-  var buddyPokemon: POGOProtos_Data_BuddyPokemon {
+  public var buddyPokemon: POGOProtos_Data_BuddyPokemon {
     get {return _storage._buddyPokemon ?? POGOProtos_Data_BuddyPokemon()}
     set {_uniqueStorage()._buddyPokemon = newValue}
   }
   /// Returns true if `buddyPokemon` has been explicitly set.
-  var hasBuddyPokemon: Bool {return _storage._buddyPokemon != nil}
+  public var hasBuddyPokemon: Bool {return _storage._buddyPokemon != nil}
   /// Clears the value of `buddyPokemon`. Subsequent reads from it will return its default value.
-  mutating func clearBuddyPokemon() {_uniqueStorage()._buddyPokemon = nil}
+  public mutating func clearBuddyPokemon() {_uniqueStorage()._buddyPokemon = nil}
 
-  var battleLockoutEndMs: Int64 {
+  public var battleLockoutEndMs: Int64 {
     get {return _storage._battleLockoutEndMs}
     set {_uniqueStorage()._battleLockoutEndMs = newValue}
   }
 
-  var secondaryPlayerAvatar: POGOProtos_Data_Player_PlayerAvatar {
+  public var secondaryPlayerAvatar: POGOProtos_Data_Player_PlayerAvatar {
     get {return _storage._secondaryPlayerAvatar ?? POGOProtos_Data_Player_PlayerAvatar()}
     set {_uniqueStorage()._secondaryPlayerAvatar = newValue}
   }
   /// Returns true if `secondaryPlayerAvatar` has been explicitly set.
-  var hasSecondaryPlayerAvatar: Bool {return _storage._secondaryPlayerAvatar != nil}
+  public var hasSecondaryPlayerAvatar: Bool {return _storage._secondaryPlayerAvatar != nil}
   /// Clears the value of `secondaryPlayerAvatar`. Subsequent reads from it will return its default value.
-  mutating func clearSecondaryPlayerAvatar() {_uniqueStorage()._secondaryPlayerAvatar = nil}
+  public mutating func clearSecondaryPlayerAvatar() {_uniqueStorage()._secondaryPlayerAvatar = nil}
 
-  var nameIsBlacklisted: Bool {
+  public var nameIsBlacklisted: Bool {
     get {return _storage._nameIsBlacklisted}
     set {_uniqueStorage()._nameIsBlacklisted = newValue}
   }
 
-  var socialPlayerSettings: POGOProtos_Settings_SocialPlayerSettings {
+  public var socialPlayerSettings: POGOProtos_Settings_SocialPlayerSettings {
     get {return _storage._socialPlayerSettings ?? POGOProtos_Settings_SocialPlayerSettings()}
     set {_uniqueStorage()._socialPlayerSettings = newValue}
   }
   /// Returns true if `socialPlayerSettings` has been explicitly set.
-  var hasSocialPlayerSettings: Bool {return _storage._socialPlayerSettings != nil}
+  public var hasSocialPlayerSettings: Bool {return _storage._socialPlayerSettings != nil}
   /// Clears the value of `socialPlayerSettings`. Subsequent reads from it will return its default value.
-  mutating func clearSocialPlayerSettings() {_uniqueStorage()._socialPlayerSettings = nil}
+  public mutating func clearSocialPlayerSettings() {_uniqueStorage()._socialPlayerSettings = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -149,8 +149,8 @@ struct POGOProtos_Data_PlayerData {
 fileprivate let _protobuf_package = "POGOProtos.Data"
 
 extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlayerData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlayerData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "creation_timestamp_ms"),
     2: .same(proto: "username"),
     5: .same(proto: "team"),
@@ -171,29 +171,29 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
   ]
 
   fileprivate class _StorageClass {
-    var _creationTimestampMs: Int64 = 0
-    var _username: String = String()
-    var _team: POGOProtos_Enums_TeamColor = .neutral
-    var _tutorialState: [POGOProtos_Enums_TutorialState] = []
-    var _avatar: POGOProtos_Data_Player_PlayerAvatar? = nil
-    var _maxPokemonStorage: Int32 = 0
-    var _maxItemStorage: Int32 = 0
-    var _dailyBonus: POGOProtos_Data_Player_DailyBonus? = nil
-    var _equippedBadge: POGOProtos_Data_Player_EquippedBadge? = nil
-    var _contactSettings: POGOProtos_Data_Player_ContactSettings? = nil
-    var _currencies: [POGOProtos_Data_Player_Currency] = []
-    var _remainingCodenameClaims: Int32 = 0
-    var _buddyPokemon: POGOProtos_Data_BuddyPokemon? = nil
-    var _battleLockoutEndMs: Int64 = 0
-    var _secondaryPlayerAvatar: POGOProtos_Data_Player_PlayerAvatar? = nil
-    var _nameIsBlacklisted: Bool = false
-    var _socialPlayerSettings: POGOProtos_Settings_SocialPlayerSettings? = nil
+    public var _creationTimestampMs: Int64 = 0
+    public var _username: String = String()
+    public var _team: POGOProtos_Enums_TeamColor = .neutral
+    public var _tutorialState: [POGOProtos_Enums_TutorialState] = []
+    public var _avatar: POGOProtos_Data_Player_PlayerAvatar? = nil
+    public var _maxPokemonStorage: Int32 = 0
+    public var _maxItemStorage: Int32 = 0
+    public var _dailyBonus: POGOProtos_Data_Player_DailyBonus? = nil
+    public var _equippedBadge: POGOProtos_Data_Player_EquippedBadge? = nil
+    public var _contactSettings: POGOProtos_Data_Player_ContactSettings? = nil
+    public var _currencies: [POGOProtos_Data_Player_Currency] = []
+    public var _remainingCodenameClaims: Int32 = 0
+    public var _buddyPokemon: POGOProtos_Data_BuddyPokemon? = nil
+    public var _battleLockoutEndMs: Int64 = 0
+    public var _secondaryPlayerAvatar: POGOProtos_Data_Player_PlayerAvatar? = nil
+    public var _nameIsBlacklisted: Bool = false
+    public var _socialPlayerSettings: POGOProtos_Settings_SocialPlayerSettings? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _creationTimestampMs = source._creationTimestampMs
       _username = source._username
       _team = source._team
@@ -221,7 +221,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -249,7 +249,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._creationTimestampMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._creationTimestampMs, fieldNumber: 1)
@@ -306,7 +306,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_PlayerData, rhs: POGOProtos_Data_PlayerData) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_PlayerData, rhs: POGOProtos_Data_PlayerData) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

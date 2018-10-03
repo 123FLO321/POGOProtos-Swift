@@ -15,44 +15,44 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_Social_SearchPlayerResponse {
+public struct POGOProtos_Networking_Responses_Social_SearchPlayerResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result {
+  public var result: POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var player: POGOProtos_Data_Player_PlayerSummary {
+  public var player: POGOProtos_Data_Player_PlayerSummary {
     get {return _storage._player ?? POGOProtos_Data_Player_PlayerSummary()}
     set {_uniqueStorage()._player = newValue}
   }
   /// Returns true if `player` has been explicitly set.
-  var hasPlayer: Bool {return _storage._player != nil}
+  public var hasPlayer: Bool {return _storage._player != nil}
   /// Clears the value of `player`. Subsequent reads from it will return its default value.
-  mutating func clearPlayer() {_uniqueStorage()._player = nil}
+  public mutating func clearPlayer() {_uniqueStorage()._player = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorUnknown // = 2
     case errorPlayerNotFound // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -62,7 +62,7 @@ struct POGOProtos_Networking_Responses_Social_SearchPlayerResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -74,7 +74,7 @@ struct POGOProtos_Networking_Responses_Social_SearchPlayerResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -98,21 +98,21 @@ extension POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result: Ca
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses.Social"
 
 extension POGOProtos_Networking_Responses_Social_SearchPlayerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SearchPlayerResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".SearchPlayerResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "player"),
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result = .unset
-    var _player: POGOProtos_Data_Player_PlayerSummary? = nil
+    public var _result: POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result = .unset
+    public var _player: POGOProtos_Data_Player_PlayerSummary? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _player = source._player
     }
@@ -125,7 +125,7 @@ extension POGOProtos_Networking_Responses_Social_SearchPlayerResponse: SwiftProt
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -138,7 +138,7 @@ extension POGOProtos_Networking_Responses_Social_SearchPlayerResponse: SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -150,7 +150,7 @@ extension POGOProtos_Networking_Responses_Social_SearchPlayerResponse: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_Social_SearchPlayerResponse, rhs: POGOProtos_Networking_Responses_Social_SearchPlayerResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_Social_SearchPlayerResponse, rhs: POGOProtos_Networking_Responses_Social_SearchPlayerResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -167,7 +167,7 @@ extension POGOProtos_Networking_Responses_Social_SearchPlayerResponse: SwiftProt
 }
 
 extension POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_UNKNOWN"),

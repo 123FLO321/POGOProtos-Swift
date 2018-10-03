@@ -15,28 +15,28 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_PokemonDisplay {
+public struct POGOProtos_Data_PokemonDisplay {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var costume: POGOProtos_Enums_Costume = .unset
+  public var costume: POGOProtos_Enums_Costume = .unset
 
-  var gender: POGOProtos_Enums_Gender = .unset
+  public var gender: POGOProtos_Enums_Gender = .unset
 
-  var shiny: Bool = false
+  public var shiny: Bool = false
 
-  var form: POGOProtos_Enums_Form = .unset
+  public var form: POGOProtos_Enums_Form = .unset
 
-  var weatherBoostedCondition: POGOProtos_Enums_WeatherCondition = .none
+  public var weatherBoostedCondition: POGOProtos_Enums_WeatherCondition = .none
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,8 +44,8 @@ struct POGOProtos_Data_PokemonDisplay {
 fileprivate let _protobuf_package = "POGOProtos.Data"
 
 extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PokemonDisplay"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PokemonDisplay"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "costume"),
     2: .same(proto: "gender"),
     3: .same(proto: "shiny"),
@@ -53,7 +53,7 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     5: .standard(proto: "weather_boosted_condition"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.costume)
@@ -66,7 +66,7 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.costume != .unset {
       try visitor.visitSingularEnumField(value: self.costume, fieldNumber: 1)
     }
@@ -85,7 +85,7 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_PokemonDisplay, rhs: POGOProtos_Data_PokemonDisplay) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_PokemonDisplay, rhs: POGOProtos_Data_PokemonDisplay) -> Bool {
     if lhs.costume != rhs.costume {return false}
     if lhs.gender != rhs.gender {return false}
     if lhs.shiny != rhs.shiny {return false}

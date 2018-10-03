@@ -15,38 +15,38 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Raid_Participation {
+public struct POGOProtos_Data_Raid_Participation {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var individualDamagePokeballs: Int32 = 0
+  public var individualDamagePokeballs: Int32 = 0
 
-  var teamDamagePokeballs: Int32 = 0
+  public var teamDamagePokeballs: Int32 = 0
 
-  var gymOwnershipPokeballs: Int32 = 0
+  public var gymOwnershipPokeballs: Int32 = 0
 
-  var basePokeballs: Int32 = 0
+  public var basePokeballs: Int32 = 0
 
-  var bluePercentage: Double = 0
+  public var bluePercentage: Double = 0
 
-  var redPercentage: Double = 0
+  public var redPercentage: Double = 0
 
-  var yellowPercentage: Double = 0
+  public var yellowPercentage: Double = 0
 
-  var bonusItemMultiplier: Float = 0
+  public var bonusItemMultiplier: Float = 0
 
-  var highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
+  public var highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
 
-  var highestFriendshipPokeballs: Int32 = 0
+  public var highestFriendshipPokeballs: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -54,8 +54,8 @@ struct POGOProtos_Data_Raid_Participation {
 fileprivate let _protobuf_package = "POGOProtos.Data.Raid"
 
 extension POGOProtos_Data_Raid_Participation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Participation"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Participation"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "individual_damage_pokeballs"),
     2: .standard(proto: "team_damage_pokeballs"),
     3: .standard(proto: "gym_ownership_pokeballs"),
@@ -68,7 +68,7 @@ extension POGOProtos_Data_Raid_Participation: SwiftProtobuf.Message, SwiftProtob
     10: .standard(proto: "highest_friendship_pokeballs"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.individualDamagePokeballs)
@@ -86,7 +86,7 @@ extension POGOProtos_Data_Raid_Participation: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.individualDamagePokeballs != 0 {
       try visitor.visitSingularInt32Field(value: self.individualDamagePokeballs, fieldNumber: 1)
     }
@@ -120,7 +120,7 @@ extension POGOProtos_Data_Raid_Participation: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Raid_Participation, rhs: POGOProtos_Data_Raid_Participation) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Raid_Participation, rhs: POGOProtos_Data_Raid_Participation) -> Bool {
     if lhs.individualDamagePokeballs != rhs.individualDamagePokeballs {return false}
     if lhs.teamDamagePokeballs != rhs.teamDamagePokeballs {return false}
     if lhs.gymOwnershipPokeballs != rhs.gymOwnershipPokeballs {return false}

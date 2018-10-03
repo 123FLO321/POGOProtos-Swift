@@ -15,46 +15,46 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_News_NewsArticle {
+public struct POGOProtos_Data_News_NewsArticle {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: String = String()
+  public var id: String = String()
 
-  var imageURL: [String] = []
+  public var imageURL: [String] = []
 
-  var headerKey: String = String()
+  public var headerKey: String = String()
 
-  var subheaderKey: String = String()
+  public var subheaderKey: String = String()
 
-  var mainTextKey: String = String()
+  public var mainTextKey: String = String()
 
-  var timestamp: Int64 = 0
+  public var timestamp: Int64 = 0
 
-  var template: POGOProtos_Data_News_NewsArticle.NewsTemplate = .unset
+  public var template: POGOProtos_Data_News_NewsArticle.NewsTemplate = .unset
 
-  var enabled: Bool = false
+  public var enabled: Bool = false
 
-  var articleRead: Bool = false
+  public var articleRead: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum NewsTemplate: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum NewsTemplate: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case defaultTemplate // = 1
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .defaultTemplate
@@ -62,7 +62,7 @@ struct POGOProtos_Data_News_NewsArticle {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .defaultTemplate: return 1
@@ -72,7 +72,7 @@ struct POGOProtos_Data_News_NewsArticle {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -92,8 +92,8 @@ extension POGOProtos_Data_News_NewsArticle.NewsTemplate: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Data.News"
 
 extension POGOProtos_Data_News_NewsArticle: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".NewsArticle"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".NewsArticle"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .standard(proto: "image_url"),
     3: .standard(proto: "header_key"),
@@ -105,7 +105,7 @@ extension POGOProtos_Data_News_NewsArticle: SwiftProtobuf.Message, SwiftProtobuf
     9: .standard(proto: "article_read"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.id)
@@ -122,7 +122,7 @@ extension POGOProtos_Data_News_NewsArticle: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
     }
@@ -153,7 +153,7 @@ extension POGOProtos_Data_News_NewsArticle: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_News_NewsArticle, rhs: POGOProtos_Data_News_NewsArticle) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_News_NewsArticle, rhs: POGOProtos_Data_News_NewsArticle) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.imageURL != rhs.imageURL {return false}
     if lhs.headerKey != rhs.headerKey {return false}
@@ -169,7 +169,7 @@ extension POGOProtos_Data_News_NewsArticle: SwiftProtobuf.Message, SwiftProtobuf
 }
 
 extension POGOProtos_Data_News_NewsArticle.NewsTemplate: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "DEFAULT_TEMPLATE"),
   ]

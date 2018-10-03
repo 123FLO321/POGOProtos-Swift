@@ -15,42 +15,42 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Raid_Lobby {
+public struct POGOProtos_Data_Raid_Lobby {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var lobbyID: [Int32] = []
+  public var lobbyID: [Int32] = []
 
-  var players: [POGOProtos_Data_Battle_BattleParticipant] = []
+  public var players: [POGOProtos_Data_Battle_BattleParticipant] = []
 
-  var playerJoinEndMs: Int64 = 0
+  public var playerJoinEndMs: Int64 = 0
 
-  var pokemonSelectionEndMs: Int64 = 0
+  public var pokemonSelectionEndMs: Int64 = 0
 
-  var raidBattleStartMs: Int64 = 0
+  public var raidBattleStartMs: Int64 = 0
 
-  var raidBattleEndMs: Int64 = 0
+  public var raidBattleEndMs: Int64 = 0
 
-  var raidBattleID: String = String()
+  public var raidBattleID: String = String()
 
-  var ownerNickname: String = String()
+  public var ownerNickname: String = String()
 
-  var `private`: Bool = false
+  public var `private`: Bool = false
 
-  var creationMs: Int64 = 0
+  public var creationMs: Int64 = 0
 
-  var battlePlfeInstance: Int32 = 0
+  public var battlePlfeInstance: Int32 = 0
 
-  var weatherCondition: POGOProtos_Enums_WeatherCondition = .none
+  public var weatherCondition: POGOProtos_Enums_WeatherCondition = .none
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -58,8 +58,8 @@ struct POGOProtos_Data_Raid_Lobby {
 fileprivate let _protobuf_package = "POGOProtos.Data.Raid"
 
 extension POGOProtos_Data_Raid_Lobby: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Lobby"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Lobby"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "lobby_id"),
     2: .same(proto: "players"),
     3: .standard(proto: "player_join_end_ms"),
@@ -74,7 +74,7 @@ extension POGOProtos_Data_Raid_Lobby: SwiftProtobuf.Message, SwiftProtobuf._Mess
     13: .standard(proto: "weather_condition"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedInt32Field(value: &self.lobbyID)
@@ -94,7 +94,7 @@ extension POGOProtos_Data_Raid_Lobby: SwiftProtobuf.Message, SwiftProtobuf._Mess
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.lobbyID.isEmpty {
       try visitor.visitPackedInt32Field(value: self.lobbyID, fieldNumber: 1)
     }
@@ -134,7 +134,7 @@ extension POGOProtos_Data_Raid_Lobby: SwiftProtobuf.Message, SwiftProtobuf._Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Raid_Lobby, rhs: POGOProtos_Data_Raid_Lobby) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Raid_Lobby, rhs: POGOProtos_Data_Raid_Lobby) -> Bool {
     if lhs.lobbyID != rhs.lobbyID {return false}
     if lhs.players != rhs.players {return false}
     if lhs.playerJoinEndMs != rhs.playerJoinEndMs {return false}

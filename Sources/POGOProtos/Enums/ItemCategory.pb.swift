@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case none // = 0
   case pokeball // = 1
   case food // = 2
@@ -41,11 +41,11 @@ enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
   case friendGiftBox // = 17
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .none
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .none
     case 1: self = .pokeball
@@ -69,7 +69,7 @@ enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .none: return 0
     case .pokeball: return 1
@@ -126,7 +126,7 @@ extension POGOProtos_Enums_ItemCategory: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_ItemCategory: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "ITEM_CATEGORY_NONE"),
     1: .same(proto: "ITEM_CATEGORY_POKEBALL"),
     2: .same(proto: "ITEM_CATEGORY_FOOD"),

@@ -15,45 +15,45 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
 /// A cell is a geographical "zone" containing objects like pokemon, gyms, and pokestops.
-struct POGOProtos_Map_MapCell {
+public struct POGOProtos_Map_MapCell {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// S2 geographic area that the cell covers (http://s2map.com/) (https://code.google.com/archive/p/s2-geometry-library/)
-  var s2CellID: UInt64 = 0
+  public var s2CellID: UInt64 = 0
 
-  var currentTimestampMs: Int64 = 0
+  public var currentTimestampMs: Int64 = 0
 
-  var forts: [POGOProtos_Map_Fort_FortData] = []
+  public var forts: [POGOProtos_Map_Fort_FortData] = []
 
-  var spawnPoints: [POGOProtos_Map_SpawnPoint] = []
+  public var spawnPoints: [POGOProtos_Map_SpawnPoint] = []
 
-  var deletedObjects: [String] = []
+  public var deletedObjects: [String] = []
 
-  var isTruncatedList: Bool = false
+  public var isTruncatedList: Bool = false
 
-  var fortSummaries: [POGOProtos_Map_Fort_FortSummary] = []
+  public var fortSummaries: [POGOProtos_Map_Fort_FortSummary] = []
 
-  var decimatedSpawnPoints: [POGOProtos_Map_SpawnPoint] = []
+  public var decimatedSpawnPoints: [POGOProtos_Map_SpawnPoint] = []
 
   /// Pokemon within 2 steps or less.
-  var wildPokemons: [POGOProtos_Map_Pokemon_WildPokemon] = []
+  public var wildPokemons: [POGOProtos_Map_Pokemon_WildPokemon] = []
 
   /// Pokemon within 1 step or none.
-  var catchablePokemons: [POGOProtos_Map_Pokemon_MapPokemon] = []
+  public var catchablePokemons: [POGOProtos_Map_Pokemon_MapPokemon] = []
 
   /// Pokemon farther away than 2 steps, but still in the area.
-  var nearbyPokemons: [POGOProtos_Map_Pokemon_NearbyPokemon] = []
+  public var nearbyPokemons: [POGOProtos_Map_Pokemon_NearbyPokemon] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -61,8 +61,8 @@ struct POGOProtos_Map_MapCell {
 fileprivate let _protobuf_package = "POGOProtos.Map"
 
 extension POGOProtos_Map_MapCell: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".MapCell"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".MapCell"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "s2_cell_id"),
     2: .standard(proto: "current_timestamp_ms"),
     3: .same(proto: "forts"),
@@ -76,7 +76,7 @@ extension POGOProtos_Map_MapCell: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     11: .standard(proto: "nearby_pokemons"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt64Field(value: &self.s2CellID)
@@ -95,7 +95,7 @@ extension POGOProtos_Map_MapCell: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.s2CellID != 0 {
       try visitor.visitSingularUInt64Field(value: self.s2CellID, fieldNumber: 1)
     }
@@ -132,7 +132,7 @@ extension POGOProtos_Map_MapCell: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_MapCell, rhs: POGOProtos_Map_MapCell) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_MapCell, rhs: POGOProtos_Map_MapCell) -> Bool {
     if lhs.s2CellID != rhs.s2CellID {return false}
     if lhs.currentTimestampMs != rhs.currentTimestampMs {return false}
     if lhs.forts != rhs.forts {return false}

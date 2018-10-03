@@ -15,21 +15,21 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_NotificationState: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_NotificationState: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case unsetState // = 0
   case viewed // = 1
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unsetState
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unsetState
     case 1: self = .viewed
@@ -37,7 +37,7 @@ enum POGOProtos_Enums_NotificationState: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unsetState: return 0
     case .viewed: return 1
@@ -62,7 +62,7 @@ extension POGOProtos_Enums_NotificationState: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_NotificationState: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET_STATE"),
     1: .same(proto: "VIEWED"),
   ]

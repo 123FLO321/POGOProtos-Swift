@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Inventory_AppliedItem {
+public struct POGOProtos_Inventory_AppliedItem {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+  public var itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-  var itemType: POGOProtos_Inventory_Item_ItemType = .none
+  public var itemType: POGOProtos_Inventory_Item_ItemType = .none
 
-  var expireMs: Int64 = 0
+  public var expireMs: Int64 = 0
 
-  var appliedMs: Int64 = 0
+  public var appliedMs: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Inventory_AppliedItem {
 fileprivate let _protobuf_package = "POGOProtos.Inventory"
 
 extension POGOProtos_Inventory_AppliedItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AppliedItem"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".AppliedItem"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "item_id"),
     2: .standard(proto: "item_type"),
     3: .standard(proto: "expire_ms"),
     4: .standard(proto: "applied_ms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.itemID)
@@ -62,7 +62,7 @@ extension POGOProtos_Inventory_AppliedItem: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.itemID != .itemUnknown {
       try visitor.visitSingularEnumField(value: self.itemID, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Inventory_AppliedItem: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Inventory_AppliedItem, rhs: POGOProtos_Inventory_AppliedItem) -> Bool {
+  public static func ==(lhs: POGOProtos_Inventory_AppliedItem, rhs: POGOProtos_Inventory_AppliedItem) -> Bool {
     if lhs.itemID != rhs.itemID {return false}
     if lhs.itemType != rhs.itemType {return false}
     if lhs.expireMs != rhs.expireMs {return false}

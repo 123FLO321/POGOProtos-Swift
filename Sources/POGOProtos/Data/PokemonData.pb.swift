@@ -15,247 +15,247 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_PokemonData {
+public struct POGOProtos_Data_PokemonData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: UInt64 {
+  public var id: UInt64 {
     get {return _storage._id}
     set {_uniqueStorage()._id = newValue}
   }
 
-  var pokemonID: POGOProtos_Enums_PokemonId {
+  public var pokemonID: POGOProtos_Enums_PokemonId {
     get {return _storage._pokemonID}
     set {_uniqueStorage()._pokemonID = newValue}
   }
 
-  var cp: Int32 {
+  public var cp: Int32 {
     get {return _storage._cp}
     set {_uniqueStorage()._cp = newValue}
   }
 
-  var stamina: Int32 {
+  public var stamina: Int32 {
     get {return _storage._stamina}
     set {_uniqueStorage()._stamina = newValue}
   }
 
-  var staminaMax: Int32 {
+  public var staminaMax: Int32 {
     get {return _storage._staminaMax}
     set {_uniqueStorage()._staminaMax = newValue}
   }
 
-  var move1: POGOProtos_Enums_PokemonMove {
+  public var move1: POGOProtos_Enums_PokemonMove {
     get {return _storage._move1}
     set {_uniqueStorage()._move1 = newValue}
   }
 
-  var move2: POGOProtos_Enums_PokemonMove {
+  public var move2: POGOProtos_Enums_PokemonMove {
     get {return _storage._move2}
     set {_uniqueStorage()._move2 = newValue}
   }
 
-  var deployedFortID: String {
+  public var deployedFortID: String {
     get {return _storage._deployedFortID}
     set {_uniqueStorage()._deployedFortID = newValue}
   }
 
-  var ownerName: String {
+  public var ownerName: String {
     get {return _storage._ownerName}
     set {_uniqueStorage()._ownerName = newValue}
   }
 
-  var isEgg: Bool {
+  public var isEgg: Bool {
     get {return _storage._isEgg}
     set {_uniqueStorage()._isEgg = newValue}
   }
 
-  var eggKmWalkedTarget: Double {
+  public var eggKmWalkedTarget: Double {
     get {return _storage._eggKmWalkedTarget}
     set {_uniqueStorage()._eggKmWalkedTarget = newValue}
   }
 
-  var eggKmWalkedStart: Double {
+  public var eggKmWalkedStart: Double {
     get {return _storage._eggKmWalkedStart}
     set {_uniqueStorage()._eggKmWalkedStart = newValue}
   }
 
-  var origin: Int32 {
+  public var origin: Int32 {
     get {return _storage._origin}
     set {_uniqueStorage()._origin = newValue}
   }
 
-  var heightM: Float {
+  public var heightM: Float {
     get {return _storage._heightM}
     set {_uniqueStorage()._heightM = newValue}
   }
 
-  var weightKg: Float {
+  public var weightKg: Float {
     get {return _storage._weightKg}
     set {_uniqueStorage()._weightKg = newValue}
   }
 
-  var individualAttack: Int32 {
+  public var individualAttack: Int32 {
     get {return _storage._individualAttack}
     set {_uniqueStorage()._individualAttack = newValue}
   }
 
-  var individualDefense: Int32 {
+  public var individualDefense: Int32 {
     get {return _storage._individualDefense}
     set {_uniqueStorage()._individualDefense = newValue}
   }
 
-  var individualStamina: Int32 {
+  public var individualStamina: Int32 {
     get {return _storage._individualStamina}
     set {_uniqueStorage()._individualStamina = newValue}
   }
 
-  var cpMultiplier: Float {
+  public var cpMultiplier: Float {
     get {return _storage._cpMultiplier}
     set {_uniqueStorage()._cpMultiplier = newValue}
   }
 
-  var pokeball: POGOProtos_Inventory_Item_ItemId {
+  public var pokeball: POGOProtos_Inventory_Item_ItemId {
     get {return _storage._pokeball}
     set {_uniqueStorage()._pokeball = newValue}
   }
 
-  var capturedCellID: UInt64 {
+  public var capturedCellID: UInt64 {
     get {return _storage._capturedCellID}
     set {_uniqueStorage()._capturedCellID = newValue}
   }
 
-  var battlesAttacked: Int32 {
+  public var battlesAttacked: Int32 {
     get {return _storage._battlesAttacked}
     set {_uniqueStorage()._battlesAttacked = newValue}
   }
 
-  var battlesDefended: Int32 {
+  public var battlesDefended: Int32 {
     get {return _storage._battlesDefended}
     set {_uniqueStorage()._battlesDefended = newValue}
   }
 
-  var eggIncubatorID: String {
+  public var eggIncubatorID: String {
     get {return _storage._eggIncubatorID}
     set {_uniqueStorage()._eggIncubatorID = newValue}
   }
 
-  var creationTimeMs: UInt64 {
+  public var creationTimeMs: UInt64 {
     get {return _storage._creationTimeMs}
     set {_uniqueStorage()._creationTimeMs = newValue}
   }
 
-  var numUpgrades: Int32 {
+  public var numUpgrades: Int32 {
     get {return _storage._numUpgrades}
     set {_uniqueStorage()._numUpgrades = newValue}
   }
 
-  var additionalCpMultiplier: Float {
+  public var additionalCpMultiplier: Float {
     get {return _storage._additionalCpMultiplier}
     set {_uniqueStorage()._additionalCpMultiplier = newValue}
   }
 
-  var favorite: Int32 {
+  public var favorite: Int32 {
     get {return _storage._favorite}
     set {_uniqueStorage()._favorite = newValue}
   }
 
-  var nickname: String {
+  public var nickname: String {
     get {return _storage._nickname}
     set {_uniqueStorage()._nickname = newValue}
   }
 
-  var fromFort: Int32 {
+  public var fromFort: Int32 {
     get {return _storage._fromFort}
     set {_uniqueStorage()._fromFort = newValue}
   }
 
-  var buddyCandyAwarded: Int32 {
+  public var buddyCandyAwarded: Int32 {
     get {return _storage._buddyCandyAwarded}
     set {_uniqueStorage()._buddyCandyAwarded = newValue}
   }
 
-  var buddyTotalKmWalked: Float {
+  public var buddyTotalKmWalked: Float {
     get {return _storage._buddyTotalKmWalked}
     set {_uniqueStorage()._buddyTotalKmWalked = newValue}
   }
 
-  var displayPokemonID: Int32 {
+  public var displayPokemonID: Int32 {
     get {return _storage._displayPokemonID}
     set {_uniqueStorage()._displayPokemonID = newValue}
   }
 
-  var displayCp: Int32 {
+  public var displayCp: Int32 {
     get {return _storage._displayCp}
     set {_uniqueStorage()._displayCp = newValue}
   }
 
-  var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
+  public var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
     get {return _storage._pokemonDisplay ?? POGOProtos_Data_PokemonDisplay()}
     set {_uniqueStorage()._pokemonDisplay = newValue}
   }
   /// Returns true if `pokemonDisplay` has been explicitly set.
-  var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
+  public var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
   /// Clears the value of `pokemonDisplay`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
+  public mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
 
-  var isBad: Bool {
+  public var isBad: Bool {
     get {return _storage._isBad}
     set {_uniqueStorage()._isBad = newValue}
   }
 
-  var hatchedFromEgg: Bool {
+  public var hatchedFromEgg: Bool {
     get {return _storage._hatchedFromEgg}
     set {_uniqueStorage()._hatchedFromEgg = newValue}
   }
 
-  var coinsReturned: Int32 {
+  public var coinsReturned: Int32 {
     get {return _storage._coinsReturned}
     set {_uniqueStorage()._coinsReturned = newValue}
   }
 
-  var deployedDurationMs: Int64 {
+  public var deployedDurationMs: Int64 {
     get {return _storage._deployedDurationMs}
     set {_uniqueStorage()._deployedDurationMs = newValue}
   }
 
-  var deployedReturnedTimestampMs: Int64 {
+  public var deployedReturnedTimestampMs: Int64 {
     get {return _storage._deployedReturnedTimestampMs}
     set {_uniqueStorage()._deployedReturnedTimestampMs = newValue}
   }
 
-  var cpMultiplierBeforeTrading: Float {
+  public var cpMultiplierBeforeTrading: Float {
     get {return _storage._cpMultiplierBeforeTrading}
     set {_uniqueStorage()._cpMultiplierBeforeTrading = newValue}
   }
 
-  var tradingOriginalOwnerHash: Int32 {
+  public var tradingOriginalOwnerHash: Int32 {
     get {return _storage._tradingOriginalOwnerHash}
     set {_uniqueStorage()._tradingOriginalOwnerHash = newValue}
   }
 
-  var originalOwnerNickname: String {
+  public var originalOwnerNickname: String {
     get {return _storage._originalOwnerNickname}
     set {_uniqueStorage()._originalOwnerNickname = newValue}
   }
 
-  var tradedTimeMs: Int64 {
+  public var tradedTimeMs: Int64 {
     get {return _storage._tradedTimeMs}
     set {_uniqueStorage()._tradedTimeMs = newValue}
   }
 
-  var isLucky: Bool {
+  public var isLucky: Bool {
     get {return _storage._isLucky}
     set {_uniqueStorage()._isLucky = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -265,8 +265,8 @@ struct POGOProtos_Data_PokemonData {
 fileprivate let _protobuf_package = "POGOProtos.Data"
 
 extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PokemonData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PokemonData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .standard(proto: "pokemon_id"),
     3: .same(proto: "cp"),
@@ -315,57 +315,57 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
   ]
 
   fileprivate class _StorageClass {
-    var _id: UInt64 = 0
-    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    var _cp: Int32 = 0
-    var _stamina: Int32 = 0
-    var _staminaMax: Int32 = 0
-    var _move1: POGOProtos_Enums_PokemonMove = .moveUnset
-    var _move2: POGOProtos_Enums_PokemonMove = .moveUnset
-    var _deployedFortID: String = String()
-    var _ownerName: String = String()
-    var _isEgg: Bool = false
-    var _eggKmWalkedTarget: Double = 0
-    var _eggKmWalkedStart: Double = 0
-    var _origin: Int32 = 0
-    var _heightM: Float = 0
-    var _weightKg: Float = 0
-    var _individualAttack: Int32 = 0
-    var _individualDefense: Int32 = 0
-    var _individualStamina: Int32 = 0
-    var _cpMultiplier: Float = 0
-    var _pokeball: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    var _capturedCellID: UInt64 = 0
-    var _battlesAttacked: Int32 = 0
-    var _battlesDefended: Int32 = 0
-    var _eggIncubatorID: String = String()
-    var _creationTimeMs: UInt64 = 0
-    var _numUpgrades: Int32 = 0
-    var _additionalCpMultiplier: Float = 0
-    var _favorite: Int32 = 0
-    var _nickname: String = String()
-    var _fromFort: Int32 = 0
-    var _buddyCandyAwarded: Int32 = 0
-    var _buddyTotalKmWalked: Float = 0
-    var _displayPokemonID: Int32 = 0
-    var _displayCp: Int32 = 0
-    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-    var _isBad: Bool = false
-    var _hatchedFromEgg: Bool = false
-    var _coinsReturned: Int32 = 0
-    var _deployedDurationMs: Int64 = 0
-    var _deployedReturnedTimestampMs: Int64 = 0
-    var _cpMultiplierBeforeTrading: Float = 0
-    var _tradingOriginalOwnerHash: Int32 = 0
-    var _originalOwnerNickname: String = String()
-    var _tradedTimeMs: Int64 = 0
-    var _isLucky: Bool = false
+    public var _id: UInt64 = 0
+    public var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    public var _cp: Int32 = 0
+    public var _stamina: Int32 = 0
+    public var _staminaMax: Int32 = 0
+    public var _move1: POGOProtos_Enums_PokemonMove = .moveUnset
+    public var _move2: POGOProtos_Enums_PokemonMove = .moveUnset
+    public var _deployedFortID: String = String()
+    public var _ownerName: String = String()
+    public var _isEgg: Bool = false
+    public var _eggKmWalkedTarget: Double = 0
+    public var _eggKmWalkedStart: Double = 0
+    public var _origin: Int32 = 0
+    public var _heightM: Float = 0
+    public var _weightKg: Float = 0
+    public var _individualAttack: Int32 = 0
+    public var _individualDefense: Int32 = 0
+    public var _individualStamina: Int32 = 0
+    public var _cpMultiplier: Float = 0
+    public var _pokeball: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    public var _capturedCellID: UInt64 = 0
+    public var _battlesAttacked: Int32 = 0
+    public var _battlesDefended: Int32 = 0
+    public var _eggIncubatorID: String = String()
+    public var _creationTimeMs: UInt64 = 0
+    public var _numUpgrades: Int32 = 0
+    public var _additionalCpMultiplier: Float = 0
+    public var _favorite: Int32 = 0
+    public var _nickname: String = String()
+    public var _fromFort: Int32 = 0
+    public var _buddyCandyAwarded: Int32 = 0
+    public var _buddyTotalKmWalked: Float = 0
+    public var _displayPokemonID: Int32 = 0
+    public var _displayCp: Int32 = 0
+    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    public var _isBad: Bool = false
+    public var _hatchedFromEgg: Bool = false
+    public var _coinsReturned: Int32 = 0
+    public var _deployedDurationMs: Int64 = 0
+    public var _deployedReturnedTimestampMs: Int64 = 0
+    public var _cpMultiplierBeforeTrading: Float = 0
+    public var _tradingOriginalOwnerHash: Int32 = 0
+    public var _originalOwnerNickname: String = String()
+    public var _tradedTimeMs: Int64 = 0
+    public var _isLucky: Bool = false
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _id = source._id
       _pokemonID = source._pokemonID
       _cp = source._cp
@@ -421,7 +421,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -477,7 +477,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._id != 0 {
         try visitor.visitSingularFixed64Field(value: _storage._id, fieldNumber: 1)
@@ -618,7 +618,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_PokemonData, rhs: POGOProtos_Data_PokemonData) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_PokemonData, rhs: POGOProtos_Data_PokemonData) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

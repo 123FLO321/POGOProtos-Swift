@@ -15,58 +15,58 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Envelopes_ResponseEnvelope {
+public struct POGOProtos_Networking_Envelopes_ResponseEnvelope {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var statusCode: POGOProtos_Networking_Envelopes_ResponseEnvelope.StatusCode {
+  public var statusCode: POGOProtos_Networking_Envelopes_ResponseEnvelope.StatusCode {
     get {return _storage._statusCode}
     set {_uniqueStorage()._statusCode = newValue}
   }
 
-  var requestID: UInt64 {
+  public var requestID: UInt64 {
     get {return _storage._requestID}
     set {_uniqueStorage()._requestID = newValue}
   }
 
-  var apiURL: String {
+  public var apiURL: String {
     get {return _storage._apiURL}
     set {_uniqueStorage()._apiURL = newValue}
   }
 
-  var platformReturns: [POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse] {
+  public var platformReturns: [POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse] {
     get {return _storage._platformReturns}
     set {_uniqueStorage()._platformReturns = newValue}
   }
 
-  var authTicket: POGOProtos_Networking_Envelopes_AuthTicket {
+  public var authTicket: POGOProtos_Networking_Envelopes_AuthTicket {
     get {return _storage._authTicket ?? POGOProtos_Networking_Envelopes_AuthTicket()}
     set {_uniqueStorage()._authTicket = newValue}
   }
   /// Returns true if `authTicket` has been explicitly set.
-  var hasAuthTicket: Bool {return _storage._authTicket != nil}
+  public var hasAuthTicket: Bool {return _storage._authTicket != nil}
   /// Clears the value of `authTicket`. Subsequent reads from it will return its default value.
-  mutating func clearAuthTicket() {_uniqueStorage()._authTicket = nil}
+  public mutating func clearAuthTicket() {_uniqueStorage()._authTicket = nil}
 
-  var returns: [Data] {
+  public var returns: [Data] {
     get {return _storage._returns}
     set {_uniqueStorage()._returns = newValue}
   }
 
-  var error: String {
+  public var error: String {
     get {return _storage._error}
     set {_uniqueStorage()._error = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum StatusCode: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum StatusCode: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unknown // = 0
 
     /// valid response with no api url
@@ -94,11 +94,11 @@ struct POGOProtos_Networking_Envelopes_ResponseEnvelope {
     case invalidAuthToken // = 102
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unknown
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unknown
       case 1: self = .ok
@@ -113,7 +113,7 @@ struct POGOProtos_Networking_Envelopes_ResponseEnvelope {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unknown: return 0
       case .ok: return 1
@@ -130,21 +130,21 @@ struct POGOProtos_Networking_Envelopes_ResponseEnvelope {
 
   }
 
-  struct PlatformResponse {
+  public struct PlatformResponse {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var type: POGOProtos_Networking_Platform_PlatformRequestType = .methodUnset
+    public var type: POGOProtos_Networking_Platform_PlatformRequestType = .methodUnset
 
-    var response: Data = SwiftProtobuf.Internal.emptyData
+    public var response: Data = SwiftProtobuf.Internal.emptyData
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -173,8 +173,8 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope.StatusCode: CaseItera
 fileprivate let _protobuf_package = "POGOProtos.Networking.Envelopes"
 
 extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ResponseEnvelope"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ResponseEnvelope"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "status_code"),
     2: .standard(proto: "request_id"),
     3: .standard(proto: "api_url"),
@@ -185,19 +185,19 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
   ]
 
   fileprivate class _StorageClass {
-    var _statusCode: POGOProtos_Networking_Envelopes_ResponseEnvelope.StatusCode = .unknown
-    var _requestID: UInt64 = 0
-    var _apiURL: String = String()
-    var _platformReturns: [POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse] = []
-    var _authTicket: POGOProtos_Networking_Envelopes_AuthTicket? = nil
-    var _returns: [Data] = []
-    var _error: String = String()
+    public var _statusCode: POGOProtos_Networking_Envelopes_ResponseEnvelope.StatusCode = .unknown
+    public var _requestID: UInt64 = 0
+    public var _apiURL: String = String()
+    public var _platformReturns: [POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse] = []
+    public var _authTicket: POGOProtos_Networking_Envelopes_AuthTicket? = nil
+    public var _returns: [Data] = []
+    public var _error: String = String()
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _statusCode = source._statusCode
       _requestID = source._requestID
       _apiURL = source._apiURL
@@ -215,7 +215,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -233,7 +233,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._statusCode != .unknown {
         try visitor.visitSingularEnumField(value: _storage._statusCode, fieldNumber: 1)
@@ -260,7 +260,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_ResponseEnvelope, rhs: POGOProtos_Networking_Envelopes_ResponseEnvelope) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_ResponseEnvelope, rhs: POGOProtos_Networking_Envelopes_ResponseEnvelope) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -282,7 +282,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
 }
 
 extension POGOProtos_Networking_Envelopes_ResponseEnvelope.StatusCode: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNKNOWN"),
     1: .same(proto: "OK"),
     2: .same(proto: "OK_RPC_URL_IN_RESPONSE"),
@@ -296,13 +296,13 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope.StatusCode: SwiftProt
 }
 
 extension POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Envelopes_ResponseEnvelope.protoMessageName + ".PlatformResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_ResponseEnvelope.protoMessageName + ".PlatformResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "type"),
     2: .same(proto: "response"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.type)
@@ -312,7 +312,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse: Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.type != .methodUnset {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
@@ -322,7 +322,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse: Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse, rhs: POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse, rhs: POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse) -> Bool {
     if lhs.type != rhs.type {return false}
     if lhs.response != rhs.response {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

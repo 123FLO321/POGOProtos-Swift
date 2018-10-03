@@ -15,52 +15,52 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Map_Pokemon_NearbyPokemon {
+public struct POGOProtos_Map_Pokemon_NearbyPokemon {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonID: POGOProtos_Enums_PokemonId {
+  public var pokemonID: POGOProtos_Enums_PokemonId {
     get {return _storage._pokemonID}
     set {_uniqueStorage()._pokemonID = newValue}
   }
 
-  var distanceInMeters: Float {
+  public var distanceInMeters: Float {
     get {return _storage._distanceInMeters}
     set {_uniqueStorage()._distanceInMeters = newValue}
   }
 
-  var encounterID: UInt64 {
+  public var encounterID: UInt64 {
     get {return _storage._encounterID}
     set {_uniqueStorage()._encounterID = newValue}
   }
 
-  var fortID: String {
+  public var fortID: String {
     get {return _storage._fortID}
     set {_uniqueStorage()._fortID = newValue}
   }
 
-  var fortImageURL: String {
+  public var fortImageURL: String {
     get {return _storage._fortImageURL}
     set {_uniqueStorage()._fortImageURL = newValue}
   }
 
-  var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
+  public var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
     get {return _storage._pokemonDisplay ?? POGOProtos_Data_PokemonDisplay()}
     set {_uniqueStorage()._pokemonDisplay = newValue}
   }
   /// Returns true if `pokemonDisplay` has been explicitly set.
-  var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
+  public var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
   /// Clears the value of `pokemonDisplay`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
+  public mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -70,8 +70,8 @@ struct POGOProtos_Map_Pokemon_NearbyPokemon {
 fileprivate let _protobuf_package = "POGOProtos.Map.Pokemon"
 
 extension POGOProtos_Map_Pokemon_NearbyPokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".NearbyPokemon"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".NearbyPokemon"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_id"),
     2: .standard(proto: "distance_in_meters"),
     3: .standard(proto: "encounter_id"),
@@ -81,18 +81,18 @@ extension POGOProtos_Map_Pokemon_NearbyPokemon: SwiftProtobuf.Message, SwiftProt
   ]
 
   fileprivate class _StorageClass {
-    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    var _distanceInMeters: Float = 0
-    var _encounterID: UInt64 = 0
-    var _fortID: String = String()
-    var _fortImageURL: String = String()
-    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    public var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    public var _distanceInMeters: Float = 0
+    public var _encounterID: UInt64 = 0
+    public var _fortID: String = String()
+    public var _fortImageURL: String = String()
+    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _pokemonID = source._pokemonID
       _distanceInMeters = source._distanceInMeters
       _encounterID = source._encounterID
@@ -109,7 +109,7 @@ extension POGOProtos_Map_Pokemon_NearbyPokemon: SwiftProtobuf.Message, SwiftProt
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -126,7 +126,7 @@ extension POGOProtos_Map_Pokemon_NearbyPokemon: SwiftProtobuf.Message, SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._pokemonID != .missingno {
         try visitor.visitSingularEnumField(value: _storage._pokemonID, fieldNumber: 1)
@@ -150,7 +150,7 @@ extension POGOProtos_Map_Pokemon_NearbyPokemon: SwiftProtobuf.Message, SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_Pokemon_NearbyPokemon, rhs: POGOProtos_Map_Pokemon_NearbyPokemon) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_Pokemon_NearbyPokemon, rhs: POGOProtos_Map_Pokemon_NearbyPokemon) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

@@ -15,68 +15,68 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
+public struct POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon {
+  public var commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon {
     get {return _storage._commonTelemetry ?? POGOProtos_Networking_Platform_Telemetry_TelemetryCommon()}
     set {_uniqueStorage()._commonTelemetry = newValue}
   }
   /// Returns true if `commonTelemetry` has been explicitly set.
-  var hasCommonTelemetry: Bool {return _storage._commonTelemetry != nil}
+  public var hasCommonTelemetry: Bool {return _storage._commonTelemetry != nil}
   /// Clears the value of `commonTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearCommonTelemetry() {_uniqueStorage()._commonTelemetry = nil}
+  public mutating func clearCommonTelemetry() {_uniqueStorage()._commonTelemetry = nil}
 
-  var longValue: Int64 {
+  public var longValue: Int64 {
     get {return _storage._longValue}
     set {_uniqueStorage()._longValue = newValue}
   }
 
-  var doubleValue: Double {
+  public var doubleValue: Double {
     get {return _storage._doubleValue}
     set {_uniqueStorage()._doubleValue = newValue}
   }
 
-  var booleanValue: Bool {
+  public var booleanValue: Bool {
     get {return _storage._booleanValue}
     set {_uniqueStorage()._booleanValue = newValue}
   }
 
-  var distribution: POGOProtos_Networking_Platform_Telemetry_Distribution {
+  public var distribution: POGOProtos_Networking_Platform_Telemetry_Distribution {
     get {return _storage._distribution ?? POGOProtos_Networking_Platform_Telemetry_Distribution()}
     set {_uniqueStorage()._distribution = newValue}
   }
   /// Returns true if `distribution` has been explicitly set.
-  var hasDistribution: Bool {return _storage._distribution != nil}
+  public var hasDistribution: Bool {return _storage._distribution != nil}
   /// Clears the value of `distribution`. Subsequent reads from it will return its default value.
-  mutating func clearDistribution() {_uniqueStorage()._distribution = nil}
+  public mutating func clearDistribution() {_uniqueStorage()._distribution = nil}
 
-  var metricKind: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind {
+  public var metricKind: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind {
     get {return _storage._metricKind}
     set {_uniqueStorage()._metricKind = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Kind: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Kind: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unspecified // = 0
     case gauge // = 1
     case delta // = 2
     case cumulative // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unspecified
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unspecified
       case 1: self = .gauge
@@ -86,7 +86,7 @@ struct POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unspecified: return 0
       case .gauge: return 1
@@ -98,7 +98,7 @@ struct POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -122,8 +122,8 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind: Case
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Telemetry"
 
 extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlatformMetricData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlatformMetricData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "common_telemetry"),
     2: .standard(proto: "long_value"),
     3: .standard(proto: "double_value"),
@@ -133,18 +133,18 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
   ]
 
   fileprivate class _StorageClass {
-    var _commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon? = nil
-    var _longValue: Int64 = 0
-    var _doubleValue: Double = 0
-    var _booleanValue: Bool = false
-    var _distribution: POGOProtos_Networking_Platform_Telemetry_Distribution? = nil
-    var _metricKind: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind = .unspecified
+    public var _commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon? = nil
+    public var _longValue: Int64 = 0
+    public var _doubleValue: Double = 0
+    public var _booleanValue: Bool = false
+    public var _distribution: POGOProtos_Networking_Platform_Telemetry_Distribution? = nil
+    public var _metricKind: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind = .unspecified
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _commonTelemetry = source._commonTelemetry
       _longValue = source._longValue
       _doubleValue = source._doubleValue
@@ -161,7 +161,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -178,7 +178,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._commonTelemetry {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -202,7 +202,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData, rhs: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData, rhs: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -223,7 +223,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
 }
 
 extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSPECIFIED"),
     1: .same(proto: "GAUGE"),
     2: .same(proto: "DELTA"),

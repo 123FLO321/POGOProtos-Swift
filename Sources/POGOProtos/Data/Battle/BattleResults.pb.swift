@@ -15,81 +15,81 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Battle_BattleResults {
+public struct POGOProtos_Data_Battle_BattleResults {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var gymState: POGOProtos_Data_Gym_GymState {
+  public var gymState: POGOProtos_Data_Gym_GymState {
     get {return _storage._gymState ?? POGOProtos_Data_Gym_GymState()}
     set {_uniqueStorage()._gymState = newValue}
   }
   /// Returns true if `gymState` has been explicitly set.
-  var hasGymState: Bool {return _storage._gymState != nil}
+  public var hasGymState: Bool {return _storage._gymState != nil}
   /// Clears the value of `gymState`. Subsequent reads from it will return its default value.
-  mutating func clearGymState() {_uniqueStorage()._gymState = nil}
+  public mutating func clearGymState() {_uniqueStorage()._gymState = nil}
 
-  var attackers: [POGOProtos_Data_Battle_BattleParticipant] {
+  public var attackers: [POGOProtos_Data_Battle_BattleParticipant] {
     get {return _storage._attackers}
     set {_uniqueStorage()._attackers = newValue}
   }
 
-  var playerXpAwarded: [Int32] {
+  public var playerXpAwarded: [Int32] {
     get {return _storage._playerXpAwarded}
     set {_uniqueStorage()._playerXpAwarded = newValue}
   }
 
-  var nextDefenderPokemonID: Int64 {
+  public var nextDefenderPokemonID: Int64 {
     get {return _storage._nextDefenderPokemonID}
     set {_uniqueStorage()._nextDefenderPokemonID = newValue}
   }
 
-  var gymPointsDelta: Int32 {
+  public var gymPointsDelta: Int32 {
     get {return _storage._gymPointsDelta}
     set {_uniqueStorage()._gymPointsDelta = newValue}
   }
 
-  var gymStatus: POGOProtos_Data_Gym_GymStatusAndDefenders {
+  public var gymStatus: POGOProtos_Data_Gym_GymStatusAndDefenders {
     get {return _storage._gymStatus ?? POGOProtos_Data_Gym_GymStatusAndDefenders()}
     set {_uniqueStorage()._gymStatus = newValue}
   }
   /// Returns true if `gymStatus` has been explicitly set.
-  var hasGymStatus: Bool {return _storage._gymStatus != nil}
+  public var hasGymStatus: Bool {return _storage._gymStatus != nil}
   /// Clears the value of `gymStatus`. Subsequent reads from it will return its default value.
-  mutating func clearGymStatus() {_uniqueStorage()._gymStatus = nil}
+  public mutating func clearGymStatus() {_uniqueStorage()._gymStatus = nil}
 
-  var participation: [POGOProtos_Data_Raid_Participation] {
+  public var participation: [POGOProtos_Data_Raid_Participation] {
     get {return _storage._participation}
     set {_uniqueStorage()._participation = newValue}
   }
 
-  var raidItemRewards: [POGOProtos_Inventory_Loot] {
+  public var raidItemRewards: [POGOProtos_Inventory_Loot] {
     get {return _storage._raidItemRewards}
     set {_uniqueStorage()._raidItemRewards = newValue}
   }
 
-  var postRaidEncounter: [POGOProtos_Data_Raid_RaidEncounter] {
+  public var postRaidEncounter: [POGOProtos_Data_Raid_RaidEncounter] {
     get {return _storage._postRaidEncounter}
     set {_uniqueStorage()._postRaidEncounter = newValue}
   }
 
-  var gymBadge: [POGOProtos_Data_Badge_AwardedGymBadge] {
+  public var gymBadge: [POGOProtos_Data_Badge_AwardedGymBadge] {
     get {return _storage._gymBadge}
     set {_uniqueStorage()._gymBadge = newValue}
   }
 
-  var defaultRaidItemRewards: [POGOProtos_Inventory_Loot] {
+  public var defaultRaidItemRewards: [POGOProtos_Inventory_Loot] {
     get {return _storage._defaultRaidItemRewards}
     set {_uniqueStorage()._defaultRaidItemRewards = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -99,8 +99,8 @@ struct POGOProtos_Data_Battle_BattleResults {
 fileprivate let _protobuf_package = "POGOProtos.Data.Battle"
 
 extension POGOProtos_Data_Battle_BattleResults: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BattleResults"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BattleResults"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "gym_state"),
     2: .same(proto: "attackers"),
     3: .standard(proto: "player_xp_awarded"),
@@ -115,23 +115,23 @@ extension POGOProtos_Data_Battle_BattleResults: SwiftProtobuf.Message, SwiftProt
   ]
 
   fileprivate class _StorageClass {
-    var _gymState: POGOProtos_Data_Gym_GymState? = nil
-    var _attackers: [POGOProtos_Data_Battle_BattleParticipant] = []
-    var _playerXpAwarded: [Int32] = []
-    var _nextDefenderPokemonID: Int64 = 0
-    var _gymPointsDelta: Int32 = 0
-    var _gymStatus: POGOProtos_Data_Gym_GymStatusAndDefenders? = nil
-    var _participation: [POGOProtos_Data_Raid_Participation] = []
-    var _raidItemRewards: [POGOProtos_Inventory_Loot] = []
-    var _postRaidEncounter: [POGOProtos_Data_Raid_RaidEncounter] = []
-    var _gymBadge: [POGOProtos_Data_Badge_AwardedGymBadge] = []
-    var _defaultRaidItemRewards: [POGOProtos_Inventory_Loot] = []
+    public var _gymState: POGOProtos_Data_Gym_GymState? = nil
+    public var _attackers: [POGOProtos_Data_Battle_BattleParticipant] = []
+    public var _playerXpAwarded: [Int32] = []
+    public var _nextDefenderPokemonID: Int64 = 0
+    public var _gymPointsDelta: Int32 = 0
+    public var _gymStatus: POGOProtos_Data_Gym_GymStatusAndDefenders? = nil
+    public var _participation: [POGOProtos_Data_Raid_Participation] = []
+    public var _raidItemRewards: [POGOProtos_Inventory_Loot] = []
+    public var _postRaidEncounter: [POGOProtos_Data_Raid_RaidEncounter] = []
+    public var _gymBadge: [POGOProtos_Data_Badge_AwardedGymBadge] = []
+    public var _defaultRaidItemRewards: [POGOProtos_Inventory_Loot] = []
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _gymState = source._gymState
       _attackers = source._attackers
       _playerXpAwarded = source._playerXpAwarded
@@ -153,7 +153,7 @@ extension POGOProtos_Data_Battle_BattleResults: SwiftProtobuf.Message, SwiftProt
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -175,7 +175,7 @@ extension POGOProtos_Data_Battle_BattleResults: SwiftProtobuf.Message, SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._gymState {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -214,7 +214,7 @@ extension POGOProtos_Data_Battle_BattleResults: SwiftProtobuf.Message, SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Battle_BattleResults, rhs: POGOProtos_Data_Battle_BattleResults) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Battle_BattleResults, rhs: POGOProtos_Data_Battle_BattleResults) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

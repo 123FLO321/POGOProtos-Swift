@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_TelemetryGlobalSettings {
+public struct POGOProtos_Settings_TelemetryGlobalSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var enabled: Bool = false
+  public var enabled: Bool = false
 
-  var sessionSamplingFraction: Double = 0
+  public var sessionSamplingFraction: Double = 0
 
-  var maxBufferSizeKb: Int32 = 0
+  public var maxBufferSizeKb: Int32 = 0
 
-  var batchSize: Int32 = 0
+  public var batchSize: Int32 = 0
 
-  var updateIntervalMs: Int64 = 0
+  public var updateIntervalMs: Int64 = 0
 
-  var frameRateSampleIntervalMs: Int64 = 0
+  public var frameRateSampleIntervalMs: Int64 = 0
 
-  var frameRateSamplePeriodMs: Int64 = 0
+  public var frameRateSamplePeriodMs: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -48,8 +48,8 @@ struct POGOProtos_Settings_TelemetryGlobalSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings"
 
 extension POGOProtos_Settings_TelemetryGlobalSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".TelemetryGlobalSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".TelemetryGlobalSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "enabled"),
     2: .standard(proto: "session_sampling_fraction"),
     3: .standard(proto: "max_buffer_size_kb"),
@@ -59,7 +59,7 @@ extension POGOProtos_Settings_TelemetryGlobalSettings: SwiftProtobuf.Message, Sw
     7: .standard(proto: "frame_rate_sample_period_ms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.enabled)
@@ -74,7 +74,7 @@ extension POGOProtos_Settings_TelemetryGlobalSettings: SwiftProtobuf.Message, Sw
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.enabled != false {
       try visitor.visitSingularBoolField(value: self.enabled, fieldNumber: 1)
     }
@@ -99,7 +99,7 @@ extension POGOProtos_Settings_TelemetryGlobalSettings: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_TelemetryGlobalSettings, rhs: POGOProtos_Settings_TelemetryGlobalSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_TelemetryGlobalSettings, rhs: POGOProtos_Settings_TelemetryGlobalSettings) -> Bool {
     if lhs.enabled != rhs.enabled {return false}
     if lhs.sessionSamplingFraction != rhs.sessionSamplingFraction {return false}
     if lhs.maxBufferSizeKb != rhs.maxBufferSizeKb {return false}

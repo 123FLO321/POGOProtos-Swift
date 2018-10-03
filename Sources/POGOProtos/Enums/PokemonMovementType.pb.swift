@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_PokemonMovementType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_PokemonMovementType: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case movementStatic // = 0
   case movementJump // = 1
   case movementVertical // = 2
@@ -30,11 +30,11 @@ enum POGOProtos_Enums_PokemonMovementType: SwiftProtobuf.Enum {
   case movementHovering // = 6
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .movementStatic
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .movementStatic
     case 1: self = .movementJump
@@ -47,7 +47,7 @@ enum POGOProtos_Enums_PokemonMovementType: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .movementStatic: return 0
     case .movementJump: return 1
@@ -82,7 +82,7 @@ extension POGOProtos_Enums_PokemonMovementType: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_PokemonMovementType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "MOVEMENT_STATIC"),
     1: .same(proto: "MOVEMENT_JUMP"),
     2: .same(proto: "MOVEMENT_VERTICAL"),

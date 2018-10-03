@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Inventory_InventoryUpgradeType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Inventory_InventoryUpgradeType: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case upgradeUnset // = 0
   case increaseItemStorage // = 1
   case increasePokemonStorage // = 2
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .upgradeUnset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .upgradeUnset
     case 1: self = .increaseItemStorage
@@ -39,7 +39,7 @@ enum POGOProtos_Inventory_InventoryUpgradeType: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .upgradeUnset: return 0
     case .increaseItemStorage: return 1
@@ -66,7 +66,7 @@ extension POGOProtos_Inventory_InventoryUpgradeType: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Inventory_InventoryUpgradeType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UPGRADE_UNSET"),
     1: .same(proto: "INCREASE_ITEM_STORAGE"),
     2: .same(proto: "INCREASE_POKEMON_STORAGE"),

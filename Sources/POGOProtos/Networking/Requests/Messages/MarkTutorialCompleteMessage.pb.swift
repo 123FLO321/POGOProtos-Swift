@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_MarkTutorialCompleteMessage {
+public struct POGOProtos_Networking_Requests_Messages_MarkTutorialCompleteMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var tutorialsCompleted: [POGOProtos_Enums_TutorialState] = []
+  public var tutorialsCompleted: [POGOProtos_Enums_TutorialState] = []
 
-  var sendMarketingEmails: Bool = false
+  public var sendMarketingEmails: Bool = false
 
-  var sendPushNotifications: Bool = false
+  public var sendPushNotifications: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Networking_Requests_Messages_MarkTutorialCompleteMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_MarkTutorialCompleteMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".MarkTutorialCompleteMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".MarkTutorialCompleteMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "tutorials_completed"),
     2: .standard(proto: "send_marketing_emails"),
     3: .standard(proto: "send_push_notifications"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedEnumField(value: &self.tutorialsCompleted)
@@ -58,7 +58,7 @@ extension POGOProtos_Networking_Requests_Messages_MarkTutorialCompleteMessage: S
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.tutorialsCompleted.isEmpty {
       try visitor.visitPackedEnumField(value: self.tutorialsCompleted, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Networking_Requests_Messages_MarkTutorialCompleteMessage: S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_MarkTutorialCompleteMessage, rhs: POGOProtos_Networking_Requests_Messages_MarkTutorialCompleteMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_MarkTutorialCompleteMessage, rhs: POGOProtos_Networking_Requests_Messages_MarkTutorialCompleteMessage) -> Bool {
     if lhs.tutorialsCompleted != rhs.tutorialsCompleted {return false}
     if lhs.sendMarketingEmails != rhs.sendMarketingEmails {return false}
     if lhs.sendPushNotifications != rhs.sendPushNotifications {return false}

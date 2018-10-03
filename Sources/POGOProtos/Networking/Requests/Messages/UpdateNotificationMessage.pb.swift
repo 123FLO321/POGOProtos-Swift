@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_UpdateNotificationMessage {
+public struct POGOProtos_Networking_Requests_Messages_UpdateNotificationMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var notificationIds: [String] = []
+  public var notificationIds: [String] = []
 
-  var createTimestampMs: [Int64] = []
+  public var createTimestampMs: [Int64] = []
 
-  var state: POGOProtos_Enums_NotificationState = .unsetState
+  public var state: POGOProtos_Enums_NotificationState = .unsetState
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Networking_Requests_Messages_UpdateNotificationMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_UpdateNotificationMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UpdateNotificationMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".UpdateNotificationMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "notification_ids"),
     2: .standard(proto: "create_timestamp_ms"),
     3: .same(proto: "state"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedStringField(value: &self.notificationIds)
@@ -58,7 +58,7 @@ extension POGOProtos_Networking_Requests_Messages_UpdateNotificationMessage: Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.notificationIds.isEmpty {
       try visitor.visitRepeatedStringField(value: self.notificationIds, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Networking_Requests_Messages_UpdateNotificationMessage: Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_UpdateNotificationMessage, rhs: POGOProtos_Networking_Requests_Messages_UpdateNotificationMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_UpdateNotificationMessage, rhs: POGOProtos_Networking_Requests_Messages_UpdateNotificationMessage) -> Bool {
     if lhs.notificationIds != rhs.notificationIds {return false}
     if lhs.createTimestampMs != rhs.createTimestampMs {return false}
     if lhs.state != rhs.state {return false}

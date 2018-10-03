@@ -15,218 +15,218 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_GlobalSettings {
+public struct POGOProtos_Settings_GlobalSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var fortSettings: POGOProtos_Settings_FortSettings {
+  public var fortSettings: POGOProtos_Settings_FortSettings {
     get {return _storage._fortSettings ?? POGOProtos_Settings_FortSettings()}
     set {_uniqueStorage()._fortSettings = newValue}
   }
   /// Returns true if `fortSettings` has been explicitly set.
-  var hasFortSettings: Bool {return _storage._fortSettings != nil}
+  public var hasFortSettings: Bool {return _storage._fortSettings != nil}
   /// Clears the value of `fortSettings`. Subsequent reads from it will return its default value.
-  mutating func clearFortSettings() {_uniqueStorage()._fortSettings = nil}
+  public mutating func clearFortSettings() {_uniqueStorage()._fortSettings = nil}
 
-  var mapSettings: POGOProtos_Settings_MapSettings {
+  public var mapSettings: POGOProtos_Settings_MapSettings {
     get {return _storage._mapSettings ?? POGOProtos_Settings_MapSettings()}
     set {_uniqueStorage()._mapSettings = newValue}
   }
   /// Returns true if `mapSettings` has been explicitly set.
-  var hasMapSettings: Bool {return _storage._mapSettings != nil}
+  public var hasMapSettings: Bool {return _storage._mapSettings != nil}
   /// Clears the value of `mapSettings`. Subsequent reads from it will return its default value.
-  mutating func clearMapSettings() {_uniqueStorage()._mapSettings = nil}
+  public mutating func clearMapSettings() {_uniqueStorage()._mapSettings = nil}
 
-  var levelSettings: POGOProtos_Settings_LevelSettings {
+  public var levelSettings: POGOProtos_Settings_LevelSettings {
     get {return _storage._levelSettings ?? POGOProtos_Settings_LevelSettings()}
     set {_uniqueStorage()._levelSettings = newValue}
   }
   /// Returns true if `levelSettings` has been explicitly set.
-  var hasLevelSettings: Bool {return _storage._levelSettings != nil}
+  public var hasLevelSettings: Bool {return _storage._levelSettings != nil}
   /// Clears the value of `levelSettings`. Subsequent reads from it will return its default value.
-  mutating func clearLevelSettings() {_uniqueStorage()._levelSettings = nil}
+  public mutating func clearLevelSettings() {_uniqueStorage()._levelSettings = nil}
 
-  var inventorySettings: POGOProtos_Settings_InventorySettings {
+  public var inventorySettings: POGOProtos_Settings_InventorySettings {
     get {return _storage._inventorySettings ?? POGOProtos_Settings_InventorySettings()}
     set {_uniqueStorage()._inventorySettings = newValue}
   }
   /// Returns true if `inventorySettings` has been explicitly set.
-  var hasInventorySettings: Bool {return _storage._inventorySettings != nil}
+  public var hasInventorySettings: Bool {return _storage._inventorySettings != nil}
   /// Clears the value of `inventorySettings`. Subsequent reads from it will return its default value.
-  mutating func clearInventorySettings() {_uniqueStorage()._inventorySettings = nil}
+  public mutating func clearInventorySettings() {_uniqueStorage()._inventorySettings = nil}
 
-  var minimumClientVersion: String {
+  public var minimumClientVersion: String {
     get {return _storage._minimumClientVersion}
     set {_uniqueStorage()._minimumClientVersion = newValue}
   }
 
-  var gpsSettings: POGOProtos_Settings_GpsSettings {
+  public var gpsSettings: POGOProtos_Settings_GpsSettings {
     get {return _storage._gpsSettings ?? POGOProtos_Settings_GpsSettings()}
     set {_uniqueStorage()._gpsSettings = newValue}
   }
   /// Returns true if `gpsSettings` has been explicitly set.
-  var hasGpsSettings: Bool {return _storage._gpsSettings != nil}
+  public var hasGpsSettings: Bool {return _storage._gpsSettings != nil}
   /// Clears the value of `gpsSettings`. Subsequent reads from it will return its default value.
-  mutating func clearGpsSettings() {_uniqueStorage()._gpsSettings = nil}
+  public mutating func clearGpsSettings() {_uniqueStorage()._gpsSettings = nil}
 
-  var festivalSettings: POGOProtos_Settings_FestivalSettings {
+  public var festivalSettings: POGOProtos_Settings_FestivalSettings {
     get {return _storage._festivalSettings ?? POGOProtos_Settings_FestivalSettings()}
     set {_uniqueStorage()._festivalSettings = newValue}
   }
   /// Returns true if `festivalSettings` has been explicitly set.
-  var hasFestivalSettings: Bool {return _storage._festivalSettings != nil}
+  public var hasFestivalSettings: Bool {return _storage._festivalSettings != nil}
   /// Clears the value of `festivalSettings`. Subsequent reads from it will return its default value.
-  mutating func clearFestivalSettings() {_uniqueStorage()._festivalSettings = nil}
+  public mutating func clearFestivalSettings() {_uniqueStorage()._festivalSettings = nil}
 
-  var eventSettings: POGOProtos_Settings_EventSettings {
+  public var eventSettings: POGOProtos_Settings_EventSettings {
     get {return _storage._eventSettings ?? POGOProtos_Settings_EventSettings()}
     set {_uniqueStorage()._eventSettings = newValue}
   }
   /// Returns true if `eventSettings` has been explicitly set.
-  var hasEventSettings: Bool {return _storage._eventSettings != nil}
+  public var hasEventSettings: Bool {return _storage._eventSettings != nil}
   /// Clears the value of `eventSettings`. Subsequent reads from it will return its default value.
-  mutating func clearEventSettings() {_uniqueStorage()._eventSettings = nil}
+  public mutating func clearEventSettings() {_uniqueStorage()._eventSettings = nil}
 
-  var maxPokemonTypes: Int32 {
+  public var maxPokemonTypes: Int32 {
     get {return _storage._maxPokemonTypes}
     set {_uniqueStorage()._maxPokemonTypes = newValue}
   }
 
-  var sfidaSettings: POGOProtos_Settings_SfidaSettings {
+  public var sfidaSettings: POGOProtos_Settings_SfidaSettings {
     get {return _storage._sfidaSettings ?? POGOProtos_Settings_SfidaSettings()}
     set {_uniqueStorage()._sfidaSettings = newValue}
   }
   /// Returns true if `sfidaSettings` has been explicitly set.
-  var hasSfidaSettings: Bool {return _storage._sfidaSettings != nil}
+  public var hasSfidaSettings: Bool {return _storage._sfidaSettings != nil}
   /// Clears the value of `sfidaSettings`. Subsequent reads from it will return its default value.
-  mutating func clearSfidaSettings() {_uniqueStorage()._sfidaSettings = nil}
+  public mutating func clearSfidaSettings() {_uniqueStorage()._sfidaSettings = nil}
 
-  var newsSettings: POGOProtos_Settings_NewsSettings {
+  public var newsSettings: POGOProtos_Settings_NewsSettings {
     get {return _storage._newsSettings ?? POGOProtos_Settings_NewsSettings()}
     set {_uniqueStorage()._newsSettings = newValue}
   }
   /// Returns true if `newsSettings` has been explicitly set.
-  var hasNewsSettings: Bool {return _storage._newsSettings != nil}
+  public var hasNewsSettings: Bool {return _storage._newsSettings != nil}
   /// Clears the value of `newsSettings`. Subsequent reads from it will return its default value.
-  mutating func clearNewsSettings() {_uniqueStorage()._newsSettings = nil}
+  public mutating func clearNewsSettings() {_uniqueStorage()._newsSettings = nil}
 
-  var translationSettings: POGOProtos_Settings_TranslationSettings {
+  public var translationSettings: POGOProtos_Settings_TranslationSettings {
     get {return _storage._translationSettings ?? POGOProtos_Settings_TranslationSettings()}
     set {_uniqueStorage()._translationSettings = newValue}
   }
   /// Returns true if `translationSettings` has been explicitly set.
-  var hasTranslationSettings: Bool {return _storage._translationSettings != nil}
+  public var hasTranslationSettings: Bool {return _storage._translationSettings != nil}
   /// Clears the value of `translationSettings`. Subsequent reads from it will return its default value.
-  mutating func clearTranslationSettings() {_uniqueStorage()._translationSettings = nil}
+  public mutating func clearTranslationSettings() {_uniqueStorage()._translationSettings = nil}
 
-  var passcodeSettings: POGOProtos_Settings_PasscodeSettings {
+  public var passcodeSettings: POGOProtos_Settings_PasscodeSettings {
     get {return _storage._passcodeSettings ?? POGOProtos_Settings_PasscodeSettings()}
     set {_uniqueStorage()._passcodeSettings = newValue}
   }
   /// Returns true if `passcodeSettings` has been explicitly set.
-  var hasPasscodeSettings: Bool {return _storage._passcodeSettings != nil}
+  public var hasPasscodeSettings: Bool {return _storage._passcodeSettings != nil}
   /// Clears the value of `passcodeSettings`. Subsequent reads from it will return its default value.
-  mutating func clearPasscodeSettings() {_uniqueStorage()._passcodeSettings = nil}
+  public mutating func clearPasscodeSettings() {_uniqueStorage()._passcodeSettings = nil}
 
-  var notificationSettings: POGOProtos_Settings_NotificationSettings {
+  public var notificationSettings: POGOProtos_Settings_NotificationSettings {
     get {return _storage._notificationSettings ?? POGOProtos_Settings_NotificationSettings()}
     set {_uniqueStorage()._notificationSettings = newValue}
   }
   /// Returns true if `notificationSettings` has been explicitly set.
-  var hasNotificationSettings: Bool {return _storage._notificationSettings != nil}
+  public var hasNotificationSettings: Bool {return _storage._notificationSettings != nil}
   /// Clears the value of `notificationSettings`. Subsequent reads from it will return its default value.
-  mutating func clearNotificationSettings() {_uniqueStorage()._notificationSettings = nil}
+  public mutating func clearNotificationSettings() {_uniqueStorage()._notificationSettings = nil}
 
-  var clientAppBlacklist: [String] {
+  public var clientAppBlacklist: [String] {
     get {return _storage._clientAppBlacklist}
     set {_uniqueStorage()._clientAppBlacklist = newValue}
   }
 
-  var clientPerfSettings: POGOProtos_Settings_ClientPerformanceSettings {
+  public var clientPerfSettings: POGOProtos_Settings_ClientPerformanceSettings {
     get {return _storage._clientPerfSettings ?? POGOProtos_Settings_ClientPerformanceSettings()}
     set {_uniqueStorage()._clientPerfSettings = newValue}
   }
   /// Returns true if `clientPerfSettings` has been explicitly set.
-  var hasClientPerfSettings: Bool {return _storage._clientPerfSettings != nil}
+  public var hasClientPerfSettings: Bool {return _storage._clientPerfSettings != nil}
   /// Clears the value of `clientPerfSettings`. Subsequent reads from it will return its default value.
-  mutating func clearClientPerfSettings() {_uniqueStorage()._clientPerfSettings = nil}
+  public mutating func clearClientPerfSettings() {_uniqueStorage()._clientPerfSettings = nil}
 
-  var newsGlobalSettings: POGOProtos_Settings_NewsGlobalSettings {
+  public var newsGlobalSettings: POGOProtos_Settings_NewsGlobalSettings {
     get {return _storage._newsGlobalSettings ?? POGOProtos_Settings_NewsGlobalSettings()}
     set {_uniqueStorage()._newsGlobalSettings = newValue}
   }
   /// Returns true if `newsGlobalSettings` has been explicitly set.
-  var hasNewsGlobalSettings: Bool {return _storage._newsGlobalSettings != nil}
+  public var hasNewsGlobalSettings: Bool {return _storage._newsGlobalSettings != nil}
   /// Clears the value of `newsGlobalSettings`. Subsequent reads from it will return its default value.
-  mutating func clearNewsGlobalSettings() {_uniqueStorage()._newsGlobalSettings = nil}
+  public mutating func clearNewsGlobalSettings() {_uniqueStorage()._newsGlobalSettings = nil}
 
-  var questGlobalSettings: POGOProtos_Settings_QuestGlobalSettings {
+  public var questGlobalSettings: POGOProtos_Settings_QuestGlobalSettings {
     get {return _storage._questGlobalSettings ?? POGOProtos_Settings_QuestGlobalSettings()}
     set {_uniqueStorage()._questGlobalSettings = newValue}
   }
   /// Returns true if `questGlobalSettings` has been explicitly set.
-  var hasQuestGlobalSettings: Bool {return _storage._questGlobalSettings != nil}
+  public var hasQuestGlobalSettings: Bool {return _storage._questGlobalSettings != nil}
   /// Clears the value of `questGlobalSettings`. Subsequent reads from it will return its default value.
-  mutating func clearQuestGlobalSettings() {_uniqueStorage()._questGlobalSettings = nil}
+  public mutating func clearQuestGlobalSettings() {_uniqueStorage()._questGlobalSettings = nil}
 
-  var telemetryGlobalSettings: POGOProtos_Settings_TelemetryGlobalSettings {
+  public var telemetryGlobalSettings: POGOProtos_Settings_TelemetryGlobalSettings {
     get {return _storage._telemetryGlobalSettings ?? POGOProtos_Settings_TelemetryGlobalSettings()}
     set {_uniqueStorage()._telemetryGlobalSettings = newValue}
   }
   /// Returns true if `telemetryGlobalSettings` has been explicitly set.
-  var hasTelemetryGlobalSettings: Bool {return _storage._telemetryGlobalSettings != nil}
+  public var hasTelemetryGlobalSettings: Bool {return _storage._telemetryGlobalSettings != nil}
   /// Clears the value of `telemetryGlobalSettings`. Subsequent reads from it will return its default value.
-  mutating func clearTelemetryGlobalSettings() {_uniqueStorage()._telemetryGlobalSettings = nil}
+  public mutating func clearTelemetryGlobalSettings() {_uniqueStorage()._telemetryGlobalSettings = nil}
 
-  var loginSettings: POGOProtos_Settings_LoginSettings {
+  public var loginSettings: POGOProtos_Settings_LoginSettings {
     get {return _storage._loginSettings ?? POGOProtos_Settings_LoginSettings()}
     set {_uniqueStorage()._loginSettings = newValue}
   }
   /// Returns true if `loginSettings` has been explicitly set.
-  var hasLoginSettings: Bool {return _storage._loginSettings != nil}
+  public var hasLoginSettings: Bool {return _storage._loginSettings != nil}
   /// Clears the value of `loginSettings`. Subsequent reads from it will return its default value.
-  mutating func clearLoginSettings() {_uniqueStorage()._loginSettings = nil}
+  public mutating func clearLoginSettings() {_uniqueStorage()._loginSettings = nil}
 
-  var socialSettings: POGOProtos_Settings_SocialClientSettings {
+  public var socialSettings: POGOProtos_Settings_SocialClientSettings {
     get {return _storage._socialSettings ?? POGOProtos_Settings_SocialClientSettings()}
     set {_uniqueStorage()._socialSettings = newValue}
   }
   /// Returns true if `socialSettings` has been explicitly set.
-  var hasSocialSettings: Bool {return _storage._socialSettings != nil}
+  public var hasSocialSettings: Bool {return _storage._socialSettings != nil}
   /// Clears the value of `socialSettings`. Subsequent reads from it will return its default value.
-  mutating func clearSocialSettings() {_uniqueStorage()._socialSettings = nil}
+  public mutating func clearSocialSettings() {_uniqueStorage()._socialSettings = nil}
 
-  var tradingGlobalSettings: POGOProtos_Settings_TradingGlobalSettings {
+  public var tradingGlobalSettings: POGOProtos_Settings_TradingGlobalSettings {
     get {return _storage._tradingGlobalSettings ?? POGOProtos_Settings_TradingGlobalSettings()}
     set {_uniqueStorage()._tradingGlobalSettings = newValue}
   }
   /// Returns true if `tradingGlobalSettings` has been explicitly set.
-  var hasTradingGlobalSettings: Bool {return _storage._tradingGlobalSettings != nil}
+  public var hasTradingGlobalSettings: Bool {return _storage._tradingGlobalSettings != nil}
   /// Clears the value of `tradingGlobalSettings`. Subsequent reads from it will return its default value.
-  mutating func clearTradingGlobalSettings() {_uniqueStorage()._tradingGlobalSettings = nil}
+  public mutating func clearTradingGlobalSettings() {_uniqueStorage()._tradingGlobalSettings = nil}
 
-  var additionalAllowedPokemonIds: [POGOProtos_Enums_PokemonId] {
+  public var additionalAllowedPokemonIds: [POGOProtos_Enums_PokemonId] {
     get {return _storage._additionalAllowedPokemonIds}
     set {_uniqueStorage()._additionalAllowedPokemonIds = newValue}
   }
 
-  var upsightLoggingSettings: POGOProtos_Settings_UpsightLoggingSettings {
+  public var upsightLoggingSettings: POGOProtos_Settings_UpsightLoggingSettings {
     get {return _storage._upsightLoggingSettings ?? POGOProtos_Settings_UpsightLoggingSettings()}
     set {_uniqueStorage()._upsightLoggingSettings = newValue}
   }
   /// Returns true if `upsightLoggingSettings` has been explicitly set.
-  var hasUpsightLoggingSettings: Bool {return _storage._upsightLoggingSettings != nil}
+  public var hasUpsightLoggingSettings: Bool {return _storage._upsightLoggingSettings != nil}
   /// Clears the value of `upsightLoggingSettings`. Subsequent reads from it will return its default value.
-  mutating func clearUpsightLoggingSettings() {_uniqueStorage()._upsightLoggingSettings = nil}
+  public mutating func clearUpsightLoggingSettings() {_uniqueStorage()._upsightLoggingSettings = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -236,8 +236,8 @@ struct POGOProtos_Settings_GlobalSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings"
 
 extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GlobalSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GlobalSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .standard(proto: "fort_settings"),
     3: .standard(proto: "map_settings"),
     4: .standard(proto: "level_settings"),
@@ -265,36 +265,36 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    var _fortSettings: POGOProtos_Settings_FortSettings? = nil
-    var _mapSettings: POGOProtos_Settings_MapSettings? = nil
-    var _levelSettings: POGOProtos_Settings_LevelSettings? = nil
-    var _inventorySettings: POGOProtos_Settings_InventorySettings? = nil
-    var _minimumClientVersion: String = String()
-    var _gpsSettings: POGOProtos_Settings_GpsSettings? = nil
-    var _festivalSettings: POGOProtos_Settings_FestivalSettings? = nil
-    var _eventSettings: POGOProtos_Settings_EventSettings? = nil
-    var _maxPokemonTypes: Int32 = 0
-    var _sfidaSettings: POGOProtos_Settings_SfidaSettings? = nil
-    var _newsSettings: POGOProtos_Settings_NewsSettings? = nil
-    var _translationSettings: POGOProtos_Settings_TranslationSettings? = nil
-    var _passcodeSettings: POGOProtos_Settings_PasscodeSettings? = nil
-    var _notificationSettings: POGOProtos_Settings_NotificationSettings? = nil
-    var _clientAppBlacklist: [String] = []
-    var _clientPerfSettings: POGOProtos_Settings_ClientPerformanceSettings? = nil
-    var _newsGlobalSettings: POGOProtos_Settings_NewsGlobalSettings? = nil
-    var _questGlobalSettings: POGOProtos_Settings_QuestGlobalSettings? = nil
-    var _telemetryGlobalSettings: POGOProtos_Settings_TelemetryGlobalSettings? = nil
-    var _loginSettings: POGOProtos_Settings_LoginSettings? = nil
-    var _socialSettings: POGOProtos_Settings_SocialClientSettings? = nil
-    var _tradingGlobalSettings: POGOProtos_Settings_TradingGlobalSettings? = nil
-    var _additionalAllowedPokemonIds: [POGOProtos_Enums_PokemonId] = []
-    var _upsightLoggingSettings: POGOProtos_Settings_UpsightLoggingSettings? = nil
+    public var _fortSettings: POGOProtos_Settings_FortSettings? = nil
+    public var _mapSettings: POGOProtos_Settings_MapSettings? = nil
+    public var _levelSettings: POGOProtos_Settings_LevelSettings? = nil
+    public var _inventorySettings: POGOProtos_Settings_InventorySettings? = nil
+    public var _minimumClientVersion: String = String()
+    public var _gpsSettings: POGOProtos_Settings_GpsSettings? = nil
+    public var _festivalSettings: POGOProtos_Settings_FestivalSettings? = nil
+    public var _eventSettings: POGOProtos_Settings_EventSettings? = nil
+    public var _maxPokemonTypes: Int32 = 0
+    public var _sfidaSettings: POGOProtos_Settings_SfidaSettings? = nil
+    public var _newsSettings: POGOProtos_Settings_NewsSettings? = nil
+    public var _translationSettings: POGOProtos_Settings_TranslationSettings? = nil
+    public var _passcodeSettings: POGOProtos_Settings_PasscodeSettings? = nil
+    public var _notificationSettings: POGOProtos_Settings_NotificationSettings? = nil
+    public var _clientAppBlacklist: [String] = []
+    public var _clientPerfSettings: POGOProtos_Settings_ClientPerformanceSettings? = nil
+    public var _newsGlobalSettings: POGOProtos_Settings_NewsGlobalSettings? = nil
+    public var _questGlobalSettings: POGOProtos_Settings_QuestGlobalSettings? = nil
+    public var _telemetryGlobalSettings: POGOProtos_Settings_TelemetryGlobalSettings? = nil
+    public var _loginSettings: POGOProtos_Settings_LoginSettings? = nil
+    public var _socialSettings: POGOProtos_Settings_SocialClientSettings? = nil
+    public var _tradingGlobalSettings: POGOProtos_Settings_TradingGlobalSettings? = nil
+    public var _additionalAllowedPokemonIds: [POGOProtos_Enums_PokemonId] = []
+    public var _upsightLoggingSettings: POGOProtos_Settings_UpsightLoggingSettings? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _fortSettings = source._fortSettings
       _mapSettings = source._mapSettings
       _levelSettings = source._levelSettings
@@ -329,7 +329,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -364,7 +364,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._fortSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -442,7 +442,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_GlobalSettings, rhs: POGOProtos_Settings_GlobalSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_GlobalSettings, rhs: POGOProtos_Settings_GlobalSettings) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

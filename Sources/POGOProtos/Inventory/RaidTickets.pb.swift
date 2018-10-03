@@ -15,20 +15,20 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Inventory_RaidTickets {
+public struct POGOProtos_Inventory_RaidTickets {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var raidTicket: [POGOProtos_Inventory_RaidTicket] = []
+  public var raidTicket: [POGOProtos_Inventory_RaidTicket] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -36,12 +36,12 @@ struct POGOProtos_Inventory_RaidTickets {
 fileprivate let _protobuf_package = "POGOProtos.Inventory"
 
 extension POGOProtos_Inventory_RaidTickets: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RaidTickets"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RaidTickets"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "raid_ticket"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.raidTicket)
@@ -50,14 +50,14 @@ extension POGOProtos_Inventory_RaidTickets: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.raidTicket.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.raidTicket, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Inventory_RaidTickets, rhs: POGOProtos_Inventory_RaidTickets) -> Bool {
+  public static func ==(lhs: POGOProtos_Inventory_RaidTickets, rhs: POGOProtos_Inventory_RaidTickets) -> Bool {
     if lhs.raidTicket != rhs.raidTicket {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

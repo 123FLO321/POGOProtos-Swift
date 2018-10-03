@@ -15,20 +15,20 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_ExRaidSettings {
+public struct POGOProtos_Settings_Master_ExRaidSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var minimumExRaidShareLevel: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
+  public var minimumExRaidShareLevel: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -36,12 +36,12 @@ struct POGOProtos_Settings_Master_ExRaidSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_ExRaidSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ExRaidSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ExRaidSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "minimum_ex_raid_share_level"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.minimumExRaidShareLevel)
@@ -50,14 +50,14 @@ extension POGOProtos_Settings_Master_ExRaidSettings: SwiftProtobuf.Message, Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.minimumExRaidShareLevel != .friendshipLevelUnset {
       try visitor.visitSingularEnumField(value: self.minimumExRaidShareLevel, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_ExRaidSettings, rhs: POGOProtos_Settings_Master_ExRaidSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_ExRaidSettings, rhs: POGOProtos_Settings_Master_ExRaidSettings) -> Bool {
     if lhs.minimumExRaidShareLevel != rhs.minimumExRaidShareLevel {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

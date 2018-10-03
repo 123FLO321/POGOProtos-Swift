@@ -15,63 +15,63 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Gym_GymDefender {
+public struct POGOProtos_Data_Gym_GymDefender {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var motivatedPokemon: POGOProtos_Map_Pokemon_MotivatedPokemon {
+  public var motivatedPokemon: POGOProtos_Map_Pokemon_MotivatedPokemon {
     get {return _storage._motivatedPokemon ?? POGOProtos_Map_Pokemon_MotivatedPokemon()}
     set {_uniqueStorage()._motivatedPokemon = newValue}
   }
   /// Returns true if `motivatedPokemon` has been explicitly set.
-  var hasMotivatedPokemon: Bool {return _storage._motivatedPokemon != nil}
+  public var hasMotivatedPokemon: Bool {return _storage._motivatedPokemon != nil}
   /// Clears the value of `motivatedPokemon`. Subsequent reads from it will return its default value.
-  mutating func clearMotivatedPokemon() {_uniqueStorage()._motivatedPokemon = nil}
+  public mutating func clearMotivatedPokemon() {_uniqueStorage()._motivatedPokemon = nil}
 
-  var deploymentTotals: POGOProtos_Data_Gym_GymDefender.DeploymentTotals {
+  public var deploymentTotals: POGOProtos_Data_Gym_GymDefender.DeploymentTotals {
     get {return _storage._deploymentTotals ?? POGOProtos_Data_Gym_GymDefender.DeploymentTotals()}
     set {_uniqueStorage()._deploymentTotals = newValue}
   }
   /// Returns true if `deploymentTotals` has been explicitly set.
-  var hasDeploymentTotals: Bool {return _storage._deploymentTotals != nil}
+  public var hasDeploymentTotals: Bool {return _storage._deploymentTotals != nil}
   /// Clears the value of `deploymentTotals`. Subsequent reads from it will return its default value.
-  mutating func clearDeploymentTotals() {_uniqueStorage()._deploymentTotals = nil}
+  public mutating func clearDeploymentTotals() {_uniqueStorage()._deploymentTotals = nil}
 
-  var trainerPublicProfile: POGOProtos_Data_Player_PlayerPublicProfile {
+  public var trainerPublicProfile: POGOProtos_Data_Player_PlayerPublicProfile {
     get {return _storage._trainerPublicProfile ?? POGOProtos_Data_Player_PlayerPublicProfile()}
     set {_uniqueStorage()._trainerPublicProfile = newValue}
   }
   /// Returns true if `trainerPublicProfile` has been explicitly set.
-  var hasTrainerPublicProfile: Bool {return _storage._trainerPublicProfile != nil}
+  public var hasTrainerPublicProfile: Bool {return _storage._trainerPublicProfile != nil}
   /// Clears the value of `trainerPublicProfile`. Subsequent reads from it will return its default value.
-  mutating func clearTrainerPublicProfile() {_uniqueStorage()._trainerPublicProfile = nil}
+  public mutating func clearTrainerPublicProfile() {_uniqueStorage()._trainerPublicProfile = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct DeploymentTotals {
+  public struct DeploymentTotals {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var timesFed: Int32 = 0
+    public var timesFed: Int32 = 0
 
-    var battlesWon: Int32 = 0
+    public var battlesWon: Int32 = 0
 
-    var battlesLost: Int32 = 0
+    public var battlesLost: Int32 = 0
 
-    var deploymentDurationMs: Int64 = 0
+    public var deploymentDurationMs: Int64 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -81,23 +81,23 @@ struct POGOProtos_Data_Gym_GymDefender {
 fileprivate let _protobuf_package = "POGOProtos.Data.Gym"
 
 extension POGOProtos_Data_Gym_GymDefender: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GymDefender"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GymDefender"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "motivated_pokemon"),
     2: .standard(proto: "deployment_totals"),
     3: .standard(proto: "trainer_public_profile"),
   ]
 
   fileprivate class _StorageClass {
-    var _motivatedPokemon: POGOProtos_Map_Pokemon_MotivatedPokemon? = nil
-    var _deploymentTotals: POGOProtos_Data_Gym_GymDefender.DeploymentTotals? = nil
-    var _trainerPublicProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
+    public var _motivatedPokemon: POGOProtos_Map_Pokemon_MotivatedPokemon? = nil
+    public var _deploymentTotals: POGOProtos_Data_Gym_GymDefender.DeploymentTotals? = nil
+    public var _trainerPublicProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _motivatedPokemon = source._motivatedPokemon
       _deploymentTotals = source._deploymentTotals
       _trainerPublicProfile = source._trainerPublicProfile
@@ -111,7 +111,7 @@ extension POGOProtos_Data_Gym_GymDefender: SwiftProtobuf.Message, SwiftProtobuf.
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -125,7 +125,7 @@ extension POGOProtos_Data_Gym_GymDefender: SwiftProtobuf.Message, SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._motivatedPokemon {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -140,7 +140,7 @@ extension POGOProtos_Data_Gym_GymDefender: SwiftProtobuf.Message, SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Gym_GymDefender, rhs: POGOProtos_Data_Gym_GymDefender) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Gym_GymDefender, rhs: POGOProtos_Data_Gym_GymDefender) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -158,15 +158,15 @@ extension POGOProtos_Data_Gym_GymDefender: SwiftProtobuf.Message, SwiftProtobuf.
 }
 
 extension POGOProtos_Data_Gym_GymDefender.DeploymentTotals: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Gym_GymDefender.protoMessageName + ".DeploymentTotals"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Gym_GymDefender.protoMessageName + ".DeploymentTotals"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "times_fed"),
     2: .standard(proto: "battles_won"),
     3: .standard(proto: "battles_lost"),
     4: .standard(proto: "deployment_duration_ms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.timesFed)
@@ -178,7 +178,7 @@ extension POGOProtos_Data_Gym_GymDefender.DeploymentTotals: SwiftProtobuf.Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.timesFed != 0 {
       try visitor.visitSingularInt32Field(value: self.timesFed, fieldNumber: 1)
     }
@@ -194,7 +194,7 @@ extension POGOProtos_Data_Gym_GymDefender.DeploymentTotals: SwiftProtobuf.Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Gym_GymDefender.DeploymentTotals, rhs: POGOProtos_Data_Gym_GymDefender.DeploymentTotals) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Gym_GymDefender.DeploymentTotals, rhs: POGOProtos_Data_Gym_GymDefender.DeploymentTotals) -> Bool {
     if lhs.timesFed != rhs.timesFed {return false}
     if lhs.battlesWon != rhs.battlesWon {return false}
     if lhs.battlesLost != rhs.battlesLost {return false}

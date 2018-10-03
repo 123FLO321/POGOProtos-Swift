@@ -15,38 +15,38 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_MapSettings {
+public struct POGOProtos_Settings_MapSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonVisibleRange: Double = 0
+  public var pokemonVisibleRange: Double = 0
 
-  var pokeNavRangeMeters: Double = 0
+  public var pokeNavRangeMeters: Double = 0
 
-  var encounterRangeMeters: Double = 0
+  public var encounterRangeMeters: Double = 0
 
-  var getMapObjectsMinRefreshSeconds: Float = 0
+  public var getMapObjectsMinRefreshSeconds: Float = 0
 
-  var getMapObjectsMaxRefreshSeconds: Float = 0
+  public var getMapObjectsMaxRefreshSeconds: Float = 0
 
-  var getMapObjectsMinDistanceMeters: Float = 0
+  public var getMapObjectsMinDistanceMeters: Float = 0
 
-  var googleMapsApiKey: String = String()
+  public var googleMapsApiKey: String = String()
 
-  var minNearbyHideSightings: Int32 = 0
+  public var minNearbyHideSightings: Int32 = 0
 
-  var enableSpecialWeather: Bool = false
+  public var enableSpecialWeather: Bool = false
 
-  var specialWeatherProbability: Float = 0
+  public var specialWeatherProbability: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -54,8 +54,8 @@ struct POGOProtos_Settings_MapSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings"
 
 extension POGOProtos_Settings_MapSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".MapSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".MapSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_visible_range"),
     2: .standard(proto: "poke_nav_range_meters"),
     3: .standard(proto: "encounter_range_meters"),
@@ -68,7 +68,7 @@ extension POGOProtos_Settings_MapSettings: SwiftProtobuf.Message, SwiftProtobuf.
     10: .standard(proto: "special_weather_probability"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularDoubleField(value: &self.pokemonVisibleRange)
@@ -86,7 +86,7 @@ extension POGOProtos_Settings_MapSettings: SwiftProtobuf.Message, SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemonVisibleRange != 0 {
       try visitor.visitSingularDoubleField(value: self.pokemonVisibleRange, fieldNumber: 1)
     }
@@ -120,7 +120,7 @@ extension POGOProtos_Settings_MapSettings: SwiftProtobuf.Message, SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_MapSettings, rhs: POGOProtos_Settings_MapSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_MapSettings, rhs: POGOProtos_Settings_MapSettings) -> Bool {
     if lhs.pokemonVisibleRange != rhs.pokemonVisibleRange {return false}
     if lhs.pokeNavRangeMeters != rhs.pokeNavRangeMeters {return false}
     if lhs.encounterRangeMeters != rhs.encounterRangeMeters {return false}

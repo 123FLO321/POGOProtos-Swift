@@ -15,38 +15,38 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_CompleteQuestResponse {
+public struct POGOProtos_Networking_Responses_CompleteQuestResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: POGOProtos_Networking_Responses_CompleteQuestResponse.Status {
+  public var status: POGOProtos_Networking_Responses_CompleteQuestResponse.Status {
     get {return _storage._status}
     set {_uniqueStorage()._status = newValue}
   }
 
-  var quest: POGOProtos_Data_Quests_ClientQuest {
+  public var quest: POGOProtos_Data_Quests_ClientQuest {
     get {return _storage._quest ?? POGOProtos_Data_Quests_ClientQuest()}
     set {_uniqueStorage()._quest = newValue}
   }
   /// Returns true if `quest` has been explicitly set.
-  var hasQuest: Bool {return _storage._quest != nil}
+  public var hasQuest: Bool {return _storage._quest != nil}
   /// Clears the value of `quest`. Subsequent reads from it will return its default value.
-  mutating func clearQuest() {_uniqueStorage()._quest = nil}
+  public mutating func clearQuest() {_uniqueStorage()._quest = nil}
 
-  var stamp: [POGOProtos_Data_Quests_QuestStamp] {
+  public var stamp: [POGOProtos_Data_Quests_QuestStamp] {
     get {return _storage._stamp}
     set {_uniqueStorage()._stamp = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Status: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorQuestNotFound // = 2
@@ -61,11 +61,11 @@ struct POGOProtos_Networking_Responses_CompleteQuestResponse {
     case errorInventoryFull // = 11
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -83,7 +83,7 @@ struct POGOProtos_Networking_Responses_CompleteQuestResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -103,7 +103,7 @@ struct POGOProtos_Networking_Responses_CompleteQuestResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -135,23 +135,23 @@ extension POGOProtos_Networking_Responses_CompleteQuestResponse.Status: CaseIter
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_CompleteQuestResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CompleteQuestResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CompleteQuestResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .same(proto: "quest"),
     3: .same(proto: "stamp"),
   ]
 
   fileprivate class _StorageClass {
-    var _status: POGOProtos_Networking_Responses_CompleteQuestResponse.Status = .unset
-    var _quest: POGOProtos_Data_Quests_ClientQuest? = nil
-    var _stamp: [POGOProtos_Data_Quests_QuestStamp] = []
+    public var _status: POGOProtos_Networking_Responses_CompleteQuestResponse.Status = .unset
+    public var _quest: POGOProtos_Data_Quests_ClientQuest? = nil
+    public var _stamp: [POGOProtos_Data_Quests_QuestStamp] = []
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _status = source._status
       _quest = source._quest
       _stamp = source._stamp
@@ -165,7 +165,7 @@ extension POGOProtos_Networking_Responses_CompleteQuestResponse: SwiftProtobuf.M
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -179,7 +179,7 @@ extension POGOProtos_Networking_Responses_CompleteQuestResponse: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._status != .unset {
         try visitor.visitSingularEnumField(value: _storage._status, fieldNumber: 1)
@@ -194,7 +194,7 @@ extension POGOProtos_Networking_Responses_CompleteQuestResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_CompleteQuestResponse, rhs: POGOProtos_Networking_Responses_CompleteQuestResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_CompleteQuestResponse, rhs: POGOProtos_Networking_Responses_CompleteQuestResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -212,7 +212,7 @@ extension POGOProtos_Networking_Responses_CompleteQuestResponse: SwiftProtobuf.M
 }
 
 extension POGOProtos_Networking_Responses_CompleteQuestResponse.Status: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_QUEST_NOT_FOUND"),

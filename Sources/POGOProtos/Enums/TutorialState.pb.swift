@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case legalScreen // = 0
   case avatarSelection // = 1
   case accountCreation // = 2
@@ -37,11 +37,11 @@ enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case poiSubmissionTutorial // = 13
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .legalScreen
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .legalScreen
     case 1: self = .avatarSelection
@@ -61,7 +61,7 @@ enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .legalScreen: return 0
     case .avatarSelection: return 1
@@ -110,7 +110,7 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "LEGAL_SCREEN"),
     1: .same(proto: "AVATAR_SELECTION"),
     2: .same(proto: "ACCOUNT_CREATION"),

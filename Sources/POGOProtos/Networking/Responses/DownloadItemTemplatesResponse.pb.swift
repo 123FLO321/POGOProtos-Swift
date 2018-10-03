@@ -15,38 +15,38 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
+public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.Result = .unset
+  public var result: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.Result = .unset
 
-  var itemTemplates: [POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate] = []
+  public var itemTemplates: [POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate] = []
 
-  var timestampMs: UInt64 = 0
+  public var timestampMs: UInt64 = 0
 
-  var pageOffset: Int32 = 0
+  public var pageOffset: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case page // = 2
     case retry // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -56,7 +56,7 @@ struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -68,276 +68,276 @@ struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
 
   }
 
-  struct ItemTemplate {
+  public struct ItemTemplate {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var templateID: String {
+    public var templateID: String {
       get {return _storage._templateID}
       set {_uniqueStorage()._templateID = newValue}
     }
 
-    var pokemonSettings: POGOProtos_Settings_Master_PokemonSettings {
+    public var pokemonSettings: POGOProtos_Settings_Master_PokemonSettings {
       get {return _storage._pokemonSettings ?? POGOProtos_Settings_Master_PokemonSettings()}
       set {_uniqueStorage()._pokemonSettings = newValue}
     }
     /// Returns true if `pokemonSettings` has been explicitly set.
-    var hasPokemonSettings: Bool {return _storage._pokemonSettings != nil}
+    public var hasPokemonSettings: Bool {return _storage._pokemonSettings != nil}
     /// Clears the value of `pokemonSettings`. Subsequent reads from it will return its default value.
-    mutating func clearPokemonSettings() {_uniqueStorage()._pokemonSettings = nil}
+    public mutating func clearPokemonSettings() {_uniqueStorage()._pokemonSettings = nil}
 
-    var itemSettings: POGOProtos_Settings_Master_ItemSettings {
+    public var itemSettings: POGOProtos_Settings_Master_ItemSettings {
       get {return _storage._itemSettings ?? POGOProtos_Settings_Master_ItemSettings()}
       set {_uniqueStorage()._itemSettings = newValue}
     }
     /// Returns true if `itemSettings` has been explicitly set.
-    var hasItemSettings: Bool {return _storage._itemSettings != nil}
+    public var hasItemSettings: Bool {return _storage._itemSettings != nil}
     /// Clears the value of `itemSettings`. Subsequent reads from it will return its default value.
-    mutating func clearItemSettings() {_uniqueStorage()._itemSettings = nil}
+    public mutating func clearItemSettings() {_uniqueStorage()._itemSettings = nil}
 
-    var moveSettings: POGOProtos_Settings_Master_MoveSettings {
+    public var moveSettings: POGOProtos_Settings_Master_MoveSettings {
       get {return _storage._moveSettings ?? POGOProtos_Settings_Master_MoveSettings()}
       set {_uniqueStorage()._moveSettings = newValue}
     }
     /// Returns true if `moveSettings` has been explicitly set.
-    var hasMoveSettings: Bool {return _storage._moveSettings != nil}
+    public var hasMoveSettings: Bool {return _storage._moveSettings != nil}
     /// Clears the value of `moveSettings`. Subsequent reads from it will return its default value.
-    mutating func clearMoveSettings() {_uniqueStorage()._moveSettings = nil}
+    public mutating func clearMoveSettings() {_uniqueStorage()._moveSettings = nil}
 
-    var moveSequenceSettings: POGOProtos_Settings_Master_MoveSequenceSettings {
+    public var moveSequenceSettings: POGOProtos_Settings_Master_MoveSequenceSettings {
       get {return _storage._moveSequenceSettings ?? POGOProtos_Settings_Master_MoveSequenceSettings()}
       set {_uniqueStorage()._moveSequenceSettings = newValue}
     }
     /// Returns true if `moveSequenceSettings` has been explicitly set.
-    var hasMoveSequenceSettings: Bool {return _storage._moveSequenceSettings != nil}
+    public var hasMoveSequenceSettings: Bool {return _storage._moveSequenceSettings != nil}
     /// Clears the value of `moveSequenceSettings`. Subsequent reads from it will return its default value.
-    mutating func clearMoveSequenceSettings() {_uniqueStorage()._moveSequenceSettings = nil}
+    public mutating func clearMoveSequenceSettings() {_uniqueStorage()._moveSequenceSettings = nil}
 
-    var typeEffective: POGOProtos_Settings_Master_TypeEffectiveSettings {
+    public var typeEffective: POGOProtos_Settings_Master_TypeEffectiveSettings {
       get {return _storage._typeEffective ?? POGOProtos_Settings_Master_TypeEffectiveSettings()}
       set {_uniqueStorage()._typeEffective = newValue}
     }
     /// Returns true if `typeEffective` has been explicitly set.
-    var hasTypeEffective: Bool {return _storage._typeEffective != nil}
+    public var hasTypeEffective: Bool {return _storage._typeEffective != nil}
     /// Clears the value of `typeEffective`. Subsequent reads from it will return its default value.
-    mutating func clearTypeEffective() {_uniqueStorage()._typeEffective = nil}
+    public mutating func clearTypeEffective() {_uniqueStorage()._typeEffective = nil}
 
-    var badgeSettings: POGOProtos_Settings_Master_BadgeSettings {
+    public var badgeSettings: POGOProtos_Settings_Master_BadgeSettings {
       get {return _storage._badgeSettings ?? POGOProtos_Settings_Master_BadgeSettings()}
       set {_uniqueStorage()._badgeSettings = newValue}
     }
     /// Returns true if `badgeSettings` has been explicitly set.
-    var hasBadgeSettings: Bool {return _storage._badgeSettings != nil}
+    public var hasBadgeSettings: Bool {return _storage._badgeSettings != nil}
     /// Clears the value of `badgeSettings`. Subsequent reads from it will return its default value.
-    mutating func clearBadgeSettings() {_uniqueStorage()._badgeSettings = nil}
+    public mutating func clearBadgeSettings() {_uniqueStorage()._badgeSettings = nil}
 
-    var camera: POGOProtos_Settings_Master_CameraSettings {
+    public var camera: POGOProtos_Settings_Master_CameraSettings {
       get {return _storage._camera ?? POGOProtos_Settings_Master_CameraSettings()}
       set {_uniqueStorage()._camera = newValue}
     }
     /// Returns true if `camera` has been explicitly set.
-    var hasCamera: Bool {return _storage._camera != nil}
+    public var hasCamera: Bool {return _storage._camera != nil}
     /// Clears the value of `camera`. Subsequent reads from it will return its default value.
-    mutating func clearCamera() {_uniqueStorage()._camera = nil}
+    public mutating func clearCamera() {_uniqueStorage()._camera = nil}
 
-    var playerLevel: POGOProtos_Settings_Master_PlayerLevelSettings {
+    public var playerLevel: POGOProtos_Settings_Master_PlayerLevelSettings {
       get {return _storage._playerLevel ?? POGOProtos_Settings_Master_PlayerLevelSettings()}
       set {_uniqueStorage()._playerLevel = newValue}
     }
     /// Returns true if `playerLevel` has been explicitly set.
-    var hasPlayerLevel: Bool {return _storage._playerLevel != nil}
+    public var hasPlayerLevel: Bool {return _storage._playerLevel != nil}
     /// Clears the value of `playerLevel`. Subsequent reads from it will return its default value.
-    mutating func clearPlayerLevel() {_uniqueStorage()._playerLevel = nil}
+    public mutating func clearPlayerLevel() {_uniqueStorage()._playerLevel = nil}
 
-    var gymLevel: POGOProtos_Settings_Master_GymLevelSettings {
+    public var gymLevel: POGOProtos_Settings_Master_GymLevelSettings {
       get {return _storage._gymLevel ?? POGOProtos_Settings_Master_GymLevelSettings()}
       set {_uniqueStorage()._gymLevel = newValue}
     }
     /// Returns true if `gymLevel` has been explicitly set.
-    var hasGymLevel: Bool {return _storage._gymLevel != nil}
+    public var hasGymLevel: Bool {return _storage._gymLevel != nil}
     /// Clears the value of `gymLevel`. Subsequent reads from it will return its default value.
-    mutating func clearGymLevel() {_uniqueStorage()._gymLevel = nil}
+    public mutating func clearGymLevel() {_uniqueStorage()._gymLevel = nil}
 
-    var battleSettings: POGOProtos_Settings_Master_GymBattleSettings {
+    public var battleSettings: POGOProtos_Settings_Master_GymBattleSettings {
       get {return _storage._battleSettings ?? POGOProtos_Settings_Master_GymBattleSettings()}
       set {_uniqueStorage()._battleSettings = newValue}
     }
     /// Returns true if `battleSettings` has been explicitly set.
-    var hasBattleSettings: Bool {return _storage._battleSettings != nil}
+    public var hasBattleSettings: Bool {return _storage._battleSettings != nil}
     /// Clears the value of `battleSettings`. Subsequent reads from it will return its default value.
-    mutating func clearBattleSettings() {_uniqueStorage()._battleSettings = nil}
+    public mutating func clearBattleSettings() {_uniqueStorage()._battleSettings = nil}
 
-    var encounterSettings: POGOProtos_Settings_Master_EncounterSettings {
+    public var encounterSettings: POGOProtos_Settings_Master_EncounterSettings {
       get {return _storage._encounterSettings ?? POGOProtos_Settings_Master_EncounterSettings()}
       set {_uniqueStorage()._encounterSettings = newValue}
     }
     /// Returns true if `encounterSettings` has been explicitly set.
-    var hasEncounterSettings: Bool {return _storage._encounterSettings != nil}
+    public var hasEncounterSettings: Bool {return _storage._encounterSettings != nil}
     /// Clears the value of `encounterSettings`. Subsequent reads from it will return its default value.
-    mutating func clearEncounterSettings() {_uniqueStorage()._encounterSettings = nil}
+    public mutating func clearEncounterSettings() {_uniqueStorage()._encounterSettings = nil}
 
-    var iapItemDisplay: POGOProtos_Settings_Master_IapItemDisplay {
+    public var iapItemDisplay: POGOProtos_Settings_Master_IapItemDisplay {
       get {return _storage._iapItemDisplay ?? POGOProtos_Settings_Master_IapItemDisplay()}
       set {_uniqueStorage()._iapItemDisplay = newValue}
     }
     /// Returns true if `iapItemDisplay` has been explicitly set.
-    var hasIapItemDisplay: Bool {return _storage._iapItemDisplay != nil}
+    public var hasIapItemDisplay: Bool {return _storage._iapItemDisplay != nil}
     /// Clears the value of `iapItemDisplay`. Subsequent reads from it will return its default value.
-    mutating func clearIapItemDisplay() {_uniqueStorage()._iapItemDisplay = nil}
+    public mutating func clearIapItemDisplay() {_uniqueStorage()._iapItemDisplay = nil}
 
-    var iapSettings: POGOProtos_Settings_Master_IapSettings {
+    public var iapSettings: POGOProtos_Settings_Master_IapSettings {
       get {return _storage._iapSettings ?? POGOProtos_Settings_Master_IapSettings()}
       set {_uniqueStorage()._iapSettings = newValue}
     }
     /// Returns true if `iapSettings` has been explicitly set.
-    var hasIapSettings: Bool {return _storage._iapSettings != nil}
+    public var hasIapSettings: Bool {return _storage._iapSettings != nil}
     /// Clears the value of `iapSettings`. Subsequent reads from it will return its default value.
-    mutating func clearIapSettings() {_uniqueStorage()._iapSettings = nil}
+    public mutating func clearIapSettings() {_uniqueStorage()._iapSettings = nil}
 
-    var pokemonUpgrades: POGOProtos_Settings_Master_PokemonUpgradeSettings {
+    public var pokemonUpgrades: POGOProtos_Settings_Master_PokemonUpgradeSettings {
       get {return _storage._pokemonUpgrades ?? POGOProtos_Settings_Master_PokemonUpgradeSettings()}
       set {_uniqueStorage()._pokemonUpgrades = newValue}
     }
     /// Returns true if `pokemonUpgrades` has been explicitly set.
-    var hasPokemonUpgrades: Bool {return _storage._pokemonUpgrades != nil}
+    public var hasPokemonUpgrades: Bool {return _storage._pokemonUpgrades != nil}
     /// Clears the value of `pokemonUpgrades`. Subsequent reads from it will return its default value.
-    mutating func clearPokemonUpgrades() {_uniqueStorage()._pokemonUpgrades = nil}
+    public mutating func clearPokemonUpgrades() {_uniqueStorage()._pokemonUpgrades = nil}
 
-    var equippedBadges: POGOProtos_Settings_Master_EquippedBadgeSettings {
+    public var equippedBadges: POGOProtos_Settings_Master_EquippedBadgeSettings {
       get {return _storage._equippedBadges ?? POGOProtos_Settings_Master_EquippedBadgeSettings()}
       set {_uniqueStorage()._equippedBadges = newValue}
     }
     /// Returns true if `equippedBadges` has been explicitly set.
-    var hasEquippedBadges: Bool {return _storage._equippedBadges != nil}
+    public var hasEquippedBadges: Bool {return _storage._equippedBadges != nil}
     /// Clears the value of `equippedBadges`. Subsequent reads from it will return its default value.
-    mutating func clearEquippedBadges() {_uniqueStorage()._equippedBadges = nil}
+    public mutating func clearEquippedBadges() {_uniqueStorage()._equippedBadges = nil}
 
-    var questSettings: POGOProtos_Settings_Master_QuestSettings {
+    public var questSettings: POGOProtos_Settings_Master_QuestSettings {
       get {return _storage._questSettings ?? POGOProtos_Settings_Master_QuestSettings()}
       set {_uniqueStorage()._questSettings = newValue}
     }
     /// Returns true if `questSettings` has been explicitly set.
-    var hasQuestSettings: Bool {return _storage._questSettings != nil}
+    public var hasQuestSettings: Bool {return _storage._questSettings != nil}
     /// Clears the value of `questSettings`. Subsequent reads from it will return its default value.
-    mutating func clearQuestSettings() {_uniqueStorage()._questSettings = nil}
+    public mutating func clearQuestSettings() {_uniqueStorage()._questSettings = nil}
 
-    var avatarCustomization: POGOProtos_Settings_Master_AvatarCustomizationSettings {
+    public var avatarCustomization: POGOProtos_Settings_Master_AvatarCustomizationSettings {
       get {return _storage._avatarCustomization ?? POGOProtos_Settings_Master_AvatarCustomizationSettings()}
       set {_uniqueStorage()._avatarCustomization = newValue}
     }
     /// Returns true if `avatarCustomization` has been explicitly set.
-    var hasAvatarCustomization: Bool {return _storage._avatarCustomization != nil}
+    public var hasAvatarCustomization: Bool {return _storage._avatarCustomization != nil}
     /// Clears the value of `avatarCustomization`. Subsequent reads from it will return its default value.
-    mutating func clearAvatarCustomization() {_uniqueStorage()._avatarCustomization = nil}
+    public mutating func clearAvatarCustomization() {_uniqueStorage()._avatarCustomization = nil}
 
-    var formSettings: POGOProtos_Settings_Master_FormSettings {
+    public var formSettings: POGOProtos_Settings_Master_FormSettings {
       get {return _storage._formSettings ?? POGOProtos_Settings_Master_FormSettings()}
       set {_uniqueStorage()._formSettings = newValue}
     }
     /// Returns true if `formSettings` has been explicitly set.
-    var hasFormSettings: Bool {return _storage._formSettings != nil}
+    public var hasFormSettings: Bool {return _storage._formSettings != nil}
     /// Clears the value of `formSettings`. Subsequent reads from it will return its default value.
-    mutating func clearFormSettings() {_uniqueStorage()._formSettings = nil}
+    public mutating func clearFormSettings() {_uniqueStorage()._formSettings = nil}
 
-    var genderSettings: POGOProtos_Settings_Master_GenderSettings {
+    public var genderSettings: POGOProtos_Settings_Master_GenderSettings {
       get {return _storage._genderSettings ?? POGOProtos_Settings_Master_GenderSettings()}
       set {_uniqueStorage()._genderSettings = newValue}
     }
     /// Returns true if `genderSettings` has been explicitly set.
-    var hasGenderSettings: Bool {return _storage._genderSettings != nil}
+    public var hasGenderSettings: Bool {return _storage._genderSettings != nil}
     /// Clears the value of `genderSettings`. Subsequent reads from it will return its default value.
-    mutating func clearGenderSettings() {_uniqueStorage()._genderSettings = nil}
+    public mutating func clearGenderSettings() {_uniqueStorage()._genderSettings = nil}
 
-    var gymBadgeSettings: POGOProtos_Settings_Master_GymBadgeGmtSettings {
+    public var gymBadgeSettings: POGOProtos_Settings_Master_GymBadgeGmtSettings {
       get {return _storage._gymBadgeSettings ?? POGOProtos_Settings_Master_GymBadgeGmtSettings()}
       set {_uniqueStorage()._gymBadgeSettings = newValue}
     }
     /// Returns true if `gymBadgeSettings` has been explicitly set.
-    var hasGymBadgeSettings: Bool {return _storage._gymBadgeSettings != nil}
+    public var hasGymBadgeSettings: Bool {return _storage._gymBadgeSettings != nil}
     /// Clears the value of `gymBadgeSettings`. Subsequent reads from it will return its default value.
-    mutating func clearGymBadgeSettings() {_uniqueStorage()._gymBadgeSettings = nil}
+    public mutating func clearGymBadgeSettings() {_uniqueStorage()._gymBadgeSettings = nil}
 
-    var weatherAffinities: POGOProtos_Settings_Master_WeatherAffinity {
+    public var weatherAffinities: POGOProtos_Settings_Master_WeatherAffinity {
       get {return _storage._weatherAffinities ?? POGOProtos_Settings_Master_WeatherAffinity()}
       set {_uniqueStorage()._weatherAffinities = newValue}
     }
     /// Returns true if `weatherAffinities` has been explicitly set.
-    var hasWeatherAffinities: Bool {return _storage._weatherAffinities != nil}
+    public var hasWeatherAffinities: Bool {return _storage._weatherAffinities != nil}
     /// Clears the value of `weatherAffinities`. Subsequent reads from it will return its default value.
-    mutating func clearWeatherAffinities() {_uniqueStorage()._weatherAffinities = nil}
+    public mutating func clearWeatherAffinities() {_uniqueStorage()._weatherAffinities = nil}
 
-    var weatherBonusSettings: POGOProtos_Settings_Master_WeatherBonus {
+    public var weatherBonusSettings: POGOProtos_Settings_Master_WeatherBonus {
       get {return _storage._weatherBonusSettings ?? POGOProtos_Settings_Master_WeatherBonus()}
       set {_uniqueStorage()._weatherBonusSettings = newValue}
     }
     /// Returns true if `weatherBonusSettings` has been explicitly set.
-    var hasWeatherBonusSettings: Bool {return _storage._weatherBonusSettings != nil}
+    public var hasWeatherBonusSettings: Bool {return _storage._weatherBonusSettings != nil}
     /// Clears the value of `weatherBonusSettings`. Subsequent reads from it will return its default value.
-    mutating func clearWeatherBonusSettings() {_uniqueStorage()._weatherBonusSettings = nil}
+    public mutating func clearWeatherBonusSettings() {_uniqueStorage()._weatherBonusSettings = nil}
 
-    var pokemonScaleSettings: POGOProtos_Settings_Master_PokemonScaleSetting {
+    public var pokemonScaleSettings: POGOProtos_Settings_Master_PokemonScaleSetting {
       get {return _storage._pokemonScaleSettings ?? POGOProtos_Settings_Master_PokemonScaleSetting()}
       set {_uniqueStorage()._pokemonScaleSettings = newValue}
     }
     /// Returns true if `pokemonScaleSettings` has been explicitly set.
-    var hasPokemonScaleSettings: Bool {return _storage._pokemonScaleSettings != nil}
+    public var hasPokemonScaleSettings: Bool {return _storage._pokemonScaleSettings != nil}
     /// Clears the value of `pokemonScaleSettings`. Subsequent reads from it will return its default value.
-    mutating func clearPokemonScaleSettings() {_uniqueStorage()._pokemonScaleSettings = nil}
+    public mutating func clearPokemonScaleSettings() {_uniqueStorage()._pokemonScaleSettings = nil}
 
-    var iapCategoryDisplay: POGOProtos_Settings_Master_IapItemCategoryDisplay {
+    public var iapCategoryDisplay: POGOProtos_Settings_Master_IapItemCategoryDisplay {
       get {return _storage._iapCategoryDisplay ?? POGOProtos_Settings_Master_IapItemCategoryDisplay()}
       set {_uniqueStorage()._iapCategoryDisplay = newValue}
     }
     /// Returns true if `iapCategoryDisplay` has been explicitly set.
-    var hasIapCategoryDisplay: Bool {return _storage._iapCategoryDisplay != nil}
+    public var hasIapCategoryDisplay: Bool {return _storage._iapCategoryDisplay != nil}
     /// Clears the value of `iapCategoryDisplay`. Subsequent reads from it will return its default value.
-    mutating func clearIapCategoryDisplay() {_uniqueStorage()._iapCategoryDisplay = nil}
+    public mutating func clearIapCategoryDisplay() {_uniqueStorage()._iapCategoryDisplay = nil}
 
-    var onboardingSettings: POGOProtos_Settings_Master_OnboardingSettings {
+    public var onboardingSettings: POGOProtos_Settings_Master_OnboardingSettings {
       get {return _storage._onboardingSettings ?? POGOProtos_Settings_Master_OnboardingSettings()}
       set {_uniqueStorage()._onboardingSettings = newValue}
     }
     /// Returns true if `onboardingSettings` has been explicitly set.
-    var hasOnboardingSettings: Bool {return _storage._onboardingSettings != nil}
+    public var hasOnboardingSettings: Bool {return _storage._onboardingSettings != nil}
     /// Clears the value of `onboardingSettings`. Subsequent reads from it will return its default value.
-    mutating func clearOnboardingSettings() {_uniqueStorage()._onboardingSettings = nil}
+    public mutating func clearOnboardingSettings() {_uniqueStorage()._onboardingSettings = nil}
 
-    var friendshipMilestoneSettings: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings {
+    public var friendshipMilestoneSettings: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings {
       get {return _storage._friendshipMilestoneSettings ?? POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings()}
       set {_uniqueStorage()._friendshipMilestoneSettings = newValue}
     }
     /// Returns true if `friendshipMilestoneSettings` has been explicitly set.
-    var hasFriendshipMilestoneSettings: Bool {return _storage._friendshipMilestoneSettings != nil}
+    public var hasFriendshipMilestoneSettings: Bool {return _storage._friendshipMilestoneSettings != nil}
     /// Clears the value of `friendshipMilestoneSettings`. Subsequent reads from it will return its default value.
-    mutating func clearFriendshipMilestoneSettings() {_uniqueStorage()._friendshipMilestoneSettings = nil}
+    public mutating func clearFriendshipMilestoneSettings() {_uniqueStorage()._friendshipMilestoneSettings = nil}
 
-    var luckyPokemonSettings: POGOProtos_Settings_Master_LuckyPokemonSettings {
+    public var luckyPokemonSettings: POGOProtos_Settings_Master_LuckyPokemonSettings {
       get {return _storage._luckyPokemonSettings ?? POGOProtos_Settings_Master_LuckyPokemonSettings()}
       set {_uniqueStorage()._luckyPokemonSettings = newValue}
     }
     /// Returns true if `luckyPokemonSettings` has been explicitly set.
-    var hasLuckyPokemonSettings: Bool {return _storage._luckyPokemonSettings != nil}
+    public var hasLuckyPokemonSettings: Bool {return _storage._luckyPokemonSettings != nil}
     /// Clears the value of `luckyPokemonSettings`. Subsequent reads from it will return its default value.
-    mutating func clearLuckyPokemonSettings() {_uniqueStorage()._luckyPokemonSettings = nil}
+    public mutating func clearLuckyPokemonSettings() {_uniqueStorage()._luckyPokemonSettings = nil}
 
-    var exRaidSettings: POGOProtos_Settings_Master_ExRaidSettings {
+    public var exRaidSettings: POGOProtos_Settings_Master_ExRaidSettings {
       get {return _storage._exRaidSettings ?? POGOProtos_Settings_Master_ExRaidSettings()}
       set {_uniqueStorage()._exRaidSettings = newValue}
     }
     /// Returns true if `exRaidSettings` has been explicitly set.
-    var hasExRaidSettings: Bool {return _storage._exRaidSettings != nil}
+    public var hasExRaidSettings: Bool {return _storage._exRaidSettings != nil}
     /// Clears the value of `exRaidSettings`. Subsequent reads from it will return its default value.
-    mutating func clearExRaidSettings() {_uniqueStorage()._exRaidSettings = nil}
+    public mutating func clearExRaidSettings() {_uniqueStorage()._exRaidSettings = nil}
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
     fileprivate var _storage = _StorageClass.defaultInstance
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -359,15 +359,15 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.Result: 
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DownloadItemTemplatesResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".DownloadItemTemplatesResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "item_templates"),
     3: .standard(proto: "timestamp_ms"),
     4: .standard(proto: "page_offset"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
@@ -379,7 +379,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.result != .unset {
       try visitor.visitSingularEnumField(value: self.result, fieldNumber: 1)
     }
@@ -395,7 +395,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs.itemTemplates != rhs.itemTemplates {return false}
     if lhs.timestampMs != rhs.timestampMs {return false}
@@ -406,7 +406,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
 }
 
 extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "PAGE"),
@@ -415,8 +415,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.Result: 
 }
 
 extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.protoMessageName + ".ItemTemplate"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.protoMessageName + ".ItemTemplate"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "template_id"),
     2: .standard(proto: "pokemon_settings"),
     3: .standard(proto: "item_settings"),
@@ -449,41 +449,41 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
   ]
 
   fileprivate class _StorageClass {
-    var _templateID: String = String()
-    var _pokemonSettings: POGOProtos_Settings_Master_PokemonSettings? = nil
-    var _itemSettings: POGOProtos_Settings_Master_ItemSettings? = nil
-    var _moveSettings: POGOProtos_Settings_Master_MoveSettings? = nil
-    var _moveSequenceSettings: POGOProtos_Settings_Master_MoveSequenceSettings? = nil
-    var _typeEffective: POGOProtos_Settings_Master_TypeEffectiveSettings? = nil
-    var _badgeSettings: POGOProtos_Settings_Master_BadgeSettings? = nil
-    var _camera: POGOProtos_Settings_Master_CameraSettings? = nil
-    var _playerLevel: POGOProtos_Settings_Master_PlayerLevelSettings? = nil
-    var _gymLevel: POGOProtos_Settings_Master_GymLevelSettings? = nil
-    var _battleSettings: POGOProtos_Settings_Master_GymBattleSettings? = nil
-    var _encounterSettings: POGOProtos_Settings_Master_EncounterSettings? = nil
-    var _iapItemDisplay: POGOProtos_Settings_Master_IapItemDisplay? = nil
-    var _iapSettings: POGOProtos_Settings_Master_IapSettings? = nil
-    var _pokemonUpgrades: POGOProtos_Settings_Master_PokemonUpgradeSettings? = nil
-    var _equippedBadges: POGOProtos_Settings_Master_EquippedBadgeSettings? = nil
-    var _questSettings: POGOProtos_Settings_Master_QuestSettings? = nil
-    var _avatarCustomization: POGOProtos_Settings_Master_AvatarCustomizationSettings? = nil
-    var _formSettings: POGOProtos_Settings_Master_FormSettings? = nil
-    var _genderSettings: POGOProtos_Settings_Master_GenderSettings? = nil
-    var _gymBadgeSettings: POGOProtos_Settings_Master_GymBadgeGmtSettings? = nil
-    var _weatherAffinities: POGOProtos_Settings_Master_WeatherAffinity? = nil
-    var _weatherBonusSettings: POGOProtos_Settings_Master_WeatherBonus? = nil
-    var _pokemonScaleSettings: POGOProtos_Settings_Master_PokemonScaleSetting? = nil
-    var _iapCategoryDisplay: POGOProtos_Settings_Master_IapItemCategoryDisplay? = nil
-    var _onboardingSettings: POGOProtos_Settings_Master_OnboardingSettings? = nil
-    var _friendshipMilestoneSettings: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings? = nil
-    var _luckyPokemonSettings: POGOProtos_Settings_Master_LuckyPokemonSettings? = nil
-    var _exRaidSettings: POGOProtos_Settings_Master_ExRaidSettings? = nil
+    public var _templateID: String = String()
+    public var _pokemonSettings: POGOProtos_Settings_Master_PokemonSettings? = nil
+    public var _itemSettings: POGOProtos_Settings_Master_ItemSettings? = nil
+    public var _moveSettings: POGOProtos_Settings_Master_MoveSettings? = nil
+    public var _moveSequenceSettings: POGOProtos_Settings_Master_MoveSequenceSettings? = nil
+    public var _typeEffective: POGOProtos_Settings_Master_TypeEffectiveSettings? = nil
+    public var _badgeSettings: POGOProtos_Settings_Master_BadgeSettings? = nil
+    public var _camera: POGOProtos_Settings_Master_CameraSettings? = nil
+    public var _playerLevel: POGOProtos_Settings_Master_PlayerLevelSettings? = nil
+    public var _gymLevel: POGOProtos_Settings_Master_GymLevelSettings? = nil
+    public var _battleSettings: POGOProtos_Settings_Master_GymBattleSettings? = nil
+    public var _encounterSettings: POGOProtos_Settings_Master_EncounterSettings? = nil
+    public var _iapItemDisplay: POGOProtos_Settings_Master_IapItemDisplay? = nil
+    public var _iapSettings: POGOProtos_Settings_Master_IapSettings? = nil
+    public var _pokemonUpgrades: POGOProtos_Settings_Master_PokemonUpgradeSettings? = nil
+    public var _equippedBadges: POGOProtos_Settings_Master_EquippedBadgeSettings? = nil
+    public var _questSettings: POGOProtos_Settings_Master_QuestSettings? = nil
+    public var _avatarCustomization: POGOProtos_Settings_Master_AvatarCustomizationSettings? = nil
+    public var _formSettings: POGOProtos_Settings_Master_FormSettings? = nil
+    public var _genderSettings: POGOProtos_Settings_Master_GenderSettings? = nil
+    public var _gymBadgeSettings: POGOProtos_Settings_Master_GymBadgeGmtSettings? = nil
+    public var _weatherAffinities: POGOProtos_Settings_Master_WeatherAffinity? = nil
+    public var _weatherBonusSettings: POGOProtos_Settings_Master_WeatherBonus? = nil
+    public var _pokemonScaleSettings: POGOProtos_Settings_Master_PokemonScaleSetting? = nil
+    public var _iapCategoryDisplay: POGOProtos_Settings_Master_IapItemCategoryDisplay? = nil
+    public var _onboardingSettings: POGOProtos_Settings_Master_OnboardingSettings? = nil
+    public var _friendshipMilestoneSettings: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings? = nil
+    public var _luckyPokemonSettings: POGOProtos_Settings_Master_LuckyPokemonSettings? = nil
+    public var _exRaidSettings: POGOProtos_Settings_Master_ExRaidSettings? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _templateID = source._templateID
       _pokemonSettings = source._pokemonSettings
       _itemSettings = source._itemSettings
@@ -523,7 +523,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -563,7 +563,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._templateID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._templateID, fieldNumber: 1)
@@ -656,7 +656,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

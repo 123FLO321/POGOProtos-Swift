@@ -15,57 +15,57 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage {
+public struct POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var gymID: String {
+  public var gymID: String {
     get {return _storage._gymID}
     set {_uniqueStorage()._gymID = newValue}
   }
 
-  var battleID: String {
+  public var battleID: String {
     get {return _storage._battleID}
     set {_uniqueStorage()._battleID = newValue}
   }
 
-  var attackerActions: [POGOProtos_Data_Battle_BattleAction] {
+  public var attackerActions: [POGOProtos_Data_Battle_BattleAction] {
     get {return _storage._attackerActions}
     set {_uniqueStorage()._attackerActions = newValue}
   }
 
-  var lastRetrievedAction: POGOProtos_Data_Battle_BattleAction {
+  public var lastRetrievedAction: POGOProtos_Data_Battle_BattleAction {
     get {return _storage._lastRetrievedAction ?? POGOProtos_Data_Battle_BattleAction()}
     set {_uniqueStorage()._lastRetrievedAction = newValue}
   }
   /// Returns true if `lastRetrievedAction` has been explicitly set.
-  var hasLastRetrievedAction: Bool {return _storage._lastRetrievedAction != nil}
+  public var hasLastRetrievedAction: Bool {return _storage._lastRetrievedAction != nil}
   /// Clears the value of `lastRetrievedAction`. Subsequent reads from it will return its default value.
-  mutating func clearLastRetrievedAction() {_uniqueStorage()._lastRetrievedAction = nil}
+  public mutating func clearLastRetrievedAction() {_uniqueStorage()._lastRetrievedAction = nil}
 
-  var playerLatDegrees: Double {
+  public var playerLatDegrees: Double {
     get {return _storage._playerLatDegrees}
     set {_uniqueStorage()._playerLatDegrees = newValue}
   }
 
-  var playerLngDegrees: Double {
+  public var playerLngDegrees: Double {
     get {return _storage._playerLngDegrees}
     set {_uniqueStorage()._playerLngDegrees = newValue}
   }
 
-  var timestampMs: Int64 {
+  public var timestampMs: Int64 {
     get {return _storage._timestampMs}
     set {_uniqueStorage()._timestampMs = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -75,8 +75,8 @@ struct POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GymBattleAttackMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GymBattleAttackMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "gym_id"),
     2: .standard(proto: "battle_id"),
     3: .standard(proto: "attacker_actions"),
@@ -87,19 +87,19 @@ extension POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage: SwiftP
   ]
 
   fileprivate class _StorageClass {
-    var _gymID: String = String()
-    var _battleID: String = String()
-    var _attackerActions: [POGOProtos_Data_Battle_BattleAction] = []
-    var _lastRetrievedAction: POGOProtos_Data_Battle_BattleAction? = nil
-    var _playerLatDegrees: Double = 0
-    var _playerLngDegrees: Double = 0
-    var _timestampMs: Int64 = 0
+    public var _gymID: String = String()
+    public var _battleID: String = String()
+    public var _attackerActions: [POGOProtos_Data_Battle_BattleAction] = []
+    public var _lastRetrievedAction: POGOProtos_Data_Battle_BattleAction? = nil
+    public var _playerLatDegrees: Double = 0
+    public var _playerLngDegrees: Double = 0
+    public var _timestampMs: Int64 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _gymID = source._gymID
       _battleID = source._battleID
       _attackerActions = source._attackerActions
@@ -117,7 +117,7 @@ extension POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage: SwiftP
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -135,7 +135,7 @@ extension POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage: SwiftP
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._gymID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._gymID, fieldNumber: 1)
@@ -162,7 +162,7 @@ extension POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage: SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage, rhs: POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage, rhs: POGOProtos_Networking_Requests_Messages_GymBattleAttackMessage) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

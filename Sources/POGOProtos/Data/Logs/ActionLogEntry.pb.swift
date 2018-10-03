@@ -15,31 +15,31 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Logs_ActionLogEntry {
+public struct POGOProtos_Data_Logs_ActionLogEntry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var timestampMs: Int64 {
+  public var timestampMs: Int64 {
     get {return _storage._timestampMs}
     set {_uniqueStorage()._timestampMs = newValue}
   }
 
-  var sfida: Bool {
+  public var sfida: Bool {
     get {return _storage._sfida}
     set {_uniqueStorage()._sfida = newValue}
   }
 
-  var action: OneOf_Action? {
+  public var action: OneOf_Action? {
     get {return _storage._action}
     set {_uniqueStorage()._action = newValue}
   }
 
-  var catchPokemon: POGOProtos_Data_Logs_CatchPokemonLogEntry {
+  public var catchPokemon: POGOProtos_Data_Logs_CatchPokemonLogEntry {
     get {
       if case .catchPokemon(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_CatchPokemonLogEntry()
@@ -47,7 +47,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .catchPokemon(newValue)}
   }
 
-  var fortSearch: POGOProtos_Data_Logs_FortSearchLogEntry {
+  public var fortSearch: POGOProtos_Data_Logs_FortSearchLogEntry {
     get {
       if case .fortSearch(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_FortSearchLogEntry()
@@ -55,7 +55,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .fortSearch(newValue)}
   }
 
-  var buddyPokemon: POGOProtos_Data_Logs_BuddyPokemonLogEntry {
+  public var buddyPokemon: POGOProtos_Data_Logs_BuddyPokemonLogEntry {
     get {
       if case .buddyPokemon(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_BuddyPokemonLogEntry()
@@ -63,7 +63,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .buddyPokemon(newValue)}
   }
 
-  var raidRewards: POGOProtos_Data_Logs_RaidRewardsLogEntry {
+  public var raidRewards: POGOProtos_Data_Logs_RaidRewardsLogEntry {
     get {
       if case .raidRewards(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_RaidRewardsLogEntry()
@@ -71,7 +71,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .raidRewards(newValue)}
   }
 
-  var passcodeRewards: POGOProtos_Data_Logs_PasscodeRewardsLogEntry {
+  public var passcodeRewards: POGOProtos_Data_Logs_PasscodeRewardsLogEntry {
     get {
       if case .passcodeRewards(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_PasscodeRewardsLogEntry()
@@ -79,7 +79,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .passcodeRewards(newValue)}
   }
 
-  var completeQuest: POGOProtos_Data_Logs_CompleteQuestLogEntry {
+  public var completeQuest: POGOProtos_Data_Logs_CompleteQuestLogEntry {
     get {
       if case .completeQuest(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_CompleteQuestLogEntry()
@@ -87,7 +87,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .completeQuest(newValue)}
   }
 
-  var completeQuestStampCard: POGOProtos_Data_Logs_CompleteQuestStampCardLogEntry {
+  public var completeQuestStampCard: POGOProtos_Data_Logs_CompleteQuestStampCardLogEntry {
     get {
       if case .completeQuestStampCard(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_CompleteQuestStampCardLogEntry()
@@ -95,7 +95,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .completeQuestStampCard(newValue)}
   }
 
-  var completeQuestPokemonEncounter: POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry {
+  public var completeQuestPokemonEncounter: POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry {
     get {
       if case .completeQuestPokemonEncounter(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry()
@@ -103,7 +103,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .completeQuestPokemonEncounter(newValue)}
   }
 
-  var openGift: POGOProtos_Data_Logs_OpenGiftLogEntry {
+  public var openGift: POGOProtos_Data_Logs_OpenGiftLogEntry {
     get {
       if case .openGift(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_OpenGiftLogEntry()
@@ -111,7 +111,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .openGift(newValue)}
   }
 
-  var sendGift: POGOProtos_Data_Logs_SendGiftLogEntry {
+  public var sendGift: POGOProtos_Data_Logs_SendGiftLogEntry {
     get {
       if case .sendGift(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_SendGiftLogEntry()
@@ -119,7 +119,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .sendGift(newValue)}
   }
 
-  var trading: POGOProtos_Data_Logs_TradingLogEntry {
+  public var trading: POGOProtos_Data_Logs_TradingLogEntry {
     get {
       if case .trading(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_TradingLogEntry()
@@ -127,7 +127,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .trading(newValue)}
   }
 
-  var shareExRaidPass: POGOProtos_Data_Logs_ShareExRaidPassLogEntry {
+  public var shareExRaidPass: POGOProtos_Data_Logs_ShareExRaidPassLogEntry {
     get {
       if case .shareExRaidPass(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_ShareExRaidPassLogEntry()
@@ -135,7 +135,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .shareExRaidPass(newValue)}
   }
 
-  var declineExRaidPass: POGOProtos_Data_Logs_DeclineExRaidPassLogEntry {
+  public var declineExRaidPass: POGOProtos_Data_Logs_DeclineExRaidPassLogEntry {
     get {
       if case .declineExRaidPass(let v)? = _storage._action {return v}
       return POGOProtos_Data_Logs_DeclineExRaidPassLogEntry()
@@ -143,9 +143,9 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .declineExRaidPass(newValue)}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum OneOf_Action: Equatable {
+  public enum OneOf_Action: Equatable {
     case catchPokemon(POGOProtos_Data_Logs_CatchPokemonLogEntry)
     case fortSearch(POGOProtos_Data_Logs_FortSearchLogEntry)
     case buddyPokemon(POGOProtos_Data_Logs_BuddyPokemonLogEntry)
@@ -161,7 +161,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
     case declineExRaidPass(POGOProtos_Data_Logs_DeclineExRaidPassLogEntry)
 
   #if !swift(>=4.1)
-    static func ==(lhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action, rhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action) -> Bool {
+    public static func ==(lhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action, rhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action) -> Bool {
       switch (lhs, rhs) {
       case (.catchPokemon(let l), .catchPokemon(let r)): return l == r
       case (.fortSearch(let l), .fortSearch(let r)): return l == r
@@ -182,7 +182,7 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
   #endif
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -192,8 +192,8 @@ struct POGOProtos_Data_Logs_ActionLogEntry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Logs"
 
 extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ActionLogEntry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ActionLogEntry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "timestamp_ms"),
     2: .same(proto: "sfida"),
     3: .standard(proto: "catch_pokemon"),
@@ -212,15 +212,15 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
   ]
 
   fileprivate class _StorageClass {
-    var _timestampMs: Int64 = 0
-    var _sfida: Bool = false
-    var _action: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action?
+    public var _timestampMs: Int64 = 0
+    public var _sfida: Bool = false
+    public var _action: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action?
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _timestampMs = source._timestampMs
       _sfida = source._sfida
       _action = source._action
@@ -234,7 +234,7 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -351,7 +351,7 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._timestampMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._timestampMs, fieldNumber: 1)
@@ -392,7 +392,7 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Logs_ActionLogEntry, rhs: POGOProtos_Data_Logs_ActionLogEntry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Logs_ActionLogEntry, rhs: POGOProtos_Data_Logs_ActionLogEntry) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

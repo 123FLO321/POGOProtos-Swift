@@ -15,42 +15,42 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Quests_Quests {
+public struct POGOProtos_Data_Quests_Quests {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var quest: [POGOProtos_Data_Quests_Quest] {
+  public var quest: [POGOProtos_Data_Quests_Quest] {
     get {return _storage._quest}
     set {_uniqueStorage()._quest = newValue}
   }
 
-  var completedStoryQuest: [String] {
+  public var completedStoryQuest: [String] {
     get {return _storage._completedStoryQuest}
     set {_uniqueStorage()._completedStoryQuest = newValue}
   }
 
-  var questPokemonEncounter: [POGOProtos_Data_Quests_QuestPokemonEncounter] {
+  public var questPokemonEncounter: [POGOProtos_Data_Quests_QuestPokemonEncounter] {
     get {return _storage._questPokemonEncounter}
     set {_uniqueStorage()._questPokemonEncounter = newValue}
   }
 
-  var stampCard: POGOProtos_Data_Quests_QuestStampCard {
+  public var stampCard: POGOProtos_Data_Quests_QuestStampCard {
     get {return _storage._stampCard ?? POGOProtos_Data_Quests_QuestStampCard()}
     set {_uniqueStorage()._stampCard = newValue}
   }
   /// Returns true if `stampCard` has been explicitly set.
-  var hasStampCard: Bool {return _storage._stampCard != nil}
+  public var hasStampCard: Bool {return _storage._stampCard != nil}
   /// Clears the value of `stampCard`. Subsequent reads from it will return its default value.
-  mutating func clearStampCard() {_uniqueStorage()._stampCard = nil}
+  public mutating func clearStampCard() {_uniqueStorage()._stampCard = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -60,8 +60,8 @@ struct POGOProtos_Data_Quests_Quests {
 fileprivate let _protobuf_package = "POGOProtos.Data.Quests"
 
 extension POGOProtos_Data_Quests_Quests: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Quests"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Quests"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "quest"),
     2: .standard(proto: "completed_story_quest"),
     3: .standard(proto: "quest_pokemon_encounter"),
@@ -69,16 +69,16 @@ extension POGOProtos_Data_Quests_Quests: SwiftProtobuf.Message, SwiftProtobuf._M
   ]
 
   fileprivate class _StorageClass {
-    var _quest: [POGOProtos_Data_Quests_Quest] = []
-    var _completedStoryQuest: [String] = []
-    var _questPokemonEncounter: [POGOProtos_Data_Quests_QuestPokemonEncounter] = []
-    var _stampCard: POGOProtos_Data_Quests_QuestStampCard? = nil
+    public var _quest: [POGOProtos_Data_Quests_Quest] = []
+    public var _completedStoryQuest: [String] = []
+    public var _questPokemonEncounter: [POGOProtos_Data_Quests_QuestPokemonEncounter] = []
+    public var _stampCard: POGOProtos_Data_Quests_QuestStampCard? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _quest = source._quest
       _completedStoryQuest = source._completedStoryQuest
       _questPokemonEncounter = source._questPokemonEncounter
@@ -93,7 +93,7 @@ extension POGOProtos_Data_Quests_Quests: SwiftProtobuf.Message, SwiftProtobuf._M
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -108,7 +108,7 @@ extension POGOProtos_Data_Quests_Quests: SwiftProtobuf.Message, SwiftProtobuf._M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._quest.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._quest, fieldNumber: 1)
@@ -126,7 +126,7 @@ extension POGOProtos_Data_Quests_Quests: SwiftProtobuf.Message, SwiftProtobuf._M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_Quests, rhs: POGOProtos_Data_Quests_Quests) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_Quests, rhs: POGOProtos_Data_Quests_Quests) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

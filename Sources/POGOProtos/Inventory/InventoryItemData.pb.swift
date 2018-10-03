@@ -15,153 +15,153 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Inventory_InventoryItemData {
+public struct POGOProtos_Inventory_InventoryItemData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonData: POGOProtos_Data_PokemonData {
+  public var pokemonData: POGOProtos_Data_PokemonData {
     get {return _storage._pokemonData ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._pokemonData = newValue}
   }
   /// Returns true if `pokemonData` has been explicitly set.
-  var hasPokemonData: Bool {return _storage._pokemonData != nil}
+  public var hasPokemonData: Bool {return _storage._pokemonData != nil}
   /// Clears the value of `pokemonData`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
+  public mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
 
-  var item: POGOProtos_Inventory_Item_ItemData {
+  public var item: POGOProtos_Inventory_Item_ItemData {
     get {return _storage._item ?? POGOProtos_Inventory_Item_ItemData()}
     set {_uniqueStorage()._item = newValue}
   }
   /// Returns true if `item` has been explicitly set.
-  var hasItem: Bool {return _storage._item != nil}
+  public var hasItem: Bool {return _storage._item != nil}
   /// Clears the value of `item`. Subsequent reads from it will return its default value.
-  mutating func clearItem() {_uniqueStorage()._item = nil}
+  public mutating func clearItem() {_uniqueStorage()._item = nil}
 
-  var pokedexEntry: POGOProtos_Data_PokedexEntry {
+  public var pokedexEntry: POGOProtos_Data_PokedexEntry {
     get {return _storage._pokedexEntry ?? POGOProtos_Data_PokedexEntry()}
     set {_uniqueStorage()._pokedexEntry = newValue}
   }
   /// Returns true if `pokedexEntry` has been explicitly set.
-  var hasPokedexEntry: Bool {return _storage._pokedexEntry != nil}
+  public var hasPokedexEntry: Bool {return _storage._pokedexEntry != nil}
   /// Clears the value of `pokedexEntry`. Subsequent reads from it will return its default value.
-  mutating func clearPokedexEntry() {_uniqueStorage()._pokedexEntry = nil}
+  public mutating func clearPokedexEntry() {_uniqueStorage()._pokedexEntry = nil}
 
-  var playerStats: POGOProtos_Data_Player_PlayerStats {
+  public var playerStats: POGOProtos_Data_Player_PlayerStats {
     get {return _storage._playerStats ?? POGOProtos_Data_Player_PlayerStats()}
     set {_uniqueStorage()._playerStats = newValue}
   }
   /// Returns true if `playerStats` has been explicitly set.
-  var hasPlayerStats: Bool {return _storage._playerStats != nil}
+  public var hasPlayerStats: Bool {return _storage._playerStats != nil}
   /// Clears the value of `playerStats`. Subsequent reads from it will return its default value.
-  mutating func clearPlayerStats() {_uniqueStorage()._playerStats = nil}
+  public mutating func clearPlayerStats() {_uniqueStorage()._playerStats = nil}
 
-  var playerCurrency: POGOProtos_Data_Player_PlayerCurrency {
+  public var playerCurrency: POGOProtos_Data_Player_PlayerCurrency {
     get {return _storage._playerCurrency ?? POGOProtos_Data_Player_PlayerCurrency()}
     set {_uniqueStorage()._playerCurrency = newValue}
   }
   /// Returns true if `playerCurrency` has been explicitly set.
-  var hasPlayerCurrency: Bool {return _storage._playerCurrency != nil}
+  public var hasPlayerCurrency: Bool {return _storage._playerCurrency != nil}
   /// Clears the value of `playerCurrency`. Subsequent reads from it will return its default value.
-  mutating func clearPlayerCurrency() {_uniqueStorage()._playerCurrency = nil}
+  public mutating func clearPlayerCurrency() {_uniqueStorage()._playerCurrency = nil}
 
-  var playerCamera: POGOProtos_Data_Player_PlayerCamera {
+  public var playerCamera: POGOProtos_Data_Player_PlayerCamera {
     get {return _storage._playerCamera ?? POGOProtos_Data_Player_PlayerCamera()}
     set {_uniqueStorage()._playerCamera = newValue}
   }
   /// Returns true if `playerCamera` has been explicitly set.
-  var hasPlayerCamera: Bool {return _storage._playerCamera != nil}
+  public var hasPlayerCamera: Bool {return _storage._playerCamera != nil}
   /// Clears the value of `playerCamera`. Subsequent reads from it will return its default value.
-  mutating func clearPlayerCamera() {_uniqueStorage()._playerCamera = nil}
+  public mutating func clearPlayerCamera() {_uniqueStorage()._playerCamera = nil}
 
-  var inventoryUpgrades: POGOProtos_Inventory_InventoryUpgrades {
+  public var inventoryUpgrades: POGOProtos_Inventory_InventoryUpgrades {
     get {return _storage._inventoryUpgrades ?? POGOProtos_Inventory_InventoryUpgrades()}
     set {_uniqueStorage()._inventoryUpgrades = newValue}
   }
   /// Returns true if `inventoryUpgrades` has been explicitly set.
-  var hasInventoryUpgrades: Bool {return _storage._inventoryUpgrades != nil}
+  public var hasInventoryUpgrades: Bool {return _storage._inventoryUpgrades != nil}
   /// Clears the value of `inventoryUpgrades`. Subsequent reads from it will return its default value.
-  mutating func clearInventoryUpgrades() {_uniqueStorage()._inventoryUpgrades = nil}
+  public mutating func clearInventoryUpgrades() {_uniqueStorage()._inventoryUpgrades = nil}
 
-  var appliedItems: POGOProtos_Inventory_AppliedItems {
+  public var appliedItems: POGOProtos_Inventory_AppliedItems {
     get {return _storage._appliedItems ?? POGOProtos_Inventory_AppliedItems()}
     set {_uniqueStorage()._appliedItems = newValue}
   }
   /// Returns true if `appliedItems` has been explicitly set.
-  var hasAppliedItems: Bool {return _storage._appliedItems != nil}
+  public var hasAppliedItems: Bool {return _storage._appliedItems != nil}
   /// Clears the value of `appliedItems`. Subsequent reads from it will return its default value.
-  mutating func clearAppliedItems() {_uniqueStorage()._appliedItems = nil}
+  public mutating func clearAppliedItems() {_uniqueStorage()._appliedItems = nil}
 
-  var eggIncubators: POGOProtos_Inventory_EggIncubators {
+  public var eggIncubators: POGOProtos_Inventory_EggIncubators {
     get {return _storage._eggIncubators ?? POGOProtos_Inventory_EggIncubators()}
     set {_uniqueStorage()._eggIncubators = newValue}
   }
   /// Returns true if `eggIncubators` has been explicitly set.
-  var hasEggIncubators: Bool {return _storage._eggIncubators != nil}
+  public var hasEggIncubators: Bool {return _storage._eggIncubators != nil}
   /// Clears the value of `eggIncubators`. Subsequent reads from it will return its default value.
-  mutating func clearEggIncubators() {_uniqueStorage()._eggIncubators = nil}
+  public mutating func clearEggIncubators() {_uniqueStorage()._eggIncubators = nil}
 
-  var candy: POGOProtos_Inventory_Candy {
+  public var candy: POGOProtos_Inventory_Candy {
     get {return _storage._candy ?? POGOProtos_Inventory_Candy()}
     set {_uniqueStorage()._candy = newValue}
   }
   /// Returns true if `candy` has been explicitly set.
-  var hasCandy: Bool {return _storage._candy != nil}
+  public var hasCandy: Bool {return _storage._candy != nil}
   /// Clears the value of `candy`. Subsequent reads from it will return its default value.
-  mutating func clearCandy() {_uniqueStorage()._candy = nil}
+  public mutating func clearCandy() {_uniqueStorage()._candy = nil}
 
-  var quest: POGOProtos_Data_Quests_Quest {
+  public var quest: POGOProtos_Data_Quests_Quest {
     get {return _storage._quest ?? POGOProtos_Data_Quests_Quest()}
     set {_uniqueStorage()._quest = newValue}
   }
   /// Returns true if `quest` has been explicitly set.
-  var hasQuest: Bool {return _storage._quest != nil}
+  public var hasQuest: Bool {return _storage._quest != nil}
   /// Clears the value of `quest`. Subsequent reads from it will return its default value.
-  mutating func clearQuest() {_uniqueStorage()._quest = nil}
+  public mutating func clearQuest() {_uniqueStorage()._quest = nil}
 
-  var avatarItem: POGOProtos_Data_Avatar_AvatarItem {
+  public var avatarItem: POGOProtos_Data_Avatar_AvatarItem {
     get {return _storage._avatarItem ?? POGOProtos_Data_Avatar_AvatarItem()}
     set {_uniqueStorage()._avatarItem = newValue}
   }
   /// Returns true if `avatarItem` has been explicitly set.
-  var hasAvatarItem: Bool {return _storage._avatarItem != nil}
+  public var hasAvatarItem: Bool {return _storage._avatarItem != nil}
   /// Clears the value of `avatarItem`. Subsequent reads from it will return its default value.
-  mutating func clearAvatarItem() {_uniqueStorage()._avatarItem = nil}
+  public mutating func clearAvatarItem() {_uniqueStorage()._avatarItem = nil}
 
-  var raidTickets: POGOProtos_Inventory_RaidTickets {
+  public var raidTickets: POGOProtos_Inventory_RaidTickets {
     get {return _storage._raidTickets ?? POGOProtos_Inventory_RaidTickets()}
     set {_uniqueStorage()._raidTickets = newValue}
   }
   /// Returns true if `raidTickets` has been explicitly set.
-  var hasRaidTickets: Bool {return _storage._raidTickets != nil}
+  public var hasRaidTickets: Bool {return _storage._raidTickets != nil}
   /// Clears the value of `raidTickets`. Subsequent reads from it will return its default value.
-  mutating func clearRaidTickets() {_uniqueStorage()._raidTickets = nil}
+  public mutating func clearRaidTickets() {_uniqueStorage()._raidTickets = nil}
 
-  var quests: POGOProtos_Data_Quests_Quests {
+  public var quests: POGOProtos_Data_Quests_Quests {
     get {return _storage._quests ?? POGOProtos_Data_Quests_Quests()}
     set {_uniqueStorage()._quests = newValue}
   }
   /// Returns true if `quests` has been explicitly set.
-  var hasQuests: Bool {return _storage._quests != nil}
+  public var hasQuests: Bool {return _storage._quests != nil}
   /// Clears the value of `quests`. Subsequent reads from it will return its default value.
-  mutating func clearQuests() {_uniqueStorage()._quests = nil}
+  public mutating func clearQuests() {_uniqueStorage()._quests = nil}
 
-  var giftBoxes: POGOProtos_Data_Gift_GiftBoxes {
+  public var giftBoxes: POGOProtos_Data_Gift_GiftBoxes {
     get {return _storage._giftBoxes ?? POGOProtos_Data_Gift_GiftBoxes()}
     set {_uniqueStorage()._giftBoxes = newValue}
   }
   /// Returns true if `giftBoxes` has been explicitly set.
-  var hasGiftBoxes: Bool {return _storage._giftBoxes != nil}
+  public var hasGiftBoxes: Bool {return _storage._giftBoxes != nil}
   /// Clears the value of `giftBoxes`. Subsequent reads from it will return its default value.
-  mutating func clearGiftBoxes() {_uniqueStorage()._giftBoxes = nil}
+  public mutating func clearGiftBoxes() {_uniqueStorage()._giftBoxes = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -171,8 +171,8 @@ struct POGOProtos_Inventory_InventoryItemData {
 fileprivate let _protobuf_package = "POGOProtos.Inventory"
 
 extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".InventoryItemData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".InventoryItemData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_data"),
     2: .same(proto: "item"),
     3: .standard(proto: "pokedex_entry"),
@@ -191,27 +191,27 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
   ]
 
   fileprivate class _StorageClass {
-    var _pokemonData: POGOProtos_Data_PokemonData? = nil
-    var _item: POGOProtos_Inventory_Item_ItemData? = nil
-    var _pokedexEntry: POGOProtos_Data_PokedexEntry? = nil
-    var _playerStats: POGOProtos_Data_Player_PlayerStats? = nil
-    var _playerCurrency: POGOProtos_Data_Player_PlayerCurrency? = nil
-    var _playerCamera: POGOProtos_Data_Player_PlayerCamera? = nil
-    var _inventoryUpgrades: POGOProtos_Inventory_InventoryUpgrades? = nil
-    var _appliedItems: POGOProtos_Inventory_AppliedItems? = nil
-    var _eggIncubators: POGOProtos_Inventory_EggIncubators? = nil
-    var _candy: POGOProtos_Inventory_Candy? = nil
-    var _quest: POGOProtos_Data_Quests_Quest? = nil
-    var _avatarItem: POGOProtos_Data_Avatar_AvatarItem? = nil
-    var _raidTickets: POGOProtos_Inventory_RaidTickets? = nil
-    var _quests: POGOProtos_Data_Quests_Quests? = nil
-    var _giftBoxes: POGOProtos_Data_Gift_GiftBoxes? = nil
+    public var _pokemonData: POGOProtos_Data_PokemonData? = nil
+    public var _item: POGOProtos_Inventory_Item_ItemData? = nil
+    public var _pokedexEntry: POGOProtos_Data_PokedexEntry? = nil
+    public var _playerStats: POGOProtos_Data_Player_PlayerStats? = nil
+    public var _playerCurrency: POGOProtos_Data_Player_PlayerCurrency? = nil
+    public var _playerCamera: POGOProtos_Data_Player_PlayerCamera? = nil
+    public var _inventoryUpgrades: POGOProtos_Inventory_InventoryUpgrades? = nil
+    public var _appliedItems: POGOProtos_Inventory_AppliedItems? = nil
+    public var _eggIncubators: POGOProtos_Inventory_EggIncubators? = nil
+    public var _candy: POGOProtos_Inventory_Candy? = nil
+    public var _quest: POGOProtos_Data_Quests_Quest? = nil
+    public var _avatarItem: POGOProtos_Data_Avatar_AvatarItem? = nil
+    public var _raidTickets: POGOProtos_Inventory_RaidTickets? = nil
+    public var _quests: POGOProtos_Data_Quests_Quests? = nil
+    public var _giftBoxes: POGOProtos_Data_Gift_GiftBoxes? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _pokemonData = source._pokemonData
       _item = source._item
       _pokedexEntry = source._pokedexEntry
@@ -237,7 +237,7 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -263,7 +263,7 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._pokemonData {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -314,7 +314,7 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Inventory_InventoryItemData, rhs: POGOProtos_Inventory_InventoryItemData) -> Bool {
+  public static func ==(lhs: POGOProtos_Inventory_InventoryItemData, rhs: POGOProtos_Inventory_InventoryItemData) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

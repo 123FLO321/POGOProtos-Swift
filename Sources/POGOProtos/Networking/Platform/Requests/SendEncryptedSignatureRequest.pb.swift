@@ -15,20 +15,20 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Requests_SendEncryptedSignatureRequest {
+public struct POGOProtos_Networking_Platform_Requests_SendEncryptedSignatureRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var encryptedSignature: Data = SwiftProtobuf.Internal.emptyData
+  public var encryptedSignature: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -36,12 +36,12 @@ struct POGOProtos_Networking_Platform_Requests_SendEncryptedSignatureRequest {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Requests"
 
 extension POGOProtos_Networking_Platform_Requests_SendEncryptedSignatureRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SendEncryptedSignatureRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".SendEncryptedSignatureRequest"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "encrypted_signature"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBytesField(value: &self.encryptedSignature)
@@ -50,14 +50,14 @@ extension POGOProtos_Networking_Platform_Requests_SendEncryptedSignatureRequest:
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.encryptedSignature.isEmpty {
       try visitor.visitSingularBytesField(value: self.encryptedSignature, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Requests_SendEncryptedSignatureRequest, rhs: POGOProtos_Networking_Platform_Requests_SendEncryptedSignatureRequest) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Requests_SendEncryptedSignatureRequest, rhs: POGOProtos_Networking_Platform_Requests_SendEncryptedSignatureRequest) -> Bool {
     if lhs.encryptedSignature != rhs.encryptedSignature {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

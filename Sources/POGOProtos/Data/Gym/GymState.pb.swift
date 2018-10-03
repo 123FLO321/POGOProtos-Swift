@@ -15,37 +15,37 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Gym_GymState {
+public struct POGOProtos_Data_Gym_GymState {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var fortData: POGOProtos_Map_Fort_FortData {
+  public var fortData: POGOProtos_Map_Fort_FortData {
     get {return _storage._fortData ?? POGOProtos_Map_Fort_FortData()}
     set {_uniqueStorage()._fortData = newValue}
   }
   /// Returns true if `fortData` has been explicitly set.
-  var hasFortData: Bool {return _storage._fortData != nil}
+  public var hasFortData: Bool {return _storage._fortData != nil}
   /// Clears the value of `fortData`. Subsequent reads from it will return its default value.
-  mutating func clearFortData() {_uniqueStorage()._fortData = nil}
+  public mutating func clearFortData() {_uniqueStorage()._fortData = nil}
 
-  var memberships: [POGOProtos_Data_Gym_GymMembership] {
+  public var memberships: [POGOProtos_Data_Gym_GymMembership] {
     get {return _storage._memberships}
     set {_uniqueStorage()._memberships = newValue}
   }
 
-  var deployLockout: Bool {
+  public var deployLockout: Bool {
     get {return _storage._deployLockout}
     set {_uniqueStorage()._deployLockout = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -55,23 +55,23 @@ struct POGOProtos_Data_Gym_GymState {
 fileprivate let _protobuf_package = "POGOProtos.Data.Gym"
 
 extension POGOProtos_Data_Gym_GymState: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GymState"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GymState"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "fort_data"),
     2: .same(proto: "memberships"),
     3: .standard(proto: "deploy_lockout"),
   ]
 
   fileprivate class _StorageClass {
-    var _fortData: POGOProtos_Map_Fort_FortData? = nil
-    var _memberships: [POGOProtos_Data_Gym_GymMembership] = []
-    var _deployLockout: Bool = false
+    public var _fortData: POGOProtos_Map_Fort_FortData? = nil
+    public var _memberships: [POGOProtos_Data_Gym_GymMembership] = []
+    public var _deployLockout: Bool = false
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _fortData = source._fortData
       _memberships = source._memberships
       _deployLockout = source._deployLockout
@@ -85,7 +85,7 @@ extension POGOProtos_Data_Gym_GymState: SwiftProtobuf.Message, SwiftProtobuf._Me
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -99,7 +99,7 @@ extension POGOProtos_Data_Gym_GymState: SwiftProtobuf.Message, SwiftProtobuf._Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._fortData {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -114,7 +114,7 @@ extension POGOProtos_Data_Gym_GymState: SwiftProtobuf.Message, SwiftProtobuf._Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Gym_GymState, rhs: POGOProtos_Data_Gym_GymState) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Gym_GymState, rhs: POGOProtos_Data_Gym_GymState) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

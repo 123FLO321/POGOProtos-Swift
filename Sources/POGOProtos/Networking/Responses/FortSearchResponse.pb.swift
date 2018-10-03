@@ -15,122 +15,122 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_FortSearchResponse {
+public struct POGOProtos_Networking_Responses_FortSearchResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_FortSearchResponse.Result {
+  public var result: POGOProtos_Networking_Responses_FortSearchResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var itemsAwarded: [POGOProtos_Inventory_Item_ItemAward] {
+  public var itemsAwarded: [POGOProtos_Inventory_Item_ItemAward] {
     get {return _storage._itemsAwarded}
     set {_uniqueStorage()._itemsAwarded = newValue}
   }
 
-  var gemsAwarded: Int32 {
+  public var gemsAwarded: Int32 {
     get {return _storage._gemsAwarded}
     set {_uniqueStorage()._gemsAwarded = newValue}
   }
 
-  var pokemonDataEgg: POGOProtos_Data_PokemonData {
+  public var pokemonDataEgg: POGOProtos_Data_PokemonData {
     get {return _storage._pokemonDataEgg ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._pokemonDataEgg = newValue}
   }
   /// Returns true if `pokemonDataEgg` has been explicitly set.
-  var hasPokemonDataEgg: Bool {return _storage._pokemonDataEgg != nil}
+  public var hasPokemonDataEgg: Bool {return _storage._pokemonDataEgg != nil}
   /// Clears the value of `pokemonDataEgg`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonDataEgg() {_uniqueStorage()._pokemonDataEgg = nil}
+  public mutating func clearPokemonDataEgg() {_uniqueStorage()._pokemonDataEgg = nil}
 
-  var experienceAwarded: Int32 {
+  public var experienceAwarded: Int32 {
     get {return _storage._experienceAwarded}
     set {_uniqueStorage()._experienceAwarded = newValue}
   }
 
-  var cooldownCompleteTimestampMs: Int64 {
+  public var cooldownCompleteTimestampMs: Int64 {
     get {return _storage._cooldownCompleteTimestampMs}
     set {_uniqueStorage()._cooldownCompleteTimestampMs = newValue}
   }
 
-  var chainHackSequenceNumber: Int32 {
+  public var chainHackSequenceNumber: Int32 {
     get {return _storage._chainHackSequenceNumber}
     set {_uniqueStorage()._chainHackSequenceNumber = newValue}
   }
 
-  var awardedGymBadge: POGOProtos_Data_Badge_AwardedGymBadge {
+  public var awardedGymBadge: POGOProtos_Data_Badge_AwardedGymBadge {
     get {return _storage._awardedGymBadge ?? POGOProtos_Data_Badge_AwardedGymBadge()}
     set {_uniqueStorage()._awardedGymBadge = newValue}
   }
   /// Returns true if `awardedGymBadge` has been explicitly set.
-  var hasAwardedGymBadge: Bool {return _storage._awardedGymBadge != nil}
+  public var hasAwardedGymBadge: Bool {return _storage._awardedGymBadge != nil}
   /// Clears the value of `awardedGymBadge`. Subsequent reads from it will return its default value.
-  mutating func clearAwardedGymBadge() {_uniqueStorage()._awardedGymBadge = nil}
+  public mutating func clearAwardedGymBadge() {_uniqueStorage()._awardedGymBadge = nil}
 
-  var loot: POGOProtos_Inventory_Loot {
+  public var loot: POGOProtos_Inventory_Loot {
     get {return _storage._loot ?? POGOProtos_Inventory_Loot()}
     set {_uniqueStorage()._loot = newValue}
   }
   /// Returns true if `loot` has been explicitly set.
-  var hasLoot: Bool {return _storage._loot != nil}
+  public var hasLoot: Bool {return _storage._loot != nil}
   /// Clears the value of `loot`. Subsequent reads from it will return its default value.
-  mutating func clearLoot() {_uniqueStorage()._loot = nil}
+  public mutating func clearLoot() {_uniqueStorage()._loot = nil}
 
-  var bonusLoot: POGOProtos_Inventory_Loot {
+  public var bonusLoot: POGOProtos_Inventory_Loot {
     get {return _storage._bonusLoot ?? POGOProtos_Inventory_Loot()}
     set {_uniqueStorage()._bonusLoot = newValue}
   }
   /// Returns true if `bonusLoot` has been explicitly set.
-  var hasBonusLoot: Bool {return _storage._bonusLoot != nil}
+  public var hasBonusLoot: Bool {return _storage._bonusLoot != nil}
   /// Clears the value of `bonusLoot`. Subsequent reads from it will return its default value.
-  mutating func clearBonusLoot() {_uniqueStorage()._bonusLoot = nil}
+  public mutating func clearBonusLoot() {_uniqueStorage()._bonusLoot = nil}
 
-  var raidTickets: Int32 {
+  public var raidTickets: Int32 {
     get {return _storage._raidTickets}
     set {_uniqueStorage()._raidTickets = newValue}
   }
 
-  var teamBonusLoot: POGOProtos_Inventory_Loot {
+  public var teamBonusLoot: POGOProtos_Inventory_Loot {
     get {return _storage._teamBonusLoot ?? POGOProtos_Inventory_Loot()}
     set {_uniqueStorage()._teamBonusLoot = newValue}
   }
   /// Returns true if `teamBonusLoot` has been explicitly set.
-  var hasTeamBonusLoot: Bool {return _storage._teamBonusLoot != nil}
+  public var hasTeamBonusLoot: Bool {return _storage._teamBonusLoot != nil}
   /// Clears the value of `teamBonusLoot`. Subsequent reads from it will return its default value.
-  mutating func clearTeamBonusLoot() {_uniqueStorage()._teamBonusLoot = nil}
+  public mutating func clearTeamBonusLoot() {_uniqueStorage()._teamBonusLoot = nil}
 
-  var fortID: String {
+  public var fortID: String {
     get {return _storage._fortID}
     set {_uniqueStorage()._fortID = newValue}
   }
 
-  var challengeQuest: POGOProtos_Data_Quests_ClientQuest {
+  public var challengeQuest: POGOProtos_Data_Quests_ClientQuest {
     get {return _storage._challengeQuest ?? POGOProtos_Data_Quests_ClientQuest()}
     set {_uniqueStorage()._challengeQuest = newValue}
   }
   /// Returns true if `challengeQuest` has been explicitly set.
-  var hasChallengeQuest: Bool {return _storage._challengeQuest != nil}
+  public var hasChallengeQuest: Bool {return _storage._challengeQuest != nil}
   /// Clears the value of `challengeQuest`. Subsequent reads from it will return its default value.
-  mutating func clearChallengeQuest() {_uniqueStorage()._challengeQuest = nil}
+  public mutating func clearChallengeQuest() {_uniqueStorage()._challengeQuest = nil}
 
-  var giftBox: POGOProtos_Data_Gift_GiftBox {
+  public var giftBox: POGOProtos_Data_Gift_GiftBox {
     get {return _storage._giftBox ?? POGOProtos_Data_Gift_GiftBox()}
     set {_uniqueStorage()._giftBox = newValue}
   }
   /// Returns true if `giftBox` has been explicitly set.
-  var hasGiftBox: Bool {return _storage._giftBox != nil}
+  public var hasGiftBox: Bool {return _storage._giftBox != nil}
   /// Clears the value of `giftBox`. Subsequent reads from it will return its default value.
-  mutating func clearGiftBox() {_uniqueStorage()._giftBox = nil}
+  public mutating func clearGiftBox() {_uniqueStorage()._giftBox = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case noResultSet // = 0
     case success // = 1
     case outOfRange // = 2
@@ -140,11 +140,11 @@ struct POGOProtos_Networking_Responses_FortSearchResponse {
     case poiInaccessible // = 6
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .noResultSet
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .noResultSet
       case 1: self = .success
@@ -157,7 +157,7 @@ struct POGOProtos_Networking_Responses_FortSearchResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .noResultSet: return 0
       case .success: return 1
@@ -172,7 +172,7 @@ struct POGOProtos_Networking_Responses_FortSearchResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -199,8 +199,8 @@ extension POGOProtos_Networking_Responses_FortSearchResponse.Result: CaseIterabl
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FortSearchResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FortSearchResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "items_awarded"),
     3: .standard(proto: "gems_awarded"),
@@ -219,27 +219,27 @@ extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Mess
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_FortSearchResponse.Result = .noResultSet
-    var _itemsAwarded: [POGOProtos_Inventory_Item_ItemAward] = []
-    var _gemsAwarded: Int32 = 0
-    var _pokemonDataEgg: POGOProtos_Data_PokemonData? = nil
-    var _experienceAwarded: Int32 = 0
-    var _cooldownCompleteTimestampMs: Int64 = 0
-    var _chainHackSequenceNumber: Int32 = 0
-    var _awardedGymBadge: POGOProtos_Data_Badge_AwardedGymBadge? = nil
-    var _loot: POGOProtos_Inventory_Loot? = nil
-    var _bonusLoot: POGOProtos_Inventory_Loot? = nil
-    var _raidTickets: Int32 = 0
-    var _teamBonusLoot: POGOProtos_Inventory_Loot? = nil
-    var _fortID: String = String()
-    var _challengeQuest: POGOProtos_Data_Quests_ClientQuest? = nil
-    var _giftBox: POGOProtos_Data_Gift_GiftBox? = nil
+    public var _result: POGOProtos_Networking_Responses_FortSearchResponse.Result = .noResultSet
+    public var _itemsAwarded: [POGOProtos_Inventory_Item_ItemAward] = []
+    public var _gemsAwarded: Int32 = 0
+    public var _pokemonDataEgg: POGOProtos_Data_PokemonData? = nil
+    public var _experienceAwarded: Int32 = 0
+    public var _cooldownCompleteTimestampMs: Int64 = 0
+    public var _chainHackSequenceNumber: Int32 = 0
+    public var _awardedGymBadge: POGOProtos_Data_Badge_AwardedGymBadge? = nil
+    public var _loot: POGOProtos_Inventory_Loot? = nil
+    public var _bonusLoot: POGOProtos_Inventory_Loot? = nil
+    public var _raidTickets: Int32 = 0
+    public var _teamBonusLoot: POGOProtos_Inventory_Loot? = nil
+    public var _fortID: String = String()
+    public var _challengeQuest: POGOProtos_Data_Quests_ClientQuest? = nil
+    public var _giftBox: POGOProtos_Data_Gift_GiftBox? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _itemsAwarded = source._itemsAwarded
       _gemsAwarded = source._gemsAwarded
@@ -265,7 +265,7 @@ extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Mess
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -291,7 +291,7 @@ extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Mess
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .noResultSet {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -342,7 +342,7 @@ extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_FortSearchResponse, rhs: POGOProtos_Networking_Responses_FortSearchResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_FortSearchResponse, rhs: POGOProtos_Networking_Responses_FortSearchResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -372,7 +372,7 @@ extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Mess
 }
 
 extension POGOProtos_Networking_Responses_FortSearchResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "NO_RESULT_SET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "OUT_OF_RANGE"),

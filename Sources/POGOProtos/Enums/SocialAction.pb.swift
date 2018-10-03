@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case unknownSocialAction // = 0
   case searchPlayer // = 10000
   case sendFriendInvite // = 10002
@@ -42,11 +42,11 @@ enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
   case getInbox // = 10105
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unknownSocialAction
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unknownSocialAction
     case 10000: self = .searchPlayer
@@ -71,7 +71,7 @@ enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unknownSocialAction: return 0
     case .searchPlayer: return 10000
@@ -130,7 +130,7 @@ extension POGOProtos_Enums_SocialAction: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_SocialAction: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNKNOWN_SOCIAL_ACTION"),
     10000: .same(proto: "SEARCH_PLAYER"),
     10002: .same(proto: "SEND_FRIEND_INVITE"),

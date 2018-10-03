@@ -15,20 +15,20 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_PasscodeSettings {
+public struct POGOProtos_Settings_PasscodeSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var showPasscodeInStore: Bool = false
+  public var showPasscodeInStore: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -36,12 +36,12 @@ struct POGOProtos_Settings_PasscodeSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings"
 
 extension POGOProtos_Settings_PasscodeSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PasscodeSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PasscodeSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "show_passcode_in_store"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.showPasscodeInStore)
@@ -50,14 +50,14 @@ extension POGOProtos_Settings_PasscodeSettings: SwiftProtobuf.Message, SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.showPasscodeInStore != false {
       try visitor.visitSingularBoolField(value: self.showPasscodeInStore, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_PasscodeSettings, rhs: POGOProtos_Settings_PasscodeSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_PasscodeSettings, rhs: POGOProtos_Settings_PasscodeSettings) -> Bool {
     if lhs.showPasscodeInStore != rhs.showPasscodeInStore {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

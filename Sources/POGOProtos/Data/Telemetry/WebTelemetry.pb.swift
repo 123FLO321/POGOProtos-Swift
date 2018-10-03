@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_WebTelemetry {
+public struct POGOProtos_Data_Telemetry_WebTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var webClickIds: POGOProtos_Enums_WebTelemetryIds = .undefinedWebEvent
+  public var webClickIds: POGOProtos_Enums_WebTelemetryIds = .undefinedWebEvent
 
-  var url: String = String()
+  public var url: String = String()
 
-  var fortID: String = String()
+  public var fortID: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Data_Telemetry_WebTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_WebTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".WebTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".WebTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "web_click_ids"),
     2: .same(proto: "url"),
     3: .standard(proto: "fort_id"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.webClickIds)
@@ -58,7 +58,7 @@ extension POGOProtos_Data_Telemetry_WebTelemetry: SwiftProtobuf.Message, SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.webClickIds != .undefinedWebEvent {
       try visitor.visitSingularEnumField(value: self.webClickIds, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Data_Telemetry_WebTelemetry: SwiftProtobuf.Message, SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_WebTelemetry, rhs: POGOProtos_Data_Telemetry_WebTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_WebTelemetry, rhs: POGOProtos_Data_Telemetry_WebTelemetry) -> Bool {
     if lhs.webClickIds != rhs.webClickIds {return false}
     if lhs.url != rhs.url {return false}
     if lhs.fortID != rhs.fortID {return false}

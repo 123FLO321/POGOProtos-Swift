@@ -15,47 +15,47 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_GetPlayerResponse {
+public struct POGOProtos_Networking_Responses_GetPlayerResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var success: Bool {
+  public var success: Bool {
     get {return _storage._success}
     set {_uniqueStorage()._success = newValue}
   }
 
-  var playerData: POGOProtos_Data_PlayerData {
+  public var playerData: POGOProtos_Data_PlayerData {
     get {return _storage._playerData ?? POGOProtos_Data_PlayerData()}
     set {_uniqueStorage()._playerData = newValue}
   }
   /// Returns true if `playerData` has been explicitly set.
-  var hasPlayerData: Bool {return _storage._playerData != nil}
+  public var hasPlayerData: Bool {return _storage._playerData != nil}
   /// Clears the value of `playerData`. Subsequent reads from it will return its default value.
-  mutating func clearPlayerData() {_uniqueStorage()._playerData = nil}
+  public mutating func clearPlayerData() {_uniqueStorage()._playerData = nil}
 
-  var banned: Bool {
+  public var banned: Bool {
     get {return _storage._banned}
     set {_uniqueStorage()._banned = newValue}
   }
 
-  var warn: Bool {
+  public var warn: Bool {
     get {return _storage._warn}
     set {_uniqueStorage()._warn = newValue}
   }
 
-  var wasCreated: Bool {
+  public var wasCreated: Bool {
     get {return _storage._wasCreated}
     set {_uniqueStorage()._wasCreated = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -65,8 +65,8 @@ struct POGOProtos_Networking_Responses_GetPlayerResponse {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetPlayerResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetPlayerResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "success"),
     2: .standard(proto: "player_data"),
     3: .same(proto: "banned"),
@@ -75,17 +75,17 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
   ]
 
   fileprivate class _StorageClass {
-    var _success: Bool = false
-    var _playerData: POGOProtos_Data_PlayerData? = nil
-    var _banned: Bool = false
-    var _warn: Bool = false
-    var _wasCreated: Bool = false
+    public var _success: Bool = false
+    public var _playerData: POGOProtos_Data_PlayerData? = nil
+    public var _banned: Bool = false
+    public var _warn: Bool = false
+    public var _wasCreated: Bool = false
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _success = source._success
       _playerData = source._playerData
       _banned = source._banned
@@ -101,7 +101,7 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -117,7 +117,7 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._success != false {
         try visitor.visitSingularBoolField(value: _storage._success, fieldNumber: 1)
@@ -138,7 +138,7 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetPlayerResponse, rhs: POGOProtos_Networking_Responses_GetPlayerResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetPlayerResponse, rhs: POGOProtos_Networking_Responses_GetPlayerResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

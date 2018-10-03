@@ -15,45 +15,45 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_AssetCache_JournalEntry {
+public struct POGOProtos_Data_AssetCache_JournalEntry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var addEntry: POGOProtos_Data_AssetCache_JournalAddEntry {
+  public var addEntry: POGOProtos_Data_AssetCache_JournalAddEntry {
     get {return _storage._addEntry ?? POGOProtos_Data_AssetCache_JournalAddEntry()}
     set {_uniqueStorage()._addEntry = newValue}
   }
   /// Returns true if `addEntry` has been explicitly set.
-  var hasAddEntry: Bool {return _storage._addEntry != nil}
+  public var hasAddEntry: Bool {return _storage._addEntry != nil}
   /// Clears the value of `addEntry`. Subsequent reads from it will return its default value.
-  mutating func clearAddEntry() {_uniqueStorage()._addEntry = nil}
+  public mutating func clearAddEntry() {_uniqueStorage()._addEntry = nil}
 
-  var readEntry: POGOProtos_Data_AssetCache_JournalReadEntry {
+  public var readEntry: POGOProtos_Data_AssetCache_JournalReadEntry {
     get {return _storage._readEntry ?? POGOProtos_Data_AssetCache_JournalReadEntry()}
     set {_uniqueStorage()._readEntry = newValue}
   }
   /// Returns true if `readEntry` has been explicitly set.
-  var hasReadEntry: Bool {return _storage._readEntry != nil}
+  public var hasReadEntry: Bool {return _storage._readEntry != nil}
   /// Clears the value of `readEntry`. Subsequent reads from it will return its default value.
-  mutating func clearReadEntry() {_uniqueStorage()._readEntry = nil}
+  public mutating func clearReadEntry() {_uniqueStorage()._readEntry = nil}
 
-  var removeEntry: POGOProtos_Data_AssetCache_JournalRemoveEntry {
+  public var removeEntry: POGOProtos_Data_AssetCache_JournalRemoveEntry {
     get {return _storage._removeEntry ?? POGOProtos_Data_AssetCache_JournalRemoveEntry()}
     set {_uniqueStorage()._removeEntry = newValue}
   }
   /// Returns true if `removeEntry` has been explicitly set.
-  var hasRemoveEntry: Bool {return _storage._removeEntry != nil}
+  public var hasRemoveEntry: Bool {return _storage._removeEntry != nil}
   /// Clears the value of `removeEntry`. Subsequent reads from it will return its default value.
-  mutating func clearRemoveEntry() {_uniqueStorage()._removeEntry = nil}
+  public mutating func clearRemoveEntry() {_uniqueStorage()._removeEntry = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -63,23 +63,23 @@ struct POGOProtos_Data_AssetCache_JournalEntry {
 fileprivate let _protobuf_package = "POGOProtos.Data.AssetCache"
 
 extension POGOProtos_Data_AssetCache_JournalEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".JournalEntry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".JournalEntry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "add_entry"),
     2: .standard(proto: "read_entry"),
     3: .standard(proto: "remove_entry"),
   ]
 
   fileprivate class _StorageClass {
-    var _addEntry: POGOProtos_Data_AssetCache_JournalAddEntry? = nil
-    var _readEntry: POGOProtos_Data_AssetCache_JournalReadEntry? = nil
-    var _removeEntry: POGOProtos_Data_AssetCache_JournalRemoveEntry? = nil
+    public var _addEntry: POGOProtos_Data_AssetCache_JournalAddEntry? = nil
+    public var _readEntry: POGOProtos_Data_AssetCache_JournalReadEntry? = nil
+    public var _removeEntry: POGOProtos_Data_AssetCache_JournalRemoveEntry? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _addEntry = source._addEntry
       _readEntry = source._readEntry
       _removeEntry = source._removeEntry
@@ -93,7 +93,7 @@ extension POGOProtos_Data_AssetCache_JournalEntry: SwiftProtobuf.Message, SwiftP
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -107,7 +107,7 @@ extension POGOProtos_Data_AssetCache_JournalEntry: SwiftProtobuf.Message, SwiftP
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._addEntry {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -122,7 +122,7 @@ extension POGOProtos_Data_AssetCache_JournalEntry: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_AssetCache_JournalEntry, rhs: POGOProtos_Data_AssetCache_JournalEntry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_AssetCache_JournalEntry, rhs: POGOProtos_Data_AssetCache_JournalEntry) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

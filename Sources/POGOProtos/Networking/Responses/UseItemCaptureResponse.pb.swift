@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_UseItemCaptureResponse {
+public struct POGOProtos_Networking_Responses_UseItemCaptureResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var success: Bool = false
+  public var success: Bool = false
 
-  var itemCaptureMult: Double = 0
+  public var itemCaptureMult: Double = 0
 
-  var itemFleeMult: Double = 0
+  public var itemFleeMult: Double = 0
 
-  var stopMovement: Bool = false
+  public var stopMovement: Bool = false
 
-  var stopAttack: Bool = false
+  public var stopAttack: Bool = false
 
-  var targetMax: Bool = false
+  public var targetMax: Bool = false
 
-  var targetSlow: Bool = false
+  public var targetSlow: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -48,8 +48,8 @@ struct POGOProtos_Networking_Responses_UseItemCaptureResponse {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_UseItemCaptureResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UseItemCaptureResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".UseItemCaptureResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "success"),
     2: .standard(proto: "item_capture_mult"),
     3: .standard(proto: "item_flee_mult"),
@@ -59,7 +59,7 @@ extension POGOProtos_Networking_Responses_UseItemCaptureResponse: SwiftProtobuf.
     7: .standard(proto: "target_slow"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.success)
@@ -74,7 +74,7 @@ extension POGOProtos_Networking_Responses_UseItemCaptureResponse: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.success != false {
       try visitor.visitSingularBoolField(value: self.success, fieldNumber: 1)
     }
@@ -99,7 +99,7 @@ extension POGOProtos_Networking_Responses_UseItemCaptureResponse: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_UseItemCaptureResponse, rhs: POGOProtos_Networking_Responses_UseItemCaptureResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_UseItemCaptureResponse, rhs: POGOProtos_Networking_Responses_UseItemCaptureResponse) -> Bool {
     if lhs.success != rhs.success {return false}
     if lhs.itemCaptureMult != rhs.itemCaptureMult {return false}
     if lhs.itemFleeMult != rhs.itemFleeMult {return false}

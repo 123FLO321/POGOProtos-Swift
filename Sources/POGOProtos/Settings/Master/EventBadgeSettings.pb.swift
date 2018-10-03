@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_EventBadgeSettings {
+public struct POGOProtos_Settings_Master_EventBadgeSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var validFromMs: Int64 = 0
+  public var validFromMs: Int64 = 0
 
-  var validToMs: Int64 = 0
+  public var validToMs: Int64 = 0
 
-  var mutuallyExclusiveBadges: [POGOProtos_Enums_BadgeType] = []
+  public var mutuallyExclusiveBadges: [POGOProtos_Enums_BadgeType] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Settings_Master_EventBadgeSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_EventBadgeSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EventBadgeSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EventBadgeSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "valid_from_ms"),
     2: .standard(proto: "valid_to_ms"),
     3: .standard(proto: "mutually_exclusive_badges"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.validFromMs)
@@ -58,7 +58,7 @@ extension POGOProtos_Settings_Master_EventBadgeSettings: SwiftProtobuf.Message, 
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.validFromMs != 0 {
       try visitor.visitSingularInt64Field(value: self.validFromMs, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Settings_Master_EventBadgeSettings: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_EventBadgeSettings, rhs: POGOProtos_Settings_Master_EventBadgeSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_EventBadgeSettings, rhs: POGOProtos_Settings_Master_EventBadgeSettings) -> Bool {
     if lhs.validFromMs != rhs.validFromMs {return false}
     if lhs.validToMs != rhs.validToMs {return false}
     if lhs.mutuallyExclusiveBadges != rhs.mutuallyExclusiveBadges {return false}

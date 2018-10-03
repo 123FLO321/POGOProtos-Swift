@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case unset // = 0
   case holiday2016 // = 1
   case anniversary // = 2
@@ -29,11 +29,11 @@ enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
   case summer2018 // = 5
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unset
     case 1: self = .holiday2016
@@ -45,7 +45,7 @@ enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unset: return 0
     case .holiday2016: return 1
@@ -78,7 +78,7 @@ extension POGOProtos_Enums_Costume: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_Costume: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "COSTUME_UNSET"),
     1: .same(proto: "HOLIDAY_2016"),
     2: .same(proto: "ANNIVERSARY"),

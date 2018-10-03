@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Login_ListLoginActionResponse {
+public struct POGOProtos_Data_Login_ListLoginActionResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var success: Bool = false
+  public var success: Bool = false
 
-  var loginDetail: [POGOProtos_Data_Login_LoginDetail] = []
+  public var loginDetail: [POGOProtos_Data_Login_LoginDetail] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Data_Login_ListLoginActionResponse {
 fileprivate let _protobuf_package = "POGOProtos.Data.Login"
 
 extension POGOProtos_Data_Login_ListLoginActionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ListLoginActionResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ListLoginActionResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "success"),
     2: .standard(proto: "login_detail"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.success)
@@ -54,7 +54,7 @@ extension POGOProtos_Data_Login_ListLoginActionResponse: SwiftProtobuf.Message, 
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.success != false {
       try visitor.visitSingularBoolField(value: self.success, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Data_Login_ListLoginActionResponse: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Login_ListLoginActionResponse, rhs: POGOProtos_Data_Login_ListLoginActionResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Login_ListLoginActionResponse, rhs: POGOProtos_Data_Login_ListLoginActionResponse) -> Bool {
     if lhs.success != rhs.success {return false}
     if lhs.loginDetail != rhs.loginDetail {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -15,28 +15,28 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Player_PlayerBadge {
+public struct POGOProtos_Data_Player_PlayerBadge {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var badgeType: POGOProtos_Enums_BadgeType = .badgeUnset
+  public var badgeType: POGOProtos_Enums_BadgeType = .badgeUnset
 
-  var rank: Int32 = 0
+  public var rank: Int32 = 0
 
-  var startValue: Int32 = 0
+  public var startValue: Int32 = 0
 
-  var endValue: Int32 = 0
+  public var endValue: Int32 = 0
 
-  var currentValue: Double = 0
+  public var currentValue: Double = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,8 +44,8 @@ struct POGOProtos_Data_Player_PlayerBadge {
 fileprivate let _protobuf_package = "POGOProtos.Data.Player"
 
 extension POGOProtos_Data_Player_PlayerBadge: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlayerBadge"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlayerBadge"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "badge_type"),
     2: .same(proto: "rank"),
     3: .standard(proto: "start_value"),
@@ -53,7 +53,7 @@ extension POGOProtos_Data_Player_PlayerBadge: SwiftProtobuf.Message, SwiftProtob
     5: .standard(proto: "current_value"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.badgeType)
@@ -66,7 +66,7 @@ extension POGOProtos_Data_Player_PlayerBadge: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.badgeType != .badgeUnset {
       try visitor.visitSingularEnumField(value: self.badgeType, fieldNumber: 1)
     }
@@ -85,7 +85,7 @@ extension POGOProtos_Data_Player_PlayerBadge: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Player_PlayerBadge, rhs: POGOProtos_Data_Player_PlayerBadge) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Player_PlayerBadge, rhs: POGOProtos_Data_Player_PlayerBadge) -> Bool {
     if lhs.badgeType != rhs.badgeType {return false}
     if lhs.rank != rhs.rank {return false}
     if lhs.startValue != rhs.startValue {return false}

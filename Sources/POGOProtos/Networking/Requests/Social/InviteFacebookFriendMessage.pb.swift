@@ -15,20 +15,20 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage {
+public struct POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var businessToken: String = String()
+  public var businessToken: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -36,12 +36,12 @@ struct POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Social"
 
 extension POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".InviteFacebookFriendMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".InviteFacebookFriendMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "business_token"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.businessToken)
@@ -50,14 +50,14 @@ extension POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage: Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.businessToken.isEmpty {
       try visitor.visitSingularStringField(value: self.businessToken, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage, rhs: POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage, rhs: POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage) -> Bool {
     if lhs.businessToken != rhs.businessToken {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

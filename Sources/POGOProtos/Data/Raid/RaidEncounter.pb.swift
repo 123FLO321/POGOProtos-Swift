@@ -15,61 +15,61 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Raid_RaidEncounter {
+public struct POGOProtos_Data_Raid_RaidEncounter {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemon: POGOProtos_Data_PokemonData {
+  public var pokemon: POGOProtos_Data_PokemonData {
     get {return _storage._pokemon ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._pokemon = newValue}
   }
   /// Returns true if `pokemon` has been explicitly set.
-  var hasPokemon: Bool {return _storage._pokemon != nil}
+  public var hasPokemon: Bool {return _storage._pokemon != nil}
   /// Clears the value of `pokemon`. Subsequent reads from it will return its default value.
-  mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
+  public mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
 
-  var encounterID: Int64 {
+  public var encounterID: Int64 {
     get {return _storage._encounterID}
     set {_uniqueStorage()._encounterID = newValue}
   }
 
-  var spawnpointID: String {
+  public var spawnpointID: String {
     get {return _storage._spawnpointID}
     set {_uniqueStorage()._spawnpointID = newValue}
   }
 
-  var captureProbabilities: POGOProtos_Data_Capture_CaptureProbability {
+  public var captureProbabilities: POGOProtos_Data_Capture_CaptureProbability {
     get {return _storage._captureProbabilities ?? POGOProtos_Data_Capture_CaptureProbability()}
     set {_uniqueStorage()._captureProbabilities = newValue}
   }
   /// Returns true if `captureProbabilities` has been explicitly set.
-  var hasCaptureProbabilities: Bool {return _storage._captureProbabilities != nil}
+  public var hasCaptureProbabilities: Bool {return _storage._captureProbabilities != nil}
   /// Clears the value of `captureProbabilities`. Subsequent reads from it will return its default value.
-  mutating func clearCaptureProbabilities() {_uniqueStorage()._captureProbabilities = nil}
+  public mutating func clearCaptureProbabilities() {_uniqueStorage()._captureProbabilities = nil}
 
-  var throwsRemaining: Int32 {
+  public var throwsRemaining: Int32 {
     get {return _storage._throwsRemaining}
     set {_uniqueStorage()._throwsRemaining = newValue}
   }
 
-  var raidLevel: POGOProtos_Enums_RaidLevel {
+  public var raidLevel: POGOProtos_Enums_RaidLevel {
     get {return _storage._raidLevel}
     set {_uniqueStorage()._raidLevel = newValue}
   }
 
-  var fortID: String {
+  public var fortID: String {
     get {return _storage._fortID}
     set {_uniqueStorage()._fortID = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -79,8 +79,8 @@ struct POGOProtos_Data_Raid_RaidEncounter {
 fileprivate let _protobuf_package = "POGOProtos.Data.Raid"
 
 extension POGOProtos_Data_Raid_RaidEncounter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RaidEncounter"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RaidEncounter"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pokemon"),
     2: .standard(proto: "encounter_id"),
     3: .standard(proto: "spawnpoint_id"),
@@ -91,19 +91,19 @@ extension POGOProtos_Data_Raid_RaidEncounter: SwiftProtobuf.Message, SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    var _pokemon: POGOProtos_Data_PokemonData? = nil
-    var _encounterID: Int64 = 0
-    var _spawnpointID: String = String()
-    var _captureProbabilities: POGOProtos_Data_Capture_CaptureProbability? = nil
-    var _throwsRemaining: Int32 = 0
-    var _raidLevel: POGOProtos_Enums_RaidLevel = .unset
-    var _fortID: String = String()
+    public var _pokemon: POGOProtos_Data_PokemonData? = nil
+    public var _encounterID: Int64 = 0
+    public var _spawnpointID: String = String()
+    public var _captureProbabilities: POGOProtos_Data_Capture_CaptureProbability? = nil
+    public var _throwsRemaining: Int32 = 0
+    public var _raidLevel: POGOProtos_Enums_RaidLevel = .unset
+    public var _fortID: String = String()
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _pokemon = source._pokemon
       _encounterID = source._encounterID
       _spawnpointID = source._spawnpointID
@@ -121,7 +121,7 @@ extension POGOProtos_Data_Raid_RaidEncounter: SwiftProtobuf.Message, SwiftProtob
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -139,7 +139,7 @@ extension POGOProtos_Data_Raid_RaidEncounter: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._pokemon {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -166,7 +166,7 @@ extension POGOProtos_Data_Raid_RaidEncounter: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Raid_RaidEncounter, rhs: POGOProtos_Data_Raid_RaidEncounter) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Raid_RaidEncounter, rhs: POGOProtos_Data_Raid_RaidEncounter) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

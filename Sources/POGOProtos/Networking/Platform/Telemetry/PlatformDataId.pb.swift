@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Telemetry_PlatformDataId {
+public struct POGOProtos_Networking_Platform_Telemetry_PlatformDataId {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var telemetryID: Int32 = 0
+  public var telemetryID: Int32 = 0
 
-  var telemetryDomainID: POGOProtos_Networking_Platform_Telemetry_TelemetryDomainId = .telemetryNoDomainID
+  public var telemetryDomainID: POGOProtos_Networking_Platform_Telemetry_TelemetryDomainId = .telemetryNoDomainID
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Networking_Platform_Telemetry_PlatformDataId {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Telemetry"
 
 extension POGOProtos_Networking_Platform_Telemetry_PlatformDataId: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlatformDataId"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlatformDataId"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "telemetry_id"),
     2: .standard(proto: "telemetry_domain_id"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.telemetryID)
@@ -54,7 +54,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformDataId: SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.telemetryID != 0 {
       try visitor.visitSingularInt32Field(value: self.telemetryID, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformDataId: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_PlatformDataId, rhs: POGOProtos_Networking_Platform_Telemetry_PlatformDataId) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_PlatformDataId, rhs: POGOProtos_Networking_Platform_Telemetry_PlatformDataId) -> Bool {
     if lhs.telemetryID != rhs.telemetryID {return false}
     if lhs.telemetryDomainID != rhs.telemetryDomainID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -15,30 +15,30 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings {
+public struct POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var minPointsToReach: Int32 = 0
+  public var minPointsToReach: Int32 = 0
 
-  var milestoneXpReward: Int32 = 0
+  public var milestoneXpReward: Int32 = 0
 
-  var attackBonusPercentage: Float = 0
+  public var attackBonusPercentage: Float = 0
 
-  var raidBallBonus: Int32 = 0
+  public var raidBallBonus: Int32 = 0
 
-  var unlockedTrading: [POGOProtos_Enums_PokemonTradingType] = []
+  public var unlockedTrading: [POGOProtos_Enums_PokemonTradingType] = []
 
-  var tradingDiscount: Float = 0
+  public var tradingDiscount: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -46,8 +46,8 @@ struct POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FriendshipLevelMilestoneSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FriendshipLevelMilestoneSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "min_points_to_reach"),
     2: .standard(proto: "milestone_xp_reward"),
     3: .standard(proto: "attack_bonus_percentage"),
@@ -56,7 +56,7 @@ extension POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings: SwiftProt
     6: .standard(proto: "trading_discount"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.minPointsToReach)
@@ -70,7 +70,7 @@ extension POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings: SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.minPointsToReach != 0 {
       try visitor.visitSingularInt32Field(value: self.minPointsToReach, fieldNumber: 1)
     }
@@ -92,7 +92,7 @@ extension POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings, rhs: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings, rhs: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings) -> Bool {
     if lhs.minPointsToReach != rhs.minPointsToReach {return false}
     if lhs.milestoneXpReward != rhs.milestoneXpReward {return false}
     if lhs.attackBonusPercentage != rhs.attackBonusPercentage {return false}

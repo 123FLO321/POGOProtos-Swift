@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_GetInboxMessage {
+public struct POGOProtos_Networking_Requests_Messages_GetInboxMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var isHistory: Bool = false
+  public var isHistory: Bool = false
 
-  var isReverse: Bool = false
+  public var isReverse: Bool = false
 
-  var notBeforeMs: Int64 = 0
+  public var notBeforeMs: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Networking_Requests_Messages_GetInboxMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_GetInboxMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetInboxMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetInboxMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "is_history"),
     2: .standard(proto: "is_reverse"),
     3: .standard(proto: "not_before_ms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.isHistory)
@@ -58,7 +58,7 @@ extension POGOProtos_Networking_Requests_Messages_GetInboxMessage: SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.isHistory != false {
       try visitor.visitSingularBoolField(value: self.isHistory, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Networking_Requests_Messages_GetInboxMessage: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetInboxMessage, rhs: POGOProtos_Networking_Requests_Messages_GetInboxMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetInboxMessage, rhs: POGOProtos_Networking_Requests_Messages_GetInboxMessage) -> Bool {
     if lhs.isHistory != rhs.isHistory {return false}
     if lhs.isReverse != rhs.isReverse {return false}
     if lhs.notBeforeMs != rhs.notBeforeMs {return false}

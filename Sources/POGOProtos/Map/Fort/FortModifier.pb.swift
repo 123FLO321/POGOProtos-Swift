@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Map_Fort_FortModifier {
+public struct POGOProtos_Map_Fort_FortModifier {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+  public var itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-  var expirationTimestampMs: Int64 = 0
+  public var expirationTimestampMs: Int64 = 0
 
-  var deployerPlayerCodename: String = String()
+  public var deployerPlayerCodename: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Map_Fort_FortModifier {
 fileprivate let _protobuf_package = "POGOProtos.Map.Fort"
 
 extension POGOProtos_Map_Fort_FortModifier: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FortModifier"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FortModifier"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "item_id"),
     2: .standard(proto: "expiration_timestamp_ms"),
     3: .standard(proto: "deployer_player_codename"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.itemID)
@@ -58,7 +58,7 @@ extension POGOProtos_Map_Fort_FortModifier: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.itemID != .itemUnknown {
       try visitor.visitSingularEnumField(value: self.itemID, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Map_Fort_FortModifier: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_Fort_FortModifier, rhs: POGOProtos_Map_Fort_FortModifier) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_Fort_FortModifier, rhs: POGOProtos_Map_Fort_FortModifier) -> Bool {
     if lhs.itemID != rhs.itemID {return false}
     if lhs.expirationTimestampMs != rhs.expirationTimestampMs {return false}
     if lhs.deployerPlayerCodename != rhs.deployerPlayerCodename {return false}

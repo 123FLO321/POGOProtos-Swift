@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_Quest_DailyQuestSettings {
+public struct POGOProtos_Settings_Master_Quest_DailyQuestSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var bucketsPerDay: Int32 = 0
+  public var bucketsPerDay: Int32 = 0
 
-  var streakLength: Int32 = 0
+  public var streakLength: Int32 = 0
 
-  var bonusMultiplier: Float = 0
+  public var bonusMultiplier: Float = 0
 
-  var streakBonusMultiplier: Float = 0
+  public var streakBonusMultiplier: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Settings_Master_Quest_DailyQuestSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master.Quest"
 
 extension POGOProtos_Settings_Master_Quest_DailyQuestSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DailyQuestSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".DailyQuestSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "buckets_per_day"),
     2: .standard(proto: "streak_length"),
     3: .standard(proto: "bonus_multiplier"),
     4: .standard(proto: "streak_bonus_multiplier"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.bucketsPerDay)
@@ -62,7 +62,7 @@ extension POGOProtos_Settings_Master_Quest_DailyQuestSettings: SwiftProtobuf.Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.bucketsPerDay != 0 {
       try visitor.visitSingularInt32Field(value: self.bucketsPerDay, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Settings_Master_Quest_DailyQuestSettings: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_Quest_DailyQuestSettings, rhs: POGOProtos_Settings_Master_Quest_DailyQuestSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Quest_DailyQuestSettings, rhs: POGOProtos_Settings_Master_Quest_DailyQuestSettings) -> Bool {
     if lhs.bucketsPerDay != rhs.bucketsPerDay {return false}
     if lhs.streakLength != rhs.streakLength {return false}
     if lhs.bonusMultiplier != rhs.bonusMultiplier {return false}

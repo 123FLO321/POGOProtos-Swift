@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case familyUnset // = 0
   case familyBulbasaur // = 1
   case familyCharmander // = 4
@@ -229,11 +229,11 @@ enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
   case familyDeoxys // = 386
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .familyUnset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .familyUnset
     case 1: self = .familyBulbasaur
@@ -445,7 +445,7 @@ enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .familyUnset: return 0
     case .familyBulbasaur: return 1
@@ -878,7 +878,7 @@ extension POGOProtos_Enums_PokemonFamilyId: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "FAMILY_UNSET"),
     1: .same(proto: "FAMILY_BULBASAUR"),
     4: .same(proto: "FAMILY_CHARMANDER"),

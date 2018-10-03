@@ -15,71 +15,71 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Quests_QuestReward {
+public struct POGOProtos_Data_Quests_QuestReward {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var type: POGOProtos_Data_Quests_QuestReward.TypeEnum {
+  public var type: POGOProtos_Data_Quests_QuestReward.TypeEnum {
     get {return _storage._type}
     set {_uniqueStorage()._type = newValue}
   }
 
-  var exp: Int32 {
+  public var exp: Int32 {
     get {return _storage._exp}
     set {_uniqueStorage()._exp = newValue}
   }
 
-  var item: POGOProtos_Data_Quests_QuestReward.ItemReward {
+  public var item: POGOProtos_Data_Quests_QuestReward.ItemReward {
     get {return _storage._item ?? POGOProtos_Data_Quests_QuestReward.ItemReward()}
     set {_uniqueStorage()._item = newValue}
   }
   /// Returns true if `item` has been explicitly set.
-  var hasItem: Bool {return _storage._item != nil}
+  public var hasItem: Bool {return _storage._item != nil}
   /// Clears the value of `item`. Subsequent reads from it will return its default value.
-  mutating func clearItem() {_uniqueStorage()._item = nil}
+  public mutating func clearItem() {_uniqueStorage()._item = nil}
 
-  var stardust: Int32 {
+  public var stardust: Int32 {
     get {return _storage._stardust}
     set {_uniqueStorage()._stardust = newValue}
   }
 
-  var candy: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward {
+  public var candy: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward {
     get {return _storage._candy ?? POGOProtos_Data_Quests_QuestReward.PokemonCandyReward()}
     set {_uniqueStorage()._candy = newValue}
   }
   /// Returns true if `candy` has been explicitly set.
-  var hasCandy: Bool {return _storage._candy != nil}
+  public var hasCandy: Bool {return _storage._candy != nil}
   /// Clears the value of `candy`. Subsequent reads from it will return its default value.
-  mutating func clearCandy() {_uniqueStorage()._candy = nil}
+  public mutating func clearCandy() {_uniqueStorage()._candy = nil}
 
-  var avatarTemplateID: String {
+  public var avatarTemplateID: String {
     get {return _storage._avatarTemplateID}
     set {_uniqueStorage()._avatarTemplateID = newValue}
   }
 
-  var questTemplateID: String {
+  public var questTemplateID: String {
     get {return _storage._questTemplateID}
     set {_uniqueStorage()._questTemplateID = newValue}
   }
 
-  var pokemonEncounter: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward {
+  public var pokemonEncounter: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward {
     get {return _storage._pokemonEncounter ?? POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward()}
     set {_uniqueStorage()._pokemonEncounter = newValue}
   }
   /// Returns true if `pokemonEncounter` has been explicitly set.
-  var hasPokemonEncounter: Bool {return _storage._pokemonEncounter != nil}
+  public var hasPokemonEncounter: Bool {return _storage._pokemonEncounter != nil}
   /// Clears the value of `pokemonEncounter`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonEncounter() {_uniqueStorage()._pokemonEncounter = nil}
+  public mutating func clearPokemonEncounter() {_uniqueStorage()._pokemonEncounter = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum TypeEnum: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum TypeEnum: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case experience // = 1
     case item // = 2
@@ -90,11 +90,11 @@ struct POGOProtos_Data_Quests_QuestReward {
     case pokemonEncounter // = 7
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .experience
@@ -108,7 +108,7 @@ struct POGOProtos_Data_Quests_QuestReward {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .experience: return 1
@@ -124,80 +124,80 @@ struct POGOProtos_Data_Quests_QuestReward {
 
   }
 
-  struct ItemReward {
+  public struct ItemReward {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    public var item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-    var amount: Int32 = 0
+    public var amount: Int32 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct PokemonCandyReward {
+  public struct PokemonCandyReward {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    public var pokemonID: POGOProtos_Enums_PokemonId = .missingno
 
-    var amount: Int32 = 0
+    public var amount: Int32 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct PokemonEncounterReward {
+  public struct PokemonEncounterReward {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var pokemonID: POGOProtos_Enums_PokemonId {
+    public var pokemonID: POGOProtos_Enums_PokemonId {
       get {return _storage._pokemonID}
       set {_uniqueStorage()._pokemonID = newValue}
     }
 
-    var useQuestPokemonEncounterDistribuition: Bool {
+    public var useQuestPokemonEncounterDistribuition: Bool {
       get {return _storage._useQuestPokemonEncounterDistribuition}
       set {_uniqueStorage()._useQuestPokemonEncounterDistribuition = newValue}
     }
 
-    var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
+    public var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
       get {return _storage._pokemonDisplay ?? POGOProtos_Data_PokemonDisplay()}
       set {_uniqueStorage()._pokemonDisplay = newValue}
     }
     /// Returns true if `pokemonDisplay` has been explicitly set.
-    var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
+    public var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
     /// Clears the value of `pokemonDisplay`. Subsequent reads from it will return its default value.
-    mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
+    public mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
 
-    var isHiddenDitto: Bool {
+    public var isHiddenDitto: Bool {
       get {return _storage._isHiddenDitto}
       set {_uniqueStorage()._isHiddenDitto = newValue}
     }
 
-    var dittoDisplay: POGOProtos_Data_PokemonDisplay {
+    public var dittoDisplay: POGOProtos_Data_PokemonDisplay {
       get {return _storage._dittoDisplay ?? POGOProtos_Data_PokemonDisplay()}
       set {_uniqueStorage()._dittoDisplay = newValue}
     }
     /// Returns true if `dittoDisplay` has been explicitly set.
-    var hasDittoDisplay: Bool {return _storage._dittoDisplay != nil}
+    public var hasDittoDisplay: Bool {return _storage._dittoDisplay != nil}
     /// Clears the value of `dittoDisplay`. Subsequent reads from it will return its default value.
-    mutating func clearDittoDisplay() {_uniqueStorage()._dittoDisplay = nil}
+    public mutating func clearDittoDisplay() {_uniqueStorage()._dittoDisplay = nil}
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
     fileprivate var _storage = _StorageClass.defaultInstance
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -225,8 +225,8 @@ extension POGOProtos_Data_Quests_QuestReward.TypeEnum: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Data.Quests"
 
 extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QuestReward"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".QuestReward"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "type"),
     2: .same(proto: "exp"),
     3: .same(proto: "item"),
@@ -238,20 +238,20 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    var _type: POGOProtos_Data_Quests_QuestReward.TypeEnum = .unset
-    var _exp: Int32 = 0
-    var _item: POGOProtos_Data_Quests_QuestReward.ItemReward? = nil
-    var _stardust: Int32 = 0
-    var _candy: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward? = nil
-    var _avatarTemplateID: String = String()
-    var _questTemplateID: String = String()
-    var _pokemonEncounter: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward? = nil
+    public var _type: POGOProtos_Data_Quests_QuestReward.TypeEnum = .unset
+    public var _exp: Int32 = 0
+    public var _item: POGOProtos_Data_Quests_QuestReward.ItemReward? = nil
+    public var _stardust: Int32 = 0
+    public var _candy: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward? = nil
+    public var _avatarTemplateID: String = String()
+    public var _questTemplateID: String = String()
+    public var _pokemonEncounter: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _type = source._type
       _exp = source._exp
       _item = source._item
@@ -270,7 +270,7 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -289,7 +289,7 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._type != .unset {
         try visitor.visitSingularEnumField(value: _storage._type, fieldNumber: 1)
@@ -319,7 +319,7 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestReward, rhs: POGOProtos_Data_Quests_QuestReward) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestReward, rhs: POGOProtos_Data_Quests_QuestReward) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -342,7 +342,7 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
 }
 
 extension POGOProtos_Data_Quests_QuestReward.TypeEnum: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "EXPERIENCE"),
     2: .same(proto: "ITEM"),
@@ -355,13 +355,13 @@ extension POGOProtos_Data_Quests_QuestReward.TypeEnum: SwiftProtobuf._ProtoNameP
 }
 
 extension POGOProtos_Data_Quests_QuestReward.ItemReward: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestReward.protoMessageName + ".ItemReward"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestReward.protoMessageName + ".ItemReward"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "item"),
     2: .same(proto: "amount"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.item)
@@ -371,7 +371,7 @@ extension POGOProtos_Data_Quests_QuestReward.ItemReward: SwiftProtobuf.Message, 
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.item != .itemUnknown {
       try visitor.visitSingularEnumField(value: self.item, fieldNumber: 1)
     }
@@ -381,7 +381,7 @@ extension POGOProtos_Data_Quests_QuestReward.ItemReward: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestReward.ItemReward, rhs: POGOProtos_Data_Quests_QuestReward.ItemReward) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestReward.ItemReward, rhs: POGOProtos_Data_Quests_QuestReward.ItemReward) -> Bool {
     if lhs.item != rhs.item {return false}
     if lhs.amount != rhs.amount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -390,13 +390,13 @@ extension POGOProtos_Data_Quests_QuestReward.ItemReward: SwiftProtobuf.Message, 
 }
 
 extension POGOProtos_Data_Quests_QuestReward.PokemonCandyReward: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestReward.protoMessageName + ".PokemonCandyReward"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestReward.protoMessageName + ".PokemonCandyReward"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_id"),
     2: .same(proto: "amount"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.pokemonID)
@@ -406,7 +406,7 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonCandyReward: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemonID != .missingno {
       try visitor.visitSingularEnumField(value: self.pokemonID, fieldNumber: 1)
     }
@@ -416,7 +416,7 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonCandyReward: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward, rhs: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward, rhs: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward) -> Bool {
     if lhs.pokemonID != rhs.pokemonID {return false}
     if lhs.amount != rhs.amount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -425,8 +425,8 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonCandyReward: SwiftProtobuf.M
 }
 
 extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestReward.protoMessageName + ".PokemonEncounterReward"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestReward.protoMessageName + ".PokemonEncounterReward"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_id"),
     2: .standard(proto: "use_quest_pokemon_encounter_distribuition"),
     3: .standard(proto: "pokemon_display"),
@@ -435,17 +435,17 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    var _useQuestPokemonEncounterDistribuition: Bool = false
-    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-    var _isHiddenDitto: Bool = false
-    var _dittoDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    public var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    public var _useQuestPokemonEncounterDistribuition: Bool = false
+    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    public var _isHiddenDitto: Bool = false
+    public var _dittoDisplay: POGOProtos_Data_PokemonDisplay? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _pokemonID = source._pokemonID
       _useQuestPokemonEncounterDistribuition = source._useQuestPokemonEncounterDistribuition
       _pokemonDisplay = source._pokemonDisplay
@@ -461,7 +461,7 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtob
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -477,7 +477,7 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._pokemonID != .missingno {
         try visitor.visitSingularEnumField(value: _storage._pokemonID, fieldNumber: 1)
@@ -498,7 +498,7 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward, rhs: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward, rhs: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

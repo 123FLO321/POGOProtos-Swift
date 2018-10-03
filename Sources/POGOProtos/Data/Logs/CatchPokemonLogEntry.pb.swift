@@ -15,59 +15,59 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Logs_CatchPokemonLogEntry {
+public struct POGOProtos_Data_Logs_CatchPokemonLogEntry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Data_Logs_CatchPokemonLogEntry.Result {
+  public var result: POGOProtos_Data_Logs_CatchPokemonLogEntry.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var pokemonID: POGOProtos_Enums_PokemonId {
+  public var pokemonID: POGOProtos_Enums_PokemonId {
     get {return _storage._pokemonID}
     set {_uniqueStorage()._pokemonID = newValue}
   }
 
-  var combatPoints: Int32 {
+  public var combatPoints: Int32 {
     get {return _storage._combatPoints}
     set {_uniqueStorage()._combatPoints = newValue}
   }
 
-  var pokemonDataID: UInt64 {
+  public var pokemonDataID: UInt64 {
     get {return _storage._pokemonDataID}
     set {_uniqueStorage()._pokemonDataID = newValue}
   }
 
-  var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
+  public var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
     get {return _storage._pokemonDisplay ?? POGOProtos_Data_PokemonDisplay()}
     set {_uniqueStorage()._pokemonDisplay = newValue}
   }
   /// Returns true if `pokemonDisplay` has been explicitly set.
-  var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
+  public var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
   /// Clears the value of `pokemonDisplay`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
+  public mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case pokemonCaptured // = 1
     case pokemonFled // = 2
     case pokemonHatched // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .pokemonCaptured
@@ -77,7 +77,7 @@ struct POGOProtos_Data_Logs_CatchPokemonLogEntry {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .pokemonCaptured: return 1
@@ -89,7 +89,7 @@ struct POGOProtos_Data_Logs_CatchPokemonLogEntry {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -113,8 +113,8 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry.Result: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Data.Logs"
 
 extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CatchPokemonLogEntry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CatchPokemonLogEntry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "pokemon_id"),
     3: .standard(proto: "combat_points"),
@@ -123,17 +123,17 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Data_Logs_CatchPokemonLogEntry.Result = .unset
-    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    var _combatPoints: Int32 = 0
-    var _pokemonDataID: UInt64 = 0
-    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    public var _result: POGOProtos_Data_Logs_CatchPokemonLogEntry.Result = .unset
+    public var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    public var _combatPoints: Int32 = 0
+    public var _pokemonDataID: UInt64 = 0
+    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _pokemonID = source._pokemonID
       _combatPoints = source._combatPoints
@@ -149,7 +149,7 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -165,7 +165,7 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -186,7 +186,7 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Logs_CatchPokemonLogEntry, rhs: POGOProtos_Data_Logs_CatchPokemonLogEntry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Logs_CatchPokemonLogEntry, rhs: POGOProtos_Data_Logs_CatchPokemonLogEntry) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -206,7 +206,7 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
 }
 
 extension POGOProtos_Data_Logs_CatchPokemonLogEntry.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "POKEMON_CAPTURED"),
     2: .same(proto: "POKEMON_FLED"),

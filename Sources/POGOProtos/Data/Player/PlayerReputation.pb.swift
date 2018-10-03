@@ -15,37 +15,37 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Player_PlayerReputation {
+public struct POGOProtos_Data_Player_PlayerReputation {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var accountAgeMs: Int64 = 0
+  public var accountAgeMs: Int64 = 0
 
-  var playerLevel: Int64 = 0
+  public var playerLevel: Int64 = 0
 
-  var cheatReputation: [POGOProtos_Data_Player_PlayerReputation.CheatReputation] = []
+  public var cheatReputation: [POGOProtos_Data_Player_PlayerReputation.CheatReputation] = []
 
-  var isMinor: Bool = false
+  public var isMinor: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum CheatReputation: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum CheatReputation: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case bot // = 1
     case spoofer // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .bot
@@ -54,7 +54,7 @@ struct POGOProtos_Data_Player_PlayerReputation {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .bot: return 1
@@ -65,7 +65,7 @@ struct POGOProtos_Data_Player_PlayerReputation {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -86,15 +86,15 @@ extension POGOProtos_Data_Player_PlayerReputation.CheatReputation: CaseIterable 
 fileprivate let _protobuf_package = "POGOProtos.Data.Player"
 
 extension POGOProtos_Data_Player_PlayerReputation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlayerReputation"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlayerReputation"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "account_age_ms"),
     2: .standard(proto: "player_level"),
     3: .standard(proto: "cheat_reputation"),
     4: .standard(proto: "is_minor"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.accountAgeMs)
@@ -106,7 +106,7 @@ extension POGOProtos_Data_Player_PlayerReputation: SwiftProtobuf.Message, SwiftP
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.accountAgeMs != 0 {
       try visitor.visitSingularInt64Field(value: self.accountAgeMs, fieldNumber: 1)
     }
@@ -122,7 +122,7 @@ extension POGOProtos_Data_Player_PlayerReputation: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Player_PlayerReputation, rhs: POGOProtos_Data_Player_PlayerReputation) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Player_PlayerReputation, rhs: POGOProtos_Data_Player_PlayerReputation) -> Bool {
     if lhs.accountAgeMs != rhs.accountAgeMs {return false}
     if lhs.playerLevel != rhs.playerLevel {return false}
     if lhs.cheatReputation != rhs.cheatReputation {return false}
@@ -133,7 +133,7 @@ extension POGOProtos_Data_Player_PlayerReputation: SwiftProtobuf.Message, SwiftP
 }
 
 extension POGOProtos_Data_Player_PlayerReputation.CheatReputation: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "BOT"),
     2: .same(proto: "SPOOFER"),

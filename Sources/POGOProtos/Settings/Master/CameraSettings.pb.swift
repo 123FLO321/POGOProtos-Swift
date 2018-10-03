@@ -15,50 +15,50 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_CameraSettings {
+public struct POGOProtos_Settings_Master_CameraSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var nextCamera: String = String()
+  public var nextCamera: String = String()
 
-  var interpolation: [POGOProtos_Enums_CameraInterpolation] = []
+  public var interpolation: [POGOProtos_Enums_CameraInterpolation] = []
 
-  var targetType: [POGOProtos_Enums_CameraTarget] = []
+  public var targetType: [POGOProtos_Enums_CameraTarget] = []
 
-  var easeInSpeed: [Float] = []
+  public var easeInSpeed: [Float] = []
 
-  var easeOutSpeed: [Float] = []
+  public var easeOutSpeed: [Float] = []
 
-  var durationSeconds: [Float] = []
+  public var durationSeconds: [Float] = []
 
-  var waitSeconds: [Float] = []
+  public var waitSeconds: [Float] = []
 
-  var transitionSeconds: [Float] = []
+  public var transitionSeconds: [Float] = []
 
-  var angleDegree: [Float] = []
+  public var angleDegree: [Float] = []
 
-  var angleOffsetDegree: [Float] = []
+  public var angleOffsetDegree: [Float] = []
 
-  var pitchDegree: [Float] = []
+  public var pitchDegree: [Float] = []
 
-  var pitchOffsetDegree: [Float] = []
+  public var pitchOffsetDegree: [Float] = []
 
-  var rollDegree: [Float] = []
+  public var rollDegree: [Float] = []
 
-  var distanceMeters: [Float] = []
+  public var distanceMeters: [Float] = []
 
-  var heightPercent: [Float] = []
+  public var heightPercent: [Float] = []
 
-  var vertCtrRatio: [Float] = []
+  public var vertCtrRatio: [Float] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -66,8 +66,8 @@ struct POGOProtos_Settings_Master_CameraSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_CameraSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CameraSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CameraSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "next_camera"),
     2: .same(proto: "interpolation"),
     3: .standard(proto: "target_type"),
@@ -86,7 +86,7 @@ extension POGOProtos_Settings_Master_CameraSettings: SwiftProtobuf.Message, Swif
     16: .standard(proto: "vert_ctr_ratio"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.nextCamera)
@@ -110,7 +110,7 @@ extension POGOProtos_Settings_Master_CameraSettings: SwiftProtobuf.Message, Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.nextCamera.isEmpty {
       try visitor.visitSingularStringField(value: self.nextCamera, fieldNumber: 1)
     }
@@ -162,7 +162,7 @@ extension POGOProtos_Settings_Master_CameraSettings: SwiftProtobuf.Message, Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_CameraSettings, rhs: POGOProtos_Settings_Master_CameraSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_CameraSettings, rhs: POGOProtos_Settings_Master_CameraSettings) -> Bool {
     if lhs.nextCamera != rhs.nextCamera {return false}
     if lhs.interpolation != rhs.interpolation {return false}
     if lhs.targetType != rhs.targetType {return false}

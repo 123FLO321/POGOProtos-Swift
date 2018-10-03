@@ -15,424 +15,424 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Envelopes_Signature {
+public struct POGOProtos_Networking_Envelopes_Signature {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var field1: [POGOProtos_Networking_Envelopes_UnknownMessage] {
+  public var field1: [POGOProtos_Networking_Envelopes_UnknownMessage] {
     get {return _storage._field1}
     set {_uniqueStorage()._field1 = newValue}
   }
 
   /// in ms
-  var timestampSinceStart: UInt64 {
+  public var timestampSinceStart: UInt64 {
     get {return _storage._timestampSinceStart}
     set {_uniqueStorage()._timestampSinceStart = newValue}
   }
 
-  var field3: String {
+  public var field3: String {
     get {return _storage._field3}
     set {_uniqueStorage()._field3 = newValue}
   }
 
-  var locationFix: [POGOProtos_Networking_Envelopes_Signature.LocationFix] {
+  public var locationFix: [POGOProtos_Networking_Envelopes_Signature.LocationFix] {
     get {return _storage._locationFix}
     set {_uniqueStorage()._locationFix = newValue}
   }
 
-  var gpsInfo: [POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo] {
+  public var gpsInfo: [POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo] {
     get {return _storage._gpsInfo}
     set {_uniqueStorage()._gpsInfo = newValue}
   }
 
-  var field6: [POGOProtos_Networking_Envelopes_UnknownMessage] {
+  public var field6: [POGOProtos_Networking_Envelopes_UnknownMessage] {
     get {return _storage._field6}
     set {_uniqueStorage()._field6 = newValue}
   }
 
-  var sensorInfo: [POGOProtos_Networking_Envelopes_Signature.SensorInfo] {
+  public var sensorInfo: [POGOProtos_Networking_Envelopes_Signature.SensorInfo] {
     get {return _storage._sensorInfo}
     set {_uniqueStorage()._sensorInfo = newValue}
   }
 
-  var deviceInfo: POGOProtos_Networking_Envelopes_Signature.DeviceInfo {
+  public var deviceInfo: POGOProtos_Networking_Envelopes_Signature.DeviceInfo {
     get {return _storage._deviceInfo ?? POGOProtos_Networking_Envelopes_Signature.DeviceInfo()}
     set {_uniqueStorage()._deviceInfo = newValue}
   }
   /// Returns true if `deviceInfo` has been explicitly set.
-  var hasDeviceInfo: Bool {return _storage._deviceInfo != nil}
+  public var hasDeviceInfo: Bool {return _storage._deviceInfo != nil}
   /// Clears the value of `deviceInfo`. Subsequent reads from it will return its default value.
-  mutating func clearDeviceInfo() {_uniqueStorage()._deviceInfo = nil}
+  public mutating func clearDeviceInfo() {_uniqueStorage()._deviceInfo = nil}
 
-  var activityStatus: POGOProtos_Networking_Envelopes_Signature.ActivityStatus {
+  public var activityStatus: POGOProtos_Networking_Envelopes_Signature.ActivityStatus {
     get {return _storage._activityStatus ?? POGOProtos_Networking_Envelopes_Signature.ActivityStatus()}
     set {_uniqueStorage()._activityStatus = newValue}
   }
   /// Returns true if `activityStatus` has been explicitly set.
-  var hasActivityStatus: Bool {return _storage._activityStatus != nil}
+  public var hasActivityStatus: Bool {return _storage._activityStatus != nil}
   /// Clears the value of `activityStatus`. Subsequent reads from it will return its default value.
-  mutating func clearActivityStatus() {_uniqueStorage()._activityStatus = nil}
+  public mutating func clearActivityStatus() {_uniqueStorage()._activityStatus = nil}
 
-  var locationHash1: Int32 {
+  public var locationHash1: Int32 {
     get {return _storage._locationHash1}
     set {_uniqueStorage()._locationHash1 = newValue}
   }
 
-  var field11: Bool {
+  public var field11: Bool {
     get {return _storage._field11}
     set {_uniqueStorage()._field11 = newValue}
   }
 
-  var field12: Bool {
+  public var field12: Bool {
     get {return _storage._field12}
     set {_uniqueStorage()._field12 = newValue}
   }
 
-  var field13: Int32 {
+  public var field13: Int32 {
     get {return _storage._field13}
     set {_uniqueStorage()._field13 = newValue}
   }
 
-  var field14: Int32 {
+  public var field14: Int32 {
     get {return _storage._field14}
     set {_uniqueStorage()._field14 = newValue}
   }
 
-  var field15: String {
+  public var field15: String {
     get {return _storage._field15}
     set {_uniqueStorage()._field15 = newValue}
   }
 
-  var field16: Int32 {
+  public var field16: Int32 {
     get {return _storage._field16}
     set {_uniqueStorage()._field16 = newValue}
   }
 
-  var field17: String {
+  public var field17: String {
     get {return _storage._field17}
     set {_uniqueStorage()._field17 = newValue}
   }
 
-  var field18: String {
+  public var field18: String {
     get {return _storage._field18}
     set {_uniqueStorage()._field18 = newValue}
   }
 
-  var field19: Bool {
+  public var field19: Bool {
     get {return _storage._field19}
     set {_uniqueStorage()._field19 = newValue}
   }
 
-  var locationHash2: Int32 {
+  public var locationHash2: Int32 {
     get {return _storage._locationHash2}
     set {_uniqueStorage()._locationHash2 = newValue}
   }
 
-  var field21: Bool {
+  public var field21: Bool {
     get {return _storage._field21}
     set {_uniqueStorage()._field21 = newValue}
   }
 
   /// 32 random bytes, unique per session.
-  var sessionHash: Data {
+  public var sessionHash: Data {
     get {return _storage._sessionHash}
     set {_uniqueStorage()._sessionHash = newValue}
   }
 
   /// epoch timestamp in ms
-  var timestamp: UInt64 {
+  public var timestamp: UInt64 {
     get {return _storage._timestamp}
     set {_uniqueStorage()._timestamp = newValue}
   }
 
   /// hashes of each request message in a hashArray signed based on the auth_token or auth_info - xxhash64
-  var requestHash: [UInt64] {
+  public var requestHash: [UInt64] {
     get {return _storage._requestHash}
     set {_uniqueStorage()._requestHash = newValue}
   }
 
-  var unknown25: Int64 {
+  public var unknown25: Int64 {
     get {return _storage._unknown25}
     set {_uniqueStorage()._unknown25 = newValue}
   }
 
-  var unknown27: Int32 {
+  public var unknown27: Int32 {
     get {return _storage._unknown27}
     set {_uniqueStorage()._unknown27 = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct LocationFix {
+  public struct LocationFix {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     /// "network", "gps", "fused", possibly others
-    var provider: String = String()
+    public var provider: String = String()
 
     /// in ms since start
-    var timestampSnapshot: UInt64 = 0
+    public var timestampSnapshot: UInt64 = 0
 
     /// Confirmed on android/ios
-    var altitude: Float = 0
+    public var altitude: Float = 0
 
-    var latitude: Float = 0
+    public var latitude: Float = 0
 
-    var longitude: Float = 0
+    public var longitude: Float = 0
 
     /// iOS only (-1 for no reading available, speed in m/s)
-    var speed: Float = 0
+    public var speed: Float = 0
 
     /// iOS only (range seems to be -1 for not reading, and 0 to 360 for reading) confirmed by @marcel
-    var course: Float = 0
+    public var course: Float = 0
 
     /// in meters, both on Android and iOS
-    var horizontalAccuracy: Float = 0
+    public var horizontalAccuracy: Float = 0
 
     /// iOS only
-    var verticalAccuracy: Float = 0
+    public var verticalAccuracy: Float = 0
 
     /// Usually 3 (possibly GPS status: 1 = no fix, 2 = acquiring/inaccurate, 3 = fix acquired)
-    var providerStatus: UInt64 = 0
+    public var providerStatus: UInt64 = 0
 
     /// On iOS there are some LocationFixes with unk26=1 and everything else empty
-    var floor: UInt32 = 0
+    public var floor: UInt32 = 0
 
     /// Always 1 (if there is data at all)
-    var locationType: UInt64 = 0
+    public var locationType: UInt64 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
   /// don't really care about this since we're not using it
-  struct AndroidGpsInfo {
+  public struct AndroidGpsInfo {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var timeToFix: UInt64 = 0
+    public var timeToFix: UInt64 = 0
 
-    var satellitesPrn: [Int32] = []
+    public var satellitesPrn: [Int32] = []
 
-    var azimuth: [Float] = []
+    public var azimuth: [Float] = []
 
-    var elevation: [Float] = []
+    public var elevation: [Float] = []
 
-    var snr: [Float] = []
+    public var snr: [Float] = []
 
-    var hasAlmanac_p: [Bool] = []
+    public var hasAlmanac_p: [Bool] = []
 
-    var hasEphemeris_p: [Bool] = []
+    public var hasEphemeris_p: [Bool] = []
 
-    var usedInFix: [Bool] = []
+    public var usedInFix: [Bool] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct SensorInfo {
+  public struct SensorInfo {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     /// in ms since start
-    var timestampSnapshot: UInt64 {
+    public var timestampSnapshot: UInt64 {
       get {return _storage._timestampSnapshot}
       set {_uniqueStorage()._timestampSnapshot = newValue}
     }
 
-    var linearAccelerationX: Double {
+    public var linearAccelerationX: Double {
       get {return _storage._linearAccelerationX}
       set {_uniqueStorage()._linearAccelerationX = newValue}
     }
 
-    var linearAccelerationY: Double {
+    public var linearAccelerationY: Double {
       get {return _storage._linearAccelerationY}
       set {_uniqueStorage()._linearAccelerationY = newValue}
     }
 
-    var linearAccelerationZ: Double {
+    public var linearAccelerationZ: Double {
       get {return _storage._linearAccelerationZ}
       set {_uniqueStorage()._linearAccelerationZ = newValue}
     }
 
-    var magneticFieldX: Double {
+    public var magneticFieldX: Double {
       get {return _storage._magneticFieldX}
       set {_uniqueStorage()._magneticFieldX = newValue}
     }
 
-    var magneticFieldY: Double {
+    public var magneticFieldY: Double {
       get {return _storage._magneticFieldY}
       set {_uniqueStorage()._magneticFieldY = newValue}
     }
 
-    var magneticFieldZ: Double {
+    public var magneticFieldZ: Double {
       get {return _storage._magneticFieldZ}
       set {_uniqueStorage()._magneticFieldZ = newValue}
     }
 
-    var magneticFieldAccuracy: Int32 {
+    public var magneticFieldAccuracy: Int32 {
       get {return _storage._magneticFieldAccuracy}
       set {_uniqueStorage()._magneticFieldAccuracy = newValue}
     }
 
-    var attitudePitch: Double {
+    public var attitudePitch: Double {
       get {return _storage._attitudePitch}
       set {_uniqueStorage()._attitudePitch = newValue}
     }
 
-    var attitudeYaw: Double {
+    public var attitudeYaw: Double {
       get {return _storage._attitudeYaw}
       set {_uniqueStorage()._attitudeYaw = newValue}
     }
 
-    var attitudeRoll: Double {
+    public var attitudeRoll: Double {
       get {return _storage._attitudeRoll}
       set {_uniqueStorage()._attitudeRoll = newValue}
     }
 
-    var rotationRateX: Double {
+    public var rotationRateX: Double {
       get {return _storage._rotationRateX}
       set {_uniqueStorage()._rotationRateX = newValue}
     }
 
-    var rotationRateY: Double {
+    public var rotationRateY: Double {
       get {return _storage._rotationRateY}
       set {_uniqueStorage()._rotationRateY = newValue}
     }
 
-    var rotationRateZ: Double {
+    public var rotationRateZ: Double {
       get {return _storage._rotationRateZ}
       set {_uniqueStorage()._rotationRateZ = newValue}
     }
 
-    var gravityX: Double {
+    public var gravityX: Double {
       get {return _storage._gravityX}
       set {_uniqueStorage()._gravityX = newValue}
     }
 
-    var gravityY: Double {
+    public var gravityY: Double {
       get {return _storage._gravityY}
       set {_uniqueStorage()._gravityY = newValue}
     }
 
-    var gravityZ: Double {
+    public var gravityZ: Double {
       get {return _storage._gravityZ}
       set {_uniqueStorage()._gravityZ = newValue}
     }
 
-    var status: Int32 {
+    public var status: Int32 {
       get {return _storage._status}
       set {_uniqueStorage()._status = newValue}
     }
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
 
     fileprivate var _storage = _StorageClass.defaultInstance
   }
 
-  struct DeviceInfo {
+  public struct DeviceInfo {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     /// Hex string
-    var deviceID: String = String()
+    public var deviceID: String = String()
 
-    var androidBoardName: String = String()
+    public var androidBoardName: String = String()
 
-    var androidBootloader: String = String()
+    public var androidBootloader: String = String()
 
     /// On Android: product.brand
-    var deviceBrand: String = String()
+    public var deviceBrand: String = String()
 
     /// On Android: product.device
-    var deviceModel: String = String()
+    public var deviceModel: String = String()
 
     /// Android only, build.display.id
-    var deviceModelIdentifier: String = String()
+    public var deviceModelIdentifier: String = String()
 
     /// On Android: boot.hardware
-    var deviceModelBoot: String = String()
+    public var deviceModelBoot: String = String()
 
     /// On Android: product.manufacturer
-    var hardwareManufacturer: String = String()
+    public var hardwareManufacturer: String = String()
 
     /// On Android: product.model
-    var hardwareModel: String = String()
+    public var hardwareModel: String = String()
 
     /// On Android: product.name, on iOS: "iPhone OS"
-    var firmwareBrand: String = String()
+    public var firmwareBrand: String = String()
 
     /// Android only, build.tags
-    var firmwareTags: String = String()
+    public var firmwareTags: String = String()
 
     /// On Android: build.type, on iOS instead: iOS version
-    var firmwareType: String = String()
+    public var firmwareType: String = String()
 
     /// Android only, build.fingerprint
-    var firmwareFingerprint: String = String()
+    public var firmwareFingerprint: String = String()
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
   /// Only used in iOS - Android just sends an empty version
-  struct ActivityStatus {
+  public struct ActivityStatus {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
     /// all of these had 1 as their value
-    var startTimeMs: UInt64 = 0
+    public var startTimeMs: UInt64 = 0
 
-    var unknownStatus: Bool = false
+    public var unknownStatus: Bool = false
 
-    var walking: Bool = false
+    public var walking: Bool = false
 
-    var running: Bool = false
+    public var running: Bool = false
 
-    var stationary: Bool = false
+    public var stationary: Bool = false
 
-    var automotive: Bool = false
+    public var automotive: Bool = false
 
-    var tilting: Bool = false
+    public var tilting: Bool = false
 
-    var cycling: Bool = false
+    public var cycling: Bool = false
 
-    var status: Data = SwiftProtobuf.Internal.emptyData
+    public var status: Data = SwiftProtobuf.Internal.emptyData
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 /// Just a junk message to denote that we don't currently know what message something is.
-struct POGOProtos_Networking_Envelopes_UnknownMessage {
+public struct POGOProtos_Networking_Envelopes_UnknownMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -440,8 +440,8 @@ struct POGOProtos_Networking_Envelopes_UnknownMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Envelopes"
 
 extension POGOProtos_Networking_Envelopes_Signature: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Signature"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Signature"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "field1"),
     2: .standard(proto: "timestamp_since_start"),
     3: .same(proto: "field3"),
@@ -471,38 +471,38 @@ extension POGOProtos_Networking_Envelopes_Signature: SwiftProtobuf.Message, Swif
   ]
 
   fileprivate class _StorageClass {
-    var _field1: [POGOProtos_Networking_Envelopes_UnknownMessage] = []
-    var _timestampSinceStart: UInt64 = 0
-    var _field3: String = String()
-    var _locationFix: [POGOProtos_Networking_Envelopes_Signature.LocationFix] = []
-    var _gpsInfo: [POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo] = []
-    var _field6: [POGOProtos_Networking_Envelopes_UnknownMessage] = []
-    var _sensorInfo: [POGOProtos_Networking_Envelopes_Signature.SensorInfo] = []
-    var _deviceInfo: POGOProtos_Networking_Envelopes_Signature.DeviceInfo? = nil
-    var _activityStatus: POGOProtos_Networking_Envelopes_Signature.ActivityStatus? = nil
-    var _locationHash1: Int32 = 0
-    var _field11: Bool = false
-    var _field12: Bool = false
-    var _field13: Int32 = 0
-    var _field14: Int32 = 0
-    var _field15: String = String()
-    var _field16: Int32 = 0
-    var _field17: String = String()
-    var _field18: String = String()
-    var _field19: Bool = false
-    var _locationHash2: Int32 = 0
-    var _field21: Bool = false
-    var _sessionHash: Data = SwiftProtobuf.Internal.emptyData
-    var _timestamp: UInt64 = 0
-    var _requestHash: [UInt64] = []
-    var _unknown25: Int64 = 0
-    var _unknown27: Int32 = 0
+    public var _field1: [POGOProtos_Networking_Envelopes_UnknownMessage] = []
+    public var _timestampSinceStart: UInt64 = 0
+    public var _field3: String = String()
+    public var _locationFix: [POGOProtos_Networking_Envelopes_Signature.LocationFix] = []
+    public var _gpsInfo: [POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo] = []
+    public var _field6: [POGOProtos_Networking_Envelopes_UnknownMessage] = []
+    public var _sensorInfo: [POGOProtos_Networking_Envelopes_Signature.SensorInfo] = []
+    public var _deviceInfo: POGOProtos_Networking_Envelopes_Signature.DeviceInfo? = nil
+    public var _activityStatus: POGOProtos_Networking_Envelopes_Signature.ActivityStatus? = nil
+    public var _locationHash1: Int32 = 0
+    public var _field11: Bool = false
+    public var _field12: Bool = false
+    public var _field13: Int32 = 0
+    public var _field14: Int32 = 0
+    public var _field15: String = String()
+    public var _field16: Int32 = 0
+    public var _field17: String = String()
+    public var _field18: String = String()
+    public var _field19: Bool = false
+    public var _locationHash2: Int32 = 0
+    public var _field21: Bool = false
+    public var _sessionHash: Data = SwiftProtobuf.Internal.emptyData
+    public var _timestamp: UInt64 = 0
+    public var _requestHash: [UInt64] = []
+    public var _unknown25: Int64 = 0
+    public var _unknown27: Int32 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _field1 = source._field1
       _timestampSinceStart = source._timestampSinceStart
       _field3 = source._field3
@@ -539,7 +539,7 @@ extension POGOProtos_Networking_Envelopes_Signature: SwiftProtobuf.Message, Swif
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -576,7 +576,7 @@ extension POGOProtos_Networking_Envelopes_Signature: SwiftProtobuf.Message, Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._field1.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._field1, fieldNumber: 1)
@@ -660,7 +660,7 @@ extension POGOProtos_Networking_Envelopes_Signature: SwiftProtobuf.Message, Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_Signature, rhs: POGOProtos_Networking_Envelopes_Signature) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_Signature, rhs: POGOProtos_Networking_Envelopes_Signature) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -701,8 +701,8 @@ extension POGOProtos_Networking_Envelopes_Signature: SwiftProtobuf.Message, Swif
 }
 
 extension POGOProtos_Networking_Envelopes_Signature.LocationFix: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Envelopes_Signature.protoMessageName + ".LocationFix"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_Signature.protoMessageName + ".LocationFix"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "provider"),
     2: .standard(proto: "timestamp_snapshot"),
     4: .same(proto: "altitude"),
@@ -717,7 +717,7 @@ extension POGOProtos_Networking_Envelopes_Signature.LocationFix: SwiftProtobuf.M
     28: .standard(proto: "location_type"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.provider)
@@ -737,7 +737,7 @@ extension POGOProtos_Networking_Envelopes_Signature.LocationFix: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.provider.isEmpty {
       try visitor.visitSingularStringField(value: self.provider, fieldNumber: 1)
     }
@@ -777,7 +777,7 @@ extension POGOProtos_Networking_Envelopes_Signature.LocationFix: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_Signature.LocationFix, rhs: POGOProtos_Networking_Envelopes_Signature.LocationFix) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_Signature.LocationFix, rhs: POGOProtos_Networking_Envelopes_Signature.LocationFix) -> Bool {
     if lhs.provider != rhs.provider {return false}
     if lhs.timestampSnapshot != rhs.timestampSnapshot {return false}
     if lhs.altitude != rhs.altitude {return false}
@@ -796,8 +796,8 @@ extension POGOProtos_Networking_Envelopes_Signature.LocationFix: SwiftProtobuf.M
 }
 
 extension POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Envelopes_Signature.protoMessageName + ".AndroidGpsInfo"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_Signature.protoMessageName + ".AndroidGpsInfo"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "time_to_fix"),
     2: .standard(proto: "satellites_prn"),
     3: .same(proto: "azimuth"),
@@ -808,7 +808,7 @@ extension POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo: SwiftProtobu
     8: .standard(proto: "used_in_fix"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt64Field(value: &self.timeToFix)
@@ -824,7 +824,7 @@ extension POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo: SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.timeToFix != 0 {
       try visitor.visitSingularUInt64Field(value: self.timeToFix, fieldNumber: 1)
     }
@@ -852,7 +852,7 @@ extension POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo, rhs: POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo, rhs: POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo) -> Bool {
     if lhs.timeToFix != rhs.timeToFix {return false}
     if lhs.satellitesPrn != rhs.satellitesPrn {return false}
     if lhs.azimuth != rhs.azimuth {return false}
@@ -867,8 +867,8 @@ extension POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo: SwiftProtobu
 }
 
 extension POGOProtos_Networking_Envelopes_Signature.SensorInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Envelopes_Signature.protoMessageName + ".SensorInfo"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_Signature.protoMessageName + ".SensorInfo"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "timestamp_snapshot"),
     3: .standard(proto: "linear_acceleration_x"),
     4: .standard(proto: "linear_acceleration_y"),
@@ -890,30 +890,30 @@ extension POGOProtos_Networking_Envelopes_Signature.SensorInfo: SwiftProtobuf.Me
   ]
 
   fileprivate class _StorageClass {
-    var _timestampSnapshot: UInt64 = 0
-    var _linearAccelerationX: Double = 0
-    var _linearAccelerationY: Double = 0
-    var _linearAccelerationZ: Double = 0
-    var _magneticFieldX: Double = 0
-    var _magneticFieldY: Double = 0
-    var _magneticFieldZ: Double = 0
-    var _magneticFieldAccuracy: Int32 = 0
-    var _attitudePitch: Double = 0
-    var _attitudeYaw: Double = 0
-    var _attitudeRoll: Double = 0
-    var _rotationRateX: Double = 0
-    var _rotationRateY: Double = 0
-    var _rotationRateZ: Double = 0
-    var _gravityX: Double = 0
-    var _gravityY: Double = 0
-    var _gravityZ: Double = 0
-    var _status: Int32 = 0
+    public var _timestampSnapshot: UInt64 = 0
+    public var _linearAccelerationX: Double = 0
+    public var _linearAccelerationY: Double = 0
+    public var _linearAccelerationZ: Double = 0
+    public var _magneticFieldX: Double = 0
+    public var _magneticFieldY: Double = 0
+    public var _magneticFieldZ: Double = 0
+    public var _magneticFieldAccuracy: Int32 = 0
+    public var _attitudePitch: Double = 0
+    public var _attitudeYaw: Double = 0
+    public var _attitudeRoll: Double = 0
+    public var _rotationRateX: Double = 0
+    public var _rotationRateY: Double = 0
+    public var _rotationRateZ: Double = 0
+    public var _gravityX: Double = 0
+    public var _gravityY: Double = 0
+    public var _gravityZ: Double = 0
+    public var _status: Int32 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _timestampSnapshot = source._timestampSnapshot
       _linearAccelerationX = source._linearAccelerationX
       _linearAccelerationY = source._linearAccelerationY
@@ -942,7 +942,7 @@ extension POGOProtos_Networking_Envelopes_Signature.SensorInfo: SwiftProtobuf.Me
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -971,7 +971,7 @@ extension POGOProtos_Networking_Envelopes_Signature.SensorInfo: SwiftProtobuf.Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._timestampSnapshot != 0 {
         try visitor.visitSingularUInt64Field(value: _storage._timestampSnapshot, fieldNumber: 1)
@@ -1031,7 +1031,7 @@ extension POGOProtos_Networking_Envelopes_Signature.SensorInfo: SwiftProtobuf.Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_Signature.SensorInfo, rhs: POGOProtos_Networking_Envelopes_Signature.SensorInfo) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_Signature.SensorInfo, rhs: POGOProtos_Networking_Envelopes_Signature.SensorInfo) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -1064,8 +1064,8 @@ extension POGOProtos_Networking_Envelopes_Signature.SensorInfo: SwiftProtobuf.Me
 }
 
 extension POGOProtos_Networking_Envelopes_Signature.DeviceInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Envelopes_Signature.protoMessageName + ".DeviceInfo"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_Signature.protoMessageName + ".DeviceInfo"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "device_id"),
     2: .standard(proto: "android_board_name"),
     3: .standard(proto: "android_bootloader"),
@@ -1081,7 +1081,7 @@ extension POGOProtos_Networking_Envelopes_Signature.DeviceInfo: SwiftProtobuf.Me
     14: .standard(proto: "firmware_fingerprint"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.deviceID)
@@ -1102,7 +1102,7 @@ extension POGOProtos_Networking_Envelopes_Signature.DeviceInfo: SwiftProtobuf.Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.deviceID.isEmpty {
       try visitor.visitSingularStringField(value: self.deviceID, fieldNumber: 1)
     }
@@ -1145,7 +1145,7 @@ extension POGOProtos_Networking_Envelopes_Signature.DeviceInfo: SwiftProtobuf.Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_Signature.DeviceInfo, rhs: POGOProtos_Networking_Envelopes_Signature.DeviceInfo) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_Signature.DeviceInfo, rhs: POGOProtos_Networking_Envelopes_Signature.DeviceInfo) -> Bool {
     if lhs.deviceID != rhs.deviceID {return false}
     if lhs.androidBoardName != rhs.androidBoardName {return false}
     if lhs.androidBootloader != rhs.androidBootloader {return false}
@@ -1165,8 +1165,8 @@ extension POGOProtos_Networking_Envelopes_Signature.DeviceInfo: SwiftProtobuf.Me
 }
 
 extension POGOProtos_Networking_Envelopes_Signature.ActivityStatus: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Envelopes_Signature.protoMessageName + ".ActivityStatus"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_Signature.protoMessageName + ".ActivityStatus"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "start_time_ms"),
     2: .standard(proto: "unknown_status"),
     3: .same(proto: "walking"),
@@ -1178,7 +1178,7 @@ extension POGOProtos_Networking_Envelopes_Signature.ActivityStatus: SwiftProtobu
     9: .same(proto: "status"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt64Field(value: &self.startTimeMs)
@@ -1195,7 +1195,7 @@ extension POGOProtos_Networking_Envelopes_Signature.ActivityStatus: SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.startTimeMs != 0 {
       try visitor.visitSingularUInt64Field(value: self.startTimeMs, fieldNumber: 1)
     }
@@ -1226,7 +1226,7 @@ extension POGOProtos_Networking_Envelopes_Signature.ActivityStatus: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_Signature.ActivityStatus, rhs: POGOProtos_Networking_Envelopes_Signature.ActivityStatus) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_Signature.ActivityStatus, rhs: POGOProtos_Networking_Envelopes_Signature.ActivityStatus) -> Bool {
     if lhs.startTimeMs != rhs.startTimeMs {return false}
     if lhs.unknownStatus != rhs.unknownStatus {return false}
     if lhs.walking != rhs.walking {return false}
@@ -1242,19 +1242,19 @@ extension POGOProtos_Networking_Envelopes_Signature.ActivityStatus: SwiftProtobu
 }
 
 extension POGOProtos_Networking_Envelopes_UnknownMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UnknownMessage"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = _protobuf_package + ".UnknownMessage"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_UnknownMessage, rhs: POGOProtos_Networking_Envelopes_UnknownMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_UnknownMessage, rhs: POGOProtos_Networking_Envelopes_UnknownMessage) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

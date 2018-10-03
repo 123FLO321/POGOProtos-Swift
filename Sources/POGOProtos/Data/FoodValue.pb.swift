@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_FoodValue {
+public struct POGOProtos_Data_FoodValue {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var motivationIncrease: Float = 0
+  public var motivationIncrease: Float = 0
 
-  var cpIncrease: Int32 = 0
+  public var cpIncrease: Int32 = 0
 
-  var foodItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+  public var foodItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Data_FoodValue {
 fileprivate let _protobuf_package = "POGOProtos.Data"
 
 extension POGOProtos_Data_FoodValue: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FoodValue"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FoodValue"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "motivation_increase"),
     2: .standard(proto: "cp_increase"),
     3: .standard(proto: "food_item"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.motivationIncrease)
@@ -58,7 +58,7 @@ extension POGOProtos_Data_FoodValue: SwiftProtobuf.Message, SwiftProtobuf._Messa
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.motivationIncrease != 0 {
       try visitor.visitSingularFloatField(value: self.motivationIncrease, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Data_FoodValue: SwiftProtobuf.Message, SwiftProtobuf._Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_FoodValue, rhs: POGOProtos_Data_FoodValue) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_FoodValue, rhs: POGOProtos_Data_FoodValue) -> Bool {
     if lhs.motivationIncrease != rhs.motivationIncrease {return false}
     if lhs.cpIncrease != rhs.cpIncrease {return false}
     if lhs.foodItem != rhs.foodItem {return false}

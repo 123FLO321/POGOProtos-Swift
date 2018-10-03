@@ -15,18 +15,18 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Ditto_SyncRequestedEventParams {
+public struct POGOProtos_Networking_Platform_Ditto_SyncRequestedEventParams {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -34,19 +34,19 @@ struct POGOProtos_Networking_Platform_Ditto_SyncRequestedEventParams {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Ditto"
 
 extension POGOProtos_Networking_Platform_Ditto_SyncRequestedEventParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SyncRequestedEventParams"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = _protobuf_package + ".SyncRequestedEventParams"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Ditto_SyncRequestedEventParams, rhs: POGOProtos_Networking_Platform_Ditto_SyncRequestedEventParams) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Ditto_SyncRequestedEventParams, rhs: POGOProtos_Networking_Platform_Ditto_SyncRequestedEventParams) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -15,45 +15,45 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Gym_GymMembership {
+public struct POGOProtos_Data_Gym_GymMembership {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonData: POGOProtos_Data_PokemonData {
+  public var pokemonData: POGOProtos_Data_PokemonData {
     get {return _storage._pokemonData ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._pokemonData = newValue}
   }
   /// Returns true if `pokemonData` has been explicitly set.
-  var hasPokemonData: Bool {return _storage._pokemonData != nil}
+  public var hasPokemonData: Bool {return _storage._pokemonData != nil}
   /// Clears the value of `pokemonData`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
+  public mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
 
-  var trainerPublicProfile: POGOProtos_Data_Player_PlayerPublicProfile {
+  public var trainerPublicProfile: POGOProtos_Data_Player_PlayerPublicProfile {
     get {return _storage._trainerPublicProfile ?? POGOProtos_Data_Player_PlayerPublicProfile()}
     set {_uniqueStorage()._trainerPublicProfile = newValue}
   }
   /// Returns true if `trainerPublicProfile` has been explicitly set.
-  var hasTrainerPublicProfile: Bool {return _storage._trainerPublicProfile != nil}
+  public var hasTrainerPublicProfile: Bool {return _storage._trainerPublicProfile != nil}
   /// Clears the value of `trainerPublicProfile`. Subsequent reads from it will return its default value.
-  mutating func clearTrainerPublicProfile() {_uniqueStorage()._trainerPublicProfile = nil}
+  public mutating func clearTrainerPublicProfile() {_uniqueStorage()._trainerPublicProfile = nil}
 
-  var trainingPokemon: POGOProtos_Data_PokemonData {
+  public var trainingPokemon: POGOProtos_Data_PokemonData {
     get {return _storage._trainingPokemon ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._trainingPokemon = newValue}
   }
   /// Returns true if `trainingPokemon` has been explicitly set.
-  var hasTrainingPokemon: Bool {return _storage._trainingPokemon != nil}
+  public var hasTrainingPokemon: Bool {return _storage._trainingPokemon != nil}
   /// Clears the value of `trainingPokemon`. Subsequent reads from it will return its default value.
-  mutating func clearTrainingPokemon() {_uniqueStorage()._trainingPokemon = nil}
+  public mutating func clearTrainingPokemon() {_uniqueStorage()._trainingPokemon = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -63,23 +63,23 @@ struct POGOProtos_Data_Gym_GymMembership {
 fileprivate let _protobuf_package = "POGOProtos.Data.Gym"
 
 extension POGOProtos_Data_Gym_GymMembership: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GymMembership"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GymMembership"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_data"),
     2: .standard(proto: "trainer_public_profile"),
     3: .standard(proto: "training_pokemon"),
   ]
 
   fileprivate class _StorageClass {
-    var _pokemonData: POGOProtos_Data_PokemonData? = nil
-    var _trainerPublicProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
-    var _trainingPokemon: POGOProtos_Data_PokemonData? = nil
+    public var _pokemonData: POGOProtos_Data_PokemonData? = nil
+    public var _trainerPublicProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
+    public var _trainingPokemon: POGOProtos_Data_PokemonData? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _pokemonData = source._pokemonData
       _trainerPublicProfile = source._trainerPublicProfile
       _trainingPokemon = source._trainingPokemon
@@ -93,7 +93,7 @@ extension POGOProtos_Data_Gym_GymMembership: SwiftProtobuf.Message, SwiftProtobu
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -107,7 +107,7 @@ extension POGOProtos_Data_Gym_GymMembership: SwiftProtobuf.Message, SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._pokemonData {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -122,7 +122,7 @@ extension POGOProtos_Data_Gym_GymMembership: SwiftProtobuf.Message, SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Gym_GymMembership, rhs: POGOProtos_Data_Gym_GymMembership) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Gym_GymMembership, rhs: POGOProtos_Data_Gym_GymMembership) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

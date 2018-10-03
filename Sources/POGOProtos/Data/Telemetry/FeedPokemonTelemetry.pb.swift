@@ -15,57 +15,57 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_FeedPokemonTelemetry {
+public struct POGOProtos_Data_Telemetry_FeedPokemonTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: Int32 {
+  public var status: Int32 {
     get {return _storage._status}
     set {_uniqueStorage()._status = newValue}
   }
 
-  var pokemon: POGOProtos_Data_Telemetry_PokemonTelemetry {
+  public var pokemon: POGOProtos_Data_Telemetry_PokemonTelemetry {
     get {return _storage._pokemon ?? POGOProtos_Data_Telemetry_PokemonTelemetry()}
     set {_uniqueStorage()._pokemon = newValue}
   }
   /// Returns true if `pokemon` has been explicitly set.
-  var hasPokemon: Bool {return _storage._pokemon != nil}
+  public var hasPokemon: Bool {return _storage._pokemon != nil}
   /// Clears the value of `pokemon`. Subsequent reads from it will return its default value.
-  mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
+  public mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
 
-  var gymID: String {
+  public var gymID: String {
     get {return _storage._gymID}
     set {_uniqueStorage()._gymID = newValue}
   }
 
-  var team: Int32 {
+  public var team: Int32 {
     get {return _storage._team}
     set {_uniqueStorage()._team = newValue}
   }
 
-  var defenderCount: Int32 {
+  public var defenderCount: Int32 {
     get {return _storage._defenderCount}
     set {_uniqueStorage()._defenderCount = newValue}
   }
 
-  var motivation: Int32 {
+  public var motivation: Int32 {
     get {return _storage._motivation}
     set {_uniqueStorage()._motivation = newValue}
   }
 
-  var cpNow: Int32 {
+  public var cpNow: Int32 {
     get {return _storage._cpNow}
     set {_uniqueStorage()._cpNow = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -75,8 +75,8 @@ struct POGOProtos_Data_Telemetry_FeedPokemonTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_FeedPokemonTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FeedPokemonTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FeedPokemonTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .same(proto: "pokemon"),
     3: .standard(proto: "gym_id"),
@@ -87,19 +87,19 @@ extension POGOProtos_Data_Telemetry_FeedPokemonTelemetry: SwiftProtobuf.Message,
   ]
 
   fileprivate class _StorageClass {
-    var _status: Int32 = 0
-    var _pokemon: POGOProtos_Data_Telemetry_PokemonTelemetry? = nil
-    var _gymID: String = String()
-    var _team: Int32 = 0
-    var _defenderCount: Int32 = 0
-    var _motivation: Int32 = 0
-    var _cpNow: Int32 = 0
+    public var _status: Int32 = 0
+    public var _pokemon: POGOProtos_Data_Telemetry_PokemonTelemetry? = nil
+    public var _gymID: String = String()
+    public var _team: Int32 = 0
+    public var _defenderCount: Int32 = 0
+    public var _motivation: Int32 = 0
+    public var _cpNow: Int32 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _status = source._status
       _pokemon = source._pokemon
       _gymID = source._gymID
@@ -117,7 +117,7 @@ extension POGOProtos_Data_Telemetry_FeedPokemonTelemetry: SwiftProtobuf.Message,
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -135,7 +135,7 @@ extension POGOProtos_Data_Telemetry_FeedPokemonTelemetry: SwiftProtobuf.Message,
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._status != 0 {
         try visitor.visitSingularInt32Field(value: _storage._status, fieldNumber: 1)
@@ -162,7 +162,7 @@ extension POGOProtos_Data_Telemetry_FeedPokemonTelemetry: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_FeedPokemonTelemetry, rhs: POGOProtos_Data_Telemetry_FeedPokemonTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_FeedPokemonTelemetry, rhs: POGOProtos_Data_Telemetry_FeedPokemonTelemetry) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

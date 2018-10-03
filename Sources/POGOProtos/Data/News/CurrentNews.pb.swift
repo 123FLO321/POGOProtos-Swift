@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_News_CurrentNews {
+public struct POGOProtos_Data_News_CurrentNews {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var newsArticles: [POGOProtos_Data_News_NewsArticle] = []
+  public var newsArticles: [POGOProtos_Data_News_NewsArticle] = []
 
-  var newsStringsURL: String = String()
+  public var newsStringsURL: String = String()
 
-  var lastUpdatedTimestamp: Int64 = 0
+  public var lastUpdatedTimestamp: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Data_News_CurrentNews {
 fileprivate let _protobuf_package = "POGOProtos.Data.News"
 
 extension POGOProtos_Data_News_CurrentNews: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CurrentNews"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CurrentNews"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "news_articles"),
     2: .standard(proto: "news_strings_url"),
     3: .standard(proto: "last_updated_timestamp"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.newsArticles)
@@ -58,7 +58,7 @@ extension POGOProtos_Data_News_CurrentNews: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.newsArticles.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.newsArticles, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Data_News_CurrentNews: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_News_CurrentNews, rhs: POGOProtos_Data_News_CurrentNews) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_News_CurrentNews, rhs: POGOProtos_Data_News_CurrentNews) -> Bool {
     if lhs.newsArticles != rhs.newsArticles {return false}
     if lhs.newsStringsURL != rhs.newsStringsURL {return false}
     if lhs.lastUpdatedTimestamp != rhs.lastUpdatedTimestamp {return false}

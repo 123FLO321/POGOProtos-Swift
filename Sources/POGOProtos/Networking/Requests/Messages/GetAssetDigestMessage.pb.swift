@@ -15,34 +15,34 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage {
+public struct POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var platform: POGOProtos_Enums_Platform = .unset
+  public var platform: POGOProtos_Enums_Platform = .unset
 
-  var deviceManufacturer: String = String()
+  public var deviceManufacturer: String = String()
 
-  var deviceModel: String = String()
+  public var deviceModel: String = String()
 
-  var locale: String = String()
+  public var locale: String = String()
 
-  var appVersion: UInt32 = 0
+  public var appVersion: UInt32 = 0
 
-  var paginate: Bool = false
+  public var paginate: Bool = false
 
-  var pageOffset: Int32 = 0
+  public var pageOffset: Int32 = 0
 
-  var pageTimestamp: UInt64 = 0
+  public var pageTimestamp: UInt64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -50,8 +50,8 @@ struct POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetAssetDigestMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetAssetDigestMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "platform"),
     2: .standard(proto: "device_manufacturer"),
     3: .standard(proto: "device_model"),
@@ -62,7 +62,7 @@ extension POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage: SwiftPr
     8: .standard(proto: "page_timestamp"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.platform)
@@ -78,7 +78,7 @@ extension POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage: SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.platform != .unset {
       try visitor.visitSingularEnumField(value: self.platform, fieldNumber: 1)
     }
@@ -106,7 +106,7 @@ extension POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage, rhs: POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage, rhs: POGOProtos_Networking_Requests_Messages_GetAssetDigestMessage) -> Bool {
     if lhs.platform != rhs.platform {return false}
     if lhs.deviceManufacturer != rhs.deviceManufacturer {return false}
     if lhs.deviceModel != rhs.deviceModel {return false}

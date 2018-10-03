@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_GymBadgeType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_GymBadgeType: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case gymBadgeUnset // = 0
   case gymBadgeVanilla // = 1
   case gymBadgeBronze // = 2
@@ -28,11 +28,11 @@ enum POGOProtos_Enums_GymBadgeType: SwiftProtobuf.Enum {
   case gymBadgeGold // = 4
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .gymBadgeUnset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .gymBadgeUnset
     case 1: self = .gymBadgeVanilla
@@ -43,7 +43,7 @@ enum POGOProtos_Enums_GymBadgeType: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .gymBadgeUnset: return 0
     case .gymBadgeVanilla: return 1
@@ -74,7 +74,7 @@ extension POGOProtos_Enums_GymBadgeType: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_GymBadgeType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "GYM_BADGE_UNSET"),
     1: .same(proto: "GYM_BADGE_VANILLA"),
     2: .same(proto: "GYM_BADGE_BRONZE"),

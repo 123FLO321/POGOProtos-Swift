@@ -15,30 +15,30 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Badge_GymBadgeStats {
+public struct POGOProtos_Data_Badge_GymBadgeStats {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var totalTimeDefendedMs: UInt64 = 0
+  public var totalTimeDefendedMs: UInt64 = 0
 
-  var numBattlesWon: UInt32 = 0
+  public var numBattlesWon: UInt32 = 0
 
-  var numBattlesLost: UInt32 = 0
+  public var numBattlesLost: UInt32 = 0
 
-  var numBerriesFed: UInt32 = 0
+  public var numBerriesFed: UInt32 = 0
 
-  var numDeploys: UInt32 = 0
+  public var numDeploys: UInt32 = 0
 
-  var gymBattles: [POGOProtos_Data_Gym_GymBattle] = []
+  public var gymBattles: [POGOProtos_Data_Gym_GymBattle] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -46,8 +46,8 @@ struct POGOProtos_Data_Badge_GymBadgeStats {
 fileprivate let _protobuf_package = "POGOProtos.Data.Badge"
 
 extension POGOProtos_Data_Badge_GymBadgeStats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GymBadgeStats"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GymBadgeStats"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "total_time_defended_ms"),
     2: .standard(proto: "num_battles_won"),
     5: .standard(proto: "num_battles_lost"),
@@ -56,7 +56,7 @@ extension POGOProtos_Data_Badge_GymBadgeStats: SwiftProtobuf.Message, SwiftProto
     15: .standard(proto: "gym_battles"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt64Field(value: &self.totalTimeDefendedMs)
@@ -70,7 +70,7 @@ extension POGOProtos_Data_Badge_GymBadgeStats: SwiftProtobuf.Message, SwiftProto
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.totalTimeDefendedMs != 0 {
       try visitor.visitSingularUInt64Field(value: self.totalTimeDefendedMs, fieldNumber: 1)
     }
@@ -92,7 +92,7 @@ extension POGOProtos_Data_Badge_GymBadgeStats: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Badge_GymBadgeStats, rhs: POGOProtos_Data_Badge_GymBadgeStats) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Badge_GymBadgeStats, rhs: POGOProtos_Data_Badge_GymBadgeStats) -> Bool {
     if lhs.totalTimeDefendedMs != rhs.totalTimeDefendedMs {return false}
     if lhs.numBattlesWon != rhs.numBattlesWon {return false}
     if lhs.numBattlesLost != rhs.numBattlesLost {return false}

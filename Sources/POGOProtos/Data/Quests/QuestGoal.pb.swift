@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Quests_QuestGoal {
+public struct POGOProtos_Data_Quests_QuestGoal {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var condition: [POGOProtos_Data_Quests_QuestCondition] = []
+  public var condition: [POGOProtos_Data_Quests_QuestCondition] = []
 
-  var target: Int32 = 0
+  public var target: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Data_Quests_QuestGoal {
 fileprivate let _protobuf_package = "POGOProtos.Data.Quests"
 
 extension POGOProtos_Data_Quests_QuestGoal: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QuestGoal"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".QuestGoal"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "condition"),
     2: .same(proto: "target"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.condition)
@@ -54,7 +54,7 @@ extension POGOProtos_Data_Quests_QuestGoal: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.condition.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.condition, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Data_Quests_QuestGoal: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestGoal, rhs: POGOProtos_Data_Quests_QuestGoal) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestGoal, rhs: POGOProtos_Data_Quests_QuestGoal) -> Bool {
     if lhs.condition != rhs.condition {return false}
     if lhs.target != rhs.target {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

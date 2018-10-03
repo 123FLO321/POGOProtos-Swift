@@ -15,44 +15,44 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_SocialClientSettings {
+public struct POGOProtos_Settings_SocialClientSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var enableSocial: Bool = false
+  public var enableSocial: Bool = false
 
-  var maxFriendDetails: Int32 = 0
+  public var maxFriendDetails: Int32 = 0
 
-  var playerLevelGate: Int32 = 0
+  public var playerLevelGate: Int32 = 0
 
-  var maxFriendNicknameLength: Int32 = 0
+  public var maxFriendNicknameLength: Int32 = 0
 
-  var enableAddFriendViaQrCode: Bool = false
+  public var enableAddFriendViaQrCode: Bool = false
 
-  var enableShareExPass: Bool = false
+  public var enableShareExPass: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct POGOProtos_Settings_SocialGiftCountTelemetry {
+public struct POGOProtos_Settings_SocialGiftCountTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var unopenedGiftCount: Int32 = 0
+  public var unopenedGiftCount: Int32 = 0
 
-  var unsentGiftCount: Int32 = 0
+  public var unsentGiftCount: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -60,8 +60,8 @@ struct POGOProtos_Settings_SocialGiftCountTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Settings"
 
 extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SocialClientSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".SocialClientSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "enable_social"),
     2: .standard(proto: "max_friend_details"),
     3: .standard(proto: "player_level_gate"),
@@ -70,7 +70,7 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     6: .standard(proto: "enable_share_ex_pass"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.enableSocial)
@@ -84,7 +84,7 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.enableSocial != false {
       try visitor.visitSingularBoolField(value: self.enableSocial, fieldNumber: 1)
     }
@@ -106,7 +106,7 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_SocialClientSettings, rhs: POGOProtos_Settings_SocialClientSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_SocialClientSettings, rhs: POGOProtos_Settings_SocialClientSettings) -> Bool {
     if lhs.enableSocial != rhs.enableSocial {return false}
     if lhs.maxFriendDetails != rhs.maxFriendDetails {return false}
     if lhs.playerLevelGate != rhs.playerLevelGate {return false}
@@ -119,13 +119,13 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
 }
 
 extension POGOProtos_Settings_SocialGiftCountTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SocialGiftCountTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".SocialGiftCountTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "unopened_gift_count"),
     2: .standard(proto: "unsent_gift_count"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.unopenedGiftCount)
@@ -135,7 +135,7 @@ extension POGOProtos_Settings_SocialGiftCountTelemetry: SwiftProtobuf.Message, S
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.unopenedGiftCount != 0 {
       try visitor.visitSingularInt32Field(value: self.unopenedGiftCount, fieldNumber: 1)
     }
@@ -145,7 +145,7 @@ extension POGOProtos_Settings_SocialGiftCountTelemetry: SwiftProtobuf.Message, S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_SocialGiftCountTelemetry, rhs: POGOProtos_Settings_SocialGiftCountTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_SocialGiftCountTelemetry, rhs: POGOProtos_Settings_SocialGiftCountTelemetry) -> Bool {
     if lhs.unopenedGiftCount != rhs.unopenedGiftCount {return false}
     if lhs.unsentGiftCount != rhs.unsentGiftCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

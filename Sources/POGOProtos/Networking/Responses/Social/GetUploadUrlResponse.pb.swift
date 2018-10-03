@@ -15,35 +15,35 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_Social_GetUploadUrlResponse {
+public struct POGOProtos_Networking_Responses_Social_GetUploadUrlResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: POGOProtos_Networking_Responses_Social_GetUploadUrlResponse.Status = .unset
+  public var status: POGOProtos_Networking_Responses_Social_GetUploadUrlResponse.Status = .unset
 
-  var signedURL: String = String()
+  public var signedURL: String = String()
 
-  var supportingImageSignedURL: String = String()
+  public var supportingImageSignedURL: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Status: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case failures // = 1
     case success // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .failures
@@ -52,7 +52,7 @@ struct POGOProtos_Networking_Responses_Social_GetUploadUrlResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .failures: return 1
@@ -63,7 +63,7 @@ struct POGOProtos_Networking_Responses_Social_GetUploadUrlResponse {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -84,14 +84,14 @@ extension POGOProtos_Networking_Responses_Social_GetUploadUrlResponse.Status: Ca
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses.Social"
 
 extension POGOProtos_Networking_Responses_Social_GetUploadUrlResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetUploadUrlResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetUploadUrlResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .standard(proto: "signed_url"),
     3: .standard(proto: "supporting_image_signed_url"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.status)
@@ -102,7 +102,7 @@ extension POGOProtos_Networking_Responses_Social_GetUploadUrlResponse: SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.status != .unset {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
     }
@@ -115,7 +115,7 @@ extension POGOProtos_Networking_Responses_Social_GetUploadUrlResponse: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_Social_GetUploadUrlResponse, rhs: POGOProtos_Networking_Responses_Social_GetUploadUrlResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_Social_GetUploadUrlResponse, rhs: POGOProtos_Networking_Responses_Social_GetUploadUrlResponse) -> Bool {
     if lhs.status != rhs.status {return false}
     if lhs.signedURL != rhs.signedURL {return false}
     if lhs.supportingImageSignedURL != rhs.supportingImageSignedURL {return false}
@@ -125,7 +125,7 @@ extension POGOProtos_Networking_Responses_Social_GetUploadUrlResponse: SwiftProt
 }
 
 extension POGOProtos_Networking_Responses_Social_GetUploadUrlResponse.Status: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "FAILURES"),
     2: .same(proto: "SUCCESS"),

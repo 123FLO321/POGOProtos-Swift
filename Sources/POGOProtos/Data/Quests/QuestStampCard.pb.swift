@@ -15,28 +15,28 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Quests_QuestStampCard {
+public struct POGOProtos_Data_Quests_QuestStampCard {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var stamp: [POGOProtos_Data_Quests_QuestStamp] = []
+  public var stamp: [POGOProtos_Data_Quests_QuestStamp] = []
 
-  var target: Int32 = 0
+  public var target: Int32 = 0
 
-  var remainingDailyStamps: Int32 = 0
+  public var remainingDailyStamps: Int32 = 0
 
-  var id: String = String()
+  public var id: String = String()
 
-  var iconURL: String = String()
+  public var iconURL: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,8 +44,8 @@ struct POGOProtos_Data_Quests_QuestStampCard {
 fileprivate let _protobuf_package = "POGOProtos.Data.Quests"
 
 extension POGOProtos_Data_Quests_QuestStampCard: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QuestStampCard"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".QuestStampCard"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "stamp"),
     2: .same(proto: "target"),
     3: .standard(proto: "remaining_daily_stamps"),
@@ -53,7 +53,7 @@ extension POGOProtos_Data_Quests_QuestStampCard: SwiftProtobuf.Message, SwiftPro
     5: .standard(proto: "icon_url"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.stamp)
@@ -66,7 +66,7 @@ extension POGOProtos_Data_Quests_QuestStampCard: SwiftProtobuf.Message, SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.stamp.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.stamp, fieldNumber: 1)
     }
@@ -85,7 +85,7 @@ extension POGOProtos_Data_Quests_QuestStampCard: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestStampCard, rhs: POGOProtos_Data_Quests_QuestStampCard) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestStampCard, rhs: POGOProtos_Data_Quests_QuestStampCard) -> Bool {
     if lhs.stamp != rhs.stamp {return false}
     if lhs.target != rhs.target {return false}
     if lhs.remainingDailyStamps != rhs.remainingDailyStamps {return false}

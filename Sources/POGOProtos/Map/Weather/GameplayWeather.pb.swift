@@ -15,21 +15,21 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Map_Weather_GameplayWeather {
+public struct POGOProtos_Map_Weather_GameplayWeather {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var gameplayCondition: POGOProtos_Map_Weather_GameplayWeather.WeatherCondition = .none
+  public var gameplayCondition: POGOProtos_Map_Weather_GameplayWeather.WeatherCondition = .none
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum WeatherCondition: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum WeatherCondition: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case none // = 0
     case clear // = 1
     case rainy // = 2
@@ -40,11 +40,11 @@ struct POGOProtos_Map_Weather_GameplayWeather {
     case fog // = 7
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .none
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .none
       case 1: self = .clear
@@ -58,7 +58,7 @@ struct POGOProtos_Map_Weather_GameplayWeather {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .none: return 0
       case .clear: return 1
@@ -74,7 +74,7 @@ struct POGOProtos_Map_Weather_GameplayWeather {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -100,12 +100,12 @@ extension POGOProtos_Map_Weather_GameplayWeather.WeatherCondition: CaseIterable 
 fileprivate let _protobuf_package = "POGOProtos.Map.Weather"
 
 extension POGOProtos_Map_Weather_GameplayWeather: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GameplayWeather"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GameplayWeather"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "gameplay_condition"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.gameplayCondition)
@@ -114,14 +114,14 @@ extension POGOProtos_Map_Weather_GameplayWeather: SwiftProtobuf.Message, SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.gameplayCondition != .none {
       try visitor.visitSingularEnumField(value: self.gameplayCondition, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_Weather_GameplayWeather, rhs: POGOProtos_Map_Weather_GameplayWeather) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_Weather_GameplayWeather, rhs: POGOProtos_Map_Weather_GameplayWeather) -> Bool {
     if lhs.gameplayCondition != rhs.gameplayCondition {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -129,7 +129,7 @@ extension POGOProtos_Map_Weather_GameplayWeather: SwiftProtobuf.Message, SwiftPr
 }
 
 extension POGOProtos_Map_Weather_GameplayWeather.WeatherCondition: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "NONE"),
     1: .same(proto: "CLEAR"),
     2: .same(proto: "RAINY"),

@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Map_MapObjectsStatus: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Map_MapObjectsStatus: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case unsetStatus // = 0
   case success // = 1
   case locationUnset // = 2
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unsetStatus
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unsetStatus
     case 1: self = .success
@@ -39,7 +39,7 @@ enum POGOProtos_Map_MapObjectsStatus: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unsetStatus: return 0
     case .success: return 1
@@ -66,7 +66,7 @@ extension POGOProtos_Map_MapObjectsStatus: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Map_MapObjectsStatus: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET_STATUS"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "LOCATION_UNSET"),

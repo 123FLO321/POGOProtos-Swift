@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_ShareExRaidPassResult: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_ShareExRaidPassResult: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case shareExRaidPassUnset // = 0
   case shareExRaidPassSuccess // = 1
   case errorFriendAlreadyInvitedToSameRaid // = 2
@@ -34,11 +34,11 @@ enum POGOProtos_Enums_ShareExRaidPassResult: SwiftProtobuf.Enum {
   case errorUnknown // = 10
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .shareExRaidPassUnset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .shareExRaidPassUnset
     case 1: self = .shareExRaidPassSuccess
@@ -55,7 +55,7 @@ enum POGOProtos_Enums_ShareExRaidPassResult: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .shareExRaidPassUnset: return 0
     case .shareExRaidPassSuccess: return 1
@@ -98,7 +98,7 @@ extension POGOProtos_Enums_ShareExRaidPassResult: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_ShareExRaidPassResult: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "SHARE_EX_RAID_PASS_UNSET"),
     1: .same(proto: "SHARE_EX_RAID_PASS_SUCCESS"),
     2: .same(proto: "ERROR_FRIEND_ALREADY_INVITED_TO_SAME_RAID"),

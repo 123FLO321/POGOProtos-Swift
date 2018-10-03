@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_SetLobbyVisibilityMessage {
+public struct POGOProtos_Networking_Requests_Messages_SetLobbyVisibilityMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var raidSeed: Int64 = 0
+  public var raidSeed: Int64 = 0
 
-  var gymID: String = String()
+  public var gymID: String = String()
 
-  var lobbyID: [Int32] = []
+  public var lobbyID: [Int32] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Networking_Requests_Messages_SetLobbyVisibilityMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_SetLobbyVisibilityMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SetLobbyVisibilityMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".SetLobbyVisibilityMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "raid_seed"),
     2: .standard(proto: "gym_id"),
     3: .standard(proto: "lobby_id"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.raidSeed)
@@ -58,7 +58,7 @@ extension POGOProtos_Networking_Requests_Messages_SetLobbyVisibilityMessage: Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.raidSeed != 0 {
       try visitor.visitSingularInt64Field(value: self.raidSeed, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Networking_Requests_Messages_SetLobbyVisibilityMessage: Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_SetLobbyVisibilityMessage, rhs: POGOProtos_Networking_Requests_Messages_SetLobbyVisibilityMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_SetLobbyVisibilityMessage, rhs: POGOProtos_Networking_Requests_Messages_SetLobbyVisibilityMessage) -> Bool {
     if lhs.raidSeed != rhs.raidSeed {return false}
     if lhs.gymID != rhs.gymID {return false}
     if lhs.lobbyID != rhs.lobbyID {return false}

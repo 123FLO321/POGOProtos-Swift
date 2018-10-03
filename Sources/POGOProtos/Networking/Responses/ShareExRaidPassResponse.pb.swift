@@ -15,41 +15,41 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_ShareExRaidPassResponse {
+public struct POGOProtos_Networking_Responses_ShareExRaidPassResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Enums_ShareExRaidPassResult {
+  public var result: POGOProtos_Enums_ShareExRaidPassResult {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData {
+  public var updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData {
     get {return _storage._updatedFriendshipData ?? POGOProtos_Data_Friends_FriendshipLevelData()}
     set {_uniqueStorage()._updatedFriendshipData = newValue}
   }
   /// Returns true if `updatedFriendshipData` has been explicitly set.
-  var hasUpdatedFriendshipData: Bool {return _storage._updatedFriendshipData != nil}
+  public var hasUpdatedFriendshipData: Bool {return _storage._updatedFriendshipData != nil}
   /// Clears the value of `updatedFriendshipData`. Subsequent reads from it will return its default value.
-  mutating func clearUpdatedFriendshipData() {_uniqueStorage()._updatedFriendshipData = nil}
+  public mutating func clearUpdatedFriendshipData() {_uniqueStorage()._updatedFriendshipData = nil}
 
-  var friendProfile: POGOProtos_Data_Player_PlayerPublicProfile {
+  public var friendProfile: POGOProtos_Data_Player_PlayerPublicProfile {
     get {return _storage._friendProfile ?? POGOProtos_Data_Player_PlayerPublicProfile()}
     set {_uniqueStorage()._friendProfile = newValue}
   }
   /// Returns true if `friendProfile` has been explicitly set.
-  var hasFriendProfile: Bool {return _storage._friendProfile != nil}
+  public var hasFriendProfile: Bool {return _storage._friendProfile != nil}
   /// Clears the value of `friendProfile`. Subsequent reads from it will return its default value.
-  mutating func clearFriendProfile() {_uniqueStorage()._friendProfile = nil}
+  public mutating func clearFriendProfile() {_uniqueStorage()._friendProfile = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -59,23 +59,23 @@ struct POGOProtos_Networking_Responses_ShareExRaidPassResponse {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_ShareExRaidPassResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ShareExRaidPassResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ShareExRaidPassResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "updated_friendship_data"),
     3: .standard(proto: "friend_profile"),
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Enums_ShareExRaidPassResult = .shareExRaidPassUnset
-    var _updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
-    var _friendProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
+    public var _result: POGOProtos_Enums_ShareExRaidPassResult = .shareExRaidPassUnset
+    public var _updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
+    public var _friendProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _updatedFriendshipData = source._updatedFriendshipData
       _friendProfile = source._friendProfile
@@ -89,7 +89,7 @@ extension POGOProtos_Networking_Responses_ShareExRaidPassResponse: SwiftProtobuf
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -103,7 +103,7 @@ extension POGOProtos_Networking_Responses_ShareExRaidPassResponse: SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .shareExRaidPassUnset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -118,7 +118,7 @@ extension POGOProtos_Networking_Responses_ShareExRaidPassResponse: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_ShareExRaidPassResponse, rhs: POGOProtos_Networking_Responses_ShareExRaidPassResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_ShareExRaidPassResponse, rhs: POGOProtos_Networking_Responses_ShareExRaidPassResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

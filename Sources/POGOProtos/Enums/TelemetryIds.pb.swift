@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefined // = 0
   case bootTime // = 1
   case frameRate // = 2
@@ -57,11 +57,11 @@ enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
   case socialGiftCount // = 33
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefined
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefined
     case 1: self = .bootTime
@@ -101,7 +101,7 @@ enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefined: return 0
     case .bootTime: return 1
@@ -187,8 +187,8 @@ extension POGOProtos_Enums_ClientTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_AvatarCustomizationTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_AvatarCustomizationTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedAvatarCustomization // = 0
   case equipItem // = 1
   case openFeatures // = 2
@@ -201,11 +201,11 @@ enum POGOProtos_Enums_AvatarCustomizationTelemetryIds: SwiftProtobuf.Enum {
   case showQuickShop // = 9
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedAvatarCustomization
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedAvatarCustomization
     case 1: self = .equipItem
@@ -221,7 +221,7 @@ enum POGOProtos_Enums_AvatarCustomizationTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedAvatarCustomization: return 0
     case .equipItem: return 1
@@ -259,8 +259,8 @@ extension POGOProtos_Enums_AvatarCustomizationTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_BattlePartyTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_BattlePartyTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedBattlePartyEvent // = 0
   case add // = 1
   case remove // = 2
@@ -269,11 +269,11 @@ enum POGOProtos_Enums_BattlePartyTelemetryIds: SwiftProtobuf.Enum {
   case battlePokemonChanged // = 5
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedBattlePartyEvent
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedBattlePartyEvent
     case 1: self = .add
@@ -285,7 +285,7 @@ enum POGOProtos_Enums_BattlePartyTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedBattlePartyEvent: return 0
     case .add: return 1
@@ -315,18 +315,18 @@ extension POGOProtos_Enums_BattlePartyTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_GenericClickTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_GenericClickTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedGenericEvent // = 0
   case speedWarningShow // = 1
   case speedWarningPassenger // = 2
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedGenericEvent
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedGenericEvent
     case 1: self = .speedWarningShow
@@ -335,7 +335,7 @@ enum POGOProtos_Enums_GenericClickTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedGenericEvent: return 0
     case .speedWarningShow: return 1
@@ -359,18 +359,18 @@ extension POGOProtos_Enums_GenericClickTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedItemEvent // = 0
   case useItem // = 1
   case recycleItem // = 2
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedItemEvent
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedItemEvent
     case 1: self = .useItem
@@ -379,7 +379,7 @@ enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedItemEvent: return 0
     case .useItem: return 1
@@ -403,8 +403,8 @@ extension POGOProtos_Enums_ItemUseTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedLoginAction // = 0
   case clickAgeGate // = 1
   case clickNewPlayer // = 2
@@ -432,11 +432,11 @@ enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
   case exitExistingPlayer // = 24
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedLoginAction
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedLoginAction
     case 1: self = .clickAgeGate
@@ -467,7 +467,7 @@ enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedLoginAction: return 0
     case .clickAgeGate: return 1
@@ -535,8 +535,8 @@ extension POGOProtos_Enums_LoginActionTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_MapEventsTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_MapEventsTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedMapEvent // = 0
   case itemBag // = 1
   case mainMenu // = 2
@@ -551,11 +551,11 @@ enum POGOProtos_Enums_MapEventsTelemetryIds: SwiftProtobuf.Enum {
   case nearby // = 11
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedMapEvent
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedMapEvent
     case 1: self = .itemBag
@@ -573,7 +573,7 @@ enum POGOProtos_Enums_MapEventsTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedMapEvent: return 0
     case .itemBag: return 1
@@ -615,8 +615,8 @@ extension POGOProtos_Enums_MapEventsTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_NewsPageTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_NewsPageTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedNewsEvent // = 0
   case newsViewed // = 1
   case newsDismissed // = 2
@@ -624,11 +624,11 @@ enum POGOProtos_Enums_NewsPageTelemetryIds: SwiftProtobuf.Enum {
   case newsUpdatedApp // = 4
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedNewsEvent
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedNewsEvent
     case 1: self = .newsViewed
@@ -639,7 +639,7 @@ enum POGOProtos_Enums_NewsPageTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedNewsEvent: return 0
     case .newsViewed: return 1
@@ -667,19 +667,19 @@ extension POGOProtos_Enums_NewsPageTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_PokemonInventoryTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_PokemonInventoryTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedPokemonInventoryEvent // = 0
   case `open` // = 1
   case sortingChange // = 2
   case filter // = 3
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedPokemonInventoryEvent
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedPokemonInventoryEvent
     case 1: self = .open
@@ -689,7 +689,7 @@ enum POGOProtos_Enums_PokemonInventoryTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedPokemonInventoryEvent: return 0
     case .open: return 1
@@ -715,8 +715,8 @@ extension POGOProtos_Enums_PokemonInventoryTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_ProfilePageTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_ProfilePageTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedProfilePage // = 0
   case shopFromProfile // = 1
   case log // = 2
@@ -724,11 +724,11 @@ enum POGOProtos_Enums_ProfilePageTelemetryIds: SwiftProtobuf.Enum {
   case customizeAvatar // = 4
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedProfilePage
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedProfilePage
     case 1: self = .shopFromProfile
@@ -739,7 +739,7 @@ enum POGOProtos_Enums_ProfilePageTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedProfilePage: return 0
     case .shopFromProfile: return 1
@@ -767,17 +767,17 @@ extension POGOProtos_Enums_ProfilePageTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_PushNotificationTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_PushNotificationTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedPushNotificationEvent // = 0
   case openApp // = 1
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedPushNotificationEvent
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedPushNotificationEvent
     case 1: self = .openApp
@@ -785,7 +785,7 @@ enum POGOProtos_Enums_PushNotificationTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedPushNotificationEvent: return 0
     case .openApp: return 1
@@ -807,8 +807,8 @@ extension POGOProtos_Enums_PushNotificationTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_RaidTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_RaidTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedRaidEvent // = 0
   case approachEnter // = 1
   case approachClickSpinner // = 2
@@ -825,11 +825,11 @@ enum POGOProtos_Enums_RaidTelemetryIds: SwiftProtobuf.Enum {
   case lobbyClickLobbyPublic // = 13
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedRaidEvent
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedRaidEvent
     case 1: self = .approachEnter
@@ -849,7 +849,7 @@ enum POGOProtos_Enums_RaidTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedRaidEvent: return 0
     case .approachEnter: return 1
@@ -895,19 +895,19 @@ extension POGOProtos_Enums_RaidTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedShoppingPageEvent // = 0
   case clickCustomizeAvatar // = 1
   case quickShopMore // = 2
   case quickShopExchange // = 3
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedShoppingPageEvent
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedShoppingPageEvent
     case 1: self = .clickCustomizeAvatar
@@ -917,7 +917,7 @@ enum POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedShoppingPageEvent: return 0
     case .clickCustomizeAvatar: return 1
@@ -943,8 +943,8 @@ extension POGOProtos_Enums_ShoppingPageTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_SocialTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_SocialTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedSocial // = 0
   case friendTab // = 1
   case notificationTab // = 2
@@ -955,11 +955,11 @@ enum POGOProtos_Enums_SocialTelemetryIds: SwiftProtobuf.Enum {
   case friendListClosed // = 7
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedSocial
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedSocial
     case 1: self = .friendTab
@@ -973,7 +973,7 @@ enum POGOProtos_Enums_SocialTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedSocial: return 0
     case .friendTab: return 1
@@ -1007,17 +1007,17 @@ extension POGOProtos_Enums_SocialTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
-enum POGOProtos_Enums_WebTelemetryIds: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_WebTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case undefinedWebEvent // = 0
   case pointOfInterestDescriptionWebClick // = 1
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .undefinedWebEvent
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .undefinedWebEvent
     case 1: self = .pointOfInterestDescriptionWebClick
@@ -1025,7 +1025,7 @@ enum POGOProtos_Enums_WebTelemetryIds: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .undefinedWebEvent: return 0
     case .pointOfInterestDescriptionWebClick: return 1
@@ -1050,7 +1050,7 @@ extension POGOProtos_Enums_WebTelemetryIds: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED"),
     1: .same(proto: "BOOT_TIME"),
     2: .same(proto: "FRAME_RATE"),
@@ -1089,7 +1089,7 @@ extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding
 }
 
 extension POGOProtos_Enums_AvatarCustomizationTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_AVATAR_CUSTOMIZATION"),
     1: .same(proto: "EQUIP_ITEM"),
     2: .same(proto: "OPEN_FEATURES"),
@@ -1104,7 +1104,7 @@ extension POGOProtos_Enums_AvatarCustomizationTelemetryIds: SwiftProtobuf._Proto
 }
 
 extension POGOProtos_Enums_BattlePartyTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_BATTLE_PARTY_EVENT"),
     1: .same(proto: "ADD"),
     2: .same(proto: "REMOVE"),
@@ -1115,7 +1115,7 @@ extension POGOProtos_Enums_BattlePartyTelemetryIds: SwiftProtobuf._ProtoNameProv
 }
 
 extension POGOProtos_Enums_GenericClickTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_GENERIC_EVENT"),
     1: .same(proto: "SPEED_WARNING_SHOW"),
     2: .same(proto: "SPEED_WARNING_PASSENGER"),
@@ -1123,7 +1123,7 @@ extension POGOProtos_Enums_GenericClickTelemetryIds: SwiftProtobuf._ProtoNamePro
 }
 
 extension POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_ITEM_EVENT"),
     1: .same(proto: "USE_ITEM"),
     2: .same(proto: "RECYCLE_ITEM"),
@@ -1131,7 +1131,7 @@ extension POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf._ProtoNameProvidin
 }
 
 extension POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_LOGIN_ACTION"),
     1: .same(proto: "CLICK_AGE_GATE"),
     2: .same(proto: "CLICK_NEW_PLAYER"),
@@ -1161,7 +1161,7 @@ extension POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf._ProtoNameProv
 }
 
 extension POGOProtos_Enums_MapEventsTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_MAP_EVENT"),
     1: .same(proto: "ITEM_BAG"),
     2: .same(proto: "MAIN_MENU"),
@@ -1178,7 +1178,7 @@ extension POGOProtos_Enums_MapEventsTelemetryIds: SwiftProtobuf._ProtoNameProvid
 }
 
 extension POGOProtos_Enums_NewsPageTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_NEWS_EVENT"),
     1: .same(proto: "NEWS_VIEWED"),
     2: .same(proto: "NEWS_DISMISSED"),
@@ -1188,7 +1188,7 @@ extension POGOProtos_Enums_NewsPageTelemetryIds: SwiftProtobuf._ProtoNameProvidi
 }
 
 extension POGOProtos_Enums_PokemonInventoryTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_POKEMON_INVENTORY_EVENT"),
     1: .same(proto: "OPEN"),
     2: .same(proto: "SORTING_CHANGE"),
@@ -1197,7 +1197,7 @@ extension POGOProtos_Enums_PokemonInventoryTelemetryIds: SwiftProtobuf._ProtoNam
 }
 
 extension POGOProtos_Enums_ProfilePageTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_PROFILE_PAGE"),
     1: .same(proto: "SHOP_FROM_PROFILE"),
     2: .same(proto: "LOG"),
@@ -1207,14 +1207,14 @@ extension POGOProtos_Enums_ProfilePageTelemetryIds: SwiftProtobuf._ProtoNameProv
 }
 
 extension POGOProtos_Enums_PushNotificationTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_PUSH_NOTIFICATION_EVENT"),
     1: .same(proto: "OPEN_APP"),
   ]
 }
 
 extension POGOProtos_Enums_RaidTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_RAID_EVENT"),
     1: .same(proto: "APPROACH_ENTER"),
     2: .same(proto: "APPROACH_CLICK_SPINNER"),
@@ -1233,7 +1233,7 @@ extension POGOProtos_Enums_RaidTelemetryIds: SwiftProtobuf._ProtoNameProviding {
 }
 
 extension POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_SHOPPING_PAGE_EVENT"),
     1: .same(proto: "CLICK_CUSTOMIZE_AVATAR"),
     2: .same(proto: "QUICK_SHOP_MORE"),
@@ -1242,7 +1242,7 @@ extension POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf._ProtoNamePro
 }
 
 extension POGOProtos_Enums_SocialTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_SOCIAL"),
     1: .same(proto: "FRIEND_TAB"),
     2: .same(proto: "NOTIFICATION_TAB"),
@@ -1255,7 +1255,7 @@ extension POGOProtos_Enums_SocialTelemetryIds: SwiftProtobuf._ProtoNameProviding
 }
 
 extension POGOProtos_Enums_WebTelemetryIds: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_WEB_EVENT"),
     1: .same(proto: "POINT_OF_INTEREST_DESCRIPTION_WEB_CLICK"),
   ]

@@ -15,168 +15,168 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Quests_QuestCondition {
+public struct POGOProtos_Data_Quests_QuestCondition {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var type: POGOProtos_Data_Quests_QuestCondition.ConditionType {
+  public var type: POGOProtos_Data_Quests_QuestCondition.ConditionType {
     get {return _storage._type}
     set {_uniqueStorage()._type = newValue}
   }
 
-  var withPokemonType: POGOProtos_Data_Quests_QuestCondition.WithPokemonType {
+  public var withPokemonType: POGOProtos_Data_Quests_QuestCondition.WithPokemonType {
     get {return _storage._withPokemonType ?? POGOProtos_Data_Quests_QuestCondition.WithPokemonType()}
     set {_uniqueStorage()._withPokemonType = newValue}
   }
   /// Returns true if `withPokemonType` has been explicitly set.
-  var hasWithPokemonType: Bool {return _storage._withPokemonType != nil}
+  public var hasWithPokemonType: Bool {return _storage._withPokemonType != nil}
   /// Clears the value of `withPokemonType`. Subsequent reads from it will return its default value.
-  mutating func clearWithPokemonType() {_uniqueStorage()._withPokemonType = nil}
+  public mutating func clearWithPokemonType() {_uniqueStorage()._withPokemonType = nil}
 
-  var withPokemonCategory: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory {
+  public var withPokemonCategory: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory {
     get {return _storage._withPokemonCategory ?? POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory()}
     set {_uniqueStorage()._withPokemonCategory = newValue}
   }
   /// Returns true if `withPokemonCategory` has been explicitly set.
-  var hasWithPokemonCategory: Bool {return _storage._withPokemonCategory != nil}
+  public var hasWithPokemonCategory: Bool {return _storage._withPokemonCategory != nil}
   /// Clears the value of `withPokemonCategory`. Subsequent reads from it will return its default value.
-  mutating func clearWithPokemonCategory() {_uniqueStorage()._withPokemonCategory = nil}
+  public mutating func clearWithPokemonCategory() {_uniqueStorage()._withPokemonCategory = nil}
 
-  var withWeatherBoost: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost {
+  public var withWeatherBoost: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost {
     get {return _storage._withWeatherBoost ?? POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost()}
     set {_uniqueStorage()._withWeatherBoost = newValue}
   }
   /// Returns true if `withWeatherBoost` has been explicitly set.
-  var hasWithWeatherBoost: Bool {return _storage._withWeatherBoost != nil}
+  public var hasWithWeatherBoost: Bool {return _storage._withWeatherBoost != nil}
   /// Clears the value of `withWeatherBoost`. Subsequent reads from it will return its default value.
-  mutating func clearWithWeatherBoost() {_uniqueStorage()._withWeatherBoost = nil}
+  public mutating func clearWithWeatherBoost() {_uniqueStorage()._withWeatherBoost = nil}
 
-  var withDailyCaptureBonus: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus {
+  public var withDailyCaptureBonus: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus {
     get {return _storage._withDailyCaptureBonus ?? POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus()}
     set {_uniqueStorage()._withDailyCaptureBonus = newValue}
   }
   /// Returns true if `withDailyCaptureBonus` has been explicitly set.
-  var hasWithDailyCaptureBonus: Bool {return _storage._withDailyCaptureBonus != nil}
+  public var hasWithDailyCaptureBonus: Bool {return _storage._withDailyCaptureBonus != nil}
   /// Clears the value of `withDailyCaptureBonus`. Subsequent reads from it will return its default value.
-  mutating func clearWithDailyCaptureBonus() {_uniqueStorage()._withDailyCaptureBonus = nil}
+  public mutating func clearWithDailyCaptureBonus() {_uniqueStorage()._withDailyCaptureBonus = nil}
 
-  var withDailySpinBonus: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus {
+  public var withDailySpinBonus: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus {
     get {return _storage._withDailySpinBonus ?? POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus()}
     set {_uniqueStorage()._withDailySpinBonus = newValue}
   }
   /// Returns true if `withDailySpinBonus` has been explicitly set.
-  var hasWithDailySpinBonus: Bool {return _storage._withDailySpinBonus != nil}
+  public var hasWithDailySpinBonus: Bool {return _storage._withDailySpinBonus != nil}
   /// Clears the value of `withDailySpinBonus`. Subsequent reads from it will return its default value.
-  mutating func clearWithDailySpinBonus() {_uniqueStorage()._withDailySpinBonus = nil}
+  public mutating func clearWithDailySpinBonus() {_uniqueStorage()._withDailySpinBonus = nil}
 
-  var withWinRaidStatus: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus {
+  public var withWinRaidStatus: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus {
     get {return _storage._withWinRaidStatus ?? POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus()}
     set {_uniqueStorage()._withWinRaidStatus = newValue}
   }
   /// Returns true if `withWinRaidStatus` has been explicitly set.
-  var hasWithWinRaidStatus: Bool {return _storage._withWinRaidStatus != nil}
+  public var hasWithWinRaidStatus: Bool {return _storage._withWinRaidStatus != nil}
   /// Clears the value of `withWinRaidStatus`. Subsequent reads from it will return its default value.
-  mutating func clearWithWinRaidStatus() {_uniqueStorage()._withWinRaidStatus = nil}
+  public mutating func clearWithWinRaidStatus() {_uniqueStorage()._withWinRaidStatus = nil}
 
-  var withRaidLevel: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel {
+  public var withRaidLevel: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel {
     get {return _storage._withRaidLevel ?? POGOProtos_Data_Quests_QuestCondition.WithRaidLevel()}
     set {_uniqueStorage()._withRaidLevel = newValue}
   }
   /// Returns true if `withRaidLevel` has been explicitly set.
-  var hasWithRaidLevel: Bool {return _storage._withRaidLevel != nil}
+  public var hasWithRaidLevel: Bool {return _storage._withRaidLevel != nil}
   /// Clears the value of `withRaidLevel`. Subsequent reads from it will return its default value.
-  mutating func clearWithRaidLevel() {_uniqueStorage()._withRaidLevel = nil}
+  public mutating func clearWithRaidLevel() {_uniqueStorage()._withRaidLevel = nil}
 
-  var withThrowType: POGOProtos_Data_Quests_QuestCondition.WithThrowType {
+  public var withThrowType: POGOProtos_Data_Quests_QuestCondition.WithThrowType {
     get {return _storage._withThrowType ?? POGOProtos_Data_Quests_QuestCondition.WithThrowType()}
     set {_uniqueStorage()._withThrowType = newValue}
   }
   /// Returns true if `withThrowType` has been explicitly set.
-  var hasWithThrowType: Bool {return _storage._withThrowType != nil}
+  public var hasWithThrowType: Bool {return _storage._withThrowType != nil}
   /// Clears the value of `withThrowType`. Subsequent reads from it will return its default value.
-  mutating func clearWithThrowType() {_uniqueStorage()._withThrowType = nil}
+  public mutating func clearWithThrowType() {_uniqueStorage()._withThrowType = nil}
 
-  var withWinGymBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus {
+  public var withWinGymBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus {
     get {return _storage._withWinGymBattleStatus ?? POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus()}
     set {_uniqueStorage()._withWinGymBattleStatus = newValue}
   }
   /// Returns true if `withWinGymBattleStatus` has been explicitly set.
-  var hasWithWinGymBattleStatus: Bool {return _storage._withWinGymBattleStatus != nil}
+  public var hasWithWinGymBattleStatus: Bool {return _storage._withWinGymBattleStatus != nil}
   /// Clears the value of `withWinGymBattleStatus`. Subsequent reads from it will return its default value.
-  mutating func clearWithWinGymBattleStatus() {_uniqueStorage()._withWinGymBattleStatus = nil}
+  public mutating func clearWithWinGymBattleStatus() {_uniqueStorage()._withWinGymBattleStatus = nil}
 
-  var withSuperEffectiveChargeMove: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove {
+  public var withSuperEffectiveChargeMove: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove {
     get {return _storage._withSuperEffectiveChargeMove ?? POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove()}
     set {_uniqueStorage()._withSuperEffectiveChargeMove = newValue}
   }
   /// Returns true if `withSuperEffectiveChargeMove` has been explicitly set.
-  var hasWithSuperEffectiveChargeMove: Bool {return _storage._withSuperEffectiveChargeMove != nil}
+  public var hasWithSuperEffectiveChargeMove: Bool {return _storage._withSuperEffectiveChargeMove != nil}
   /// Clears the value of `withSuperEffectiveChargeMove`. Subsequent reads from it will return its default value.
-  mutating func clearWithSuperEffectiveChargeMove() {_uniqueStorage()._withSuperEffectiveChargeMove = nil}
+  public mutating func clearWithSuperEffectiveChargeMove() {_uniqueStorage()._withSuperEffectiveChargeMove = nil}
 
-  var withItem: POGOProtos_Data_Quests_QuestCondition.WithItem {
+  public var withItem: POGOProtos_Data_Quests_QuestCondition.WithItem {
     get {return _storage._withItem ?? POGOProtos_Data_Quests_QuestCondition.WithItem()}
     set {_uniqueStorage()._withItem = newValue}
   }
   /// Returns true if `withItem` has been explicitly set.
-  var hasWithItem: Bool {return _storage._withItem != nil}
+  public var hasWithItem: Bool {return _storage._withItem != nil}
   /// Clears the value of `withItem`. Subsequent reads from it will return its default value.
-  mutating func clearWithItem() {_uniqueStorage()._withItem = nil}
+  public mutating func clearWithItem() {_uniqueStorage()._withItem = nil}
 
-  var withUniquePokestop: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop {
+  public var withUniquePokestop: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop {
     get {return _storage._withUniquePokestop ?? POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop()}
     set {_uniqueStorage()._withUniquePokestop = newValue}
   }
   /// Returns true if `withUniquePokestop` has been explicitly set.
-  var hasWithUniquePokestop: Bool {return _storage._withUniquePokestop != nil}
+  public var hasWithUniquePokestop: Bool {return _storage._withUniquePokestop != nil}
   /// Clears the value of `withUniquePokestop`. Subsequent reads from it will return its default value.
-  mutating func clearWithUniquePokestop() {_uniqueStorage()._withUniquePokestop = nil}
+  public mutating func clearWithUniquePokestop() {_uniqueStorage()._withUniquePokestop = nil}
 
-  var withQuestContext: POGOProtos_Data_Quests_QuestCondition.WithQuestContext {
+  public var withQuestContext: POGOProtos_Data_Quests_QuestCondition.WithQuestContext {
     get {return _storage._withQuestContext ?? POGOProtos_Data_Quests_QuestCondition.WithQuestContext()}
     set {_uniqueStorage()._withQuestContext = newValue}
   }
   /// Returns true if `withQuestContext` has been explicitly set.
-  var hasWithQuestContext: Bool {return _storage._withQuestContext != nil}
+  public var hasWithQuestContext: Bool {return _storage._withQuestContext != nil}
   /// Clears the value of `withQuestContext`. Subsequent reads from it will return its default value.
-  mutating func clearWithQuestContext() {_uniqueStorage()._withQuestContext = nil}
+  public mutating func clearWithQuestContext() {_uniqueStorage()._withQuestContext = nil}
 
-  var withBadgeType: POGOProtos_Data_Quests_QuestCondition.WithBadgeType {
+  public var withBadgeType: POGOProtos_Data_Quests_QuestCondition.WithBadgeType {
     get {return _storage._withBadgeType ?? POGOProtos_Data_Quests_QuestCondition.WithBadgeType()}
     set {_uniqueStorage()._withBadgeType = newValue}
   }
   /// Returns true if `withBadgeType` has been explicitly set.
-  var hasWithBadgeType: Bool {return _storage._withBadgeType != nil}
+  public var hasWithBadgeType: Bool {return _storage._withBadgeType != nil}
   /// Clears the value of `withBadgeType`. Subsequent reads from it will return its default value.
-  mutating func clearWithBadgeType() {_uniqueStorage()._withBadgeType = nil}
+  public mutating func clearWithBadgeType() {_uniqueStorage()._withBadgeType = nil}
 
-  var withPlayerLevel: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel {
+  public var withPlayerLevel: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel {
     get {return _storage._withPlayerLevel ?? POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel()}
     set {_uniqueStorage()._withPlayerLevel = newValue}
   }
   /// Returns true if `withPlayerLevel` has been explicitly set.
-  var hasWithPlayerLevel: Bool {return _storage._withPlayerLevel != nil}
+  public var hasWithPlayerLevel: Bool {return _storage._withPlayerLevel != nil}
   /// Clears the value of `withPlayerLevel`. Subsequent reads from it will return its default value.
-  mutating func clearWithPlayerLevel() {_uniqueStorage()._withPlayerLevel = nil}
+  public mutating func clearWithPlayerLevel() {_uniqueStorage()._withPlayerLevel = nil}
 
-  var withWinBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus {
+  public var withWinBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus {
     get {return _storage._withWinBattleStatus ?? POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus()}
     set {_uniqueStorage()._withWinBattleStatus = newValue}
   }
   /// Returns true if `withWinBattleStatus` has been explicitly set.
-  var hasWithWinBattleStatus: Bool {return _storage._withWinBattleStatus != nil}
+  public var hasWithWinBattleStatus: Bool {return _storage._withWinBattleStatus != nil}
   /// Clears the value of `withWinBattleStatus`. Subsequent reads from it will return its default value.
-  mutating func clearWithWinBattleStatus() {_uniqueStorage()._withWinBattleStatus = nil}
+  public mutating func clearWithWinBattleStatus() {_uniqueStorage()._withWinBattleStatus = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum ConditionType: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum ConditionType: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case withPokemonType // = 1
     case withPokemonCategory // = 2
@@ -200,11 +200,11 @@ struct POGOProtos_Data_Quests_QuestCondition {
     case withDaysInARow // = 20
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .withPokemonType
@@ -231,7 +231,7 @@ struct POGOProtos_Data_Quests_QuestCondition {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .withPokemonType: return 1
@@ -260,171 +260,171 @@ struct POGOProtos_Data_Quests_QuestCondition {
 
   }
 
-  struct WithPokemonType {
+  public struct WithPokemonType {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var pokemonType: [POGOProtos_Enums_PokemonType] = []
+    public var pokemonType: [POGOProtos_Enums_PokemonType] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithWeatherBoost {
+  public struct WithWeatherBoost {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithPokemonCategory {
+  public struct WithPokemonCategory {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var categoryName: String = String()
+    public var categoryName: String = String()
 
-    var pokemonIds: [POGOProtos_Enums_PokemonId] = []
+    public var pokemonIds: [POGOProtos_Enums_PokemonId] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithDailyCaptureBonus {
+  public struct WithDailyCaptureBonus {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithDailySpinBonus {
+  public struct WithDailySpinBonus {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithWinRaidStatus {
+  public struct WithWinRaidStatus {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithRaidLevel {
+  public struct WithRaidLevel {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var raidLevel: [POGOProtos_Enums_RaidLevel] = []
+    public var raidLevel: [POGOProtos_Enums_RaidLevel] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithThrowType {
+  public struct WithThrowType {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var throwType: POGOProtos_Enums_ActivityType = .activityUnknown
+    public var throwType: POGOProtos_Enums_ActivityType = .activityUnknown
 
-    var hit: Bool = false
+    public var hit: Bool = false
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithCurveBall {
+  public struct WithCurveBall {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithWinGymBattleStatus {
+  public struct WithWinGymBattleStatus {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithSuperEffectiveChargeMove {
+  public struct WithSuperEffectiveChargeMove {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithItem {
+  public struct WithItem {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    public var item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithUniquePokestop {
+  public struct WithUniquePokestop {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithQuestContext {
+  public struct WithQuestContext {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var context: POGOProtos_Data_Quests_QuestCondition.WithQuestContext.Context = .unset
+    public var context: POGOProtos_Data_Quests_QuestCondition.WithQuestContext.Context = .unset
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    enum Context: SwiftProtobuf.Enum {
-      typealias RawValue = Int
+    public enum Context: SwiftProtobuf.Enum {
+      public typealias RawValue = Int
       case unset // = 0
       case storyQuest // = 1
       case challengeQuest // = 2
       case UNRECOGNIZED(Int)
 
-      init() {
+      public init() {
         self = .unset
       }
 
-      init?(rawValue: Int) {
+      public init?(rawValue: Int) {
         switch rawValue {
         case 0: self = .unset
         case 1: self = .storyQuest
@@ -433,7 +433,7 @@ struct POGOProtos_Data_Quests_QuestCondition {
         }
       }
 
-      var rawValue: Int {
+      public var rawValue: Int {
         switch self {
         case .unset: return 0
         case .storyQuest: return 1
@@ -444,48 +444,48 @@ struct POGOProtos_Data_Quests_QuestCondition {
 
     }
 
-    init() {}
+    public init() {}
   }
 
-  struct WithBadgeType {
+  public struct WithBadgeType {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var badgeType: [POGOProtos_Enums_BadgeType] = []
+    public var badgeType: [POGOProtos_Enums_BadgeType] = []
 
-    var badgeRank: Int32 = 0
+    public var badgeRank: Int32 = 0
 
-    var amount: Int32 = 0
+    public var amount: Int32 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithPlayerLevel {
+  public struct WithPlayerLevel {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var level: Int32 = 0
+    public var level: Int32 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct WithWinBattleStatus {
+  public struct WithWinBattleStatus {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -526,8 +526,8 @@ extension POGOProtos_Data_Quests_QuestCondition.ConditionType: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Data.Quests"
 
 extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QuestCondition"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".QuestCondition"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "type"),
     2: .standard(proto: "with_pokemon_type"),
     3: .standard(proto: "with_pokemon_category"),
@@ -548,29 +548,29 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
   ]
 
   fileprivate class _StorageClass {
-    var _type: POGOProtos_Data_Quests_QuestCondition.ConditionType = .unset
-    var _withPokemonType: POGOProtos_Data_Quests_QuestCondition.WithPokemonType? = nil
-    var _withPokemonCategory: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory? = nil
-    var _withWeatherBoost: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost? = nil
-    var _withDailyCaptureBonus: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus? = nil
-    var _withDailySpinBonus: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus? = nil
-    var _withWinRaidStatus: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus? = nil
-    var _withRaidLevel: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel? = nil
-    var _withThrowType: POGOProtos_Data_Quests_QuestCondition.WithThrowType? = nil
-    var _withWinGymBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus? = nil
-    var _withSuperEffectiveChargeMove: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove? = nil
-    var _withItem: POGOProtos_Data_Quests_QuestCondition.WithItem? = nil
-    var _withUniquePokestop: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop? = nil
-    var _withQuestContext: POGOProtos_Data_Quests_QuestCondition.WithQuestContext? = nil
-    var _withBadgeType: POGOProtos_Data_Quests_QuestCondition.WithBadgeType? = nil
-    var _withPlayerLevel: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel? = nil
-    var _withWinBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus? = nil
+    public var _type: POGOProtos_Data_Quests_QuestCondition.ConditionType = .unset
+    public var _withPokemonType: POGOProtos_Data_Quests_QuestCondition.WithPokemonType? = nil
+    public var _withPokemonCategory: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory? = nil
+    public var _withWeatherBoost: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost? = nil
+    public var _withDailyCaptureBonus: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus? = nil
+    public var _withDailySpinBonus: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus? = nil
+    public var _withWinRaidStatus: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus? = nil
+    public var _withRaidLevel: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel? = nil
+    public var _withThrowType: POGOProtos_Data_Quests_QuestCondition.WithThrowType? = nil
+    public var _withWinGymBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus? = nil
+    public var _withSuperEffectiveChargeMove: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove? = nil
+    public var _withItem: POGOProtos_Data_Quests_QuestCondition.WithItem? = nil
+    public var _withUniquePokestop: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop? = nil
+    public var _withQuestContext: POGOProtos_Data_Quests_QuestCondition.WithQuestContext? = nil
+    public var _withBadgeType: POGOProtos_Data_Quests_QuestCondition.WithBadgeType? = nil
+    public var _withPlayerLevel: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel? = nil
+    public var _withWinBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _type = source._type
       _withPokemonType = source._withPokemonType
       _withPokemonCategory = source._withPokemonCategory
@@ -598,7 +598,7 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -626,7 +626,7 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._type != .unset {
         try visitor.visitSingularEnumField(value: _storage._type, fieldNumber: 1)
@@ -683,7 +683,7 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition, rhs: POGOProtos_Data_Quests_QuestCondition) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition, rhs: POGOProtos_Data_Quests_QuestCondition) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -715,7 +715,7 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.ConditionType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "WITH_POKEMON_TYPE"),
     2: .same(proto: "WITH_POKEMON_CATEGORY"),
@@ -741,12 +741,12 @@ extension POGOProtos_Data_Quests_QuestCondition.ConditionType: SwiftProtobuf._Pr
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithPokemonType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithPokemonType"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithPokemonType"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_type"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedEnumField(value: &self.pokemonType)
@@ -755,14 +755,14 @@ extension POGOProtos_Data_Quests_QuestCondition.WithPokemonType: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.pokemonType.isEmpty {
       try visitor.visitPackedEnumField(value: self.pokemonType, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonType, rhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonType) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonType, rhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonType) -> Bool {
     if lhs.pokemonType != rhs.pokemonType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -770,32 +770,32 @@ extension POGOProtos_Data_Quests_QuestCondition.WithPokemonType: SwiftProtobuf.M
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithWeatherBoost"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithWeatherBoost"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost, rhs: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost, rhs: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithPokemonCategory"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithPokemonCategory"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "category_name"),
     2: .standard(proto: "pokemon_ids"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.categoryName)
@@ -805,7 +805,7 @@ extension POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory: SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.categoryName.isEmpty {
       try visitor.visitSingularStringField(value: self.categoryName, fieldNumber: 1)
     }
@@ -815,7 +815,7 @@ extension POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory: SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory, rhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory, rhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory) -> Bool {
     if lhs.categoryName != rhs.categoryName {return false}
     if lhs.pokemonIds != rhs.pokemonIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -824,69 +824,69 @@ extension POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory: SwiftProtob
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithDailyCaptureBonus"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithDailyCaptureBonus"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus, rhs: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus, rhs: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithDailySpinBonus"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithDailySpinBonus"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus, rhs: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus, rhs: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithWinRaidStatus"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithWinRaidStatus"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus, rhs: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus, rhs: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithRaidLevel: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithRaidLevel"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithRaidLevel"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "raid_level"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedEnumField(value: &self.raidLevel)
@@ -895,14 +895,14 @@ extension POGOProtos_Data_Quests_QuestCondition.WithRaidLevel: SwiftProtobuf.Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.raidLevel.isEmpty {
       try visitor.visitPackedEnumField(value: self.raidLevel, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel, rhs: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel, rhs: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel) -> Bool {
     if lhs.raidLevel != rhs.raidLevel {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -910,13 +910,13 @@ extension POGOProtos_Data_Quests_QuestCondition.WithRaidLevel: SwiftProtobuf.Mes
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithThrowType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithThrowType"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithThrowType"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "throw_type"),
     2: .same(proto: "hit"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.throwType)
@@ -926,7 +926,7 @@ extension POGOProtos_Data_Quests_QuestCondition.WithThrowType: SwiftProtobuf.Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.throwType != .activityUnknown {
       try visitor.visitSingularEnumField(value: self.throwType, fieldNumber: 1)
     }
@@ -936,7 +936,7 @@ extension POGOProtos_Data_Quests_QuestCondition.WithThrowType: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithThrowType, rhs: POGOProtos_Data_Quests_QuestCondition.WithThrowType) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithThrowType, rhs: POGOProtos_Data_Quests_QuestCondition.WithThrowType) -> Bool {
     if lhs.throwType != rhs.throwType {return false}
     if lhs.hit != rhs.hit {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -945,69 +945,69 @@ extension POGOProtos_Data_Quests_QuestCondition.WithThrowType: SwiftProtobuf.Mes
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithCurveBall: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithCurveBall"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithCurveBall"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithCurveBall, rhs: POGOProtos_Data_Quests_QuestCondition.WithCurveBall) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithCurveBall, rhs: POGOProtos_Data_Quests_QuestCondition.WithCurveBall) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithWinGymBattleStatus"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithWinGymBattleStatus"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus, rhs: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus, rhs: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithSuperEffectiveChargeMove"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithSuperEffectiveChargeMove"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove, rhs: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove, rhs: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithItem: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithItem"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithItem"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "item"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.item)
@@ -1016,14 +1016,14 @@ extension POGOProtos_Data_Quests_QuestCondition.WithItem: SwiftProtobuf.Message,
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.item != .itemUnknown {
       try visitor.visitSingularEnumField(value: self.item, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithItem, rhs: POGOProtos_Data_Quests_QuestCondition.WithItem) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithItem, rhs: POGOProtos_Data_Quests_QuestCondition.WithItem) -> Bool {
     if lhs.item != rhs.item {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1031,31 +1031,31 @@ extension POGOProtos_Data_Quests_QuestCondition.WithItem: SwiftProtobuf.Message,
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithUniquePokestop"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithUniquePokestop"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop, rhs: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop, rhs: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithQuestContext: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithQuestContext"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithQuestContext"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "context"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.context)
@@ -1064,14 +1064,14 @@ extension POGOProtos_Data_Quests_QuestCondition.WithQuestContext: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.context != .unset {
       try visitor.visitSingularEnumField(value: self.context, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithQuestContext, rhs: POGOProtos_Data_Quests_QuestCondition.WithQuestContext) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithQuestContext, rhs: POGOProtos_Data_Quests_QuestCondition.WithQuestContext) -> Bool {
     if lhs.context != rhs.context {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1079,7 +1079,7 @@ extension POGOProtos_Data_Quests_QuestCondition.WithQuestContext: SwiftProtobuf.
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithQuestContext.Context: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "STORY_QUEST"),
     2: .same(proto: "CHALLENGE_QUEST"),
@@ -1087,14 +1087,14 @@ extension POGOProtos_Data_Quests_QuestCondition.WithQuestContext.Context: SwiftP
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithBadgeType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithBadgeType"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithBadgeType"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "badge_type"),
     2: .standard(proto: "badge_rank"),
     3: .same(proto: "amount"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedEnumField(value: &self.badgeType)
@@ -1105,7 +1105,7 @@ extension POGOProtos_Data_Quests_QuestCondition.WithBadgeType: SwiftProtobuf.Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.badgeType.isEmpty {
       try visitor.visitPackedEnumField(value: self.badgeType, fieldNumber: 1)
     }
@@ -1118,7 +1118,7 @@ extension POGOProtos_Data_Quests_QuestCondition.WithBadgeType: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithBadgeType, rhs: POGOProtos_Data_Quests_QuestCondition.WithBadgeType) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithBadgeType, rhs: POGOProtos_Data_Quests_QuestCondition.WithBadgeType) -> Bool {
     if lhs.badgeType != rhs.badgeType {return false}
     if lhs.badgeRank != rhs.badgeRank {return false}
     if lhs.amount != rhs.amount {return false}
@@ -1128,12 +1128,12 @@ extension POGOProtos_Data_Quests_QuestCondition.WithBadgeType: SwiftProtobuf.Mes
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithPlayerLevel"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithPlayerLevel"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "level"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.level)
@@ -1142,14 +1142,14 @@ extension POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.level != 0 {
       try visitor.visitSingularInt32Field(value: self.level, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel, rhs: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel, rhs: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel) -> Bool {
     if lhs.level != rhs.level {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1157,19 +1157,19 @@ extension POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel: SwiftProtobuf.M
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithWinBattleStatus"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithWinBattleStatus"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus, rhs: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus, rhs: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

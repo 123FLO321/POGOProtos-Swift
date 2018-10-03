@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_Platform: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_Platform: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case unset // = 0
   case ios // = 1
   case android // = 2
@@ -29,11 +29,11 @@ enum POGOProtos_Enums_Platform: SwiftProtobuf.Enum {
   case appleWatch // = 5
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unset
     case 1: self = .ios
@@ -45,7 +45,7 @@ enum POGOProtos_Enums_Platform: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unset: return 0
     case .ios: return 1
@@ -78,7 +78,7 @@ extension POGOProtos_Enums_Platform: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_Platform: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "IOS"),
     2: .same(proto: "ANDROID"),

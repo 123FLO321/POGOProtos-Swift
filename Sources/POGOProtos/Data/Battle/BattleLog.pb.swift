@@ -15,30 +15,30 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Battle_BattleLog {
+public struct POGOProtos_Data_Battle_BattleLog {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var state: POGOProtos_Data_Battle_BattleState = .stateUnset
+  public var state: POGOProtos_Data_Battle_BattleState = .stateUnset
 
-  var battleType: POGOProtos_Data_Battle_BattleType = .unset
+  public var battleType: POGOProtos_Data_Battle_BattleType = .unset
 
-  var serverMs: Int64 = 0
+  public var serverMs: Int64 = 0
 
-  var battleActions: [POGOProtos_Data_Battle_BattleAction] = []
+  public var battleActions: [POGOProtos_Data_Battle_BattleAction] = []
 
-  var battleStartTimestampMs: Int64 = 0
+  public var battleStartTimestampMs: Int64 = 0
 
-  var battleEndTimestampMs: Int64 = 0
+  public var battleEndTimestampMs: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -46,8 +46,8 @@ struct POGOProtos_Data_Battle_BattleLog {
 fileprivate let _protobuf_package = "POGOProtos.Data.Battle"
 
 extension POGOProtos_Data_Battle_BattleLog: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BattleLog"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BattleLog"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "state"),
     2: .standard(proto: "battle_type"),
     3: .standard(proto: "server_ms"),
@@ -56,7 +56,7 @@ extension POGOProtos_Data_Battle_BattleLog: SwiftProtobuf.Message, SwiftProtobuf
     6: .standard(proto: "battle_end_timestamp_ms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.state)
@@ -70,7 +70,7 @@ extension POGOProtos_Data_Battle_BattleLog: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.state != .stateUnset {
       try visitor.visitSingularEnumField(value: self.state, fieldNumber: 1)
     }
@@ -92,7 +92,7 @@ extension POGOProtos_Data_Battle_BattleLog: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Battle_BattleLog, rhs: POGOProtos_Data_Battle_BattleLog) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Battle_BattleLog, rhs: POGOProtos_Data_Battle_BattleLog) -> Bool {
     if lhs.state != rhs.state {return false}
     if lhs.battleType != rhs.battleType {return false}
     if lhs.serverMs != rhs.serverMs {return false}

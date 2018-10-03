@@ -15,30 +15,30 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry {
+public struct POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var avatarCustomizationClickID: POGOProtos_Enums_AvatarCustomizationTelemetryIds = .undefinedAvatarCustomization
+  public var avatarCustomizationClickID: POGOProtos_Enums_AvatarCustomizationTelemetryIds = .undefinedAvatarCustomization
 
-  var assetName: String = String()
+  public var assetName: String = String()
 
-  var sku: String = String()
+  public var sku: String = String()
 
-  var hasEnoughCoins_p: Bool = false
+  public var hasEnoughCoins_p: Bool = false
 
-  var groupName: String = String()
+  public var groupName: String = String()
 
-  var colorChoiceID: String = String()
+  public var colorChoiceID: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -46,8 +46,8 @@ struct POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AvatarCustomizationTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".AvatarCustomizationTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "avatar_customization_click_id"),
     2: .standard(proto: "asset_name"),
     3: .same(proto: "sku"),
@@ -56,7 +56,7 @@ extension POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry: SwiftProtobuf.
     6: .standard(proto: "color_choice_id"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.avatarCustomizationClickID)
@@ -70,7 +70,7 @@ extension POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.avatarCustomizationClickID != .undefinedAvatarCustomization {
       try visitor.visitSingularEnumField(value: self.avatarCustomizationClickID, fieldNumber: 1)
     }
@@ -92,7 +92,7 @@ extension POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry, rhs: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry, rhs: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry) -> Bool {
     if lhs.avatarCustomizationClickID != rhs.avatarCustomizationClickID {return false}
     if lhs.assetName != rhs.assetName {return false}
     if lhs.sku != rhs.sku {return false}

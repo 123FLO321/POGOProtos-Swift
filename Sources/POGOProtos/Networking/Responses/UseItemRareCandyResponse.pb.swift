@@ -15,25 +15,25 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_UseItemRareCandyResponse {
+public struct POGOProtos_Networking_Responses_UseItemRareCandyResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_UseItemRareCandyResponse.Result = .unset
+  public var result: POGOProtos_Networking_Responses_UseItemRareCandyResponse.Result = .unset
 
-  var pokemonID: POGOProtos_Enums_PokemonId = .missingno
+  public var pokemonID: POGOProtos_Enums_PokemonId = .missingno
 
-  var updatedCandyCount: Int32 = 0
+  public var updatedCandyCount: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case invalidPokemonID // = 2
@@ -43,11 +43,11 @@ struct POGOProtos_Networking_Responses_UseItemRareCandyResponse {
     case notEnoughItems // = 6
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -60,7 +60,7 @@ struct POGOProtos_Networking_Responses_UseItemRareCandyResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -75,7 +75,7 @@ struct POGOProtos_Networking_Responses_UseItemRareCandyResponse {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -100,14 +100,14 @@ extension POGOProtos_Networking_Responses_UseItemRareCandyResponse.Result: CaseI
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_UseItemRareCandyResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UseItemRareCandyResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".UseItemRareCandyResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "pokemon_id"),
     3: .standard(proto: "updated_candy_count"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
@@ -118,7 +118,7 @@ extension POGOProtos_Networking_Responses_UseItemRareCandyResponse: SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.result != .unset {
       try visitor.visitSingularEnumField(value: self.result, fieldNumber: 1)
     }
@@ -131,7 +131,7 @@ extension POGOProtos_Networking_Responses_UseItemRareCandyResponse: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_UseItemRareCandyResponse, rhs: POGOProtos_Networking_Responses_UseItemRareCandyResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_UseItemRareCandyResponse, rhs: POGOProtos_Networking_Responses_UseItemRareCandyResponse) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs.pokemonID != rhs.pokemonID {return false}
     if lhs.updatedCandyCount != rhs.updatedCandyCount {return false}
@@ -141,7 +141,7 @@ extension POGOProtos_Networking_Responses_UseItemRareCandyResponse: SwiftProtobu
 }
 
 extension POGOProtos_Networking_Responses_UseItemRareCandyResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "INVALID_POKEMON_ID"),

@@ -15,70 +15,70 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Battle_Battle {
+public struct POGOProtos_Data_Battle_Battle {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var battleStartMs: Int64 {
+  public var battleStartMs: Int64 {
     get {return _storage._battleStartMs}
     set {_uniqueStorage()._battleStartMs = newValue}
   }
 
-  var battleEndMs: Int64 {
+  public var battleEndMs: Int64 {
     get {return _storage._battleEndMs}
     set {_uniqueStorage()._battleEndMs = newValue}
   }
 
-  var battleID: String {
+  public var battleID: String {
     get {return _storage._battleID}
     set {_uniqueStorage()._battleID = newValue}
   }
 
-  var defender: POGOProtos_Data_Battle_BattleParticipant {
+  public var defender: POGOProtos_Data_Battle_BattleParticipant {
     get {return _storage._defender ?? POGOProtos_Data_Battle_BattleParticipant()}
     set {_uniqueStorage()._defender = newValue}
   }
   /// Returns true if `defender` has been explicitly set.
-  var hasDefender: Bool {return _storage._defender != nil}
+  public var hasDefender: Bool {return _storage._defender != nil}
   /// Clears the value of `defender`. Subsequent reads from it will return its default value.
-  mutating func clearDefender() {_uniqueStorage()._defender = nil}
+  public mutating func clearDefender() {_uniqueStorage()._defender = nil}
 
-  var battleLog: POGOProtos_Data_Battle_BattleLog {
+  public var battleLog: POGOProtos_Data_Battle_BattleLog {
     get {return _storage._battleLog ?? POGOProtos_Data_Battle_BattleLog()}
     set {_uniqueStorage()._battleLog = newValue}
   }
   /// Returns true if `battleLog` has been explicitly set.
-  var hasBattleLog: Bool {return _storage._battleLog != nil}
+  public var hasBattleLog: Bool {return _storage._battleLog != nil}
   /// Clears the value of `battleLog`. Subsequent reads from it will return its default value.
-  mutating func clearBattleLog() {_uniqueStorage()._battleLog = nil}
+  public mutating func clearBattleLog() {_uniqueStorage()._battleLog = nil}
 
-  var attacker: POGOProtos_Data_Battle_BattleParticipant {
+  public var attacker: POGOProtos_Data_Battle_BattleParticipant {
     get {return _storage._attacker ?? POGOProtos_Data_Battle_BattleParticipant()}
     set {_uniqueStorage()._attacker = newValue}
   }
   /// Returns true if `attacker` has been explicitly set.
-  var hasAttacker: Bool {return _storage._attacker != nil}
+  public var hasAttacker: Bool {return _storage._attacker != nil}
   /// Clears the value of `attacker`. Subsequent reads from it will return its default value.
-  mutating func clearAttacker() {_uniqueStorage()._attacker = nil}
+  public mutating func clearAttacker() {_uniqueStorage()._attacker = nil}
 
-  var weatherCondition: POGOProtos_Enums_WeatherCondition {
+  public var weatherCondition: POGOProtos_Enums_WeatherCondition {
     get {return _storage._weatherCondition}
     set {_uniqueStorage()._weatherCondition = newValue}
   }
 
-  var highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone {
+  public var highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone {
     get {return _storage._highestFriendshipMilestone}
     set {_uniqueStorage()._highestFriendshipMilestone = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -88,8 +88,8 @@ struct POGOProtos_Data_Battle_Battle {
 fileprivate let _protobuf_package = "POGOProtos.Data.Battle"
 
 extension POGOProtos_Data_Battle_Battle: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Battle"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Battle"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "battle_start_ms"),
     2: .standard(proto: "battle_end_ms"),
     3: .standard(proto: "battle_id"),
@@ -101,20 +101,20 @@ extension POGOProtos_Data_Battle_Battle: SwiftProtobuf.Message, SwiftProtobuf._M
   ]
 
   fileprivate class _StorageClass {
-    var _battleStartMs: Int64 = 0
-    var _battleEndMs: Int64 = 0
-    var _battleID: String = String()
-    var _defender: POGOProtos_Data_Battle_BattleParticipant? = nil
-    var _battleLog: POGOProtos_Data_Battle_BattleLog? = nil
-    var _attacker: POGOProtos_Data_Battle_BattleParticipant? = nil
-    var _weatherCondition: POGOProtos_Enums_WeatherCondition = .none
-    var _highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
+    public var _battleStartMs: Int64 = 0
+    public var _battleEndMs: Int64 = 0
+    public var _battleID: String = String()
+    public var _defender: POGOProtos_Data_Battle_BattleParticipant? = nil
+    public var _battleLog: POGOProtos_Data_Battle_BattleLog? = nil
+    public var _attacker: POGOProtos_Data_Battle_BattleParticipant? = nil
+    public var _weatherCondition: POGOProtos_Enums_WeatherCondition = .none
+    public var _highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _battleStartMs = source._battleStartMs
       _battleEndMs = source._battleEndMs
       _battleID = source._battleID
@@ -133,7 +133,7 @@ extension POGOProtos_Data_Battle_Battle: SwiftProtobuf.Message, SwiftProtobuf._M
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -152,7 +152,7 @@ extension POGOProtos_Data_Battle_Battle: SwiftProtobuf.Message, SwiftProtobuf._M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._battleStartMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._battleStartMs, fieldNumber: 1)
@@ -182,7 +182,7 @@ extension POGOProtos_Data_Battle_Battle: SwiftProtobuf.Message, SwiftProtobuf._M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Battle_Battle, rhs: POGOProtos_Data_Battle_Battle) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Battle_Battle, rhs: POGOProtos_Data_Battle_Battle) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

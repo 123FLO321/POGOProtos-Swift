@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_GenderSettings {
+public struct POGOProtos_Settings_Master_GenderSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemon: POGOProtos_Enums_PokemonId {
+  public var pokemon: POGOProtos_Enums_PokemonId {
     get {return _storage._pokemon}
     set {_uniqueStorage()._pokemon = newValue}
   }
 
-  var gender: POGOProtos_Settings_Master_Pokemon_PokemonGenderSettings {
+  public var gender: POGOProtos_Settings_Master_Pokemon_PokemonGenderSettings {
     get {return _storage._gender ?? POGOProtos_Settings_Master_Pokemon_PokemonGenderSettings()}
     set {_uniqueStorage()._gender = newValue}
   }
   /// Returns true if `gender` has been explicitly set.
-  var hasGender: Bool {return _storage._gender != nil}
+  public var hasGender: Bool {return _storage._gender != nil}
   /// Clears the value of `gender`. Subsequent reads from it will return its default value.
-  mutating func clearGender() {_uniqueStorage()._gender = nil}
+  public mutating func clearGender() {_uniqueStorage()._gender = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -50,21 +50,21 @@ struct POGOProtos_Settings_Master_GenderSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_GenderSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GenderSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GenderSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pokemon"),
     2: .same(proto: "gender"),
   ]
 
   fileprivate class _StorageClass {
-    var _pokemon: POGOProtos_Enums_PokemonId = .missingno
-    var _gender: POGOProtos_Settings_Master_Pokemon_PokemonGenderSettings? = nil
+    public var _pokemon: POGOProtos_Enums_PokemonId = .missingno
+    public var _gender: POGOProtos_Settings_Master_Pokemon_PokemonGenderSettings? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _pokemon = source._pokemon
       _gender = source._gender
     }
@@ -77,7 +77,7 @@ extension POGOProtos_Settings_Master_GenderSettings: SwiftProtobuf.Message, Swif
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -90,7 +90,7 @@ extension POGOProtos_Settings_Master_GenderSettings: SwiftProtobuf.Message, Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._pokemon != .missingno {
         try visitor.visitSingularEnumField(value: _storage._pokemon, fieldNumber: 1)
@@ -102,7 +102,7 @@ extension POGOProtos_Settings_Master_GenderSettings: SwiftProtobuf.Message, Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_GenderSettings, rhs: POGOProtos_Settings_Master_GenderSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_GenderSettings, rhs: POGOProtos_Settings_Master_GenderSettings) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

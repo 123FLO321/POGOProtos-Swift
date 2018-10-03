@@ -15,28 +15,28 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_FortSearchMessage {
+public struct POGOProtos_Networking_Requests_Messages_FortSearchMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var fortID: String = String()
+  public var fortID: String = String()
 
-  var playerLatitude: Double = 0
+  public var playerLatitude: Double = 0
 
-  var playerLongitude: Double = 0
+  public var playerLongitude: Double = 0
 
-  var fortLatitude: Double = 0
+  public var fortLatitude: Double = 0
 
-  var fortLongitude: Double = 0
+  public var fortLongitude: Double = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,8 +44,8 @@ struct POGOProtos_Networking_Requests_Messages_FortSearchMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_FortSearchMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FortSearchMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FortSearchMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "fort_id"),
     2: .standard(proto: "player_latitude"),
     3: .standard(proto: "player_longitude"),
@@ -53,7 +53,7 @@ extension POGOProtos_Networking_Requests_Messages_FortSearchMessage: SwiftProtob
     5: .standard(proto: "fort_longitude"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.fortID)
@@ -66,7 +66,7 @@ extension POGOProtos_Networking_Requests_Messages_FortSearchMessage: SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.fortID.isEmpty {
       try visitor.visitSingularStringField(value: self.fortID, fieldNumber: 1)
     }
@@ -85,7 +85,7 @@ extension POGOProtos_Networking_Requests_Messages_FortSearchMessage: SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_FortSearchMessage, rhs: POGOProtos_Networking_Requests_Messages_FortSearchMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_FortSearchMessage, rhs: POGOProtos_Networking_Requests_Messages_FortSearchMessage) -> Bool {
     if lhs.fortID != rhs.fortID {return false}
     if lhs.playerLatitude != rhs.playerLatitude {return false}
     if lhs.playerLongitude != rhs.playerLongitude {return false}

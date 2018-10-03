@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_LevelSettings {
+public struct POGOProtos_Settings_LevelSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var trainerCpModifier: Double = 0
+  public var trainerCpModifier: Double = 0
 
-  var trainerDifficultyModifier: Double = 0
+  public var trainerDifficultyModifier: Double = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Settings_LevelSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings"
 
 extension POGOProtos_Settings_LevelSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".LevelSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".LevelSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .standard(proto: "trainer_cp_modifier"),
     3: .standard(proto: "trainer_difficulty_modifier"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 2: try decoder.decodeSingularDoubleField(value: &self.trainerCpModifier)
@@ -54,7 +54,7 @@ extension POGOProtos_Settings_LevelSettings: SwiftProtobuf.Message, SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.trainerCpModifier != 0 {
       try visitor.visitSingularDoubleField(value: self.trainerCpModifier, fieldNumber: 2)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Settings_LevelSettings: SwiftProtobuf.Message, SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_LevelSettings, rhs: POGOProtos_Settings_LevelSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_LevelSettings, rhs: POGOProtos_Settings_LevelSettings) -> Bool {
     if lhs.trainerCpModifier != rhs.trainerCpModifier {return false}
     if lhs.trainerDifficultyModifier != rhs.trainerDifficultyModifier {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

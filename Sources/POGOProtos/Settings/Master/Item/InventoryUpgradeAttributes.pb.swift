@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes {
+public struct POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var additionalStorage: Int32 = 0
+  public var additionalStorage: Int32 = 0
 
-  var upgradeType: POGOProtos_Inventory_InventoryUpgradeType = .upgradeUnset
+  public var upgradeType: POGOProtos_Inventory_InventoryUpgradeType = .upgradeUnset
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master.Item"
 
 extension POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".InventoryUpgradeAttributes"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".InventoryUpgradeAttributes"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "additional_storage"),
     2: .standard(proto: "upgrade_type"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.additionalStorage)
@@ -54,7 +54,7 @@ extension POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes: SwiftProto
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.additionalStorage != 0 {
       try visitor.visitSingularInt32Field(value: self.additionalStorage, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes: SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes, rhs: POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes, rhs: POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes) -> Bool {
     if lhs.additionalStorage != rhs.additionalStorage {return false}
     if lhs.upgradeType != rhs.upgradeType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_Item_PokeballAttributes {
+public struct POGOProtos_Settings_Master_Item_PokeballAttributes {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var itemEffect: POGOProtos_Enums_ItemEffect = .none
+  public var itemEffect: POGOProtos_Enums_ItemEffect = .none
 
-  var captureMulti: Float = 0
+  public var captureMulti: Float = 0
 
-  var captureMultiEffect: Float = 0
+  public var captureMultiEffect: Float = 0
 
-  var itemEffectMod: Float = 0
+  public var itemEffectMod: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Settings_Master_Item_PokeballAttributes {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master.Item"
 
 extension POGOProtos_Settings_Master_Item_PokeballAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PokeballAttributes"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PokeballAttributes"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "item_effect"),
     2: .standard(proto: "capture_multi"),
     3: .standard(proto: "capture_multi_effect"),
     4: .standard(proto: "item_effect_mod"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.itemEffect)
@@ -62,7 +62,7 @@ extension POGOProtos_Settings_Master_Item_PokeballAttributes: SwiftProtobuf.Mess
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.itemEffect != .none {
       try visitor.visitSingularEnumField(value: self.itemEffect, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Settings_Master_Item_PokeballAttributes: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_Item_PokeballAttributes, rhs: POGOProtos_Settings_Master_Item_PokeballAttributes) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Item_PokeballAttributes, rhs: POGOProtos_Settings_Master_Item_PokeballAttributes) -> Bool {
     if lhs.itemEffect != rhs.itemEffect {return false}
     if lhs.captureMulti != rhs.captureMulti {return false}
     if lhs.captureMultiEffect != rhs.captureMultiEffect {return false}

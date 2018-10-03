@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_AssetCache_JournalAddEntry {
+public struct POGOProtos_Data_AssetCache_JournalAddEntry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var hashedKey: POGOProtos_Data_AssetCache_HashedKey {
+  public var hashedKey: POGOProtos_Data_AssetCache_HashedKey {
     get {return _storage._hashedKey ?? POGOProtos_Data_AssetCache_HashedKey()}
     set {_uniqueStorage()._hashedKey = newValue}
   }
   /// Returns true if `hashedKey` has been explicitly set.
-  var hasHashedKey: Bool {return _storage._hashedKey != nil}
+  public var hasHashedKey: Bool {return _storage._hashedKey != nil}
   /// Clears the value of `hashedKey`. Subsequent reads from it will return its default value.
-  mutating func clearHashedKey() {_uniqueStorage()._hashedKey = nil}
+  public mutating func clearHashedKey() {_uniqueStorage()._hashedKey = nil}
 
-  var entrySize: Int64 {
+  public var entrySize: Int64 {
     get {return _storage._entrySize}
     set {_uniqueStorage()._entrySize = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -50,21 +50,21 @@ struct POGOProtos_Data_AssetCache_JournalAddEntry {
 fileprivate let _protobuf_package = "POGOProtos.Data.AssetCache"
 
 extension POGOProtos_Data_AssetCache_JournalAddEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".JournalAddEntry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".JournalAddEntry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "hashed_key"),
     2: .standard(proto: "entry_size"),
   ]
 
   fileprivate class _StorageClass {
-    var _hashedKey: POGOProtos_Data_AssetCache_HashedKey? = nil
-    var _entrySize: Int64 = 0
+    public var _hashedKey: POGOProtos_Data_AssetCache_HashedKey? = nil
+    public var _entrySize: Int64 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _hashedKey = source._hashedKey
       _entrySize = source._entrySize
     }
@@ -77,7 +77,7 @@ extension POGOProtos_Data_AssetCache_JournalAddEntry: SwiftProtobuf.Message, Swi
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -90,7 +90,7 @@ extension POGOProtos_Data_AssetCache_JournalAddEntry: SwiftProtobuf.Message, Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._hashedKey {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -102,7 +102,7 @@ extension POGOProtos_Data_AssetCache_JournalAddEntry: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_AssetCache_JournalAddEntry, rhs: POGOProtos_Data_AssetCache_JournalAddEntry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_AssetCache_JournalAddEntry, rhs: POGOProtos_Data_AssetCache_JournalAddEntry) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

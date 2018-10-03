@@ -15,52 +15,52 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Logs_OpenGiftLogEntry {
+public struct POGOProtos_Data_Logs_OpenGiftLogEntry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Data_Logs_OpenGiftLogEntry.Result {
+  public var result: POGOProtos_Data_Logs_OpenGiftLogEntry.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var friendCodename: String {
+  public var friendCodename: String {
     get {return _storage._friendCodename}
     set {_uniqueStorage()._friendCodename = newValue}
   }
 
-  var items: POGOProtos_Inventory_Loot {
+  public var items: POGOProtos_Inventory_Loot {
     get {return _storage._items ?? POGOProtos_Inventory_Loot()}
     set {_uniqueStorage()._items = newValue}
   }
   /// Returns true if `items` has been explicitly set.
-  var hasItems: Bool {return _storage._items != nil}
+  public var hasItems: Bool {return _storage._items != nil}
   /// Clears the value of `items`. Subsequent reads from it will return its default value.
-  mutating func clearItems() {_uniqueStorage()._items = nil}
+  public mutating func clearItems() {_uniqueStorage()._items = nil}
 
-  var pokemonEggs: [POGOProtos_Data_PokemonData] {
+  public var pokemonEggs: [POGOProtos_Data_PokemonData] {
     get {return _storage._pokemonEggs}
     set {_uniqueStorage()._pokemonEggs = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -68,7 +68,7 @@ struct POGOProtos_Data_Logs_OpenGiftLogEntry {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -78,7 +78,7 @@ struct POGOProtos_Data_Logs_OpenGiftLogEntry {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -100,8 +100,8 @@ extension POGOProtos_Data_Logs_OpenGiftLogEntry.Result: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Data.Logs"
 
 extension POGOProtos_Data_Logs_OpenGiftLogEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".OpenGiftLogEntry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".OpenGiftLogEntry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "friend_codename"),
     3: .same(proto: "items"),
@@ -109,16 +109,16 @@ extension POGOProtos_Data_Logs_OpenGiftLogEntry: SwiftProtobuf.Message, SwiftPro
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Data_Logs_OpenGiftLogEntry.Result = .unset
-    var _friendCodename: String = String()
-    var _items: POGOProtos_Inventory_Loot? = nil
-    var _pokemonEggs: [POGOProtos_Data_PokemonData] = []
+    public var _result: POGOProtos_Data_Logs_OpenGiftLogEntry.Result = .unset
+    public var _friendCodename: String = String()
+    public var _items: POGOProtos_Inventory_Loot? = nil
+    public var _pokemonEggs: [POGOProtos_Data_PokemonData] = []
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _friendCodename = source._friendCodename
       _items = source._items
@@ -133,7 +133,7 @@ extension POGOProtos_Data_Logs_OpenGiftLogEntry: SwiftProtobuf.Message, SwiftPro
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -148,7 +148,7 @@ extension POGOProtos_Data_Logs_OpenGiftLogEntry: SwiftProtobuf.Message, SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -166,7 +166,7 @@ extension POGOProtos_Data_Logs_OpenGiftLogEntry: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Logs_OpenGiftLogEntry, rhs: POGOProtos_Data_Logs_OpenGiftLogEntry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Logs_OpenGiftLogEntry, rhs: POGOProtos_Data_Logs_OpenGiftLogEntry) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -185,7 +185,7 @@ extension POGOProtos_Data_Logs_OpenGiftLogEntry: SwiftProtobuf.Message, SwiftPro
 }
 
 extension POGOProtos_Data_Logs_OpenGiftLogEntry.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
   ]

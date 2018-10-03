@@ -15,23 +15,23 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_TeamColor: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_TeamColor: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case neutral // = 0
   case blue // = 1
   case red // = 2
   case yellow // = 3
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .neutral
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .neutral
     case 1: self = .blue
@@ -41,7 +41,7 @@ enum POGOProtos_Enums_TeamColor: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .neutral: return 0
     case .blue: return 1
@@ -70,7 +70,7 @@ extension POGOProtos_Enums_TeamColor: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_TeamColor: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "NEUTRAL"),
     1: .same(proto: "BLUE"),
     2: .same(proto: "RED"),

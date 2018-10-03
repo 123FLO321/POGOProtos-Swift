@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams {
+public struct POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var latitudeDeg: Double = 0
+  public var latitudeDeg: Double = 0
 
-  var longitudeDeg: Double = 0
+  public var longitudeDeg: Double = 0
 
-  var altitudeM: Double = 0
+  public var altitudeM: Double = 0
 
-  var accuracyM: Double = 0
+  public var accuracyM: Double = 0
 
-  var timestampS: Double = 0
+  public var timestampS: Double = 0
 
-  var providerStatus: UInt32 = 0
+  public var providerStatus: UInt32 = 0
 
-  var locationType: UInt32 = 0
+  public var locationType: UInt32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -48,8 +48,8 @@ struct POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Ditto"
 
 extension POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".LocationUpdateEventParams"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".LocationUpdateEventParams"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "latitude_deg"),
     2: .standard(proto: "longitude_deg"),
     3: .standard(proto: "altitude_m"),
@@ -59,7 +59,7 @@ extension POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams: SwiftP
     7: .standard(proto: "location_type"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularDoubleField(value: &self.latitudeDeg)
@@ -74,7 +74,7 @@ extension POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams: SwiftP
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.latitudeDeg != 0 {
       try visitor.visitSingularDoubleField(value: self.latitudeDeg, fieldNumber: 1)
     }
@@ -99,7 +99,7 @@ extension POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams: SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams, rhs: POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams, rhs: POGOProtos_Networking_Platform_Ditto_LocationUpdateEventParams) -> Bool {
     if lhs.latitudeDeg != rhs.latitudeDeg {return false}
     if lhs.longitudeDeg != rhs.longitudeDeg {return false}
     if lhs.altitudeM != rhs.altitudeM {return false}

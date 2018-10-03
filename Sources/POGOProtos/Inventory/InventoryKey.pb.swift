@@ -15,50 +15,50 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
 /// Usage unknown.
 /// - Maybe used in envelope (?)
-struct POGOProtos_Inventory_InventoryKey {
+public struct POGOProtos_Inventory_InventoryKey {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonID: UInt64 = 0
+  public var pokemonID: UInt64 = 0
 
-  var item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+  public var item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-  var pokedexEntryID: Int32 = 0
+  public var pokedexEntryID: Int32 = 0
 
-  var playerStats: Bool = false
+  public var playerStats: Bool = false
 
-  var playerCurrency: Bool = false
+  public var playerCurrency: Bool = false
 
-  var playerCamera: Bool = false
+  public var playerCamera: Bool = false
 
-  var inventoryUpgrades: Bool = false
+  public var inventoryUpgrades: Bool = false
 
-  var appliedItems: Bool = false
+  public var appliedItems: Bool = false
 
-  var eggIncubators: Bool = false
+  public var eggIncubators: Bool = false
 
-  var pokemonFamilyID: POGOProtos_Enums_PokemonFamilyId = .familyUnset
+  public var pokemonFamilyID: POGOProtos_Enums_PokemonFamilyId = .familyUnset
 
-  var questType: POGOProtos_Enums_QuestType = .questUnknownType
+  public var questType: POGOProtos_Enums_QuestType = .questUnknownType
 
-  var avatarTemplateID: String = String()
+  public var avatarTemplateID: String = String()
 
-  var raidTickets: Bool = false
+  public var raidTickets: Bool = false
 
-  var quests: Bool = false
+  public var quests: Bool = false
 
-  var giftBoxes: Bool = false
+  public var giftBoxes: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -66,8 +66,8 @@ struct POGOProtos_Inventory_InventoryKey {
 fileprivate let _protobuf_package = "POGOProtos.Inventory"
 
 extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".InventoryKey"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".InventoryKey"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_id"),
     2: .same(proto: "item"),
     3: .standard(proto: "pokedex_entry_id"),
@@ -85,7 +85,7 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
     15: .standard(proto: "gift_boxes"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFixed64Field(value: &self.pokemonID)
@@ -108,7 +108,7 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemonID != 0 {
       try visitor.visitSingularFixed64Field(value: self.pokemonID, fieldNumber: 1)
     }
@@ -157,7 +157,7 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Inventory_InventoryKey, rhs: POGOProtos_Inventory_InventoryKey) -> Bool {
+  public static func ==(lhs: POGOProtos_Inventory_InventoryKey, rhs: POGOProtos_Inventory_InventoryKey) -> Bool {
     if lhs.pokemonID != rhs.pokemonID {return false}
     if lhs.item != rhs.item {return false}
     if lhs.pokedexEntryID != rhs.pokedexEntryID {return false}

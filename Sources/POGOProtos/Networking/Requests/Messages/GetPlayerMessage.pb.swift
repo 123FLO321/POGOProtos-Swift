@@ -15,48 +15,48 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_GetPlayerMessage {
+public struct POGOProtos_Networking_Requests_Messages_GetPlayerMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var playerLocale: POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale {
+  public var playerLocale: POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale {
     get {return _storage._playerLocale ?? POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale()}
     set {_uniqueStorage()._playerLocale = newValue}
   }
   /// Returns true if `playerLocale` has been explicitly set.
-  var hasPlayerLocale: Bool {return _storage._playerLocale != nil}
+  public var hasPlayerLocale: Bool {return _storage._playerLocale != nil}
   /// Clears the value of `playerLocale`. Subsequent reads from it will return its default value.
-  mutating func clearPlayerLocale() {_uniqueStorage()._playerLocale = nil}
+  public mutating func clearPlayerLocale() {_uniqueStorage()._playerLocale = nil}
 
-  var preventCreation: Bool {
+  public var preventCreation: Bool {
     get {return _storage._preventCreation}
     set {_uniqueStorage()._preventCreation = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct PlayerLocale {
+  public struct PlayerLocale {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var country: String = String()
+    public var country: String = String()
 
-    var language: String = String()
+    public var language: String = String()
 
-    var timezone: String = String()
+    public var timezone: String = String()
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -66,21 +66,21 @@ struct POGOProtos_Networking_Requests_Messages_GetPlayerMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_GetPlayerMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetPlayerMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetPlayerMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "player_locale"),
     2: .standard(proto: "prevent_creation"),
   ]
 
   fileprivate class _StorageClass {
-    var _playerLocale: POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale? = nil
-    var _preventCreation: Bool = false
+    public var _playerLocale: POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale? = nil
+    public var _preventCreation: Bool = false
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _playerLocale = source._playerLocale
       _preventCreation = source._preventCreation
     }
@@ -93,7 +93,7 @@ extension POGOProtos_Networking_Requests_Messages_GetPlayerMessage: SwiftProtobu
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -106,7 +106,7 @@ extension POGOProtos_Networking_Requests_Messages_GetPlayerMessage: SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._playerLocale {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -118,7 +118,7 @@ extension POGOProtos_Networking_Requests_Messages_GetPlayerMessage: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetPlayerMessage, rhs: POGOProtos_Networking_Requests_Messages_GetPlayerMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetPlayerMessage, rhs: POGOProtos_Networking_Requests_Messages_GetPlayerMessage) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -135,14 +135,14 @@ extension POGOProtos_Networking_Requests_Messages_GetPlayerMessage: SwiftProtobu
 }
 
 extension POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Requests_Messages_GetPlayerMessage.protoMessageName + ".PlayerLocale"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Requests_Messages_GetPlayerMessage.protoMessageName + ".PlayerLocale"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "country"),
     2: .same(proto: "language"),
     3: .same(proto: "timezone"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.country)
@@ -153,7 +153,7 @@ extension POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale:
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.country.isEmpty {
       try visitor.visitSingularStringField(value: self.country, fieldNumber: 1)
     }
@@ -166,7 +166,7 @@ extension POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale:
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale, rhs: POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale, rhs: POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale) -> Bool {
     if lhs.country != rhs.country {return false}
     if lhs.language != rhs.language {return false}
     if lhs.timezone != rhs.timezone {return false}

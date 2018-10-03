@@ -15,77 +15,77 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Player_PlayerPublicProfile {
+public struct POGOProtos_Data_Player_PlayerPublicProfile {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
-  var level: Int32 {
+  public var level: Int32 {
     get {return _storage._level}
     set {_uniqueStorage()._level = newValue}
   }
 
-  var avatar: POGOProtos_Data_Player_PlayerAvatar {
+  public var avatar: POGOProtos_Data_Player_PlayerAvatar {
     get {return _storage._avatar ?? POGOProtos_Data_Player_PlayerAvatar()}
     set {_uniqueStorage()._avatar = newValue}
   }
   /// Returns true if `avatar` has been explicitly set.
-  var hasAvatar: Bool {return _storage._avatar != nil}
+  public var hasAvatar: Bool {return _storage._avatar != nil}
   /// Clears the value of `avatar`. Subsequent reads from it will return its default value.
-  mutating func clearAvatar() {_uniqueStorage()._avatar = nil}
+  public mutating func clearAvatar() {_uniqueStorage()._avatar = nil}
 
-  var teamColor: POGOProtos_Enums_TeamColor {
+  public var teamColor: POGOProtos_Enums_TeamColor {
     get {return _storage._teamColor}
     set {_uniqueStorage()._teamColor = newValue}
   }
 
-  var battlesWon: Int32 {
+  public var battlesWon: Int32 {
     get {return _storage._battlesWon}
     set {_uniqueStorage()._battlesWon = newValue}
   }
 
-  var kmWalked: Float {
+  public var kmWalked: Float {
     get {return _storage._kmWalked}
     set {_uniqueStorage()._kmWalked = newValue}
   }
 
-  var caughtPokemon: Int32 {
+  public var caughtPokemon: Int32 {
     get {return _storage._caughtPokemon}
     set {_uniqueStorage()._caughtPokemon = newValue}
   }
 
-  var gymBadgeType: POGOProtos_Enums_GymBadgeType {
+  public var gymBadgeType: POGOProtos_Enums_GymBadgeType {
     get {return _storage._gymBadgeType}
     set {_uniqueStorage()._gymBadgeType = newValue}
   }
 
-  var badges: [POGOProtos_Data_Player_PlayerBadge] {
+  public var badges: [POGOProtos_Data_Player_PlayerBadge] {
     get {return _storage._badges}
     set {_uniqueStorage()._badges = newValue}
   }
 
-  var experience: Int64 {
+  public var experience: Int64 {
     get {return _storage._experience}
     set {_uniqueStorage()._experience = newValue}
   }
 
-  var hasSharedExPass_p: Bool {
+  public var hasSharedExPass_p: Bool {
     get {return _storage._hasSharedExPass_p}
     set {_uniqueStorage()._hasSharedExPass_p = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -95,8 +95,8 @@ struct POGOProtos_Data_Player_PlayerPublicProfile {
 fileprivate let _protobuf_package = "POGOProtos.Data.Player"
 
 extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlayerPublicProfile"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlayerPublicProfile"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "level"),
     3: .same(proto: "avatar"),
@@ -111,23 +111,23 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
   ]
 
   fileprivate class _StorageClass {
-    var _name: String = String()
-    var _level: Int32 = 0
-    var _avatar: POGOProtos_Data_Player_PlayerAvatar? = nil
-    var _teamColor: POGOProtos_Enums_TeamColor = .neutral
-    var _battlesWon: Int32 = 0
-    var _kmWalked: Float = 0
-    var _caughtPokemon: Int32 = 0
-    var _gymBadgeType: POGOProtos_Enums_GymBadgeType = .gymBadgeUnset
-    var _badges: [POGOProtos_Data_Player_PlayerBadge] = []
-    var _experience: Int64 = 0
-    var _hasSharedExPass_p: Bool = false
+    public var _name: String = String()
+    public var _level: Int32 = 0
+    public var _avatar: POGOProtos_Data_Player_PlayerAvatar? = nil
+    public var _teamColor: POGOProtos_Enums_TeamColor = .neutral
+    public var _battlesWon: Int32 = 0
+    public var _kmWalked: Float = 0
+    public var _caughtPokemon: Int32 = 0
+    public var _gymBadgeType: POGOProtos_Enums_GymBadgeType = .gymBadgeUnset
+    public var _badges: [POGOProtos_Data_Player_PlayerBadge] = []
+    public var _experience: Int64 = 0
+    public var _hasSharedExPass_p: Bool = false
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _name = source._name
       _level = source._level
       _avatar = source._avatar
@@ -149,7 +149,7 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -171,7 +171,7 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._name.isEmpty {
         try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 1)
@@ -210,7 +210,7 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Player_PlayerPublicProfile, rhs: POGOProtos_Data_Player_PlayerPublicProfile) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Player_PlayerPublicProfile, rhs: POGOProtos_Data_Player_PlayerPublicProfile) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

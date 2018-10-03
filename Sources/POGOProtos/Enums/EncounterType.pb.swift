@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_EncounterType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_EncounterType: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case spawnPoint // = 0
   case incense // = 1
   case disk // = 2
@@ -30,11 +30,11 @@ enum POGOProtos_Enums_EncounterType: SwiftProtobuf.Enum {
   case challengeQuest // = 6
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .spawnPoint
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .spawnPoint
     case 1: self = .incense
@@ -47,7 +47,7 @@ enum POGOProtos_Enums_EncounterType: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .spawnPoint: return 0
     case .incense: return 1
@@ -82,7 +82,7 @@ extension POGOProtos_Enums_EncounterType: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_EncounterType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "SPAWN_POINT"),
     1: .same(proto: "INCENSE"),
     2: .same(proto: "DISK"),

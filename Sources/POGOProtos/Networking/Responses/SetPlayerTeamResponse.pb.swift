@@ -15,44 +15,44 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_SetPlayerTeamResponse {
+public struct POGOProtos_Networking_Responses_SetPlayerTeamResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: POGOProtos_Networking_Responses_SetPlayerTeamResponse.Status {
+  public var status: POGOProtos_Networking_Responses_SetPlayerTeamResponse.Status {
     get {return _storage._status}
     set {_uniqueStorage()._status = newValue}
   }
 
-  var playerData: POGOProtos_Data_PlayerData {
+  public var playerData: POGOProtos_Data_PlayerData {
     get {return _storage._playerData ?? POGOProtos_Data_PlayerData()}
     set {_uniqueStorage()._playerData = newValue}
   }
   /// Returns true if `playerData` has been explicitly set.
-  var hasPlayerData: Bool {return _storage._playerData != nil}
+  public var hasPlayerData: Bool {return _storage._playerData != nil}
   /// Clears the value of `playerData`. Subsequent reads from it will return its default value.
-  mutating func clearPlayerData() {_uniqueStorage()._playerData = nil}
+  public mutating func clearPlayerData() {_uniqueStorage()._playerData = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Status: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case teamAlreadySet // = 2
     case failure // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -62,7 +62,7 @@ struct POGOProtos_Networking_Responses_SetPlayerTeamResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -74,7 +74,7 @@ struct POGOProtos_Networking_Responses_SetPlayerTeamResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -98,21 +98,21 @@ extension POGOProtos_Networking_Responses_SetPlayerTeamResponse.Status: CaseIter
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_SetPlayerTeamResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SetPlayerTeamResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".SetPlayerTeamResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .standard(proto: "player_data"),
   ]
 
   fileprivate class _StorageClass {
-    var _status: POGOProtos_Networking_Responses_SetPlayerTeamResponse.Status = .unset
-    var _playerData: POGOProtos_Data_PlayerData? = nil
+    public var _status: POGOProtos_Networking_Responses_SetPlayerTeamResponse.Status = .unset
+    public var _playerData: POGOProtos_Data_PlayerData? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _status = source._status
       _playerData = source._playerData
     }
@@ -125,7 +125,7 @@ extension POGOProtos_Networking_Responses_SetPlayerTeamResponse: SwiftProtobuf.M
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -138,7 +138,7 @@ extension POGOProtos_Networking_Responses_SetPlayerTeamResponse: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._status != .unset {
         try visitor.visitSingularEnumField(value: _storage._status, fieldNumber: 1)
@@ -150,7 +150,7 @@ extension POGOProtos_Networking_Responses_SetPlayerTeamResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_SetPlayerTeamResponse, rhs: POGOProtos_Networking_Responses_SetPlayerTeamResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_SetPlayerTeamResponse, rhs: POGOProtos_Networking_Responses_SetPlayerTeamResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -167,7 +167,7 @@ extension POGOProtos_Networking_Responses_SetPlayerTeamResponse: SwiftProtobuf.M
 }
 
 extension POGOProtos_Networking_Responses_SetPlayerTeamResponse.Status: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "TEAM_ALREADY_SET"),

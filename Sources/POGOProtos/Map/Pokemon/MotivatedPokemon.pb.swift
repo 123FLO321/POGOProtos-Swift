@@ -15,62 +15,62 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Map_Pokemon_MotivatedPokemon {
+public struct POGOProtos_Map_Pokemon_MotivatedPokemon {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemon: POGOProtos_Data_PokemonData {
+  public var pokemon: POGOProtos_Data_PokemonData {
     get {return _storage._pokemon ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._pokemon = newValue}
   }
   /// Returns true if `pokemon` has been explicitly set.
-  var hasPokemon: Bool {return _storage._pokemon != nil}
+  public var hasPokemon: Bool {return _storage._pokemon != nil}
   /// Clears the value of `pokemon`. Subsequent reads from it will return its default value.
-  mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
+  public mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
 
-  var deployMs: Int64 {
+  public var deployMs: Int64 {
     get {return _storage._deployMs}
     set {_uniqueStorage()._deployMs = newValue}
   }
 
-  var cpWhenDeployed: Int32 {
+  public var cpWhenDeployed: Int32 {
     get {return _storage._cpWhenDeployed}
     set {_uniqueStorage()._cpWhenDeployed = newValue}
   }
 
-  var motivationNow: Double {
+  public var motivationNow: Double {
     get {return _storage._motivationNow}
     set {_uniqueStorage()._motivationNow = newValue}
   }
 
-  var cpNow: Int32 {
+  public var cpNow: Int32 {
     get {return _storage._cpNow}
     set {_uniqueStorage()._cpNow = newValue}
   }
 
-  var berryValue: Float {
+  public var berryValue: Float {
     get {return _storage._berryValue}
     set {_uniqueStorage()._berryValue = newValue}
   }
 
-  var feedCooldownDurationMillis: Int64 {
+  public var feedCooldownDurationMillis: Int64 {
     get {return _storage._feedCooldownDurationMillis}
     set {_uniqueStorage()._feedCooldownDurationMillis = newValue}
   }
 
-  var foodValue: [POGOProtos_Data_FoodValue] {
+  public var foodValue: [POGOProtos_Data_FoodValue] {
     get {return _storage._foodValue}
     set {_uniqueStorage()._foodValue = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -80,8 +80,8 @@ struct POGOProtos_Map_Pokemon_MotivatedPokemon {
 fileprivate let _protobuf_package = "POGOProtos.Map.Pokemon"
 
 extension POGOProtos_Map_Pokemon_MotivatedPokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".MotivatedPokemon"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".MotivatedPokemon"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pokemon"),
     2: .standard(proto: "deploy_ms"),
     3: .standard(proto: "cp_when_deployed"),
@@ -93,20 +93,20 @@ extension POGOProtos_Map_Pokemon_MotivatedPokemon: SwiftProtobuf.Message, SwiftP
   ]
 
   fileprivate class _StorageClass {
-    var _pokemon: POGOProtos_Data_PokemonData? = nil
-    var _deployMs: Int64 = 0
-    var _cpWhenDeployed: Int32 = 0
-    var _motivationNow: Double = 0
-    var _cpNow: Int32 = 0
-    var _berryValue: Float = 0
-    var _feedCooldownDurationMillis: Int64 = 0
-    var _foodValue: [POGOProtos_Data_FoodValue] = []
+    public var _pokemon: POGOProtos_Data_PokemonData? = nil
+    public var _deployMs: Int64 = 0
+    public var _cpWhenDeployed: Int32 = 0
+    public var _motivationNow: Double = 0
+    public var _cpNow: Int32 = 0
+    public var _berryValue: Float = 0
+    public var _feedCooldownDurationMillis: Int64 = 0
+    public var _foodValue: [POGOProtos_Data_FoodValue] = []
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _pokemon = source._pokemon
       _deployMs = source._deployMs
       _cpWhenDeployed = source._cpWhenDeployed
@@ -125,7 +125,7 @@ extension POGOProtos_Map_Pokemon_MotivatedPokemon: SwiftProtobuf.Message, SwiftP
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -144,7 +144,7 @@ extension POGOProtos_Map_Pokemon_MotivatedPokemon: SwiftProtobuf.Message, SwiftP
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._pokemon {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -174,7 +174,7 @@ extension POGOProtos_Map_Pokemon_MotivatedPokemon: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_Pokemon_MotivatedPokemon, rhs: POGOProtos_Map_Pokemon_MotivatedPokemon) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_Pokemon_MotivatedPokemon, rhs: POGOProtos_Map_Pokemon_MotivatedPokemon) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

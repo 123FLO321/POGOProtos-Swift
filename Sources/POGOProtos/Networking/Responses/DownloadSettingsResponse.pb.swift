@@ -15,37 +15,37 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_DownloadSettingsResponse {
+public struct POGOProtos_Networking_Responses_DownloadSettingsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var error: String {
+  public var error: String {
     get {return _storage._error}
     set {_uniqueStorage()._error = newValue}
   }
 
-  var hash: String {
+  public var hash: String {
     get {return _storage._hash}
     set {_uniqueStorage()._hash = newValue}
   }
 
-  var settings: POGOProtos_Settings_GlobalSettings {
+  public var settings: POGOProtos_Settings_GlobalSettings {
     get {return _storage._settings ?? POGOProtos_Settings_GlobalSettings()}
     set {_uniqueStorage()._settings = newValue}
   }
   /// Returns true if `settings` has been explicitly set.
-  var hasSettings: Bool {return _storage._settings != nil}
+  public var hasSettings: Bool {return _storage._settings != nil}
   /// Clears the value of `settings`. Subsequent reads from it will return its default value.
-  mutating func clearSettings() {_uniqueStorage()._settings = nil}
+  public mutating func clearSettings() {_uniqueStorage()._settings = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -55,23 +55,23 @@ struct POGOProtos_Networking_Responses_DownloadSettingsResponse {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_DownloadSettingsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DownloadSettingsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".DownloadSettingsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "error"),
     2: .same(proto: "hash"),
     3: .same(proto: "settings"),
   ]
 
   fileprivate class _StorageClass {
-    var _error: String = String()
-    var _hash: String = String()
-    var _settings: POGOProtos_Settings_GlobalSettings? = nil
+    public var _error: String = String()
+    public var _hash: String = String()
+    public var _settings: POGOProtos_Settings_GlobalSettings? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _error = source._error
       _hash = source._hash
       _settings = source._settings
@@ -85,7 +85,7 @@ extension POGOProtos_Networking_Responses_DownloadSettingsResponse: SwiftProtobu
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -99,7 +99,7 @@ extension POGOProtos_Networking_Responses_DownloadSettingsResponse: SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._error.isEmpty {
         try visitor.visitSingularStringField(value: _storage._error, fieldNumber: 1)
@@ -114,7 +114,7 @@ extension POGOProtos_Networking_Responses_DownloadSettingsResponse: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_DownloadSettingsResponse, rhs: POGOProtos_Networking_Responses_DownloadSettingsResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_DownloadSettingsResponse, rhs: POGOProtos_Networking_Responses_DownloadSettingsResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Raid_EventInfo {
+public struct POGOProtos_Data_Raid_EventInfo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var imageURL: String = String()
+  public var imageURL: String = String()
 
-  var iconURL: String = String()
+  public var iconURL: String = String()
 
-  var nameKey: String = String()
+  public var nameKey: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Data_Raid_EventInfo {
 fileprivate let _protobuf_package = "POGOProtos.Data.Raid"
 
 extension POGOProtos_Data_Raid_EventInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EventInfo"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EventInfo"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "image_url"),
     2: .standard(proto: "icon_url"),
     3: .standard(proto: "name_key"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.imageURL)
@@ -58,7 +58,7 @@ extension POGOProtos_Data_Raid_EventInfo: SwiftProtobuf.Message, SwiftProtobuf._
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.imageURL.isEmpty {
       try visitor.visitSingularStringField(value: self.imageURL, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Data_Raid_EventInfo: SwiftProtobuf.Message, SwiftProtobuf._
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Raid_EventInfo, rhs: POGOProtos_Data_Raid_EventInfo) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Raid_EventInfo, rhs: POGOProtos_Data_Raid_EventInfo) -> Bool {
     if lhs.imageURL != rhs.imageURL {return false}
     if lhs.iconURL != rhs.iconURL {return false}
     if lhs.nameKey != rhs.nameKey {return false}

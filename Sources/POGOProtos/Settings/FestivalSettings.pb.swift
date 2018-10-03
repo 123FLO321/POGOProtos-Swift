@@ -15,35 +15,35 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_FestivalSettings {
+public struct POGOProtos_Settings_FestivalSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var festivalType: POGOProtos_Settings_FestivalSettings.FestivalType = .none
+  public var festivalType: POGOProtos_Settings_FestivalSettings.FestivalType = .none
 
-  var key: String = String()
+  public var key: String = String()
 
-  var vector: String = String()
+  public var vector: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum FestivalType: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum FestivalType: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case none // = 0
     case halloween // = 1
     case holiday // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .none
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .none
       case 1: self = .halloween
@@ -52,7 +52,7 @@ struct POGOProtos_Settings_FestivalSettings {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .none: return 0
       case .halloween: return 1
@@ -63,7 +63,7 @@ struct POGOProtos_Settings_FestivalSettings {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -84,14 +84,14 @@ extension POGOProtos_Settings_FestivalSettings.FestivalType: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Settings"
 
 extension POGOProtos_Settings_FestivalSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FestivalSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FestivalSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "festival_type"),
     2: .same(proto: "key"),
     3: .same(proto: "vector"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.festivalType)
@@ -102,7 +102,7 @@ extension POGOProtos_Settings_FestivalSettings: SwiftProtobuf.Message, SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.festivalType != .none {
       try visitor.visitSingularEnumField(value: self.festivalType, fieldNumber: 1)
     }
@@ -115,7 +115,7 @@ extension POGOProtos_Settings_FestivalSettings: SwiftProtobuf.Message, SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_FestivalSettings, rhs: POGOProtos_Settings_FestivalSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_FestivalSettings, rhs: POGOProtos_Settings_FestivalSettings) -> Bool {
     if lhs.festivalType != rhs.festivalType {return false}
     if lhs.key != rhs.key {return false}
     if lhs.vector != rhs.vector {return false}
@@ -125,7 +125,7 @@ extension POGOProtos_Settings_FestivalSettings: SwiftProtobuf.Message, SwiftProt
 }
 
 extension POGOProtos_Settings_FestivalSettings.FestivalType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "NONE"),
     1: .same(proto: "HALLOWEEN"),
     2: .same(proto: "HOLIDAY"),

@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Map_Fort_FortLureInfo {
+public struct POGOProtos_Map_Fort_FortLureInfo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var fortID: String = String()
+  public var fortID: String = String()
 
-  var encounterID: UInt64 = 0
+  public var encounterID: UInt64 = 0
 
-  var activePokemonID: POGOProtos_Enums_PokemonId = .missingno
+  public var activePokemonID: POGOProtos_Enums_PokemonId = .missingno
 
-  var lureExpiresTimestampMs: Int64 = 0
+  public var lureExpiresTimestampMs: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Map_Fort_FortLureInfo {
 fileprivate let _protobuf_package = "POGOProtos.Map.Fort"
 
 extension POGOProtos_Map_Fort_FortLureInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FortLureInfo"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FortLureInfo"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "fort_id"),
     2: .standard(proto: "encounter_id"),
     3: .standard(proto: "active_pokemon_id"),
     4: .standard(proto: "lure_expires_timestamp_ms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.fortID)
@@ -62,7 +62,7 @@ extension POGOProtos_Map_Fort_FortLureInfo: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.fortID.isEmpty {
       try visitor.visitSingularStringField(value: self.fortID, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Map_Fort_FortLureInfo: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_Fort_FortLureInfo, rhs: POGOProtos_Map_Fort_FortLureInfo) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_Fort_FortLureInfo, rhs: POGOProtos_Map_Fort_FortLureInfo) -> Bool {
     if lhs.fortID != rhs.fortID {return false}
     if lhs.encounterID != rhs.encounterID {return false}
     if lhs.activePokemonID != rhs.activePokemonID {return false}

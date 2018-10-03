@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_PokemonTradingType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_PokemonTradingType: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case unsetPokemonTrading // = 0
   case regularInPokedex // = 1
   case specialInPokedex // = 2
@@ -31,11 +31,11 @@ enum POGOProtos_Enums_PokemonTradingType: SwiftProtobuf.Enum {
   case shinyNonPokedex // = 7
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unsetPokemonTrading
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unsetPokemonTrading
     case 1: self = .regularInPokedex
@@ -49,7 +49,7 @@ enum POGOProtos_Enums_PokemonTradingType: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unsetPokemonTrading: return 0
     case .regularInPokedex: return 1
@@ -86,7 +86,7 @@ extension POGOProtos_Enums_PokemonTradingType: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_PokemonTradingType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET_POKEMON_TRADING"),
     1: .same(proto: "REGULAR_IN_POKEDEX"),
     2: .same(proto: "SPECIAL_IN_POKEDEX"),

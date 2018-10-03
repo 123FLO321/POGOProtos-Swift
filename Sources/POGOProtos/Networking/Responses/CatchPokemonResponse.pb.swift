@@ -15,67 +15,67 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_CatchPokemonResponse {
+public struct POGOProtos_Networking_Responses_CatchPokemonResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus {
+  public var status: POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus {
     get {return _storage._status}
     set {_uniqueStorage()._status = newValue}
   }
 
-  var missPercent: Double {
+  public var missPercent: Double {
     get {return _storage._missPercent}
     set {_uniqueStorage()._missPercent = newValue}
   }
 
-  var capturedPokemonID: UInt64 {
+  public var capturedPokemonID: UInt64 {
     get {return _storage._capturedPokemonID}
     set {_uniqueStorage()._capturedPokemonID = newValue}
   }
 
-  var captureAward: POGOProtos_Data_Capture_CaptureAward {
+  public var captureAward: POGOProtos_Data_Capture_CaptureAward {
     get {return _storage._captureAward ?? POGOProtos_Data_Capture_CaptureAward()}
     set {_uniqueStorage()._captureAward = newValue}
   }
   /// Returns true if `captureAward` has been explicitly set.
-  var hasCaptureAward: Bool {return _storage._captureAward != nil}
+  public var hasCaptureAward: Bool {return _storage._captureAward != nil}
   /// Clears the value of `captureAward`. Subsequent reads from it will return its default value.
-  mutating func clearCaptureAward() {_uniqueStorage()._captureAward = nil}
+  public mutating func clearCaptureAward() {_uniqueStorage()._captureAward = nil}
 
-  var captureReason: POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason {
+  public var captureReason: POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason {
     get {return _storage._captureReason}
     set {_uniqueStorage()._captureReason = newValue}
   }
 
-  var displayPokedexID: Int32 {
+  public var displayPokedexID: Int32 {
     get {return _storage._displayPokedexID}
     set {_uniqueStorage()._displayPokedexID = newValue}
   }
 
-  var throwsRemaining: Int32 {
+  public var throwsRemaining: Int32 {
     get {return _storage._throwsRemaining}
     set {_uniqueStorage()._throwsRemaining = newValue}
   }
 
-  var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
+  public var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
     get {return _storage._pokemonDisplay ?? POGOProtos_Data_PokemonDisplay()}
     set {_uniqueStorage()._pokemonDisplay = newValue}
   }
   /// Returns true if `pokemonDisplay` has been explicitly set.
-  var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
+  public var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
   /// Clears the value of `pokemonDisplay`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
+  public mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum CatchStatus: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum CatchStatus: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case catchError // = 0
     case catchSuccess // = 1
     case catchEscape // = 2
@@ -83,11 +83,11 @@ struct POGOProtos_Networking_Responses_CatchPokemonResponse {
     case catchMissed // = 4
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .catchError
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .catchError
       case 1: self = .catchSuccess
@@ -98,7 +98,7 @@ struct POGOProtos_Networking_Responses_CatchPokemonResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .catchError: return 0
       case .catchSuccess: return 1
@@ -111,19 +111,19 @@ struct POGOProtos_Networking_Responses_CatchPokemonResponse {
 
   }
 
-  enum CaptureReason: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum CaptureReason: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case `default` // = 1
     case elementalBadge // = 2
     case criticalCatch // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .default
@@ -133,7 +133,7 @@ struct POGOProtos_Networking_Responses_CatchPokemonResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .default: return 1
@@ -145,7 +145,7 @@ struct POGOProtos_Networking_Responses_CatchPokemonResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -180,8 +180,8 @@ extension POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason: Ca
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_CatchPokemonResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CatchPokemonResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CatchPokemonResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .standard(proto: "miss_percent"),
     3: .standard(proto: "captured_pokemon_id"),
@@ -193,20 +193,20 @@ extension POGOProtos_Networking_Responses_CatchPokemonResponse: SwiftProtobuf.Me
   ]
 
   fileprivate class _StorageClass {
-    var _status: POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus = .catchError
-    var _missPercent: Double = 0
-    var _capturedPokemonID: UInt64 = 0
-    var _captureAward: POGOProtos_Data_Capture_CaptureAward? = nil
-    var _captureReason: POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason = .unset
-    var _displayPokedexID: Int32 = 0
-    var _throwsRemaining: Int32 = 0
-    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    public var _status: POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus = .catchError
+    public var _missPercent: Double = 0
+    public var _capturedPokemonID: UInt64 = 0
+    public var _captureAward: POGOProtos_Data_Capture_CaptureAward? = nil
+    public var _captureReason: POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason = .unset
+    public var _displayPokedexID: Int32 = 0
+    public var _throwsRemaining: Int32 = 0
+    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _status = source._status
       _missPercent = source._missPercent
       _capturedPokemonID = source._capturedPokemonID
@@ -225,7 +225,7 @@ extension POGOProtos_Networking_Responses_CatchPokemonResponse: SwiftProtobuf.Me
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -244,7 +244,7 @@ extension POGOProtos_Networking_Responses_CatchPokemonResponse: SwiftProtobuf.Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._status != .catchError {
         try visitor.visitSingularEnumField(value: _storage._status, fieldNumber: 1)
@@ -274,7 +274,7 @@ extension POGOProtos_Networking_Responses_CatchPokemonResponse: SwiftProtobuf.Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_CatchPokemonResponse, rhs: POGOProtos_Networking_Responses_CatchPokemonResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_CatchPokemonResponse, rhs: POGOProtos_Networking_Responses_CatchPokemonResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -297,7 +297,7 @@ extension POGOProtos_Networking_Responses_CatchPokemonResponse: SwiftProtobuf.Me
 }
 
 extension POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "CATCH_ERROR"),
     1: .same(proto: "CATCH_SUCCESS"),
     2: .same(proto: "CATCH_ESCAPE"),
@@ -307,7 +307,7 @@ extension POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus: Swif
 }
 
 extension POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "DEFAULT"),
     2: .same(proto: "ELEMENTAL_BADGE"),

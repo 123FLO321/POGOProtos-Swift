@@ -15,130 +15,130 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Trading_TradingPokemon {
+public struct POGOProtos_Data_Trading_TradingPokemon {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonID: UInt64 {
+  public var pokemonID: UInt64 {
     get {return _storage._pokemonID}
     set {_uniqueStorage()._pokemonID = newValue}
   }
 
-  var pokedexEntryNumber: Int32 {
+  public var pokedexEntryNumber: Int32 {
     get {return _storage._pokedexEntryNumber}
     set {_uniqueStorage()._pokedexEntryNumber = newValue}
   }
 
-  var originalCp: Int32 {
+  public var originalCp: Int32 {
     get {return _storage._originalCp}
     set {_uniqueStorage()._originalCp = newValue}
   }
 
-  var adjustedCpMin: Int32 {
+  public var adjustedCpMin: Int32 {
     get {return _storage._adjustedCpMin}
     set {_uniqueStorage()._adjustedCpMin = newValue}
   }
 
-  var adjustedCpMax: Int32 {
+  public var adjustedCpMax: Int32 {
     get {return _storage._adjustedCpMax}
     set {_uniqueStorage()._adjustedCpMax = newValue}
   }
 
-  var originalStamina: Int32 {
+  public var originalStamina: Int32 {
     get {return _storage._originalStamina}
     set {_uniqueStorage()._originalStamina = newValue}
   }
 
-  var adjustedStaminaMin: Int32 {
+  public var adjustedStaminaMin: Int32 {
     get {return _storage._adjustedStaminaMin}
     set {_uniqueStorage()._adjustedStaminaMin = newValue}
   }
 
-  var adjustedStaminaMax: Int32 {
+  public var adjustedStaminaMax: Int32 {
     get {return _storage._adjustedStaminaMax}
     set {_uniqueStorage()._adjustedStaminaMax = newValue}
   }
 
-  var friendLevelCap: Bool {
+  public var friendLevelCap: Bool {
     get {return _storage._friendLevelCap}
     set {_uniqueStorage()._friendLevelCap = newValue}
   }
 
-  var move1: Int32 {
+  public var move1: Int32 {
     get {return _storage._move1}
     set {_uniqueStorage()._move1 = newValue}
   }
 
-  var move2: Int32 {
+  public var move2: Int32 {
     get {return _storage._move2}
     set {_uniqueStorage()._move2 = newValue}
   }
 
-  var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
+  public var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
     get {return _storage._pokemonDisplay ?? POGOProtos_Data_PokemonDisplay()}
     set {_uniqueStorage()._pokemonDisplay = newValue}
   }
   /// Returns true if `pokemonDisplay` has been explicitly set.
-  var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
+  public var hasPokemonDisplay: Bool {return _storage._pokemonDisplay != nil}
   /// Clears the value of `pokemonDisplay`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
+  public mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
 
-  var capturedS2CellID: Int64 {
+  public var capturedS2CellID: Int64 {
     get {return _storage._capturedS2CellID}
     set {_uniqueStorage()._capturedS2CellID = newValue}
   }
 
-  var tradedPokemon: POGOProtos_Data_PokemonData {
+  public var tradedPokemon: POGOProtos_Data_PokemonData {
     get {return _storage._tradedPokemon ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._tradedPokemon = newValue}
   }
   /// Returns true if `tradedPokemon` has been explicitly set.
-  var hasTradedPokemon: Bool {return _storage._tradedPokemon != nil}
+  public var hasTradedPokemon: Bool {return _storage._tradedPokemon != nil}
   /// Clears the value of `tradedPokemon`. Subsequent reads from it will return its default value.
-  mutating func clearTradedPokemon() {_uniqueStorage()._tradedPokemon = nil}
+  public mutating func clearTradedPokemon() {_uniqueStorage()._tradedPokemon = nil}
 
-  var pokeball: POGOProtos_Inventory_Item_ItemData {
+  public var pokeball: POGOProtos_Inventory_Item_ItemData {
     get {return _storage._pokeball ?? POGOProtos_Inventory_Item_ItemData()}
     set {_uniqueStorage()._pokeball = newValue}
   }
   /// Returns true if `pokeball` has been explicitly set.
-  var hasPokeball: Bool {return _storage._pokeball != nil}
+  public var hasPokeball: Bool {return _storage._pokeball != nil}
   /// Clears the value of `pokeball`. Subsequent reads from it will return its default value.
-  mutating func clearPokeball() {_uniqueStorage()._pokeball = nil}
+  public mutating func clearPokeball() {_uniqueStorage()._pokeball = nil}
 
-  var individualAttack: Int32 {
+  public var individualAttack: Int32 {
     get {return _storage._individualAttack}
     set {_uniqueStorage()._individualAttack = newValue}
   }
 
-  var individualDefense: Int32 {
+  public var individualDefense: Int32 {
     get {return _storage._individualDefense}
     set {_uniqueStorage()._individualDefense = newValue}
   }
 
-  var individualStamina: Int32 {
+  public var individualStamina: Int32 {
     get {return _storage._individualStamina}
     set {_uniqueStorage()._individualStamina = newValue}
   }
 
-  var nickname: String {
+  public var nickname: String {
     get {return _storage._nickname}
     set {_uniqueStorage()._nickname = newValue}
   }
 
-  var favorite: Bool {
+  public var favorite: Bool {
     get {return _storage._favorite}
     set {_uniqueStorage()._favorite = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -148,8 +148,8 @@ struct POGOProtos_Data_Trading_TradingPokemon {
 fileprivate let _protobuf_package = "POGOProtos.Data.Trading"
 
 extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".TradingPokemon"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".TradingPokemon"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_id"),
     2: .standard(proto: "pokedex_entry_number"),
     3: .standard(proto: "original_cp"),
@@ -173,32 +173,32 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
   ]
 
   fileprivate class _StorageClass {
-    var _pokemonID: UInt64 = 0
-    var _pokedexEntryNumber: Int32 = 0
-    var _originalCp: Int32 = 0
-    var _adjustedCpMin: Int32 = 0
-    var _adjustedCpMax: Int32 = 0
-    var _originalStamina: Int32 = 0
-    var _adjustedStaminaMin: Int32 = 0
-    var _adjustedStaminaMax: Int32 = 0
-    var _friendLevelCap: Bool = false
-    var _move1: Int32 = 0
-    var _move2: Int32 = 0
-    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-    var _capturedS2CellID: Int64 = 0
-    var _tradedPokemon: POGOProtos_Data_PokemonData? = nil
-    var _pokeball: POGOProtos_Inventory_Item_ItemData? = nil
-    var _individualAttack: Int32 = 0
-    var _individualDefense: Int32 = 0
-    var _individualStamina: Int32 = 0
-    var _nickname: String = String()
-    var _favorite: Bool = false
+    public var _pokemonID: UInt64 = 0
+    public var _pokedexEntryNumber: Int32 = 0
+    public var _originalCp: Int32 = 0
+    public var _adjustedCpMin: Int32 = 0
+    public var _adjustedCpMax: Int32 = 0
+    public var _originalStamina: Int32 = 0
+    public var _adjustedStaminaMin: Int32 = 0
+    public var _adjustedStaminaMax: Int32 = 0
+    public var _friendLevelCap: Bool = false
+    public var _move1: Int32 = 0
+    public var _move2: Int32 = 0
+    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    public var _capturedS2CellID: Int64 = 0
+    public var _tradedPokemon: POGOProtos_Data_PokemonData? = nil
+    public var _pokeball: POGOProtos_Inventory_Item_ItemData? = nil
+    public var _individualAttack: Int32 = 0
+    public var _individualDefense: Int32 = 0
+    public var _individualStamina: Int32 = 0
+    public var _nickname: String = String()
+    public var _favorite: Bool = false
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _pokemonID = source._pokemonID
       _pokedexEntryNumber = source._pokedexEntryNumber
       _originalCp = source._originalCp
@@ -229,7 +229,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -260,7 +260,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._pokemonID != 0 {
         try visitor.visitSingularFixed64Field(value: _storage._pokemonID, fieldNumber: 1)
@@ -326,7 +326,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Trading_TradingPokemon, rhs: POGOProtos_Data_Trading_TradingPokemon) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Trading_TradingPokemon, rhs: POGOProtos_Data_Trading_TradingPokemon) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

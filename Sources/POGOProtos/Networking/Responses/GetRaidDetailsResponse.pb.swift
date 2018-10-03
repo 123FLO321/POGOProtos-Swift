@@ -15,86 +15,86 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_GetRaidDetailsResponse {
+public struct POGOProtos_Networking_Responses_GetRaidDetailsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var lobby: POGOProtos_Data_Raid_Lobby {
+  public var lobby: POGOProtos_Data_Raid_Lobby {
     get {return _storage._lobby ?? POGOProtos_Data_Raid_Lobby()}
     set {_uniqueStorage()._lobby = newValue}
   }
   /// Returns true if `lobby` has been explicitly set.
-  var hasLobby: Bool {return _storage._lobby != nil}
+  public var hasLobby: Bool {return _storage._lobby != nil}
   /// Clears the value of `lobby`. Subsequent reads from it will return its default value.
-  mutating func clearLobby() {_uniqueStorage()._lobby = nil}
+  public mutating func clearLobby() {_uniqueStorage()._lobby = nil}
 
-  var raidBattle: POGOProtos_Data_Battle_Battle {
+  public var raidBattle: POGOProtos_Data_Battle_Battle {
     get {return _storage._raidBattle ?? POGOProtos_Data_Battle_Battle()}
     set {_uniqueStorage()._raidBattle = newValue}
   }
   /// Returns true if `raidBattle` has been explicitly set.
-  var hasRaidBattle: Bool {return _storage._raidBattle != nil}
+  public var hasRaidBattle: Bool {return _storage._raidBattle != nil}
   /// Clears the value of `raidBattle`. Subsequent reads from it will return its default value.
-  mutating func clearRaidBattle() {_uniqueStorage()._raidBattle = nil}
+  public mutating func clearRaidBattle() {_uniqueStorage()._raidBattle = nil}
 
-  var playerCanJoinLobby: Bool {
+  public var playerCanJoinLobby: Bool {
     get {return _storage._playerCanJoinLobby}
     set {_uniqueStorage()._playerCanJoinLobby = newValue}
   }
 
-  var result: POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result {
+  public var result: POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var raidInfo: POGOProtos_Data_Raid_RaidInfo {
+  public var raidInfo: POGOProtos_Data_Raid_RaidInfo {
     get {return _storage._raidInfo ?? POGOProtos_Data_Raid_RaidInfo()}
     set {_uniqueStorage()._raidInfo = newValue}
   }
   /// Returns true if `raidInfo` has been explicitly set.
-  var hasRaidInfo: Bool {return _storage._raidInfo != nil}
+  public var hasRaidInfo: Bool {return _storage._raidInfo != nil}
   /// Clears the value of `raidInfo`. Subsequent reads from it will return its default value.
-  mutating func clearRaidInfo() {_uniqueStorage()._raidInfo = nil}
+  public mutating func clearRaidInfo() {_uniqueStorage()._raidInfo = nil}
 
-  var ticketUsed: Bool {
+  public var ticketUsed: Bool {
     get {return _storage._ticketUsed}
     set {_uniqueStorage()._ticketUsed = newValue}
   }
 
-  var freeTicketAvailable: Bool {
+  public var freeTicketAvailable: Bool {
     get {return _storage._freeTicketAvailable}
     set {_uniqueStorage()._freeTicketAvailable = newValue}
   }
 
-  var throwsRemaining: Int32 {
+  public var throwsRemaining: Int32 {
     get {return _storage._throwsRemaining}
     set {_uniqueStorage()._throwsRemaining = newValue}
   }
 
-  var receivedRewards: Bool {
+  public var receivedRewards: Bool {
     get {return _storage._receivedRewards}
     set {_uniqueStorage()._receivedRewards = newValue}
   }
 
-  var numPlayersInLobby: Int32 {
+  public var numPlayersInLobby: Int32 {
     get {return _storage._numPlayersInLobby}
     set {_uniqueStorage()._numPlayersInLobby = newValue}
   }
 
-  var serverMs: Int64 {
+  public var serverMs: Int64 {
     get {return _storage._serverMs}
     set {_uniqueStorage()._serverMs = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorNotInRange // = 2
@@ -104,11 +104,11 @@ struct POGOProtos_Networking_Responses_GetRaidDetailsResponse {
     case errorPoiInaccessible // = 6
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -121,7 +121,7 @@ struct POGOProtos_Networking_Responses_GetRaidDetailsResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -136,7 +136,7 @@ struct POGOProtos_Networking_Responses_GetRaidDetailsResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -163,8 +163,8 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result: CaseIte
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetRaidDetailsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetRaidDetailsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "lobby"),
     2: .standard(proto: "raid_battle"),
     3: .standard(proto: "player_can_join_lobby"),
@@ -179,23 +179,23 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
   ]
 
   fileprivate class _StorageClass {
-    var _lobby: POGOProtos_Data_Raid_Lobby? = nil
-    var _raidBattle: POGOProtos_Data_Battle_Battle? = nil
-    var _playerCanJoinLobby: Bool = false
-    var _result: POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result = .unset
-    var _raidInfo: POGOProtos_Data_Raid_RaidInfo? = nil
-    var _ticketUsed: Bool = false
-    var _freeTicketAvailable: Bool = false
-    var _throwsRemaining: Int32 = 0
-    var _receivedRewards: Bool = false
-    var _numPlayersInLobby: Int32 = 0
-    var _serverMs: Int64 = 0
+    public var _lobby: POGOProtos_Data_Raid_Lobby? = nil
+    public var _raidBattle: POGOProtos_Data_Battle_Battle? = nil
+    public var _playerCanJoinLobby: Bool = false
+    public var _result: POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result = .unset
+    public var _raidInfo: POGOProtos_Data_Raid_RaidInfo? = nil
+    public var _ticketUsed: Bool = false
+    public var _freeTicketAvailable: Bool = false
+    public var _throwsRemaining: Int32 = 0
+    public var _receivedRewards: Bool = false
+    public var _numPlayersInLobby: Int32 = 0
+    public var _serverMs: Int64 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _lobby = source._lobby
       _raidBattle = source._raidBattle
       _playerCanJoinLobby = source._playerCanJoinLobby
@@ -217,7 +217,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -239,7 +239,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._lobby {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -278,7 +278,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetRaidDetailsResponse, rhs: POGOProtos_Networking_Responses_GetRaidDetailsResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetRaidDetailsResponse, rhs: POGOProtos_Networking_Responses_GetRaidDetailsResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -304,7 +304,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
 }
 
 extension POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_NOT_IN_RANGE"),

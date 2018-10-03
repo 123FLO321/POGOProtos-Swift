@@ -15,43 +15,43 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse {
+public struct POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.Status {
+  public var status: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.Status {
     get {return _storage._status}
     set {_uniqueStorage()._status = newValue}
   }
 
-  var token: POGOProtos_Data_BackgroundToken {
+  public var token: POGOProtos_Data_BackgroundToken {
     get {return _storage._token ?? POGOProtos_Data_BackgroundToken()}
     set {_uniqueStorage()._token = newValue}
   }
   /// Returns true if `token` has been explicitly set.
-  var hasToken: Bool {return _storage._token != nil}
+  public var hasToken: Bool {return _storage._token != nil}
   /// Clears the value of `token`. Subsequent reads from it will return its default value.
-  mutating func clearToken() {_uniqueStorage()._token = nil}
+  public mutating func clearToken() {_uniqueStorage()._token = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Status: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case error // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -60,7 +60,7 @@ struct POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -71,7 +71,7 @@ struct POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -94,21 +94,21 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.Statu
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RegisterBackgroundDeviceResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RegisterBackgroundDeviceResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .same(proto: "token"),
   ]
 
   fileprivate class _StorageClass {
-    var _status: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.Status = .unset
-    var _token: POGOProtos_Data_BackgroundToken? = nil
+    public var _status: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.Status = .unset
+    public var _token: POGOProtos_Data_BackgroundToken? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _status = source._status
       _token = source._token
     }
@@ -121,7 +121,7 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: Swif
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -134,7 +134,7 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._status != .unset {
         try visitor.visitSingularEnumField(value: _storage._status, fieldNumber: 1)
@@ -146,7 +146,7 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse, rhs: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse, rhs: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -163,7 +163,7 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: Swif
 }
 
 extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.Status: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR"),

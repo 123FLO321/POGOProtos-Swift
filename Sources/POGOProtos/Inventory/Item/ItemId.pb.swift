@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case itemUnknown // = 0
   case itemPokeBall // = 1
   case itemGreatBall // = 2
@@ -71,11 +71,11 @@ enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemFriendGiftBox // = 1405
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .itemUnknown
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .itemUnknown
     case 1: self = .itemPokeBall
@@ -129,7 +129,7 @@ enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .itemUnknown: return 0
     case .itemPokeBall: return 1
@@ -246,7 +246,7 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "ITEM_UNKNOWN"),
     1: .same(proto: "ITEM_POKE_BALL"),
     2: .same(proto: "ITEM_GREAT_BALL"),

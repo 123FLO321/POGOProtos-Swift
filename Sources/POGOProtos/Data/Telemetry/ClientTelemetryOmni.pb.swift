@@ -15,324 +15,324 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
+public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var bootTime: POGOProtos_Data_Telemetry_BootTime {
+  public var bootTime: POGOProtos_Data_Telemetry_BootTime {
     get {return _storage._bootTime ?? POGOProtos_Data_Telemetry_BootTime()}
     set {_uniqueStorage()._bootTime = newValue}
   }
   /// Returns true if `bootTime` has been explicitly set.
-  var hasBootTime: Bool {return _storage._bootTime != nil}
+  public var hasBootTime: Bool {return _storage._bootTime != nil}
   /// Clears the value of `bootTime`. Subsequent reads from it will return its default value.
-  mutating func clearBootTime() {_uniqueStorage()._bootTime = nil}
+  public mutating func clearBootTime() {_uniqueStorage()._bootTime = nil}
 
-  var frameRate: POGOProtos_Data_Telemetry_FrameRate {
+  public var frameRate: POGOProtos_Data_Telemetry_FrameRate {
     get {return _storage._frameRate ?? POGOProtos_Data_Telemetry_FrameRate()}
     set {_uniqueStorage()._frameRate = newValue}
   }
   /// Returns true if `frameRate` has been explicitly set.
-  var hasFrameRate: Bool {return _storage._frameRate != nil}
+  public var hasFrameRate: Bool {return _storage._frameRate != nil}
   /// Clears the value of `frameRate`. Subsequent reads from it will return its default value.
-  mutating func clearFrameRate() {_uniqueStorage()._frameRate = nil}
+  public mutating func clearFrameRate() {_uniqueStorage()._frameRate = nil}
 
-  var genericClickTelemetry: POGOProtos_Data_Telemetry_GenericClickTelemetry {
+  public var genericClickTelemetry: POGOProtos_Data_Telemetry_GenericClickTelemetry {
     get {return _storage._genericClickTelemetry ?? POGOProtos_Data_Telemetry_GenericClickTelemetry()}
     set {_uniqueStorage()._genericClickTelemetry = newValue}
   }
   /// Returns true if `genericClickTelemetry` has been explicitly set.
-  var hasGenericClickTelemetry: Bool {return _storage._genericClickTelemetry != nil}
+  public var hasGenericClickTelemetry: Bool {return _storage._genericClickTelemetry != nil}
   /// Clears the value of `genericClickTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearGenericClickTelemetry() {_uniqueStorage()._genericClickTelemetry = nil}
+  public mutating func clearGenericClickTelemetry() {_uniqueStorage()._genericClickTelemetry = nil}
 
-  var mapEventsTelemetry: POGOProtos_Data_Telemetry_MapEventsTelemetry {
+  public var mapEventsTelemetry: POGOProtos_Data_Telemetry_MapEventsTelemetry {
     get {return _storage._mapEventsTelemetry ?? POGOProtos_Data_Telemetry_MapEventsTelemetry()}
     set {_uniqueStorage()._mapEventsTelemetry = newValue}
   }
   /// Returns true if `mapEventsTelemetry` has been explicitly set.
-  var hasMapEventsTelemetry: Bool {return _storage._mapEventsTelemetry != nil}
+  public var hasMapEventsTelemetry: Bool {return _storage._mapEventsTelemetry != nil}
   /// Clears the value of `mapEventsTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearMapEventsTelemetry() {_uniqueStorage()._mapEventsTelemetry = nil}
+  public mutating func clearMapEventsTelemetry() {_uniqueStorage()._mapEventsTelemetry = nil}
 
-  var spinPokestopTelemetry: POGOProtos_Data_Telemetry_SpinPokestopTelemetry {
+  public var spinPokestopTelemetry: POGOProtos_Data_Telemetry_SpinPokestopTelemetry {
     get {return _storage._spinPokestopTelemetry ?? POGOProtos_Data_Telemetry_SpinPokestopTelemetry()}
     set {_uniqueStorage()._spinPokestopTelemetry = newValue}
   }
   /// Returns true if `spinPokestopTelemetry` has been explicitly set.
-  var hasSpinPokestopTelemetry: Bool {return _storage._spinPokestopTelemetry != nil}
+  public var hasSpinPokestopTelemetry: Bool {return _storage._spinPokestopTelemetry != nil}
   /// Clears the value of `spinPokestopTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearSpinPokestopTelemetry() {_uniqueStorage()._spinPokestopTelemetry = nil}
+  public mutating func clearSpinPokestopTelemetry() {_uniqueStorage()._spinPokestopTelemetry = nil}
 
-  var profilePageTelemetry: POGOProtos_Data_Telemetry_ProfilePageTelemetry {
+  public var profilePageTelemetry: POGOProtos_Data_Telemetry_ProfilePageTelemetry {
     get {return _storage._profilePageTelemetry ?? POGOProtos_Data_Telemetry_ProfilePageTelemetry()}
     set {_uniqueStorage()._profilePageTelemetry = newValue}
   }
   /// Returns true if `profilePageTelemetry` has been explicitly set.
-  var hasProfilePageTelemetry: Bool {return _storage._profilePageTelemetry != nil}
+  public var hasProfilePageTelemetry: Bool {return _storage._profilePageTelemetry != nil}
   /// Clears the value of `profilePageTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearProfilePageTelemetry() {_uniqueStorage()._profilePageTelemetry = nil}
+  public mutating func clearProfilePageTelemetry() {_uniqueStorage()._profilePageTelemetry = nil}
 
-  var shoppingPageTelemetry: POGOProtos_Data_Telemetry_ShoppingPageTelemetry {
+  public var shoppingPageTelemetry: POGOProtos_Data_Telemetry_ShoppingPageTelemetry {
     get {return _storage._shoppingPageTelemetry ?? POGOProtos_Data_Telemetry_ShoppingPageTelemetry()}
     set {_uniqueStorage()._shoppingPageTelemetry = newValue}
   }
   /// Returns true if `shoppingPageTelemetry` has been explicitly set.
-  var hasShoppingPageTelemetry: Bool {return _storage._shoppingPageTelemetry != nil}
+  public var hasShoppingPageTelemetry: Bool {return _storage._shoppingPageTelemetry != nil}
   /// Clears the value of `shoppingPageTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearShoppingPageTelemetry() {_uniqueStorage()._shoppingPageTelemetry = nil}
+  public mutating func clearShoppingPageTelemetry() {_uniqueStorage()._shoppingPageTelemetry = nil}
 
-  var encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry {
+  public var encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry {
     get {return _storage._encounterPokemonTelemetry ?? POGOProtos_Data_Telemetry_EncounterPokemonTelemetry()}
     set {_uniqueStorage()._encounterPokemonTelemetry = newValue}
   }
   /// Returns true if `encounterPokemonTelemetry` has been explicitly set.
-  var hasEncounterPokemonTelemetry: Bool {return _storage._encounterPokemonTelemetry != nil}
+  public var hasEncounterPokemonTelemetry: Bool {return _storage._encounterPokemonTelemetry != nil}
   /// Clears the value of `encounterPokemonTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearEncounterPokemonTelemetry() {_uniqueStorage()._encounterPokemonTelemetry = nil}
+  public mutating func clearEncounterPokemonTelemetry() {_uniqueStorage()._encounterPokemonTelemetry = nil}
 
-  var catchPokemonTelemetry: POGOProtos_Data_Telemetry_CatchPokemonTelemetry {
+  public var catchPokemonTelemetry: POGOProtos_Data_Telemetry_CatchPokemonTelemetry {
     get {return _storage._catchPokemonTelemetry ?? POGOProtos_Data_Telemetry_CatchPokemonTelemetry()}
     set {_uniqueStorage()._catchPokemonTelemetry = newValue}
   }
   /// Returns true if `catchPokemonTelemetry` has been explicitly set.
-  var hasCatchPokemonTelemetry: Bool {return _storage._catchPokemonTelemetry != nil}
+  public var hasCatchPokemonTelemetry: Bool {return _storage._catchPokemonTelemetry != nil}
   /// Clears the value of `catchPokemonTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearCatchPokemonTelemetry() {_uniqueStorage()._catchPokemonTelemetry = nil}
+  public mutating func clearCatchPokemonTelemetry() {_uniqueStorage()._catchPokemonTelemetry = nil}
 
-  var deployPokemonTelemetry: POGOProtos_Data_Telemetry_DeployPokemonTelemetry {
+  public var deployPokemonTelemetry: POGOProtos_Data_Telemetry_DeployPokemonTelemetry {
     get {return _storage._deployPokemonTelemetry ?? POGOProtos_Data_Telemetry_DeployPokemonTelemetry()}
     set {_uniqueStorage()._deployPokemonTelemetry = newValue}
   }
   /// Returns true if `deployPokemonTelemetry` has been explicitly set.
-  var hasDeployPokemonTelemetry: Bool {return _storage._deployPokemonTelemetry != nil}
+  public var hasDeployPokemonTelemetry: Bool {return _storage._deployPokemonTelemetry != nil}
   /// Clears the value of `deployPokemonTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearDeployPokemonTelemetry() {_uniqueStorage()._deployPokemonTelemetry = nil}
+  public mutating func clearDeployPokemonTelemetry() {_uniqueStorage()._deployPokemonTelemetry = nil}
 
-  var feedPokemonTelemetry: POGOProtos_Data_Telemetry_FeedPokemonTelemetry {
+  public var feedPokemonTelemetry: POGOProtos_Data_Telemetry_FeedPokemonTelemetry {
     get {return _storage._feedPokemonTelemetry ?? POGOProtos_Data_Telemetry_FeedPokemonTelemetry()}
     set {_uniqueStorage()._feedPokemonTelemetry = newValue}
   }
   /// Returns true if `feedPokemonTelemetry` has been explicitly set.
-  var hasFeedPokemonTelemetry: Bool {return _storage._feedPokemonTelemetry != nil}
+  public var hasFeedPokemonTelemetry: Bool {return _storage._feedPokemonTelemetry != nil}
   /// Clears the value of `feedPokemonTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearFeedPokemonTelemetry() {_uniqueStorage()._feedPokemonTelemetry = nil}
+  public mutating func clearFeedPokemonTelemetry() {_uniqueStorage()._feedPokemonTelemetry = nil}
 
-  var evolvePokemonTelemetry: POGOProtos_Data_Telemetry_EvolvePokemonTelemetry {
+  public var evolvePokemonTelemetry: POGOProtos_Data_Telemetry_EvolvePokemonTelemetry {
     get {return _storage._evolvePokemonTelemetry ?? POGOProtos_Data_Telemetry_EvolvePokemonTelemetry()}
     set {_uniqueStorage()._evolvePokemonTelemetry = newValue}
   }
   /// Returns true if `evolvePokemonTelemetry` has been explicitly set.
-  var hasEvolvePokemonTelemetry: Bool {return _storage._evolvePokemonTelemetry != nil}
+  public var hasEvolvePokemonTelemetry: Bool {return _storage._evolvePokemonTelemetry != nil}
   /// Clears the value of `evolvePokemonTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearEvolvePokemonTelemetry() {_uniqueStorage()._evolvePokemonTelemetry = nil}
+  public mutating func clearEvolvePokemonTelemetry() {_uniqueStorage()._evolvePokemonTelemetry = nil}
 
-  var releasePokemonTelemetry: POGOProtos_Data_Telemetry_ReleasePokemonTelemetry {
+  public var releasePokemonTelemetry: POGOProtos_Data_Telemetry_ReleasePokemonTelemetry {
     get {return _storage._releasePokemonTelemetry ?? POGOProtos_Data_Telemetry_ReleasePokemonTelemetry()}
     set {_uniqueStorage()._releasePokemonTelemetry = newValue}
   }
   /// Returns true if `releasePokemonTelemetry` has been explicitly set.
-  var hasReleasePokemonTelemetry: Bool {return _storage._releasePokemonTelemetry != nil}
+  public var hasReleasePokemonTelemetry: Bool {return _storage._releasePokemonTelemetry != nil}
   /// Clears the value of `releasePokemonTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearReleasePokemonTelemetry() {_uniqueStorage()._releasePokemonTelemetry = nil}
+  public mutating func clearReleasePokemonTelemetry() {_uniqueStorage()._releasePokemonTelemetry = nil}
 
-  var nicknamePokemonTelemetry: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry {
+  public var nicknamePokemonTelemetry: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry {
     get {return _storage._nicknamePokemonTelemetry ?? POGOProtos_Data_Telemetry_NicknamePokemonTelemetry()}
     set {_uniqueStorage()._nicknamePokemonTelemetry = newValue}
   }
   /// Returns true if `nicknamePokemonTelemetry` has been explicitly set.
-  var hasNicknamePokemonTelemetry: Bool {return _storage._nicknamePokemonTelemetry != nil}
+  public var hasNicknamePokemonTelemetry: Bool {return _storage._nicknamePokemonTelemetry != nil}
   /// Clears the value of `nicknamePokemonTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearNicknamePokemonTelemetry() {_uniqueStorage()._nicknamePokemonTelemetry = nil}
+  public mutating func clearNicknamePokemonTelemetry() {_uniqueStorage()._nicknamePokemonTelemetry = nil}
 
-  var newsPageTelemetry: POGOProtos_Data_Telemetry_NewsPageTelemetry {
+  public var newsPageTelemetry: POGOProtos_Data_Telemetry_NewsPageTelemetry {
     get {return _storage._newsPageTelemetry ?? POGOProtos_Data_Telemetry_NewsPageTelemetry()}
     set {_uniqueStorage()._newsPageTelemetry = newValue}
   }
   /// Returns true if `newsPageTelemetry` has been explicitly set.
-  var hasNewsPageTelemetry: Bool {return _storage._newsPageTelemetry != nil}
+  public var hasNewsPageTelemetry: Bool {return _storage._newsPageTelemetry != nil}
   /// Clears the value of `newsPageTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearNewsPageTelemetry() {_uniqueStorage()._newsPageTelemetry = nil}
+  public mutating func clearNewsPageTelemetry() {_uniqueStorage()._newsPageTelemetry = nil}
 
-  var itemTelemetry: POGOProtos_Data_Telemetry_ItemTelemetry {
+  public var itemTelemetry: POGOProtos_Data_Telemetry_ItemTelemetry {
     get {return _storage._itemTelemetry ?? POGOProtos_Data_Telemetry_ItemTelemetry()}
     set {_uniqueStorage()._itemTelemetry = newValue}
   }
   /// Returns true if `itemTelemetry` has been explicitly set.
-  var hasItemTelemetry: Bool {return _storage._itemTelemetry != nil}
+  public var hasItemTelemetry: Bool {return _storage._itemTelemetry != nil}
   /// Clears the value of `itemTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearItemTelemetry() {_uniqueStorage()._itemTelemetry = nil}
+  public mutating func clearItemTelemetry() {_uniqueStorage()._itemTelemetry = nil}
 
-  var battlePartyTelemetry: POGOProtos_Data_Telemetry_BattlePartyTelemetry {
+  public var battlePartyTelemetry: POGOProtos_Data_Telemetry_BattlePartyTelemetry {
     get {return _storage._battlePartyTelemetry ?? POGOProtos_Data_Telemetry_BattlePartyTelemetry()}
     set {_uniqueStorage()._battlePartyTelemetry = newValue}
   }
   /// Returns true if `battlePartyTelemetry` has been explicitly set.
-  var hasBattlePartyTelemetry: Bool {return _storage._battlePartyTelemetry != nil}
+  public var hasBattlePartyTelemetry: Bool {return _storage._battlePartyTelemetry != nil}
   /// Clears the value of `battlePartyTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearBattlePartyTelemetry() {_uniqueStorage()._battlePartyTelemetry = nil}
+  public mutating func clearBattlePartyTelemetry() {_uniqueStorage()._battlePartyTelemetry = nil}
 
-  var passcodeRedeemTelemetry: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry {
+  public var passcodeRedeemTelemetry: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry {
     get {return _storage._passcodeRedeemTelemetry ?? POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry()}
     set {_uniqueStorage()._passcodeRedeemTelemetry = newValue}
   }
   /// Returns true if `passcodeRedeemTelemetry` has been explicitly set.
-  var hasPasscodeRedeemTelemetry: Bool {return _storage._passcodeRedeemTelemetry != nil}
+  public var hasPasscodeRedeemTelemetry: Bool {return _storage._passcodeRedeemTelemetry != nil}
   /// Clears the value of `passcodeRedeemTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearPasscodeRedeemTelemetry() {_uniqueStorage()._passcodeRedeemTelemetry = nil}
+  public mutating func clearPasscodeRedeemTelemetry() {_uniqueStorage()._passcodeRedeemTelemetry = nil}
 
-  var linkLoginTelemetry: POGOProtos_Data_Telemetry_LinkLoginTelemetry {
+  public var linkLoginTelemetry: POGOProtos_Data_Telemetry_LinkLoginTelemetry {
     get {return _storage._linkLoginTelemetry ?? POGOProtos_Data_Telemetry_LinkLoginTelemetry()}
     set {_uniqueStorage()._linkLoginTelemetry = newValue}
   }
   /// Returns true if `linkLoginTelemetry` has been explicitly set.
-  var hasLinkLoginTelemetry: Bool {return _storage._linkLoginTelemetry != nil}
+  public var hasLinkLoginTelemetry: Bool {return _storage._linkLoginTelemetry != nil}
   /// Clears the value of `linkLoginTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearLinkLoginTelemetry() {_uniqueStorage()._linkLoginTelemetry = nil}
+  public mutating func clearLinkLoginTelemetry() {_uniqueStorage()._linkLoginTelemetry = nil}
 
-  var raidTelemetry: POGOProtos_Data_Telemetry_RaidTelemetry {
+  public var raidTelemetry: POGOProtos_Data_Telemetry_RaidTelemetry {
     get {return _storage._raidTelemetry ?? POGOProtos_Data_Telemetry_RaidTelemetry()}
     set {_uniqueStorage()._raidTelemetry = newValue}
   }
   /// Returns true if `raidTelemetry` has been explicitly set.
-  var hasRaidTelemetry: Bool {return _storage._raidTelemetry != nil}
+  public var hasRaidTelemetry: Bool {return _storage._raidTelemetry != nil}
   /// Clears the value of `raidTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearRaidTelemetry() {_uniqueStorage()._raidTelemetry = nil}
+  public mutating func clearRaidTelemetry() {_uniqueStorage()._raidTelemetry = nil}
 
-  var pushNotificationTelemetry: POGOProtos_Data_Telemetry_PushNotificationTelemetry {
+  public var pushNotificationTelemetry: POGOProtos_Data_Telemetry_PushNotificationTelemetry {
     get {return _storage._pushNotificationTelemetry ?? POGOProtos_Data_Telemetry_PushNotificationTelemetry()}
     set {_uniqueStorage()._pushNotificationTelemetry = newValue}
   }
   /// Returns true if `pushNotificationTelemetry` has been explicitly set.
-  var hasPushNotificationTelemetry: Bool {return _storage._pushNotificationTelemetry != nil}
+  public var hasPushNotificationTelemetry: Bool {return _storage._pushNotificationTelemetry != nil}
   /// Clears the value of `pushNotificationTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearPushNotificationTelemetry() {_uniqueStorage()._pushNotificationTelemetry = nil}
+  public mutating func clearPushNotificationTelemetry() {_uniqueStorage()._pushNotificationTelemetry = nil}
 
-  var avatarCustomizationTelemetry: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry {
+  public var avatarCustomizationTelemetry: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry {
     get {return _storage._avatarCustomizationTelemetry ?? POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry()}
     set {_uniqueStorage()._avatarCustomizationTelemetry = newValue}
   }
   /// Returns true if `avatarCustomizationTelemetry` has been explicitly set.
-  var hasAvatarCustomizationTelemetry: Bool {return _storage._avatarCustomizationTelemetry != nil}
+  public var hasAvatarCustomizationTelemetry: Bool {return _storage._avatarCustomizationTelemetry != nil}
   /// Clears the value of `avatarCustomizationTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearAvatarCustomizationTelemetry() {_uniqueStorage()._avatarCustomizationTelemetry = nil}
+  public mutating func clearAvatarCustomizationTelemetry() {_uniqueStorage()._avatarCustomizationTelemetry = nil}
 
-  var readPointOfInterestDescriptionTelemetry: POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry {
+  public var readPointOfInterestDescriptionTelemetry: POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry {
     get {return _storage._readPointOfInterestDescriptionTelemetry ?? POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry()}
     set {_uniqueStorage()._readPointOfInterestDescriptionTelemetry = newValue}
   }
   /// Returns true if `readPointOfInterestDescriptionTelemetry` has been explicitly set.
-  var hasReadPointOfInterestDescriptionTelemetry: Bool {return _storage._readPointOfInterestDescriptionTelemetry != nil}
+  public var hasReadPointOfInterestDescriptionTelemetry: Bool {return _storage._readPointOfInterestDescriptionTelemetry != nil}
   /// Clears the value of `readPointOfInterestDescriptionTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearReadPointOfInterestDescriptionTelemetry() {_uniqueStorage()._readPointOfInterestDescriptionTelemetry = nil}
+  public mutating func clearReadPointOfInterestDescriptionTelemetry() {_uniqueStorage()._readPointOfInterestDescriptionTelemetry = nil}
 
-  var webTelemetry: POGOProtos_Data_Telemetry_WebTelemetry {
+  public var webTelemetry: POGOProtos_Data_Telemetry_WebTelemetry {
     get {return _storage._webTelemetry ?? POGOProtos_Data_Telemetry_WebTelemetry()}
     set {_uniqueStorage()._webTelemetry = newValue}
   }
   /// Returns true if `webTelemetry` has been explicitly set.
-  var hasWebTelemetry: Bool {return _storage._webTelemetry != nil}
+  public var hasWebTelemetry: Bool {return _storage._webTelemetry != nil}
   /// Clears the value of `webTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearWebTelemetry() {_uniqueStorage()._webTelemetry = nil}
+  public mutating func clearWebTelemetry() {_uniqueStorage()._webTelemetry = nil}
 
-  var changeArTelemetry: POGOProtos_Data_Telemetry_ChangeArTelemetry {
+  public var changeArTelemetry: POGOProtos_Data_Telemetry_ChangeArTelemetry {
     get {return _storage._changeArTelemetry ?? POGOProtos_Data_Telemetry_ChangeArTelemetry()}
     set {_uniqueStorage()._changeArTelemetry = newValue}
   }
   /// Returns true if `changeArTelemetry` has been explicitly set.
-  var hasChangeArTelemetry: Bool {return _storage._changeArTelemetry != nil}
+  public var hasChangeArTelemetry: Bool {return _storage._changeArTelemetry != nil}
   /// Clears the value of `changeArTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearChangeArTelemetry() {_uniqueStorage()._changeArTelemetry = nil}
+  public mutating func clearChangeArTelemetry() {_uniqueStorage()._changeArTelemetry = nil}
 
-  var weatherDetailClickTelemetry: POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry {
+  public var weatherDetailClickTelemetry: POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry {
     get {return _storage._weatherDetailClickTelemetry ?? POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry()}
     set {_uniqueStorage()._weatherDetailClickTelemetry = newValue}
   }
   /// Returns true if `weatherDetailClickTelemetry` has been explicitly set.
-  var hasWeatherDetailClickTelemetry: Bool {return _storage._weatherDetailClickTelemetry != nil}
+  public var hasWeatherDetailClickTelemetry: Bool {return _storage._weatherDetailClickTelemetry != nil}
   /// Clears the value of `weatherDetailClickTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearWeatherDetailClickTelemetry() {_uniqueStorage()._weatherDetailClickTelemetry = nil}
+  public mutating func clearWeatherDetailClickTelemetry() {_uniqueStorage()._weatherDetailClickTelemetry = nil}
 
-  var userIssueWeatherReport: POGOProtos_Data_Player_UserIssueWeatherReport {
+  public var userIssueWeatherReport: POGOProtos_Data_Player_UserIssueWeatherReport {
     get {return _storage._userIssueWeatherReport ?? POGOProtos_Data_Player_UserIssueWeatherReport()}
     set {_uniqueStorage()._userIssueWeatherReport = newValue}
   }
   /// Returns true if `userIssueWeatherReport` has been explicitly set.
-  var hasUserIssueWeatherReport: Bool {return _storage._userIssueWeatherReport != nil}
+  public var hasUserIssueWeatherReport: Bool {return _storage._userIssueWeatherReport != nil}
   /// Clears the value of `userIssueWeatherReport`. Subsequent reads from it will return its default value.
-  mutating func clearUserIssueWeatherReport() {_uniqueStorage()._userIssueWeatherReport = nil}
+  public mutating func clearUserIssueWeatherReport() {_uniqueStorage()._userIssueWeatherReport = nil}
 
-  var pokemonInventoryTelemetry: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry {
+  public var pokemonInventoryTelemetry: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry {
     get {return _storage._pokemonInventoryTelemetry ?? POGOProtos_Data_Telemetry_PokemonInventoryTelemetry()}
     set {_uniqueStorage()._pokemonInventoryTelemetry = newValue}
   }
   /// Returns true if `pokemonInventoryTelemetry` has been explicitly set.
-  var hasPokemonInventoryTelemetry: Bool {return _storage._pokemonInventoryTelemetry != nil}
+  public var hasPokemonInventoryTelemetry: Bool {return _storage._pokemonInventoryTelemetry != nil}
   /// Clears the value of `pokemonInventoryTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonInventoryTelemetry() {_uniqueStorage()._pokemonInventoryTelemetry = nil}
+  public mutating func clearPokemonInventoryTelemetry() {_uniqueStorage()._pokemonInventoryTelemetry = nil}
 
-  var socialTelemetry: POGOProtos_Data_Telemetry_SocialTelemetry {
+  public var socialTelemetry: POGOProtos_Data_Telemetry_SocialTelemetry {
     get {return _storage._socialTelemetry ?? POGOProtos_Data_Telemetry_SocialTelemetry()}
     set {_uniqueStorage()._socialTelemetry = newValue}
   }
   /// Returns true if `socialTelemetry` has been explicitly set.
-  var hasSocialTelemetry: Bool {return _storage._socialTelemetry != nil}
+  public var hasSocialTelemetry: Bool {return _storage._socialTelemetry != nil}
   /// Clears the value of `socialTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearSocialTelemetry() {_uniqueStorage()._socialTelemetry = nil}
+  public mutating func clearSocialTelemetry() {_uniqueStorage()._socialTelemetry = nil}
 
-  var checkEncounterInfoTelemetry: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry {
+  public var checkEncounterInfoTelemetry: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry {
     get {return _storage._checkEncounterInfoTelemetry ?? POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry()}
     set {_uniqueStorage()._checkEncounterInfoTelemetry = newValue}
   }
   /// Returns true if `checkEncounterInfoTelemetry` has been explicitly set.
-  var hasCheckEncounterInfoTelemetry: Bool {return _storage._checkEncounterInfoTelemetry != nil}
+  public var hasCheckEncounterInfoTelemetry: Bool {return _storage._checkEncounterInfoTelemetry != nil}
   /// Clears the value of `checkEncounterInfoTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearCheckEncounterInfoTelemetry() {_uniqueStorage()._checkEncounterInfoTelemetry = nil}
+  public mutating func clearCheckEncounterInfoTelemetry() {_uniqueStorage()._checkEncounterInfoTelemetry = nil}
 
-  var pokemonGoPlusTelemetry: POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry {
+  public var pokemonGoPlusTelemetry: POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry {
     get {return _storage._pokemonGoPlusTelemetry ?? POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry()}
     set {_uniqueStorage()._pokemonGoPlusTelemetry = newValue}
   }
   /// Returns true if `pokemonGoPlusTelemetry` has been explicitly set.
-  var hasPokemonGoPlusTelemetry: Bool {return _storage._pokemonGoPlusTelemetry != nil}
+  public var hasPokemonGoPlusTelemetry: Bool {return _storage._pokemonGoPlusTelemetry != nil}
   /// Clears the value of `pokemonGoPlusTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonGoPlusTelemetry() {_uniqueStorage()._pokemonGoPlusTelemetry = nil}
+  public mutating func clearPokemonGoPlusTelemetry() {_uniqueStorage()._pokemonGoPlusTelemetry = nil}
 
-  var rpcTimingTelemetry: POGOProtos_Data_Telemetry_RpcResponseTelemetry {
+  public var rpcTimingTelemetry: POGOProtos_Data_Telemetry_RpcResponseTelemetry {
     get {return _storage._rpcTimingTelemetry ?? POGOProtos_Data_Telemetry_RpcResponseTelemetry()}
     set {_uniqueStorage()._rpcTimingTelemetry = newValue}
   }
   /// Returns true if `rpcTimingTelemetry` has been explicitly set.
-  var hasRpcTimingTelemetry: Bool {return _storage._rpcTimingTelemetry != nil}
+  public var hasRpcTimingTelemetry: Bool {return _storage._rpcTimingTelemetry != nil}
   /// Clears the value of `rpcTimingTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearRpcTimingTelemetry() {_uniqueStorage()._rpcTimingTelemetry = nil}
+  public mutating func clearRpcTimingTelemetry() {_uniqueStorage()._rpcTimingTelemetry = nil}
 
-  var socialGiftCountTelemetry: POGOProtos_Settings_SocialGiftCountTelemetry {
+  public var socialGiftCountTelemetry: POGOProtos_Settings_SocialGiftCountTelemetry {
     get {return _storage._socialGiftCountTelemetry ?? POGOProtos_Settings_SocialGiftCountTelemetry()}
     set {_uniqueStorage()._socialGiftCountTelemetry = newValue}
   }
   /// Returns true if `socialGiftCountTelemetry` has been explicitly set.
-  var hasSocialGiftCountTelemetry: Bool {return _storage._socialGiftCountTelemetry != nil}
+  public var hasSocialGiftCountTelemetry: Bool {return _storage._socialGiftCountTelemetry != nil}
   /// Clears the value of `socialGiftCountTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearSocialGiftCountTelemetry() {_uniqueStorage()._socialGiftCountTelemetry = nil}
+  public mutating func clearSocialGiftCountTelemetry() {_uniqueStorage()._socialGiftCountTelemetry = nil}
 
-  var serverData: POGOProtos_Networking_Platform_Telemetry_PlatformServerData {
+  public var serverData: POGOProtos_Networking_Platform_Telemetry_PlatformServerData {
     get {return _storage._serverData ?? POGOProtos_Networking_Platform_Telemetry_PlatformServerData()}
     set {_uniqueStorage()._serverData = newValue}
   }
   /// Returns true if `serverData` has been explicitly set.
-  var hasServerData: Bool {return _storage._serverData != nil}
+  public var hasServerData: Bool {return _storage._serverData != nil}
   /// Clears the value of `serverData`. Subsequent reads from it will return its default value.
-  mutating func clearServerData() {_uniqueStorage()._serverData = nil}
+  public mutating func clearServerData() {_uniqueStorage()._serverData = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -342,8 +342,8 @@ struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ClientTelemetryOmni"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ClientTelemetryOmni"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "boot_time"),
     2: .standard(proto: "frame_rate"),
     3: .standard(proto: "generic_click_telemetry"),
@@ -381,46 +381,46 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
   ]
 
   fileprivate class _StorageClass {
-    var _bootTime: POGOProtos_Data_Telemetry_BootTime? = nil
-    var _frameRate: POGOProtos_Data_Telemetry_FrameRate? = nil
-    var _genericClickTelemetry: POGOProtos_Data_Telemetry_GenericClickTelemetry? = nil
-    var _mapEventsTelemetry: POGOProtos_Data_Telemetry_MapEventsTelemetry? = nil
-    var _spinPokestopTelemetry: POGOProtos_Data_Telemetry_SpinPokestopTelemetry? = nil
-    var _profilePageTelemetry: POGOProtos_Data_Telemetry_ProfilePageTelemetry? = nil
-    var _shoppingPageTelemetry: POGOProtos_Data_Telemetry_ShoppingPageTelemetry? = nil
-    var _encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry? = nil
-    var _catchPokemonTelemetry: POGOProtos_Data_Telemetry_CatchPokemonTelemetry? = nil
-    var _deployPokemonTelemetry: POGOProtos_Data_Telemetry_DeployPokemonTelemetry? = nil
-    var _feedPokemonTelemetry: POGOProtos_Data_Telemetry_FeedPokemonTelemetry? = nil
-    var _evolvePokemonTelemetry: POGOProtos_Data_Telemetry_EvolvePokemonTelemetry? = nil
-    var _releasePokemonTelemetry: POGOProtos_Data_Telemetry_ReleasePokemonTelemetry? = nil
-    var _nicknamePokemonTelemetry: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry? = nil
-    var _newsPageTelemetry: POGOProtos_Data_Telemetry_NewsPageTelemetry? = nil
-    var _itemTelemetry: POGOProtos_Data_Telemetry_ItemTelemetry? = nil
-    var _battlePartyTelemetry: POGOProtos_Data_Telemetry_BattlePartyTelemetry? = nil
-    var _passcodeRedeemTelemetry: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry? = nil
-    var _linkLoginTelemetry: POGOProtos_Data_Telemetry_LinkLoginTelemetry? = nil
-    var _raidTelemetry: POGOProtos_Data_Telemetry_RaidTelemetry? = nil
-    var _pushNotificationTelemetry: POGOProtos_Data_Telemetry_PushNotificationTelemetry? = nil
-    var _avatarCustomizationTelemetry: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry? = nil
-    var _readPointOfInterestDescriptionTelemetry: POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry? = nil
-    var _webTelemetry: POGOProtos_Data_Telemetry_WebTelemetry? = nil
-    var _changeArTelemetry: POGOProtos_Data_Telemetry_ChangeArTelemetry? = nil
-    var _weatherDetailClickTelemetry: POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry? = nil
-    var _userIssueWeatherReport: POGOProtos_Data_Player_UserIssueWeatherReport? = nil
-    var _pokemonInventoryTelemetry: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry? = nil
-    var _socialTelemetry: POGOProtos_Data_Telemetry_SocialTelemetry? = nil
-    var _checkEncounterInfoTelemetry: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry? = nil
-    var _pokemonGoPlusTelemetry: POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry? = nil
-    var _rpcTimingTelemetry: POGOProtos_Data_Telemetry_RpcResponseTelemetry? = nil
-    var _socialGiftCountTelemetry: POGOProtos_Settings_SocialGiftCountTelemetry? = nil
-    var _serverData: POGOProtos_Networking_Platform_Telemetry_PlatformServerData? = nil
+    public var _bootTime: POGOProtos_Data_Telemetry_BootTime? = nil
+    public var _frameRate: POGOProtos_Data_Telemetry_FrameRate? = nil
+    public var _genericClickTelemetry: POGOProtos_Data_Telemetry_GenericClickTelemetry? = nil
+    public var _mapEventsTelemetry: POGOProtos_Data_Telemetry_MapEventsTelemetry? = nil
+    public var _spinPokestopTelemetry: POGOProtos_Data_Telemetry_SpinPokestopTelemetry? = nil
+    public var _profilePageTelemetry: POGOProtos_Data_Telemetry_ProfilePageTelemetry? = nil
+    public var _shoppingPageTelemetry: POGOProtos_Data_Telemetry_ShoppingPageTelemetry? = nil
+    public var _encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry? = nil
+    public var _catchPokemonTelemetry: POGOProtos_Data_Telemetry_CatchPokemonTelemetry? = nil
+    public var _deployPokemonTelemetry: POGOProtos_Data_Telemetry_DeployPokemonTelemetry? = nil
+    public var _feedPokemonTelemetry: POGOProtos_Data_Telemetry_FeedPokemonTelemetry? = nil
+    public var _evolvePokemonTelemetry: POGOProtos_Data_Telemetry_EvolvePokemonTelemetry? = nil
+    public var _releasePokemonTelemetry: POGOProtos_Data_Telemetry_ReleasePokemonTelemetry? = nil
+    public var _nicknamePokemonTelemetry: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry? = nil
+    public var _newsPageTelemetry: POGOProtos_Data_Telemetry_NewsPageTelemetry? = nil
+    public var _itemTelemetry: POGOProtos_Data_Telemetry_ItemTelemetry? = nil
+    public var _battlePartyTelemetry: POGOProtos_Data_Telemetry_BattlePartyTelemetry? = nil
+    public var _passcodeRedeemTelemetry: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry? = nil
+    public var _linkLoginTelemetry: POGOProtos_Data_Telemetry_LinkLoginTelemetry? = nil
+    public var _raidTelemetry: POGOProtos_Data_Telemetry_RaidTelemetry? = nil
+    public var _pushNotificationTelemetry: POGOProtos_Data_Telemetry_PushNotificationTelemetry? = nil
+    public var _avatarCustomizationTelemetry: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry? = nil
+    public var _readPointOfInterestDescriptionTelemetry: POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry? = nil
+    public var _webTelemetry: POGOProtos_Data_Telemetry_WebTelemetry? = nil
+    public var _changeArTelemetry: POGOProtos_Data_Telemetry_ChangeArTelemetry? = nil
+    public var _weatherDetailClickTelemetry: POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry? = nil
+    public var _userIssueWeatherReport: POGOProtos_Data_Player_UserIssueWeatherReport? = nil
+    public var _pokemonInventoryTelemetry: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry? = nil
+    public var _socialTelemetry: POGOProtos_Data_Telemetry_SocialTelemetry? = nil
+    public var _checkEncounterInfoTelemetry: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry? = nil
+    public var _pokemonGoPlusTelemetry: POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry? = nil
+    public var _rpcTimingTelemetry: POGOProtos_Data_Telemetry_RpcResponseTelemetry? = nil
+    public var _socialGiftCountTelemetry: POGOProtos_Settings_SocialGiftCountTelemetry? = nil
+    public var _serverData: POGOProtos_Networking_Platform_Telemetry_PlatformServerData? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _bootTime = source._bootTime
       _frameRate = source._frameRate
       _genericClickTelemetry = source._genericClickTelemetry
@@ -465,7 +465,7 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -510,7 +510,7 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._bootTime {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -618,7 +618,7 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni, rhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni, rhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

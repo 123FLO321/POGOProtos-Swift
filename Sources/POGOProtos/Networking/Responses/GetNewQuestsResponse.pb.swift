@@ -15,35 +15,35 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_GetNewQuestsResponse {
+public struct POGOProtos_Networking_Responses_GetNewQuestsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: POGOProtos_Networking_Responses_GetNewQuestsResponse.Status = .unset
+  public var status: POGOProtos_Networking_Responses_GetNewQuestsResponse.Status = .unset
 
-  var quests: [POGOProtos_Data_Quests_ClientQuest] = []
+  public var quests: [POGOProtos_Data_Quests_ClientQuest] = []
 
-  var versionChangedQuests: [POGOProtos_Data_Quests_ClientQuest] = []
+  public var versionChangedQuests: [POGOProtos_Data_Quests_ClientQuest] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Status: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorInvalidDisplay // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -52,7 +52,7 @@ struct POGOProtos_Networking_Responses_GetNewQuestsResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -63,7 +63,7 @@ struct POGOProtos_Networking_Responses_GetNewQuestsResponse {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -84,14 +84,14 @@ extension POGOProtos_Networking_Responses_GetNewQuestsResponse.Status: CaseItera
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_GetNewQuestsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetNewQuestsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetNewQuestsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .same(proto: "quests"),
     3: .standard(proto: "version_changed_quests"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.status)
@@ -102,7 +102,7 @@ extension POGOProtos_Networking_Responses_GetNewQuestsResponse: SwiftProtobuf.Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.status != .unset {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
     }
@@ -115,7 +115,7 @@ extension POGOProtos_Networking_Responses_GetNewQuestsResponse: SwiftProtobuf.Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetNewQuestsResponse, rhs: POGOProtos_Networking_Responses_GetNewQuestsResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetNewQuestsResponse, rhs: POGOProtos_Networking_Responses_GetNewQuestsResponse) -> Bool {
     if lhs.status != rhs.status {return false}
     if lhs.quests != rhs.quests {return false}
     if lhs.versionChangedQuests != rhs.versionChangedQuests {return false}
@@ -125,7 +125,7 @@ extension POGOProtos_Networking_Responses_GetNewQuestsResponse: SwiftProtobuf.Me
 }
 
 extension POGOProtos_Networking_Responses_GetNewQuestsResponse.Status: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_INVALID_DISPLAY"),

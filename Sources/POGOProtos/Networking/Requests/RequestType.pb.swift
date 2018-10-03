@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case methodUnset // = 0
   case getPlayer // = 2
   case getHoloholoInventory // = 4
@@ -133,11 +133,11 @@ enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case getTrading // = 974
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .methodUnset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .methodUnset
     case 2: self = .getPlayer
@@ -253,7 +253,7 @@ enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .methodUnset: return 0
     case .getPlayer: return 2
@@ -494,7 +494,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "METHOD_UNSET"),
     2: .same(proto: "GET_PLAYER"),
     4: .same(proto: "GET_HOLOHOLO_INVENTORY"),

@@ -15,28 +15,28 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_Pokemon_EvolutionBranch {
+public struct POGOProtos_Settings_Master_Pokemon_EvolutionBranch {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var evolution: POGOProtos_Enums_PokemonId = .missingno
+  public var evolution: POGOProtos_Enums_PokemonId = .missingno
 
-  var evolutionItemRequirement: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+  public var evolutionItemRequirement: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-  var candyCost: Int32 = 0
+  public var candyCost: Int32 = 0
 
-  var kmBuddyDistanceRequirement: Float = 0
+  public var kmBuddyDistanceRequirement: Float = 0
 
-  var form: POGOProtos_Enums_Form = .unset
+  public var form: POGOProtos_Enums_Form = .unset
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,8 +44,8 @@ struct POGOProtos_Settings_Master_Pokemon_EvolutionBranch {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master.Pokemon"
 
 extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EvolutionBranch"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EvolutionBranch"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "evolution"),
     2: .standard(proto: "evolution_item_requirement"),
     3: .standard(proto: "candy_cost"),
@@ -53,7 +53,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     5: .same(proto: "form"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.evolution)
@@ -66,7 +66,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.evolution != .missingno {
       try visitor.visitSingularEnumField(value: self.evolution, fieldNumber: 1)
     }
@@ -85,7 +85,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_Pokemon_EvolutionBranch, rhs: POGOProtos_Settings_Master_Pokemon_EvolutionBranch) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Pokemon_EvolutionBranch, rhs: POGOProtos_Settings_Master_Pokemon_EvolutionBranch) -> Bool {
     if lhs.evolution != rhs.evolution {return false}
     if lhs.evolutionItemRequirement != rhs.evolutionItemRequirement {return false}
     if lhs.candyCost != rhs.candyCost {return false}

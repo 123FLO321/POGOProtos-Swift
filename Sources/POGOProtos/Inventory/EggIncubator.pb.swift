@@ -15,33 +15,33 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Inventory_EggIncubator {
+public struct POGOProtos_Inventory_EggIncubator {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: String = String()
+  public var id: String = String()
 
-  var itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+  public var itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-  var incubatorType: POGOProtos_Inventory_EggIncubatorType = .incubatorUnset
+  public var incubatorType: POGOProtos_Inventory_EggIncubatorType = .incubatorUnset
 
-  var usesRemaining: Int32 = 0
+  public var usesRemaining: Int32 = 0
 
   /// TODO: Check if is PokemonType
-  var pokemonID: UInt64 = 0
+  public var pokemonID: UInt64 = 0
 
-  var startKmWalked: Double = 0
+  public var startKmWalked: Double = 0
 
-  var targetKmWalked: Double = 0
+  public var targetKmWalked: Double = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -49,8 +49,8 @@ struct POGOProtos_Inventory_EggIncubator {
 fileprivate let _protobuf_package = "POGOProtos.Inventory"
 
 extension POGOProtos_Inventory_EggIncubator: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EggIncubator"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EggIncubator"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .standard(proto: "item_id"),
     3: .standard(proto: "incubator_type"),
@@ -60,7 +60,7 @@ extension POGOProtos_Inventory_EggIncubator: SwiftProtobuf.Message, SwiftProtobu
     7: .standard(proto: "target_km_walked"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.id)
@@ -75,7 +75,7 @@ extension POGOProtos_Inventory_EggIncubator: SwiftProtobuf.Message, SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.id.isEmpty {
       try visitor.visitSingularStringField(value: self.id, fieldNumber: 1)
     }
@@ -100,7 +100,7 @@ extension POGOProtos_Inventory_EggIncubator: SwiftProtobuf.Message, SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Inventory_EggIncubator, rhs: POGOProtos_Inventory_EggIncubator) -> Bool {
+  public static func ==(lhs: POGOProtos_Inventory_EggIncubator, rhs: POGOProtos_Inventory_EggIncubator) -> Bool {
     if lhs.id != rhs.id {return false}
     if lhs.itemID != rhs.itemID {return false}
     if lhs.incubatorType != rhs.incubatorType {return false}

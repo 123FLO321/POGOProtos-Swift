@@ -15,46 +15,46 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Gift_GiftBoxDetails {
+public struct POGOProtos_Data_Gift_GiftBoxDetails {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var giftboxID: UInt64 = 0
+  public var giftboxID: UInt64 = 0
 
-  var senderID: String = String()
+  public var senderID: String = String()
 
-  var senderCodename: String = String()
+  public var senderCodename: String = String()
 
-  var receiverID: String = String()
+  public var receiverID: String = String()
 
-  var receiverCodename: String = String()
+  public var receiverCodename: String = String()
 
-  var fortID: String = String()
+  public var fortID: String = String()
 
-  var fortName: String = String()
+  public var fortName: String = String()
 
-  var fortLat: Double = 0
+  public var fortLat: Double = 0
 
-  var fortLng: Double = 0
+  public var fortLng: Double = 0
 
-  var fortImageURL: String = String()
+  public var fortImageURL: String = String()
 
-  var creationTimestamp: Int64 = 0
+  public var creationTimestamp: Int64 = 0
 
-  var sentTimestamp: Int64 = 0
+  public var sentTimestamp: Int64 = 0
 
-  var deliveryPokemonID: UInt64 = 0
+  public var deliveryPokemonID: UInt64 = 0
 
-  var isSponsored: Bool = false
+  public var isSponsored: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -62,8 +62,8 @@ struct POGOProtos_Data_Gift_GiftBoxDetails {
 fileprivate let _protobuf_package = "POGOProtos.Data.Gift"
 
 extension POGOProtos_Data_Gift_GiftBoxDetails: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GiftBoxDetails"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GiftBoxDetails"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "giftbox_id"),
     2: .standard(proto: "sender_id"),
     3: .standard(proto: "sender_codename"),
@@ -80,7 +80,7 @@ extension POGOProtos_Data_Gift_GiftBoxDetails: SwiftProtobuf.Message, SwiftProto
     14: .standard(proto: "is_sponsored"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFixed64Field(value: &self.giftboxID)
@@ -102,7 +102,7 @@ extension POGOProtos_Data_Gift_GiftBoxDetails: SwiftProtobuf.Message, SwiftProto
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.giftboxID != 0 {
       try visitor.visitSingularFixed64Field(value: self.giftboxID, fieldNumber: 1)
     }
@@ -148,7 +148,7 @@ extension POGOProtos_Data_Gift_GiftBoxDetails: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Gift_GiftBoxDetails, rhs: POGOProtos_Data_Gift_GiftBoxDetails) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Gift_GiftBoxDetails, rhs: POGOProtos_Data_Gift_GiftBoxDetails) -> Bool {
     if lhs.giftboxID != rhs.giftboxID {return false}
     if lhs.senderID != rhs.senderID {return false}
     if lhs.senderCodename != rhs.senderCodename {return false}

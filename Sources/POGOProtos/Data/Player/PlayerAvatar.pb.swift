@@ -15,123 +15,123 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Player_PlayerAvatar {
+public struct POGOProtos_Data_Player_PlayerAvatar {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var skin: Int32 {
+  public var skin: Int32 {
     get {return _storage._skin}
     set {_uniqueStorage()._skin = newValue}
   }
 
-  var hair: Int32 {
+  public var hair: Int32 {
     get {return _storage._hair}
     set {_uniqueStorage()._hair = newValue}
   }
 
-  var shirt: Int32 {
+  public var shirt: Int32 {
     get {return _storage._shirt}
     set {_uniqueStorage()._shirt = newValue}
   }
 
-  var pants: Int32 {
+  public var pants: Int32 {
     get {return _storage._pants}
     set {_uniqueStorage()._pants = newValue}
   }
 
-  var hat: Int32 {
+  public var hat: Int32 {
     get {return _storage._hat}
     set {_uniqueStorage()._hat = newValue}
   }
 
-  var shoes: Int32 {
+  public var shoes: Int32 {
     get {return _storage._shoes}
     set {_uniqueStorage()._shoes = newValue}
   }
 
-  var avatar: Int32 {
+  public var avatar: Int32 {
     get {return _storage._avatar}
     set {_uniqueStorage()._avatar = newValue}
   }
 
-  var eyes: Int32 {
+  public var eyes: Int32 {
     get {return _storage._eyes}
     set {_uniqueStorage()._eyes = newValue}
   }
 
-  var backpack: Int32 {
+  public var backpack: Int32 {
     get {return _storage._backpack}
     set {_uniqueStorage()._backpack = newValue}
   }
 
-  var avatarHair: String {
+  public var avatarHair: String {
     get {return _storage._avatarHair}
     set {_uniqueStorage()._avatarHair = newValue}
   }
 
-  var avatarShirt: String {
+  public var avatarShirt: String {
     get {return _storage._avatarShirt}
     set {_uniqueStorage()._avatarShirt = newValue}
   }
 
-  var avatarPants: String {
+  public var avatarPants: String {
     get {return _storage._avatarPants}
     set {_uniqueStorage()._avatarPants = newValue}
   }
 
-  var avatarHat: String {
+  public var avatarHat: String {
     get {return _storage._avatarHat}
     set {_uniqueStorage()._avatarHat = newValue}
   }
 
-  var avatarShoes: String {
+  public var avatarShoes: String {
     get {return _storage._avatarShoes}
     set {_uniqueStorage()._avatarShoes = newValue}
   }
 
-  var avatarEyes: String {
+  public var avatarEyes: String {
     get {return _storage._avatarEyes}
     set {_uniqueStorage()._avatarEyes = newValue}
   }
 
-  var avatarBackpack: String {
+  public var avatarBackpack: String {
     get {return _storage._avatarBackpack}
     set {_uniqueStorage()._avatarBackpack = newValue}
   }
 
-  var avatarGloves: String {
+  public var avatarGloves: String {
     get {return _storage._avatarGloves}
     set {_uniqueStorage()._avatarGloves = newValue}
   }
 
-  var avatarSocks: String {
+  public var avatarSocks: String {
     get {return _storage._avatarSocks}
     set {_uniqueStorage()._avatarSocks = newValue}
   }
 
-  var avatarBelt: String {
+  public var avatarBelt: String {
     get {return _storage._avatarBelt}
     set {_uniqueStorage()._avatarBelt = newValue}
   }
 
-  var avatarGlasses: String {
+  public var avatarGlasses: String {
     get {return _storage._avatarGlasses}
     set {_uniqueStorage()._avatarGlasses = newValue}
   }
 
-  var avatarNecklace: String {
+  public var avatarNecklace: String {
     get {return _storage._avatarNecklace}
     set {_uniqueStorage()._avatarNecklace = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -141,8 +141,8 @@ struct POGOProtos_Data_Player_PlayerAvatar {
 fileprivate let _protobuf_package = "POGOProtos.Data.Player"
 
 extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlayerAvatar"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlayerAvatar"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     2: .same(proto: "skin"),
     3: .same(proto: "hair"),
     4: .same(proto: "shirt"),
@@ -167,33 +167,33 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
   ]
 
   fileprivate class _StorageClass {
-    var _skin: Int32 = 0
-    var _hair: Int32 = 0
-    var _shirt: Int32 = 0
-    var _pants: Int32 = 0
-    var _hat: Int32 = 0
-    var _shoes: Int32 = 0
-    var _avatar: Int32 = 0
-    var _eyes: Int32 = 0
-    var _backpack: Int32 = 0
-    var _avatarHair: String = String()
-    var _avatarShirt: String = String()
-    var _avatarPants: String = String()
-    var _avatarHat: String = String()
-    var _avatarShoes: String = String()
-    var _avatarEyes: String = String()
-    var _avatarBackpack: String = String()
-    var _avatarGloves: String = String()
-    var _avatarSocks: String = String()
-    var _avatarBelt: String = String()
-    var _avatarGlasses: String = String()
-    var _avatarNecklace: String = String()
+    public var _skin: Int32 = 0
+    public var _hair: Int32 = 0
+    public var _shirt: Int32 = 0
+    public var _pants: Int32 = 0
+    public var _hat: Int32 = 0
+    public var _shoes: Int32 = 0
+    public var _avatar: Int32 = 0
+    public var _eyes: Int32 = 0
+    public var _backpack: Int32 = 0
+    public var _avatarHair: String = String()
+    public var _avatarShirt: String = String()
+    public var _avatarPants: String = String()
+    public var _avatarHat: String = String()
+    public var _avatarShoes: String = String()
+    public var _avatarEyes: String = String()
+    public var _avatarBackpack: String = String()
+    public var _avatarGloves: String = String()
+    public var _avatarSocks: String = String()
+    public var _avatarBelt: String = String()
+    public var _avatarGlasses: String = String()
+    public var _avatarNecklace: String = String()
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _skin = source._skin
       _hair = source._hair
       _shirt = source._shirt
@@ -225,7 +225,7 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -257,7 +257,7 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._skin != 0 {
         try visitor.visitSingularInt32Field(value: _storage._skin, fieldNumber: 2)
@@ -326,7 +326,7 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Player_PlayerAvatar, rhs: POGOProtos_Data_Player_PlayerAvatar) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Player_PlayerAvatar, rhs: POGOProtos_Data_Player_PlayerAvatar) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

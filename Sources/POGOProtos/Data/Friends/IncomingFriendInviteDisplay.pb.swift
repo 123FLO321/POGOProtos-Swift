@@ -15,36 +15,36 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Friends_IncomingFriendInviteDisplay {
+public struct POGOProtos_Data_Friends_IncomingFriendInviteDisplay {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var invite: POGOProtos_Data_Friends_IncomingFriendInvite {
+  public var invite: POGOProtos_Data_Friends_IncomingFriendInvite {
     get {return _storage._invite ?? POGOProtos_Data_Friends_IncomingFriendInvite()}
     set {_uniqueStorage()._invite = newValue}
   }
   /// Returns true if `invite` has been explicitly set.
-  var hasInvite: Bool {return _storage._invite != nil}
+  public var hasInvite: Bool {return _storage._invite != nil}
   /// Clears the value of `invite`. Subsequent reads from it will return its default value.
-  mutating func clearInvite() {_uniqueStorage()._invite = nil}
+  public mutating func clearInvite() {_uniqueStorage()._invite = nil}
 
-  var player: POGOProtos_Data_Player_PlayerSummary {
+  public var player: POGOProtos_Data_Player_PlayerSummary {
     get {return _storage._player ?? POGOProtos_Data_Player_PlayerSummary()}
     set {_uniqueStorage()._player = newValue}
   }
   /// Returns true if `player` has been explicitly set.
-  var hasPlayer: Bool {return _storage._player != nil}
+  public var hasPlayer: Bool {return _storage._player != nil}
   /// Clears the value of `player`. Subsequent reads from it will return its default value.
-  mutating func clearPlayer() {_uniqueStorage()._player = nil}
+  public mutating func clearPlayer() {_uniqueStorage()._player = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -54,21 +54,21 @@ struct POGOProtos_Data_Friends_IncomingFriendInviteDisplay {
 fileprivate let _protobuf_package = "POGOProtos.Data.Friends"
 
 extension POGOProtos_Data_Friends_IncomingFriendInviteDisplay: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".IncomingFriendInviteDisplay"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".IncomingFriendInviteDisplay"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "invite"),
     2: .same(proto: "player"),
   ]
 
   fileprivate class _StorageClass {
-    var _invite: POGOProtos_Data_Friends_IncomingFriendInvite? = nil
-    var _player: POGOProtos_Data_Player_PlayerSummary? = nil
+    public var _invite: POGOProtos_Data_Friends_IncomingFriendInvite? = nil
+    public var _player: POGOProtos_Data_Player_PlayerSummary? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _invite = source._invite
       _player = source._player
     }
@@ -81,7 +81,7 @@ extension POGOProtos_Data_Friends_IncomingFriendInviteDisplay: SwiftProtobuf.Mes
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -94,7 +94,7 @@ extension POGOProtos_Data_Friends_IncomingFriendInviteDisplay: SwiftProtobuf.Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._invite {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -106,7 +106,7 @@ extension POGOProtos_Data_Friends_IncomingFriendInviteDisplay: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Friends_IncomingFriendInviteDisplay, rhs: POGOProtos_Data_Friends_IncomingFriendInviteDisplay) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Friends_IncomingFriendInviteDisplay, rhs: POGOProtos_Data_Friends_IncomingFriendInviteDisplay) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

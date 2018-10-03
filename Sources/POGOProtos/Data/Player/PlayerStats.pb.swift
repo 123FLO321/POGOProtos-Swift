@@ -15,203 +15,203 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Player_PlayerStats {
+public struct POGOProtos_Data_Player_PlayerStats {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var level: Int32 {
+  public var level: Int32 {
     get {return _storage._level}
     set {_uniqueStorage()._level = newValue}
   }
 
-  var experience: Int64 {
+  public var experience: Int64 {
     get {return _storage._experience}
     set {_uniqueStorage()._experience = newValue}
   }
 
-  var prevLevelXp: Int64 {
+  public var prevLevelXp: Int64 {
     get {return _storage._prevLevelXp}
     set {_uniqueStorage()._prevLevelXp = newValue}
   }
 
-  var nextLevelXp: Int64 {
+  public var nextLevelXp: Int64 {
     get {return _storage._nextLevelXp}
     set {_uniqueStorage()._nextLevelXp = newValue}
   }
 
-  var kmWalked: Float {
+  public var kmWalked: Float {
     get {return _storage._kmWalked}
     set {_uniqueStorage()._kmWalked = newValue}
   }
 
-  var pokemonsEncountered: Int32 {
+  public var pokemonsEncountered: Int32 {
     get {return _storage._pokemonsEncountered}
     set {_uniqueStorage()._pokemonsEncountered = newValue}
   }
 
-  var uniquePokedexEntries: Int32 {
+  public var uniquePokedexEntries: Int32 {
     get {return _storage._uniquePokedexEntries}
     set {_uniqueStorage()._uniquePokedexEntries = newValue}
   }
 
-  var pokemonsCaptured: Int32 {
+  public var pokemonsCaptured: Int32 {
     get {return _storage._pokemonsCaptured}
     set {_uniqueStorage()._pokemonsCaptured = newValue}
   }
 
-  var evolutions: Int32 {
+  public var evolutions: Int32 {
     get {return _storage._evolutions}
     set {_uniqueStorage()._evolutions = newValue}
   }
 
-  var pokeStopVisits: Int32 {
+  public var pokeStopVisits: Int32 {
     get {return _storage._pokeStopVisits}
     set {_uniqueStorage()._pokeStopVisits = newValue}
   }
 
-  var pokeballsThrown: Int32 {
+  public var pokeballsThrown: Int32 {
     get {return _storage._pokeballsThrown}
     set {_uniqueStorage()._pokeballsThrown = newValue}
   }
 
-  var eggsHatched: Int32 {
+  public var eggsHatched: Int32 {
     get {return _storage._eggsHatched}
     set {_uniqueStorage()._eggsHatched = newValue}
   }
 
-  var bigMagikarpCaught: Int32 {
+  public var bigMagikarpCaught: Int32 {
     get {return _storage._bigMagikarpCaught}
     set {_uniqueStorage()._bigMagikarpCaught = newValue}
   }
 
-  var battleAttackWon: Int32 {
+  public var battleAttackWon: Int32 {
     get {return _storage._battleAttackWon}
     set {_uniqueStorage()._battleAttackWon = newValue}
   }
 
-  var battleAttackTotal: Int32 {
+  public var battleAttackTotal: Int32 {
     get {return _storage._battleAttackTotal}
     set {_uniqueStorage()._battleAttackTotal = newValue}
   }
 
-  var battleDefendedWon: Int32 {
+  public var battleDefendedWon: Int32 {
     get {return _storage._battleDefendedWon}
     set {_uniqueStorage()._battleDefendedWon = newValue}
   }
 
-  var battleTrainingWon: Int32 {
+  public var battleTrainingWon: Int32 {
     get {return _storage._battleTrainingWon}
     set {_uniqueStorage()._battleTrainingWon = newValue}
   }
 
-  var battleTrainingTotal: Int32 {
+  public var battleTrainingTotal: Int32 {
     get {return _storage._battleTrainingTotal}
     set {_uniqueStorage()._battleTrainingTotal = newValue}
   }
 
-  var prestigeRaisedTotal: Int32 {
+  public var prestigeRaisedTotal: Int32 {
     get {return _storage._prestigeRaisedTotal}
     set {_uniqueStorage()._prestigeRaisedTotal = newValue}
   }
 
-  var prestigeDroppedTotal: Int32 {
+  public var prestigeDroppedTotal: Int32 {
     get {return _storage._prestigeDroppedTotal}
     set {_uniqueStorage()._prestigeDroppedTotal = newValue}
   }
 
-  var pokemonDeployed: Int32 {
+  public var pokemonDeployed: Int32 {
     get {return _storage._pokemonDeployed}
     set {_uniqueStorage()._pokemonDeployed = newValue}
   }
 
-  var pokemonCaughtByType: [Int32] {
+  public var pokemonCaughtByType: [Int32] {
     get {return _storage._pokemonCaughtByType}
     set {_uniqueStorage()._pokemonCaughtByType = newValue}
   }
 
-  var smallRattataCaught: Int32 {
+  public var smallRattataCaught: Int32 {
     get {return _storage._smallRattataCaught}
     set {_uniqueStorage()._smallRattataCaught = newValue}
   }
 
-  var usedKmPool: Double {
+  public var usedKmPool: Double {
     get {return _storage._usedKmPool}
     set {_uniqueStorage()._usedKmPool = newValue}
   }
 
-  var lastKmRefillMs: Int64 {
+  public var lastKmRefillMs: Int64 {
     get {return _storage._lastKmRefillMs}
     set {_uniqueStorage()._lastKmRefillMs = newValue}
   }
 
-  var numRaidBattleWon: Int32 {
+  public var numRaidBattleWon: Int32 {
     get {return _storage._numRaidBattleWon}
     set {_uniqueStorage()._numRaidBattleWon = newValue}
   }
 
-  var numRaidBattleTotal: Int32 {
+  public var numRaidBattleTotal: Int32 {
     get {return _storage._numRaidBattleTotal}
     set {_uniqueStorage()._numRaidBattleTotal = newValue}
   }
 
-  var numLegendaryBattleWon: Int32 {
+  public var numLegendaryBattleWon: Int32 {
     get {return _storage._numLegendaryBattleWon}
     set {_uniqueStorage()._numLegendaryBattleWon = newValue}
   }
 
-  var numLegendaryBattleTotal: Int32 {
+  public var numLegendaryBattleTotal: Int32 {
     get {return _storage._numLegendaryBattleTotal}
     set {_uniqueStorage()._numLegendaryBattleTotal = newValue}
   }
 
-  var numBerriesFed: Int32 {
+  public var numBerriesFed: Int32 {
     get {return _storage._numBerriesFed}
     set {_uniqueStorage()._numBerriesFed = newValue}
   }
 
-  var totalDefendedMs: Int64 {
+  public var totalDefendedMs: Int64 {
     get {return _storage._totalDefendedMs}
     set {_uniqueStorage()._totalDefendedMs = newValue}
   }
 
-  var eventBadges: [POGOProtos_Enums_GymBadgeType] {
+  public var eventBadges: [POGOProtos_Enums_GymBadgeType] {
     get {return _storage._eventBadges}
     set {_uniqueStorage()._eventBadges = newValue}
   }
 
-  var kmWalkedPastActiveDay: Float {
+  public var kmWalkedPastActiveDay: Float {
     get {return _storage._kmWalkedPastActiveDay}
     set {_uniqueStorage()._kmWalkedPastActiveDay = newValue}
   }
 
-  var numChallengeQuestsCompleted: Int32 {
+  public var numChallengeQuestsCompleted: Int32 {
     get {return _storage._numChallengeQuestsCompleted}
     set {_uniqueStorage()._numChallengeQuestsCompleted = newValue}
   }
 
-  var numTrades: Int32 {
+  public var numTrades: Int32 {
     get {return _storage._numTrades}
     set {_uniqueStorage()._numTrades = newValue}
   }
 
-  var numMaxLevelFriends: Int32 {
+  public var numMaxLevelFriends: Int32 {
     get {return _storage._numMaxLevelFriends}
     set {_uniqueStorage()._numMaxLevelFriends = newValue}
   }
 
-  var tradeAccumulatedDistanceKm: Int64 {
+  public var tradeAccumulatedDistanceKm: Int64 {
     get {return _storage._tradeAccumulatedDistanceKm}
     set {_uniqueStorage()._tradeAccumulatedDistanceKm = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -221,8 +221,8 @@ struct POGOProtos_Data_Player_PlayerStats {
 fileprivate let _protobuf_package = "POGOProtos.Data.Player"
 
 extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlayerStats"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlayerStats"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "level"),
     2: .same(proto: "experience"),
     3: .standard(proto: "prev_level_xp"),
@@ -263,49 +263,49 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    var _level: Int32 = 0
-    var _experience: Int64 = 0
-    var _prevLevelXp: Int64 = 0
-    var _nextLevelXp: Int64 = 0
-    var _kmWalked: Float = 0
-    var _pokemonsEncountered: Int32 = 0
-    var _uniquePokedexEntries: Int32 = 0
-    var _pokemonsCaptured: Int32 = 0
-    var _evolutions: Int32 = 0
-    var _pokeStopVisits: Int32 = 0
-    var _pokeballsThrown: Int32 = 0
-    var _eggsHatched: Int32 = 0
-    var _bigMagikarpCaught: Int32 = 0
-    var _battleAttackWon: Int32 = 0
-    var _battleAttackTotal: Int32 = 0
-    var _battleDefendedWon: Int32 = 0
-    var _battleTrainingWon: Int32 = 0
-    var _battleTrainingTotal: Int32 = 0
-    var _prestigeRaisedTotal: Int32 = 0
-    var _prestigeDroppedTotal: Int32 = 0
-    var _pokemonDeployed: Int32 = 0
-    var _pokemonCaughtByType: [Int32] = []
-    var _smallRattataCaught: Int32 = 0
-    var _usedKmPool: Double = 0
-    var _lastKmRefillMs: Int64 = 0
-    var _numRaidBattleWon: Int32 = 0
-    var _numRaidBattleTotal: Int32 = 0
-    var _numLegendaryBattleWon: Int32 = 0
-    var _numLegendaryBattleTotal: Int32 = 0
-    var _numBerriesFed: Int32 = 0
-    var _totalDefendedMs: Int64 = 0
-    var _eventBadges: [POGOProtos_Enums_GymBadgeType] = []
-    var _kmWalkedPastActiveDay: Float = 0
-    var _numChallengeQuestsCompleted: Int32 = 0
-    var _numTrades: Int32 = 0
-    var _numMaxLevelFriends: Int32 = 0
-    var _tradeAccumulatedDistanceKm: Int64 = 0
+    public var _level: Int32 = 0
+    public var _experience: Int64 = 0
+    public var _prevLevelXp: Int64 = 0
+    public var _nextLevelXp: Int64 = 0
+    public var _kmWalked: Float = 0
+    public var _pokemonsEncountered: Int32 = 0
+    public var _uniquePokedexEntries: Int32 = 0
+    public var _pokemonsCaptured: Int32 = 0
+    public var _evolutions: Int32 = 0
+    public var _pokeStopVisits: Int32 = 0
+    public var _pokeballsThrown: Int32 = 0
+    public var _eggsHatched: Int32 = 0
+    public var _bigMagikarpCaught: Int32 = 0
+    public var _battleAttackWon: Int32 = 0
+    public var _battleAttackTotal: Int32 = 0
+    public var _battleDefendedWon: Int32 = 0
+    public var _battleTrainingWon: Int32 = 0
+    public var _battleTrainingTotal: Int32 = 0
+    public var _prestigeRaisedTotal: Int32 = 0
+    public var _prestigeDroppedTotal: Int32 = 0
+    public var _pokemonDeployed: Int32 = 0
+    public var _pokemonCaughtByType: [Int32] = []
+    public var _smallRattataCaught: Int32 = 0
+    public var _usedKmPool: Double = 0
+    public var _lastKmRefillMs: Int64 = 0
+    public var _numRaidBattleWon: Int32 = 0
+    public var _numRaidBattleTotal: Int32 = 0
+    public var _numLegendaryBattleWon: Int32 = 0
+    public var _numLegendaryBattleTotal: Int32 = 0
+    public var _numBerriesFed: Int32 = 0
+    public var _totalDefendedMs: Int64 = 0
+    public var _eventBadges: [POGOProtos_Enums_GymBadgeType] = []
+    public var _kmWalkedPastActiveDay: Float = 0
+    public var _numChallengeQuestsCompleted: Int32 = 0
+    public var _numTrades: Int32 = 0
+    public var _numMaxLevelFriends: Int32 = 0
+    public var _tradeAccumulatedDistanceKm: Int64 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _level = source._level
       _experience = source._experience
       _prevLevelXp = source._prevLevelXp
@@ -353,7 +353,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -401,7 +401,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._level != 0 {
         try visitor.visitSingularInt32Field(value: _storage._level, fieldNumber: 1)
@@ -518,7 +518,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Player_PlayerStats, rhs: POGOProtos_Data_Player_PlayerStats) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Player_PlayerStats, rhs: POGOProtos_Data_Player_PlayerStats) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

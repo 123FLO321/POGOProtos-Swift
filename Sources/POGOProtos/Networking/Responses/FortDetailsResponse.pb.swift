@@ -15,106 +15,106 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_FortDetailsResponse {
+public struct POGOProtos_Networking_Responses_FortDetailsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var fortID: String {
+  public var fortID: String {
     get {return _storage._fortID}
     set {_uniqueStorage()._fortID = newValue}
   }
 
-  var teamColor: POGOProtos_Enums_TeamColor {
+  public var teamColor: POGOProtos_Enums_TeamColor {
     get {return _storage._teamColor}
     set {_uniqueStorage()._teamColor = newValue}
   }
 
-  var pokemonData: POGOProtos_Data_PokemonData {
+  public var pokemonData: POGOProtos_Data_PokemonData {
     get {return _storage._pokemonData ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._pokemonData = newValue}
   }
   /// Returns true if `pokemonData` has been explicitly set.
-  var hasPokemonData: Bool {return _storage._pokemonData != nil}
+  public var hasPokemonData: Bool {return _storage._pokemonData != nil}
   /// Clears the value of `pokemonData`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
+  public mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
 
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
-  var imageUrls: [String] {
+  public var imageUrls: [String] {
     get {return _storage._imageUrls}
     set {_uniqueStorage()._imageUrls = newValue}
   }
 
-  var fp: Int32 {
+  public var fp: Int32 {
     get {return _storage._fp}
     set {_uniqueStorage()._fp = newValue}
   }
 
-  var stamina: Int32 {
+  public var stamina: Int32 {
     get {return _storage._stamina}
     set {_uniqueStorage()._stamina = newValue}
   }
 
-  var maxStamina: Int32 {
+  public var maxStamina: Int32 {
     get {return _storage._maxStamina}
     set {_uniqueStorage()._maxStamina = newValue}
   }
 
-  var type: POGOProtos_Map_Fort_FortType {
+  public var type: POGOProtos_Map_Fort_FortType {
     get {return _storage._type}
     set {_uniqueStorage()._type = newValue}
   }
 
-  var latitude: Double {
+  public var latitude: Double {
     get {return _storage._latitude}
     set {_uniqueStorage()._latitude = newValue}
   }
 
-  var longitude: Double {
+  public var longitude: Double {
     get {return _storage._longitude}
     set {_uniqueStorage()._longitude = newValue}
   }
 
-  var description_p: String {
+  public var description_p: String {
     get {return _storage._description_p}
     set {_uniqueStorage()._description_p = newValue}
   }
 
-  var modifiers: [POGOProtos_Map_Fort_FortModifier] {
+  public var modifiers: [POGOProtos_Map_Fort_FortModifier] {
     get {return _storage._modifiers}
     set {_uniqueStorage()._modifiers = newValue}
   }
 
-  var closeSoon: Bool {
+  public var closeSoon: Bool {
     get {return _storage._closeSoon}
     set {_uniqueStorage()._closeSoon = newValue}
   }
 
-  var checkinImageURL: String {
+  public var checkinImageURL: String {
     get {return _storage._checkinImageURL}
     set {_uniqueStorage()._checkinImageURL = newValue}
   }
 
-  var eventInfo: POGOProtos_Data_Raid_EventInfo {
+  public var eventInfo: POGOProtos_Data_Raid_EventInfo {
     get {return _storage._eventInfo ?? POGOProtos_Data_Raid_EventInfo()}
     set {_uniqueStorage()._eventInfo = newValue}
   }
   /// Returns true if `eventInfo` has been explicitly set.
-  var hasEventInfo: Bool {return _storage._eventInfo != nil}
+  public var hasEventInfo: Bool {return _storage._eventInfo != nil}
   /// Clears the value of `eventInfo`. Subsequent reads from it will return its default value.
-  mutating func clearEventInfo() {_uniqueStorage()._eventInfo = nil}
+  public mutating func clearEventInfo() {_uniqueStorage()._eventInfo = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -124,8 +124,8 @@ struct POGOProtos_Networking_Responses_FortDetailsResponse {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FortDetailsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FortDetailsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "fort_id"),
     2: .standard(proto: "team_color"),
     3: .standard(proto: "pokemon_data"),
@@ -145,28 +145,28 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
   ]
 
   fileprivate class _StorageClass {
-    var _fortID: String = String()
-    var _teamColor: POGOProtos_Enums_TeamColor = .neutral
-    var _pokemonData: POGOProtos_Data_PokemonData? = nil
-    var _name: String = String()
-    var _imageUrls: [String] = []
-    var _fp: Int32 = 0
-    var _stamina: Int32 = 0
-    var _maxStamina: Int32 = 0
-    var _type: POGOProtos_Map_Fort_FortType = .gym
-    var _latitude: Double = 0
-    var _longitude: Double = 0
-    var _description_p: String = String()
-    var _modifiers: [POGOProtos_Map_Fort_FortModifier] = []
-    var _closeSoon: Bool = false
-    var _checkinImageURL: String = String()
-    var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
+    public var _fortID: String = String()
+    public var _teamColor: POGOProtos_Enums_TeamColor = .neutral
+    public var _pokemonData: POGOProtos_Data_PokemonData? = nil
+    public var _name: String = String()
+    public var _imageUrls: [String] = []
+    public var _fp: Int32 = 0
+    public var _stamina: Int32 = 0
+    public var _maxStamina: Int32 = 0
+    public var _type: POGOProtos_Map_Fort_FortType = .gym
+    public var _latitude: Double = 0
+    public var _longitude: Double = 0
+    public var _description_p: String = String()
+    public var _modifiers: [POGOProtos_Map_Fort_FortModifier] = []
+    public var _closeSoon: Bool = false
+    public var _checkinImageURL: String = String()
+    public var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _fortID = source._fortID
       _teamColor = source._teamColor
       _pokemonData = source._pokemonData
@@ -193,7 +193,7 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -220,7 +220,7 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._fortID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._fortID, fieldNumber: 1)
@@ -274,7 +274,7 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_FortDetailsResponse, rhs: POGOProtos_Networking_Responses_FortDetailsResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_FortDetailsResponse, rhs: POGOProtos_Networking_Responses_FortDetailsResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

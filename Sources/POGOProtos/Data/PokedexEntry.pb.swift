@@ -15,46 +15,46 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_PokedexEntry {
+public struct POGOProtos_Data_PokedexEntry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonID: POGOProtos_Enums_PokemonId = .missingno
+  public var pokemonID: POGOProtos_Enums_PokemonId = .missingno
 
-  var timesEncountered: Int32 = 0
+  public var timesEncountered: Int32 = 0
 
-  var timesCaptured: Int32 = 0
+  public var timesCaptured: Int32 = 0
 
-  var evolutionStonePieces: Int32 = 0
+  public var evolutionStonePieces: Int32 = 0
 
-  var evolutionStones: Int32 = 0
+  public var evolutionStones: Int32 = 0
 
-  var capturedCostumes: [POGOProtos_Enums_Costume] = []
+  public var capturedCostumes: [POGOProtos_Enums_Costume] = []
 
-  var capturedForms: [POGOProtos_Enums_Form] = []
+  public var capturedForms: [POGOProtos_Enums_Form] = []
 
-  var capturedGenders: [POGOProtos_Enums_Gender] = []
+  public var capturedGenders: [POGOProtos_Enums_Gender] = []
 
-  var capturedShiny: Bool = false
+  public var capturedShiny: Bool = false
 
-  var encounteredCostumes: [POGOProtos_Enums_Costume] = []
+  public var encounteredCostumes: [POGOProtos_Enums_Costume] = []
 
-  var encounteredForms: [POGOProtos_Enums_Form] = []
+  public var encounteredForms: [POGOProtos_Enums_Form] = []
 
-  var encounteredGenders: [POGOProtos_Enums_Gender] = []
+  public var encounteredGenders: [POGOProtos_Enums_Gender] = []
 
-  var encounteredShiny: Bool = false
+  public var encounteredShiny: Bool = false
 
-  var timesLuckyReceived: Int32 = 0
+  public var timesLuckyReceived: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -62,8 +62,8 @@ struct POGOProtos_Data_PokedexEntry {
 fileprivate let _protobuf_package = "POGOProtos.Data"
 
 extension POGOProtos_Data_PokedexEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PokedexEntry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PokedexEntry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_id"),
     2: .standard(proto: "times_encountered"),
     3: .standard(proto: "times_captured"),
@@ -80,7 +80,7 @@ extension POGOProtos_Data_PokedexEntry: SwiftProtobuf.Message, SwiftProtobuf._Me
     14: .standard(proto: "times_lucky_received"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.pokemonID)
@@ -102,7 +102,7 @@ extension POGOProtos_Data_PokedexEntry: SwiftProtobuf.Message, SwiftProtobuf._Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemonID != .missingno {
       try visitor.visitSingularEnumField(value: self.pokemonID, fieldNumber: 1)
     }
@@ -148,7 +148,7 @@ extension POGOProtos_Data_PokedexEntry: SwiftProtobuf.Message, SwiftProtobuf._Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_PokedexEntry, rhs: POGOProtos_Data_PokedexEntry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_PokedexEntry, rhs: POGOProtos_Data_PokedexEntry) -> Bool {
     if lhs.pokemonID != rhs.pokemonID {return false}
     if lhs.timesEncountered != rhs.timesEncountered {return false}
     if lhs.timesCaptured != rhs.timesCaptured {return false}

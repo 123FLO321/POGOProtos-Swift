@@ -15,23 +15,23 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse {
+public struct POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse.Status = .unset
+  public var status: POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse.Status = .unset
 
-  var rowsWritten: Int32 = 0
+  public var rowsWritten: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Status: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case failure // = 2
@@ -40,11 +40,11 @@ struct POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse {
     case errorUnsetTelemetryID // = 5
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -56,7 +56,7 @@ struct POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -70,7 +70,7 @@ struct POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -94,13 +94,13 @@ extension POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse.Statu
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Responses"
 
 extension POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ClientTelemetryResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ClientTelemetryResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .standard(proto: "rows_written"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.status)
@@ -110,7 +110,7 @@ extension POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse: Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.status != .unset {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
     }
@@ -120,7 +120,7 @@ extension POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse: Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse, rhs: POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse, rhs: POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse) -> Bool {
     if lhs.status != rhs.status {return false}
     if lhs.rowsWritten != rhs.rowsWritten {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -129,7 +129,7 @@ extension POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse: Swif
 }
 
 extension POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse.Status: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "FAILURE"),

@@ -15,36 +15,36 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_FormSettings {
+public struct POGOProtos_Settings_Master_FormSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemon: POGOProtos_Enums_PokemonId = .missingno
+  public var pokemon: POGOProtos_Enums_PokemonId = .missingno
 
-  var forms: [POGOProtos_Settings_Master_FormSettings.Form] = []
+  public var forms: [POGOProtos_Settings_Master_FormSettings.Form] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct Form {
+  public struct Form {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var form: POGOProtos_Enums_Form = .unset
+    public var form: POGOProtos_Enums_Form = .unset
 
-    var assetBundleValue: Int32 = 0
+    public var assetBundleValue: Int32 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -52,13 +52,13 @@ struct POGOProtos_Settings_Master_FormSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_FormSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FormSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FormSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pokemon"),
     2: .same(proto: "forms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.pokemon)
@@ -68,7 +68,7 @@ extension POGOProtos_Settings_Master_FormSettings: SwiftProtobuf.Message, SwiftP
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemon != .missingno {
       try visitor.visitSingularEnumField(value: self.pokemon, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Settings_Master_FormSettings: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_FormSettings, rhs: POGOProtos_Settings_Master_FormSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_FormSettings, rhs: POGOProtos_Settings_Master_FormSettings) -> Bool {
     if lhs.pokemon != rhs.pokemon {return false}
     if lhs.forms != rhs.forms {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -87,13 +87,13 @@ extension POGOProtos_Settings_Master_FormSettings: SwiftProtobuf.Message, SwiftP
 }
 
 extension POGOProtos_Settings_Master_FormSettings.Form: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Settings_Master_FormSettings.protoMessageName + ".Form"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Settings_Master_FormSettings.protoMessageName + ".Form"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "form"),
     2: .standard(proto: "asset_bundle_value"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.form)
@@ -103,7 +103,7 @@ extension POGOProtos_Settings_Master_FormSettings.Form: SwiftProtobuf.Message, S
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.form != .unset {
       try visitor.visitSingularEnumField(value: self.form, fieldNumber: 1)
     }
@@ -113,7 +113,7 @@ extension POGOProtos_Settings_Master_FormSettings.Form: SwiftProtobuf.Message, S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_FormSettings.Form, rhs: POGOProtos_Settings_Master_FormSettings.Form) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_FormSettings.Form, rhs: POGOProtos_Settings_Master_FormSettings.Form) -> Bool {
     if lhs.form != rhs.form {return false}
     if lhs.assetBundleValue != rhs.assetBundleValue {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

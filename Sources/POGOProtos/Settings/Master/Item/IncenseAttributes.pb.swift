@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_Item_IncenseAttributes {
+public struct POGOProtos_Settings_Master_Item_IncenseAttributes {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var incenseLifetimeSeconds: Int32 = 0
+  public var incenseLifetimeSeconds: Int32 = 0
 
-  var pokemonType: [POGOProtos_Enums_PokemonType] = []
+  public var pokemonType: [POGOProtos_Enums_PokemonType] = []
 
-  var pokemonIncenseTypeProbability: Float = 0
+  public var pokemonIncenseTypeProbability: Float = 0
 
-  var standingTimeBetweenEncountersSeconds: Int32 = 0
+  public var standingTimeBetweenEncountersSeconds: Int32 = 0
 
-  var movingTimeBetweenEncounterSeconds: Int32 = 0
+  public var movingTimeBetweenEncounterSeconds: Int32 = 0
 
-  var distanceRequiredForShorterIntervalMeters: Int32 = 0
+  public var distanceRequiredForShorterIntervalMeters: Int32 = 0
 
-  var pokemonAttractedLengthSec: Int32 = 0
+  public var pokemonAttractedLengthSec: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -48,8 +48,8 @@ struct POGOProtos_Settings_Master_Item_IncenseAttributes {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master.Item"
 
 extension POGOProtos_Settings_Master_Item_IncenseAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".IncenseAttributes"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".IncenseAttributes"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "incense_lifetime_seconds"),
     2: .standard(proto: "pokemon_type"),
     3: .standard(proto: "pokemon_incense_type_probability"),
@@ -59,7 +59,7 @@ extension POGOProtos_Settings_Master_Item_IncenseAttributes: SwiftProtobuf.Messa
     7: .standard(proto: "pokemon_attracted_length_sec"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.incenseLifetimeSeconds)
@@ -74,7 +74,7 @@ extension POGOProtos_Settings_Master_Item_IncenseAttributes: SwiftProtobuf.Messa
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.incenseLifetimeSeconds != 0 {
       try visitor.visitSingularInt32Field(value: self.incenseLifetimeSeconds, fieldNumber: 1)
     }
@@ -99,7 +99,7 @@ extension POGOProtos_Settings_Master_Item_IncenseAttributes: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_Item_IncenseAttributes, rhs: POGOProtos_Settings_Master_Item_IncenseAttributes) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Item_IncenseAttributes, rhs: POGOProtos_Settings_Master_Item_IncenseAttributes) -> Bool {
     if lhs.incenseLifetimeSeconds != rhs.incenseLifetimeSeconds {return false}
     if lhs.pokemonType != rhs.pokemonType {return false}
     if lhs.pokemonIncenseTypeProbability != rhs.pokemonIncenseTypeProbability {return false}

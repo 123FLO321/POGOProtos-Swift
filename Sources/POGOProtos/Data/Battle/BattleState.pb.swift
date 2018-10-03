@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Data_Battle_BattleState: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Data_Battle_BattleState: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case stateUnset // = 0
   case active // = 1
   case victory // = 2
@@ -28,11 +28,11 @@ enum POGOProtos_Data_Battle_BattleState: SwiftProtobuf.Enum {
   case timedOut // = 4
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .stateUnset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .stateUnset
     case 1: self = .active
@@ -43,7 +43,7 @@ enum POGOProtos_Data_Battle_BattleState: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .stateUnset: return 0
     case .active: return 1
@@ -74,7 +74,7 @@ extension POGOProtos_Data_Battle_BattleState: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Data_Battle_BattleState: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "STATE_UNSET"),
     1: .same(proto: "ACTIVE"),
     2: .same(proto: "VICTORY"),

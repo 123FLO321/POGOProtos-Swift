@@ -15,21 +15,21 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Inventory_EggIncubatorType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Inventory_EggIncubatorType: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case incubatorUnset // = 0
   case incubatorDistance // = 1
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .incubatorUnset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .incubatorUnset
     case 1: self = .incubatorDistance
@@ -37,7 +37,7 @@ enum POGOProtos_Inventory_EggIncubatorType: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .incubatorUnset: return 0
     case .incubatorDistance: return 1
@@ -62,7 +62,7 @@ extension POGOProtos_Inventory_EggIncubatorType: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Inventory_EggIncubatorType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "INCUBATOR_UNSET"),
     1: .same(proto: "INCUBATOR_DISTANCE"),
   ]

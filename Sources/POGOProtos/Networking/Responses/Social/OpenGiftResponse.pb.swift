@@ -15,60 +15,60 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_Social_OpenGiftResponse {
+public struct POGOProtos_Networking_Responses_Social_OpenGiftResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result {
+  public var result: POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var items: POGOProtos_Inventory_Loot {
+  public var items: POGOProtos_Inventory_Loot {
     get {return _storage._items ?? POGOProtos_Inventory_Loot()}
     set {_uniqueStorage()._items = newValue}
   }
   /// Returns true if `items` has been explicitly set.
-  var hasItems: Bool {return _storage._items != nil}
+  public var hasItems: Bool {return _storage._items != nil}
   /// Clears the value of `items`. Subsequent reads from it will return its default value.
-  mutating func clearItems() {_uniqueStorage()._items = nil}
+  public mutating func clearItems() {_uniqueStorage()._items = nil}
 
-  var eggPokemon: POGOProtos_Data_PokemonData {
+  public var eggPokemon: POGOProtos_Data_PokemonData {
     get {return _storage._eggPokemon ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._eggPokemon = newValue}
   }
   /// Returns true if `eggPokemon` has been explicitly set.
-  var hasEggPokemon: Bool {return _storage._eggPokemon != nil}
+  public var hasEggPokemon: Bool {return _storage._eggPokemon != nil}
   /// Clears the value of `eggPokemon`. Subsequent reads from it will return its default value.
-  mutating func clearEggPokemon() {_uniqueStorage()._eggPokemon = nil}
+  public mutating func clearEggPokemon() {_uniqueStorage()._eggPokemon = nil}
 
-  var updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData {
+  public var updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData {
     get {return _storage._updatedFriendshipData ?? POGOProtos_Data_Friends_FriendshipLevelData()}
     set {_uniqueStorage()._updatedFriendshipData = newValue}
   }
   /// Returns true if `updatedFriendshipData` has been explicitly set.
-  var hasUpdatedFriendshipData: Bool {return _storage._updatedFriendshipData != nil}
+  public var hasUpdatedFriendshipData: Bool {return _storage._updatedFriendshipData != nil}
   /// Clears the value of `updatedFriendshipData`. Subsequent reads from it will return its default value.
-  mutating func clearUpdatedFriendshipData() {_uniqueStorage()._updatedFriendshipData = nil}
+  public mutating func clearUpdatedFriendshipData() {_uniqueStorage()._updatedFriendshipData = nil}
 
-  var friendProfile: POGOProtos_Data_Player_PlayerPublicProfile {
+  public var friendProfile: POGOProtos_Data_Player_PlayerPublicProfile {
     get {return _storage._friendProfile ?? POGOProtos_Data_Player_PlayerPublicProfile()}
     set {_uniqueStorage()._friendProfile = newValue}
   }
   /// Returns true if `friendProfile` has been explicitly set.
-  var hasFriendProfile: Bool {return _storage._friendProfile != nil}
+  public var hasFriendProfile: Bool {return _storage._friendProfile != nil}
   /// Clears the value of `friendProfile`. Subsequent reads from it will return its default value.
-  mutating func clearFriendProfile() {_uniqueStorage()._friendProfile = nil}
+  public mutating func clearFriendProfile() {_uniqueStorage()._friendProfile = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorUnknown // = 2
@@ -80,11 +80,11 @@ struct POGOProtos_Networking_Responses_Social_OpenGiftResponse {
     case errorFriendUpdate // = 8
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -99,7 +99,7 @@ struct POGOProtos_Networking_Responses_Social_OpenGiftResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -116,7 +116,7 @@ struct POGOProtos_Networking_Responses_Social_OpenGiftResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -145,8 +145,8 @@ extension POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result: CaseIt
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses.Social"
 
 extension POGOProtos_Networking_Responses_Social_OpenGiftResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".OpenGiftResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".OpenGiftResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "items"),
     3: .standard(proto: "egg_pokemon"),
@@ -155,17 +155,17 @@ extension POGOProtos_Networking_Responses_Social_OpenGiftResponse: SwiftProtobuf
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result = .unset
-    var _items: POGOProtos_Inventory_Loot? = nil
-    var _eggPokemon: POGOProtos_Data_PokemonData? = nil
-    var _updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
-    var _friendProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
+    public var _result: POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result = .unset
+    public var _items: POGOProtos_Inventory_Loot? = nil
+    public var _eggPokemon: POGOProtos_Data_PokemonData? = nil
+    public var _updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
+    public var _friendProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _items = source._items
       _eggPokemon = source._eggPokemon
@@ -181,7 +181,7 @@ extension POGOProtos_Networking_Responses_Social_OpenGiftResponse: SwiftProtobuf
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -197,7 +197,7 @@ extension POGOProtos_Networking_Responses_Social_OpenGiftResponse: SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -218,7 +218,7 @@ extension POGOProtos_Networking_Responses_Social_OpenGiftResponse: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_Social_OpenGiftResponse, rhs: POGOProtos_Networking_Responses_Social_OpenGiftResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_Social_OpenGiftResponse, rhs: POGOProtos_Networking_Responses_Social_OpenGiftResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -238,7 +238,7 @@ extension POGOProtos_Networking_Responses_Social_OpenGiftResponse: SwiftProtobuf
 }
 
 extension POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_UNKNOWN"),

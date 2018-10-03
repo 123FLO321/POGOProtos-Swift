@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_GetHatchedEggsResponse {
+public struct POGOProtos_Networking_Responses_GetHatchedEggsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var success: Bool = false
+  public var success: Bool = false
 
-  var pokemonID: [UInt64] = []
+  public var pokemonID: [UInt64] = []
 
-  var experienceAwarded: [Int32] = []
+  public var experienceAwarded: [Int32] = []
 
-  var candyAwarded: [Int32] = []
+  public var candyAwarded: [Int32] = []
 
-  var stardustAwarded: [Int32] = []
+  public var stardustAwarded: [Int32] = []
 
-  var eggKmWalked: [Float] = []
+  public var eggKmWalked: [Float] = []
 
-  var hatchedPokemon: [POGOProtos_Data_PokemonData] = []
+  public var hatchedPokemon: [POGOProtos_Data_PokemonData] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -48,8 +48,8 @@ struct POGOProtos_Networking_Responses_GetHatchedEggsResponse {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_GetHatchedEggsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetHatchedEggsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetHatchedEggsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "success"),
     2: .standard(proto: "pokemon_id"),
     3: .standard(proto: "experience_awarded"),
@@ -59,7 +59,7 @@ extension POGOProtos_Networking_Responses_GetHatchedEggsResponse: SwiftProtobuf.
     7: .standard(proto: "hatched_pokemon"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.success)
@@ -74,7 +74,7 @@ extension POGOProtos_Networking_Responses_GetHatchedEggsResponse: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.success != false {
       try visitor.visitSingularBoolField(value: self.success, fieldNumber: 1)
     }
@@ -99,7 +99,7 @@ extension POGOProtos_Networking_Responses_GetHatchedEggsResponse: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetHatchedEggsResponse, rhs: POGOProtos_Networking_Responses_GetHatchedEggsResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetHatchedEggsResponse, rhs: POGOProtos_Networking_Responses_GetHatchedEggsResponse) -> Bool {
     if lhs.success != rhs.success {return false}
     if lhs.pokemonID != rhs.pokemonID {return false}
     if lhs.experienceAwarded != rhs.experienceAwarded {return false}

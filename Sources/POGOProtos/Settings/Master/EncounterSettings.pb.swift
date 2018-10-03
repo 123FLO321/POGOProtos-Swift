@@ -15,108 +15,108 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_EncounterSettings {
+public struct POGOProtos_Settings_Master_EncounterSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var spinBonusThreshold: Float {
+  public var spinBonusThreshold: Float {
     get {return _storage._spinBonusThreshold}
     set {_uniqueStorage()._spinBonusThreshold = newValue}
   }
 
-  var excellentThrowThreshold: Float {
+  public var excellentThrowThreshold: Float {
     get {return _storage._excellentThrowThreshold}
     set {_uniqueStorage()._excellentThrowThreshold = newValue}
   }
 
-  var greatThrowThreshold: Float {
+  public var greatThrowThreshold: Float {
     get {return _storage._greatThrowThreshold}
     set {_uniqueStorage()._greatThrowThreshold = newValue}
   }
 
-  var niceThrowThreshold: Float {
+  public var niceThrowThreshold: Float {
     get {return _storage._niceThrowThreshold}
     set {_uniqueStorage()._niceThrowThreshold = newValue}
   }
 
-  var milestoneThreshold: Int32 {
+  public var milestoneThreshold: Int32 {
     get {return _storage._milestoneThreshold}
     set {_uniqueStorage()._milestoneThreshold = newValue}
   }
 
-  var arPlusModeEnabled: Bool {
+  public var arPlusModeEnabled: Bool {
     get {return _storage._arPlusModeEnabled}
     set {_uniqueStorage()._arPlusModeEnabled = newValue}
   }
 
-  var arCloseProximityThreshold: Float {
+  public var arCloseProximityThreshold: Float {
     get {return _storage._arCloseProximityThreshold}
     set {_uniqueStorage()._arCloseProximityThreshold = newValue}
   }
 
-  var arLowAwarenessThreshold: Float {
+  public var arLowAwarenessThreshold: Float {
     get {return _storage._arLowAwarenessThreshold}
     set {_uniqueStorage()._arLowAwarenessThreshold = newValue}
   }
 
-  var arCloseProximityMultiplier: Float {
+  public var arCloseProximityMultiplier: Float {
     get {return _storage._arCloseProximityMultiplier}
     set {_uniqueStorage()._arCloseProximityMultiplier = newValue}
   }
 
-  var arAwarenessPenaltyThreshold: Float {
+  public var arAwarenessPenaltyThreshold: Float {
     get {return _storage._arAwarenessPenaltyThreshold}
     set {_uniqueStorage()._arAwarenessPenaltyThreshold = newValue}
   }
 
-  var arLowAwarenessMaxMultiplier: Float {
+  public var arLowAwarenessMaxMultiplier: Float {
     get {return _storage._arLowAwarenessMaxMultiplier}
     set {_uniqueStorage()._arLowAwarenessMaxMultiplier = newValue}
   }
 
-  var arHighAwarenessMinPenaltyMultiplier: Float {
+  public var arHighAwarenessMinPenaltyMultiplier: Float {
     get {return _storage._arHighAwarenessMinPenaltyMultiplier}
     set {_uniqueStorage()._arHighAwarenessMinPenaltyMultiplier = newValue}
   }
 
-  var arPlusAttemptsUntilFleeMax: Int32 {
+  public var arPlusAttemptsUntilFleeMax: Int32 {
     get {return _storage._arPlusAttemptsUntilFleeMax}
     set {_uniqueStorage()._arPlusAttemptsUntilFleeMax = newValue}
   }
 
-  var arPlusAttemptsUntilFleeInfinite: Int32 {
+  public var arPlusAttemptsUntilFleeInfinite: Int32 {
     get {return _storage._arPlusAttemptsUntilFleeInfinite}
     set {_uniqueStorage()._arPlusAttemptsUntilFleeInfinite = newValue}
   }
 
-  var escapedBonusMultiplierMax: Float {
+  public var escapedBonusMultiplierMax: Float {
     get {return _storage._escapedBonusMultiplierMax}
     set {_uniqueStorage()._escapedBonusMultiplierMax = newValue}
   }
 
-  var escapedBonusMultiplierByExcellentThrow: Float {
+  public var escapedBonusMultiplierByExcellentThrow: Float {
     get {return _storage._escapedBonusMultiplierByExcellentThrow}
     set {_uniqueStorage()._escapedBonusMultiplierByExcellentThrow = newValue}
   }
 
-  var escapedBonusMultiplierByGreatThrow: Float {
+  public var escapedBonusMultiplierByGreatThrow: Float {
     get {return _storage._escapedBonusMultiplierByGreatThrow}
     set {_uniqueStorage()._escapedBonusMultiplierByGreatThrow = newValue}
   }
 
-  var escapedBonusMultiplierByNiceThrow: Float {
+  public var escapedBonusMultiplierByNiceThrow: Float {
     get {return _storage._escapedBonusMultiplierByNiceThrow}
     set {_uniqueStorage()._escapedBonusMultiplierByNiceThrow = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -126,8 +126,8 @@ struct POGOProtos_Settings_Master_EncounterSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_EncounterSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EncounterSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EncounterSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "spin_bonus_threshold"),
     2: .standard(proto: "excellent_throw_threshold"),
     3: .standard(proto: "great_throw_threshold"),
@@ -149,30 +149,30 @@ extension POGOProtos_Settings_Master_EncounterSettings: SwiftProtobuf.Message, S
   ]
 
   fileprivate class _StorageClass {
-    var _spinBonusThreshold: Float = 0
-    var _excellentThrowThreshold: Float = 0
-    var _greatThrowThreshold: Float = 0
-    var _niceThrowThreshold: Float = 0
-    var _milestoneThreshold: Int32 = 0
-    var _arPlusModeEnabled: Bool = false
-    var _arCloseProximityThreshold: Float = 0
-    var _arLowAwarenessThreshold: Float = 0
-    var _arCloseProximityMultiplier: Float = 0
-    var _arAwarenessPenaltyThreshold: Float = 0
-    var _arLowAwarenessMaxMultiplier: Float = 0
-    var _arHighAwarenessMinPenaltyMultiplier: Float = 0
-    var _arPlusAttemptsUntilFleeMax: Int32 = 0
-    var _arPlusAttemptsUntilFleeInfinite: Int32 = 0
-    var _escapedBonusMultiplierMax: Float = 0
-    var _escapedBonusMultiplierByExcellentThrow: Float = 0
-    var _escapedBonusMultiplierByGreatThrow: Float = 0
-    var _escapedBonusMultiplierByNiceThrow: Float = 0
+    public var _spinBonusThreshold: Float = 0
+    public var _excellentThrowThreshold: Float = 0
+    public var _greatThrowThreshold: Float = 0
+    public var _niceThrowThreshold: Float = 0
+    public var _milestoneThreshold: Int32 = 0
+    public var _arPlusModeEnabled: Bool = false
+    public var _arCloseProximityThreshold: Float = 0
+    public var _arLowAwarenessThreshold: Float = 0
+    public var _arCloseProximityMultiplier: Float = 0
+    public var _arAwarenessPenaltyThreshold: Float = 0
+    public var _arLowAwarenessMaxMultiplier: Float = 0
+    public var _arHighAwarenessMinPenaltyMultiplier: Float = 0
+    public var _arPlusAttemptsUntilFleeMax: Int32 = 0
+    public var _arPlusAttemptsUntilFleeInfinite: Int32 = 0
+    public var _escapedBonusMultiplierMax: Float = 0
+    public var _escapedBonusMultiplierByExcellentThrow: Float = 0
+    public var _escapedBonusMultiplierByGreatThrow: Float = 0
+    public var _escapedBonusMultiplierByNiceThrow: Float = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _spinBonusThreshold = source._spinBonusThreshold
       _excellentThrowThreshold = source._excellentThrowThreshold
       _greatThrowThreshold = source._greatThrowThreshold
@@ -201,7 +201,7 @@ extension POGOProtos_Settings_Master_EncounterSettings: SwiftProtobuf.Message, S
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -230,7 +230,7 @@ extension POGOProtos_Settings_Master_EncounterSettings: SwiftProtobuf.Message, S
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._spinBonusThreshold != 0 {
         try visitor.visitSingularFloatField(value: _storage._spinBonusThreshold, fieldNumber: 1)
@@ -290,7 +290,7 @@ extension POGOProtos_Settings_Master_EncounterSettings: SwiftProtobuf.Message, S
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_EncounterSettings, rhs: POGOProtos_Settings_Master_EncounterSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_EncounterSettings, rhs: POGOProtos_Settings_Master_EncounterSettings) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

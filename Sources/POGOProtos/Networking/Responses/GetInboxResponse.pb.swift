@@ -15,44 +15,44 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_GetInboxResponse {
+public struct POGOProtos_Networking_Responses_GetInboxResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_GetInboxResponse.Result {
+  public var result: POGOProtos_Networking_Responses_GetInboxResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var inbox: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox {
+  public var inbox: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox {
     get {return _storage._inbox ?? POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox()}
     set {_uniqueStorage()._inbox = newValue}
   }
   /// Returns true if `inbox` has been explicitly set.
-  var hasInbox: Bool {return _storage._inbox != nil}
+  public var hasInbox: Bool {return _storage._inbox != nil}
   /// Clears the value of `inbox`. Subsequent reads from it will return its default value.
-  mutating func clearInbox() {_uniqueStorage()._inbox = nil}
+  public mutating func clearInbox() {_uniqueStorage()._inbox = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case failure // = 2
     case timedOut // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -62,7 +62,7 @@ struct POGOProtos_Networking_Responses_GetInboxResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -74,51 +74,51 @@ struct POGOProtos_Networking_Responses_GetInboxResponse {
 
   }
 
-  struct ClientInbox {
+  public struct ClientInbox {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var notifications: [POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notification] = []
+    public var notifications: [POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notification] = []
 
-    var builtinVariables: [POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateVariable] = []
+    public var builtinVariables: [POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateVariable] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    struct Notification {
+    public struct Notification {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
-      var notificationID: String = String()
+      public var notificationID: String = String()
 
-      var titleKey: String = String()
+      public var titleKey: String = String()
 
-      var category: String = String()
+      public var category: String = String()
 
-      var createTimestampMs: Int64 = 0
+      public var createTimestampMs: Int64 = 0
 
-      var variables: [POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateVariable] = []
+      public var variables: [POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateVariable] = []
 
-      var labels: [POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notification.Label] = []
+      public var labels: [POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notification.Label] = []
 
-      var expireTimeMs: Int64 = 0
+      public var expireTimeMs: Int64 = 0
 
-      var unknownFields = SwiftProtobuf.UnknownStorage()
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-      enum Label: SwiftProtobuf.Enum {
-        typealias RawValue = Int
+      public enum Label: SwiftProtobuf.Enum {
+        public typealias RawValue = Int
         case unsetLabel // = 0
         case unread // = 1
         case new // = 2
         case immediate // = 3
         case UNRECOGNIZED(Int)
 
-        init() {
+        public init() {
           self = .unsetLabel
         }
 
-        init?(rawValue: Int) {
+        public init?(rawValue: Int) {
           switch rawValue {
           case 0: self = .unsetLabel
           case 1: self = .unread
@@ -128,7 +128,7 @@ struct POGOProtos_Networking_Responses_GetInboxResponse {
           }
         }
 
-        var rawValue: Int {
+        public var rawValue: Int {
           switch self {
           case .unsetLabel: return 0
           case .unread: return 1
@@ -140,33 +140,33 @@ struct POGOProtos_Networking_Responses_GetInboxResponse {
 
       }
 
-      init() {}
+      public init() {}
     }
 
-    struct TemplateVariable {
+    public struct TemplateVariable {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
-      var name: String = String()
+      public var name: String = String()
 
-      var literal: String = String()
+      public var literal: String = String()
 
-      var key: String = String()
+      public var key: String = String()
 
-      var lookupTable: String = String()
+      public var lookupTable: String = String()
 
-      var byteValue: Data = SwiftProtobuf.Internal.emptyData
+      public var byteValue: Data = SwiftProtobuf.Internal.emptyData
 
-      var unknownFields = SwiftProtobuf.UnknownStorage()
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-      init() {}
+      public init() {}
     }
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -190,21 +190,21 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.Result: CaseIterable 
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_GetInboxResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetInboxResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetInboxResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "inbox"),
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_GetInboxResponse.Result = .unset
-    var _inbox: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox? = nil
+    public var _result: POGOProtos_Networking_Responses_GetInboxResponse.Result = .unset
+    public var _inbox: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _inbox = source._inbox
     }
@@ -217,7 +217,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse: SwiftProtobuf.Messag
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -230,7 +230,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse: SwiftProtobuf.Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -242,7 +242,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse: SwiftProtobuf.Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetInboxResponse, rhs: POGOProtos_Networking_Responses_GetInboxResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetInboxResponse, rhs: POGOProtos_Networking_Responses_GetInboxResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -259,7 +259,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse: SwiftProtobuf.Messag
 }
 
 extension POGOProtos_Networking_Responses_GetInboxResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "FAILURE"),
@@ -268,13 +268,13 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.Result: SwiftProtobuf
 }
 
 extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Responses_GetInboxResponse.protoMessageName + ".ClientInbox"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_GetInboxResponse.protoMessageName + ".ClientInbox"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "notifications"),
     2: .standard(proto: "builtin_variables"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.notifications)
@@ -284,7 +284,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox: SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.notifications.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.notifications, fieldNumber: 1)
     }
@@ -294,7 +294,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox: SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox, rhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox, rhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox) -> Bool {
     if lhs.notifications != rhs.notifications {return false}
     if lhs.builtinVariables != rhs.builtinVariables {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -303,8 +303,8 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox: SwiftPro
 }
 
 extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notification: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.protoMessageName + ".Notification"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.protoMessageName + ".Notification"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "notification_id"),
     2: .standard(proto: "title_key"),
     3: .same(proto: "category"),
@@ -314,7 +314,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notificat
     7: .standard(proto: "expire_time_ms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.notificationID)
@@ -329,7 +329,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notificat
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.notificationID.isEmpty {
       try visitor.visitSingularStringField(value: self.notificationID, fieldNumber: 1)
     }
@@ -354,7 +354,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notificat
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notification, rhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notification) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notification, rhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notification) -> Bool {
     if lhs.notificationID != rhs.notificationID {return false}
     if lhs.titleKey != rhs.titleKey {return false}
     if lhs.category != rhs.category {return false}
@@ -368,7 +368,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notificat
 }
 
 extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notification.Label: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET_LABEL"),
     1: .same(proto: "UNREAD"),
     2: .same(proto: "NEW"),
@@ -377,8 +377,8 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.Notificat
 }
 
 extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateVariable: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.protoMessageName + ".TemplateVariable"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.protoMessageName + ".TemplateVariable"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "name"),
     2: .same(proto: "literal"),
     3: .same(proto: "key"),
@@ -386,7 +386,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateV
     5: .standard(proto: "byte_value"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.name)
@@ -399,7 +399,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateV
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.name.isEmpty {
       try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
     }
@@ -418,7 +418,7 @@ extension POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateV
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateVariable, rhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateVariable) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateVariable, rhs: POGOProtos_Networking_Responses_GetInboxResponse.ClientInbox.TemplateVariable) -> Bool {
     if lhs.name != rhs.name {return false}
     if lhs.literal != rhs.literal {return false}
     if lhs.key != rhs.key {return false}

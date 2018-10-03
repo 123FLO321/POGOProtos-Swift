@@ -15,192 +15,192 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Map_Fort_FortData {
+public struct POGOProtos_Map_Fort_FortData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var id: String {
+  public var id: String {
     get {return _storage._id}
     set {_uniqueStorage()._id = newValue}
   }
 
-  var lastModifiedTimestampMs: Int64 {
+  public var lastModifiedTimestampMs: Int64 {
     get {return _storage._lastModifiedTimestampMs}
     set {_uniqueStorage()._lastModifiedTimestampMs = newValue}
   }
 
-  var latitude: Double {
+  public var latitude: Double {
     get {return _storage._latitude}
     set {_uniqueStorage()._latitude = newValue}
   }
 
-  var longitude: Double {
+  public var longitude: Double {
     get {return _storage._longitude}
     set {_uniqueStorage()._longitude = newValue}
   }
 
   /// (Gym only) Team that owns the gym.
-  var ownedByTeam: POGOProtos_Enums_TeamColor {
+  public var ownedByTeam: POGOProtos_Enums_TeamColor {
     get {return _storage._ownedByTeam}
     set {_uniqueStorage()._ownedByTeam = newValue}
   }
 
   /// (Gym only) Highest CP Pokemon ID at the gym.
-  var guardPokemonID: POGOProtos_Enums_PokemonId {
+  public var guardPokemonID: POGOProtos_Enums_PokemonId {
     get {return _storage._guardPokemonID}
     set {_uniqueStorage()._guardPokemonID = newValue}
   }
 
   /// (Gym only) Highest CP Pokemon at the gym.
-  var guardPokemonCp: Int32 {
+  public var guardPokemonCp: Int32 {
     get {return _storage._guardPokemonCp}
     set {_uniqueStorage()._guardPokemonCp = newValue}
   }
 
-  var enabled: Bool {
+  public var enabled: Bool {
     get {return _storage._enabled}
     set {_uniqueStorage()._enabled = newValue}
   }
 
-  var type: POGOProtos_Map_Fort_FortType {
+  public var type: POGOProtos_Map_Fort_FortType {
     get {return _storage._type}
     set {_uniqueStorage()._type = newValue}
   }
 
   /// (Gym only) Prestigate / experience of the gym.
-  var gymPoints: Int64 {
+  public var gymPoints: Int64 {
     get {return _storage._gymPoints}
     set {_uniqueStorage()._gymPoints = newValue}
   }
 
   /// (Gym only) Whether someone is battling at the gym currently.
-  var isInBattle: Bool {
+  public var isInBattle: Bool {
     get {return _storage._isInBattle}
     set {_uniqueStorage()._isInBattle = newValue}
   }
 
   /// (Pokestop only)
-  var activeFortModifier: [POGOProtos_Inventory_Item_ItemId] {
+  public var activeFortModifier: [POGOProtos_Inventory_Item_ItemId] {
     get {return _storage._activeFortModifier}
     set {_uniqueStorage()._activeFortModifier = newValue}
   }
 
   /// (Pokestop only)
-  var lureInfo: POGOProtos_Map_Fort_FortLureInfo {
+  public var lureInfo: POGOProtos_Map_Fort_FortLureInfo {
     get {return _storage._lureInfo ?? POGOProtos_Map_Fort_FortLureInfo()}
     set {_uniqueStorage()._lureInfo = newValue}
   }
   /// Returns true if `lureInfo` has been explicitly set.
-  var hasLureInfo: Bool {return _storage._lureInfo != nil}
+  public var hasLureInfo: Bool {return _storage._lureInfo != nil}
   /// Clears the value of `lureInfo`. Subsequent reads from it will return its default value.
-  mutating func clearLureInfo() {_uniqueStorage()._lureInfo = nil}
+  public mutating func clearLureInfo() {_uniqueStorage()._lureInfo = nil}
 
   /// (Pokestop only) Timestamp when the pokestop can be activated again to get items / xp.
-  var cooldownCompleteTimestampMs: Int64 {
+  public var cooldownCompleteTimestampMs: Int64 {
     get {return _storage._cooldownCompleteTimestampMs}
     set {_uniqueStorage()._cooldownCompleteTimestampMs = newValue}
   }
 
-  var sponsor: POGOProtos_Map_Fort_FortSponsor {
+  public var sponsor: POGOProtos_Map_Fort_FortSponsor {
     get {return _storage._sponsor}
     set {_uniqueStorage()._sponsor = newValue}
   }
 
-  var renderingType: POGOProtos_Map_Fort_FortRenderingType {
+  public var renderingType: POGOProtos_Map_Fort_FortRenderingType {
     get {return _storage._renderingType}
     set {_uniqueStorage()._renderingType = newValue}
   }
 
-  var deployLockoutEndMs: Int64 {
+  public var deployLockoutEndMs: Int64 {
     get {return _storage._deployLockoutEndMs}
     set {_uniqueStorage()._deployLockoutEndMs = newValue}
   }
 
-  var guardPokemonDisplay: POGOProtos_Data_PokemonDisplay {
+  public var guardPokemonDisplay: POGOProtos_Data_PokemonDisplay {
     get {return _storage._guardPokemonDisplay ?? POGOProtos_Data_PokemonDisplay()}
     set {_uniqueStorage()._guardPokemonDisplay = newValue}
   }
   /// Returns true if `guardPokemonDisplay` has been explicitly set.
-  var hasGuardPokemonDisplay: Bool {return _storage._guardPokemonDisplay != nil}
+  public var hasGuardPokemonDisplay: Bool {return _storage._guardPokemonDisplay != nil}
   /// Clears the value of `guardPokemonDisplay`. Subsequent reads from it will return its default value.
-  mutating func clearGuardPokemonDisplay() {_uniqueStorage()._guardPokemonDisplay = nil}
+  public mutating func clearGuardPokemonDisplay() {_uniqueStorage()._guardPokemonDisplay = nil}
 
-  var closed: Bool {
+  public var closed: Bool {
     get {return _storage._closed}
     set {_uniqueStorage()._closed = newValue}
   }
 
-  var raidInfo: POGOProtos_Data_Raid_RaidInfo {
+  public var raidInfo: POGOProtos_Data_Raid_RaidInfo {
     get {return _storage._raidInfo ?? POGOProtos_Data_Raid_RaidInfo()}
     set {_uniqueStorage()._raidInfo = newValue}
   }
   /// Returns true if `raidInfo` has been explicitly set.
-  var hasRaidInfo: Bool {return _storage._raidInfo != nil}
+  public var hasRaidInfo: Bool {return _storage._raidInfo != nil}
   /// Clears the value of `raidInfo`. Subsequent reads from it will return its default value.
-  mutating func clearRaidInfo() {_uniqueStorage()._raidInfo = nil}
+  public mutating func clearRaidInfo() {_uniqueStorage()._raidInfo = nil}
 
-  var gymDisplay: POGOProtos_Map_Fort_GymDisplay {
+  public var gymDisplay: POGOProtos_Map_Fort_GymDisplay {
     get {return _storage._gymDisplay ?? POGOProtos_Map_Fort_GymDisplay()}
     set {_uniqueStorage()._gymDisplay = newValue}
   }
   /// Returns true if `gymDisplay` has been explicitly set.
-  var hasGymDisplay: Bool {return _storage._gymDisplay != nil}
+  public var hasGymDisplay: Bool {return _storage._gymDisplay != nil}
   /// Clears the value of `gymDisplay`. Subsequent reads from it will return its default value.
-  mutating func clearGymDisplay() {_uniqueStorage()._gymDisplay = nil}
+  public mutating func clearGymDisplay() {_uniqueStorage()._gymDisplay = nil}
 
-  var visited: Bool {
+  public var visited: Bool {
     get {return _storage._visited}
     set {_uniqueStorage()._visited = newValue}
   }
 
-  var sameTeamDeployLockoutEndMs: Int64 {
+  public var sameTeamDeployLockoutEndMs: Int64 {
     get {return _storage._sameTeamDeployLockoutEndMs}
     set {_uniqueStorage()._sameTeamDeployLockoutEndMs = newValue}
   }
 
-  var allowCheckin: Bool {
+  public var allowCheckin: Bool {
     get {return _storage._allowCheckin}
     set {_uniqueStorage()._allowCheckin = newValue}
   }
 
-  var imageURL: String {
+  public var imageURL: String {
     get {return _storage._imageURL}
     set {_uniqueStorage()._imageURL = newValue}
   }
 
-  var inEvent: Bool {
+  public var inEvent: Bool {
     get {return _storage._inEvent}
     set {_uniqueStorage()._inEvent = newValue}
   }
 
-  var bannerURL: String {
+  public var bannerURL: String {
     get {return _storage._bannerURL}
     set {_uniqueStorage()._bannerURL = newValue}
   }
 
-  var partnerID: String {
+  public var partnerID: String {
     get {return _storage._partnerID}
     set {_uniqueStorage()._partnerID = newValue}
   }
 
-  var challengeQuestCompleted: Bool {
+  public var challengeQuestCompleted: Bool {
     get {return _storage._challengeQuestCompleted}
     set {_uniqueStorage()._challengeQuestCompleted = newValue}
   }
 
-  var isExRaidEligible: Bool {
+  public var isExRaidEligible: Bool {
     get {return _storage._isExRaidEligible}
     set {_uniqueStorage()._isExRaidEligible = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -210,8 +210,8 @@ struct POGOProtos_Map_Fort_FortData {
 fileprivate let _protobuf_package = "POGOProtos.Map.Fort"
 
 extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FortData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FortData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "id"),
     2: .standard(proto: "last_modified_timestamp_ms"),
     3: .same(proto: "latitude"),
@@ -245,42 +245,42 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
   ]
 
   fileprivate class _StorageClass {
-    var _id: String = String()
-    var _lastModifiedTimestampMs: Int64 = 0
-    var _latitude: Double = 0
-    var _longitude: Double = 0
-    var _ownedByTeam: POGOProtos_Enums_TeamColor = .neutral
-    var _guardPokemonID: POGOProtos_Enums_PokemonId = .missingno
-    var _guardPokemonCp: Int32 = 0
-    var _enabled: Bool = false
-    var _type: POGOProtos_Map_Fort_FortType = .gym
-    var _gymPoints: Int64 = 0
-    var _isInBattle: Bool = false
-    var _activeFortModifier: [POGOProtos_Inventory_Item_ItemId] = []
-    var _lureInfo: POGOProtos_Map_Fort_FortLureInfo? = nil
-    var _cooldownCompleteTimestampMs: Int64 = 0
-    var _sponsor: POGOProtos_Map_Fort_FortSponsor = .unsetSponsor
-    var _renderingType: POGOProtos_Map_Fort_FortRenderingType = .default
-    var _deployLockoutEndMs: Int64 = 0
-    var _guardPokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-    var _closed: Bool = false
-    var _raidInfo: POGOProtos_Data_Raid_RaidInfo? = nil
-    var _gymDisplay: POGOProtos_Map_Fort_GymDisplay? = nil
-    var _visited: Bool = false
-    var _sameTeamDeployLockoutEndMs: Int64 = 0
-    var _allowCheckin: Bool = false
-    var _imageURL: String = String()
-    var _inEvent: Bool = false
-    var _bannerURL: String = String()
-    var _partnerID: String = String()
-    var _challengeQuestCompleted: Bool = false
-    var _isExRaidEligible: Bool = false
+    public var _id: String = String()
+    public var _lastModifiedTimestampMs: Int64 = 0
+    public var _latitude: Double = 0
+    public var _longitude: Double = 0
+    public var _ownedByTeam: POGOProtos_Enums_TeamColor = .neutral
+    public var _guardPokemonID: POGOProtos_Enums_PokemonId = .missingno
+    public var _guardPokemonCp: Int32 = 0
+    public var _enabled: Bool = false
+    public var _type: POGOProtos_Map_Fort_FortType = .gym
+    public var _gymPoints: Int64 = 0
+    public var _isInBattle: Bool = false
+    public var _activeFortModifier: [POGOProtos_Inventory_Item_ItemId] = []
+    public var _lureInfo: POGOProtos_Map_Fort_FortLureInfo? = nil
+    public var _cooldownCompleteTimestampMs: Int64 = 0
+    public var _sponsor: POGOProtos_Map_Fort_FortSponsor = .unsetSponsor
+    public var _renderingType: POGOProtos_Map_Fort_FortRenderingType = .default
+    public var _deployLockoutEndMs: Int64 = 0
+    public var _guardPokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    public var _closed: Bool = false
+    public var _raidInfo: POGOProtos_Data_Raid_RaidInfo? = nil
+    public var _gymDisplay: POGOProtos_Map_Fort_GymDisplay? = nil
+    public var _visited: Bool = false
+    public var _sameTeamDeployLockoutEndMs: Int64 = 0
+    public var _allowCheckin: Bool = false
+    public var _imageURL: String = String()
+    public var _inEvent: Bool = false
+    public var _bannerURL: String = String()
+    public var _partnerID: String = String()
+    public var _challengeQuestCompleted: Bool = false
+    public var _isExRaidEligible: Bool = false
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _id = source._id
       _lastModifiedTimestampMs = source._lastModifiedTimestampMs
       _latitude = source._latitude
@@ -321,7 +321,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -362,7 +362,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._id.isEmpty {
         try visitor.visitSingularStringField(value: _storage._id, fieldNumber: 1)
@@ -458,7 +458,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_Fort_FortData, rhs: POGOProtos_Map_Fort_FortData) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_Fort_FortData, rhs: POGOProtos_Map_Fort_FortData) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_PlayerLevelSettings {
+public struct POGOProtos_Settings_Master_PlayerLevelSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var rankNum: [Int32] = []
+  public var rankNum: [Int32] = []
 
-  var requiredExperience: [Int32] = []
+  public var requiredExperience: [Int32] = []
 
-  var cpMultiplier: [Float] = []
+  public var cpMultiplier: [Float] = []
 
-  var maxEggPlayerLevel: Int32 = 0
+  public var maxEggPlayerLevel: Int32 = 0
 
-  var maxEncounterPlayerLevel: Int32 = 0
+  public var maxEncounterPlayerLevel: Int32 = 0
 
-  var maxRaidEncounterPlayerLevel: Int32 = 0
+  public var maxRaidEncounterPlayerLevel: Int32 = 0
 
-  var maxQuestEncounterPlayerLevel: Int32 = 0
+  public var maxQuestEncounterPlayerLevel: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -48,8 +48,8 @@ struct POGOProtos_Settings_Master_PlayerLevelSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_PlayerLevelSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlayerLevelSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlayerLevelSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "rank_num"),
     2: .standard(proto: "required_experience"),
     3: .standard(proto: "cp_multiplier"),
@@ -59,7 +59,7 @@ extension POGOProtos_Settings_Master_PlayerLevelSettings: SwiftProtobuf.Message,
     7: .standard(proto: "max_quest_encounter_player_level"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedInt32Field(value: &self.rankNum)
@@ -74,7 +74,7 @@ extension POGOProtos_Settings_Master_PlayerLevelSettings: SwiftProtobuf.Message,
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.rankNum.isEmpty {
       try visitor.visitPackedInt32Field(value: self.rankNum, fieldNumber: 1)
     }
@@ -99,7 +99,7 @@ extension POGOProtos_Settings_Master_PlayerLevelSettings: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_PlayerLevelSettings, rhs: POGOProtos_Settings_Master_PlayerLevelSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_PlayerLevelSettings, rhs: POGOProtos_Settings_Master_PlayerLevelSettings) -> Bool {
     if lhs.rankNum != rhs.rankNum {return false}
     if lhs.requiredExperience != rhs.requiredExperience {return false}
     if lhs.cpMultiplier != rhs.cpMultiplier {return false}

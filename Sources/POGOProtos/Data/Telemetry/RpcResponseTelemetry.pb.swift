@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_RpcResponseTelemetry {
+public struct POGOProtos_Data_Telemetry_RpcResponseTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var windowDuration: Float = 0
+  public var windowDuration: Float = 0
 
-  var responseTimings: [POGOProtos_Data_Telemetry_RpcResponseTime] = []
+  public var responseTimings: [POGOProtos_Data_Telemetry_RpcResponseTime] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Data_Telemetry_RpcResponseTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_RpcResponseTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RpcResponseTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RpcResponseTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "window_duration"),
     2: .standard(proto: "response_timings"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.windowDuration)
@@ -54,7 +54,7 @@ extension POGOProtos_Data_Telemetry_RpcResponseTelemetry: SwiftProtobuf.Message,
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.windowDuration != 0 {
       try visitor.visitSingularFloatField(value: self.windowDuration, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Data_Telemetry_RpcResponseTelemetry: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_RpcResponseTelemetry, rhs: POGOProtos_Data_Telemetry_RpcResponseTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_RpcResponseTelemetry, rhs: POGOProtos_Data_Telemetry_RpcResponseTelemetry) -> Bool {
     if lhs.windowDuration != rhs.windowDuration {return false}
     if lhs.responseTimings != rhs.responseTimings {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

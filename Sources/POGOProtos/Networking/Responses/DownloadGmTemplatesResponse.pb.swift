@@ -15,29 +15,29 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_DownloadGmTemplatesResponse {
+public struct POGOProtos_Networking_Responses_DownloadGmTemplatesResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.Result = .unset
+  public var result: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.Result = .unset
 
-  var template: [POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGameMasterTemplate] = []
+  public var template: [POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGameMasterTemplate] = []
 
-  var deletedTemplate: [String] = []
+  public var deletedTemplate: [String] = []
 
-  var batchID: UInt64 = 0
+  public var batchID: UInt64 = 0
 
-  var pageOffset: Int32 = 0
+  public var pageOffset: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case complete // = 1
     case moreResults // = 2
@@ -45,11 +45,11 @@ struct POGOProtos_Networking_Responses_DownloadGmTemplatesResponse {
     case invalidBasisBatchID // = 4
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .complete
@@ -60,7 +60,7 @@ struct POGOProtos_Networking_Responses_DownloadGmTemplatesResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .complete: return 1
@@ -73,21 +73,21 @@ struct POGOProtos_Networking_Responses_DownloadGmTemplatesResponse {
 
   }
 
-  struct ClientGameMasterTemplate {
+  public struct ClientGameMasterTemplate {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var templateID: String = String()
+    public var templateID: String = String()
 
-    var data: Data = SwiftProtobuf.Internal.emptyData
+    public var data: Data = SwiftProtobuf.Internal.emptyData
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -110,8 +110,8 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.Result: Ca
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DownloadGmTemplatesResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".DownloadGmTemplatesResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "template"),
     3: .standard(proto: "deleted_template"),
@@ -119,7 +119,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProt
     5: .standard(proto: "page_offset"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
@@ -132,7 +132,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.result != .unset {
       try visitor.visitSingularEnumField(value: self.result, fieldNumber: 1)
     }
@@ -151,7 +151,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse, rhs: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse, rhs: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs.template != rhs.template {return false}
     if lhs.deletedTemplate != rhs.deletedTemplate {return false}
@@ -163,7 +163,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProt
 }
 
 extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "COMPLETE"),
     2: .same(proto: "MORE_RESULTS"),
@@ -173,13 +173,13 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.Result: Sw
 }
 
 extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGameMasterTemplate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.protoMessageName + ".ClientGameMasterTemplate"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.protoMessageName + ".ClientGameMasterTemplate"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "template_id"),
     2: .same(proto: "data"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.templateID)
@@ -189,7 +189,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGame
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.templateID.isEmpty {
       try visitor.visitSingularStringField(value: self.templateID, fieldNumber: 1)
     }
@@ -199,7 +199,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGame
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGameMasterTemplate, rhs: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGameMasterTemplate) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGameMasterTemplate, rhs: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGameMasterTemplate) -> Bool {
     if lhs.templateID != rhs.templateID {return false}
     if lhs.data != rhs.data {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

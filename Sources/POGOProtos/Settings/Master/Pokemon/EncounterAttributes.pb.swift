@@ -15,108 +15,108 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_Pokemon_EncounterAttributes {
+public struct POGOProtos_Settings_Master_Pokemon_EncounterAttributes {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var baseCaptureRate: Float {
+  public var baseCaptureRate: Float {
     get {return _storage._baseCaptureRate}
     set {_uniqueStorage()._baseCaptureRate = newValue}
   }
 
-  var baseFleeRate: Float {
+  public var baseFleeRate: Float {
     get {return _storage._baseFleeRate}
     set {_uniqueStorage()._baseFleeRate = newValue}
   }
 
-  var collisionRadiusM: Float {
+  public var collisionRadiusM: Float {
     get {return _storage._collisionRadiusM}
     set {_uniqueStorage()._collisionRadiusM = newValue}
   }
 
-  var collisionHeightM: Float {
+  public var collisionHeightM: Float {
     get {return _storage._collisionHeightM}
     set {_uniqueStorage()._collisionHeightM = newValue}
   }
 
-  var collisionHeadRadiusM: Float {
+  public var collisionHeadRadiusM: Float {
     get {return _storage._collisionHeadRadiusM}
     set {_uniqueStorage()._collisionHeadRadiusM = newValue}
   }
 
-  var movementType: POGOProtos_Enums_PokemonMovementType {
+  public var movementType: POGOProtos_Enums_PokemonMovementType {
     get {return _storage._movementType}
     set {_uniqueStorage()._movementType = newValue}
   }
 
-  var movementTimerS: Float {
+  public var movementTimerS: Float {
     get {return _storage._movementTimerS}
     set {_uniqueStorage()._movementTimerS = newValue}
   }
 
-  var jumpTimeS: Float {
+  public var jumpTimeS: Float {
     get {return _storage._jumpTimeS}
     set {_uniqueStorage()._jumpTimeS = newValue}
   }
 
-  var attackTimerS: Float {
+  public var attackTimerS: Float {
     get {return _storage._attackTimerS}
     set {_uniqueStorage()._attackTimerS = newValue}
   }
 
-  var bonusCandyCaptureReward: Int32 {
+  public var bonusCandyCaptureReward: Int32 {
     get {return _storage._bonusCandyCaptureReward}
     set {_uniqueStorage()._bonusCandyCaptureReward = newValue}
   }
 
-  var bonusStardustCaptureReward: Int32 {
+  public var bonusStardustCaptureReward: Int32 {
     get {return _storage._bonusStardustCaptureReward}
     set {_uniqueStorage()._bonusStardustCaptureReward = newValue}
   }
 
-  var attackProbability: Float {
+  public var attackProbability: Float {
     get {return _storage._attackProbability}
     set {_uniqueStorage()._attackProbability = newValue}
   }
 
-  var dodgeProbability: Float {
+  public var dodgeProbability: Float {
     get {return _storage._dodgeProbability}
     set {_uniqueStorage()._dodgeProbability = newValue}
   }
 
-  var dodgeDurationS: Float {
+  public var dodgeDurationS: Float {
     get {return _storage._dodgeDurationS}
     set {_uniqueStorage()._dodgeDurationS = newValue}
   }
 
-  var dodgeDistance: Float {
+  public var dodgeDistance: Float {
     get {return _storage._dodgeDistance}
     set {_uniqueStorage()._dodgeDistance = newValue}
   }
 
-  var cameraDistance: Float {
+  public var cameraDistance: Float {
     get {return _storage._cameraDistance}
     set {_uniqueStorage()._cameraDistance = newValue}
   }
 
-  var minPokemonActionFrequencyS: Float {
+  public var minPokemonActionFrequencyS: Float {
     get {return _storage._minPokemonActionFrequencyS}
     set {_uniqueStorage()._minPokemonActionFrequencyS = newValue}
   }
 
-  var maxPokemonActionFrequencyS: Float {
+  public var maxPokemonActionFrequencyS: Float {
     get {return _storage._maxPokemonActionFrequencyS}
     set {_uniqueStorage()._maxPokemonActionFrequencyS = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -126,8 +126,8 @@ struct POGOProtos_Settings_Master_Pokemon_EncounterAttributes {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master.Pokemon"
 
 extension POGOProtos_Settings_Master_Pokemon_EncounterAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EncounterAttributes"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EncounterAttributes"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "base_capture_rate"),
     2: .standard(proto: "base_flee_rate"),
     3: .standard(proto: "collision_radius_m"),
@@ -149,30 +149,30 @@ extension POGOProtos_Settings_Master_Pokemon_EncounterAttributes: SwiftProtobuf.
   ]
 
   fileprivate class _StorageClass {
-    var _baseCaptureRate: Float = 0
-    var _baseFleeRate: Float = 0
-    var _collisionRadiusM: Float = 0
-    var _collisionHeightM: Float = 0
-    var _collisionHeadRadiusM: Float = 0
-    var _movementType: POGOProtos_Enums_PokemonMovementType = .movementStatic
-    var _movementTimerS: Float = 0
-    var _jumpTimeS: Float = 0
-    var _attackTimerS: Float = 0
-    var _bonusCandyCaptureReward: Int32 = 0
-    var _bonusStardustCaptureReward: Int32 = 0
-    var _attackProbability: Float = 0
-    var _dodgeProbability: Float = 0
-    var _dodgeDurationS: Float = 0
-    var _dodgeDistance: Float = 0
-    var _cameraDistance: Float = 0
-    var _minPokemonActionFrequencyS: Float = 0
-    var _maxPokemonActionFrequencyS: Float = 0
+    public var _baseCaptureRate: Float = 0
+    public var _baseFleeRate: Float = 0
+    public var _collisionRadiusM: Float = 0
+    public var _collisionHeightM: Float = 0
+    public var _collisionHeadRadiusM: Float = 0
+    public var _movementType: POGOProtos_Enums_PokemonMovementType = .movementStatic
+    public var _movementTimerS: Float = 0
+    public var _jumpTimeS: Float = 0
+    public var _attackTimerS: Float = 0
+    public var _bonusCandyCaptureReward: Int32 = 0
+    public var _bonusStardustCaptureReward: Int32 = 0
+    public var _attackProbability: Float = 0
+    public var _dodgeProbability: Float = 0
+    public var _dodgeDurationS: Float = 0
+    public var _dodgeDistance: Float = 0
+    public var _cameraDistance: Float = 0
+    public var _minPokemonActionFrequencyS: Float = 0
+    public var _maxPokemonActionFrequencyS: Float = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _baseCaptureRate = source._baseCaptureRate
       _baseFleeRate = source._baseFleeRate
       _collisionRadiusM = source._collisionRadiusM
@@ -201,7 +201,7 @@ extension POGOProtos_Settings_Master_Pokemon_EncounterAttributes: SwiftProtobuf.
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -230,7 +230,7 @@ extension POGOProtos_Settings_Master_Pokemon_EncounterAttributes: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._baseCaptureRate != 0 {
         try visitor.visitSingularFloatField(value: _storage._baseCaptureRate, fieldNumber: 1)
@@ -290,7 +290,7 @@ extension POGOProtos_Settings_Master_Pokemon_EncounterAttributes: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_Pokemon_EncounterAttributes, rhs: POGOProtos_Settings_Master_Pokemon_EncounterAttributes) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Pokemon_EncounterAttributes, rhs: POGOProtos_Settings_Master_Pokemon_EncounterAttributes) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

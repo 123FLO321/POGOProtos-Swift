@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case unsetNotificationCategory // = 0
   case gymRemoval // = 1
   case pokemonHungry // = 2
@@ -33,11 +33,11 @@ enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case gymBattleFriendshipIncrement // = 9
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unsetNotificationCategory
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unsetNotificationCategory
     case 1: self = .gymRemoval
@@ -53,7 +53,7 @@ enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unsetNotificationCategory: return 0
     case .gymRemoval: return 1
@@ -94,7 +94,7 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET_NotificationCategory"),
     1: .same(proto: "GYM_REMOVAL"),
     2: .same(proto: "POKEMON_HUNGRY"),

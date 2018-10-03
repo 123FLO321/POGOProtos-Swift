@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_Item_EggIncubatorAttributes {
+public struct POGOProtos_Settings_Master_Item_EggIncubatorAttributes {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var incubatorType: POGOProtos_Inventory_EggIncubatorType = .incubatorUnset
+  public var incubatorType: POGOProtos_Inventory_EggIncubatorType = .incubatorUnset
 
-  var uses: Int32 = 0
+  public var uses: Int32 = 0
 
-  var distanceMultiplier: Float = 0
+  public var distanceMultiplier: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Settings_Master_Item_EggIncubatorAttributes {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master.Item"
 
 extension POGOProtos_Settings_Master_Item_EggIncubatorAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EggIncubatorAttributes"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EggIncubatorAttributes"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "incubator_type"),
     2: .same(proto: "uses"),
     3: .standard(proto: "distance_multiplier"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.incubatorType)
@@ -58,7 +58,7 @@ extension POGOProtos_Settings_Master_Item_EggIncubatorAttributes: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.incubatorType != .incubatorUnset {
       try visitor.visitSingularEnumField(value: self.incubatorType, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Settings_Master_Item_EggIncubatorAttributes: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_Item_EggIncubatorAttributes, rhs: POGOProtos_Settings_Master_Item_EggIncubatorAttributes) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Item_EggIncubatorAttributes, rhs: POGOProtos_Settings_Master_Item_EggIncubatorAttributes) -> Bool {
     if lhs.incubatorType != rhs.incubatorType {return false}
     if lhs.uses != rhs.uses {return false}
     if lhs.distanceMultiplier != rhs.distanceMultiplier {return false}

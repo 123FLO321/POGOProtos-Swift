@@ -15,20 +15,20 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Social_DeleteGiftFromInventoryMessage {
+public struct POGOProtos_Networking_Requests_Social_DeleteGiftFromInventoryMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var giftboxID: [UInt64] = []
+  public var giftboxID: [UInt64] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -36,12 +36,12 @@ struct POGOProtos_Networking_Requests_Social_DeleteGiftFromInventoryMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Social"
 
 extension POGOProtos_Networking_Requests_Social_DeleteGiftFromInventoryMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DeleteGiftFromInventoryMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".DeleteGiftFromInventoryMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "giftbox_id"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedUInt64Field(value: &self.giftboxID)
@@ -50,14 +50,14 @@ extension POGOProtos_Networking_Requests_Social_DeleteGiftFromInventoryMessage: 
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.giftboxID.isEmpty {
       try visitor.visitPackedUInt64Field(value: self.giftboxID, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Social_DeleteGiftFromInventoryMessage, rhs: POGOProtos_Networking_Requests_Social_DeleteGiftFromInventoryMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Social_DeleteGiftFromInventoryMessage, rhs: POGOProtos_Networking_Requests_Social_DeleteGiftFromInventoryMessage) -> Bool {
     if lhs.giftboxID != rhs.giftboxID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -15,33 +15,33 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse {
+public struct POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse.Result = .unset
+  public var result: POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse.Result = .unset
 
-  var invites: [POGOProtos_Data_Friends_IncomingFriendInviteDisplay] = []
+  public var invites: [POGOProtos_Data_Friends_IncomingFriendInviteDisplay] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorUnknown // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -50,7 +50,7 @@ struct POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -61,7 +61,7 @@ struct POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -82,13 +82,13 @@ extension POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesRespons
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses.Social"
 
 extension POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetIncomingFriendInvitesResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetIncomingFriendInvitesResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "invites"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
@@ -98,7 +98,7 @@ extension POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesRespons
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.result != .unset {
       try visitor.visitSingularEnumField(value: self.result, fieldNumber: 1)
     }
@@ -108,7 +108,7 @@ extension POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesRespons
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse, rhs: POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse, rhs: POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs.invites != rhs.invites {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -117,7 +117,7 @@ extension POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesRespons
 }
 
 extension POGOProtos_Networking_Responses_Social_GetIncomingFriendInvitesResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_UNKNOWN"),

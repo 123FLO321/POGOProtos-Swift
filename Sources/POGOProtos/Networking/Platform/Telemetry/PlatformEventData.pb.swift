@@ -15,27 +15,27 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Telemetry_PlatformEventData {
+public struct POGOProtos_Networking_Platform_Telemetry_PlatformEventData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon {
+  public var commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon {
     get {return _storage._commonTelemetry ?? POGOProtos_Networking_Platform_Telemetry_TelemetryCommon()}
     set {_uniqueStorage()._commonTelemetry = newValue}
   }
   /// Returns true if `commonTelemetry` has been explicitly set.
-  var hasCommonTelemetry: Bool {return _storage._commonTelemetry != nil}
+  public var hasCommonTelemetry: Bool {return _storage._commonTelemetry != nil}
   /// Clears the value of `commonTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearCommonTelemetry() {_uniqueStorage()._commonTelemetry = nil}
+  public mutating func clearCommonTelemetry() {_uniqueStorage()._commonTelemetry = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -45,19 +45,19 @@ struct POGOProtos_Networking_Platform_Telemetry_PlatformEventData {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Telemetry"
 
 extension POGOProtos_Networking_Platform_Telemetry_PlatformEventData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlatformEventData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlatformEventData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "common_telemetry"),
   ]
 
   fileprivate class _StorageClass {
-    var _commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon? = nil
+    public var _commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _commonTelemetry = source._commonTelemetry
     }
   }
@@ -69,7 +69,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformEventData: SwiftProto
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -81,7 +81,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformEventData: SwiftProto
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._commonTelemetry {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -90,7 +90,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformEventData: SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_PlatformEventData, rhs: POGOProtos_Networking_Platform_Telemetry_PlatformEventData) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_PlatformEventData, rhs: POGOProtos_Networking_Platform_Telemetry_PlatformEventData) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

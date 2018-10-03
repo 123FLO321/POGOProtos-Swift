@@ -15,33 +15,33 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse {
+public struct POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse.Result {
+  public var result: POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var friend: POGOProtos_Data_Player_PlayerSummary {
+  public var friend: POGOProtos_Data_Player_PlayerSummary {
     get {return _storage._friend ?? POGOProtos_Data_Player_PlayerSummary()}
     set {_uniqueStorage()._friend = newValue}
   }
   /// Returns true if `friend` has been explicitly set.
-  var hasFriend: Bool {return _storage._friend != nil}
+  public var hasFriend: Bool {return _storage._friend != nil}
   /// Clears the value of `friend`. Subsequent reads from it will return its default value.
-  mutating func clearFriend() {_uniqueStorage()._friend = nil}
+  public mutating func clearFriend() {_uniqueStorage()._friend = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorUnknown // = 2
@@ -52,11 +52,11 @@ struct POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse {
     case errorReceiverHasMaxFriends // = 7
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -70,7 +70,7 @@ struct POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -86,7 +86,7 @@ struct POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -114,21 +114,21 @@ extension POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse.Resu
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses.Social"
 
 extension POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AcceptFriendInviteResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".AcceptFriendInviteResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "friend"),
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse.Result = .unset
-    var _friend: POGOProtos_Data_Player_PlayerSummary? = nil
+    public var _result: POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse.Result = .unset
+    public var _friend: POGOProtos_Data_Player_PlayerSummary? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _friend = source._friend
     }
@@ -141,7 +141,7 @@ extension POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse: Swi
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -154,7 +154,7 @@ extension POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse: Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -166,7 +166,7 @@ extension POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse: Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse, rhs: POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse, rhs: POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -183,7 +183,7 @@ extension POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse: Swi
 }
 
 extension POGOProtos_Networking_Responses_Social_AcceptFriendInviteResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_UNKNOWN"),

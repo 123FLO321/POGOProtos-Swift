@@ -15,33 +15,33 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_AttackRaidBattleResponse {
+public struct POGOProtos_Networking_Responses_AttackRaidBattleResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_AttackRaidBattleResponse.Result {
+  public var result: POGOProtos_Networking_Responses_AttackRaidBattleResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var battleUpdate: POGOProtos_Data_Battle_BattleUpdate {
+  public var battleUpdate: POGOProtos_Data_Battle_BattleUpdate {
     get {return _storage._battleUpdate ?? POGOProtos_Data_Battle_BattleUpdate()}
     set {_uniqueStorage()._battleUpdate = newValue}
   }
   /// Returns true if `battleUpdate` has been explicitly set.
-  var hasBattleUpdate: Bool {return _storage._battleUpdate != nil}
+  public var hasBattleUpdate: Bool {return _storage._battleUpdate != nil}
   /// Clears the value of `battleUpdate`. Subsequent reads from it will return its default value.
-  mutating func clearBattleUpdate() {_uniqueStorage()._battleUpdate = nil}
+  public mutating func clearBattleUpdate() {_uniqueStorage()._battleUpdate = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorGymNotFound // = 2
@@ -51,11 +51,11 @@ struct POGOProtos_Networking_Responses_AttackRaidBattleResponse {
     case errorBattleIDNotRaid // = 6
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -68,7 +68,7 @@ struct POGOProtos_Networking_Responses_AttackRaidBattleResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -83,7 +83,7 @@ struct POGOProtos_Networking_Responses_AttackRaidBattleResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -110,21 +110,21 @@ extension POGOProtos_Networking_Responses_AttackRaidBattleResponse.Result: CaseI
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_AttackRaidBattleResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AttackRaidBattleResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".AttackRaidBattleResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "battle_update"),
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_AttackRaidBattleResponse.Result = .unset
-    var _battleUpdate: POGOProtos_Data_Battle_BattleUpdate? = nil
+    public var _result: POGOProtos_Networking_Responses_AttackRaidBattleResponse.Result = .unset
+    public var _battleUpdate: POGOProtos_Data_Battle_BattleUpdate? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _battleUpdate = source._battleUpdate
     }
@@ -137,7 +137,7 @@ extension POGOProtos_Networking_Responses_AttackRaidBattleResponse: SwiftProtobu
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -150,7 +150,7 @@ extension POGOProtos_Networking_Responses_AttackRaidBattleResponse: SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -162,7 +162,7 @@ extension POGOProtos_Networking_Responses_AttackRaidBattleResponse: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_AttackRaidBattleResponse, rhs: POGOProtos_Networking_Responses_AttackRaidBattleResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_AttackRaidBattleResponse, rhs: POGOProtos_Networking_Responses_AttackRaidBattleResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -179,7 +179,7 @@ extension POGOProtos_Networking_Responses_AttackRaidBattleResponse: SwiftProtobu
 }
 
 extension POGOProtos_Networking_Responses_AttackRaidBattleResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_GYM_NOT_FOUND"),

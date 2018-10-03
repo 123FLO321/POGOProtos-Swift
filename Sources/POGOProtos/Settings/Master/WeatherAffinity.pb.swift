@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_WeatherAffinity {
+public struct POGOProtos_Settings_Master_WeatherAffinity {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var weatherCondition: POGOProtos_Enums_WeatherCondition = .none
+  public var weatherCondition: POGOProtos_Enums_WeatherCondition = .none
 
-  var pokemonType: [POGOProtos_Enums_PokemonType] = []
+  public var pokemonType: [POGOProtos_Enums_PokemonType] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Settings_Master_WeatherAffinity {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_WeatherAffinity: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".WeatherAffinity"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".WeatherAffinity"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "weather_condition"),
     2: .standard(proto: "pokemon_type"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.weatherCondition)
@@ -54,7 +54,7 @@ extension POGOProtos_Settings_Master_WeatherAffinity: SwiftProtobuf.Message, Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.weatherCondition != .none {
       try visitor.visitSingularEnumField(value: self.weatherCondition, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Settings_Master_WeatherAffinity: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_WeatherAffinity, rhs: POGOProtos_Settings_Master_WeatherAffinity) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_WeatherAffinity, rhs: POGOProtos_Settings_Master_WeatherAffinity) -> Bool {
     if lhs.weatherCondition != rhs.weatherCondition {return false}
     if lhs.pokemonType != rhs.pokemonType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

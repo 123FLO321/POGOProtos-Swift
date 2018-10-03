@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Player_ContactSettings {
+public struct POGOProtos_Data_Player_ContactSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var sendMarketingEmails: Bool = false
+  public var sendMarketingEmails: Bool = false
 
-  var sendPushNotifications: Bool = false
+  public var sendPushNotifications: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Data_Player_ContactSettings {
 fileprivate let _protobuf_package = "POGOProtos.Data.Player"
 
 extension POGOProtos_Data_Player_ContactSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ContactSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ContactSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "send_marketing_emails"),
     2: .standard(proto: "send_push_notifications"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.sendMarketingEmails)
@@ -54,7 +54,7 @@ extension POGOProtos_Data_Player_ContactSettings: SwiftProtobuf.Message, SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.sendMarketingEmails != false {
       try visitor.visitSingularBoolField(value: self.sendMarketingEmails, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Data_Player_ContactSettings: SwiftProtobuf.Message, SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Player_ContactSettings, rhs: POGOProtos_Data_Player_ContactSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Player_ContactSettings, rhs: POGOProtos_Data_Player_ContactSettings) -> Bool {
     if lhs.sendMarketingEmails != rhs.sendMarketingEmails {return false}
     if lhs.sendPushNotifications != rhs.sendPushNotifications {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -15,49 +15,49 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse {
+public struct POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result {
+  public var result: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var friend: [POGOProtos_Data_Friends_FriendDetails] {
+  public var friend: [POGOProtos_Data_Friends_FriendDetails] {
     get {return _storage._friend}
     set {_uniqueStorage()._friend = newValue}
   }
 
-  var friendDetailsDebugInfo: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug {
+  public var friendDetailsDebugInfo: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug {
     get {return _storage._friendDetailsDebugInfo ?? POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug()}
     set {_uniqueStorage()._friendDetailsDebugInfo = newValue}
   }
   /// Returns true if `friendDetailsDebugInfo` has been explicitly set.
-  var hasFriendDetailsDebugInfo: Bool {return _storage._friendDetailsDebugInfo != nil}
+  public var hasFriendDetailsDebugInfo: Bool {return _storage._friendDetailsDebugInfo != nil}
   /// Clears the value of `friendDetailsDebugInfo`. Subsequent reads from it will return its default value.
-  mutating func clearFriendDetailsDebugInfo() {_uniqueStorage()._friendDetailsDebugInfo = nil}
+  public mutating func clearFriendDetailsDebugInfo() {_uniqueStorage()._friendDetailsDebugInfo = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorUnknown // = 2
     case exceedsMaxPlayersPerQuery // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -67,7 +67,7 @@ struct POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -79,43 +79,43 @@ struct POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse {
 
   }
 
-  struct Debug {
+  public struct Debug {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var fetchedFromDb: Int32 = 0
+    public var fetchedFromDb: Int32 = 0
 
-    var fetchedFromFanout: Int32 = 0
+    public var fetchedFromFanout: Int32 = 0
 
-    var fetchedFromPlayerMapper: Int32 = 0
+    public var fetchedFromPlayerMapper: Int32 = 0
 
-    var fetchedFromStatusCache: Int32 = 0
+    public var fetchedFromStatusCache: Int32 = 0
 
-    var failedToFetch: Int32 = 0
+    public var failedToFetch: Int32 = 0
 
-    var calleeList: [POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.Callee] = []
+    public var calleeList: [POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.Callee] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    struct Callee {
+    public struct Callee {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
-      var calleeID: [Int32] = []
+      public var calleeID: [Int32] = []
 
-      var playerID: String = String()
+      public var playerID: String = String()
 
-      var unknownFields = SwiftProtobuf.UnknownStorage()
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-      init() {}
+      public init() {}
     }
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -139,23 +139,23 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses.Social"
 
 extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetFriendDetailsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetFriendDetailsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "friend"),
     3: .standard(proto: "friend_details_debug_info"),
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result = .unset
-    var _friend: [POGOProtos_Data_Friends_FriendDetails] = []
-    var _friendDetailsDebugInfo: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug? = nil
+    public var _result: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result = .unset
+    public var _friend: [POGOProtos_Data_Friends_FriendDetails] = []
+    public var _friendDetailsDebugInfo: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _friend = source._friend
       _friendDetailsDebugInfo = source._friendDetailsDebugInfo
@@ -169,7 +169,7 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse: Swift
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -183,7 +183,7 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse: Swift
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -198,7 +198,7 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse: Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse, rhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse, rhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -216,7 +216,7 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse: Swift
 }
 
 extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_UNKNOWN"),
@@ -225,8 +225,8 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result
 }
 
 extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.protoMessageName + ".Debug"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.protoMessageName + ".Debug"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "fetched_from_db"),
     2: .standard(proto: "fetched_from_fanout"),
     3: .standard(proto: "fetched_from_player_mapper"),
@@ -235,7 +235,7 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug:
     6: .standard(proto: "callee_list"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.fetchedFromDb)
@@ -249,7 +249,7 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug:
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.fetchedFromDb != 0 {
       try visitor.visitSingularInt32Field(value: self.fetchedFromDb, fieldNumber: 1)
     }
@@ -271,7 +271,7 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug:
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug, rhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug, rhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug) -> Bool {
     if lhs.fetchedFromDb != rhs.fetchedFromDb {return false}
     if lhs.fetchedFromFanout != rhs.fetchedFromFanout {return false}
     if lhs.fetchedFromPlayerMapper != rhs.fetchedFromPlayerMapper {return false}
@@ -284,13 +284,13 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug:
 }
 
 extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.Callee: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.protoMessageName + ".Callee"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.protoMessageName + ".Callee"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "callee_id"),
     2: .standard(proto: "player_id"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedInt32Field(value: &self.calleeID)
@@ -300,7 +300,7 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.calleeID.isEmpty {
       try visitor.visitPackedInt32Field(value: self.calleeID, fieldNumber: 1)
     }
@@ -310,7 +310,7 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.Callee, rhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.Callee) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.Callee, rhs: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug.Callee) -> Bool {
     if lhs.calleeID != rhs.calleeID {return false}
     if lhs.playerID != rhs.playerID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

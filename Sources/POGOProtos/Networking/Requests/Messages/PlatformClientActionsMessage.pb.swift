@@ -15,92 +15,92 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage {
+public struct POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken {
+  public var apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken {
     get {return _storage._apnToken ?? POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken()}
     set {_uniqueStorage()._apnToken = newValue}
   }
   /// Returns true if `apnToken` has been explicitly set.
-  var hasApnToken: Bool {return _storage._apnToken != nil}
+  public var hasApnToken: Bool {return _storage._apnToken != nil}
   /// Clears the value of `apnToken`. Subsequent reads from it will return its default value.
-  mutating func clearApnToken() {_uniqueStorage()._apnToken = nil}
+  public mutating func clearApnToken() {_uniqueStorage()._apnToken = nil}
 
-  var gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken {
+  public var gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken {
     get {return _storage._gcmToken ?? POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken()}
     set {_uniqueStorage()._gcmToken = newValue}
   }
   /// Returns true if `gcmToken` has been explicitly set.
-  var hasGcmToken: Bool {return _storage._gcmToken != nil}
+  public var hasGcmToken: Bool {return _storage._gcmToken != nil}
   /// Clears the value of `gcmToken`. Subsequent reads from it will return its default value.
-  mutating func clearGcmToken() {_uniqueStorage()._gcmToken = nil}
+  public mutating func clearGcmToken() {_uniqueStorage()._gcmToken = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct ApnToken {
+  public struct ApnToken {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var registrationID: String = String()
+    public var registrationID: String = String()
 
-    var bundleIdentifier: String = String()
+    public var bundleIdentifier: String = String()
 
-    var payloadByteSize: Int32 = 0
+    public var payloadByteSize: Int32 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct GcmToken {
+  public struct GcmToken {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var registrationID: String = String()
+    public var registrationID: String = String()
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage {
+public struct POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var notificationIds: [String] = []
+  public var notificationIds: [String] = []
 
-  var createTimestampMs: [Int64] = []
+  public var createTimestampMs: [Int64] = []
 
-  var state: POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage.NotificationState = .unsetState
+  public var state: POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage.NotificationState = .unsetState
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum NotificationState: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum NotificationState: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unsetState // = 0
     case viewed // = 1
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unsetState
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unsetState
       case 1: self = .viewed
@@ -108,7 +108,7 @@ struct POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unsetState: return 0
       case .viewed: return 1
@@ -118,7 +118,7 @@ struct POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -133,255 +133,255 @@ extension POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessag
 
 #endif  // swift(>=4.2)
 
-struct POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCategoryMessage {
+public struct POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCategoryMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var categories: [String] = []
+  public var categories: [String] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage {
+public struct POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var passcode: String = String()
+  public var passcode: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct POGOProtos_Networking_Requests_Messages_AddNewPoiMessage {
+public struct POGOProtos_Networking_Requests_Messages_AddNewPoiMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var title: String {
+  public var title: String {
     get {return _storage._title}
     set {_uniqueStorage()._title = newValue}
   }
 
-  var longDescription: String {
+  public var longDescription: String {
     get {return _storage._longDescription}
     set {_uniqueStorage()._longDescription = newValue}
   }
 
-  var imageGsFilePath: String {
+  public var imageGsFilePath: String {
     get {return _storage._imageGsFilePath}
     set {_uniqueStorage()._imageGsFilePath = newValue}
   }
 
-  var latE6: Int32 {
+  public var latE6: Int32 {
     get {return _storage._latE6}
     set {_uniqueStorage()._latE6 = newValue}
   }
 
-  var lngE6: Int32 {
+  public var lngE6: Int32 {
     get {return _storage._lngE6}
     set {_uniqueStorage()._lngE6 = newValue}
   }
 
-  var imageServingURL: String {
+  public var imageServingURL: String {
     get {return _storage._imageServingURL}
     set {_uniqueStorage()._imageServingURL = newValue}
   }
 
-  var userID: String {
+  public var userID: String {
     get {return _storage._userID}
     set {_uniqueStorage()._userID = newValue}
   }
 
-  var playerLanguage: String {
+  public var playerLanguage: String {
     get {return _storage._playerLanguage}
     set {_uniqueStorage()._playerLanguage = newValue}
   }
 
-  var gameUniqueID: String {
+  public var gameUniqueID: String {
     get {return _storage._gameUniqueID}
     set {_uniqueStorage()._gameUniqueID = newValue}
   }
 
-  var appID: String {
+  public var appID: String {
     get {return _storage._appID}
     set {_uniqueStorage()._appID = newValue}
   }
 
-  var playerReputation: POGOProtos_Data_Player_PlayerReputation {
+  public var playerReputation: POGOProtos_Data_Player_PlayerReputation {
     get {return _storage._playerReputation ?? POGOProtos_Data_Player_PlayerReputation()}
     set {_uniqueStorage()._playerReputation = newValue}
   }
   /// Returns true if `playerReputation` has been explicitly set.
-  var hasPlayerReputation: Bool {return _storage._playerReputation != nil}
+  public var hasPlayerReputation: Bool {return _storage._playerReputation != nil}
   /// Clears the value of `playerReputation`. Subsequent reads from it will return its default value.
-  mutating func clearPlayerReputation() {_uniqueStorage()._playerReputation = nil}
+  public mutating func clearPlayerReputation() {_uniqueStorage()._playerReputation = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct POGOProtos_Networking_Requests_Messages_ProxySocialActionMessage {
+public struct POGOProtos_Networking_Requests_Messages_ProxySocialActionMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var action: UInt32 = 0
+  public var action: UInt32 = 0
 
-  var host: String = String()
+  public var host: String = String()
 
-  var payload: Data = SwiftProtobuf.Internal.emptyData
+  public var payload: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct POGOProtos_Networking_Requests_Messages_GetAvailableSubmissionsMessage {
+public struct POGOProtos_Networking_Requests_Messages_GetAvailableSubmissionsMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessage {
+public struct POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken {
+  public var apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken {
     get {return _storage._apnToken ?? POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken()}
     set {_uniqueStorage()._apnToken = newValue}
   }
   /// Returns true if `apnToken` has been explicitly set.
-  var hasApnToken: Bool {return _storage._apnToken != nil}
+  public var hasApnToken: Bool {return _storage._apnToken != nil}
   /// Clears the value of `apnToken`. Subsequent reads from it will return its default value.
-  mutating func clearApnToken() {_uniqueStorage()._apnToken = nil}
+  public mutating func clearApnToken() {_uniqueStorage()._apnToken = nil}
 
-  var gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken {
+  public var gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken {
     get {return _storage._gcmToken ?? POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken()}
     set {_uniqueStorage()._gcmToken = newValue}
   }
   /// Returns true if `gcmToken` has been explicitly set.
-  var hasGcmToken: Bool {return _storage._gcmToken != nil}
+  public var hasGcmToken: Bool {return _storage._gcmToken != nil}
   /// Clears the value of `gcmToken`. Subsequent reads from it will return its default value.
-  mutating func clearGcmToken() {_uniqueStorage()._gcmToken = nil}
+  public mutating func clearGcmToken() {_uniqueStorage()._gcmToken = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-struct POGOProtos_Networking_Requests_Messages_AddLoginActionMessage {
+public struct POGOProtos_Networking_Requests_Messages_AddLoginActionMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var identityProvider: POGOProtos_Enums_IdentityProvider = .unsetIdentityProvider
+  public var identityProvider: POGOProtos_Enums_IdentityProvider = .unsetIdentityProvider
 
-  var innerMessage: Data = SwiftProtobuf.Internal.emptyData
+  public var innerMessage: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct POGOProtos_Networking_Requests_Messages_RemoveLoginActionMessage {
+public struct POGOProtos_Networking_Requests_Messages_RemoveLoginActionMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var identityProvider: POGOProtos_Enums_IdentityProvider = .unsetIdentityProvider
+  public var identityProvider: POGOProtos_Enums_IdentityProvider = .unsetIdentityProvider
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage {
+public struct POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var title: String = String()
+  public var title: String = String()
 
-  var longDescription: String = String()
+  public var longDescription: String = String()
 
-  var latE6: Int32 = 0
+  public var latE6: Int32 = 0
 
-  var lngE6: Int32 = 0
+  public var lngE6: Int32 = 0
 
-  var supportingStatement: String = String()
+  public var supportingStatement: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct POGOProtos_Networking_Requests_Messages_UploadPoiPhotoByUrlMessage {
+public struct POGOProtos_Networking_Requests_Messages_UploadPoiPhotoByUrlMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var requestID: String = String()
+  public var requestID: String = String()
 
-  var imageURL: String = String()
+  public var imageURL: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct POGOProtos_Networking_Requests_Messages_PingMessage {
+public struct POGOProtos_Networking_Requests_Messages_PingMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var responseSizeBytes: Int32 = 0
+  public var responseSizeBytes: Int32 = 0
 
-  var randomRequestBytes: String = String()
+  public var randomRequestBytes: String = String()
 
-  var useCacheForRandomRequestBytes: Bool = false
+  public var useCacheForRandomRequestBytes: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
-struct POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto {
+public struct POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var existingIdentityProvider: POGOProtos_Enums_IdentityProvider {
+  public var existingIdentityProvider: POGOProtos_Enums_IdentityProvider {
     get {return _storage._existingIdentityProvider}
     set {_uniqueStorage()._existingIdentityProvider = newValue}
   }
 
-  var newLogin: POGOProtos_Networking_Requests_Messages_AddLoginActionMessage {
+  public var newLogin: POGOProtos_Networking_Requests_Messages_AddLoginActionMessage {
     get {return _storage._newLogin ?? POGOProtos_Networking_Requests_Messages_AddLoginActionMessage()}
     set {_uniqueStorage()._newLogin = newValue}
   }
   /// Returns true if `newLogin` has been explicitly set.
-  var hasNewLogin: Bool {return _storage._newLogin != nil}
+  public var hasNewLogin: Bool {return _storage._newLogin != nil}
   /// Clears the value of `newLogin`. Subsequent reads from it will return its default value.
-  mutating func clearNewLogin() {_uniqueStorage()._newLogin = nil}
+  public mutating func clearNewLogin() {_uniqueStorage()._newLogin = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -391,21 +391,21 @@ struct POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RegisterPushNotificationMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RegisterPushNotificationMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "apn_token"),
     2: .standard(proto: "gcm_token"),
   ]
 
   fileprivate class _StorageClass {
-    var _apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken? = nil
-    var _gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken? = nil
+    public var _apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken? = nil
+    public var _gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _apnToken = source._apnToken
       _gcmToken = source._gcmToken
     }
@@ -418,7 +418,7 @@ extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessag
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -431,7 +431,7 @@ extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._apnToken {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -443,7 +443,7 @@ extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage, rhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage, rhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -460,14 +460,14 @@ extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessag
 }
 
 extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.protoMessageName + ".ApnToken"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.protoMessageName + ".ApnToken"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "registration_id"),
     2: .standard(proto: "bundle_identifier"),
     3: .standard(proto: "payload_byte_size"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.registrationID)
@@ -478,7 +478,7 @@ extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.registrationID.isEmpty {
       try visitor.visitSingularStringField(value: self.registrationID, fieldNumber: 1)
     }
@@ -491,7 +491,7 @@ extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken, rhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken, rhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken) -> Bool {
     if lhs.registrationID != rhs.registrationID {return false}
     if lhs.bundleIdentifier != rhs.bundleIdentifier {return false}
     if lhs.payloadByteSize != rhs.payloadByteSize {return false}
@@ -501,12 +501,12 @@ extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessag
 }
 
 extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.protoMessageName + ".GcmToken"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.protoMessageName + ".GcmToken"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "registration_id"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.registrationID)
@@ -515,14 +515,14 @@ extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.registrationID.isEmpty {
       try visitor.visitSingularStringField(value: self.registrationID, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken, rhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken, rhs: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken) -> Bool {
     if lhs.registrationID != rhs.registrationID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -530,14 +530,14 @@ extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessag
 }
 
 extension POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UpdateNotificationStatusMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".UpdateNotificationStatusMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "notification_ids"),
     2: .standard(proto: "create_timestamp_ms"),
     3: .same(proto: "state"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedStringField(value: &self.notificationIds)
@@ -548,7 +548,7 @@ extension POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.notificationIds.isEmpty {
       try visitor.visitRepeatedStringField(value: self.notificationIds, fieldNumber: 1)
     }
@@ -561,7 +561,7 @@ extension POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage, rhs: POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage, rhs: POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage) -> Bool {
     if lhs.notificationIds != rhs.notificationIds {return false}
     if lhs.createTimestampMs != rhs.createTimestampMs {return false}
     if lhs.state != rhs.state {return false}
@@ -571,19 +571,19 @@ extension POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessag
 }
 
 extension POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage.NotificationState: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET_STATE"),
     1: .same(proto: "VIEWED"),
   ]
 }
 
 extension POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCategoryMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".OptOutPushNotificationCategoryMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".OptOutPushNotificationCategoryMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "categories"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedStringField(value: &self.categories)
@@ -592,14 +592,14 @@ extension POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCategory
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.categories.isEmpty {
       try visitor.visitRepeatedStringField(value: self.categories, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCategoryMessage, rhs: POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCategoryMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCategoryMessage, rhs: POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCategoryMessage) -> Bool {
     if lhs.categories != rhs.categories {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -607,12 +607,12 @@ extension POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCategory
 }
 
 extension POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RedeemPasscodeMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RedeemPasscodeMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "passcode"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.passcode)
@@ -621,14 +621,14 @@ extension POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage: SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.passcode.isEmpty {
       try visitor.visitSingularStringField(value: self.passcode, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage, rhs: POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage, rhs: POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage) -> Bool {
     if lhs.passcode != rhs.passcode {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -636,8 +636,8 @@ extension POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage: SwiftPr
 }
 
 extension POGOProtos_Networking_Requests_Messages_AddNewPoiMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AddNewPoiMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".AddNewPoiMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
     2: .standard(proto: "long_description"),
     3: .standard(proto: "image_gs_file_path"),
@@ -652,23 +652,23 @@ extension POGOProtos_Networking_Requests_Messages_AddNewPoiMessage: SwiftProtobu
   ]
 
   fileprivate class _StorageClass {
-    var _title: String = String()
-    var _longDescription: String = String()
-    var _imageGsFilePath: String = String()
-    var _latE6: Int32 = 0
-    var _lngE6: Int32 = 0
-    var _imageServingURL: String = String()
-    var _userID: String = String()
-    var _playerLanguage: String = String()
-    var _gameUniqueID: String = String()
-    var _appID: String = String()
-    var _playerReputation: POGOProtos_Data_Player_PlayerReputation? = nil
+    public var _title: String = String()
+    public var _longDescription: String = String()
+    public var _imageGsFilePath: String = String()
+    public var _latE6: Int32 = 0
+    public var _lngE6: Int32 = 0
+    public var _imageServingURL: String = String()
+    public var _userID: String = String()
+    public var _playerLanguage: String = String()
+    public var _gameUniqueID: String = String()
+    public var _appID: String = String()
+    public var _playerReputation: POGOProtos_Data_Player_PlayerReputation? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _title = source._title
       _longDescription = source._longDescription
       _imageGsFilePath = source._imageGsFilePath
@@ -690,7 +690,7 @@ extension POGOProtos_Networking_Requests_Messages_AddNewPoiMessage: SwiftProtobu
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -712,7 +712,7 @@ extension POGOProtos_Networking_Requests_Messages_AddNewPoiMessage: SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._title.isEmpty {
         try visitor.visitSingularStringField(value: _storage._title, fieldNumber: 1)
@@ -751,7 +751,7 @@ extension POGOProtos_Networking_Requests_Messages_AddNewPoiMessage: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_AddNewPoiMessage, rhs: POGOProtos_Networking_Requests_Messages_AddNewPoiMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_AddNewPoiMessage, rhs: POGOProtos_Networking_Requests_Messages_AddNewPoiMessage) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -777,14 +777,14 @@ extension POGOProtos_Networking_Requests_Messages_AddNewPoiMessage: SwiftProtobu
 }
 
 extension POGOProtos_Networking_Requests_Messages_ProxySocialActionMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ProxySocialActionMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ProxySocialActionMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "action"),
     2: .same(proto: "host"),
     3: .same(proto: "payload"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt32Field(value: &self.action)
@@ -795,7 +795,7 @@ extension POGOProtos_Networking_Requests_Messages_ProxySocialActionMessage: Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.action != 0 {
       try visitor.visitSingularUInt32Field(value: self.action, fieldNumber: 1)
     }
@@ -808,7 +808,7 @@ extension POGOProtos_Networking_Requests_Messages_ProxySocialActionMessage: Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_ProxySocialActionMessage, rhs: POGOProtos_Networking_Requests_Messages_ProxySocialActionMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_ProxySocialActionMessage, rhs: POGOProtos_Networking_Requests_Messages_ProxySocialActionMessage) -> Bool {
     if lhs.action != rhs.action {return false}
     if lhs.host != rhs.host {return false}
     if lhs.payload != rhs.payload {return false}
@@ -818,40 +818,40 @@ extension POGOProtos_Networking_Requests_Messages_ProxySocialActionMessage: Swif
 }
 
 extension POGOProtos_Networking_Requests_Messages_GetAvailableSubmissionsMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetAvailableSubmissionsMessage"
-  static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+  public static let protoMessageName: String = _protobuf_package + ".GetAvailableSubmissionsMessage"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let _ = try decoder.nextFieldNumber() {
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetAvailableSubmissionsMessage, rhs: POGOProtos_Networking_Requests_Messages_GetAvailableSubmissionsMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetAvailableSubmissionsMessage, rhs: POGOProtos_Networking_Requests_Messages_GetAvailableSubmissionsMessage) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
 }
 
 extension POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PushNotificationRegistryMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PushNotificationRegistryMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "apn_token"),
     2: .standard(proto: "gcm_token"),
   ]
 
   fileprivate class _StorageClass {
-    var _apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken? = nil
-    var _gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken? = nil
+    public var _apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken? = nil
+    public var _gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _apnToken = source._apnToken
       _gcmToken = source._gcmToken
     }
@@ -864,7 +864,7 @@ extension POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessag
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -877,7 +877,7 @@ extension POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._apnToken {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -889,7 +889,7 @@ extension POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessage, rhs: POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessage, rhs: POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessage) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -906,13 +906,13 @@ extension POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessag
 }
 
 extension POGOProtos_Networking_Requests_Messages_AddLoginActionMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AddLoginActionMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".AddLoginActionMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "identity_provider"),
     2: .standard(proto: "inner_message"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.identityProvider)
@@ -922,7 +922,7 @@ extension POGOProtos_Networking_Requests_Messages_AddLoginActionMessage: SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.identityProvider != .unsetIdentityProvider {
       try visitor.visitSingularEnumField(value: self.identityProvider, fieldNumber: 1)
     }
@@ -932,7 +932,7 @@ extension POGOProtos_Networking_Requests_Messages_AddLoginActionMessage: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_AddLoginActionMessage, rhs: POGOProtos_Networking_Requests_Messages_AddLoginActionMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_AddLoginActionMessage, rhs: POGOProtos_Networking_Requests_Messages_AddLoginActionMessage) -> Bool {
     if lhs.identityProvider != rhs.identityProvider {return false}
     if lhs.innerMessage != rhs.innerMessage {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -941,12 +941,12 @@ extension POGOProtos_Networking_Requests_Messages_AddLoginActionMessage: SwiftPr
 }
 
 extension POGOProtos_Networking_Requests_Messages_RemoveLoginActionMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RemoveLoginActionMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RemoveLoginActionMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "identity_provider"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.identityProvider)
@@ -955,14 +955,14 @@ extension POGOProtos_Networking_Requests_Messages_RemoveLoginActionMessage: Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.identityProvider != .unsetIdentityProvider {
       try visitor.visitSingularEnumField(value: self.identityProvider, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_RemoveLoginActionMessage, rhs: POGOProtos_Networking_Requests_Messages_RemoveLoginActionMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_RemoveLoginActionMessage, rhs: POGOProtos_Networking_Requests_Messages_RemoveLoginActionMessage) -> Bool {
     if lhs.identityProvider != rhs.identityProvider {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -970,8 +970,8 @@ extension POGOProtos_Networking_Requests_Messages_RemoveLoginActionMessage: Swif
 }
 
 extension POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SubmitNewPoiMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".SubmitNewPoiMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "title"),
     2: .standard(proto: "long_description"),
     4: .standard(proto: "lat_e6"),
@@ -979,7 +979,7 @@ extension POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage: SwiftProt
     14: .standard(proto: "supporting_statement"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.title)
@@ -992,7 +992,7 @@ extension POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage: SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.title.isEmpty {
       try visitor.visitSingularStringField(value: self.title, fieldNumber: 1)
     }
@@ -1011,7 +1011,7 @@ extension POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage, rhs: POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage, rhs: POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage) -> Bool {
     if lhs.title != rhs.title {return false}
     if lhs.longDescription != rhs.longDescription {return false}
     if lhs.latE6 != rhs.latE6 {return false}
@@ -1023,13 +1023,13 @@ extension POGOProtos_Networking_Requests_Messages_SubmitNewPoiMessage: SwiftProt
 }
 
 extension POGOProtos_Networking_Requests_Messages_UploadPoiPhotoByUrlMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UploadPoiPhotoByUrlMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".UploadPoiPhotoByUrlMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "request_id"),
     2: .standard(proto: "image_url"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.requestID)
@@ -1039,7 +1039,7 @@ extension POGOProtos_Networking_Requests_Messages_UploadPoiPhotoByUrlMessage: Sw
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.requestID.isEmpty {
       try visitor.visitSingularStringField(value: self.requestID, fieldNumber: 1)
     }
@@ -1049,7 +1049,7 @@ extension POGOProtos_Networking_Requests_Messages_UploadPoiPhotoByUrlMessage: Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_UploadPoiPhotoByUrlMessage, rhs: POGOProtos_Networking_Requests_Messages_UploadPoiPhotoByUrlMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_UploadPoiPhotoByUrlMessage, rhs: POGOProtos_Networking_Requests_Messages_UploadPoiPhotoByUrlMessage) -> Bool {
     if lhs.requestID != rhs.requestID {return false}
     if lhs.imageURL != rhs.imageURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -1058,14 +1058,14 @@ extension POGOProtos_Networking_Requests_Messages_UploadPoiPhotoByUrlMessage: Sw
 }
 
 extension POGOProtos_Networking_Requests_Messages_PingMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PingMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PingMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "response_size_bytes"),
     2: .standard(proto: "random_request_bytes"),
     3: .standard(proto: "use_cache_for_random_request_bytes"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.responseSizeBytes)
@@ -1076,7 +1076,7 @@ extension POGOProtos_Networking_Requests_Messages_PingMessage: SwiftProtobuf.Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.responseSizeBytes != 0 {
       try visitor.visitSingularInt32Field(value: self.responseSizeBytes, fieldNumber: 1)
     }
@@ -1089,7 +1089,7 @@ extension POGOProtos_Networking_Requests_Messages_PingMessage: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_PingMessage, rhs: POGOProtos_Networking_Requests_Messages_PingMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_PingMessage, rhs: POGOProtos_Networking_Requests_Messages_PingMessage) -> Bool {
     if lhs.responseSizeBytes != rhs.responseSizeBytes {return false}
     if lhs.randomRequestBytes != rhs.randomRequestBytes {return false}
     if lhs.useCacheForRandomRequestBytes != rhs.useCacheForRandomRequestBytes {return false}
@@ -1099,21 +1099,21 @@ extension POGOProtos_Networking_Requests_Messages_PingMessage: SwiftProtobuf.Mes
 }
 
 extension POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ReplaceLoginActionProto"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ReplaceLoginActionProto"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "existing_identity_provider"),
     2: .standard(proto: "new_login"),
   ]
 
   fileprivate class _StorageClass {
-    var _existingIdentityProvider: POGOProtos_Enums_IdentityProvider = .unsetIdentityProvider
-    var _newLogin: POGOProtos_Networking_Requests_Messages_AddLoginActionMessage? = nil
+    public var _existingIdentityProvider: POGOProtos_Enums_IdentityProvider = .unsetIdentityProvider
+    public var _newLogin: POGOProtos_Networking_Requests_Messages_AddLoginActionMessage? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _existingIdentityProvider = source._existingIdentityProvider
       _newLogin = source._newLogin
     }
@@ -1126,7 +1126,7 @@ extension POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto: Swift
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -1139,7 +1139,7 @@ extension POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto: Swift
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._existingIdentityProvider != .unsetIdentityProvider {
         try visitor.visitSingularEnumField(value: _storage._existingIdentityProvider, fieldNumber: 1)
@@ -1151,7 +1151,7 @@ extension POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto: Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto, rhs: POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto, rhs: POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

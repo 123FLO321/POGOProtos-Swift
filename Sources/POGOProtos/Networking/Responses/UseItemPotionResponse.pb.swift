@@ -15,23 +15,23 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_UseItemPotionResponse {
+public struct POGOProtos_Networking_Responses_UseItemPotionResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_UseItemPotionResponse.Result = .unset
+  public var result: POGOProtos_Networking_Responses_UseItemPotionResponse.Result = .unset
 
-  var stamina: Int32 = 0
+  public var stamina: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorNoPokemon // = 2
@@ -39,11 +39,11 @@ struct POGOProtos_Networking_Responses_UseItemPotionResponse {
     case errorDeployedToFort // = 4
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -54,7 +54,7 @@ struct POGOProtos_Networking_Responses_UseItemPotionResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -67,7 +67,7 @@ struct POGOProtos_Networking_Responses_UseItemPotionResponse {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -90,13 +90,13 @@ extension POGOProtos_Networking_Responses_UseItemPotionResponse.Result: CaseIter
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_UseItemPotionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UseItemPotionResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".UseItemPotionResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "stamina"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
@@ -106,7 +106,7 @@ extension POGOProtos_Networking_Responses_UseItemPotionResponse: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.result != .unset {
       try visitor.visitSingularEnumField(value: self.result, fieldNumber: 1)
     }
@@ -116,7 +116,7 @@ extension POGOProtos_Networking_Responses_UseItemPotionResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_UseItemPotionResponse, rhs: POGOProtos_Networking_Responses_UseItemPotionResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_UseItemPotionResponse, rhs: POGOProtos_Networking_Responses_UseItemPotionResponse) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs.stamina != rhs.stamina {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -125,7 +125,7 @@ extension POGOProtos_Networking_Responses_UseItemPotionResponse: SwiftProtobuf.M
 }
 
 extension POGOProtos_Networking_Responses_UseItemPotionResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_NO_POKEMON"),

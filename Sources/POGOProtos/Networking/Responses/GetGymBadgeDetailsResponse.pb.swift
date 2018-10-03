@@ -15,41 +15,41 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse {
+public struct POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var gymBadge: POGOProtos_Data_Badge_AwardedGymBadge {
+  public var gymBadge: POGOProtos_Data_Badge_AwardedGymBadge {
     get {return _storage._gymBadge ?? POGOProtos_Data_Badge_AwardedGymBadge()}
     set {_uniqueStorage()._gymBadge = newValue}
   }
   /// Returns true if `gymBadge` has been explicitly set.
-  var hasGymBadge: Bool {return _storage._gymBadge != nil}
+  public var hasGymBadge: Bool {return _storage._gymBadge != nil}
   /// Clears the value of `gymBadge`. Subsequent reads from it will return its default value.
-  mutating func clearGymBadge() {_uniqueStorage()._gymBadge = nil}
+  public mutating func clearGymBadge() {_uniqueStorage()._gymBadge = nil}
 
-  var gymDefender: POGOProtos_Data_Gym_GymDefender {
+  public var gymDefender: POGOProtos_Data_Gym_GymDefender {
     get {return _storage._gymDefender ?? POGOProtos_Data_Gym_GymDefender()}
     set {_uniqueStorage()._gymDefender = newValue}
   }
   /// Returns true if `gymDefender` has been explicitly set.
-  var hasGymDefender: Bool {return _storage._gymDefender != nil}
+  public var hasGymDefender: Bool {return _storage._gymDefender != nil}
   /// Clears the value of `gymDefender`. Subsequent reads from it will return its default value.
-  mutating func clearGymDefender() {_uniqueStorage()._gymDefender = nil}
+  public mutating func clearGymDefender() {_uniqueStorage()._gymDefender = nil}
 
-  var success: Bool {
+  public var success: Bool {
     get {return _storage._success}
     set {_uniqueStorage()._success = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -59,23 +59,23 @@ struct POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetGymBadgeDetailsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetGymBadgeDetailsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "gym_badge"),
     2: .standard(proto: "gym_defender"),
     3: .same(proto: "success"),
   ]
 
   fileprivate class _StorageClass {
-    var _gymBadge: POGOProtos_Data_Badge_AwardedGymBadge? = nil
-    var _gymDefender: POGOProtos_Data_Gym_GymDefender? = nil
-    var _success: Bool = false
+    public var _gymBadge: POGOProtos_Data_Badge_AwardedGymBadge? = nil
+    public var _gymDefender: POGOProtos_Data_Gym_GymDefender? = nil
+    public var _success: Bool = false
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _gymBadge = source._gymBadge
       _gymDefender = source._gymDefender
       _success = source._success
@@ -89,7 +89,7 @@ extension POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse: SwiftProto
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -103,7 +103,7 @@ extension POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse: SwiftProto
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._gymBadge {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -118,7 +118,7 @@ extension POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse: SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse, rhs: POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse, rhs: POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

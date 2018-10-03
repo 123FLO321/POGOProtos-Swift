@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_Item_FortModifierAttributes {
+public struct POGOProtos_Settings_Master_Item_FortModifierAttributes {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var modifierLifetimeSeconds: Int32 = 0
+  public var modifierLifetimeSeconds: Int32 = 0
 
-  var troyDiskNumPokemonSpawned: Int32 = 0
+  public var troyDiskNumPokemonSpawned: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Settings_Master_Item_FortModifierAttributes {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master.Item"
 
 extension POGOProtos_Settings_Master_Item_FortModifierAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FortModifierAttributes"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FortModifierAttributes"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "modifier_lifetime_seconds"),
     2: .standard(proto: "troy_disk_num_pokemon_spawned"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.modifierLifetimeSeconds)
@@ -54,7 +54,7 @@ extension POGOProtos_Settings_Master_Item_FortModifierAttributes: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.modifierLifetimeSeconds != 0 {
       try visitor.visitSingularInt32Field(value: self.modifierLifetimeSeconds, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Settings_Master_Item_FortModifierAttributes: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_Item_FortModifierAttributes, rhs: POGOProtos_Settings_Master_Item_FortModifierAttributes) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Item_FortModifierAttributes, rhs: POGOProtos_Settings_Master_Item_FortModifierAttributes) -> Bool {
     if lhs.modifierLifetimeSeconds != rhs.modifierLifetimeSeconds {return false}
     if lhs.troyDiskNumPokemonSpawned != rhs.troyDiskNumPokemonSpawned {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

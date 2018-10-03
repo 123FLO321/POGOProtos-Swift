@@ -15,28 +15,28 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_Pokemon_CameraAttributes {
+public struct POGOProtos_Settings_Master_Pokemon_CameraAttributes {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var diskRadiusM: Float = 0
+  public var diskRadiusM: Float = 0
 
-  var cylinderRadiusM: Float = 0
+  public var cylinderRadiusM: Float = 0
 
-  var cylinderHeightM: Float = 0
+  public var cylinderHeightM: Float = 0
 
-  var cylinderGroundM: Float = 0
+  public var cylinderGroundM: Float = 0
 
-  var shoulderModeScale: Float = 0
+  public var shoulderModeScale: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,8 +44,8 @@ struct POGOProtos_Settings_Master_Pokemon_CameraAttributes {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master.Pokemon"
 
 extension POGOProtos_Settings_Master_Pokemon_CameraAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CameraAttributes"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CameraAttributes"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "disk_radius_m"),
     2: .standard(proto: "cylinder_radius_m"),
     3: .standard(proto: "cylinder_height_m"),
@@ -53,7 +53,7 @@ extension POGOProtos_Settings_Master_Pokemon_CameraAttributes: SwiftProtobuf.Mes
     5: .standard(proto: "shoulder_mode_scale"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.diskRadiusM)
@@ -66,7 +66,7 @@ extension POGOProtos_Settings_Master_Pokemon_CameraAttributes: SwiftProtobuf.Mes
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.diskRadiusM != 0 {
       try visitor.visitSingularFloatField(value: self.diskRadiusM, fieldNumber: 1)
     }
@@ -85,7 +85,7 @@ extension POGOProtos_Settings_Master_Pokemon_CameraAttributes: SwiftProtobuf.Mes
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_Pokemon_CameraAttributes, rhs: POGOProtos_Settings_Master_Pokemon_CameraAttributes) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Pokemon_CameraAttributes, rhs: POGOProtos_Settings_Master_Pokemon_CameraAttributes) -> Bool {
     if lhs.diskRadiusM != rhs.diskRadiusM {return false}
     if lhs.cylinderRadiusM != rhs.cylinderRadiusM {return false}
     if lhs.cylinderHeightM != rhs.cylinderHeightM {return false}

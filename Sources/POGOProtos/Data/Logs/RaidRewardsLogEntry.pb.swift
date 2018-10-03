@@ -15,38 +15,38 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Logs_RaidRewardsLogEntry {
+public struct POGOProtos_Data_Logs_RaidRewardsLogEntry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Data_Logs_RaidRewardsLogEntry.Result = .unset
+  public var result: POGOProtos_Data_Logs_RaidRewardsLogEntry.Result = .unset
 
-  var isExclusive: Bool = false
+  public var isExclusive: Bool = false
 
-  var items: [POGOProtos_Inventory_Item_ItemData] = []
+  public var items: [POGOProtos_Inventory_Item_ItemData] = []
 
-  var defaultRewards: [POGOProtos_Inventory_Item_ItemData] = []
+  public var defaultRewards: [POGOProtos_Inventory_Item_ItemData] = []
 
-  var stardust: Int32 = 0
+  public var stardust: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -54,7 +54,7 @@ struct POGOProtos_Data_Logs_RaidRewardsLogEntry {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -64,7 +64,7 @@ struct POGOProtos_Data_Logs_RaidRewardsLogEntry {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -84,8 +84,8 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry.Result: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Data.Logs"
 
 extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RaidRewardsLogEntry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RaidRewardsLogEntry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "is_exclusive"),
     3: .same(proto: "items"),
@@ -93,7 +93,7 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
     5: .same(proto: "stardust"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
@@ -106,7 +106,7 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.result != .unset {
       try visitor.visitSingularEnumField(value: self.result, fieldNumber: 1)
     }
@@ -125,7 +125,7 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Logs_RaidRewardsLogEntry, rhs: POGOProtos_Data_Logs_RaidRewardsLogEntry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Logs_RaidRewardsLogEntry, rhs: POGOProtos_Data_Logs_RaidRewardsLogEntry) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs.isExclusive != rhs.isExclusive {return false}
     if lhs.items != rhs.items {return false}
@@ -137,7 +137,7 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
 }
 
 extension POGOProtos_Data_Logs_RaidRewardsLogEntry.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
   ]

@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_IapSettings {
+public struct POGOProtos_Settings_Master_IapSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var dailyBonusCoins: Int32 = 0
+  public var dailyBonusCoins: Int32 = 0
 
-  var dailyDefenderBonusPerPokemon: [Int32] = []
+  public var dailyDefenderBonusPerPokemon: [Int32] = []
 
-  var dailyDefenderBonusMaxDefenders: Int32 = 0
+  public var dailyDefenderBonusMaxDefenders: Int32 = 0
 
-  var dailyDefenderBonusCurrency: [String] = []
+  public var dailyDefenderBonusCurrency: [String] = []
 
-  var minTimeBetweenClaimsMs: Int64 = 0
+  public var minTimeBetweenClaimsMs: Int64 = 0
 
-  var dailyBonusEnabled: Bool = false
+  public var dailyBonusEnabled: Bool = false
 
-  var dailyDefenderBonusEnabled: Bool = false
+  public var dailyDefenderBonusEnabled: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -48,8 +48,8 @@ struct POGOProtos_Settings_Master_IapSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_IapSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".IapSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".IapSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "daily_bonus_coins"),
     2: .standard(proto: "daily_defender_bonus_per_pokemon"),
     3: .standard(proto: "daily_defender_bonus_max_defenders"),
@@ -59,7 +59,7 @@ extension POGOProtos_Settings_Master_IapSettings: SwiftProtobuf.Message, SwiftPr
     7: .standard(proto: "daily_defender_bonus_enabled"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.dailyBonusCoins)
@@ -74,7 +74,7 @@ extension POGOProtos_Settings_Master_IapSettings: SwiftProtobuf.Message, SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.dailyBonusCoins != 0 {
       try visitor.visitSingularInt32Field(value: self.dailyBonusCoins, fieldNumber: 1)
     }
@@ -99,7 +99,7 @@ extension POGOProtos_Settings_Master_IapSettings: SwiftProtobuf.Message, SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_IapSettings, rhs: POGOProtos_Settings_Master_IapSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_IapSettings, rhs: POGOProtos_Settings_Master_IapSettings) -> Bool {
     if lhs.dailyBonusCoins != rhs.dailyBonusCoins {return false}
     if lhs.dailyDefenderBonusPerPokemon != rhs.dailyDefenderBonusPerPokemon {return false}
     if lhs.dailyDefenderBonusMaxDefenders != rhs.dailyDefenderBonusMaxDefenders {return false}

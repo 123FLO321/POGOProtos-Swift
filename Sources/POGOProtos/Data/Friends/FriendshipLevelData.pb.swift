@@ -15,30 +15,30 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Friends_FriendshipLevelData {
+public struct POGOProtos_Data_Friends_FriendshipLevelData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var bucket: Int64 = 0
+  public var bucket: Int64 = 0
 
-  var pointsEarnedToday: Int32 = 0
+  public var pointsEarnedToday: Int32 = 0
 
-  var awardedFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
+  public var awardedFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
 
-  var currentFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
+  public var currentFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
 
-  var nextFriendshipMilestoneProgressPercentage: Double = 0
+  public var nextFriendshipMilestoneProgressPercentage: Double = 0
 
-  var pointsTowardNextMilestone: Int32 = 0
+  public var pointsTowardNextMilestone: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -46,8 +46,8 @@ struct POGOProtos_Data_Friends_FriendshipLevelData {
 fileprivate let _protobuf_package = "POGOProtos.Data.Friends"
 
 extension POGOProtos_Data_Friends_FriendshipLevelData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FriendshipLevelData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FriendshipLevelData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "bucket"),
     2: .standard(proto: "points_earned_today"),
     3: .standard(proto: "awarded_friendship_milestone"),
@@ -56,7 +56,7 @@ extension POGOProtos_Data_Friends_FriendshipLevelData: SwiftProtobuf.Message, Sw
     6: .standard(proto: "points_toward_next_milestone"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.bucket)
@@ -70,7 +70,7 @@ extension POGOProtos_Data_Friends_FriendshipLevelData: SwiftProtobuf.Message, Sw
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.bucket != 0 {
       try visitor.visitSingularInt64Field(value: self.bucket, fieldNumber: 1)
     }
@@ -92,7 +92,7 @@ extension POGOProtos_Data_Friends_FriendshipLevelData: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Friends_FriendshipLevelData, rhs: POGOProtos_Data_Friends_FriendshipLevelData) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Friends_FriendshipLevelData, rhs: POGOProtos_Data_Friends_FriendshipLevelData) -> Bool {
     if lhs.bucket != rhs.bucket {return false}
     if lhs.pointsEarnedToday != rhs.pointsEarnedToday {return false}
     if lhs.awardedFriendshipMilestone != rhs.awardedFriendshipMilestone {return false}

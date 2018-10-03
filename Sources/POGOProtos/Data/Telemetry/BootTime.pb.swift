@@ -15,33 +15,33 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_BootTime {
+public struct POGOProtos_Data_Telemetry_BootTime {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var duration: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
+  public var duration: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
     get {return _storage._duration ?? POGOProtos_Networking_Platform_Telemetry_PlatformMetricData()}
     set {_uniqueStorage()._duration = newValue}
   }
   /// Returns true if `duration` has been explicitly set.
-  var hasDuration: Bool {return _storage._duration != nil}
+  public var hasDuration: Bool {return _storage._duration != nil}
   /// Clears the value of `duration`. Subsequent reads from it will return its default value.
-  mutating func clearDuration() {_uniqueStorage()._duration = nil}
+  public mutating func clearDuration() {_uniqueStorage()._duration = nil}
 
-  var bootPhase: POGOProtos_Data_Telemetry_BootTime.BootPhase {
+  public var bootPhase: POGOProtos_Data_Telemetry_BootTime.BootPhase {
     get {return _storage._bootPhase}
     set {_uniqueStorage()._bootPhase = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum BootPhase: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum BootPhase: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case undefined // = 0
     case timeToMap // = 1
     case logoScreenTime // = 2
@@ -60,11 +60,11 @@ struct POGOProtos_Data_Telemetry_BootTime {
     case loginAuthentication // = 15
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .undefined
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .undefined
       case 1: self = .timeToMap
@@ -86,7 +86,7 @@ struct POGOProtos_Data_Telemetry_BootTime {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .undefined: return 0
       case .timeToMap: return 1
@@ -110,7 +110,7 @@ struct POGOProtos_Data_Telemetry_BootTime {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -146,21 +146,21 @@ extension POGOProtos_Data_Telemetry_BootTime.BootPhase: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_BootTime: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BootTime"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BootTime"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "duration"),
     2: .standard(proto: "boot_phase"),
   ]
 
   fileprivate class _StorageClass {
-    var _duration: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData? = nil
-    var _bootPhase: POGOProtos_Data_Telemetry_BootTime.BootPhase = .undefined
+    public var _duration: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData? = nil
+    public var _bootPhase: POGOProtos_Data_Telemetry_BootTime.BootPhase = .undefined
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _duration = source._duration
       _bootPhase = source._bootPhase
     }
@@ -173,7 +173,7 @@ extension POGOProtos_Data_Telemetry_BootTime: SwiftProtobuf.Message, SwiftProtob
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -186,7 +186,7 @@ extension POGOProtos_Data_Telemetry_BootTime: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._duration {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -198,7 +198,7 @@ extension POGOProtos_Data_Telemetry_BootTime: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_BootTime, rhs: POGOProtos_Data_Telemetry_BootTime) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_BootTime, rhs: POGOProtos_Data_Telemetry_BootTime) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -215,7 +215,7 @@ extension POGOProtos_Data_Telemetry_BootTime: SwiftProtobuf.Message, SwiftProtob
 }
 
 extension POGOProtos_Data_Telemetry_BootTime.BootPhase: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED"),
     1: .same(proto: "TIME_TO_MAP"),
     2: .same(proto: "LOGO_SCREEN_TIME"),

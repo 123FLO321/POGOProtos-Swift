@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Map_Fort_FortSponsor: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Map_Fort_FortSponsor: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case unsetSponsor // = 0
   case mcdonalds // = 1
   case pokemonStore // = 2
@@ -47,11 +47,11 @@ enum POGOProtos_Map_Fort_FortSponsor: SwiftProtobuf.Enum {
   case whisk // = 23
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unsetSponsor
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unsetSponsor
     case 1: self = .mcdonalds
@@ -81,7 +81,7 @@ enum POGOProtos_Map_Fort_FortSponsor: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unsetSponsor: return 0
     case .mcdonalds: return 1
@@ -150,7 +150,7 @@ extension POGOProtos_Map_Fort_FortSponsor: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Map_Fort_FortSponsor: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET_SPONSOR"),
     1: .same(proto: "MCDONALDS"),
     2: .same(proto: "POKEMON_STORE"),

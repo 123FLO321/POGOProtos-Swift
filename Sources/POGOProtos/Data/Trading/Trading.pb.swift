@@ -15,80 +15,80 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Trading_Trading {
+public struct POGOProtos_Data_Trading_Trading {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var state: POGOProtos_Data_Trading_Trading.TradingState {
+  public var state: POGOProtos_Data_Trading_Trading.TradingState {
     get {return _storage._state}
     set {_uniqueStorage()._state = newValue}
   }
 
-  var expirationMs: UInt64 {
+  public var expirationMs: UInt64 {
     get {return _storage._expirationMs}
     set {_uniqueStorage()._expirationMs = newValue}
   }
 
-  var player: POGOProtos_Data_Trading_TradingPlayer {
+  public var player: POGOProtos_Data_Trading_TradingPlayer {
     get {return _storage._player ?? POGOProtos_Data_Trading_TradingPlayer()}
     set {_uniqueStorage()._player = newValue}
   }
   /// Returns true if `player` has been explicitly set.
-  var hasPlayer: Bool {return _storage._player != nil}
+  public var hasPlayer: Bool {return _storage._player != nil}
   /// Clears the value of `player`. Subsequent reads from it will return its default value.
-  mutating func clearPlayer() {_uniqueStorage()._player = nil}
+  public mutating func clearPlayer() {_uniqueStorage()._player = nil}
 
-  var friend: POGOProtos_Data_Trading_TradingPlayer {
+  public var friend: POGOProtos_Data_Trading_TradingPlayer {
     get {return _storage._friend ?? POGOProtos_Data_Trading_TradingPlayer()}
     set {_uniqueStorage()._friend = newValue}
   }
   /// Returns true if `friend` has been explicitly set.
-  var hasFriend: Bool {return _storage._friend != nil}
+  public var hasFriend: Bool {return _storage._friend != nil}
   /// Clears the value of `friend`. Subsequent reads from it will return its default value.
-  mutating func clearFriend() {_uniqueStorage()._friend = nil}
+  public mutating func clearFriend() {_uniqueStorage()._friend = nil}
 
-  var tradingS2CellID: Int64 {
+  public var tradingS2CellID: Int64 {
     get {return _storage._tradingS2CellID}
     set {_uniqueStorage()._tradingS2CellID = newValue}
   }
 
-  var transactionLog: String {
+  public var transactionLog: String {
     get {return _storage._transactionLog}
     set {_uniqueStorage()._transactionLog = newValue}
   }
 
-  var friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData {
+  public var friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData {
     get {return _storage._friendshipLevelData ?? POGOProtos_Data_Friends_FriendshipLevelData()}
     set {_uniqueStorage()._friendshipLevelData = newValue}
   }
   /// Returns true if `friendshipLevelData` has been explicitly set.
-  var hasFriendshipLevelData: Bool {return _storage._friendshipLevelData != nil}
+  public var hasFriendshipLevelData: Bool {return _storage._friendshipLevelData != nil}
   /// Clears the value of `friendshipLevelData`. Subsequent reads from it will return its default value.
-  mutating func clearFriendshipLevelData() {_uniqueStorage()._friendshipLevelData = nil}
+  public mutating func clearFriendshipLevelData() {_uniqueStorage()._friendshipLevelData = nil}
 
-  var isSpecialTrading: Bool {
+  public var isSpecialTrading: Bool {
     get {return _storage._isSpecialTrading}
     set {_uniqueStorage()._isSpecialTrading = newValue}
   }
 
-  var preTradingFriendshipLevel: POGOProtos_Data_Friends_FriendshipLevelData {
+  public var preTradingFriendshipLevel: POGOProtos_Data_Friends_FriendshipLevelData {
     get {return _storage._preTradingFriendshipLevel ?? POGOProtos_Data_Friends_FriendshipLevelData()}
     set {_uniqueStorage()._preTradingFriendshipLevel = newValue}
   }
   /// Returns true if `preTradingFriendshipLevel` has been explicitly set.
-  var hasPreTradingFriendshipLevel: Bool {return _storage._preTradingFriendshipLevel != nil}
+  public var hasPreTradingFriendshipLevel: Bool {return _storage._preTradingFriendshipLevel != nil}
   /// Clears the value of `preTradingFriendshipLevel`. Subsequent reads from it will return its default value.
-  mutating func clearPreTradingFriendshipLevel() {_uniqueStorage()._preTradingFriendshipLevel = nil}
+  public mutating func clearPreTradingFriendshipLevel() {_uniqueStorage()._preTradingFriendshipLevel = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum TradingState: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum TradingState: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case primordial // = 1
     case wait // = 2
@@ -97,11 +97,11 @@ struct POGOProtos_Data_Trading_Trading {
     case finished // = 5
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .primordial
@@ -113,7 +113,7 @@ struct POGOProtos_Data_Trading_Trading {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .primordial: return 1
@@ -127,7 +127,7 @@ struct POGOProtos_Data_Trading_Trading {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -153,8 +153,8 @@ extension POGOProtos_Data_Trading_Trading.TradingState: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Data.Trading"
 
 extension POGOProtos_Data_Trading_Trading: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Trading"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Trading"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "state"),
     2: .standard(proto: "expiration_ms"),
     3: .same(proto: "player"),
@@ -167,21 +167,21 @@ extension POGOProtos_Data_Trading_Trading: SwiftProtobuf.Message, SwiftProtobuf.
   ]
 
   fileprivate class _StorageClass {
-    var _state: POGOProtos_Data_Trading_Trading.TradingState = .unset
-    var _expirationMs: UInt64 = 0
-    var _player: POGOProtos_Data_Trading_TradingPlayer? = nil
-    var _friend: POGOProtos_Data_Trading_TradingPlayer? = nil
-    var _tradingS2CellID: Int64 = 0
-    var _transactionLog: String = String()
-    var _friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
-    var _isSpecialTrading: Bool = false
-    var _preTradingFriendshipLevel: POGOProtos_Data_Friends_FriendshipLevelData? = nil
+    public var _state: POGOProtos_Data_Trading_Trading.TradingState = .unset
+    public var _expirationMs: UInt64 = 0
+    public var _player: POGOProtos_Data_Trading_TradingPlayer? = nil
+    public var _friend: POGOProtos_Data_Trading_TradingPlayer? = nil
+    public var _tradingS2CellID: Int64 = 0
+    public var _transactionLog: String = String()
+    public var _friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
+    public var _isSpecialTrading: Bool = false
+    public var _preTradingFriendshipLevel: POGOProtos_Data_Friends_FriendshipLevelData? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _state = source._state
       _expirationMs = source._expirationMs
       _player = source._player
@@ -201,7 +201,7 @@ extension POGOProtos_Data_Trading_Trading: SwiftProtobuf.Message, SwiftProtobuf.
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -221,7 +221,7 @@ extension POGOProtos_Data_Trading_Trading: SwiftProtobuf.Message, SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._state != .unset {
         try visitor.visitSingularEnumField(value: _storage._state, fieldNumber: 1)
@@ -254,7 +254,7 @@ extension POGOProtos_Data_Trading_Trading: SwiftProtobuf.Message, SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Trading_Trading, rhs: POGOProtos_Data_Trading_Trading) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Trading_Trading, rhs: POGOProtos_Data_Trading_Trading) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -278,7 +278,7 @@ extension POGOProtos_Data_Trading_Trading: SwiftProtobuf.Message, SwiftProtobuf.
 }
 
 extension POGOProtos_Data_Trading_Trading.TradingState: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "PRIMORDIAL"),
     2: .same(proto: "WAIT"),

@@ -15,37 +15,37 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_GetMapObjectsResponse {
+public struct POGOProtos_Networking_Responses_GetMapObjectsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var mapCells: [POGOProtos_Map_MapCell] = []
+  public var mapCells: [POGOProtos_Map_MapCell] = []
 
-  var status: POGOProtos_Map_MapObjectsStatus = .unsetStatus
+  public var status: POGOProtos_Map_MapObjectsStatus = .unsetStatus
 
-  var timeOfDay: POGOProtos_Networking_Responses_GetMapObjectsResponse.TimeOfDay = .none
+  public var timeOfDay: POGOProtos_Networking_Responses_GetMapObjectsResponse.TimeOfDay = .none
 
-  var clientWeather: [POGOProtos_Map_Weather_ClientWeather] = []
+  public var clientWeather: [POGOProtos_Map_Weather_ClientWeather] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum TimeOfDay: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum TimeOfDay: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case none // = 0
     case day // = 1
     case night // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .none
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .none
       case 1: self = .day
@@ -54,7 +54,7 @@ struct POGOProtos_Networking_Responses_GetMapObjectsResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .none: return 0
       case .day: return 1
@@ -65,7 +65,7 @@ struct POGOProtos_Networking_Responses_GetMapObjectsResponse {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -86,15 +86,15 @@ extension POGOProtos_Networking_Responses_GetMapObjectsResponse.TimeOfDay: CaseI
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_GetMapObjectsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetMapObjectsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetMapObjectsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "map_cells"),
     2: .same(proto: "status"),
     3: .standard(proto: "time_of_day"),
     4: .standard(proto: "client_weather"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.mapCells)
@@ -106,7 +106,7 @@ extension POGOProtos_Networking_Responses_GetMapObjectsResponse: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.mapCells.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.mapCells, fieldNumber: 1)
     }
@@ -122,7 +122,7 @@ extension POGOProtos_Networking_Responses_GetMapObjectsResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetMapObjectsResponse, rhs: POGOProtos_Networking_Responses_GetMapObjectsResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetMapObjectsResponse, rhs: POGOProtos_Networking_Responses_GetMapObjectsResponse) -> Bool {
     if lhs.mapCells != rhs.mapCells {return false}
     if lhs.status != rhs.status {return false}
     if lhs.timeOfDay != rhs.timeOfDay {return false}
@@ -133,7 +133,7 @@ extension POGOProtos_Networking_Responses_GetMapObjectsResponse: SwiftProtobuf.M
 }
 
 extension POGOProtos_Networking_Responses_GetMapObjectsResponse.TimeOfDay: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "NONE"),
     1: .same(proto: "DAY"),
     2: .same(proto: "NIGHT"),

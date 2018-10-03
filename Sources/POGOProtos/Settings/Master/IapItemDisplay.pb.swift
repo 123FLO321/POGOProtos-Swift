@@ -15,36 +15,36 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_IapItemDisplay {
+public struct POGOProtos_Settings_Master_IapItemDisplay {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var sku: String = String()
+  public var sku: String = String()
 
-  var category: POGOProtos_Enums_HoloIapItemCategory = .iapCategoryNone
+  public var category: POGOProtos_Enums_HoloIapItemCategory = .iapCategoryNone
 
-  var sortOrder: Int32 = 0
+  public var sortOrder: Int32 = 0
 
   /// repeated .POGOProtos.Inventory.Item.ItemId item_ids = 4;
   /// repeated int32 counts = 5;
-  var hidden: Bool = false
+  public var hidden: Bool = false
 
-  var sale: Bool = false
+  public var sale: Bool = false
 
-  var spriteID: String = String()
+  public var spriteID: String = String()
 
-  var title: String = String()
+  public var title: String = String()
 
-  var description_p: String = String()
+  public var description_p: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -52,8 +52,8 @@ struct POGOProtos_Settings_Master_IapItemDisplay {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".IapItemDisplay"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".IapItemDisplay"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "sku"),
     2: .same(proto: "category"),
     3: .standard(proto: "sort_order"),
@@ -64,7 +64,7 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
     10: .same(proto: "description"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.sku)
@@ -80,7 +80,7 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.sku.isEmpty {
       try visitor.visitSingularStringField(value: self.sku, fieldNumber: 1)
     }
@@ -108,7 +108,7 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_IapItemDisplay, rhs: POGOProtos_Settings_Master_IapItemDisplay) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_IapItemDisplay, rhs: POGOProtos_Settings_Master_IapItemDisplay) -> Bool {
     if lhs.sku != rhs.sku {return false}
     if lhs.category != rhs.category {return false}
     if lhs.sortOrder != rhs.sortOrder {return false}

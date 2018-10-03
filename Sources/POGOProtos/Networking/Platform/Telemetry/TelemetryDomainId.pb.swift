@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Networking_Platform_Telemetry_TelemetryDomainId: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Networking_Platform_Telemetry_TelemetryDomainId: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case telemetryNoDomainID // = 0
   case telemetryDitto // = 1
   case telemetryGame // = 2
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .telemetryNoDomainID
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .telemetryNoDomainID
     case 1: self = .telemetryDitto
@@ -39,7 +39,7 @@ enum POGOProtos_Networking_Platform_Telemetry_TelemetryDomainId: SwiftProtobuf.E
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .telemetryNoDomainID: return 0
     case .telemetryDitto: return 1
@@ -66,7 +66,7 @@ extension POGOProtos_Networking_Platform_Telemetry_TelemetryDomainId: CaseIterab
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Networking_Platform_Telemetry_TelemetryDomainId: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "TELEMETRY_NO_DOMAIN_ID"),
     1: .same(proto: "TELEMETRY_DITTO"),
     2: .same(proto: "TELEMETRY_GAME"),

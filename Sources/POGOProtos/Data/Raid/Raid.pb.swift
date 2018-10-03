@@ -15,36 +15,36 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Raid_Raid {
+public struct POGOProtos_Data_Raid_Raid {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var raidSeed: Int64 = 0
+  public var raidSeed: Int64 = 0
 
-  var startedMs: Int64 = 0
+  public var startedMs: Int64 = 0
 
-  var completedMs: Int64 = 0
+  public var completedMs: Int64 = 0
 
-  var encounterPokemonID: POGOProtos_Enums_PokemonId = .missingno
+  public var encounterPokemonID: POGOProtos_Enums_PokemonId = .missingno
 
-  var completedBattle: Bool = false
+  public var completedBattle: Bool = false
 
-  var receivedRewards: Bool = false
+  public var receivedRewards: Bool = false
 
-  var finishedEncounter: Bool = false
+  public var finishedEncounter: Bool = false
 
-  var receivedDefaultRewards: Bool = false
+  public var receivedDefaultRewards: Bool = false
 
-  var incrementedRaidFriends: Bool = false
+  public var incrementedRaidFriends: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -52,8 +52,8 @@ struct POGOProtos_Data_Raid_Raid {
 fileprivate let _protobuf_package = "POGOProtos.Data.Raid"
 
 extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".Raid"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".Raid"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "raid_seed"),
     2: .standard(proto: "started_ms"),
     3: .standard(proto: "completed_ms"),
@@ -65,7 +65,7 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
     9: .standard(proto: "incremented_raid_friends"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.raidSeed)
@@ -82,7 +82,7 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.raidSeed != 0 {
       try visitor.visitSingularInt64Field(value: self.raidSeed, fieldNumber: 1)
     }
@@ -113,7 +113,7 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Raid_Raid, rhs: POGOProtos_Data_Raid_Raid) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Raid_Raid, rhs: POGOProtos_Data_Raid_Raid) -> Bool {
     if lhs.raidSeed != rhs.raidSeed {return false}
     if lhs.startedMs != rhs.startedMs {return false}
     if lhs.completedMs != rhs.completedMs {return false}

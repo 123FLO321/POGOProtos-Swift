@@ -15,40 +15,40 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_FortSettings {
+public struct POGOProtos_Settings_FortSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var interactionRangeMeters: Double = 0
+  public var interactionRangeMeters: Double = 0
 
-  var maxTotalDeployedPokemon: Int32 = 0
+  public var maxTotalDeployedPokemon: Int32 = 0
 
-  var maxPlayerDeployedPokemon: Int32 = 0
+  public var maxPlayerDeployedPokemon: Int32 = 0
 
-  var deployStaminaMultiplier: Double = 0
+  public var deployStaminaMultiplier: Double = 0
 
-  var deployAttackMultiplier: Double = 0
+  public var deployAttackMultiplier: Double = 0
 
-  var farInteractionRangeMeters: Double = 0
+  public var farInteractionRangeMeters: Double = 0
 
-  var disableGyms: Bool = false
+  public var disableGyms: Bool = false
 
-  var maxSamePokemonAtFort: Int32 = 0
+  public var maxSamePokemonAtFort: Int32 = 0
 
-  var maxPlayerTotalDeployedPokemon: Int32 = 0
+  public var maxPlayerTotalDeployedPokemon: Int32 = 0
 
-  var enableHyperlinksInPoiDescriptions: Bool = false
+  public var enableHyperlinksInPoiDescriptions: Bool = false
 
-  var enableRightToLeftTextDisplay: Bool = false
+  public var enableRightToLeftTextDisplay: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -56,8 +56,8 @@ struct POGOProtos_Settings_FortSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings"
 
 extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FortSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FortSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "interaction_range_meters"),
     2: .standard(proto: "max_total_deployed_pokemon"),
     3: .standard(proto: "max_player_deployed_pokemon"),
@@ -71,7 +71,7 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
     11: .standard(proto: "enable_right_to_left_text_display"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularDoubleField(value: &self.interactionRangeMeters)
@@ -90,7 +90,7 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.interactionRangeMeters != 0 {
       try visitor.visitSingularDoubleField(value: self.interactionRangeMeters, fieldNumber: 1)
     }
@@ -127,7 +127,7 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_FortSettings, rhs: POGOProtos_Settings_FortSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_FortSettings, rhs: POGOProtos_Settings_FortSettings) -> Bool {
     if lhs.interactionRangeMeters != rhs.interactionRangeMeters {return false}
     if lhs.maxTotalDeployedPokemon != rhs.maxTotalDeployedPokemon {return false}
     if lhs.maxPlayerDeployedPokemon != rhs.maxPlayerDeployedPokemon {return false}

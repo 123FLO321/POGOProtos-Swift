@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_NicknamePokemonTelemetry {
+public struct POGOProtos_Data_Telemetry_NicknamePokemonTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemon: POGOProtos_Data_Telemetry_PokemonTelemetry {
+  public var pokemon: POGOProtos_Data_Telemetry_PokemonTelemetry {
     get {return _storage._pokemon ?? POGOProtos_Data_Telemetry_PokemonTelemetry()}
     set {_uniqueStorage()._pokemon = newValue}
   }
   /// Returns true if `pokemon` has been explicitly set.
-  var hasPokemon: Bool {return _storage._pokemon != nil}
+  public var hasPokemon: Bool {return _storage._pokemon != nil}
   /// Clears the value of `pokemon`. Subsequent reads from it will return its default value.
-  mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
+  public mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
 
-  var nickname: String {
+  public var nickname: String {
     get {return _storage._nickname}
     set {_uniqueStorage()._nickname = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -50,21 +50,21 @@ struct POGOProtos_Data_Telemetry_NicknamePokemonTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_NicknamePokemonTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".NicknamePokemonTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".NicknamePokemonTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "pokemon"),
     2: .same(proto: "nickname"),
   ]
 
   fileprivate class _StorageClass {
-    var _pokemon: POGOProtos_Data_Telemetry_PokemonTelemetry? = nil
-    var _nickname: String = String()
+    public var _pokemon: POGOProtos_Data_Telemetry_PokemonTelemetry? = nil
+    public var _nickname: String = String()
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _pokemon = source._pokemon
       _nickname = source._nickname
     }
@@ -77,7 +77,7 @@ extension POGOProtos_Data_Telemetry_NicknamePokemonTelemetry: SwiftProtobuf.Mess
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -90,7 +90,7 @@ extension POGOProtos_Data_Telemetry_NicknamePokemonTelemetry: SwiftProtobuf.Mess
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._pokemon {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -102,7 +102,7 @@ extension POGOProtos_Data_Telemetry_NicknamePokemonTelemetry: SwiftProtobuf.Mess
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry, rhs: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry, rhs: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

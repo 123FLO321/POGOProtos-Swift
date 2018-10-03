@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case unsetIdentityProvider // = 0
   case google // = 1
   case ptc // = 2
@@ -31,11 +31,11 @@ enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
   case superAwesome // = 7
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .unsetIdentityProvider
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .unsetIdentityProvider
     case 1: self = .google
@@ -49,7 +49,7 @@ enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .unsetIdentityProvider: return 0
     case .google: return 1
@@ -86,7 +86,7 @@ extension POGOProtos_Enums_IdentityProvider: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_IdentityProvider: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET_IDENTITY_PROVIDER"),
     1: .same(proto: "GOOGLE"),
     2: .same(proto: "PTC"),

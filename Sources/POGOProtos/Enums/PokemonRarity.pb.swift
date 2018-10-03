@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_PokemonRarity: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_PokemonRarity: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case normal // = 0
   case legendary // = 1
   case mythic // = 2
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .normal
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .normal
     case 1: self = .legendary
@@ -39,7 +39,7 @@ enum POGOProtos_Enums_PokemonRarity: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .normal: return 0
     case .legendary: return 1
@@ -66,7 +66,7 @@ extension POGOProtos_Enums_PokemonRarity: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_PokemonRarity: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "POKEMON_RARITY_NORMAL"),
     1: .same(proto: "POKEMON_RARITY_LEGENDARY"),
     2: .same(proto: "POKEMON_RARITY_MYTHIC"),

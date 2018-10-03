@@ -15,32 +15,32 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_GymBadgeGmtSettings {
+public struct POGOProtos_Settings_Master_GymBadgeGmtSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var target: [Int32] = []
+  public var target: [Int32] = []
 
-  var battleWinningScorePerDefenderCp: Float = 0
+  public var battleWinningScorePerDefenderCp: Float = 0
 
-  var gymDefendingScorePerMinute: Float = 0
+  public var gymDefendingScorePerMinute: Float = 0
 
-  var berryFeedingScore: Int32 = 0
+  public var berryFeedingScore: Int32 = 0
 
-  var pokemonDeployScore: Int32 = 0
+  public var pokemonDeployScore: Int32 = 0
 
-  var raidBattleWinningScore: Int32 = 0
+  public var raidBattleWinningScore: Int32 = 0
 
-  var loseAllBattlesScore: Int32 = 0
+  public var loseAllBattlesScore: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -48,8 +48,8 @@ struct POGOProtos_Settings_Master_GymBadgeGmtSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_GymBadgeGmtSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GymBadgeGmtSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GymBadgeGmtSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "target"),
     2: .standard(proto: "battle_winning_score_per_defender_cp"),
     3: .standard(proto: "gym_defending_score_per_minute"),
@@ -59,7 +59,7 @@ extension POGOProtos_Settings_Master_GymBadgeGmtSettings: SwiftProtobuf.Message,
     7: .standard(proto: "lose_all_battles_score"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedInt32Field(value: &self.target)
@@ -74,7 +74,7 @@ extension POGOProtos_Settings_Master_GymBadgeGmtSettings: SwiftProtobuf.Message,
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.target.isEmpty {
       try visitor.visitPackedInt32Field(value: self.target, fieldNumber: 1)
     }
@@ -99,7 +99,7 @@ extension POGOProtos_Settings_Master_GymBadgeGmtSettings: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_GymBadgeGmtSettings, rhs: POGOProtos_Settings_Master_GymBadgeGmtSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_GymBadgeGmtSettings, rhs: POGOProtos_Settings_Master_GymBadgeGmtSettings) -> Bool {
     if lhs.target != rhs.target {return false}
     if lhs.battleWinningScorePerDefenderCp != rhs.battleWinningScorePerDefenderCp {return false}
     if lhs.gymDefendingScorePerMinute != rhs.gymDefendingScorePerMinute {return false}

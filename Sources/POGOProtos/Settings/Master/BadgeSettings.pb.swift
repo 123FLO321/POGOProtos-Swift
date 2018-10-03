@@ -15,52 +15,52 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_BadgeSettings {
+public struct POGOProtos_Settings_Master_BadgeSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var badgeType: POGOProtos_Enums_BadgeType {
+  public var badgeType: POGOProtos_Enums_BadgeType {
     get {return _storage._badgeType}
     set {_uniqueStorage()._badgeType = newValue}
   }
 
-  var badgeRank: Int32 {
+  public var badgeRank: Int32 {
     get {return _storage._badgeRank}
     set {_uniqueStorage()._badgeRank = newValue}
   }
 
-  var targets: [Int32] {
+  public var targets: [Int32] {
     get {return _storage._targets}
     set {_uniqueStorage()._targets = newValue}
   }
 
-  var captureReward: [POGOProtos_Data_Badge_BadgeCaptureReward] {
+  public var captureReward: [POGOProtos_Data_Badge_BadgeCaptureReward] {
     get {return _storage._captureReward}
     set {_uniqueStorage()._captureReward = newValue}
   }
 
-  var eventBadge: Bool {
+  public var eventBadge: Bool {
     get {return _storage._eventBadge}
     set {_uniqueStorage()._eventBadge = newValue}
   }
 
-  var eventBadgeSettings: POGOProtos_Settings_Master_EventBadgeSettings {
+  public var eventBadgeSettings: POGOProtos_Settings_Master_EventBadgeSettings {
     get {return _storage._eventBadgeSettings ?? POGOProtos_Settings_Master_EventBadgeSettings()}
     set {_uniqueStorage()._eventBadgeSettings = newValue}
   }
   /// Returns true if `eventBadgeSettings` has been explicitly set.
-  var hasEventBadgeSettings: Bool {return _storage._eventBadgeSettings != nil}
+  public var hasEventBadgeSettings: Bool {return _storage._eventBadgeSettings != nil}
   /// Clears the value of `eventBadgeSettings`. Subsequent reads from it will return its default value.
-  mutating func clearEventBadgeSettings() {_uniqueStorage()._eventBadgeSettings = nil}
+  public mutating func clearEventBadgeSettings() {_uniqueStorage()._eventBadgeSettings = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -70,8 +70,8 @@ struct POGOProtos_Settings_Master_BadgeSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BadgeSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BadgeSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "badge_type"),
     2: .standard(proto: "badge_rank"),
     3: .same(proto: "targets"),
@@ -81,18 +81,18 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
   ]
 
   fileprivate class _StorageClass {
-    var _badgeType: POGOProtos_Enums_BadgeType = .badgeUnset
-    var _badgeRank: Int32 = 0
-    var _targets: [Int32] = []
-    var _captureReward: [POGOProtos_Data_Badge_BadgeCaptureReward] = []
-    var _eventBadge: Bool = false
-    var _eventBadgeSettings: POGOProtos_Settings_Master_EventBadgeSettings? = nil
+    public var _badgeType: POGOProtos_Enums_BadgeType = .badgeUnset
+    public var _badgeRank: Int32 = 0
+    public var _targets: [Int32] = []
+    public var _captureReward: [POGOProtos_Data_Badge_BadgeCaptureReward] = []
+    public var _eventBadge: Bool = false
+    public var _eventBadgeSettings: POGOProtos_Settings_Master_EventBadgeSettings? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _badgeType = source._badgeType
       _badgeRank = source._badgeRank
       _targets = source._targets
@@ -109,7 +109,7 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -126,7 +126,7 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._badgeType != .badgeUnset {
         try visitor.visitSingularEnumField(value: _storage._badgeType, fieldNumber: 1)
@@ -150,7 +150,7 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_BadgeSettings, rhs: POGOProtos_Settings_Master_BadgeSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_BadgeSettings, rhs: POGOProtos_Settings_Master_BadgeSettings) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

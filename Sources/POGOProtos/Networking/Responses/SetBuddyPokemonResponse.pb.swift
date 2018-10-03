@@ -15,33 +15,33 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
+public struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result {
+  public var result: POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var updatedBuddy: POGOProtos_Data_BuddyPokemon {
+  public var updatedBuddy: POGOProtos_Data_BuddyPokemon {
     get {return _storage._updatedBuddy ?? POGOProtos_Data_BuddyPokemon()}
     set {_uniqueStorage()._updatedBuddy = newValue}
   }
   /// Returns true if `updatedBuddy` has been explicitly set.
-  var hasUpdatedBuddy: Bool {return _storage._updatedBuddy != nil}
+  public var hasUpdatedBuddy: Bool {return _storage._updatedBuddy != nil}
   /// Clears the value of `updatedBuddy`. Subsequent reads from it will return its default value.
-  mutating func clearUpdatedBuddy() {_uniqueStorage()._updatedBuddy = nil}
+  public mutating func clearUpdatedBuddy() {_uniqueStorage()._updatedBuddy = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unest // = 0
     case success // = 1
     case errorPokemonDeployed // = 2
@@ -50,11 +50,11 @@ struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
     case errorInvalidPokemon // = 5
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unest
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unest
       case 1: self = .success
@@ -66,7 +66,7 @@ struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unest: return 0
       case .success: return 1
@@ -80,7 +80,7 @@ struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -106,21 +106,21 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result: CaseIt
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".SetBuddyPokemonResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".SetBuddyPokemonResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "updated_buddy"),
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result = .unest
-    var _updatedBuddy: POGOProtos_Data_BuddyPokemon? = nil
+    public var _result: POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result = .unest
+    public var _updatedBuddy: POGOProtos_Data_BuddyPokemon? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _updatedBuddy = source._updatedBuddy
     }
@@ -133,7 +133,7 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -146,7 +146,7 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unest {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -158,7 +158,7 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_SetBuddyPokemonResponse, rhs: POGOProtos_Networking_Responses_SetBuddyPokemonResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_SetBuddyPokemonResponse, rhs: POGOProtos_Networking_Responses_SetBuddyPokemonResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -175,7 +175,7 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
 }
 
 extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNEST"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_POKEMON_DEPLOYED"),

@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Map_Fort_FortSummary {
+public struct POGOProtos_Map_Fort_FortSummary {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var fortSummaryID: String = String()
+  public var fortSummaryID: String = String()
 
-  var lastModifiedTimestampMs: Int64 = 0
+  public var lastModifiedTimestampMs: Int64 = 0
 
-  var latitude: Double = 0
+  public var latitude: Double = 0
 
-  var longitude: Double = 0
+  public var longitude: Double = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Map_Fort_FortSummary {
 fileprivate let _protobuf_package = "POGOProtos.Map.Fort"
 
 extension POGOProtos_Map_Fort_FortSummary: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FortSummary"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FortSummary"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "fort_summary_id"),
     2: .standard(proto: "last_modified_timestamp_ms"),
     3: .same(proto: "latitude"),
     4: .same(proto: "longitude"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.fortSummaryID)
@@ -62,7 +62,7 @@ extension POGOProtos_Map_Fort_FortSummary: SwiftProtobuf.Message, SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.fortSummaryID.isEmpty {
       try visitor.visitSingularStringField(value: self.fortSummaryID, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Map_Fort_FortSummary: SwiftProtobuf.Message, SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_Fort_FortSummary, rhs: POGOProtos_Map_Fort_FortSummary) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_Fort_FortSummary, rhs: POGOProtos_Map_Fort_FortSummary) -> Bool {
     if lhs.fortSummaryID != rhs.fortSummaryID {return false}
     if lhs.lastModifiedTimestampMs != rhs.lastModifiedTimestampMs {return false}
     if lhs.latitude != rhs.latitude {return false}

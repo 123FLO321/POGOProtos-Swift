@@ -15,67 +15,67 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Quests_QuestPrecondition {
+public struct POGOProtos_Data_Quests_QuestPrecondition {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var type: POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType {
+  public var type: POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType {
     get {return _storage._type}
     set {_uniqueStorage()._type = newValue}
   }
 
-  var questTemplateID: String {
+  public var questTemplateID: String {
     get {return _storage._questTemplateID}
     set {_uniqueStorage()._questTemplateID = newValue}
   }
 
-  var level: POGOProtos_Data_Quests_QuestPrecondition.Level {
+  public var level: POGOProtos_Data_Quests_QuestPrecondition.Level {
     get {return _storage._level ?? POGOProtos_Data_Quests_QuestPrecondition.Level()}
     set {_uniqueStorage()._level = newValue}
   }
   /// Returns true if `level` has been explicitly set.
-  var hasLevel: Bool {return _storage._level != nil}
+  public var hasLevel: Bool {return _storage._level != nil}
   /// Clears the value of `level`. Subsequent reads from it will return its default value.
-  mutating func clearLevel() {_uniqueStorage()._level = nil}
+  public mutating func clearLevel() {_uniqueStorage()._level = nil}
 
-  var medal: POGOProtos_Data_Quests_QuestPrecondition.Medal {
+  public var medal: POGOProtos_Data_Quests_QuestPrecondition.Medal {
     get {return _storage._medal ?? POGOProtos_Data_Quests_QuestPrecondition.Medal()}
     set {_uniqueStorage()._medal = newValue}
   }
   /// Returns true if `medal` has been explicitly set.
-  var hasMedal: Bool {return _storage._medal != nil}
+  public var hasMedal: Bool {return _storage._medal != nil}
   /// Clears the value of `medal`. Subsequent reads from it will return its default value.
-  mutating func clearMedal() {_uniqueStorage()._medal = nil}
+  public mutating func clearMedal() {_uniqueStorage()._medal = nil}
 
-  var quests: POGOProtos_Data_Quests_QuestPrecondition.Quests {
+  public var quests: POGOProtos_Data_Quests_QuestPrecondition.Quests {
     get {return _storage._quests ?? POGOProtos_Data_Quests_QuestPrecondition.Quests()}
     set {_uniqueStorage()._quests = newValue}
   }
   /// Returns true if `quests` has been explicitly set.
-  var hasQuests: Bool {return _storage._quests != nil}
+  public var hasQuests: Bool {return _storage._quests != nil}
   /// Clears the value of `quests`. Subsequent reads from it will return its default value.
-  mutating func clearQuests() {_uniqueStorage()._quests = nil}
+  public mutating func clearQuests() {_uniqueStorage()._quests = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Operator: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Operator: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case equals // = 1
     case greaterThan // = 2
     case lessThan // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .equals
@@ -85,7 +85,7 @@ struct POGOProtos_Data_Quests_QuestPrecondition {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .equals: return 1
@@ -97,8 +97,8 @@ struct POGOProtos_Data_Quests_QuestPrecondition {
 
   }
 
-  enum QuestPreconditionType: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum QuestPreconditionType: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case questPreconditionUnset // = 0
     case questPreconditionQuest // = 1
     case questPreconditionLevel // = 2
@@ -107,11 +107,11 @@ struct POGOProtos_Data_Quests_QuestPrecondition {
     case questPreconditionExclusiveQuests // = 5
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .questPreconditionUnset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .questPreconditionUnset
       case 1: self = .questPreconditionQuest
@@ -123,7 +123,7 @@ struct POGOProtos_Data_Quests_QuestPrecondition {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .questPreconditionUnset: return 0
       case .questPreconditionQuest: return 1
@@ -137,49 +137,49 @@ struct POGOProtos_Data_Quests_QuestPrecondition {
 
   }
 
-  struct Quests {
+  public struct Quests {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var questTemplateIds: [String] = []
+    public var questTemplateIds: [String] = []
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct Level {
+  public struct Level {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var `operator`: POGOProtos_Data_Quests_QuestPrecondition.Operator = .unset
+    public var `operator`: POGOProtos_Data_Quests_QuestPrecondition.Operator = .unset
 
-    var level: Int32 = 0
+    public var level: Int32 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  struct Medal {
+  public struct Medal {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var type: POGOProtos_Enums_BadgeType = .badgeUnset
+    public var type: POGOProtos_Enums_BadgeType = .badgeUnset
 
-    var `operator`: POGOProtos_Data_Quests_QuestPrecondition.Operator = .unset
+    public var `operator`: POGOProtos_Data_Quests_QuestPrecondition.Operator = .unset
 
-    var badgeRank: Int32 = 0
+    public var badgeRank: Int32 = 0
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -215,8 +215,8 @@ extension POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType: CaseIt
 fileprivate let _protobuf_package = "POGOProtos.Data.Quests"
 
 extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QuestPrecondition"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".QuestPrecondition"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "type"),
     2: .standard(proto: "quest_template_id"),
     3: .same(proto: "level"),
@@ -225,17 +225,17 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
   ]
 
   fileprivate class _StorageClass {
-    var _type: POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType = .questPreconditionUnset
-    var _questTemplateID: String = String()
-    var _level: POGOProtos_Data_Quests_QuestPrecondition.Level? = nil
-    var _medal: POGOProtos_Data_Quests_QuestPrecondition.Medal? = nil
-    var _quests: POGOProtos_Data_Quests_QuestPrecondition.Quests? = nil
+    public var _type: POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType = .questPreconditionUnset
+    public var _questTemplateID: String = String()
+    public var _level: POGOProtos_Data_Quests_QuestPrecondition.Level? = nil
+    public var _medal: POGOProtos_Data_Quests_QuestPrecondition.Medal? = nil
+    public var _quests: POGOProtos_Data_Quests_QuestPrecondition.Quests? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _type = source._type
       _questTemplateID = source._questTemplateID
       _level = source._level
@@ -251,7 +251,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -267,7 +267,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._type != .questPreconditionUnset {
         try visitor.visitSingularEnumField(value: _storage._type, fieldNumber: 1)
@@ -288,7 +288,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition, rhs: POGOProtos_Data_Quests_QuestPrecondition) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition, rhs: POGOProtos_Data_Quests_QuestPrecondition) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -308,7 +308,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
 }
 
 extension POGOProtos_Data_Quests_QuestPrecondition.Operator: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "EQUALS"),
     2: .same(proto: "GREATER_THAN"),
@@ -317,7 +317,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition.Operator: SwiftProtobuf._Prot
 }
 
 extension POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "QUEST_PRECONDITION_UNSET"),
     1: .same(proto: "QUEST_PRECONDITION_QUEST"),
     2: .same(proto: "QUEST_PRECONDITION_LEVEL"),
@@ -328,12 +328,12 @@ extension POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType: SwiftP
 }
 
 extension POGOProtos_Data_Quests_QuestPrecondition.Quests: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestPrecondition.protoMessageName + ".Quests"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestPrecondition.protoMessageName + ".Quests"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "quest_template_ids"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedStringField(value: &self.questTemplateIds)
@@ -342,14 +342,14 @@ extension POGOProtos_Data_Quests_QuestPrecondition.Quests: SwiftProtobuf.Message
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.questTemplateIds.isEmpty {
       try visitor.visitRepeatedStringField(value: self.questTemplateIds, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.Quests, rhs: POGOProtos_Data_Quests_QuestPrecondition.Quests) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.Quests, rhs: POGOProtos_Data_Quests_QuestPrecondition.Quests) -> Bool {
     if lhs.questTemplateIds != rhs.questTemplateIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -357,13 +357,13 @@ extension POGOProtos_Data_Quests_QuestPrecondition.Quests: SwiftProtobuf.Message
 }
 
 extension POGOProtos_Data_Quests_QuestPrecondition.Level: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestPrecondition.protoMessageName + ".Level"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestPrecondition.protoMessageName + ".Level"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "operator"),
     2: .same(proto: "level"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.`operator`)
@@ -373,7 +373,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition.Level: SwiftProtobuf.Message,
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.`operator` != .unset {
       try visitor.visitSingularEnumField(value: self.`operator`, fieldNumber: 1)
     }
@@ -383,7 +383,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition.Level: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.Level, rhs: POGOProtos_Data_Quests_QuestPrecondition.Level) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.Level, rhs: POGOProtos_Data_Quests_QuestPrecondition.Level) -> Bool {
     if lhs.`operator` != rhs.`operator` {return false}
     if lhs.level != rhs.level {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -392,14 +392,14 @@ extension POGOProtos_Data_Quests_QuestPrecondition.Level: SwiftProtobuf.Message,
 }
 
 extension POGOProtos_Data_Quests_QuestPrecondition.Medal: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Data_Quests_QuestPrecondition.protoMessageName + ".Medal"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestPrecondition.protoMessageName + ".Medal"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "type"),
     2: .same(proto: "operator"),
     3: .standard(proto: "badge_rank"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.type)
@@ -410,7 +410,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition.Medal: SwiftProtobuf.Message,
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.type != .badgeUnset {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
@@ -423,7 +423,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition.Medal: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.Medal, rhs: POGOProtos_Data_Quests_QuestPrecondition.Medal) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.Medal, rhs: POGOProtos_Data_Quests_QuestPrecondition.Medal) -> Bool {
     if lhs.type != rhs.type {return false}
     if lhs.`operator` != rhs.`operator` {return false}
     if lhs.badgeRank != rhs.badgeRank {return false}

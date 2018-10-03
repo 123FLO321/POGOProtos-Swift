@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case questUnknownType // = 0
   case questFirstCatchOfTheDay // = 1
   case questFirstPokestopOfTheDay // = 2
@@ -49,11 +49,11 @@ enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
   case questEvolveIntoPokemon // = 25
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .questUnknownType
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .questUnknownType
     case 1: self = .questFirstCatchOfTheDay
@@ -85,7 +85,7 @@ enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .questUnknownType: return 0
     case .questFirstCatchOfTheDay: return 1
@@ -158,7 +158,7 @@ extension POGOProtos_Enums_QuestType: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_QuestType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "QUEST_UNKNOWN_TYPE"),
     1: .same(proto: "QUEST_FIRST_CATCH_OF_THE_DAY"),
     2: .same(proto: "QUEST_FIRST_POKESTOP_OF_THE_DAY"),

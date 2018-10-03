@@ -15,37 +15,37 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Battle_BattlePokemonInfo {
+public struct POGOProtos_Data_Battle_BattlePokemonInfo {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonData: POGOProtos_Data_PokemonData {
+  public var pokemonData: POGOProtos_Data_PokemonData {
     get {return _storage._pokemonData ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._pokemonData = newValue}
   }
   /// Returns true if `pokemonData` has been explicitly set.
-  var hasPokemonData: Bool {return _storage._pokemonData != nil}
+  public var hasPokemonData: Bool {return _storage._pokemonData != nil}
   /// Clears the value of `pokemonData`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
+  public mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
 
-  var currentHealth: Int32 {
+  public var currentHealth: Int32 {
     get {return _storage._currentHealth}
     set {_uniqueStorage()._currentHealth = newValue}
   }
 
-  var currentEnergy: Int32 {
+  public var currentEnergy: Int32 {
     get {return _storage._currentEnergy}
     set {_uniqueStorage()._currentEnergy = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -55,23 +55,23 @@ struct POGOProtos_Data_Battle_BattlePokemonInfo {
 fileprivate let _protobuf_package = "POGOProtos.Data.Battle"
 
 extension POGOProtos_Data_Battle_BattlePokemonInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BattlePokemonInfo"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BattlePokemonInfo"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_data"),
     2: .standard(proto: "current_health"),
     3: .standard(proto: "current_energy"),
   ]
 
   fileprivate class _StorageClass {
-    var _pokemonData: POGOProtos_Data_PokemonData? = nil
-    var _currentHealth: Int32 = 0
-    var _currentEnergy: Int32 = 0
+    public var _pokemonData: POGOProtos_Data_PokemonData? = nil
+    public var _currentHealth: Int32 = 0
+    public var _currentEnergy: Int32 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _pokemonData = source._pokemonData
       _currentHealth = source._currentHealth
       _currentEnergy = source._currentEnergy
@@ -85,7 +85,7 @@ extension POGOProtos_Data_Battle_BattlePokemonInfo: SwiftProtobuf.Message, Swift
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -99,7 +99,7 @@ extension POGOProtos_Data_Battle_BattlePokemonInfo: SwiftProtobuf.Message, Swift
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._pokemonData {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -114,7 +114,7 @@ extension POGOProtos_Data_Battle_BattlePokemonInfo: SwiftProtobuf.Message, Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Battle_BattlePokemonInfo, rhs: POGOProtos_Data_Battle_BattlePokemonInfo) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Battle_BattlePokemonInfo, rhs: POGOProtos_Data_Battle_BattlePokemonInfo) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

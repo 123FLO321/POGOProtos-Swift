@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Telemetry_TelemetryCommon {
+public struct POGOProtos_Networking_Platform_Telemetry_TelemetryCommon {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var timestamp: Int64 = 0
+  public var timestamp: Int64 = 0
 
-  var correlationVector: String = String()
+  public var correlationVector: String = String()
 
-  var eventID: String = String()
+  public var eventID: String = String()
 
-  var clientTimestampMs: Int64 = 0
+  public var clientTimestampMs: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Networking_Platform_Telemetry_TelemetryCommon {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Telemetry"
 
 extension POGOProtos_Networking_Platform_Telemetry_TelemetryCommon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".TelemetryCommon"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".TelemetryCommon"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "timestamp"),
     2: .standard(proto: "correlation_vector"),
     3: .standard(proto: "event_id"),
     4: .standard(proto: "client_timestamp_ms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.timestamp)
@@ -62,7 +62,7 @@ extension POGOProtos_Networking_Platform_Telemetry_TelemetryCommon: SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.timestamp != 0 {
       try visitor.visitSingularInt64Field(value: self.timestamp, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Networking_Platform_Telemetry_TelemetryCommon: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon, rhs: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon, rhs: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon) -> Bool {
     if lhs.timestamp != rhs.timestamp {return false}
     if lhs.correlationVector != rhs.correlationVector {return false}
     if lhs.eventID != rhs.eventID {return false}

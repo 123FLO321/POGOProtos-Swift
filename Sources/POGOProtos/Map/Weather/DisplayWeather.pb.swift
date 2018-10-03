@@ -15,44 +15,44 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Map_Weather_DisplayWeather {
+public struct POGOProtos_Map_Weather_DisplayWeather {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var cloudLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
+  public var cloudLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
 
-  var rainLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
+  public var rainLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
 
-  var windLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
+  public var windLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
 
-  var snowLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
+  public var snowLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
 
-  var fogLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
+  public var fogLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
 
-  var windDirection: Int32 = 0
+  public var windDirection: Int32 = 0
 
-  var specialEffectLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
+  public var specialEffectLevel: POGOProtos_Map_Weather_DisplayWeather.DisplayLevel = .level0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum DisplayLevel: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum DisplayLevel: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case level0 // = 0
     case level1 // = 1
     case level2 // = 2
     case level3 // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .level0
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .level0
       case 1: self = .level1
@@ -62,7 +62,7 @@ struct POGOProtos_Map_Weather_DisplayWeather {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .level0: return 0
       case .level1: return 1
@@ -74,7 +74,7 @@ struct POGOProtos_Map_Weather_DisplayWeather {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -96,8 +96,8 @@ extension POGOProtos_Map_Weather_DisplayWeather.DisplayLevel: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Map.Weather"
 
 extension POGOProtos_Map_Weather_DisplayWeather: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".DisplayWeather"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".DisplayWeather"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "cloud_level"),
     2: .standard(proto: "rain_level"),
     3: .standard(proto: "wind_level"),
@@ -107,7 +107,7 @@ extension POGOProtos_Map_Weather_DisplayWeather: SwiftProtobuf.Message, SwiftPro
     7: .standard(proto: "special_effect_level"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.cloudLevel)
@@ -122,7 +122,7 @@ extension POGOProtos_Map_Weather_DisplayWeather: SwiftProtobuf.Message, SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.cloudLevel != .level0 {
       try visitor.visitSingularEnumField(value: self.cloudLevel, fieldNumber: 1)
     }
@@ -147,7 +147,7 @@ extension POGOProtos_Map_Weather_DisplayWeather: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_Weather_DisplayWeather, rhs: POGOProtos_Map_Weather_DisplayWeather) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_Weather_DisplayWeather, rhs: POGOProtos_Map_Weather_DisplayWeather) -> Bool {
     if lhs.cloudLevel != rhs.cloudLevel {return false}
     if lhs.rainLevel != rhs.rainLevel {return false}
     if lhs.windLevel != rhs.windLevel {return false}
@@ -161,7 +161,7 @@ extension POGOProtos_Map_Weather_DisplayWeather: SwiftProtobuf.Message, SwiftPro
 }
 
 extension POGOProtos_Map_Weather_DisplayWeather.DisplayLevel: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "LEVEL_0"),
     1: .same(proto: "LEVEL_1"),
     2: .same(proto: "LEVEL_2"),

@@ -15,30 +15,30 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Telemetry_PlatformServerData {
+public struct POGOProtos_Networking_Platform_Telemetry_PlatformServerData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var userID: String = String()
+  public var userID: String = String()
 
-  var telemetryID: String = String()
+  public var telemetryID: String = String()
 
-  var sessionID: String = String()
+  public var sessionID: String = String()
 
-  var experimentIds: [Int32] = []
+  public var experimentIds: [Int32] = []
 
-  var eventRequestID: String = String()
+  public var eventRequestID: String = String()
 
-  var serverTimestampMs: Int64 = 0
+  public var serverTimestampMs: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -46,8 +46,8 @@ struct POGOProtos_Networking_Platform_Telemetry_PlatformServerData {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Telemetry"
 
 extension POGOProtos_Networking_Platform_Telemetry_PlatformServerData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlatformServerData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlatformServerData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "user_id"),
     2: .standard(proto: "telemetry_id"),
     3: .standard(proto: "session_id"),
@@ -56,7 +56,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformServerData: SwiftProt
     6: .standard(proto: "server_timestamp_ms"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.userID)
@@ -70,7 +70,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformServerData: SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.userID.isEmpty {
       try visitor.visitSingularStringField(value: self.userID, fieldNumber: 1)
     }
@@ -92,7 +92,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformServerData: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_PlatformServerData, rhs: POGOProtos_Networking_Platform_Telemetry_PlatformServerData) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_PlatformServerData, rhs: POGOProtos_Networking_Platform_Telemetry_PlatformServerData) -> Bool {
     if lhs.userID != rhs.userID {return false}
     if lhs.telemetryID != rhs.telemetryID {return false}
     if lhs.sessionID != rhs.sessionID {return false}

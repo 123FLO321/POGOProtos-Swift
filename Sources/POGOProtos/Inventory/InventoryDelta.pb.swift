@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Inventory_InventoryDelta {
+public struct POGOProtos_Inventory_InventoryDelta {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var originalTimestampMs: Int64 = 0
+  public var originalTimestampMs: Int64 = 0
 
-  var newTimestampMs: Int64 = 0
+  public var newTimestampMs: Int64 = 0
 
-  var inventoryItems: [POGOProtos_Inventory_InventoryItem] = []
+  public var inventoryItems: [POGOProtos_Inventory_InventoryItem] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Inventory_InventoryDelta {
 fileprivate let _protobuf_package = "POGOProtos.Inventory"
 
 extension POGOProtos_Inventory_InventoryDelta: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".InventoryDelta"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".InventoryDelta"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "original_timestamp_ms"),
     2: .standard(proto: "new_timestamp_ms"),
     3: .standard(proto: "inventory_items"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.originalTimestampMs)
@@ -58,7 +58,7 @@ extension POGOProtos_Inventory_InventoryDelta: SwiftProtobuf.Message, SwiftProto
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.originalTimestampMs != 0 {
       try visitor.visitSingularInt64Field(value: self.originalTimestampMs, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Inventory_InventoryDelta: SwiftProtobuf.Message, SwiftProto
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Inventory_InventoryDelta, rhs: POGOProtos_Inventory_InventoryDelta) -> Bool {
+  public static func ==(lhs: POGOProtos_Inventory_InventoryDelta, rhs: POGOProtos_Inventory_InventoryDelta) -> Bool {
     if lhs.originalTimestampMs != rhs.originalTimestampMs {return false}
     if lhs.newTimestampMs != rhs.newTimestampMs {return false}
     if lhs.inventoryItems != rhs.inventoryItems {return false}

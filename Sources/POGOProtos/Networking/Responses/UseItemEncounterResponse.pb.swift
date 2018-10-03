@@ -15,38 +15,38 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_UseItemEncounterResponse {
+public struct POGOProtos_Networking_Responses_UseItemEncounterResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: POGOProtos_Networking_Responses_UseItemEncounterResponse.Status {
+  public var status: POGOProtos_Networking_Responses_UseItemEncounterResponse.Status {
     get {return _storage._status}
     set {_uniqueStorage()._status = newValue}
   }
 
-  var captureProbability: POGOProtos_Data_Capture_CaptureProbability {
+  public var captureProbability: POGOProtos_Data_Capture_CaptureProbability {
     get {return _storage._captureProbability ?? POGOProtos_Data_Capture_CaptureProbability()}
     set {_uniqueStorage()._captureProbability = newValue}
   }
   /// Returns true if `captureProbability` has been explicitly set.
-  var hasCaptureProbability: Bool {return _storage._captureProbability != nil}
+  public var hasCaptureProbability: Bool {return _storage._captureProbability != nil}
   /// Clears the value of `captureProbability`. Subsequent reads from it will return its default value.
-  mutating func clearCaptureProbability() {_uniqueStorage()._captureProbability = nil}
+  public mutating func clearCaptureProbability() {_uniqueStorage()._captureProbability = nil}
 
-  var activeItem: POGOProtos_Inventory_Item_ItemId {
+  public var activeItem: POGOProtos_Inventory_Item_ItemId {
     get {return _storage._activeItem}
     set {_uniqueStorage()._activeItem = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Status: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case success // = 0
     case alreadyCompleted // = 1
     case activeItemExists // = 2
@@ -54,11 +54,11 @@ struct POGOProtos_Networking_Responses_UseItemEncounterResponse {
     case invalidItemCategory // = 4
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .success
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .success
       case 1: self = .alreadyCompleted
@@ -69,7 +69,7 @@ struct POGOProtos_Networking_Responses_UseItemEncounterResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .success: return 0
       case .alreadyCompleted: return 1
@@ -82,7 +82,7 @@ struct POGOProtos_Networking_Responses_UseItemEncounterResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -107,23 +107,23 @@ extension POGOProtos_Networking_Responses_UseItemEncounterResponse.Status: CaseI
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_UseItemEncounterResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UseItemEncounterResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".UseItemEncounterResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .standard(proto: "capture_probability"),
     3: .standard(proto: "active_item"),
   ]
 
   fileprivate class _StorageClass {
-    var _status: POGOProtos_Networking_Responses_UseItemEncounterResponse.Status = .success
-    var _captureProbability: POGOProtos_Data_Capture_CaptureProbability? = nil
-    var _activeItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    public var _status: POGOProtos_Networking_Responses_UseItemEncounterResponse.Status = .success
+    public var _captureProbability: POGOProtos_Data_Capture_CaptureProbability? = nil
+    public var _activeItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _status = source._status
       _captureProbability = source._captureProbability
       _activeItem = source._activeItem
@@ -137,7 +137,7 @@ extension POGOProtos_Networking_Responses_UseItemEncounterResponse: SwiftProtobu
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -151,7 +151,7 @@ extension POGOProtos_Networking_Responses_UseItemEncounterResponse: SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._status != .success {
         try visitor.visitSingularEnumField(value: _storage._status, fieldNumber: 1)
@@ -166,7 +166,7 @@ extension POGOProtos_Networking_Responses_UseItemEncounterResponse: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_UseItemEncounterResponse, rhs: POGOProtos_Networking_Responses_UseItemEncounterResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_UseItemEncounterResponse, rhs: POGOProtos_Networking_Responses_UseItemEncounterResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -184,7 +184,7 @@ extension POGOProtos_Networking_Responses_UseItemEncounterResponse: SwiftProtobu
 }
 
 extension POGOProtos_Networking_Responses_UseItemEncounterResponse.Status: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "SUCCESS"),
     1: .same(proto: "ALREADY_COMPLETED"),
     2: .same(proto: "ACTIVE_ITEM_EXISTS"),

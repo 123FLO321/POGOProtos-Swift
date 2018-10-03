@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_GymLevelSettings {
+public struct POGOProtos_Settings_Master_GymLevelSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var requiredExperience: [Int32] = []
+  public var requiredExperience: [Int32] = []
 
-  var leaderSlots: [Int32] = []
+  public var leaderSlots: [Int32] = []
 
-  var trainerSlots: [Int32] = []
+  public var trainerSlots: [Int32] = []
 
-  var searchRollBonus: [Int32] = []
+  public var searchRollBonus: [Int32] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Settings_Master_GymLevelSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_GymLevelSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GymLevelSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GymLevelSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "required_experience"),
     2: .standard(proto: "leader_slots"),
     3: .standard(proto: "trainer_slots"),
     4: .standard(proto: "search_roll_bonus"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedInt32Field(value: &self.requiredExperience)
@@ -62,7 +62,7 @@ extension POGOProtos_Settings_Master_GymLevelSettings: SwiftProtobuf.Message, Sw
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.requiredExperience.isEmpty {
       try visitor.visitPackedInt32Field(value: self.requiredExperience, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Settings_Master_GymLevelSettings: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_GymLevelSettings, rhs: POGOProtos_Settings_Master_GymLevelSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_GymLevelSettings, rhs: POGOProtos_Settings_Master_GymLevelSettings) -> Bool {
     if lhs.requiredExperience != rhs.requiredExperience {return false}
     if lhs.leaderSlots != rhs.leaderSlots {return false}
     if lhs.trainerSlots != rhs.trainerSlots {return false}

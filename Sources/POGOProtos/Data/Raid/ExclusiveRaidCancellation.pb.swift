@@ -15,34 +15,34 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Raid_ExclusiveRaidCancellation {
+public struct POGOProtos_Data_Raid_ExclusiveRaidCancellation {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var fortID: String = String()
+  public var fortID: String = String()
 
-  var startTimeMs: Int64 = 0
+  public var startTimeMs: Int64 = 0
 
-  var endTimeMs: Int64 = 0
+  public var endTimeMs: Int64 = 0
 
-  var imageURL: String = String()
+  public var imageURL: String = String()
 
-  var latitude: Double = 0
+  public var latitude: Double = 0
 
-  var longitude: Double = 0
+  public var longitude: Double = 0
 
-  var gymName: String = String()
+  public var gymName: String = String()
 
-  var rewards: [POGOProtos_Inventory_LootItem] = []
+  public var rewards: [POGOProtos_Inventory_LootItem] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -50,8 +50,8 @@ struct POGOProtos_Data_Raid_ExclusiveRaidCancellation {
 fileprivate let _protobuf_package = "POGOProtos.Data.Raid"
 
 extension POGOProtos_Data_Raid_ExclusiveRaidCancellation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ExclusiveRaidCancellation"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ExclusiveRaidCancellation"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "fort_id"),
     2: .standard(proto: "start_time_ms"),
     3: .standard(proto: "end_time_ms"),
@@ -62,7 +62,7 @@ extension POGOProtos_Data_Raid_ExclusiveRaidCancellation: SwiftProtobuf.Message,
     8: .same(proto: "rewards"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.fortID)
@@ -78,7 +78,7 @@ extension POGOProtos_Data_Raid_ExclusiveRaidCancellation: SwiftProtobuf.Message,
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.fortID.isEmpty {
       try visitor.visitSingularStringField(value: self.fortID, fieldNumber: 1)
     }
@@ -106,7 +106,7 @@ extension POGOProtos_Data_Raid_ExclusiveRaidCancellation: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Raid_ExclusiveRaidCancellation, rhs: POGOProtos_Data_Raid_ExclusiveRaidCancellation) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Raid_ExclusiveRaidCancellation, rhs: POGOProtos_Data_Raid_ExclusiveRaidCancellation) -> Bool {
     if lhs.fortID != rhs.fortID {return false}
     if lhs.startTimeMs != rhs.startTimeMs {return false}
     if lhs.endTimeMs != rhs.endTimeMs {return false}

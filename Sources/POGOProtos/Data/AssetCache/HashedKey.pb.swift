@@ -15,20 +15,20 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_AssetCache_HashedKey {
+public struct POGOProtos_Data_AssetCache_HashedKey {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var hashedKeyRaw: String = String()
+  public var hashedKeyRaw: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -36,12 +36,12 @@ struct POGOProtos_Data_AssetCache_HashedKey {
 fileprivate let _protobuf_package = "POGOProtos.Data.AssetCache"
 
 extension POGOProtos_Data_AssetCache_HashedKey: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".HashedKey"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".HashedKey"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "hashed_key_raw"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.hashedKeyRaw)
@@ -50,14 +50,14 @@ extension POGOProtos_Data_AssetCache_HashedKey: SwiftProtobuf.Message, SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.hashedKeyRaw.isEmpty {
       try visitor.visitSingularStringField(value: self.hashedKeyRaw, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_AssetCache_HashedKey, rhs: POGOProtos_Data_AssetCache_HashedKey) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_AssetCache_HashedKey, rhs: POGOProtos_Data_AssetCache_HashedKey) -> Bool {
     if lhs.hashedKeyRaw != rhs.hashedKeyRaw {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

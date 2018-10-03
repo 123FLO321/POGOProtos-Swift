@@ -15,57 +15,57 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_AvatarCustomizationSettings {
+public struct POGOProtos_Settings_Master_AvatarCustomizationSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var enabled: Bool = false
+  public var enabled: Bool = false
 
-  var avatarType: POGOProtos_Data_Player_PlayerAvatarType = .playerAvatarMale
+  public var avatarType: POGOProtos_Data_Player_PlayerAvatarType = .playerAvatarMale
 
-  var slot: [POGOProtos_Data_Avatar_AvatarCustomization.Slot] = []
+  public var slot: [POGOProtos_Data_Avatar_AvatarCustomization.Slot] = []
 
-  var bundleName: String = String()
+  public var bundleName: String = String()
 
-  var assetName: String = String()
+  public var assetName: String = String()
 
-  var groupName: String = String()
+  public var groupName: String = String()
 
-  var sortOrder: Int32 = 0
+  public var sortOrder: Int32 = 0
 
-  var unlockType: POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationUnlockType = .unsetUnlockType
+  public var unlockType: POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationUnlockType = .unsetUnlockType
 
-  var promoType: [POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationPromoType] = []
+  public var promoType: [POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationPromoType] = []
 
-  var unlockBadgeType: POGOProtos_Enums_BadgeType = .badgeUnset
+  public var unlockBadgeType: POGOProtos_Enums_BadgeType = .badgeUnset
 
-  var iapSku: String = String()
+  public var iapSku: String = String()
 
-  var unlockBadgeLevel: Int32 = 0
+  public var unlockBadgeLevel: Int32 = 0
 
-  var iconName: String = String()
+  public var iconName: String = String()
 
-  var unlockPlayerLevel: Int32 = 0
+  public var unlockPlayerLevel: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum AvatarCustomizationPromoType: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum AvatarCustomizationPromoType: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unsetPromoType // = 0
     case sale // = 1
     case featured // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unsetPromoType
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unsetPromoType
       case 1: self = .sale
@@ -74,7 +74,7 @@ struct POGOProtos_Settings_Master_AvatarCustomizationSettings {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unsetPromoType: return 0
       case .sale: return 1
@@ -85,8 +85,8 @@ struct POGOProtos_Settings_Master_AvatarCustomizationSettings {
 
   }
 
-  enum AvatarCustomizationUnlockType: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum AvatarCustomizationUnlockType: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unsetUnlockType // = 0
     case `default` // = 1
     case medalReward // = 2
@@ -94,11 +94,11 @@ struct POGOProtos_Settings_Master_AvatarCustomizationSettings {
     case levelReward // = 4
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unsetUnlockType
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unsetUnlockType
       case 1: self = .default
@@ -109,7 +109,7 @@ struct POGOProtos_Settings_Master_AvatarCustomizationSettings {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unsetUnlockType: return 0
       case .default: return 1
@@ -122,7 +122,7 @@ struct POGOProtos_Settings_Master_AvatarCustomizationSettings {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -154,8 +154,8 @@ extension POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomiza
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_AvatarCustomizationSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AvatarCustomizationSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".AvatarCustomizationSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "enabled"),
     2: .standard(proto: "avatar_type"),
     3: .same(proto: "slot"),
@@ -172,7 +172,7 @@ extension POGOProtos_Settings_Master_AvatarCustomizationSettings: SwiftProtobuf.
     14: .standard(proto: "unlock_player_level"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.enabled)
@@ -194,7 +194,7 @@ extension POGOProtos_Settings_Master_AvatarCustomizationSettings: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.enabled != false {
       try visitor.visitSingularBoolField(value: self.enabled, fieldNumber: 1)
     }
@@ -240,7 +240,7 @@ extension POGOProtos_Settings_Master_AvatarCustomizationSettings: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_AvatarCustomizationSettings, rhs: POGOProtos_Settings_Master_AvatarCustomizationSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_AvatarCustomizationSettings, rhs: POGOProtos_Settings_Master_AvatarCustomizationSettings) -> Bool {
     if lhs.enabled != rhs.enabled {return false}
     if lhs.avatarType != rhs.avatarType {return false}
     if lhs.slot != rhs.slot {return false}
@@ -261,7 +261,7 @@ extension POGOProtos_Settings_Master_AvatarCustomizationSettings: SwiftProtobuf.
 }
 
 extension POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationPromoType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET_PROMO_TYPE"),
     1: .same(proto: "SALE"),
     2: .same(proto: "FEATURED"),
@@ -269,7 +269,7 @@ extension POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomiza
 }
 
 extension POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationUnlockType: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET_UNLOCK_TYPE"),
     1: .same(proto: "DEFAULT"),
     2: .same(proto: "MEDAL_REWARD"),

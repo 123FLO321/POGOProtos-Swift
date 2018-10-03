@@ -15,52 +15,52 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_CatchPokemonTelemetry {
+public struct POGOProtos_Data_Telemetry_CatchPokemonTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var status: String {
+  public var status: String {
     get {return _storage._status}
     set {_uniqueStorage()._status = newValue}
   }
 
-  var encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry {
+  public var encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry {
     get {return _storage._encounterPokemonTelemetry ?? POGOProtos_Data_Telemetry_EncounterPokemonTelemetry()}
     set {_uniqueStorage()._encounterPokemonTelemetry = newValue}
   }
   /// Returns true if `encounterPokemonTelemetry` has been explicitly set.
-  var hasEncounterPokemonTelemetry: Bool {return _storage._encounterPokemonTelemetry != nil}
+  public var hasEncounterPokemonTelemetry: Bool {return _storage._encounterPokemonTelemetry != nil}
   /// Clears the value of `encounterPokemonTelemetry`. Subsequent reads from it will return its default value.
-  mutating func clearEncounterPokemonTelemetry() {_uniqueStorage()._encounterPokemonTelemetry = nil}
+  public mutating func clearEncounterPokemonTelemetry() {_uniqueStorage()._encounterPokemonTelemetry = nil}
 
-  var balltype: Int32 {
+  public var balltype: Int32 {
     get {return _storage._balltype}
     set {_uniqueStorage()._balltype = newValue}
   }
 
-  var hitGrade: Int32 {
+  public var hitGrade: Int32 {
     get {return _storage._hitGrade}
     set {_uniqueStorage()._hitGrade = newValue}
   }
 
-  var curveBall: Bool {
+  public var curveBall: Bool {
     get {return _storage._curveBall}
     set {_uniqueStorage()._curveBall = newValue}
   }
 
-  var missPercent: Double {
+  public var missPercent: Double {
     get {return _storage._missPercent}
     set {_uniqueStorage()._missPercent = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -70,8 +70,8 @@ struct POGOProtos_Data_Telemetry_CatchPokemonTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_CatchPokemonTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CatchPokemonTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CatchPokemonTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .standard(proto: "encounter_pokemon_telemetry"),
     3: .same(proto: "balltype"),
@@ -81,18 +81,18 @@ extension POGOProtos_Data_Telemetry_CatchPokemonTelemetry: SwiftProtobuf.Message
   ]
 
   fileprivate class _StorageClass {
-    var _status: String = String()
-    var _encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry? = nil
-    var _balltype: Int32 = 0
-    var _hitGrade: Int32 = 0
-    var _curveBall: Bool = false
-    var _missPercent: Double = 0
+    public var _status: String = String()
+    public var _encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry? = nil
+    public var _balltype: Int32 = 0
+    public var _hitGrade: Int32 = 0
+    public var _curveBall: Bool = false
+    public var _missPercent: Double = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _status = source._status
       _encounterPokemonTelemetry = source._encounterPokemonTelemetry
       _balltype = source._balltype
@@ -109,7 +109,7 @@ extension POGOProtos_Data_Telemetry_CatchPokemonTelemetry: SwiftProtobuf.Message
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -126,7 +126,7 @@ extension POGOProtos_Data_Telemetry_CatchPokemonTelemetry: SwiftProtobuf.Message
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._status.isEmpty {
         try visitor.visitSingularStringField(value: _storage._status, fieldNumber: 1)
@@ -150,7 +150,7 @@ extension POGOProtos_Data_Telemetry_CatchPokemonTelemetry: SwiftProtobuf.Message
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_CatchPokemonTelemetry, rhs: POGOProtos_Data_Telemetry_CatchPokemonTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_CatchPokemonTelemetry, rhs: POGOProtos_Data_Telemetry_CatchPokemonTelemetry) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

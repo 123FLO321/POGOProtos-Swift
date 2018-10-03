@@ -15,34 +15,34 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_IapItemCategoryDisplay {
+public struct POGOProtos_Settings_Master_IapItemCategoryDisplay {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var category: POGOProtos_Enums_HoloIapItemCategory = .iapCategoryNone
+  public var category: POGOProtos_Enums_HoloIapItemCategory = .iapCategoryNone
 
-  var name: String = String()
+  public var name: String = String()
 
-  var hidden: Bool = false
+  public var hidden: Bool = false
 
-  var sortOrder: Int32 = 0
+  public var sortOrder: Int32 = 0
 
-  var bannerEnabled: Bool = false
+  public var bannerEnabled: Bool = false
 
-  var bannerTitle: String = String()
+  public var bannerTitle: String = String()
 
-  var imageURL: String = String()
+  public var imageURL: String = String()
 
-  var description_p: String = String()
+  public var description_p: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -50,8 +50,8 @@ struct POGOProtos_Settings_Master_IapItemCategoryDisplay {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_IapItemCategoryDisplay: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".IapItemCategoryDisplay"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".IapItemCategoryDisplay"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "category"),
     2: .same(proto: "name"),
     3: .same(proto: "hidden"),
@@ -62,7 +62,7 @@ extension POGOProtos_Settings_Master_IapItemCategoryDisplay: SwiftProtobuf.Messa
     8: .same(proto: "description"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.category)
@@ -78,7 +78,7 @@ extension POGOProtos_Settings_Master_IapItemCategoryDisplay: SwiftProtobuf.Messa
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.category != .iapCategoryNone {
       try visitor.visitSingularEnumField(value: self.category, fieldNumber: 1)
     }
@@ -106,7 +106,7 @@ extension POGOProtos_Settings_Master_IapItemCategoryDisplay: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_IapItemCategoryDisplay, rhs: POGOProtos_Settings_Master_IapItemCategoryDisplay) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_IapItemCategoryDisplay, rhs: POGOProtos_Settings_Master_IapItemCategoryDisplay) -> Bool {
     if lhs.category != rhs.category {return false}
     if lhs.name != rhs.name {return false}
     if lhs.hidden != rhs.hidden {return false}

@@ -15,47 +15,47 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_QuestEncounterResponse {
+public struct POGOProtos_Networking_Responses_QuestEncounterResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_QuestEncounterResponse.Result {
+  public var result: POGOProtos_Networking_Responses_QuestEncounterResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var pokemon: POGOProtos_Map_Pokemon_WildPokemon {
+  public var pokemon: POGOProtos_Map_Pokemon_WildPokemon {
     get {return _storage._pokemon ?? POGOProtos_Map_Pokemon_WildPokemon()}
     set {_uniqueStorage()._pokemon = newValue}
   }
   /// Returns true if `pokemon` has been explicitly set.
-  var hasPokemon: Bool {return _storage._pokemon != nil}
+  public var hasPokemon: Bool {return _storage._pokemon != nil}
   /// Clears the value of `pokemon`. Subsequent reads from it will return its default value.
-  mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
+  public mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
 
-  var captureProbability: POGOProtos_Data_Capture_CaptureProbability {
+  public var captureProbability: POGOProtos_Data_Capture_CaptureProbability {
     get {return _storage._captureProbability ?? POGOProtos_Data_Capture_CaptureProbability()}
     set {_uniqueStorage()._captureProbability = newValue}
   }
   /// Returns true if `captureProbability` has been explicitly set.
-  var hasCaptureProbability: Bool {return _storage._captureProbability != nil}
+  public var hasCaptureProbability: Bool {return _storage._captureProbability != nil}
   /// Clears the value of `captureProbability`. Subsequent reads from it will return its default value.
-  mutating func clearCaptureProbability() {_uniqueStorage()._captureProbability = nil}
+  public mutating func clearCaptureProbability() {_uniqueStorage()._captureProbability = nil}
 
-  var activeItem: POGOProtos_Inventory_Item_ItemId {
+  public var activeItem: POGOProtos_Inventory_Item_ItemId {
     get {return _storage._activeItem}
     set {_uniqueStorage()._activeItem = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case questEncounterUnknown // = 0
     case questEncounterSuccess // = 1
     case questEncounterNotAvailable // = 2
@@ -63,11 +63,11 @@ struct POGOProtos_Networking_Responses_QuestEncounterResponse {
     case pokemonInventoryFull // = 4
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .questEncounterUnknown
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .questEncounterUnknown
       case 1: self = .questEncounterSuccess
@@ -78,7 +78,7 @@ struct POGOProtos_Networking_Responses_QuestEncounterResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .questEncounterUnknown: return 0
       case .questEncounterSuccess: return 1
@@ -91,7 +91,7 @@ struct POGOProtos_Networking_Responses_QuestEncounterResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -116,8 +116,8 @@ extension POGOProtos_Networking_Responses_QuestEncounterResponse.Result: CaseIte
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_QuestEncounterResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".QuestEncounterResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".QuestEncounterResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "pokemon"),
     3: .standard(proto: "capture_probability"),
@@ -125,16 +125,16 @@ extension POGOProtos_Networking_Responses_QuestEncounterResponse: SwiftProtobuf.
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_QuestEncounterResponse.Result = .questEncounterUnknown
-    var _pokemon: POGOProtos_Map_Pokemon_WildPokemon? = nil
-    var _captureProbability: POGOProtos_Data_Capture_CaptureProbability? = nil
-    var _activeItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    public var _result: POGOProtos_Networking_Responses_QuestEncounterResponse.Result = .questEncounterUnknown
+    public var _pokemon: POGOProtos_Map_Pokemon_WildPokemon? = nil
+    public var _captureProbability: POGOProtos_Data_Capture_CaptureProbability? = nil
+    public var _activeItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _pokemon = source._pokemon
       _captureProbability = source._captureProbability
@@ -149,7 +149,7 @@ extension POGOProtos_Networking_Responses_QuestEncounterResponse: SwiftProtobuf.
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -164,7 +164,7 @@ extension POGOProtos_Networking_Responses_QuestEncounterResponse: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .questEncounterUnknown {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -182,7 +182,7 @@ extension POGOProtos_Networking_Responses_QuestEncounterResponse: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_QuestEncounterResponse, rhs: POGOProtos_Networking_Responses_QuestEncounterResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_QuestEncounterResponse, rhs: POGOProtos_Networking_Responses_QuestEncounterResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -201,7 +201,7 @@ extension POGOProtos_Networking_Responses_QuestEncounterResponse: SwiftProtobuf.
 }
 
 extension POGOProtos_Networking_Responses_QuestEncounterResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "QUEST_ENCOUNTER_UNKNOWN"),
     1: .same(proto: "QUEST_ENCOUNTER_SUCCESS"),
     2: .same(proto: "QUEST_ENCOUNTER_NOT_AVAILABLE"),

@@ -15,52 +15,52 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse {
+public struct POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse.Result {
+  public var result: POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var pokemonData: POGOProtos_Data_PokemonData {
+  public var pokemonData: POGOProtos_Data_PokemonData {
     get {return _storage._pokemonData ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._pokemonData = newValue}
   }
   /// Returns true if `pokemonData` has been explicitly set.
-  var hasPokemonData: Bool {return _storage._pokemonData != nil}
+  public var hasPokemonData: Bool {return _storage._pokemonData != nil}
   /// Clears the value of `pokemonData`. Subsequent reads from it will return its default value.
-  mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
+  public mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
 
-  var captureAward: POGOProtos_Data_Capture_CaptureAward {
+  public var captureAward: POGOProtos_Data_Capture_CaptureAward {
     get {return _storage._captureAward ?? POGOProtos_Data_Capture_CaptureAward()}
     set {_uniqueStorage()._captureAward = newValue}
   }
   /// Returns true if `captureAward` has been explicitly set.
-  var hasCaptureAward: Bool {return _storage._captureAward != nil}
+  public var hasCaptureAward: Bool {return _storage._captureAward != nil}
   /// Clears the value of `captureAward`. Subsequent reads from it will return its default value.
-  mutating func clearCaptureAward() {_uniqueStorage()._captureAward = nil}
+  public mutating func clearCaptureAward() {_uniqueStorage()._captureAward = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorInvalidPokemon // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -69,7 +69,7 @@ struct POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -80,7 +80,7 @@ struct POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -103,23 +103,23 @@ extension POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse.Resu
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EncounterTutorialCompleteResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EncounterTutorialCompleteResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "pokemon_data"),
     3: .standard(proto: "capture_award"),
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse.Result = .unset
-    var _pokemonData: POGOProtos_Data_PokemonData? = nil
-    var _captureAward: POGOProtos_Data_Capture_CaptureAward? = nil
+    public var _result: POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse.Result = .unset
+    public var _pokemonData: POGOProtos_Data_PokemonData? = nil
+    public var _captureAward: POGOProtos_Data_Capture_CaptureAward? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _pokemonData = source._pokemonData
       _captureAward = source._captureAward
@@ -133,7 +133,7 @@ extension POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse: Swi
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -147,7 +147,7 @@ extension POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse: Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -162,7 +162,7 @@ extension POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse: Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse, rhs: POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse, rhs: POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -180,7 +180,7 @@ extension POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse: Swi
 }
 
 extension POGOProtos_Networking_Responses_EncounterTutorialCompleteResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_INVALID_POKEMON"),

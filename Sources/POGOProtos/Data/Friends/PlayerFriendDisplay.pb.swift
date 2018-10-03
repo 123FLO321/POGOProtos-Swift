@@ -15,61 +15,61 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Friends_PlayerFriendDisplay {
+public struct POGOProtos_Data_Friends_PlayerFriendDisplay {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var buddy: POGOProtos_Data_PokemonDisplay {
+  public var buddy: POGOProtos_Data_PokemonDisplay {
     get {return _storage._buddy ?? POGOProtos_Data_PokemonDisplay()}
     set {_uniqueStorage()._buddy = newValue}
   }
   /// Returns true if `buddy` has been explicitly set.
-  var hasBuddy: Bool {return _storage._buddy != nil}
+  public var hasBuddy: Bool {return _storage._buddy != nil}
   /// Clears the value of `buddy`. Subsequent reads from it will return its default value.
-  mutating func clearBuddy() {_uniqueStorage()._buddy = nil}
+  public mutating func clearBuddy() {_uniqueStorage()._buddy = nil}
 
-  var buddyDisplayPokemonID: Int32 {
+  public var buddyDisplayPokemonID: Int32 {
     get {return _storage._buddyDisplayPokemonID}
     set {_uniqueStorage()._buddyDisplayPokemonID = newValue}
   }
 
-  var buddyPokemonNickname: String {
+  public var buddyPokemonNickname: String {
     get {return _storage._buddyPokemonNickname}
     set {_uniqueStorage()._buddyPokemonNickname = newValue}
   }
 
-  var lastPokemonCaught: POGOProtos_Data_PokemonDisplay {
+  public var lastPokemonCaught: POGOProtos_Data_PokemonDisplay {
     get {return _storage._lastPokemonCaught ?? POGOProtos_Data_PokemonDisplay()}
     set {_uniqueStorage()._lastPokemonCaught = newValue}
   }
   /// Returns true if `lastPokemonCaught` has been explicitly set.
-  var hasLastPokemonCaught: Bool {return _storage._lastPokemonCaught != nil}
+  public var hasLastPokemonCaught: Bool {return _storage._lastPokemonCaught != nil}
   /// Clears the value of `lastPokemonCaught`. Subsequent reads from it will return its default value.
-  mutating func clearLastPokemonCaught() {_uniqueStorage()._lastPokemonCaught = nil}
+  public mutating func clearLastPokemonCaught() {_uniqueStorage()._lastPokemonCaught = nil}
 
-  var lastPokemonCaughtDisplayID: Int32 {
+  public var lastPokemonCaughtDisplayID: Int32 {
     get {return _storage._lastPokemonCaughtDisplayID}
     set {_uniqueStorage()._lastPokemonCaughtDisplayID = newValue}
   }
 
-  var lastPokemonCaughtTimestamp: Int64 {
+  public var lastPokemonCaughtTimestamp: Int64 {
     get {return _storage._lastPokemonCaughtTimestamp}
     set {_uniqueStorage()._lastPokemonCaughtTimestamp = newValue}
   }
 
-  var buddyCandyAwarded: Int32 {
+  public var buddyCandyAwarded: Int32 {
     get {return _storage._buddyCandyAwarded}
     set {_uniqueStorage()._buddyCandyAwarded = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -79,8 +79,8 @@ struct POGOProtos_Data_Friends_PlayerFriendDisplay {
 fileprivate let _protobuf_package = "POGOProtos.Data.Friends"
 
 extension POGOProtos_Data_Friends_PlayerFriendDisplay: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PlayerFriendDisplay"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PlayerFriendDisplay"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "buddy"),
     2: .standard(proto: "buddy_display_pokemon_id"),
     3: .standard(proto: "buddy_pokemon_nickname"),
@@ -91,19 +91,19 @@ extension POGOProtos_Data_Friends_PlayerFriendDisplay: SwiftProtobuf.Message, Sw
   ]
 
   fileprivate class _StorageClass {
-    var _buddy: POGOProtos_Data_PokemonDisplay? = nil
-    var _buddyDisplayPokemonID: Int32 = 0
-    var _buddyPokemonNickname: String = String()
-    var _lastPokemonCaught: POGOProtos_Data_PokemonDisplay? = nil
-    var _lastPokemonCaughtDisplayID: Int32 = 0
-    var _lastPokemonCaughtTimestamp: Int64 = 0
-    var _buddyCandyAwarded: Int32 = 0
+    public var _buddy: POGOProtos_Data_PokemonDisplay? = nil
+    public var _buddyDisplayPokemonID: Int32 = 0
+    public var _buddyPokemonNickname: String = String()
+    public var _lastPokemonCaught: POGOProtos_Data_PokemonDisplay? = nil
+    public var _lastPokemonCaughtDisplayID: Int32 = 0
+    public var _lastPokemonCaughtTimestamp: Int64 = 0
+    public var _buddyCandyAwarded: Int32 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _buddy = source._buddy
       _buddyDisplayPokemonID = source._buddyDisplayPokemonID
       _buddyPokemonNickname = source._buddyPokemonNickname
@@ -121,7 +121,7 @@ extension POGOProtos_Data_Friends_PlayerFriendDisplay: SwiftProtobuf.Message, Sw
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -139,7 +139,7 @@ extension POGOProtos_Data_Friends_PlayerFriendDisplay: SwiftProtobuf.Message, Sw
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._buddy {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -166,7 +166,7 @@ extension POGOProtos_Data_Friends_PlayerFriendDisplay: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Friends_PlayerFriendDisplay, rhs: POGOProtos_Data_Friends_PlayerFriendDisplay) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Friends_PlayerFriendDisplay, rhs: POGOProtos_Data_Friends_PlayerFriendDisplay) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

@@ -15,74 +15,74 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Trading_TradingPlayer {
+public struct POGOProtos_Data_Trading_TradingPlayer {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var playerID: String {
+  public var playerID: String {
     get {return _storage._playerID}
     set {_uniqueStorage()._playerID = newValue}
   }
 
-  var publicProfile: POGOProtos_Data_Player_PlayerPublicProfile {
+  public var publicProfile: POGOProtos_Data_Player_PlayerPublicProfile {
     get {return _storage._publicProfile ?? POGOProtos_Data_Player_PlayerPublicProfile()}
     set {_uniqueStorage()._publicProfile = newValue}
   }
   /// Returns true if `publicProfile` has been explicitly set.
-  var hasPublicProfile: Bool {return _storage._publicProfile != nil}
+  public var hasPublicProfile: Bool {return _storage._publicProfile != nil}
   /// Clears the value of `publicProfile`. Subsequent reads from it will return its default value.
-  mutating func clearPublicProfile() {_uniqueStorage()._publicProfile = nil}
+  public mutating func clearPublicProfile() {_uniqueStorage()._publicProfile = nil}
 
-  var excludedPokemon: [POGOProtos_Data_Trading_ExcludedPokemon] {
+  public var excludedPokemon: [POGOProtos_Data_Trading_ExcludedPokemon] {
     get {return _storage._excludedPokemon}
     set {_uniqueStorage()._excludedPokemon = newValue}
   }
 
-  var tradingPokemon: POGOProtos_Data_Trading_TradingPokemon {
+  public var tradingPokemon: POGOProtos_Data_Trading_TradingPokemon {
     get {return _storage._tradingPokemon ?? POGOProtos_Data_Trading_TradingPokemon()}
     set {_uniqueStorage()._tradingPokemon = newValue}
   }
   /// Returns true if `tradingPokemon` has been explicitly set.
-  var hasTradingPokemon: Bool {return _storage._tradingPokemon != nil}
+  public var hasTradingPokemon: Bool {return _storage._tradingPokemon != nil}
   /// Clears the value of `tradingPokemon`. Subsequent reads from it will return its default value.
-  mutating func clearTradingPokemon() {_uniqueStorage()._tradingPokemon = nil}
+  public mutating func clearTradingPokemon() {_uniqueStorage()._tradingPokemon = nil}
 
-  var bonus: POGOProtos_Inventory_Loot {
+  public var bonus: POGOProtos_Inventory_Loot {
     get {return _storage._bonus ?? POGOProtos_Inventory_Loot()}
     set {_uniqueStorage()._bonus = newValue}
   }
   /// Returns true if `bonus` has been explicitly set.
-  var hasBonus: Bool {return _storage._bonus != nil}
+  public var hasBonus: Bool {return _storage._bonus != nil}
   /// Clears the value of `bonus`. Subsequent reads from it will return its default value.
-  mutating func clearBonus() {_uniqueStorage()._bonus = nil}
+  public mutating func clearBonus() {_uniqueStorage()._bonus = nil}
 
-  var price: POGOProtos_Inventory_Loot {
+  public var price: POGOProtos_Inventory_Loot {
     get {return _storage._price ?? POGOProtos_Inventory_Loot()}
     set {_uniqueStorage()._price = newValue}
   }
   /// Returns true if `price` has been explicitly set.
-  var hasPrice: Bool {return _storage._price != nil}
+  public var hasPrice: Bool {return _storage._price != nil}
   /// Clears the value of `price`. Subsequent reads from it will return its default value.
-  mutating func clearPrice() {_uniqueStorage()._price = nil}
+  public mutating func clearPrice() {_uniqueStorage()._price = nil}
 
-  var canAffordTrading: Bool {
+  public var canAffordTrading: Bool {
     get {return _storage._canAffordTrading}
     set {_uniqueStorage()._canAffordTrading = newValue}
   }
 
-  var hasConfirmed_p: Bool {
+  public var hasConfirmed_p: Bool {
     get {return _storage._hasConfirmed_p}
     set {_uniqueStorage()._hasConfirmed_p = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -92,8 +92,8 @@ struct POGOProtos_Data_Trading_TradingPlayer {
 fileprivate let _protobuf_package = "POGOProtos.Data.Trading"
 
 extension POGOProtos_Data_Trading_TradingPlayer: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".TradingPlayer"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".TradingPlayer"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "player_id"),
     2: .standard(proto: "public_profile"),
     3: .standard(proto: "excluded_pokemon"),
@@ -105,20 +105,20 @@ extension POGOProtos_Data_Trading_TradingPlayer: SwiftProtobuf.Message, SwiftPro
   ]
 
   fileprivate class _StorageClass {
-    var _playerID: String = String()
-    var _publicProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
-    var _excludedPokemon: [POGOProtos_Data_Trading_ExcludedPokemon] = []
-    var _tradingPokemon: POGOProtos_Data_Trading_TradingPokemon? = nil
-    var _bonus: POGOProtos_Inventory_Loot? = nil
-    var _price: POGOProtos_Inventory_Loot? = nil
-    var _canAffordTrading: Bool = false
-    var _hasConfirmed_p: Bool = false
+    public var _playerID: String = String()
+    public var _publicProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
+    public var _excludedPokemon: [POGOProtos_Data_Trading_ExcludedPokemon] = []
+    public var _tradingPokemon: POGOProtos_Data_Trading_TradingPokemon? = nil
+    public var _bonus: POGOProtos_Inventory_Loot? = nil
+    public var _price: POGOProtos_Inventory_Loot? = nil
+    public var _canAffordTrading: Bool = false
+    public var _hasConfirmed_p: Bool = false
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _playerID = source._playerID
       _publicProfile = source._publicProfile
       _excludedPokemon = source._excludedPokemon
@@ -137,7 +137,7 @@ extension POGOProtos_Data_Trading_TradingPlayer: SwiftProtobuf.Message, SwiftPro
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -156,7 +156,7 @@ extension POGOProtos_Data_Trading_TradingPlayer: SwiftProtobuf.Message, SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._playerID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._playerID, fieldNumber: 1)
@@ -186,7 +186,7 @@ extension POGOProtos_Data_Trading_TradingPlayer: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Trading_TradingPlayer, rhs: POGOProtos_Data_Trading_TradingPlayer) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Trading_TradingPlayer, rhs: POGOProtos_Data_Trading_TradingPlayer) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

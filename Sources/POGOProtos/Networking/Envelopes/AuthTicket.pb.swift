@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Envelopes_AuthTicket {
+public struct POGOProtos_Networking_Envelopes_AuthTicket {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var start: Data = SwiftProtobuf.Internal.emptyData
+  public var start: Data = SwiftProtobuf.Internal.emptyData
 
-  var expireTimestampMs: UInt64 = 0
+  public var expireTimestampMs: UInt64 = 0
 
-  var end: Data = SwiftProtobuf.Internal.emptyData
+  public var end: Data = SwiftProtobuf.Internal.emptyData
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Networking_Envelopes_AuthTicket {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Envelopes"
 
 extension POGOProtos_Networking_Envelopes_AuthTicket: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".AuthTicket"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".AuthTicket"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "start"),
     2: .standard(proto: "expire_timestamp_ms"),
     3: .same(proto: "end"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBytesField(value: &self.start)
@@ -58,7 +58,7 @@ extension POGOProtos_Networking_Envelopes_AuthTicket: SwiftProtobuf.Message, Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.start.isEmpty {
       try visitor.visitSingularBytesField(value: self.start, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Networking_Envelopes_AuthTicket: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_AuthTicket, rhs: POGOProtos_Networking_Envelopes_AuthTicket) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_AuthTicket, rhs: POGOProtos_Networking_Envelopes_AuthTicket) -> Bool {
     if lhs.start != rhs.start {return false}
     if lhs.expireTimestampMs != rhs.expireTimestampMs {return false}
     if lhs.end != rhs.end {return false}

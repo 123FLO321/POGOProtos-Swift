@@ -15,43 +15,43 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_EvolvePokemonResponse {
+public struct POGOProtos_Networking_Responses_EvolvePokemonResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_EvolvePokemonResponse.Result {
+  public var result: POGOProtos_Networking_Responses_EvolvePokemonResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var evolvedPokemonData: POGOProtos_Data_PokemonData {
+  public var evolvedPokemonData: POGOProtos_Data_PokemonData {
     get {return _storage._evolvedPokemonData ?? POGOProtos_Data_PokemonData()}
     set {_uniqueStorage()._evolvedPokemonData = newValue}
   }
   /// Returns true if `evolvedPokemonData` has been explicitly set.
-  var hasEvolvedPokemonData: Bool {return _storage._evolvedPokemonData != nil}
+  public var hasEvolvedPokemonData: Bool {return _storage._evolvedPokemonData != nil}
   /// Clears the value of `evolvedPokemonData`. Subsequent reads from it will return its default value.
-  mutating func clearEvolvedPokemonData() {_uniqueStorage()._evolvedPokemonData = nil}
+  public mutating func clearEvolvedPokemonData() {_uniqueStorage()._evolvedPokemonData = nil}
 
-  var experienceAwarded: Int32 {
+  public var experienceAwarded: Int32 {
     get {return _storage._experienceAwarded}
     set {_uniqueStorage()._experienceAwarded = newValue}
   }
 
-  var candyAwarded: Int32 {
+  public var candyAwarded: Int32 {
     get {return _storage._candyAwarded}
     set {_uniqueStorage()._candyAwarded = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case failedPokemonMissing // = 2
@@ -61,11 +61,11 @@ struct POGOProtos_Networking_Responses_EvolvePokemonResponse {
     case failedInvalidItemRequirement // = 6
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -78,7 +78,7 @@ struct POGOProtos_Networking_Responses_EvolvePokemonResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -93,7 +93,7 @@ struct POGOProtos_Networking_Responses_EvolvePokemonResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -120,8 +120,8 @@ extension POGOProtos_Networking_Responses_EvolvePokemonResponse.Result: CaseIter
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_EvolvePokemonResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EvolvePokemonResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EvolvePokemonResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "evolved_pokemon_data"),
     3: .standard(proto: "experience_awarded"),
@@ -129,16 +129,16 @@ extension POGOProtos_Networking_Responses_EvolvePokemonResponse: SwiftProtobuf.M
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_EvolvePokemonResponse.Result = .unset
-    var _evolvedPokemonData: POGOProtos_Data_PokemonData? = nil
-    var _experienceAwarded: Int32 = 0
-    var _candyAwarded: Int32 = 0
+    public var _result: POGOProtos_Networking_Responses_EvolvePokemonResponse.Result = .unset
+    public var _evolvedPokemonData: POGOProtos_Data_PokemonData? = nil
+    public var _experienceAwarded: Int32 = 0
+    public var _candyAwarded: Int32 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _evolvedPokemonData = source._evolvedPokemonData
       _experienceAwarded = source._experienceAwarded
@@ -153,7 +153,7 @@ extension POGOProtos_Networking_Responses_EvolvePokemonResponse: SwiftProtobuf.M
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -168,7 +168,7 @@ extension POGOProtos_Networking_Responses_EvolvePokemonResponse: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -186,7 +186,7 @@ extension POGOProtos_Networking_Responses_EvolvePokemonResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_EvolvePokemonResponse, rhs: POGOProtos_Networking_Responses_EvolvePokemonResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_EvolvePokemonResponse, rhs: POGOProtos_Networking_Responses_EvolvePokemonResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -205,7 +205,7 @@ extension POGOProtos_Networking_Responses_EvolvePokemonResponse: SwiftProtobuf.M
 }
 
 extension POGOProtos_Networking_Responses_EvolvePokemonResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "FAILED_POKEMON_MISSING"),

@@ -15,130 +15,130 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Envelopes_RequestEnvelope {
+public struct POGOProtos_Networking_Envelopes_RequestEnvelope {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var statusCode: Int32 {
+  public var statusCode: Int32 {
     get {return _storage._statusCode}
     set {_uniqueStorage()._statusCode = newValue}
   }
 
-  var requestID: UInt64 {
+  public var requestID: UInt64 {
     get {return _storage._requestID}
     set {_uniqueStorage()._requestID = newValue}
   }
 
-  var requests: [POGOProtos_Networking_Requests_Request] {
+  public var requests: [POGOProtos_Networking_Requests_Request] {
     get {return _storage._requests}
     set {_uniqueStorage()._requests = newValue}
   }
 
-  var platformRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest] {
+  public var platformRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest] {
     get {return _storage._platformRequests}
     set {_uniqueStorage()._platformRequests = newValue}
   }
 
-  var latitude: Double {
+  public var latitude: Double {
     get {return _storage._latitude}
     set {_uniqueStorage()._latitude = newValue}
   }
 
-  var longitude: Double {
+  public var longitude: Double {
     get {return _storage._longitude}
     set {_uniqueStorage()._longitude = newValue}
   }
 
-  var accuracy: Double {
+  public var accuracy: Double {
     get {return _storage._accuracy}
     set {_uniqueStorage()._accuracy = newValue}
   }
 
-  var authInfo: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo {
+  public var authInfo: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo {
     get {return _storage._authInfo ?? POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo()}
     set {_uniqueStorage()._authInfo = newValue}
   }
   /// Returns true if `authInfo` has been explicitly set.
-  var hasAuthInfo: Bool {return _storage._authInfo != nil}
+  public var hasAuthInfo: Bool {return _storage._authInfo != nil}
   /// Clears the value of `authInfo`. Subsequent reads from it will return its default value.
-  mutating func clearAuthInfo() {_uniqueStorage()._authInfo = nil}
+  public mutating func clearAuthInfo() {_uniqueStorage()._authInfo = nil}
 
-  var authTicket: POGOProtos_Networking_Envelopes_AuthTicket {
+  public var authTicket: POGOProtos_Networking_Envelopes_AuthTicket {
     get {return _storage._authTicket ?? POGOProtos_Networking_Envelopes_AuthTicket()}
     set {_uniqueStorage()._authTicket = newValue}
   }
   /// Returns true if `authTicket` has been explicitly set.
-  var hasAuthTicket: Bool {return _storage._authTicket != nil}
+  public var hasAuthTicket: Bool {return _storage._authTicket != nil}
   /// Clears the value of `authTicket`. Subsequent reads from it will return its default value.
-  mutating func clearAuthTicket() {_uniqueStorage()._authTicket = nil}
+  public mutating func clearAuthTicket() {_uniqueStorage()._authTicket = nil}
 
-  var msSinceLastLocationfix: Int64 {
+  public var msSinceLastLocationfix: Int64 {
     get {return _storage._msSinceLastLocationfix}
     set {_uniqueStorage()._msSinceLastLocationfix = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  struct AuthInfo {
+  public struct AuthInfo {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var provider: String {
+    public var provider: String {
       get {return _storage._provider}
       set {_uniqueStorage()._provider = newValue}
     }
 
-    var token: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT {
+    public var token: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT {
       get {return _storage._token ?? POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT()}
       set {_uniqueStorage()._token = newValue}
     }
     /// Returns true if `token` has been explicitly set.
-    var hasToken: Bool {return _storage._token != nil}
+    public var hasToken: Bool {return _storage._token != nil}
     /// Clears the value of `token`. Subsequent reads from it will return its default value.
-    mutating func clearToken() {_uniqueStorage()._token = nil}
+    public mutating func clearToken() {_uniqueStorage()._token = nil}
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    struct JWT {
+    public struct JWT {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
-      var contents: String = String()
+      public var contents: String = String()
 
-      var unknown2: Int32 = 0
+      public var unknown2: Int32 = 0
 
-      var unknownFields = SwiftProtobuf.UnknownStorage()
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-      init() {}
+      public init() {}
     }
 
-    init() {}
+    public init() {}
 
     fileprivate var _storage = _StorageClass.defaultInstance
   }
 
-  struct PlatformRequest {
+  public struct PlatformRequest {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    var type: POGOProtos_Networking_Platform_PlatformRequestType = .methodUnset
+    public var type: POGOProtos_Networking_Platform_PlatformRequestType = .methodUnset
 
-    var requestMessage: Data = SwiftProtobuf.Internal.emptyData
+    public var requestMessage: Data = SwiftProtobuf.Internal.emptyData
 
-    var unknownFields = SwiftProtobuf.UnknownStorage()
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-    init() {}
+    public init() {}
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -148,8 +148,8 @@ struct POGOProtos_Networking_Envelopes_RequestEnvelope {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Envelopes"
 
 extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RequestEnvelope"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RequestEnvelope"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "status_code"),
     3: .standard(proto: "request_id"),
     4: .same(proto: "requests"),
@@ -163,22 +163,22 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
   ]
 
   fileprivate class _StorageClass {
-    var _statusCode: Int32 = 0
-    var _requestID: UInt64 = 0
-    var _requests: [POGOProtos_Networking_Requests_Request] = []
-    var _platformRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest] = []
-    var _latitude: Double = 0
-    var _longitude: Double = 0
-    var _accuracy: Double = 0
-    var _authInfo: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo? = nil
-    var _authTicket: POGOProtos_Networking_Envelopes_AuthTicket? = nil
-    var _msSinceLastLocationfix: Int64 = 0
+    public var _statusCode: Int32 = 0
+    public var _requestID: UInt64 = 0
+    public var _requests: [POGOProtos_Networking_Requests_Request] = []
+    public var _platformRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest] = []
+    public var _latitude: Double = 0
+    public var _longitude: Double = 0
+    public var _accuracy: Double = 0
+    public var _authInfo: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo? = nil
+    public var _authTicket: POGOProtos_Networking_Envelopes_AuthTicket? = nil
+    public var _msSinceLastLocationfix: Int64 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _statusCode = source._statusCode
       _requestID = source._requestID
       _requests = source._requests
@@ -199,7 +199,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -220,7 +220,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._statusCode != 0 {
         try visitor.visitSingularInt32Field(value: _storage._statusCode, fieldNumber: 1)
@@ -256,7 +256,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -281,21 +281,21 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
 }
 
 extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Envelopes_RequestEnvelope.protoMessageName + ".AuthInfo"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_RequestEnvelope.protoMessageName + ".AuthInfo"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "provider"),
     2: .same(proto: "token"),
   ]
 
   fileprivate class _StorageClass {
-    var _provider: String = String()
-    var _token: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT? = nil
+    public var _provider: String = String()
+    public var _token: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _provider = source._provider
       _token = source._token
     }
@@ -308,7 +308,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobu
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -321,7 +321,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobu
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._provider.isEmpty {
         try visitor.visitSingularStringField(value: _storage._provider, fieldNumber: 1)
@@ -333,7 +333,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobu
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -350,13 +350,13 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobu
 }
 
 extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.protoMessageName + ".JWT"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.protoMessageName + ".JWT"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "contents"),
     2: .same(proto: "unknown2"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.contents)
@@ -366,7 +366,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT: SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.contents.isEmpty {
       try visitor.visitSingularStringField(value: self.contents, fieldNumber: 1)
     }
@@ -376,7 +376,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT: SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT) -> Bool {
     if lhs.contents != rhs.contents {return false}
     if lhs.unknown2 != rhs.unknown2 {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -385,13 +385,13 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT: SwiftPro
 }
 
 extension POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = POGOProtos_Networking_Envelopes_RequestEnvelope.protoMessageName + ".PlatformRequest"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_RequestEnvelope.protoMessageName + ".PlatformRequest"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "type"),
     2: .standard(proto: "request_message"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.type)
@@ -401,7 +401,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest: Swift
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.type != .methodUnset {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
@@ -411,7 +411,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest: Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest) -> Bool {
     if lhs.type != rhs.type {return false}
     if lhs.requestMessage != rhs.requestMessage {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -15,142 +15,142 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_ItemSettings {
+public struct POGOProtos_Settings_Master_ItemSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var itemID: POGOProtos_Inventory_Item_ItemId {
+  public var itemID: POGOProtos_Inventory_Item_ItemId {
     get {return _storage._itemID}
     set {_uniqueStorage()._itemID = newValue}
   }
 
-  var itemType: POGOProtos_Inventory_Item_ItemType {
+  public var itemType: POGOProtos_Inventory_Item_ItemType {
     get {return _storage._itemType}
     set {_uniqueStorage()._itemType = newValue}
   }
 
-  var category: POGOProtos_Enums_ItemCategory {
+  public var category: POGOProtos_Enums_ItemCategory {
     get {return _storage._category}
     set {_uniqueStorage()._category = newValue}
   }
 
-  var dropFreq: Float {
+  public var dropFreq: Float {
     get {return _storage._dropFreq}
     set {_uniqueStorage()._dropFreq = newValue}
   }
 
-  var dropTrainerLevel: Int32 {
+  public var dropTrainerLevel: Int32 {
     get {return _storage._dropTrainerLevel}
     set {_uniqueStorage()._dropTrainerLevel = newValue}
   }
 
-  var pokeball: POGOProtos_Settings_Master_Item_PokeballAttributes {
+  public var pokeball: POGOProtos_Settings_Master_Item_PokeballAttributes {
     get {return _storage._pokeball ?? POGOProtos_Settings_Master_Item_PokeballAttributes()}
     set {_uniqueStorage()._pokeball = newValue}
   }
   /// Returns true if `pokeball` has been explicitly set.
-  var hasPokeball: Bool {return _storage._pokeball != nil}
+  public var hasPokeball: Bool {return _storage._pokeball != nil}
   /// Clears the value of `pokeball`. Subsequent reads from it will return its default value.
-  mutating func clearPokeball() {_uniqueStorage()._pokeball = nil}
+  public mutating func clearPokeball() {_uniqueStorage()._pokeball = nil}
 
-  var potion: POGOProtos_Settings_Master_Item_PotionAttributes {
+  public var potion: POGOProtos_Settings_Master_Item_PotionAttributes {
     get {return _storage._potion ?? POGOProtos_Settings_Master_Item_PotionAttributes()}
     set {_uniqueStorage()._potion = newValue}
   }
   /// Returns true if `potion` has been explicitly set.
-  var hasPotion: Bool {return _storage._potion != nil}
+  public var hasPotion: Bool {return _storage._potion != nil}
   /// Clears the value of `potion`. Subsequent reads from it will return its default value.
-  mutating func clearPotion() {_uniqueStorage()._potion = nil}
+  public mutating func clearPotion() {_uniqueStorage()._potion = nil}
 
-  var revive: POGOProtos_Settings_Master_Item_ReviveAttributes {
+  public var revive: POGOProtos_Settings_Master_Item_ReviveAttributes {
     get {return _storage._revive ?? POGOProtos_Settings_Master_Item_ReviveAttributes()}
     set {_uniqueStorage()._revive = newValue}
   }
   /// Returns true if `revive` has been explicitly set.
-  var hasRevive: Bool {return _storage._revive != nil}
+  public var hasRevive: Bool {return _storage._revive != nil}
   /// Clears the value of `revive`. Subsequent reads from it will return its default value.
-  mutating func clearRevive() {_uniqueStorage()._revive = nil}
+  public mutating func clearRevive() {_uniqueStorage()._revive = nil}
 
-  var battle: POGOProtos_Settings_Master_Item_BattleAttributes {
+  public var battle: POGOProtos_Settings_Master_Item_BattleAttributes {
     get {return _storage._battle ?? POGOProtos_Settings_Master_Item_BattleAttributes()}
     set {_uniqueStorage()._battle = newValue}
   }
   /// Returns true if `battle` has been explicitly set.
-  var hasBattle: Bool {return _storage._battle != nil}
+  public var hasBattle: Bool {return _storage._battle != nil}
   /// Clears the value of `battle`. Subsequent reads from it will return its default value.
-  mutating func clearBattle() {_uniqueStorage()._battle = nil}
+  public mutating func clearBattle() {_uniqueStorage()._battle = nil}
 
-  var food: POGOProtos_Settings_Master_Item_FoodAttributes {
+  public var food: POGOProtos_Settings_Master_Item_FoodAttributes {
     get {return _storage._food ?? POGOProtos_Settings_Master_Item_FoodAttributes()}
     set {_uniqueStorage()._food = newValue}
   }
   /// Returns true if `food` has been explicitly set.
-  var hasFood: Bool {return _storage._food != nil}
+  public var hasFood: Bool {return _storage._food != nil}
   /// Clears the value of `food`. Subsequent reads from it will return its default value.
-  mutating func clearFood() {_uniqueStorage()._food = nil}
+  public mutating func clearFood() {_uniqueStorage()._food = nil}
 
-  var inventoryUpgrade: POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes {
+  public var inventoryUpgrade: POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes {
     get {return _storage._inventoryUpgrade ?? POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes()}
     set {_uniqueStorage()._inventoryUpgrade = newValue}
   }
   /// Returns true if `inventoryUpgrade` has been explicitly set.
-  var hasInventoryUpgrade: Bool {return _storage._inventoryUpgrade != nil}
+  public var hasInventoryUpgrade: Bool {return _storage._inventoryUpgrade != nil}
   /// Clears the value of `inventoryUpgrade`. Subsequent reads from it will return its default value.
-  mutating func clearInventoryUpgrade() {_uniqueStorage()._inventoryUpgrade = nil}
+  public mutating func clearInventoryUpgrade() {_uniqueStorage()._inventoryUpgrade = nil}
 
-  var xpBoost: POGOProtos_Settings_Master_Item_ExperienceBoostAttributes {
+  public var xpBoost: POGOProtos_Settings_Master_Item_ExperienceBoostAttributes {
     get {return _storage._xpBoost ?? POGOProtos_Settings_Master_Item_ExperienceBoostAttributes()}
     set {_uniqueStorage()._xpBoost = newValue}
   }
   /// Returns true if `xpBoost` has been explicitly set.
-  var hasXpBoost: Bool {return _storage._xpBoost != nil}
+  public var hasXpBoost: Bool {return _storage._xpBoost != nil}
   /// Clears the value of `xpBoost`. Subsequent reads from it will return its default value.
-  mutating func clearXpBoost() {_uniqueStorage()._xpBoost = nil}
+  public mutating func clearXpBoost() {_uniqueStorage()._xpBoost = nil}
 
-  var incense: POGOProtos_Settings_Master_Item_IncenseAttributes {
+  public var incense: POGOProtos_Settings_Master_Item_IncenseAttributes {
     get {return _storage._incense ?? POGOProtos_Settings_Master_Item_IncenseAttributes()}
     set {_uniqueStorage()._incense = newValue}
   }
   /// Returns true if `incense` has been explicitly set.
-  var hasIncense: Bool {return _storage._incense != nil}
+  public var hasIncense: Bool {return _storage._incense != nil}
   /// Clears the value of `incense`. Subsequent reads from it will return its default value.
-  mutating func clearIncense() {_uniqueStorage()._incense = nil}
+  public mutating func clearIncense() {_uniqueStorage()._incense = nil}
 
-  var eggIncubator: POGOProtos_Settings_Master_Item_EggIncubatorAttributes {
+  public var eggIncubator: POGOProtos_Settings_Master_Item_EggIncubatorAttributes {
     get {return _storage._eggIncubator ?? POGOProtos_Settings_Master_Item_EggIncubatorAttributes()}
     set {_uniqueStorage()._eggIncubator = newValue}
   }
   /// Returns true if `eggIncubator` has been explicitly set.
-  var hasEggIncubator: Bool {return _storage._eggIncubator != nil}
+  public var hasEggIncubator: Bool {return _storage._eggIncubator != nil}
   /// Clears the value of `eggIncubator`. Subsequent reads from it will return its default value.
-  mutating func clearEggIncubator() {_uniqueStorage()._eggIncubator = nil}
+  public mutating func clearEggIncubator() {_uniqueStorage()._eggIncubator = nil}
 
-  var fortModifier: POGOProtos_Settings_Master_Item_FortModifierAttributes {
+  public var fortModifier: POGOProtos_Settings_Master_Item_FortModifierAttributes {
     get {return _storage._fortModifier ?? POGOProtos_Settings_Master_Item_FortModifierAttributes()}
     set {_uniqueStorage()._fortModifier = newValue}
   }
   /// Returns true if `fortModifier` has been explicitly set.
-  var hasFortModifier: Bool {return _storage._fortModifier != nil}
+  public var hasFortModifier: Bool {return _storage._fortModifier != nil}
   /// Clears the value of `fortModifier`. Subsequent reads from it will return its default value.
-  mutating func clearFortModifier() {_uniqueStorage()._fortModifier = nil}
+  public mutating func clearFortModifier() {_uniqueStorage()._fortModifier = nil}
 
-  var stardustBoost: POGOProtos_Settings_Master_Item_StardustBoostAttributes {
+  public var stardustBoost: POGOProtos_Settings_Master_Item_StardustBoostAttributes {
     get {return _storage._stardustBoost ?? POGOProtos_Settings_Master_Item_StardustBoostAttributes()}
     set {_uniqueStorage()._stardustBoost = newValue}
   }
   /// Returns true if `stardustBoost` has been explicitly set.
-  var hasStardustBoost: Bool {return _storage._stardustBoost != nil}
+  public var hasStardustBoost: Bool {return _storage._stardustBoost != nil}
   /// Clears the value of `stardustBoost`. Subsequent reads from it will return its default value.
-  mutating func clearStardustBoost() {_uniqueStorage()._stardustBoost = nil}
+  public mutating func clearStardustBoost() {_uniqueStorage()._stardustBoost = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -160,8 +160,8 @@ struct POGOProtos_Settings_Master_ItemSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ItemSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ItemSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "item_id"),
     2: .standard(proto: "item_type"),
     3: .same(proto: "category"),
@@ -181,28 +181,28 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
   ]
 
   fileprivate class _StorageClass {
-    var _itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    var _itemType: POGOProtos_Inventory_Item_ItemType = .none
-    var _category: POGOProtos_Enums_ItemCategory = .none
-    var _dropFreq: Float = 0
-    var _dropTrainerLevel: Int32 = 0
-    var _pokeball: POGOProtos_Settings_Master_Item_PokeballAttributes? = nil
-    var _potion: POGOProtos_Settings_Master_Item_PotionAttributes? = nil
-    var _revive: POGOProtos_Settings_Master_Item_ReviveAttributes? = nil
-    var _battle: POGOProtos_Settings_Master_Item_BattleAttributes? = nil
-    var _food: POGOProtos_Settings_Master_Item_FoodAttributes? = nil
-    var _inventoryUpgrade: POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes? = nil
-    var _xpBoost: POGOProtos_Settings_Master_Item_ExperienceBoostAttributes? = nil
-    var _incense: POGOProtos_Settings_Master_Item_IncenseAttributes? = nil
-    var _eggIncubator: POGOProtos_Settings_Master_Item_EggIncubatorAttributes? = nil
-    var _fortModifier: POGOProtos_Settings_Master_Item_FortModifierAttributes? = nil
-    var _stardustBoost: POGOProtos_Settings_Master_Item_StardustBoostAttributes? = nil
+    public var _itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    public var _itemType: POGOProtos_Inventory_Item_ItemType = .none
+    public var _category: POGOProtos_Enums_ItemCategory = .none
+    public var _dropFreq: Float = 0
+    public var _dropTrainerLevel: Int32 = 0
+    public var _pokeball: POGOProtos_Settings_Master_Item_PokeballAttributes? = nil
+    public var _potion: POGOProtos_Settings_Master_Item_PotionAttributes? = nil
+    public var _revive: POGOProtos_Settings_Master_Item_ReviveAttributes? = nil
+    public var _battle: POGOProtos_Settings_Master_Item_BattleAttributes? = nil
+    public var _food: POGOProtos_Settings_Master_Item_FoodAttributes? = nil
+    public var _inventoryUpgrade: POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes? = nil
+    public var _xpBoost: POGOProtos_Settings_Master_Item_ExperienceBoostAttributes? = nil
+    public var _incense: POGOProtos_Settings_Master_Item_IncenseAttributes? = nil
+    public var _eggIncubator: POGOProtos_Settings_Master_Item_EggIncubatorAttributes? = nil
+    public var _fortModifier: POGOProtos_Settings_Master_Item_FortModifierAttributes? = nil
+    public var _stardustBoost: POGOProtos_Settings_Master_Item_StardustBoostAttributes? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _itemID = source._itemID
       _itemType = source._itemType
       _category = source._category
@@ -229,7 +229,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -256,7 +256,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._itemID != .itemUnknown {
         try visitor.visitSingularEnumField(value: _storage._itemID, fieldNumber: 1)
@@ -310,7 +310,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_ItemSettings, rhs: POGOProtos_Settings_Master_ItemSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_ItemSettings, rhs: POGOProtos_Settings_Master_ItemSettings) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_InternalAuth {
+public struct POGOProtos_Networking_Platform_InternalAuth {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var email: String = String()
+  public var email: String = String()
 
-  var playerID: String = String()
+  public var playerID: String = String()
 
-  var appID: String = String()
+  public var appID: String = String()
 
-  var key: String = String()
+  public var key: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Networking_Platform_InternalAuth {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform"
 
 extension POGOProtos_Networking_Platform_InternalAuth: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".InternalAuth"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".InternalAuth"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "email"),
     2: .standard(proto: "player_id"),
     3: .standard(proto: "app_id"),
     4: .same(proto: "key"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.email)
@@ -62,7 +62,7 @@ extension POGOProtos_Networking_Platform_InternalAuth: SwiftProtobuf.Message, Sw
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.email.isEmpty {
       try visitor.visitSingularStringField(value: self.email, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Networking_Platform_InternalAuth: SwiftProtobuf.Message, Sw
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_InternalAuth, rhs: POGOProtos_Networking_Platform_InternalAuth) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_InternalAuth, rhs: POGOProtos_Networking_Platform_InternalAuth) -> Bool {
     if lhs.email != rhs.email {return false}
     if lhs.playerID != rhs.playerID {return false}
     if lhs.appID != rhs.appID {return false}

@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_EquippedBadgeSettings {
+public struct POGOProtos_Settings_Master_EquippedBadgeSettings {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var equipBadgeCooldownMs: Int64 = 0
+  public var equipBadgeCooldownMs: Int64 = 0
 
-  var catchProbabilityBonus: [Float] = []
+  public var catchProbabilityBonus: [Float] = []
 
-  var fleeProbabilityBonus: [Float] = []
+  public var fleeProbabilityBonus: [Float] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Settings_Master_EquippedBadgeSettings {
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_EquippedBadgeSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".EquippedBadgeSettings"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".EquippedBadgeSettings"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "equip_badge_cooldown_ms"),
     2: .standard(proto: "catch_probability_bonus"),
     3: .standard(proto: "flee_probability_bonus"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.equipBadgeCooldownMs)
@@ -58,7 +58,7 @@ extension POGOProtos_Settings_Master_EquippedBadgeSettings: SwiftProtobuf.Messag
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.equipBadgeCooldownMs != 0 {
       try visitor.visitSingularInt64Field(value: self.equipBadgeCooldownMs, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Settings_Master_EquippedBadgeSettings: SwiftProtobuf.Messag
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_EquippedBadgeSettings, rhs: POGOProtos_Settings_Master_EquippedBadgeSettings) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_EquippedBadgeSettings, rhs: POGOProtos_Settings_Master_EquippedBadgeSettings) -> Bool {
     if lhs.equipBadgeCooldownMs != rhs.equipBadgeCooldownMs {return false}
     if lhs.catchProbabilityBonus != rhs.catchProbabilityBonus {return false}
     if lhs.fleeProbabilityBonus != rhs.fleeProbabilityBonus {return false}

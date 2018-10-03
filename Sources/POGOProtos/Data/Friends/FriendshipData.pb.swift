@@ -15,47 +15,47 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Friends_FriendshipData {
+public struct POGOProtos_Data_Friends_FriendshipData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData {
+  public var friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData {
     get {return _storage._friendshipLevelData ?? POGOProtos_Data_Friends_FriendshipLevelData()}
     set {_uniqueStorage()._friendshipLevelData = newValue}
   }
   /// Returns true if `friendshipLevelData` has been explicitly set.
-  var hasFriendshipLevelData: Bool {return _storage._friendshipLevelData != nil}
+  public var hasFriendshipLevelData: Bool {return _storage._friendshipLevelData != nil}
   /// Clears the value of `friendshipLevelData`. Subsequent reads from it will return its default value.
-  mutating func clearFriendshipLevelData() {_uniqueStorage()._friendshipLevelData = nil}
+  public mutating func clearFriendshipLevelData() {_uniqueStorage()._friendshipLevelData = nil}
 
-  var giftboxDetails: [POGOProtos_Data_Gift_GiftBoxDetails] {
+  public var giftboxDetails: [POGOProtos_Data_Gift_GiftBoxDetails] {
     get {return _storage._giftboxDetails}
     set {_uniqueStorage()._giftboxDetails = newValue}
   }
 
-  var codename: String {
+  public var codename: String {
     get {return _storage._codename}
     set {_uniqueStorage()._codename = newValue}
   }
 
-  var nickname: String {
+  public var nickname: String {
     get {return _storage._nickname}
     set {_uniqueStorage()._nickname = newValue}
   }
 
-  var openTradeExpireMs: Int64 {
+  public var openTradeExpireMs: Int64 {
     get {return _storage._openTradeExpireMs}
     set {_uniqueStorage()._openTradeExpireMs = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -65,8 +65,8 @@ struct POGOProtos_Data_Friends_FriendshipData {
 fileprivate let _protobuf_package = "POGOProtos.Data.Friends"
 
 extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".FriendshipData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".FriendshipData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "friendship_level_data"),
     2: .standard(proto: "giftbox_details"),
     3: .same(proto: "codename"),
@@ -75,17 +75,17 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
   ]
 
   fileprivate class _StorageClass {
-    var _friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
-    var _giftboxDetails: [POGOProtos_Data_Gift_GiftBoxDetails] = []
-    var _codename: String = String()
-    var _nickname: String = String()
-    var _openTradeExpireMs: Int64 = 0
+    public var _friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
+    public var _giftboxDetails: [POGOProtos_Data_Gift_GiftBoxDetails] = []
+    public var _codename: String = String()
+    public var _nickname: String = String()
+    public var _openTradeExpireMs: Int64 = 0
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _friendshipLevelData = source._friendshipLevelData
       _giftboxDetails = source._giftboxDetails
       _codename = source._codename
@@ -101,7 +101,7 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -117,7 +117,7 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._friendshipLevelData {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -138,7 +138,7 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Friends_FriendshipData, rhs: POGOProtos_Data_Friends_FriendshipData) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Friends_FriendshipData, rhs: POGOProtos_Data_Friends_FriendshipData) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

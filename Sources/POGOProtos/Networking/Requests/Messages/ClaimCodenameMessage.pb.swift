@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_ClaimCodenameMessage {
+public struct POGOProtos_Networking_Requests_Messages_ClaimCodenameMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var codename: String = String()
+  public var codename: String = String()
 
-  var force: Bool = false
+  public var force: Bool = false
 
-  var generateSuggestedCodenames: Bool = false
+  public var generateSuggestedCodenames: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Networking_Requests_Messages_ClaimCodenameMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_ClaimCodenameMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ClaimCodenameMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ClaimCodenameMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "codename"),
     2: .same(proto: "force"),
     3: .standard(proto: "generate_suggested_codenames"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.codename)
@@ -58,7 +58,7 @@ extension POGOProtos_Networking_Requests_Messages_ClaimCodenameMessage: SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.codename.isEmpty {
       try visitor.visitSingularStringField(value: self.codename, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Networking_Requests_Messages_ClaimCodenameMessage: SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_ClaimCodenameMessage, rhs: POGOProtos_Networking_Requests_Messages_ClaimCodenameMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_ClaimCodenameMessage, rhs: POGOProtos_Networking_Requests_Messages_ClaimCodenameMessage) -> Bool {
     if lhs.codename != rhs.codename {return false}
     if lhs.force != rhs.force {return false}
     if lhs.generateSuggestedCodenames != rhs.generateSuggestedCodenames {return false}

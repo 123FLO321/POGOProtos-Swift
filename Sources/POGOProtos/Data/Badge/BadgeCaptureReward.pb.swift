@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Badge_BadgeCaptureReward {
+public struct POGOProtos_Data_Badge_BadgeCaptureReward {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var captureRewardMultiplier: Float = 0
+  public var captureRewardMultiplier: Float = 0
 
-  var avatarTemplateIds: [String] = []
+  public var avatarTemplateIds: [String] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Data_Badge_BadgeCaptureReward {
 fileprivate let _protobuf_package = "POGOProtos.Data.Badge"
 
 extension POGOProtos_Data_Badge_BadgeCaptureReward: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BadgeCaptureReward"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BadgeCaptureReward"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "capture_reward_multiplier"),
     2: .standard(proto: "avatar_template_ids"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularFloatField(value: &self.captureRewardMultiplier)
@@ -54,7 +54,7 @@ extension POGOProtos_Data_Badge_BadgeCaptureReward: SwiftProtobuf.Message, Swift
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.captureRewardMultiplier != 0 {
       try visitor.visitSingularFloatField(value: self.captureRewardMultiplier, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Data_Badge_BadgeCaptureReward: SwiftProtobuf.Message, Swift
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Badge_BadgeCaptureReward, rhs: POGOProtos_Data_Badge_BadgeCaptureReward) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Badge_BadgeCaptureReward, rhs: POGOProtos_Data_Badge_BadgeCaptureReward) -> Bool {
     if lhs.captureRewardMultiplier != rhs.captureRewardMultiplier {return false}
     if lhs.avatarTemplateIds != rhs.avatarTemplateIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

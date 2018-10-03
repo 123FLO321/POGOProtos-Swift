@@ -15,47 +15,47 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Logs_CompleteQuestLogEntry {
+public struct POGOProtos_Data_Logs_CompleteQuestLogEntry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Data_Logs_CompleteQuestLogEntry.Result {
+  public var result: POGOProtos_Data_Logs_CompleteQuestLogEntry.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var quest: POGOProtos_Data_Quests_ClientQuest {
+  public var quest: POGOProtos_Data_Quests_ClientQuest {
     get {return _storage._quest ?? POGOProtos_Data_Quests_ClientQuest()}
     set {_uniqueStorage()._quest = newValue}
   }
   /// Returns true if `quest` has been explicitly set.
-  var hasQuest: Bool {return _storage._quest != nil}
+  public var hasQuest: Bool {return _storage._quest != nil}
   /// Clears the value of `quest`. Subsequent reads from it will return its default value.
-  mutating func clearQuest() {_uniqueStorage()._quest = nil}
+  public mutating func clearQuest() {_uniqueStorage()._quest = nil}
 
-  var stamp: [POGOProtos_Data_Quests_QuestStamp] {
+  public var stamp: [POGOProtos_Data_Quests_QuestStamp] {
     get {return _storage._stamp}
     set {_uniqueStorage()._stamp = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -63,7 +63,7 @@ struct POGOProtos_Data_Logs_CompleteQuestLogEntry {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -73,7 +73,7 @@ struct POGOProtos_Data_Logs_CompleteQuestLogEntry {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -95,23 +95,23 @@ extension POGOProtos_Data_Logs_CompleteQuestLogEntry.Result: CaseIterable {
 fileprivate let _protobuf_package = "POGOProtos.Data.Logs"
 
 extension POGOProtos_Data_Logs_CompleteQuestLogEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CompleteQuestLogEntry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CompleteQuestLogEntry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "quest"),
     3: .same(proto: "stamp"),
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Data_Logs_CompleteQuestLogEntry.Result = .unset
-    var _quest: POGOProtos_Data_Quests_ClientQuest? = nil
-    var _stamp: [POGOProtos_Data_Quests_QuestStamp] = []
+    public var _result: POGOProtos_Data_Logs_CompleteQuestLogEntry.Result = .unset
+    public var _quest: POGOProtos_Data_Quests_ClientQuest? = nil
+    public var _stamp: [POGOProtos_Data_Quests_QuestStamp] = []
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _quest = source._quest
       _stamp = source._stamp
@@ -125,7 +125,7 @@ extension POGOProtos_Data_Logs_CompleteQuestLogEntry: SwiftProtobuf.Message, Swi
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -139,7 +139,7 @@ extension POGOProtos_Data_Logs_CompleteQuestLogEntry: SwiftProtobuf.Message, Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -154,7 +154,7 @@ extension POGOProtos_Data_Logs_CompleteQuestLogEntry: SwiftProtobuf.Message, Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Logs_CompleteQuestLogEntry, rhs: POGOProtos_Data_Logs_CompleteQuestLogEntry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Logs_CompleteQuestLogEntry, rhs: POGOProtos_Data_Logs_CompleteQuestLogEntry) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -172,7 +172,7 @@ extension POGOProtos_Data_Logs_CompleteQuestLogEntry: SwiftProtobuf.Message, Swi
 }
 
 extension POGOProtos_Data_Logs_CompleteQuestLogEntry.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
   ]

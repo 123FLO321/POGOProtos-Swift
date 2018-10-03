@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case moveUnset // = 0
   case thunderShock // = 1
   case quickAttack // = 2
@@ -262,11 +262,11 @@ enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case lastResort // = 300
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .moveUnset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .moveUnset
     case 1: self = .thunderShock
@@ -511,7 +511,7 @@ enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .moveUnset: return 0
     case .thunderShock: return 1
@@ -1010,7 +1010,7 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "MOVE_UNSET"),
     1: .same(proto: "THUNDER_SHOCK"),
     2: .same(proto: "QUICK_ATTACK"),

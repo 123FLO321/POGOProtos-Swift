@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_PokemonCreateContext: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_PokemonCreateContext: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case createContextWild // = 0
   case createContextEgg // = 1
   case createContextEvolve // = 2
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .createContextWild
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .createContextWild
     case 1: self = .createContextEgg
@@ -39,7 +39,7 @@ enum POGOProtos_Enums_PokemonCreateContext: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .createContextWild: return 0
     case .createContextEgg: return 1
@@ -66,7 +66,7 @@ extension POGOProtos_Enums_PokemonCreateContext: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_PokemonCreateContext: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "CREATE_CONTEXT_WILD"),
     1: .same(proto: "CREATE_CONTEXT_EGG"),
     2: .same(proto: "CREATE_CONTEXT_EVOLVE"),

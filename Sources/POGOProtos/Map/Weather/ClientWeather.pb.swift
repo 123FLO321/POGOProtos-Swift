@@ -15,46 +15,46 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Map_Weather_ClientWeather {
+public struct POGOProtos_Map_Weather_ClientWeather {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var s2CellID: Int64 {
+  public var s2CellID: Int64 {
     get {return _storage._s2CellID}
     set {_uniqueStorage()._s2CellID = newValue}
   }
 
-  var displayWeather: POGOProtos_Map_Weather_DisplayWeather {
+  public var displayWeather: POGOProtos_Map_Weather_DisplayWeather {
     get {return _storage._displayWeather ?? POGOProtos_Map_Weather_DisplayWeather()}
     set {_uniqueStorage()._displayWeather = newValue}
   }
   /// Returns true if `displayWeather` has been explicitly set.
-  var hasDisplayWeather: Bool {return _storage._displayWeather != nil}
+  public var hasDisplayWeather: Bool {return _storage._displayWeather != nil}
   /// Clears the value of `displayWeather`. Subsequent reads from it will return its default value.
-  mutating func clearDisplayWeather() {_uniqueStorage()._displayWeather = nil}
+  public mutating func clearDisplayWeather() {_uniqueStorage()._displayWeather = nil}
 
-  var gameplayWeather: POGOProtos_Map_Weather_GameplayWeather {
+  public var gameplayWeather: POGOProtos_Map_Weather_GameplayWeather {
     get {return _storage._gameplayWeather ?? POGOProtos_Map_Weather_GameplayWeather()}
     set {_uniqueStorage()._gameplayWeather = newValue}
   }
   /// Returns true if `gameplayWeather` has been explicitly set.
-  var hasGameplayWeather: Bool {return _storage._gameplayWeather != nil}
+  public var hasGameplayWeather: Bool {return _storage._gameplayWeather != nil}
   /// Clears the value of `gameplayWeather`. Subsequent reads from it will return its default value.
-  mutating func clearGameplayWeather() {_uniqueStorage()._gameplayWeather = nil}
+  public mutating func clearGameplayWeather() {_uniqueStorage()._gameplayWeather = nil}
 
-  var alerts: [POGOProtos_Map_Weather_WeatherAlert] {
+  public var alerts: [POGOProtos_Map_Weather_WeatherAlert] {
     get {return _storage._alerts}
     set {_uniqueStorage()._alerts = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -64,8 +64,8 @@ struct POGOProtos_Map_Weather_ClientWeather {
 fileprivate let _protobuf_package = "POGOProtos.Map.Weather"
 
 extension POGOProtos_Map_Weather_ClientWeather: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ClientWeather"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ClientWeather"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "s2_cell_id"),
     2: .standard(proto: "display_weather"),
     3: .standard(proto: "gameplay_weather"),
@@ -73,16 +73,16 @@ extension POGOProtos_Map_Weather_ClientWeather: SwiftProtobuf.Message, SwiftProt
   ]
 
   fileprivate class _StorageClass {
-    var _s2CellID: Int64 = 0
-    var _displayWeather: POGOProtos_Map_Weather_DisplayWeather? = nil
-    var _gameplayWeather: POGOProtos_Map_Weather_GameplayWeather? = nil
-    var _alerts: [POGOProtos_Map_Weather_WeatherAlert] = []
+    public var _s2CellID: Int64 = 0
+    public var _displayWeather: POGOProtos_Map_Weather_DisplayWeather? = nil
+    public var _gameplayWeather: POGOProtos_Map_Weather_GameplayWeather? = nil
+    public var _alerts: [POGOProtos_Map_Weather_WeatherAlert] = []
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _s2CellID = source._s2CellID
       _displayWeather = source._displayWeather
       _gameplayWeather = source._gameplayWeather
@@ -97,7 +97,7 @@ extension POGOProtos_Map_Weather_ClientWeather: SwiftProtobuf.Message, SwiftProt
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -112,7 +112,7 @@ extension POGOProtos_Map_Weather_ClientWeather: SwiftProtobuf.Message, SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._s2CellID != 0 {
         try visitor.visitSingularInt64Field(value: _storage._s2CellID, fieldNumber: 1)
@@ -130,7 +130,7 @@ extension POGOProtos_Map_Weather_ClientWeather: SwiftProtobuf.Message, SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_Weather_ClientWeather, rhs: POGOProtos_Map_Weather_ClientWeather) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_Weather_ClientWeather, rhs: POGOProtos_Map_Weather_ClientWeather) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

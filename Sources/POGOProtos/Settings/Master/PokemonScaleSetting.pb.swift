@@ -15,25 +15,25 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Settings_Master_PokemonScaleSetting {
+public struct POGOProtos_Settings_Master_PokemonScaleSetting {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var pokemonScaleMode: POGOProtos_Settings_Master_PokemonScaleSetting.PokemonScaleMode = .naturalScale
+  public var pokemonScaleMode: POGOProtos_Settings_Master_PokemonScaleSetting.PokemonScaleMode = .naturalScale
 
-  var minHeight: Float = 0
+  public var minHeight: Float = 0
 
-  var maxHeight: Float = 0
+  public var maxHeight: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum PokemonScaleMode: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum PokemonScaleMode: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case naturalScale // = 0
     case guiScale // = 1
     case battlePokemonScale // = 2
@@ -42,11 +42,11 @@ struct POGOProtos_Settings_Master_PokemonScaleSetting {
     case mapPokemonScale // = 5
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .naturalScale
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .naturalScale
       case 1: self = .guiScale
@@ -58,7 +58,7 @@ struct POGOProtos_Settings_Master_PokemonScaleSetting {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .naturalScale: return 0
       case .guiScale: return 1
@@ -72,7 +72,7 @@ struct POGOProtos_Settings_Master_PokemonScaleSetting {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -96,14 +96,14 @@ extension POGOProtos_Settings_Master_PokemonScaleSetting.PokemonScaleMode: CaseI
 fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 
 extension POGOProtos_Settings_Master_PokemonScaleSetting: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PokemonScaleSetting"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PokemonScaleSetting"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_scale_mode"),
     2: .standard(proto: "min_height"),
     3: .standard(proto: "max_height"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.pokemonScaleMode)
@@ -114,7 +114,7 @@ extension POGOProtos_Settings_Master_PokemonScaleSetting: SwiftProtobuf.Message,
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemonScaleMode != .naturalScale {
       try visitor.visitSingularEnumField(value: self.pokemonScaleMode, fieldNumber: 1)
     }
@@ -127,7 +127,7 @@ extension POGOProtos_Settings_Master_PokemonScaleSetting: SwiftProtobuf.Message,
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Settings_Master_PokemonScaleSetting, rhs: POGOProtos_Settings_Master_PokemonScaleSetting) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_PokemonScaleSetting, rhs: POGOProtos_Settings_Master_PokemonScaleSetting) -> Bool {
     if lhs.pokemonScaleMode != rhs.pokemonScaleMode {return false}
     if lhs.minHeight != rhs.minHeight {return false}
     if lhs.maxHeight != rhs.maxHeight {return false}
@@ -137,7 +137,7 @@ extension POGOProtos_Settings_Master_PokemonScaleSetting: SwiftProtobuf.Message,
 }
 
 extension POGOProtos_Settings_Master_PokemonScaleSetting.PokemonScaleMode: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "NaturalScale"),
     1: .same(proto: "GuiScale"),
     2: .same(proto: "BattlePokemonScale"),

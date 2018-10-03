@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_RpcResponseTime {
+public struct POGOProtos_Data_Telemetry_RpcResponseTime {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var rpcID: POGOProtos_Networking_Requests_RequestType = .methodUnset
+  public var rpcID: POGOProtos_Networking_Requests_RequestType = .methodUnset
 
-  var countCall: Int32 = 0
+  public var countCall: Int32 = 0
 
-  var averageResponseTime: Float = 0
+  public var averageResponseTime: Float = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Data_Telemetry_RpcResponseTime {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_RpcResponseTime: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RpcResponseTime"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RpcResponseTime"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "rpc_id"),
     2: .standard(proto: "count_call"),
     3: .standard(proto: "average_response_time"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.rpcID)
@@ -58,7 +58,7 @@ extension POGOProtos_Data_Telemetry_RpcResponseTime: SwiftProtobuf.Message, Swif
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.rpcID != .methodUnset {
       try visitor.visitSingularEnumField(value: self.rpcID, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Data_Telemetry_RpcResponseTime: SwiftProtobuf.Message, Swif
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_RpcResponseTime, rhs: POGOProtos_Data_Telemetry_RpcResponseTime) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_RpcResponseTime, rhs: POGOProtos_Data_Telemetry_RpcResponseTime) -> Bool {
     if lhs.rpcID != rhs.rpcID {return false}
     if lhs.countCall != rhs.countCall {return false}
     if lhs.averageResponseTime != rhs.averageResponseTime {return false}

@@ -15,36 +15,36 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Player_UserAttributes {
+public struct POGOProtos_Data_Player_UserAttributes {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var level: Int32 = 0
+  public var level: Int32 = 0
 
-  var xp: Int64 = 0
+  public var xp: Int64 = 0
 
-  var avatar: Int32 = 0
+  public var avatar: Int32 = 0
 
-  var itemCount: Int64 = 0
+  public var itemCount: Int64 = 0
 
-  var pokemonCount: Int64 = 0
+  public var pokemonCount: Int64 = 0
 
-  var pokecoinCount: Int64 = 0
+  public var pokecoinCount: Int64 = 0
 
-  var team: Int32 = 0
+  public var team: Int32 = 0
 
-  var catchStreak: Int32 = 0
+  public var catchStreak: Int32 = 0
 
-  var spinStreak: Int32 = 0
+  public var spinStreak: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -52,8 +52,8 @@ struct POGOProtos_Data_Player_UserAttributes {
 fileprivate let _protobuf_package = "POGOProtos.Data.Player"
 
 extension POGOProtos_Data_Player_UserAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UserAttributes"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".UserAttributes"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "level"),
     2: .same(proto: "xp"),
     3: .same(proto: "avatar"),
@@ -65,7 +65,7 @@ extension POGOProtos_Data_Player_UserAttributes: SwiftProtobuf.Message, SwiftPro
     9: .standard(proto: "spin_streak"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.level)
@@ -82,7 +82,7 @@ extension POGOProtos_Data_Player_UserAttributes: SwiftProtobuf.Message, SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.level != 0 {
       try visitor.visitSingularInt32Field(value: self.level, fieldNumber: 1)
     }
@@ -113,7 +113,7 @@ extension POGOProtos_Data_Player_UserAttributes: SwiftProtobuf.Message, SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Player_UserAttributes, rhs: POGOProtos_Data_Player_UserAttributes) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Player_UserAttributes, rhs: POGOProtos_Data_Player_UserAttributes) -> Bool {
     if lhs.level != rhs.level {return false}
     if lhs.xp != rhs.xp {return false}
     if lhs.avatar != rhs.avatar {return false}

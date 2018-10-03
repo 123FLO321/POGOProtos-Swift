@@ -15,33 +15,33 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_UseItemXpBoostResponse {
+public struct POGOProtos_Networking_Responses_UseItemXpBoostResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: POGOProtos_Networking_Responses_UseItemXpBoostResponse.Result {
+  public var result: POGOProtos_Networking_Responses_UseItemXpBoostResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var appliedItems: POGOProtos_Inventory_AppliedItems {
+  public var appliedItems: POGOProtos_Inventory_AppliedItems {
     get {return _storage._appliedItems ?? POGOProtos_Inventory_AppliedItems()}
     set {_uniqueStorage()._appliedItems = newValue}
   }
   /// Returns true if `appliedItems` has been explicitly set.
-  var hasAppliedItems: Bool {return _storage._appliedItems != nil}
+  public var hasAppliedItems: Bool {return _storage._appliedItems != nil}
   /// Clears the value of `appliedItems`. Subsequent reads from it will return its default value.
-  mutating func clearAppliedItems() {_uniqueStorage()._appliedItems = nil}
+  public mutating func clearAppliedItems() {_uniqueStorage()._appliedItems = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorInvalidItemType // = 2
@@ -50,11 +50,11 @@ struct POGOProtos_Networking_Responses_UseItemXpBoostResponse {
     case errorLocationUnset // = 5
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -66,7 +66,7 @@ struct POGOProtos_Networking_Responses_UseItemXpBoostResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -80,7 +80,7 @@ struct POGOProtos_Networking_Responses_UseItemXpBoostResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -106,21 +106,21 @@ extension POGOProtos_Networking_Responses_UseItemXpBoostResponse.Result: CaseIte
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_UseItemXpBoostResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".UseItemXpBoostResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".UseItemXpBoostResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "applied_items"),
   ]
 
   fileprivate class _StorageClass {
-    var _result: POGOProtos_Networking_Responses_UseItemXpBoostResponse.Result = .unset
-    var _appliedItems: POGOProtos_Inventory_AppliedItems? = nil
+    public var _result: POGOProtos_Networking_Responses_UseItemXpBoostResponse.Result = .unset
+    public var _appliedItems: POGOProtos_Inventory_AppliedItems? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _result = source._result
       _appliedItems = source._appliedItems
     }
@@ -133,7 +133,7 @@ extension POGOProtos_Networking_Responses_UseItemXpBoostResponse: SwiftProtobuf.
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -146,7 +146,7 @@ extension POGOProtos_Networking_Responses_UseItemXpBoostResponse: SwiftProtobuf.
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
@@ -158,7 +158,7 @@ extension POGOProtos_Networking_Responses_UseItemXpBoostResponse: SwiftProtobuf.
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_UseItemXpBoostResponse, rhs: POGOProtos_Networking_Responses_UseItemXpBoostResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_UseItemXpBoostResponse, rhs: POGOProtos_Networking_Responses_UseItemXpBoostResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -175,7 +175,7 @@ extension POGOProtos_Networking_Responses_UseItemXpBoostResponse: SwiftProtobuf.
 }
 
 extension POGOProtos_Networking_Responses_UseItemXpBoostResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_INVALID_ITEM_TYPE"),

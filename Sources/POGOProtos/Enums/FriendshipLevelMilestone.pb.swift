@@ -15,12 +15,12 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-enum POGOProtos_Enums_FriendshipLevelMilestone: SwiftProtobuf.Enum {
-  typealias RawValue = Int
+public enum POGOProtos_Enums_FriendshipLevelMilestone: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
   case friendshipLevelUnset // = 0
   case friendshipLevel0 // = 1
   case friendshipLevel1 // = 2
@@ -29,11 +29,11 @@ enum POGOProtos_Enums_FriendshipLevelMilestone: SwiftProtobuf.Enum {
   case friendshipLevel4 // = 5
   case UNRECOGNIZED(Int)
 
-  init() {
+  public init() {
     self = .friendshipLevelUnset
   }
 
-  init?(rawValue: Int) {
+  public init?(rawValue: Int) {
     switch rawValue {
     case 0: self = .friendshipLevelUnset
     case 1: self = .friendshipLevel0
@@ -45,7 +45,7 @@ enum POGOProtos_Enums_FriendshipLevelMilestone: SwiftProtobuf.Enum {
     }
   }
 
-  var rawValue: Int {
+  public var rawValue: Int {
     switch self {
     case .friendshipLevelUnset: return 0
     case .friendshipLevel0: return 1
@@ -78,7 +78,7 @@ extension POGOProtos_Enums_FriendshipLevelMilestone: CaseIterable {
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_FriendshipLevelMilestone: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "FRIENDSHIP_LEVEL_UNSET"),
     1: .same(proto: "FRIENDSHIP_LEVEL_0"),
     2: .same(proto: "FRIENDSHIP_LEVEL_1"),

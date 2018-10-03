@@ -15,26 +15,26 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_GetMapObjectsMessage {
+public struct POGOProtos_Networking_Requests_Messages_GetMapObjectsMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var cellID: [UInt64] = []
+  public var cellID: [UInt64] = []
 
-  var sinceTimestampMs: [Int64] = []
+  public var sinceTimestampMs: [Int64] = []
 
-  var latitude: Double = 0
+  public var latitude: Double = 0
 
-  var longitude: Double = 0
+  public var longitude: Double = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -42,15 +42,15 @@ struct POGOProtos_Networking_Requests_Messages_GetMapObjectsMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_GetMapObjectsMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetMapObjectsMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetMapObjectsMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "cell_id"),
     2: .standard(proto: "since_timestamp_ms"),
     3: .same(proto: "latitude"),
     4: .same(proto: "longitude"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedUInt64Field(value: &self.cellID)
@@ -62,7 +62,7 @@ extension POGOProtos_Networking_Requests_Messages_GetMapObjectsMessage: SwiftPro
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.cellID.isEmpty {
       try visitor.visitPackedUInt64Field(value: self.cellID, fieldNumber: 1)
     }
@@ -78,7 +78,7 @@ extension POGOProtos_Networking_Requests_Messages_GetMapObjectsMessage: SwiftPro
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetMapObjectsMessage, rhs: POGOProtos_Networking_Requests_Messages_GetMapObjectsMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetMapObjectsMessage, rhs: POGOProtos_Networking_Requests_Messages_GetMapObjectsMessage) -> Bool {
     if lhs.cellID != rhs.cellID {return false}
     if lhs.sinceTimestampMs != rhs.sinceTimestampMs {return false}
     if lhs.latitude != rhs.latitude {return false}

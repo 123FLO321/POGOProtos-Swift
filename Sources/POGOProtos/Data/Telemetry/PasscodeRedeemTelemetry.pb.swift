@@ -15,28 +15,28 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry {
+public struct POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var result: String = String()
+  public var result: String = String()
 
-  var passcode: String = String()
+  public var passcode: String = String()
 
-  var countryCode: String = String()
+  public var countryCode: String = String()
 
-  var languageCode: String = String()
+  public var languageCode: String = String()
 
-  var bundleVersion: String = String()
+  public var bundleVersion: String = String()
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,8 +44,8 @@ struct POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".PasscodeRedeemTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".PasscodeRedeemTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "passcode"),
     3: .standard(proto: "country_code"),
@@ -53,7 +53,7 @@ extension POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry: SwiftProtobuf.Messa
     5: .standard(proto: "bundle_version"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.result)
@@ -66,7 +66,7 @@ extension POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry: SwiftProtobuf.Messa
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.result.isEmpty {
       try visitor.visitSingularStringField(value: self.result, fieldNumber: 1)
     }
@@ -85,7 +85,7 @@ extension POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry: SwiftProtobuf.Messa
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry, rhs: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry, rhs: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs.passcode != rhs.passcode {return false}
     if lhs.countryCode != rhs.countryCode {return false}

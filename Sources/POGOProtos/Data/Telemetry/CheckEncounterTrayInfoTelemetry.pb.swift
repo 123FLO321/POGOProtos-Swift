@@ -15,22 +15,22 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry {
+public struct POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var berryTrayInfo: Bool = false
+  public var berryTrayInfo: Bool = false
 
-  var ballTrayInfo: Bool = false
+  public var ballTrayInfo: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -38,13 +38,13 @@ struct POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".CheckEncounterTrayInfoTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".CheckEncounterTrayInfoTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "berry_tray_info"),
     2: .standard(proto: "ball_tray_info"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.berryTrayInfo)
@@ -54,7 +54,7 @@ extension POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry: SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.berryTrayInfo != false {
       try visitor.visitSingularBoolField(value: self.berryTrayInfo, fieldNumber: 1)
     }
@@ -64,7 +64,7 @@ extension POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry: SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry, rhs: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry, rhs: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry) -> Bool {
     if lhs.berryTrayInfo != rhs.berryTrayInfo {return false}
     if lhs.ballTrayInfo != rhs.ballTrayInfo {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -15,53 +15,53 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_ClaimCodenameResponse {
+public struct POGOProtos_Networking_Responses_ClaimCodenameResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var codename: String {
+  public var codename: String {
     get {return _storage._codename}
     set {_uniqueStorage()._codename = newValue}
   }
 
-  var userMessage: String {
+  public var userMessage: String {
     get {return _storage._userMessage}
     set {_uniqueStorage()._userMessage = newValue}
   }
 
-  var isAssignable: Bool {
+  public var isAssignable: Bool {
     get {return _storage._isAssignable}
     set {_uniqueStorage()._isAssignable = newValue}
   }
 
-  var status: POGOProtos_Networking_Responses_ClaimCodenameResponse.Status {
+  public var status: POGOProtos_Networking_Responses_ClaimCodenameResponse.Status {
     get {return _storage._status}
     set {_uniqueStorage()._status = newValue}
   }
 
-  var updatedPlayer: POGOProtos_Data_PlayerData {
+  public var updatedPlayer: POGOProtos_Data_PlayerData {
     get {return _storage._updatedPlayer ?? POGOProtos_Data_PlayerData()}
     set {_uniqueStorage()._updatedPlayer = newValue}
   }
   /// Returns true if `updatedPlayer` has been explicitly set.
-  var hasUpdatedPlayer: Bool {return _storage._updatedPlayer != nil}
+  public var hasUpdatedPlayer: Bool {return _storage._updatedPlayer != nil}
   /// Clears the value of `updatedPlayer`. Subsequent reads from it will return its default value.
-  mutating func clearUpdatedPlayer() {_uniqueStorage()._updatedPlayer = nil}
+  public mutating func clearUpdatedPlayer() {_uniqueStorage()._updatedPlayer = nil}
 
-  var suggestedCodenames: [String] {
+  public var suggestedCodenames: [String] {
     get {return _storage._suggestedCodenames}
     set {_uniqueStorage()._suggestedCodenames = newValue}
   }
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Status: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case codenameNotAvailable // = 2
@@ -70,11 +70,11 @@ struct POGOProtos_Networking_Responses_ClaimCodenameResponse {
     case codenameChangeNotAllowed // = 5
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -86,7 +86,7 @@ struct POGOProtos_Networking_Responses_ClaimCodenameResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -100,7 +100,7 @@ struct POGOProtos_Networking_Responses_ClaimCodenameResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -126,8 +126,8 @@ extension POGOProtos_Networking_Responses_ClaimCodenameResponse.Status: CaseIter
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_ClaimCodenameResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ClaimCodenameResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ClaimCodenameResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "codename"),
     2: .standard(proto: "user_message"),
     3: .standard(proto: "is_assignable"),
@@ -137,18 +137,18 @@ extension POGOProtos_Networking_Responses_ClaimCodenameResponse: SwiftProtobuf.M
   ]
 
   fileprivate class _StorageClass {
-    var _codename: String = String()
-    var _userMessage: String = String()
-    var _isAssignable: Bool = false
-    var _status: POGOProtos_Networking_Responses_ClaimCodenameResponse.Status = .unset
-    var _updatedPlayer: POGOProtos_Data_PlayerData? = nil
-    var _suggestedCodenames: [String] = []
+    public var _codename: String = String()
+    public var _userMessage: String = String()
+    public var _isAssignable: Bool = false
+    public var _status: POGOProtos_Networking_Responses_ClaimCodenameResponse.Status = .unset
+    public var _updatedPlayer: POGOProtos_Data_PlayerData? = nil
+    public var _suggestedCodenames: [String] = []
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _codename = source._codename
       _userMessage = source._userMessage
       _isAssignable = source._isAssignable
@@ -165,7 +165,7 @@ extension POGOProtos_Networking_Responses_ClaimCodenameResponse: SwiftProtobuf.M
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -182,7 +182,7 @@ extension POGOProtos_Networking_Responses_ClaimCodenameResponse: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._codename.isEmpty {
         try visitor.visitSingularStringField(value: _storage._codename, fieldNumber: 1)
@@ -206,7 +206,7 @@ extension POGOProtos_Networking_Responses_ClaimCodenameResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_ClaimCodenameResponse, rhs: POGOProtos_Networking_Responses_ClaimCodenameResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_ClaimCodenameResponse, rhs: POGOProtos_Networking_Responses_ClaimCodenameResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -227,7 +227,7 @@ extension POGOProtos_Networking_Responses_ClaimCodenameResponse: SwiftProtobuf.M
 }
 
 extension POGOProtos_Networking_Responses_ClaimCodenameResponse.Status: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "CODENAME_NOT_AVAILABLE"),

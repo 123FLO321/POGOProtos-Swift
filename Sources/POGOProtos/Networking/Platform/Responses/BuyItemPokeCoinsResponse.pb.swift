@@ -15,33 +15,33 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse {
+public struct POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
   /// result
-  var result: POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse.Status = .unknown
+  public var result: POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse.Status = .unknown
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   /// THESE ARE SOMEWHAT SPECULATED, should be a NOT ENOUGH ROOM status too for bag being full somewhere.
-  enum Status: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unknown // = 0
     case success // = 1
     case notEnoughPokecoins // = 3
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unknown
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unknown
       case 1: self = .success
@@ -50,7 +50,7 @@ struct POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unknown: return 0
       case .success: return 1
@@ -61,7 +61,7 @@ struct POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse {
 
   }
 
-  init() {}
+  public init() {}
 }
 
 #if swift(>=4.2)
@@ -82,12 +82,12 @@ extension POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse.Stat
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Responses"
 
 extension POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".BuyItemPokeCoinsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".BuyItemPokeCoinsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
@@ -96,14 +96,14 @@ extension POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse: Swi
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.result != .unknown {
       try visitor.visitSingularEnumField(value: self.result, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse, rhs: POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse, rhs: POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -111,7 +111,7 @@ extension POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse: Swi
 }
 
 extension POGOProtos_Networking_Platform_Responses_BuyItemPokeCoinsResponse.Status: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNKNOWN"),
     1: .same(proto: "SUCCESS"),
     3: .same(proto: "NOT_ENOUGH_POKECOINS"),

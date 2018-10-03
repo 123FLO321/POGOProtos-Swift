@@ -15,30 +15,30 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage {
+public struct POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+  public var item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-  var startingQuantity: Int32 = 0
+  public var startingQuantity: Int32 = 0
 
-  var gymID: String = String()
+  public var gymID: String = String()
 
-  var pokemonID: UInt64 = 0
+  public var pokemonID: UInt64 = 0
 
-  var playerLatDegrees: Double = 0
+  public var playerLatDegrees: Double = 0
 
-  var playerLngDegrees: Double = 0
+  public var playerLngDegrees: Double = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -46,8 +46,8 @@ struct POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 
 extension POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GymFeedPokemonMessage"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GymFeedPokemonMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "item"),
     2: .standard(proto: "starting_quantity"),
     3: .standard(proto: "gym_id"),
@@ -56,7 +56,7 @@ extension POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage: SwiftPr
     6: .standard(proto: "player_lng_degrees"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.item)
@@ -70,7 +70,7 @@ extension POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage: SwiftPr
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.item != .itemUnknown {
       try visitor.visitSingularEnumField(value: self.item, fieldNumber: 1)
     }
@@ -92,7 +92,7 @@ extension POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage, rhs: POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage, rhs: POGOProtos_Networking_Requests_Messages_GymFeedPokemonMessage) -> Bool {
     if lhs.item != rhs.item {return false}
     if lhs.startingQuantity != rhs.startingQuantity {return false}
     if lhs.gymID != rhs.gymID {return false}

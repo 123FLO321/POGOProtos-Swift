@@ -15,77 +15,77 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Responses_GetGymDetailsResponse {
+public struct POGOProtos_Networking_Responses_GetGymDetailsResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var gymState: POGOProtos_Data_Gym_GymState {
+  public var gymState: POGOProtos_Data_Gym_GymState {
     get {return _storage._gymState ?? POGOProtos_Data_Gym_GymState()}
     set {_uniqueStorage()._gymState = newValue}
   }
   /// Returns true if `gymState` has been explicitly set.
-  var hasGymState: Bool {return _storage._gymState != nil}
+  public var hasGymState: Bool {return _storage._gymState != nil}
   /// Clears the value of `gymState`. Subsequent reads from it will return its default value.
-  mutating func clearGymState() {_uniqueStorage()._gymState = nil}
+  public mutating func clearGymState() {_uniqueStorage()._gymState = nil}
 
-  var name: String {
+  public var name: String {
     get {return _storage._name}
     set {_uniqueStorage()._name = newValue}
   }
 
-  var urls: [String] {
+  public var urls: [String] {
     get {return _storage._urls}
     set {_uniqueStorage()._urls = newValue}
   }
 
-  var result: POGOProtos_Networking_Responses_GetGymDetailsResponse.Result {
+  public var result: POGOProtos_Networking_Responses_GetGymDetailsResponse.Result {
     get {return _storage._result}
     set {_uniqueStorage()._result = newValue}
   }
 
-  var description_p: String {
+  public var description_p: String {
     get {return _storage._description_p}
     set {_uniqueStorage()._description_p = newValue}
   }
 
-  var secondaryURL: [String] {
+  public var secondaryURL: [String] {
     get {return _storage._secondaryURL}
     set {_uniqueStorage()._secondaryURL = newValue}
   }
 
-  var checkinImageURL: String {
+  public var checkinImageURL: String {
     get {return _storage._checkinImageURL}
     set {_uniqueStorage()._checkinImageURL = newValue}
   }
 
-  var eventInfo: POGOProtos_Data_Raid_EventInfo {
+  public var eventInfo: POGOProtos_Data_Raid_EventInfo {
     get {return _storage._eventInfo ?? POGOProtos_Data_Raid_EventInfo()}
     set {_uniqueStorage()._eventInfo = newValue}
   }
   /// Returns true if `eventInfo` has been explicitly set.
-  var hasEventInfo: Bool {return _storage._eventInfo != nil}
+  public var hasEventInfo: Bool {return _storage._eventInfo != nil}
   /// Clears the value of `eventInfo`. Subsequent reads from it will return its default value.
-  mutating func clearEventInfo() {_uniqueStorage()._eventInfo = nil}
+  public mutating func clearEventInfo() {_uniqueStorage()._eventInfo = nil}
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  enum Result: SwiftProtobuf.Enum {
-    typealias RawValue = Int
+  public enum Result: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
     case unset // = 0
     case success // = 1
     case errorNotInRange // = 2
     case UNRECOGNIZED(Int)
 
-    init() {
+    public init() {
       self = .unset
     }
 
-    init?(rawValue: Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .success
@@ -94,7 +94,7 @@ struct POGOProtos_Networking_Responses_GetGymDetailsResponse {
       }
     }
 
-    var rawValue: Int {
+    public var rawValue: Int {
       switch self {
       case .unset: return 0
       case .success: return 1
@@ -105,7 +105,7 @@ struct POGOProtos_Networking_Responses_GetGymDetailsResponse {
 
   }
 
-  init() {}
+  public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
@@ -128,8 +128,8 @@ extension POGOProtos_Networking_Responses_GetGymDetailsResponse.Result: CaseIter
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_GetGymDetailsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GetGymDetailsResponse"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GetGymDetailsResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "gym_state"),
     2: .same(proto: "name"),
     3: .same(proto: "urls"),
@@ -141,20 +141,20 @@ extension POGOProtos_Networking_Responses_GetGymDetailsResponse: SwiftProtobuf.M
   ]
 
   fileprivate class _StorageClass {
-    var _gymState: POGOProtos_Data_Gym_GymState? = nil
-    var _name: String = String()
-    var _urls: [String] = []
-    var _result: POGOProtos_Networking_Responses_GetGymDetailsResponse.Result = .unset
-    var _description_p: String = String()
-    var _secondaryURL: [String] = []
-    var _checkinImageURL: String = String()
-    var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
+    public var _gymState: POGOProtos_Data_Gym_GymState? = nil
+    public var _name: String = String()
+    public var _urls: [String] = []
+    public var _result: POGOProtos_Networking_Responses_GetGymDetailsResponse.Result = .unset
+    public var _description_p: String = String()
+    public var _secondaryURL: [String] = []
+    public var _checkinImageURL: String = String()
+    public var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
 
-    static let defaultInstance = _StorageClass()
+    public static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    init(copying source: _StorageClass) {
+    public init(copying source: _StorageClass) {
       _gymState = source._gymState
       _name = source._name
       _urls = source._urls
@@ -173,7 +173,7 @@ extension POGOProtos_Networking_Responses_GetGymDetailsResponse: SwiftProtobuf.M
     return _storage
   }
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     _ = _uniqueStorage()
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
@@ -192,7 +192,7 @@ extension POGOProtos_Networking_Responses_GetGymDetailsResponse: SwiftProtobuf.M
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if let v = _storage._gymState {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
@@ -222,7 +222,7 @@ extension POGOProtos_Networking_Responses_GetGymDetailsResponse: SwiftProtobuf.M
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Responses_GetGymDetailsResponse, rhs: POGOProtos_Networking_Responses_GetGymDetailsResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetGymDetailsResponse, rhs: POGOProtos_Networking_Responses_GetGymDetailsResponse) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
@@ -245,7 +245,7 @@ extension POGOProtos_Networking_Responses_GetGymDetailsResponse: SwiftProtobuf.M
 }
 
 extension POGOProtos_Networking_Responses_GetGymDetailsResponse.Result: SwiftProtobuf._ProtoNameProviding {
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_NOT_IN_RANGE"),

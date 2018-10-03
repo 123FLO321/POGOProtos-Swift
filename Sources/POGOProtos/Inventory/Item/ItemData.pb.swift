@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Inventory_Item_ItemData {
+public struct POGOProtos_Inventory_Item_ItemData {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+  public var itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
-  var count: Int32 = 0
+  public var count: Int32 = 0
 
-  var unseen: Bool = false
+  public var unseen: Bool = false
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Inventory_Item_ItemData {
 fileprivate let _protobuf_package = "POGOProtos.Inventory.Item"
 
 extension POGOProtos_Inventory_Item_ItemData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".ItemData"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".ItemData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "item_id"),
     2: .same(proto: "count"),
     3: .same(proto: "unseen"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.itemID)
@@ -58,7 +58,7 @@ extension POGOProtos_Inventory_Item_ItemData: SwiftProtobuf.Message, SwiftProtob
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.itemID != .itemUnknown {
       try visitor.visitSingularEnumField(value: self.itemID, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Inventory_Item_ItemData: SwiftProtobuf.Message, SwiftProtob
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Inventory_Item_ItemData, rhs: POGOProtos_Inventory_Item_ItemData) -> Bool {
+  public static func ==(lhs: POGOProtos_Inventory_Item_ItemData, rhs: POGOProtos_Inventory_Item_ItemData) -> Bool {
     if lhs.itemID != rhs.itemID {return false}
     if lhs.count != rhs.count {return false}
     if lhs.unseen != rhs.unseen {return false}

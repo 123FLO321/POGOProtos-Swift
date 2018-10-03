@@ -15,28 +15,28 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Map_Fort_GymDisplay {
+public struct POGOProtos_Map_Fort_GymDisplay {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var gymEvent: [POGOProtos_Map_Fort_GymEvent] = []
+  public var gymEvent: [POGOProtos_Map_Fort_GymEvent] = []
 
-  var totalGymCp: Int32 = 0
+  public var totalGymCp: Int32 = 0
 
-  var lowestPokemonMotivation: Double = 0
+  public var lowestPokemonMotivation: Double = 0
 
-  var slotsAvailable: Int32 = 0
+  public var slotsAvailable: Int32 = 0
 
-  var occupiedMillis: Int64 = 0
+  public var occupiedMillis: Int64 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -44,8 +44,8 @@ struct POGOProtos_Map_Fort_GymDisplay {
 fileprivate let _protobuf_package = "POGOProtos.Map.Fort"
 
 extension POGOProtos_Map_Fort_GymDisplay: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".GymDisplay"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".GymDisplay"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "gym_event"),
     2: .standard(proto: "total_gym_cp"),
     3: .standard(proto: "lowest_pokemon_motivation"),
@@ -53,7 +53,7 @@ extension POGOProtos_Map_Fort_GymDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     5: .standard(proto: "occupied_millis"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.gymEvent)
@@ -66,7 +66,7 @@ extension POGOProtos_Map_Fort_GymDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.gymEvent.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.gymEvent, fieldNumber: 1)
     }
@@ -85,7 +85,7 @@ extension POGOProtos_Map_Fort_GymDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Map_Fort_GymDisplay, rhs: POGOProtos_Map_Fort_GymDisplay) -> Bool {
+  public static func ==(lhs: POGOProtos_Map_Fort_GymDisplay, rhs: POGOProtos_Map_Fort_GymDisplay) -> Bool {
     if lhs.gymEvent != rhs.gymEvent {return false}
     if lhs.totalGymCp != rhs.totalGymCp {return false}
     if lhs.lowestPokemonMotivation != rhs.lowestPokemonMotivation {return false}

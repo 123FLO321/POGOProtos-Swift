@@ -15,24 +15,24 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Networking_Platform_Ditto_RpcResponseEventParams {
+public struct POGOProtos_Networking_Platform_Ditto_RpcResponseEventParams {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var rpcID: UInt32 = 0
+  public var rpcID: UInt32 = 0
 
-  var status: UInt32 = 0
+  public var status: UInt32 = 0
 
-  var payloads: [Data] = []
+  public var payloads: [Data] = []
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -40,14 +40,14 @@ struct POGOProtos_Networking_Platform_Ditto_RpcResponseEventParams {
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Ditto"
 
 extension POGOProtos_Networking_Platform_Ditto_RpcResponseEventParams: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RpcResponseEventParams"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RpcResponseEventParams"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "rpc_id"),
     2: .same(proto: "status"),
     3: .same(proto: "payloads"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularUInt32Field(value: &self.rpcID)
@@ -58,7 +58,7 @@ extension POGOProtos_Networking_Platform_Ditto_RpcResponseEventParams: SwiftProt
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.rpcID != 0 {
       try visitor.visitSingularUInt32Field(value: self.rpcID, fieldNumber: 1)
     }
@@ -71,7 +71,7 @@ extension POGOProtos_Networking_Platform_Ditto_RpcResponseEventParams: SwiftProt
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Networking_Platform_Ditto_RpcResponseEventParams, rhs: POGOProtos_Networking_Platform_Ditto_RpcResponseEventParams) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Ditto_RpcResponseEventParams, rhs: POGOProtos_Networking_Platform_Ditto_RpcResponseEventParams) -> Bool {
     if lhs.rpcID != rhs.rpcID {return false}
     if lhs.status != rhs.status {return false}
     if lhs.payloads != rhs.payloads {return false}

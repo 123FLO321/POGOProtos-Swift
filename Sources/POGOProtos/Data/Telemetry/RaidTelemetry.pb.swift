@@ -15,36 +15,36 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  typealias Version = _2
+  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  public typealias Version = _2
 }
 
-struct POGOProtos_Data_Telemetry_RaidTelemetry {
+public struct POGOProtos_Data_Telemetry_RaidTelemetry {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  var raidTelemetryID: POGOProtos_Enums_RaidTelemetryIds = .undefinedRaidEvent
+  public var raidTelemetryID: POGOProtos_Enums_RaidTelemetryIds = .undefinedRaidEvent
 
-  var bundleVersion: String = String()
+  public var bundleVersion: String = String()
 
-  var timeSinceEnterRaid: Float = 0
+  public var timeSinceEnterRaid: Float = 0
 
-  var timeSinceLastRaidTelemetry: Float = 0
+  public var timeSinceLastRaidTelemetry: Float = 0
 
-  var raidLevel: Int32 = 0
+  public var raidLevel: Int32 = 0
 
-  var privateLobby: Bool = false
+  public var privateLobby: Bool = false
 
-  var ticketItem: String = String()
+  public var ticketItem: String = String()
 
-  var numPlayersInLobby: Int32 = 0
+  public var numPlayersInLobby: Int32 = 0
 
-  var battlePartyNumber: Int32 = 0
+  public var battlePartyNumber: Int32 = 0
 
-  var unknownFields = SwiftProtobuf.UnknownStorage()
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  init() {}
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -52,8 +52,8 @@ struct POGOProtos_Data_Telemetry_RaidTelemetry {
 fileprivate let _protobuf_package = "POGOProtos.Data.Telemetry"
 
 extension POGOProtos_Data_Telemetry_RaidTelemetry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  static let protoMessageName: String = _protobuf_package + ".RaidTelemetry"
-  static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+  public static let protoMessageName: String = _protobuf_package + ".RaidTelemetry"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "raid_telemetry_id"),
     2: .standard(proto: "bundle_version"),
     3: .standard(proto: "time_since_enter_raid"),
@@ -65,7 +65,7 @@ extension POGOProtos_Data_Telemetry_RaidTelemetry: SwiftProtobuf.Message, SwiftP
     9: .standard(proto: "battle_party_number"),
   ]
 
-  mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.raidTelemetryID)
@@ -82,7 +82,7 @@ extension POGOProtos_Data_Telemetry_RaidTelemetry: SwiftProtobuf.Message, SwiftP
     }
   }
 
-  func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.raidTelemetryID != .undefinedRaidEvent {
       try visitor.visitSingularEnumField(value: self.raidTelemetryID, fieldNumber: 1)
     }
@@ -113,7 +113,7 @@ extension POGOProtos_Data_Telemetry_RaidTelemetry: SwiftProtobuf.Message, SwiftP
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  static func ==(lhs: POGOProtos_Data_Telemetry_RaidTelemetry, rhs: POGOProtos_Data_Telemetry_RaidTelemetry) -> Bool {
+  public static func ==(lhs: POGOProtos_Data_Telemetry_RaidTelemetry, rhs: POGOProtos_Data_Telemetry_RaidTelemetry) -> Bool {
     if lhs.raidTelemetryID != rhs.raidTelemetryID {return false}
     if lhs.bundleVersion != rhs.bundleVersion {return false}
     if lhs.timeSinceEnterRaid != rhs.timeSinceEnterRaid {return false}
