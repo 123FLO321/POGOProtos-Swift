@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_DownloadSettingsResponse {
@@ -63,15 +63,15 @@ extension POGOProtos_Networking_Responses_DownloadSettingsResponse: SwiftProtobu
   ]
 
   fileprivate class _StorageClass {
-    public var _error: String = String()
-    public var _hash: String = String()
-    public var _settings: POGOProtos_Settings_GlobalSettings? = nil
+    var _error: String = String()
+    var _hash: String = String()
+    var _settings: POGOProtos_Settings_GlobalSettings? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _error = source._error
       _hash = source._hash
       _settings = source._settings

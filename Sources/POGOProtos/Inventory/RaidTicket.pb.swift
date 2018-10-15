@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Inventory_RaidTicket {
@@ -63,15 +63,15 @@ extension POGOProtos_Inventory_RaidTicket: SwiftProtobuf.Message, SwiftProtobuf.
   ]
 
   fileprivate class _StorageClass {
-    public var _ticketID: String = String()
-    public var _item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    public var _exclusiveInfo: POGOProtos_Inventory_ExclusiveTicketInfo? = nil
+    var _ticketID: String = String()
+    var _item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    var _exclusiveInfo: POGOProtos_Inventory_ExclusiveTicketInfo? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _ticketID = source._ticketID
       _item = source._item
       _exclusiveInfo = source._exclusiveInfo

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Trading_Trading {
@@ -136,7 +136,7 @@ public struct POGOProtos_Data_Trading_Trading {
 
 extension POGOProtos_Data_Trading_Trading.TradingState: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Trading_Trading.TradingState] = [
+  public static var allCases: [POGOProtos_Data_Trading_Trading.TradingState] = [
     .unset,
     .primordial,
     .wait,
@@ -167,21 +167,21 @@ extension POGOProtos_Data_Trading_Trading: SwiftProtobuf.Message, SwiftProtobuf.
   ]
 
   fileprivate class _StorageClass {
-    public var _state: POGOProtos_Data_Trading_Trading.TradingState = .unset
-    public var _expirationMs: UInt64 = 0
-    public var _player: POGOProtos_Data_Trading_TradingPlayer? = nil
-    public var _friend: POGOProtos_Data_Trading_TradingPlayer? = nil
-    public var _tradingS2CellID: Int64 = 0
-    public var _transactionLog: String = String()
-    public var _friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
-    public var _isSpecialTrading: Bool = false
-    public var _preTradingFriendshipLevel: POGOProtos_Data_Friends_FriendshipLevelData? = nil
+    var _state: POGOProtos_Data_Trading_Trading.TradingState = .unset
+    var _expirationMs: UInt64 = 0
+    var _player: POGOProtos_Data_Trading_TradingPlayer? = nil
+    var _friend: POGOProtos_Data_Trading_TradingPlayer? = nil
+    var _tradingS2CellID: Int64 = 0
+    var _transactionLog: String = String()
+    var _friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
+    var _isSpecialTrading: Bool = false
+    var _preTradingFriendshipLevel: POGOProtos_Data_Friends_FriendshipLevelData? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _state = source._state
       _expirationMs = source._expirationMs
       _player = source._player

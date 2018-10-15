@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Friends_FriendshipData {
@@ -75,17 +75,17 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
   ]
 
   fileprivate class _StorageClass {
-    public var _friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
-    public var _giftboxDetails: [POGOProtos_Data_Gift_GiftBoxDetails] = []
-    public var _codename: String = String()
-    public var _nickname: String = String()
-    public var _openTradeExpireMs: Int64 = 0
+    var _friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
+    var _giftboxDetails: [POGOProtos_Data_Gift_GiftBoxDetails] = []
+    var _codename: String = String()
+    var _nickname: String = String()
+    var _openTradeExpireMs: Int64 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _friendshipLevelData = source._friendshipLevelData
       _giftboxDetails = source._giftboxDetails
       _codename = source._codename

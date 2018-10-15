@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_GetGymDetailsResponse {
@@ -114,7 +114,7 @@ public struct POGOProtos_Networking_Responses_GetGymDetailsResponse {
 
 extension POGOProtos_Networking_Responses_GetGymDetailsResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_GetGymDetailsResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_GetGymDetailsResponse.Result] = [
     .unset,
     .success,
     .errorNotInRange,
@@ -141,20 +141,20 @@ extension POGOProtos_Networking_Responses_GetGymDetailsResponse: SwiftProtobuf.M
   ]
 
   fileprivate class _StorageClass {
-    public var _gymState: POGOProtos_Data_Gym_GymState? = nil
-    public var _name: String = String()
-    public var _urls: [String] = []
-    public var _result: POGOProtos_Networking_Responses_GetGymDetailsResponse.Result = .unset
-    public var _description_p: String = String()
-    public var _secondaryURL: [String] = []
-    public var _checkinImageURL: String = String()
-    public var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
+    var _gymState: POGOProtos_Data_Gym_GymState? = nil
+    var _name: String = String()
+    var _urls: [String] = []
+    var _result: POGOProtos_Networking_Responses_GetGymDetailsResponse.Result = .unset
+    var _description_p: String = String()
+    var _secondaryURL: [String] = []
+    var _checkinImageURL: String = String()
+    var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _gymState = source._gymState
       _name = source._name
       _urls = source._urls

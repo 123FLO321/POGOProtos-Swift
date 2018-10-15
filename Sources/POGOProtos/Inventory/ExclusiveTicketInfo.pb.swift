@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Inventory_ExclusiveTicketInfo {
@@ -83,6 +83,24 @@ public struct POGOProtos_Inventory_ExclusiveTicketInfo {
   /// Clears the value of `raidPokemon`. Subsequent reads from it will return its default value.
   public mutating func clearRaidPokemon() {_uniqueStorage()._raidPokemon = nil}
 
+  public var inviter: POGOProtos_Data_Raid_SharedExclusiveTicketTrainerInfo {
+    get {return _storage._inviter ?? POGOProtos_Data_Raid_SharedExclusiveTicketTrainerInfo()}
+    set {_uniqueStorage()._inviter = newValue}
+  }
+  /// Returns true if `inviter` has been explicitly set.
+  public var hasInviter: Bool {return _storage._inviter != nil}
+  /// Clears the value of `inviter`. Subsequent reads from it will return its default value.
+  public mutating func clearInviter() {_uniqueStorage()._inviter = nil}
+
+  public var invitee: POGOProtos_Data_Raid_SharedExclusiveTicketTrainerInfo {
+    get {return _storage._invitee ?? POGOProtos_Data_Raid_SharedExclusiveTicketTrainerInfo()}
+    set {_uniqueStorage()._invitee = newValue}
+  }
+  /// Returns true if `invitee` has been explicitly set.
+  public var hasInvitee: Bool {return _storage._invitee != nil}
+  /// Clears the value of `invitee`. Subsequent reads from it will return its default value.
+  public mutating func clearInvitee() {_uniqueStorage()._invitee = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -108,26 +126,30 @@ extension POGOProtos_Inventory_ExclusiveTicketInfo: SwiftProtobuf.Message, Swift
     10: .standard(proto: "spawn_time_ms"),
     11: .standard(proto: "is_cancelled"),
     12: .standard(proto: "raid_pokemon"),
+    13: .same(proto: "inviter"),
+    14: .same(proto: "invitee"),
   ]
 
   fileprivate class _StorageClass {
-    public var _raidSeed: Int64 = 0
-    public var _fortID: String = String()
-    public var _startTimeMs: Int64 = 0
-    public var _endTimeMs: Int64 = 0
-    public var _imageURL: String = String()
-    public var _latitude: Double = 0
-    public var _longitude: Double = 0
-    public var _gymName: String = String()
-    public var _spawnTimeMs: Int64 = 0
-    public var _isCancelled: Bool = false
-    public var _raidPokemon: POGOProtos_Data_PokemonData? = nil
+    var _raidSeed: Int64 = 0
+    var _fortID: String = String()
+    var _startTimeMs: Int64 = 0
+    var _endTimeMs: Int64 = 0
+    var _imageURL: String = String()
+    var _latitude: Double = 0
+    var _longitude: Double = 0
+    var _gymName: String = String()
+    var _spawnTimeMs: Int64 = 0
+    var _isCancelled: Bool = false
+    var _raidPokemon: POGOProtos_Data_PokemonData? = nil
+    var _inviter: POGOProtos_Data_Raid_SharedExclusiveTicketTrainerInfo? = nil
+    var _invitee: POGOProtos_Data_Raid_SharedExclusiveTicketTrainerInfo? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _raidSeed = source._raidSeed
       _fortID = source._fortID
       _startTimeMs = source._startTimeMs
@@ -139,6 +161,8 @@ extension POGOProtos_Inventory_ExclusiveTicketInfo: SwiftProtobuf.Message, Swift
       _spawnTimeMs = source._spawnTimeMs
       _isCancelled = source._isCancelled
       _raidPokemon = source._raidPokemon
+      _inviter = source._inviter
+      _invitee = source._invitee
     }
   }
 
@@ -165,6 +189,8 @@ extension POGOProtos_Inventory_ExclusiveTicketInfo: SwiftProtobuf.Message, Swift
         case 10: try decoder.decodeSingularInt64Field(value: &_storage._spawnTimeMs)
         case 11: try decoder.decodeSingularBoolField(value: &_storage._isCancelled)
         case 12: try decoder.decodeSingularMessageField(value: &_storage._raidPokemon)
+        case 13: try decoder.decodeSingularMessageField(value: &_storage._inviter)
+        case 14: try decoder.decodeSingularMessageField(value: &_storage._invitee)
         default: break
         }
       }
@@ -206,6 +232,12 @@ extension POGOProtos_Inventory_ExclusiveTicketInfo: SwiftProtobuf.Message, Swift
       if let v = _storage._raidPokemon {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
       }
+      if let v = _storage._inviter {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
+      }
+      if let v = _storage._invitee {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -226,6 +258,8 @@ extension POGOProtos_Inventory_ExclusiveTicketInfo: SwiftProtobuf.Message, Swift
         if _storage._spawnTimeMs != rhs_storage._spawnTimeMs {return false}
         if _storage._isCancelled != rhs_storage._isCancelled {return false}
         if _storage._raidPokemon != rhs_storage._raidPokemon {return false}
+        if _storage._inviter != rhs_storage._inviter {return false}
+        if _storage._invitee != rhs_storage._invitee {return false}
         return true
       }
       if !storagesAreEqual {return false}

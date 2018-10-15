@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Settings_GlobalSettings {
@@ -224,6 +224,24 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `upsightLoggingSettings`. Subsequent reads from it will return its default value.
   public mutating func clearUpsightLoggingSettings() {_uniqueStorage()._upsightLoggingSettings = nil}
 
+  public var bgmodeGlobalSettings: POGOProtos_Settings_BackgroundModeGlobalSettings {
+    get {return _storage._bgmodeGlobalSettings ?? POGOProtos_Settings_BackgroundModeGlobalSettings()}
+    set {_uniqueStorage()._bgmodeGlobalSettings = newValue}
+  }
+  /// Returns true if `bgmodeGlobalSettings` has been explicitly set.
+  public var hasBgmodeGlobalSettings: Bool {return _storage._bgmodeGlobalSettings != nil}
+  /// Clears the value of `bgmodeGlobalSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearBgmodeGlobalSettings() {_uniqueStorage()._bgmodeGlobalSettings = nil}
+
+  public var probeSettings: POGOProtos_Settings_ProbeSettings {
+    get {return _storage._probeSettings ?? POGOProtos_Settings_ProbeSettings()}
+    set {_uniqueStorage()._probeSettings = newValue}
+  }
+  /// Returns true if `probeSettings` has been explicitly set.
+  public var hasProbeSettings: Bool {return _storage._probeSettings != nil}
+  /// Clears the value of `probeSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearProbeSettings() {_uniqueStorage()._probeSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -262,39 +280,43 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     24: .standard(proto: "trading_global_settings"),
     25: .standard(proto: "additional_allowed_pokemon_ids"),
     26: .standard(proto: "upsight_logging_settings"),
+    30: .standard(proto: "bgmode_global_settings"),
+    31: .standard(proto: "probe_settings"),
   ]
 
   fileprivate class _StorageClass {
-    public var _fortSettings: POGOProtos_Settings_FortSettings? = nil
-    public var _mapSettings: POGOProtos_Settings_MapSettings? = nil
-    public var _levelSettings: POGOProtos_Settings_LevelSettings? = nil
-    public var _inventorySettings: POGOProtos_Settings_InventorySettings? = nil
-    public var _minimumClientVersion: String = String()
-    public var _gpsSettings: POGOProtos_Settings_GpsSettings? = nil
-    public var _festivalSettings: POGOProtos_Settings_FestivalSettings? = nil
-    public var _eventSettings: POGOProtos_Settings_EventSettings? = nil
-    public var _maxPokemonTypes: Int32 = 0
-    public var _sfidaSettings: POGOProtos_Settings_SfidaSettings? = nil
-    public var _newsSettings: POGOProtos_Settings_NewsSettings? = nil
-    public var _translationSettings: POGOProtos_Settings_TranslationSettings? = nil
-    public var _passcodeSettings: POGOProtos_Settings_PasscodeSettings? = nil
-    public var _notificationSettings: POGOProtos_Settings_NotificationSettings? = nil
-    public var _clientAppBlacklist: [String] = []
-    public var _clientPerfSettings: POGOProtos_Settings_ClientPerformanceSettings? = nil
-    public var _newsGlobalSettings: POGOProtos_Settings_NewsGlobalSettings? = nil
-    public var _questGlobalSettings: POGOProtos_Settings_QuestGlobalSettings? = nil
-    public var _telemetryGlobalSettings: POGOProtos_Settings_TelemetryGlobalSettings? = nil
-    public var _loginSettings: POGOProtos_Settings_LoginSettings? = nil
-    public var _socialSettings: POGOProtos_Settings_SocialClientSettings? = nil
-    public var _tradingGlobalSettings: POGOProtos_Settings_TradingGlobalSettings? = nil
-    public var _additionalAllowedPokemonIds: [POGOProtos_Enums_PokemonId] = []
-    public var _upsightLoggingSettings: POGOProtos_Settings_UpsightLoggingSettings? = nil
+    var _fortSettings: POGOProtos_Settings_FortSettings? = nil
+    var _mapSettings: POGOProtos_Settings_MapSettings? = nil
+    var _levelSettings: POGOProtos_Settings_LevelSettings? = nil
+    var _inventorySettings: POGOProtos_Settings_InventorySettings? = nil
+    var _minimumClientVersion: String = String()
+    var _gpsSettings: POGOProtos_Settings_GpsSettings? = nil
+    var _festivalSettings: POGOProtos_Settings_FestivalSettings? = nil
+    var _eventSettings: POGOProtos_Settings_EventSettings? = nil
+    var _maxPokemonTypes: Int32 = 0
+    var _sfidaSettings: POGOProtos_Settings_SfidaSettings? = nil
+    var _newsSettings: POGOProtos_Settings_NewsSettings? = nil
+    var _translationSettings: POGOProtos_Settings_TranslationSettings? = nil
+    var _passcodeSettings: POGOProtos_Settings_PasscodeSettings? = nil
+    var _notificationSettings: POGOProtos_Settings_NotificationSettings? = nil
+    var _clientAppBlacklist: [String] = []
+    var _clientPerfSettings: POGOProtos_Settings_ClientPerformanceSettings? = nil
+    var _newsGlobalSettings: POGOProtos_Settings_NewsGlobalSettings? = nil
+    var _questGlobalSettings: POGOProtos_Settings_QuestGlobalSettings? = nil
+    var _telemetryGlobalSettings: POGOProtos_Settings_TelemetryGlobalSettings? = nil
+    var _loginSettings: POGOProtos_Settings_LoginSettings? = nil
+    var _socialSettings: POGOProtos_Settings_SocialClientSettings? = nil
+    var _tradingGlobalSettings: POGOProtos_Settings_TradingGlobalSettings? = nil
+    var _additionalAllowedPokemonIds: [POGOProtos_Enums_PokemonId] = []
+    var _upsightLoggingSettings: POGOProtos_Settings_UpsightLoggingSettings? = nil
+    var _bgmodeGlobalSettings: POGOProtos_Settings_BackgroundModeGlobalSettings? = nil
+    var _probeSettings: POGOProtos_Settings_ProbeSettings? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _fortSettings = source._fortSettings
       _mapSettings = source._mapSettings
       _levelSettings = source._levelSettings
@@ -319,6 +341,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _tradingGlobalSettings = source._tradingGlobalSettings
       _additionalAllowedPokemonIds = source._additionalAllowedPokemonIds
       _upsightLoggingSettings = source._upsightLoggingSettings
+      _bgmodeGlobalSettings = source._bgmodeGlobalSettings
+      _probeSettings = source._probeSettings
     }
   }
 
@@ -358,6 +382,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 24: try decoder.decodeSingularMessageField(value: &_storage._tradingGlobalSettings)
         case 25: try decoder.decodeRepeatedEnumField(value: &_storage._additionalAllowedPokemonIds)
         case 26: try decoder.decodeSingularMessageField(value: &_storage._upsightLoggingSettings)
+        case 30: try decoder.decodeSingularMessageField(value: &_storage._bgmodeGlobalSettings)
+        case 31: try decoder.decodeSingularMessageField(value: &_storage._probeSettings)
         default: break
         }
       }
@@ -438,6 +464,12 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._upsightLoggingSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 26)
       }
+      if let v = _storage._bgmodeGlobalSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 30)
+      }
+      if let v = _storage._probeSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -471,6 +503,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._tradingGlobalSettings != rhs_storage._tradingGlobalSettings {return false}
         if _storage._additionalAllowedPokemonIds != rhs_storage._additionalAllowedPokemonIds {return false}
         if _storage._upsightLoggingSettings != rhs_storage._upsightLoggingSettings {return false}
+        if _storage._bgmodeGlobalSettings != rhs_storage._bgmodeGlobalSettings {return false}
+        if _storage._probeSettings != rhs_storage._probeSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

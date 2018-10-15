@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_GetRaidDetailsResponse {
@@ -145,7 +145,7 @@ public struct POGOProtos_Networking_Responses_GetRaidDetailsResponse {
 
 extension POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result] = [
     .unset,
     .success,
     .errorNotInRange,
@@ -179,23 +179,23 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
   ]
 
   fileprivate class _StorageClass {
-    public var _lobby: POGOProtos_Data_Raid_Lobby? = nil
-    public var _raidBattle: POGOProtos_Data_Battle_Battle? = nil
-    public var _playerCanJoinLobby: Bool = false
-    public var _result: POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result = .unset
-    public var _raidInfo: POGOProtos_Data_Raid_RaidInfo? = nil
-    public var _ticketUsed: Bool = false
-    public var _freeTicketAvailable: Bool = false
-    public var _throwsRemaining: Int32 = 0
-    public var _receivedRewards: Bool = false
-    public var _numPlayersInLobby: Int32 = 0
-    public var _serverMs: Int64 = 0
+    var _lobby: POGOProtos_Data_Raid_Lobby? = nil
+    var _raidBattle: POGOProtos_Data_Battle_Battle? = nil
+    var _playerCanJoinLobby: Bool = false
+    var _result: POGOProtos_Networking_Responses_GetRaidDetailsResponse.Result = .unset
+    var _raidInfo: POGOProtos_Data_Raid_RaidInfo? = nil
+    var _ticketUsed: Bool = false
+    var _freeTicketAvailable: Bool = false
+    var _throwsRemaining: Int32 = 0
+    var _receivedRewards: Bool = false
+    var _numPlayersInLobby: Int32 = 0
+    var _serverMs: Int64 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _lobby = source._lobby
       _raidBattle = source._raidBattle
       _playerCanJoinLobby = source._playerCanJoinLobby

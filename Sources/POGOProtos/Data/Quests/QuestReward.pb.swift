@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Quests_QuestReward {
@@ -206,7 +206,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
 
 extension POGOProtos_Data_Quests_QuestReward.TypeEnum: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Quests_QuestReward.TypeEnum] = [
+  public static var allCases: [POGOProtos_Data_Quests_QuestReward.TypeEnum] = [
     .unset,
     .experience,
     .item,
@@ -238,20 +238,20 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    public var _type: POGOProtos_Data_Quests_QuestReward.TypeEnum = .unset
-    public var _exp: Int32 = 0
-    public var _item: POGOProtos_Data_Quests_QuestReward.ItemReward? = nil
-    public var _stardust: Int32 = 0
-    public var _candy: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward? = nil
-    public var _avatarTemplateID: String = String()
-    public var _questTemplateID: String = String()
-    public var _pokemonEncounter: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward? = nil
+    var _type: POGOProtos_Data_Quests_QuestReward.TypeEnum = .unset
+    var _exp: Int32 = 0
+    var _item: POGOProtos_Data_Quests_QuestReward.ItemReward? = nil
+    var _stardust: Int32 = 0
+    var _candy: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward? = nil
+    var _avatarTemplateID: String = String()
+    var _questTemplateID: String = String()
+    var _pokemonEncounter: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _type = source._type
       _exp = source._exp
       _item = source._item
@@ -435,17 +435,17 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    public var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    public var _useQuestPokemonEncounterDistribuition: Bool = false
-    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-    public var _isHiddenDitto: Bool = false
-    public var _dittoDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _useQuestPokemonEncounterDistribuition: Bool = false
+    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    var _isHiddenDitto: Bool = false
+    var _dittoDisplay: POGOProtos_Data_PokemonDisplay? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _pokemonID = source._pokemonID
       _useQuestPokemonEncounterDistribuition = source._useQuestPokemonEncounterDistribuition
       _pokemonDisplay = source._pokemonDisplay

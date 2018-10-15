@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_IncenseEncounterResponse {
@@ -102,7 +102,7 @@ public struct POGOProtos_Networking_Responses_IncenseEncounterResponse {
 
 extension POGOProtos_Networking_Responses_IncenseEncounterResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_IncenseEncounterResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_IncenseEncounterResponse.Result] = [
     .incenseEncounterUnknown,
     .incenseEncounterSuccess,
     .incenseEncounterNotAvailable,
@@ -127,17 +127,17 @@ extension POGOProtos_Networking_Responses_IncenseEncounterResponse: SwiftProtobu
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_IncenseEncounterResponse.Result = .incenseEncounterUnknown
-    public var _pokemonData: POGOProtos_Data_PokemonData? = nil
-    public var _captureProbability: POGOProtos_Data_Capture_CaptureProbability? = nil
-    public var _activeItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    public var _arplusAttemptsUntilFlee: Int32 = 0
+    var _result: POGOProtos_Networking_Responses_IncenseEncounterResponse.Result = .incenseEncounterUnknown
+    var _pokemonData: POGOProtos_Data_PokemonData? = nil
+    var _captureProbability: POGOProtos_Data_Capture_CaptureProbability? = nil
+    var _activeItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    var _arplusAttemptsUntilFlee: Int32 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _pokemonData = source._pokemonData
       _captureProbability = source._captureProbability

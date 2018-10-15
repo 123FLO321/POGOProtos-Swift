@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_FortDetailsResponse {
@@ -145,28 +145,28 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
   ]
 
   fileprivate class _StorageClass {
-    public var _fortID: String = String()
-    public var _teamColor: POGOProtos_Enums_TeamColor = .neutral
-    public var _pokemonData: POGOProtos_Data_PokemonData? = nil
-    public var _name: String = String()
-    public var _imageUrls: [String] = []
-    public var _fp: Int32 = 0
-    public var _stamina: Int32 = 0
-    public var _maxStamina: Int32 = 0
-    public var _type: POGOProtos_Map_Fort_FortType = .gym
-    public var _latitude: Double = 0
-    public var _longitude: Double = 0
-    public var _description_p: String = String()
-    public var _modifiers: [POGOProtos_Map_Fort_FortModifier] = []
-    public var _closeSoon: Bool = false
-    public var _checkinImageURL: String = String()
-    public var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
+    var _fortID: String = String()
+    var _teamColor: POGOProtos_Enums_TeamColor = .neutral
+    var _pokemonData: POGOProtos_Data_PokemonData? = nil
+    var _name: String = String()
+    var _imageUrls: [String] = []
+    var _fp: Int32 = 0
+    var _stamina: Int32 = 0
+    var _maxStamina: Int32 = 0
+    var _type: POGOProtos_Map_Fort_FortType = .gym
+    var _latitude: Double = 0
+    var _longitude: Double = 0
+    var _description_p: String = String()
+    var _modifiers: [POGOProtos_Map_Fort_FortModifier] = []
+    var _closeSoon: Bool = false
+    var _checkinImageURL: String = String()
+    var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _fortID = source._fortID
       _teamColor = source._teamColor
       _pokemonData = source._pokemonData

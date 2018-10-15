@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse {
@@ -124,7 +124,7 @@ public struct POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse {
 
 extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result] = [
     .unset,
     .success,
     .errorUnknown,
@@ -147,15 +147,15 @@ extension POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse: Swift
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result = .unset
-    public var _friend: [POGOProtos_Data_Friends_FriendDetails] = []
-    public var _friendDetailsDebugInfo: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug? = nil
+    var _result: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Result = .unset
+    var _friend: [POGOProtos_Data_Friends_FriendDetails] = []
+    var _friendDetailsDebugInfo: POGOProtos_Networking_Responses_Social_GetFriendDetailsResponse.Debug? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _friend = source._friend
       _friendDetailsDebugInfo = source._friendDetailsDebugInfo

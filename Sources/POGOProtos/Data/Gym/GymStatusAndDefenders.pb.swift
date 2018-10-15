@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Gym_GymStatusAndDefenders {
@@ -57,14 +57,14 @@ extension POGOProtos_Data_Gym_GymStatusAndDefenders: SwiftProtobuf.Message, Swif
   ]
 
   fileprivate class _StorageClass {
-    public var _pokemonFortProto: POGOProtos_Map_Fort_FortData? = nil
-    public var _gymDefender: [POGOProtos_Data_Gym_GymDefender] = []
+    var _pokemonFortProto: POGOProtos_Map_Fort_FortData? = nil
+    var _gymDefender: [POGOProtos_Data_Gym_GymDefender] = []
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _pokemonFortProto = source._pokemonFortProto
       _gymDefender = source._gymDefender
     }

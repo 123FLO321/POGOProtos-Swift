@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Inventory_LootItem {
@@ -87,19 +87,19 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
   ]
 
   fileprivate class _StorageClass {
-    public var _item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    public var _stardust: Bool = false
-    public var _pokecoin: Bool = false
-    public var _pokemonCandy: POGOProtos_Enums_PokemonId = .missingno
-    public var _count: Int32 = 0
-    public var _experience: Bool = false
-    public var _pokemonEgg: POGOProtos_Data_PokemonData? = nil
+    var _item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    var _stardust: Bool = false
+    var _pokecoin: Bool = false
+    var _pokemonCandy: POGOProtos_Enums_PokemonId = .missingno
+    var _count: Int32 = 0
+    var _experience: Bool = false
+    var _pokemonEgg: POGOProtos_Data_PokemonData? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _item = source._item
       _stardust = source._stardust
       _pokecoin = source._pokecoin

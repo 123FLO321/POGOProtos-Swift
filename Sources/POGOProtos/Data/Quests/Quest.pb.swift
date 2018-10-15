@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Quests_Quest {
@@ -221,7 +221,7 @@ public struct POGOProtos_Data_Quests_Quest {
       self = .undefined
     }
 
-    public init?(rawValue : Int) {
+    public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .undefined
       case 1: self = .active
@@ -262,7 +262,7 @@ public struct POGOProtos_Data_Quests_Quest {
 
 extension POGOProtos_Data_Quests_Quest.Context: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Quests_Quest.Context] = [
+  public static var allCases: [POGOProtos_Data_Quests_Quest.Context] = [
     .unset,
     .storyQuest,
     .challengeQuest,
@@ -271,7 +271,7 @@ extension POGOProtos_Data_Quests_Quest.Context: CaseIterable {
 
 extension POGOProtos_Data_Quests_Quest.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Quests_Quest.Status] = [
+  public static var allCases: [POGOProtos_Data_Quests_Quest.Status] = [
     .undefined,
     .active,
     .completed,
@@ -315,37 +315,37 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
   ]
 
   fileprivate class _StorageClass {
-    public var _questType: POGOProtos_Enums_QuestType = .questUnknownType
-    public var _dailyQuest: POGOProtos_Data_Quests_DailyQuest? = nil
-    public var _multiPart: POGOProtos_Data_Quests_Quest.MultiPartQuest? = nil
-    public var _catchPokemon: POGOProtos_Data_Quests_CatchPokemonQuest? = nil
-    public var _addFriend: POGOProtos_Data_Quests_AddFriendQuest? = nil
-    public var _tradePokemon: POGOProtos_Data_Quests_TradePokemonQuest? = nil
-    public var _questID: String = String()
-    public var _questSeed: Int64 = 0
-    public var _questContext: POGOProtos_Data_Quests_Quest.Context = .unset
-    public var _templateID: String = String()
-    public var _progress: Int32 = 0
-    public var _goal: POGOProtos_Data_Quests_QuestGoal? = nil
-    public var _status: POGOProtos_Data_Quests_Quest.Status = .undefined
-    public var _questRewards: [POGOProtos_Data_Quests_QuestReward] = []
-    public var _creationTimestampMs: Int64 = 0
-    public var _lastUpdateTimestampMs: Int64 = 0
-    public var _compeletionTimestampMs: Int64 = 0
-    public var _fortID: String = String()
-    public var _adminGenerated: Bool = false
-    public var _stampCountOverrideEnabled: Bool = false
-    public var _stampCountOverride: Int32 = 0
-    public var _s2CellID: Int64 = 0
-    public var _storyQuestTemplateVersion: Int32 = 0
-    public var _dailyCounter: POGOProtos_Data_Player_DailyCounter? = nil
-    public var _rewardPokemonIconURL: String = String()
+    var _questType: POGOProtos_Enums_QuestType = .questUnknownType
+    var _dailyQuest: POGOProtos_Data_Quests_DailyQuest? = nil
+    var _multiPart: POGOProtos_Data_Quests_Quest.MultiPartQuest? = nil
+    var _catchPokemon: POGOProtos_Data_Quests_CatchPokemonQuest? = nil
+    var _addFriend: POGOProtos_Data_Quests_AddFriendQuest? = nil
+    var _tradePokemon: POGOProtos_Data_Quests_TradePokemonQuest? = nil
+    var _questID: String = String()
+    var _questSeed: Int64 = 0
+    var _questContext: POGOProtos_Data_Quests_Quest.Context = .unset
+    var _templateID: String = String()
+    var _progress: Int32 = 0
+    var _goal: POGOProtos_Data_Quests_QuestGoal? = nil
+    var _status: POGOProtos_Data_Quests_Quest.Status = .undefined
+    var _questRewards: [POGOProtos_Data_Quests_QuestReward] = []
+    var _creationTimestampMs: Int64 = 0
+    var _lastUpdateTimestampMs: Int64 = 0
+    var _compeletionTimestampMs: Int64 = 0
+    var _fortID: String = String()
+    var _adminGenerated: Bool = false
+    var _stampCountOverrideEnabled: Bool = false
+    var _stampCountOverride: Int32 = 0
+    var _s2CellID: Int64 = 0
+    var _storyQuestTemplateVersion: Int32 = 0
+    var _dailyCounter: POGOProtos_Data_Player_DailyCounter? = nil
+    var _rewardPokemonIconURL: String = String()
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _questType = source._questType
       _dailyQuest = source._dailyQuest
       _multiPart = source._multiPart

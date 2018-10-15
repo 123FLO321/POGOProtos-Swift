@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Settings_Master_Item_IncenseAttributes {
@@ -38,7 +38,25 @@ public struct POGOProtos_Settings_Master_Item_IncenseAttributes {
 
   public var pokemonAttractedLengthSec: Int32 = 0
 
+  public var spawnTable: [POGOProtos_Settings_Master_Item_IncenseAttributes.IncensedPokemon] = []
+
+  public var spawnTableProbability: Float = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public struct IncensedPokemon {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var pokemonID: POGOProtos_Enums_PokemonId = .missingno
+
+    public var weight: Float = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
 
   public init() {}
 }
@@ -57,6 +75,8 @@ extension POGOProtos_Settings_Master_Item_IncenseAttributes: SwiftProtobuf.Messa
     5: .standard(proto: "moving_time_between_encounter_seconds"),
     6: .standard(proto: "distance_required_for_shorter_interval_meters"),
     7: .standard(proto: "pokemon_attracted_length_sec"),
+    8: .standard(proto: "spawn_table"),
+    9: .standard(proto: "spawn_table_probability"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -69,6 +89,8 @@ extension POGOProtos_Settings_Master_Item_IncenseAttributes: SwiftProtobuf.Messa
       case 5: try decoder.decodeSingularInt32Field(value: &self.movingTimeBetweenEncounterSeconds)
       case 6: try decoder.decodeSingularInt32Field(value: &self.distanceRequiredForShorterIntervalMeters)
       case 7: try decoder.decodeSingularInt32Field(value: &self.pokemonAttractedLengthSec)
+      case 8: try decoder.decodeRepeatedMessageField(value: &self.spawnTable)
+      case 9: try decoder.decodeSingularFloatField(value: &self.spawnTableProbability)
       default: break
       }
     }
@@ -96,6 +118,12 @@ extension POGOProtos_Settings_Master_Item_IncenseAttributes: SwiftProtobuf.Messa
     if self.pokemonAttractedLengthSec != 0 {
       try visitor.visitSingularInt32Field(value: self.pokemonAttractedLengthSec, fieldNumber: 7)
     }
+    if !self.spawnTable.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.spawnTable, fieldNumber: 8)
+    }
+    if self.spawnTableProbability != 0 {
+      try visitor.visitSingularFloatField(value: self.spawnTableProbability, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -107,6 +135,43 @@ extension POGOProtos_Settings_Master_Item_IncenseAttributes: SwiftProtobuf.Messa
     if lhs.movingTimeBetweenEncounterSeconds != rhs.movingTimeBetweenEncounterSeconds {return false}
     if lhs.distanceRequiredForShorterIntervalMeters != rhs.distanceRequiredForShorterIntervalMeters {return false}
     if lhs.pokemonAttractedLengthSec != rhs.pokemonAttractedLengthSec {return false}
+    if lhs.spawnTable != rhs.spawnTable {return false}
+    if lhs.spawnTableProbability != rhs.spawnTableProbability {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Settings_Master_Item_IncenseAttributes.IncensedPokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Settings_Master_Item_IncenseAttributes.protoMessageName + ".IncensedPokemon"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "pokemon_id"),
+    2: .same(proto: "weight"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.pokemonID)
+      case 2: try decoder.decodeSingularFloatField(value: &self.weight)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.pokemonID != .missingno {
+      try visitor.visitSingularEnumField(value: self.pokemonID, fieldNumber: 1)
+    }
+    if self.weight != 0 {
+      try visitor.visitSingularFloatField(value: self.weight, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Settings_Master_Item_IncenseAttributes.IncensedPokemon, rhs: POGOProtos_Settings_Master_Item_IncenseAttributes.IncensedPokemon) -> Bool {
+    if lhs.pokemonID != rhs.pokemonID {return false}
+    if lhs.weight != rhs.weight {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

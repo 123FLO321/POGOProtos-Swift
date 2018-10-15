@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Battle_Battle {
@@ -101,20 +101,20 @@ extension POGOProtos_Data_Battle_Battle: SwiftProtobuf.Message, SwiftProtobuf._M
   ]
 
   fileprivate class _StorageClass {
-    public var _battleStartMs: Int64 = 0
-    public var _battleEndMs: Int64 = 0
-    public var _battleID: String = String()
-    public var _defender: POGOProtos_Data_Battle_BattleParticipant? = nil
-    public var _battleLog: POGOProtos_Data_Battle_BattleLog? = nil
-    public var _attacker: POGOProtos_Data_Battle_BattleParticipant? = nil
-    public var _weatherCondition: POGOProtos_Enums_WeatherCondition = .none
-    public var _highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
+    var _battleStartMs: Int64 = 0
+    var _battleEndMs: Int64 = 0
+    var _battleID: String = String()
+    var _defender: POGOProtos_Data_Battle_BattleParticipant? = nil
+    var _battleLog: POGOProtos_Data_Battle_BattleLog? = nil
+    var _attacker: POGOProtos_Data_Battle_BattleParticipant? = nil
+    var _weatherCondition: POGOProtos_Enums_WeatherCondition = .none
+    var _highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _battleStartMs = source._battleStartMs
       _battleEndMs = source._battleEndMs
       _battleID = source._battleID

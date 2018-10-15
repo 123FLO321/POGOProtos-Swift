@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage {
@@ -125,7 +125,7 @@ public struct POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMe
 
 extension POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage.NotificationState: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage.NotificationState] = [
+  public static var allCases: [POGOProtos_Networking_Requests_Messages_UpdateNotificationStatusMessage.NotificationState] = [
     .unsetState,
     .viewed,
   ]
@@ -398,14 +398,14 @@ extension POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessag
   ]
 
   fileprivate class _StorageClass {
-    public var _apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken? = nil
-    public var _gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken? = nil
+    var _apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken? = nil
+    var _gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _apnToken = source._apnToken
       _gcmToken = source._gcmToken
     }
@@ -652,23 +652,23 @@ extension POGOProtos_Networking_Requests_Messages_AddNewPoiMessage: SwiftProtobu
   ]
 
   fileprivate class _StorageClass {
-    public var _title: String = String()
-    public var _longDescription: String = String()
-    public var _imageGsFilePath: String = String()
-    public var _latE6: Int32 = 0
-    public var _lngE6: Int32 = 0
-    public var _imageServingURL: String = String()
-    public var _userID: String = String()
-    public var _playerLanguage: String = String()
-    public var _gameUniqueID: String = String()
-    public var _appID: String = String()
-    public var _playerReputation: POGOProtos_Data_Player_PlayerReputation? = nil
+    var _title: String = String()
+    var _longDescription: String = String()
+    var _imageGsFilePath: String = String()
+    var _latE6: Int32 = 0
+    var _lngE6: Int32 = 0
+    var _imageServingURL: String = String()
+    var _userID: String = String()
+    var _playerLanguage: String = String()
+    var _gameUniqueID: String = String()
+    var _appID: String = String()
+    var _playerReputation: POGOProtos_Data_Player_PlayerReputation? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _title = source._title
       _longDescription = source._longDescription
       _imageGsFilePath = source._imageGsFilePath
@@ -844,14 +844,14 @@ extension POGOProtos_Networking_Requests_Messages_PushNotificationRegistryMessag
   ]
 
   fileprivate class _StorageClass {
-    public var _apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken? = nil
-    public var _gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken? = nil
+    var _apnToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.ApnToken? = nil
+    var _gcmToken: POGOProtos_Networking_Requests_Messages_RegisterPushNotificationMessage.GcmToken? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _apnToken = source._apnToken
       _gcmToken = source._gcmToken
     }
@@ -1106,14 +1106,14 @@ extension POGOProtos_Networking_Requests_Messages_ReplaceLoginActionProto: Swift
   ]
 
   fileprivate class _StorageClass {
-    public var _existingIdentityProvider: POGOProtos_Enums_IdentityProvider = .unsetIdentityProvider
-    public var _newLogin: POGOProtos_Networking_Requests_Messages_AddLoginActionMessage? = nil
+    var _existingIdentityProvider: POGOProtos_Enums_IdentityProvider = .unsetIdentityProvider
+    var _newLogin: POGOProtos_Networking_Requests_Messages_AddLoginActionMessage? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _existingIdentityProvider = source._existingIdentityProvider
       _newLogin = source._newLogin
     }

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Settings_Master_Pokemon_EncounterAttributes {
@@ -149,30 +149,30 @@ extension POGOProtos_Settings_Master_Pokemon_EncounterAttributes: SwiftProtobuf.
   ]
 
   fileprivate class _StorageClass {
-    public var _baseCaptureRate: Float = 0
-    public var _baseFleeRate: Float = 0
-    public var _collisionRadiusM: Float = 0
-    public var _collisionHeightM: Float = 0
-    public var _collisionHeadRadiusM: Float = 0
-    public var _movementType: POGOProtos_Enums_PokemonMovementType = .movementStatic
-    public var _movementTimerS: Float = 0
-    public var _jumpTimeS: Float = 0
-    public var _attackTimerS: Float = 0
-    public var _bonusCandyCaptureReward: Int32 = 0
-    public var _bonusStardustCaptureReward: Int32 = 0
-    public var _attackProbability: Float = 0
-    public var _dodgeProbability: Float = 0
-    public var _dodgeDurationS: Float = 0
-    public var _dodgeDistance: Float = 0
-    public var _cameraDistance: Float = 0
-    public var _minPokemonActionFrequencyS: Float = 0
-    public var _maxPokemonActionFrequencyS: Float = 0
+    var _baseCaptureRate: Float = 0
+    var _baseFleeRate: Float = 0
+    var _collisionRadiusM: Float = 0
+    var _collisionHeightM: Float = 0
+    var _collisionHeadRadiusM: Float = 0
+    var _movementType: POGOProtos_Enums_PokemonMovementType = .movementStatic
+    var _movementTimerS: Float = 0
+    var _jumpTimeS: Float = 0
+    var _attackTimerS: Float = 0
+    var _bonusCandyCaptureReward: Int32 = 0
+    var _bonusStardustCaptureReward: Int32 = 0
+    var _attackProbability: Float = 0
+    var _dodgeProbability: Float = 0
+    var _dodgeDurationS: Float = 0
+    var _dodgeDistance: Float = 0
+    var _cameraDistance: Float = 0
+    var _minPokemonActionFrequencyS: Float = 0
+    var _maxPokemonActionFrequencyS: Float = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _baseCaptureRate = source._baseCaptureRate
       _baseFleeRate = source._baseFleeRate
       _collisionRadiusM = source._collisionRadiusM

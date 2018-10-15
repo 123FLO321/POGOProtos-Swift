@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_ShareExRaidPassResponse {
@@ -67,15 +67,15 @@ extension POGOProtos_Networking_Responses_ShareExRaidPassResponse: SwiftProtobuf
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Enums_ShareExRaidPassResult = .shareExRaidPassUnset
-    public var _updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
-    public var _friendProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
+    var _result: POGOProtos_Enums_ShareExRaidPassResult = .shareExRaidPassUnset
+    var _updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
+    var _friendProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _updatedFriendshipData = source._updatedFriendshipData
       _friendProfile = source._friendProfile

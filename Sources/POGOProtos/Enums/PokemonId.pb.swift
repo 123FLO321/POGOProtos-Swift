@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
@@ -408,6 +408,113 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
   case rayquaza // = 384
   case jirachi // = 385
   case deoxys // = 386
+  case turtwig // = 387
+  case grotle // = 388
+  case torterra // = 389
+  case chimchar // = 390
+  case monferno // = 391
+  case infernape // = 392
+  case piplup // = 393
+  case prinplup // = 394
+  case empoleon // = 395
+  case starly // = 396
+  case staravia // = 397
+  case staraptor // = 398
+  case bidoof // = 399
+  case bibarel // = 400
+  case kricketot // = 401
+  case kricketune // = 402
+  case shinx // = 403
+  case luxio // = 404
+  case luxray // = 405
+  case budew // = 406
+  case roserade // = 407
+  case cranidos // = 408
+  case rampardos // = 409
+  case shieldon // = 410
+  case bastiodon // = 411
+  case burmy // = 412
+  case wormadam // = 413
+  case mothim // = 414
+  case combee // = 415
+  case vespiquen // = 416
+  case pachirisu // = 417
+  case buizel // = 418
+  case floatzel // = 419
+  case cherubi // = 420
+  case cherrim // = 421
+  case shellos // = 422
+  case gastrodon // = 423
+  case ambipom // = 424
+  case drifloon // = 425
+  case drifblim // = 426
+  case buneary // = 427
+  case lopunny // = 428
+  case mismagius // = 429
+  case honchkrow // = 430
+  case glameow // = 431
+  case purugly // = 432
+  case chingling // = 433
+  case stunky // = 434
+  case skuntank // = 435
+  case bronzor // = 436
+  case bronzong // = 437
+  case bonsly // = 438
+  case mimeJr // = 439
+  case happiny // = 440
+  case chatot // = 441
+  case spiritomb // = 442
+  case gible // = 443
+  case gabite // = 444
+  case garchomp // = 445
+  case munchlax // = 446
+  case riolu // = 447
+  case lucario // = 448
+  case hippopotas // = 449
+  case hippowdon // = 450
+  case skorupi // = 451
+  case drapion // = 452
+  case croagunk // = 453
+  case toxicroak // = 454
+  case carnivine // = 455
+  case finneon // = 456
+  case lumineon // = 457
+  case mantyke // = 458
+  case snover // = 459
+  case abomasnow // = 460
+  case weavile // = 461
+  case magnezone // = 462
+  case lickilicky // = 463
+  case rhyperior // = 464
+  case tangrowth // = 465
+  case electivire // = 466
+  case magmortar // = 467
+  case togekiss // = 468
+  case yanmega // = 469
+  case leafeon // = 470
+  case glaceon // = 471
+  case gliscor // = 472
+  case mamoswine // = 473
+  case porygonZ // = 474
+  case gallade // = 475
+  case probopass // = 476
+  case dusknoir // = 477
+  case froslass // = 478
+  case rotom // = 479
+  case uxie // = 480
+  case mesprit // = 481
+  case azelf // = 482
+  case dialga // = 483
+  case palkia // = 484
+  case heatran // = 485
+  case regigigas // = 486
+  case giratina // = 487
+  case cresselia // = 488
+  case phione // = 489
+  case manaphy // = 490
+  case darkrai // = 491
+  case shaymin // = 492
+  case arceus // = 493
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -803,6 +910,113 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case 384: self = .rayquaza
     case 385: self = .jirachi
     case 386: self = .deoxys
+    case 387: self = .turtwig
+    case 388: self = .grotle
+    case 389: self = .torterra
+    case 390: self = .chimchar
+    case 391: self = .monferno
+    case 392: self = .infernape
+    case 393: self = .piplup
+    case 394: self = .prinplup
+    case 395: self = .empoleon
+    case 396: self = .starly
+    case 397: self = .staravia
+    case 398: self = .staraptor
+    case 399: self = .bidoof
+    case 400: self = .bibarel
+    case 401: self = .kricketot
+    case 402: self = .kricketune
+    case 403: self = .shinx
+    case 404: self = .luxio
+    case 405: self = .luxray
+    case 406: self = .budew
+    case 407: self = .roserade
+    case 408: self = .cranidos
+    case 409: self = .rampardos
+    case 410: self = .shieldon
+    case 411: self = .bastiodon
+    case 412: self = .burmy
+    case 413: self = .wormadam
+    case 414: self = .mothim
+    case 415: self = .combee
+    case 416: self = .vespiquen
+    case 417: self = .pachirisu
+    case 418: self = .buizel
+    case 419: self = .floatzel
+    case 420: self = .cherubi
+    case 421: self = .cherrim
+    case 422: self = .shellos
+    case 423: self = .gastrodon
+    case 424: self = .ambipom
+    case 425: self = .drifloon
+    case 426: self = .drifblim
+    case 427: self = .buneary
+    case 428: self = .lopunny
+    case 429: self = .mismagius
+    case 430: self = .honchkrow
+    case 431: self = .glameow
+    case 432: self = .purugly
+    case 433: self = .chingling
+    case 434: self = .stunky
+    case 435: self = .skuntank
+    case 436: self = .bronzor
+    case 437: self = .bronzong
+    case 438: self = .bonsly
+    case 439: self = .mimeJr
+    case 440: self = .happiny
+    case 441: self = .chatot
+    case 442: self = .spiritomb
+    case 443: self = .gible
+    case 444: self = .gabite
+    case 445: self = .garchomp
+    case 446: self = .munchlax
+    case 447: self = .riolu
+    case 448: self = .lucario
+    case 449: self = .hippopotas
+    case 450: self = .hippowdon
+    case 451: self = .skorupi
+    case 452: self = .drapion
+    case 453: self = .croagunk
+    case 454: self = .toxicroak
+    case 455: self = .carnivine
+    case 456: self = .finneon
+    case 457: self = .lumineon
+    case 458: self = .mantyke
+    case 459: self = .snover
+    case 460: self = .abomasnow
+    case 461: self = .weavile
+    case 462: self = .magnezone
+    case 463: self = .lickilicky
+    case 464: self = .rhyperior
+    case 465: self = .tangrowth
+    case 466: self = .electivire
+    case 467: self = .magmortar
+    case 468: self = .togekiss
+    case 469: self = .yanmega
+    case 470: self = .leafeon
+    case 471: self = .glaceon
+    case 472: self = .gliscor
+    case 473: self = .mamoswine
+    case 474: self = .porygonZ
+    case 475: self = .gallade
+    case 476: self = .probopass
+    case 477: self = .dusknoir
+    case 478: self = .froslass
+    case 479: self = .rotom
+    case 480: self = .uxie
+    case 481: self = .mesprit
+    case 482: self = .azelf
+    case 483: self = .dialga
+    case 484: self = .palkia
+    case 485: self = .heatran
+    case 486: self = .regigigas
+    case 487: self = .giratina
+    case 488: self = .cresselia
+    case 489: self = .phione
+    case 490: self = .manaphy
+    case 491: self = .darkrai
+    case 492: self = .shaymin
+    case 493: self = .arceus
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -1196,6 +1410,113 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case .rayquaza: return 384
     case .jirachi: return 385
     case .deoxys: return 386
+    case .turtwig: return 387
+    case .grotle: return 388
+    case .torterra: return 389
+    case .chimchar: return 390
+    case .monferno: return 391
+    case .infernape: return 392
+    case .piplup: return 393
+    case .prinplup: return 394
+    case .empoleon: return 395
+    case .starly: return 396
+    case .staravia: return 397
+    case .staraptor: return 398
+    case .bidoof: return 399
+    case .bibarel: return 400
+    case .kricketot: return 401
+    case .kricketune: return 402
+    case .shinx: return 403
+    case .luxio: return 404
+    case .luxray: return 405
+    case .budew: return 406
+    case .roserade: return 407
+    case .cranidos: return 408
+    case .rampardos: return 409
+    case .shieldon: return 410
+    case .bastiodon: return 411
+    case .burmy: return 412
+    case .wormadam: return 413
+    case .mothim: return 414
+    case .combee: return 415
+    case .vespiquen: return 416
+    case .pachirisu: return 417
+    case .buizel: return 418
+    case .floatzel: return 419
+    case .cherubi: return 420
+    case .cherrim: return 421
+    case .shellos: return 422
+    case .gastrodon: return 423
+    case .ambipom: return 424
+    case .drifloon: return 425
+    case .drifblim: return 426
+    case .buneary: return 427
+    case .lopunny: return 428
+    case .mismagius: return 429
+    case .honchkrow: return 430
+    case .glameow: return 431
+    case .purugly: return 432
+    case .chingling: return 433
+    case .stunky: return 434
+    case .skuntank: return 435
+    case .bronzor: return 436
+    case .bronzong: return 437
+    case .bonsly: return 438
+    case .mimeJr: return 439
+    case .happiny: return 440
+    case .chatot: return 441
+    case .spiritomb: return 442
+    case .gible: return 443
+    case .gabite: return 444
+    case .garchomp: return 445
+    case .munchlax: return 446
+    case .riolu: return 447
+    case .lucario: return 448
+    case .hippopotas: return 449
+    case .hippowdon: return 450
+    case .skorupi: return 451
+    case .drapion: return 452
+    case .croagunk: return 453
+    case .toxicroak: return 454
+    case .carnivine: return 455
+    case .finneon: return 456
+    case .lumineon: return 457
+    case .mantyke: return 458
+    case .snover: return 459
+    case .abomasnow: return 460
+    case .weavile: return 461
+    case .magnezone: return 462
+    case .lickilicky: return 463
+    case .rhyperior: return 464
+    case .tangrowth: return 465
+    case .electivire: return 466
+    case .magmortar: return 467
+    case .togekiss: return 468
+    case .yanmega: return 469
+    case .leafeon: return 470
+    case .glaceon: return 471
+    case .gliscor: return 472
+    case .mamoswine: return 473
+    case .porygonZ: return 474
+    case .gallade: return 475
+    case .probopass: return 476
+    case .dusknoir: return 477
+    case .froslass: return 478
+    case .rotom: return 479
+    case .uxie: return 480
+    case .mesprit: return 481
+    case .azelf: return 482
+    case .dialga: return 483
+    case .palkia: return 484
+    case .heatran: return 485
+    case .regigigas: return 486
+    case .giratina: return 487
+    case .cresselia: return 488
+    case .phione: return 489
+    case .manaphy: return 490
+    case .darkrai: return 491
+    case .shaymin: return 492
+    case .arceus: return 493
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1206,7 +1527,7 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_PokemonId: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_PokemonId] = [
+  public static var allCases: [POGOProtos_Enums_PokemonId] = [
     .missingno,
     .bulbasaur,
     .ivysaur,
@@ -1594,6 +1915,113 @@ extension POGOProtos_Enums_PokemonId: CaseIterable {
     .rayquaza,
     .jirachi,
     .deoxys,
+    .turtwig,
+    .grotle,
+    .torterra,
+    .chimchar,
+    .monferno,
+    .infernape,
+    .piplup,
+    .prinplup,
+    .empoleon,
+    .starly,
+    .staravia,
+    .staraptor,
+    .bidoof,
+    .bibarel,
+    .kricketot,
+    .kricketune,
+    .shinx,
+    .luxio,
+    .luxray,
+    .budew,
+    .roserade,
+    .cranidos,
+    .rampardos,
+    .shieldon,
+    .bastiodon,
+    .burmy,
+    .wormadam,
+    .mothim,
+    .combee,
+    .vespiquen,
+    .pachirisu,
+    .buizel,
+    .floatzel,
+    .cherubi,
+    .cherrim,
+    .shellos,
+    .gastrodon,
+    .ambipom,
+    .drifloon,
+    .drifblim,
+    .buneary,
+    .lopunny,
+    .mismagius,
+    .honchkrow,
+    .glameow,
+    .purugly,
+    .chingling,
+    .stunky,
+    .skuntank,
+    .bronzor,
+    .bronzong,
+    .bonsly,
+    .mimeJr,
+    .happiny,
+    .chatot,
+    .spiritomb,
+    .gible,
+    .gabite,
+    .garchomp,
+    .munchlax,
+    .riolu,
+    .lucario,
+    .hippopotas,
+    .hippowdon,
+    .skorupi,
+    .drapion,
+    .croagunk,
+    .toxicroak,
+    .carnivine,
+    .finneon,
+    .lumineon,
+    .mantyke,
+    .snover,
+    .abomasnow,
+    .weavile,
+    .magnezone,
+    .lickilicky,
+    .rhyperior,
+    .tangrowth,
+    .electivire,
+    .magmortar,
+    .togekiss,
+    .yanmega,
+    .leafeon,
+    .glaceon,
+    .gliscor,
+    .mamoswine,
+    .porygonZ,
+    .gallade,
+    .probopass,
+    .dusknoir,
+    .froslass,
+    .rotom,
+    .uxie,
+    .mesprit,
+    .azelf,
+    .dialga,
+    .palkia,
+    .heatran,
+    .regigigas,
+    .giratina,
+    .cresselia,
+    .phione,
+    .manaphy,
+    .darkrai,
+    .shaymin,
+    .arceus,
   ]
 }
 
@@ -1990,5 +2418,112 @@ extension POGOProtos_Enums_PokemonId: SwiftProtobuf._ProtoNameProviding {
     384: .same(proto: "RAYQUAZA"),
     385: .same(proto: "JIRACHI"),
     386: .same(proto: "DEOXYS"),
+    387: .same(proto: "TURTWIG"),
+    388: .same(proto: "GROTLE"),
+    389: .same(proto: "TORTERRA"),
+    390: .same(proto: "CHIMCHAR"),
+    391: .same(proto: "MONFERNO"),
+    392: .same(proto: "INFERNAPE"),
+    393: .same(proto: "PIPLUP"),
+    394: .same(proto: "PRINPLUP"),
+    395: .same(proto: "EMPOLEON"),
+    396: .same(proto: "STARLY"),
+    397: .same(proto: "STARAVIA"),
+    398: .same(proto: "STARAPTOR"),
+    399: .same(proto: "BIDOOF"),
+    400: .same(proto: "BIBAREL"),
+    401: .same(proto: "KRICKETOT"),
+    402: .same(proto: "KRICKETUNE"),
+    403: .same(proto: "SHINX"),
+    404: .same(proto: "LUXIO"),
+    405: .same(proto: "LUXRAY"),
+    406: .same(proto: "BUDEW"),
+    407: .same(proto: "ROSERADE"),
+    408: .same(proto: "CRANIDOS"),
+    409: .same(proto: "RAMPARDOS"),
+    410: .same(proto: "SHIELDON"),
+    411: .same(proto: "BASTIODON"),
+    412: .same(proto: "BURMY"),
+    413: .same(proto: "WORMADAM"),
+    414: .same(proto: "MOTHIM"),
+    415: .same(proto: "COMBEE"),
+    416: .same(proto: "VESPIQUEN"),
+    417: .same(proto: "PACHIRISU"),
+    418: .same(proto: "BUIZEL"),
+    419: .same(proto: "FLOATZEL"),
+    420: .same(proto: "CHERUBI"),
+    421: .same(proto: "CHERRIM"),
+    422: .same(proto: "SHELLOS"),
+    423: .same(proto: "GASTRODON"),
+    424: .same(proto: "AMBIPOM"),
+    425: .same(proto: "DRIFLOON"),
+    426: .same(proto: "DRIFBLIM"),
+    427: .same(proto: "BUNEARY"),
+    428: .same(proto: "LOPUNNY"),
+    429: .same(proto: "MISMAGIUS"),
+    430: .same(proto: "HONCHKROW"),
+    431: .same(proto: "GLAMEOW"),
+    432: .same(proto: "PURUGLY"),
+    433: .same(proto: "CHINGLING"),
+    434: .same(proto: "STUNKY"),
+    435: .same(proto: "SKUNTANK"),
+    436: .same(proto: "BRONZOR"),
+    437: .same(proto: "BRONZONG"),
+    438: .same(proto: "BONSLY"),
+    439: .same(proto: "MIME_JR"),
+    440: .same(proto: "HAPPINY"),
+    441: .same(proto: "CHATOT"),
+    442: .same(proto: "SPIRITOMB"),
+    443: .same(proto: "GIBLE"),
+    444: .same(proto: "GABITE"),
+    445: .same(proto: "GARCHOMP"),
+    446: .same(proto: "MUNCHLAX"),
+    447: .same(proto: "RIOLU"),
+    448: .same(proto: "LUCARIO"),
+    449: .same(proto: "HIPPOPOTAS"),
+    450: .same(proto: "HIPPOWDON"),
+    451: .same(proto: "SKORUPI"),
+    452: .same(proto: "DRAPION"),
+    453: .same(proto: "CROAGUNK"),
+    454: .same(proto: "TOXICROAK"),
+    455: .same(proto: "CARNIVINE"),
+    456: .same(proto: "FINNEON"),
+    457: .same(proto: "LUMINEON"),
+    458: .same(proto: "MANTYKE"),
+    459: .same(proto: "SNOVER"),
+    460: .same(proto: "ABOMASNOW"),
+    461: .same(proto: "WEAVILE"),
+    462: .same(proto: "MAGNEZONE"),
+    463: .same(proto: "LICKILICKY"),
+    464: .same(proto: "RHYPERIOR"),
+    465: .same(proto: "TANGROWTH"),
+    466: .same(proto: "ELECTIVIRE"),
+    467: .same(proto: "MAGMORTAR"),
+    468: .same(proto: "TOGEKISS"),
+    469: .same(proto: "YANMEGA"),
+    470: .same(proto: "LEAFEON"),
+    471: .same(proto: "GLACEON"),
+    472: .same(proto: "GLISCOR"),
+    473: .same(proto: "MAMOSWINE"),
+    474: .same(proto: "PORYGON_Z"),
+    475: .same(proto: "GALLADE"),
+    476: .same(proto: "PROBOPASS"),
+    477: .same(proto: "DUSKNOIR"),
+    478: .same(proto: "FROSLASS"),
+    479: .same(proto: "ROTOM"),
+    480: .same(proto: "UXIE"),
+    481: .same(proto: "MESPRIT"),
+    482: .same(proto: "AZELF"),
+    483: .same(proto: "DIALGA"),
+    484: .same(proto: "PALKIA"),
+    485: .same(proto: "HEATRAN"),
+    486: .same(proto: "REGIGIGAS"),
+    487: .same(proto: "GIRATINA"),
+    488: .same(proto: "CRESSELIA"),
+    489: .same(proto: "PHIONE"),
+    490: .same(proto: "MANAPHY"),
+    491: .same(proto: "DARKRAI"),
+    492: .same(proto: "SHAYMIN"),
+    493: .same(proto: "ARCEUS"),
   ]
 }

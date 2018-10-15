@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Requests_Messages_CatchPokemonMessage {
@@ -93,20 +93,20 @@ extension POGOProtos_Networking_Requests_Messages_CatchPokemonMessage: SwiftProt
   ]
 
   fileprivate class _StorageClass {
-    public var _encounterID: UInt64 = 0
-    public var _pokeball: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    public var _normalizedReticleSize: Double = 0
-    public var _spawnPointID: String = String()
-    public var _hitPokemon: Bool = false
-    public var _spinModifier: Double = 0
-    public var _normalizedHitPosition: Double = 0
-    public var _arPlusValues: POGOProtos_Data_ARPlusEncounterValues? = nil
+    var _encounterID: UInt64 = 0
+    var _pokeball: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    var _normalizedReticleSize: Double = 0
+    var _spawnPointID: String = String()
+    var _hitPokemon: Bool = false
+    var _spinModifier: Double = 0
+    var _normalizedHitPosition: Double = 0
+    var _arPlusValues: POGOProtos_Data_ARPlusEncounterValues? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _encounterID = source._encounterID
       _pokeball = source._pokeball
       _normalizedReticleSize = source._normalizedReticleSize

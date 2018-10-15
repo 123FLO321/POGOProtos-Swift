@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Battle_BattleResults {
@@ -115,23 +115,23 @@ extension POGOProtos_Data_Battle_BattleResults: SwiftProtobuf.Message, SwiftProt
   ]
 
   fileprivate class _StorageClass {
-    public var _gymState: POGOProtos_Data_Gym_GymState? = nil
-    public var _attackers: [POGOProtos_Data_Battle_BattleParticipant] = []
-    public var _playerXpAwarded: [Int32] = []
-    public var _nextDefenderPokemonID: Int64 = 0
-    public var _gymPointsDelta: Int32 = 0
-    public var _gymStatus: POGOProtos_Data_Gym_GymStatusAndDefenders? = nil
-    public var _participation: [POGOProtos_Data_Raid_Participation] = []
-    public var _raidItemRewards: [POGOProtos_Inventory_Loot] = []
-    public var _postRaidEncounter: [POGOProtos_Data_Raid_RaidEncounter] = []
-    public var _gymBadge: [POGOProtos_Data_Badge_AwardedGymBadge] = []
-    public var _defaultRaidItemRewards: [POGOProtos_Inventory_Loot] = []
+    var _gymState: POGOProtos_Data_Gym_GymState? = nil
+    var _attackers: [POGOProtos_Data_Battle_BattleParticipant] = []
+    var _playerXpAwarded: [Int32] = []
+    var _nextDefenderPokemonID: Int64 = 0
+    var _gymPointsDelta: Int32 = 0
+    var _gymStatus: POGOProtos_Data_Gym_GymStatusAndDefenders? = nil
+    var _participation: [POGOProtos_Data_Raid_Participation] = []
+    var _raidItemRewards: [POGOProtos_Inventory_Loot] = []
+    var _postRaidEncounter: [POGOProtos_Data_Raid_RaidEncounter] = []
+    var _gymBadge: [POGOProtos_Data_Badge_AwardedGymBadge] = []
+    var _defaultRaidItemRewards: [POGOProtos_Inventory_Loot] = []
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _gymState = source._gymState
       _attackers = source._attackers
       _playerXpAwarded = source._playerXpAwarded

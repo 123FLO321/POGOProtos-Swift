@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
@@ -107,7 +107,7 @@ public struct POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
 
 extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind] = [
+  public static var allCases: [POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind] = [
     .unspecified,
     .gauge,
     .delta,
@@ -133,18 +133,18 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
   ]
 
   fileprivate class _StorageClass {
-    public var _commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon? = nil
-    public var _longValue: Int64 = 0
-    public var _doubleValue: Double = 0
-    public var _booleanValue: Bool = false
-    public var _distribution: POGOProtos_Networking_Platform_Telemetry_Distribution? = nil
-    public var _metricKind: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind = .unspecified
+    var _commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon? = nil
+    var _longValue: Int64 = 0
+    var _doubleValue: Double = 0
+    var _booleanValue: Bool = false
+    var _distribution: POGOProtos_Networking_Platform_Telemetry_Distribution? = nil
+    var _metricKind: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind = .unspecified
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _commonTelemetry = source._commonTelemetry
       _longValue = source._longValue
       _doubleValue = source._doubleValue

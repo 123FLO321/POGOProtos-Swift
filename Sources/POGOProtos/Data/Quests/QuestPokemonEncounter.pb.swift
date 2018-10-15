@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Quests_QuestPokemonEncounter {
@@ -79,17 +79,17 @@ extension POGOProtos_Data_Quests_QuestPokemonEncounter: SwiftProtobuf.Message, S
   ]
 
   fileprivate class _StorageClass {
-    public var _questID: String = String()
-    public var _pokemon: POGOProtos_Data_PokemonData? = nil
-    public var _encounterType: POGOProtos_Enums_EncounterType = .spawnPoint
-    public var _isHiddenDitto: Bool = false
-    public var _ditto: POGOProtos_Data_PokemonData? = nil
+    var _questID: String = String()
+    var _pokemon: POGOProtos_Data_PokemonData? = nil
+    var _encounterType: POGOProtos_Enums_EncounterType = .spawnPoint
+    var _isHiddenDitto: Bool = false
+    var _ditto: POGOProtos_Data_PokemonData? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _questID = source._questID
       _pokemon = source._pokemon
       _encounterType = source._encounterType

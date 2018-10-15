@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Map_Weather_ClientWeather {
@@ -73,16 +73,16 @@ extension POGOProtos_Map_Weather_ClientWeather: SwiftProtobuf.Message, SwiftProt
   ]
 
   fileprivate class _StorageClass {
-    public var _s2CellID: Int64 = 0
-    public var _displayWeather: POGOProtos_Map_Weather_DisplayWeather? = nil
-    public var _gameplayWeather: POGOProtos_Map_Weather_GameplayWeather? = nil
-    public var _alerts: [POGOProtos_Map_Weather_WeatherAlert] = []
+    var _s2CellID: Int64 = 0
+    var _displayWeather: POGOProtos_Map_Weather_DisplayWeather? = nil
+    var _gameplayWeather: POGOProtos_Map_Weather_GameplayWeather? = nil
+    var _alerts: [POGOProtos_Map_Weather_WeatherAlert] = []
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _s2CellID = source._s2CellID
       _displayWeather = source._displayWeather
       _gameplayWeather = source._gameplayWeather

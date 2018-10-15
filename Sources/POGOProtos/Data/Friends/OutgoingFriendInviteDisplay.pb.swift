@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Friends_OutgoingFriendInviteDisplay {
@@ -61,14 +61,14 @@ extension POGOProtos_Data_Friends_OutgoingFriendInviteDisplay: SwiftProtobuf.Mes
   ]
 
   fileprivate class _StorageClass {
-    public var _invite: POGOProtos_Data_Friends_OutgoingFriendInvite? = nil
-    public var _player: POGOProtos_Data_Player_PlayerSummary? = nil
+    var _invite: POGOProtos_Data_Friends_OutgoingFriendInvite? = nil
+    var _player: POGOProtos_Data_Player_PlayerSummary? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _invite = source._invite
       _player = source._player
     }

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Player_PlayerPublicProfile {
@@ -111,23 +111,23 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
   ]
 
   fileprivate class _StorageClass {
-    public var _name: String = String()
-    public var _level: Int32 = 0
-    public var _avatar: POGOProtos_Data_Player_PlayerAvatar? = nil
-    public var _teamColor: POGOProtos_Enums_TeamColor = .neutral
-    public var _battlesWon: Int32 = 0
-    public var _kmWalked: Float = 0
-    public var _caughtPokemon: Int32 = 0
-    public var _gymBadgeType: POGOProtos_Enums_GymBadgeType = .gymBadgeUnset
-    public var _badges: [POGOProtos_Data_Player_PlayerBadge] = []
-    public var _experience: Int64 = 0
-    public var _hasSharedExPass_p: Bool = false
+    var _name: String = String()
+    var _level: Int32 = 0
+    var _avatar: POGOProtos_Data_Player_PlayerAvatar? = nil
+    var _teamColor: POGOProtos_Enums_TeamColor = .neutral
+    var _battlesWon: Int32 = 0
+    var _kmWalked: Float = 0
+    var _caughtPokemon: Int32 = 0
+    var _gymBadgeType: POGOProtos_Enums_GymBadgeType = .gymBadgeUnset
+    var _badges: [POGOProtos_Data_Player_PlayerBadge] = []
+    var _experience: Int64 = 0
+    var _hasSharedExPass_p: Bool = false
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _name = source._name
       _level = source._level
       _avatar = source._avatar

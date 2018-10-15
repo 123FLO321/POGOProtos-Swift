@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Telemetry_BootTime {
@@ -119,7 +119,7 @@ public struct POGOProtos_Data_Telemetry_BootTime {
 
 extension POGOProtos_Data_Telemetry_BootTime.BootPhase: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Telemetry_BootTime.BootPhase] = [
+  public static var allCases: [POGOProtos_Data_Telemetry_BootTime.BootPhase] = [
     .undefined,
     .timeToMap,
     .logoScreenTime,
@@ -153,14 +153,14 @@ extension POGOProtos_Data_Telemetry_BootTime: SwiftProtobuf.Message, SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    public var _duration: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData? = nil
-    public var _bootPhase: POGOProtos_Data_Telemetry_BootTime.BootPhase = .undefined
+    var _duration: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData? = nil
+    var _bootPhase: POGOProtos_Data_Telemetry_BootTime.BootPhase = .undefined
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _duration = source._duration
       _bootPhase = source._bootPhase
     }

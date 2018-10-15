@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse {
@@ -67,15 +67,15 @@ extension POGOProtos_Networking_Responses_GetGymBadgeDetailsResponse: SwiftProto
   ]
 
   fileprivate class _StorageClass {
-    public var _gymBadge: POGOProtos_Data_Badge_AwardedGymBadge? = nil
-    public var _gymDefender: POGOProtos_Data_Gym_GymDefender? = nil
-    public var _success: Bool = false
+    var _gymBadge: POGOProtos_Data_Badge_AwardedGymBadge? = nil
+    var _gymDefender: POGOProtos_Data_Gym_GymDefender? = nil
+    var _success: Bool = false
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _gymBadge = source._gymBadge
       _gymDefender = source._gymDefender
       _success = source._success

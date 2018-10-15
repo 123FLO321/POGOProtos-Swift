@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Inventory_InventoryItemData {
@@ -191,27 +191,27 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
   ]
 
   fileprivate class _StorageClass {
-    public var _pokemonData: POGOProtos_Data_PokemonData? = nil
-    public var _item: POGOProtos_Inventory_Item_ItemData? = nil
-    public var _pokedexEntry: POGOProtos_Data_PokedexEntry? = nil
-    public var _playerStats: POGOProtos_Data_Player_PlayerStats? = nil
-    public var _playerCurrency: POGOProtos_Data_Player_PlayerCurrency? = nil
-    public var _playerCamera: POGOProtos_Data_Player_PlayerCamera? = nil
-    public var _inventoryUpgrades: POGOProtos_Inventory_InventoryUpgrades? = nil
-    public var _appliedItems: POGOProtos_Inventory_AppliedItems? = nil
-    public var _eggIncubators: POGOProtos_Inventory_EggIncubators? = nil
-    public var _candy: POGOProtos_Inventory_Candy? = nil
-    public var _quest: POGOProtos_Data_Quests_Quest? = nil
-    public var _avatarItem: POGOProtos_Data_Avatar_AvatarItem? = nil
-    public var _raidTickets: POGOProtos_Inventory_RaidTickets? = nil
-    public var _quests: POGOProtos_Data_Quests_Quests? = nil
-    public var _giftBoxes: POGOProtos_Data_Gift_GiftBoxes? = nil
+    var _pokemonData: POGOProtos_Data_PokemonData? = nil
+    var _item: POGOProtos_Inventory_Item_ItemData? = nil
+    var _pokedexEntry: POGOProtos_Data_PokedexEntry? = nil
+    var _playerStats: POGOProtos_Data_Player_PlayerStats? = nil
+    var _playerCurrency: POGOProtos_Data_Player_PlayerCurrency? = nil
+    var _playerCamera: POGOProtos_Data_Player_PlayerCamera? = nil
+    var _inventoryUpgrades: POGOProtos_Inventory_InventoryUpgrades? = nil
+    var _appliedItems: POGOProtos_Inventory_AppliedItems? = nil
+    var _eggIncubators: POGOProtos_Inventory_EggIncubators? = nil
+    var _candy: POGOProtos_Inventory_Candy? = nil
+    var _quest: POGOProtos_Data_Quests_Quest? = nil
+    var _avatarItem: POGOProtos_Data_Avatar_AvatarItem? = nil
+    var _raidTickets: POGOProtos_Inventory_RaidTickets? = nil
+    var _quests: POGOProtos_Data_Quests_Quests? = nil
+    var _giftBoxes: POGOProtos_Data_Gift_GiftBoxes? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _pokemonData = source._pokemonData
       _item = source._item
       _pokedexEntry = source._pokedexEntry

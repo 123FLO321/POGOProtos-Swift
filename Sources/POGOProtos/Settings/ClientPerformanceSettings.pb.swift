@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Settings_ClientPerformanceSettings {
@@ -27,6 +27,8 @@ public struct POGOProtos_Settings_ClientPerformanceSettings {
   public var enableLocalDiskCaching: Bool = false
 
   public var maxNumberLocalBattleParties: Int32 = 0
+
+  public var multiPokemonBattlePartySelect: Bool = false
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -42,6 +44,7 @@ extension POGOProtos_Settings_ClientPerformanceSettings: SwiftProtobuf.Message, 
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "enable_local_disk_caching"),
     2: .standard(proto: "max_number_local_battle_parties"),
+    3: .standard(proto: "multi_pokemon_battle_party_select"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +52,7 @@ extension POGOProtos_Settings_ClientPerformanceSettings: SwiftProtobuf.Message, 
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.enableLocalDiskCaching)
       case 2: try decoder.decodeSingularInt32Field(value: &self.maxNumberLocalBattleParties)
+      case 3: try decoder.decodeSingularBoolField(value: &self.multiPokemonBattlePartySelect)
       default: break
       }
     }
@@ -61,12 +65,16 @@ extension POGOProtos_Settings_ClientPerformanceSettings: SwiftProtobuf.Message, 
     if self.maxNumberLocalBattleParties != 0 {
       try visitor.visitSingularInt32Field(value: self.maxNumberLocalBattleParties, fieldNumber: 2)
     }
+    if self.multiPokemonBattlePartySelect != false {
+      try visitor.visitSingularBoolField(value: self.multiPokemonBattlePartySelect, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_ClientPerformanceSettings, rhs: POGOProtos_Settings_ClientPerformanceSettings) -> Bool {
     if lhs.enableLocalDiskCaching != rhs.enableLocalDiskCaching {return false}
     if lhs.maxNumberLocalBattleParties != rhs.maxNumberLocalBattleParties {return false}
+    if lhs.multiPokemonBattlePartySelect != rhs.multiPokemonBattlePartySelect {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

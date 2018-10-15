@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Badge_AwardedGymBadge {
@@ -139,27 +139,27 @@ extension POGOProtos_Data_Badge_AwardedGymBadge: SwiftProtobuf.Message, SwiftPro
   ]
 
   fileprivate class _StorageClass {
-    public var _fortID: String = String()
-    public var _gymBadgeType: POGOProtos_Enums_GymBadgeType = .gymBadgeUnset
-    public var _score: UInt32 = 0
-    public var _gymBadgeStats: POGOProtos_Data_Badge_GymBadgeStats? = nil
-    public var _lastUpdateTimestampMs: UInt64 = 0
-    public var _lastCheckTimestampMs: UInt64 = 0
-    public var _earnedPoints: UInt32 = 0
-    public var _progress: Float = 0
-    public var _levelUp: Bool = false
-    public var _name: String = String()
-    public var _imageURL: String = String()
-    public var _description_p: String = String()
-    public var _latitude: Double = 0
-    public var _longitude: Double = 0
-    public var _raids: POGOProtos_Data_Raid_PlayerRaidInfo? = nil
+    var _fortID: String = String()
+    var _gymBadgeType: POGOProtos_Enums_GymBadgeType = .gymBadgeUnset
+    var _score: UInt32 = 0
+    var _gymBadgeStats: POGOProtos_Data_Badge_GymBadgeStats? = nil
+    var _lastUpdateTimestampMs: UInt64 = 0
+    var _lastCheckTimestampMs: UInt64 = 0
+    var _earnedPoints: UInt32 = 0
+    var _progress: Float = 0
+    var _levelUp: Bool = false
+    var _name: String = String()
+    var _imageURL: String = String()
+    var _description_p: String = String()
+    var _latitude: Double = 0
+    var _longitude: Double = 0
+    var _raids: POGOProtos_Data_Raid_PlayerRaidInfo? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _fortID = source._fortID
       _gymBadgeType = source._gymBadgeType
       _score = source._score

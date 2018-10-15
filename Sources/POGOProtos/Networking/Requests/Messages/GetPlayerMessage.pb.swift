@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Requests_Messages_GetPlayerMessage {
@@ -73,14 +73,14 @@ extension POGOProtos_Networking_Requests_Messages_GetPlayerMessage: SwiftProtobu
   ]
 
   fileprivate class _StorageClass {
-    public var _playerLocale: POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale? = nil
-    public var _preventCreation: Bool = false
+    var _playerLocale: POGOProtos_Networking_Requests_Messages_GetPlayerMessage.PlayerLocale? = nil
+    var _preventCreation: Bool = false
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _playerLocale = source._playerLocale
       _preventCreation = source._preventCreation
     }

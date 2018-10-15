@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Quests_QuestCondition {
@@ -494,7 +494,7 @@ public struct POGOProtos_Data_Quests_QuestCondition {
 
 extension POGOProtos_Data_Quests_QuestCondition.ConditionType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Quests_QuestCondition.ConditionType] = [
+  public static var allCases: [POGOProtos_Data_Quests_QuestCondition.ConditionType] = [
     .unset,
     .withPokemonType,
     .withPokemonCategory,
@@ -548,29 +548,29 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
   ]
 
   fileprivate class _StorageClass {
-    public var _type: POGOProtos_Data_Quests_QuestCondition.ConditionType = .unset
-    public var _withPokemonType: POGOProtos_Data_Quests_QuestCondition.WithPokemonType? = nil
-    public var _withPokemonCategory: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory? = nil
-    public var _withWeatherBoost: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost? = nil
-    public var _withDailyCaptureBonus: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus? = nil
-    public var _withDailySpinBonus: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus? = nil
-    public var _withWinRaidStatus: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus? = nil
-    public var _withRaidLevel: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel? = nil
-    public var _withThrowType: POGOProtos_Data_Quests_QuestCondition.WithThrowType? = nil
-    public var _withWinGymBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus? = nil
-    public var _withSuperEffectiveChargeMove: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove? = nil
-    public var _withItem: POGOProtos_Data_Quests_QuestCondition.WithItem? = nil
-    public var _withUniquePokestop: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop? = nil
-    public var _withQuestContext: POGOProtos_Data_Quests_QuestCondition.WithQuestContext? = nil
-    public var _withBadgeType: POGOProtos_Data_Quests_QuestCondition.WithBadgeType? = nil
-    public var _withPlayerLevel: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel? = nil
-    public var _withWinBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus? = nil
+    var _type: POGOProtos_Data_Quests_QuestCondition.ConditionType = .unset
+    var _withPokemonType: POGOProtos_Data_Quests_QuestCondition.WithPokemonType? = nil
+    var _withPokemonCategory: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory? = nil
+    var _withWeatherBoost: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost? = nil
+    var _withDailyCaptureBonus: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus? = nil
+    var _withDailySpinBonus: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus? = nil
+    var _withWinRaidStatus: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus? = nil
+    var _withRaidLevel: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel? = nil
+    var _withThrowType: POGOProtos_Data_Quests_QuestCondition.WithThrowType? = nil
+    var _withWinGymBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus? = nil
+    var _withSuperEffectiveChargeMove: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove? = nil
+    var _withItem: POGOProtos_Data_Quests_QuestCondition.WithItem? = nil
+    var _withUniquePokestop: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop? = nil
+    var _withQuestContext: POGOProtos_Data_Quests_QuestCondition.WithQuestContext? = nil
+    var _withBadgeType: POGOProtos_Data_Quests_QuestCondition.WithBadgeType? = nil
+    var _withPlayerLevel: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel? = nil
+    var _withWinBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _type = source._type
       _withPokemonType = source._withPokemonType
       _withPokemonCategory = source._withPokemonCategory

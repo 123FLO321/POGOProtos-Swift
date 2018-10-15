@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Envelopes_RequestEnvelope {
@@ -163,22 +163,22 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
   ]
 
   fileprivate class _StorageClass {
-    public var _statusCode: Int32 = 0
-    public var _requestID: UInt64 = 0
-    public var _requests: [POGOProtos_Networking_Requests_Request] = []
-    public var _platformRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest] = []
-    public var _latitude: Double = 0
-    public var _longitude: Double = 0
-    public var _accuracy: Double = 0
-    public var _authInfo: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo? = nil
-    public var _authTicket: POGOProtos_Networking_Envelopes_AuthTicket? = nil
-    public var _msSinceLastLocationfix: Int64 = 0
+    var _statusCode: Int32 = 0
+    var _requestID: UInt64 = 0
+    var _requests: [POGOProtos_Networking_Requests_Request] = []
+    var _platformRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest] = []
+    var _latitude: Double = 0
+    var _longitude: Double = 0
+    var _accuracy: Double = 0
+    var _authInfo: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo? = nil
+    var _authTicket: POGOProtos_Networking_Envelopes_AuthTicket? = nil
+    var _msSinceLastLocationfix: Int64 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _statusCode = source._statusCode
       _requestID = source._requestID
       _requests = source._requests
@@ -288,14 +288,14 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobu
   ]
 
   fileprivate class _StorageClass {
-    public var _provider: String = String()
-    public var _token: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT? = nil
+    var _provider: String = String()
+    var _token: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _provider = source._provider
       _token = source._token
     }

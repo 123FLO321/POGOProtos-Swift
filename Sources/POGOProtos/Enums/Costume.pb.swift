@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
@@ -27,6 +27,7 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
   case oneYearAnniversary // = 3
   case halloween2017 // = 4
   case summer2018 // = 5
+  case fall2018 // = 6
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -41,6 +42,7 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case 3: self = .oneYearAnniversary
     case 4: self = .halloween2017
     case 5: self = .summer2018
+    case 6: self = .fall2018
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -53,6 +55,7 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case .oneYearAnniversary: return 3
     case .halloween2017: return 4
     case .summer2018: return 5
+    case .fall2018: return 6
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -63,13 +66,14 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_Costume: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_Costume] = [
+  public static var allCases: [POGOProtos_Enums_Costume] = [
     .unset,
     .holiday2016,
     .anniversary,
     .oneYearAnniversary,
     .halloween2017,
     .summer2018,
+    .fall2018,
   ]
 }
 
@@ -85,5 +89,6 @@ extension POGOProtos_Enums_Costume: SwiftProtobuf._ProtoNameProviding {
     3: .same(proto: "ONE_YEAR_ANNIVERSARY"),
     4: .same(proto: "HALLOWEEN_2017"),
     5: .same(proto: "SUMMER_2018"),
+    6: .same(proto: "FALL_2018"),
   ]
 }

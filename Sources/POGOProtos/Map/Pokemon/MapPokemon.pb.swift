@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Map_Pokemon_MapPokemon {
@@ -88,19 +88,19 @@ extension POGOProtos_Map_Pokemon_MapPokemon: SwiftProtobuf.Message, SwiftProtobu
   ]
 
   fileprivate class _StorageClass {
-    public var _spawnPointID: String = String()
-    public var _encounterID: UInt64 = 0
-    public var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    public var _expirationTimestampMs: Int64 = 0
-    public var _latitude: Double = 0
-    public var _longitude: Double = 0
-    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    var _spawnPointID: String = String()
+    var _encounterID: UInt64 = 0
+    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _expirationTimestampMs: Int64 = 0
+    var _latitude: Double = 0
+    var _longitude: Double = 0
+    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _spawnPointID = source._spawnPointID
       _encounterID = source._encounterID
       _pokemonID = source._pokemonID

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Map_Fort_FortData {
@@ -245,42 +245,42 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
   ]
 
   fileprivate class _StorageClass {
-    public var _id: String = String()
-    public var _lastModifiedTimestampMs: Int64 = 0
-    public var _latitude: Double = 0
-    public var _longitude: Double = 0
-    public var _ownedByTeam: POGOProtos_Enums_TeamColor = .neutral
-    public var _guardPokemonID: POGOProtos_Enums_PokemonId = .missingno
-    public var _guardPokemonCp: Int32 = 0
-    public var _enabled: Bool = false
-    public var _type: POGOProtos_Map_Fort_FortType = .gym
-    public var _gymPoints: Int64 = 0
-    public var _isInBattle: Bool = false
-    public var _activeFortModifier: [POGOProtos_Inventory_Item_ItemId] = []
-    public var _lureInfo: POGOProtos_Map_Fort_FortLureInfo? = nil
-    public var _cooldownCompleteTimestampMs: Int64 = 0
-    public var _sponsor: POGOProtos_Map_Fort_FortSponsor = .unsetSponsor
-    public var _renderingType: POGOProtos_Map_Fort_FortRenderingType = .default
-    public var _deployLockoutEndMs: Int64 = 0
-    public var _guardPokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-    public var _closed: Bool = false
-    public var _raidInfo: POGOProtos_Data_Raid_RaidInfo? = nil
-    public var _gymDisplay: POGOProtos_Map_Fort_GymDisplay? = nil
-    public var _visited: Bool = false
-    public var _sameTeamDeployLockoutEndMs: Int64 = 0
-    public var _allowCheckin: Bool = false
-    public var _imageURL: String = String()
-    public var _inEvent: Bool = false
-    public var _bannerURL: String = String()
-    public var _partnerID: String = String()
-    public var _challengeQuestCompleted: Bool = false
-    public var _isExRaidEligible: Bool = false
+    var _id: String = String()
+    var _lastModifiedTimestampMs: Int64 = 0
+    var _latitude: Double = 0
+    var _longitude: Double = 0
+    var _ownedByTeam: POGOProtos_Enums_TeamColor = .neutral
+    var _guardPokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _guardPokemonCp: Int32 = 0
+    var _enabled: Bool = false
+    var _type: POGOProtos_Map_Fort_FortType = .gym
+    var _gymPoints: Int64 = 0
+    var _isInBattle: Bool = false
+    var _activeFortModifier: [POGOProtos_Inventory_Item_ItemId] = []
+    var _lureInfo: POGOProtos_Map_Fort_FortLureInfo? = nil
+    var _cooldownCompleteTimestampMs: Int64 = 0
+    var _sponsor: POGOProtos_Map_Fort_FortSponsor = .unsetSponsor
+    var _renderingType: POGOProtos_Map_Fort_FortRenderingType = .default
+    var _deployLockoutEndMs: Int64 = 0
+    var _guardPokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    var _closed: Bool = false
+    var _raidInfo: POGOProtos_Data_Raid_RaidInfo? = nil
+    var _gymDisplay: POGOProtos_Map_Fort_GymDisplay? = nil
+    var _visited: Bool = false
+    var _sameTeamDeployLockoutEndMs: Int64 = 0
+    var _allowCheckin: Bool = false
+    var _imageURL: String = String()
+    var _inEvent: Bool = false
+    var _bannerURL: String = String()
+    var _partnerID: String = String()
+    var _challengeQuestCompleted: Bool = false
+    var _isExRaidEligible: Bool = false
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _id = source._id
       _lastModifiedTimestampMs = source._lastModifiedTimestampMs
       _latitude = source._latitude

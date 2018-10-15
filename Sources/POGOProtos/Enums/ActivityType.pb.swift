@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public enum POGOProtos_Enums_ActivityType: SwiftProtobuf.Enum {
@@ -183,7 +183,7 @@ public enum POGOProtos_Enums_ActivityType: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_ActivityType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_ActivityType] = [
+  public static var allCases: [POGOProtos_Enums_ActivityType] = [
     .activityUnknown,
     .activityCatchPokemon,
     .activityCatchLegendPokemon,

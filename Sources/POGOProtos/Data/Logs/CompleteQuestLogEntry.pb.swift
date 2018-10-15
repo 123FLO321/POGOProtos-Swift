@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Logs_CompleteQuestLogEntry {
@@ -82,7 +82,7 @@ public struct POGOProtos_Data_Logs_CompleteQuestLogEntry {
 
 extension POGOProtos_Data_Logs_CompleteQuestLogEntry.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Logs_CompleteQuestLogEntry.Result] = [
+  public static var allCases: [POGOProtos_Data_Logs_CompleteQuestLogEntry.Result] = [
     .unset,
     .success,
   ]
@@ -103,15 +103,15 @@ extension POGOProtos_Data_Logs_CompleteQuestLogEntry: SwiftProtobuf.Message, Swi
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Data_Logs_CompleteQuestLogEntry.Result = .unset
-    public var _quest: POGOProtos_Data_Quests_ClientQuest? = nil
-    public var _stamp: [POGOProtos_Data_Quests_QuestStamp] = []
+    var _result: POGOProtos_Data_Logs_CompleteQuestLogEntry.Result = .unset
+    var _quest: POGOProtos_Data_Quests_ClientQuest? = nil
+    var _stamp: [POGOProtos_Data_Quests_QuestStamp] = []
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _quest = source._quest
       _stamp = source._stamp

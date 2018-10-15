@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
@@ -72,6 +72,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeMaxLevelFriends // = 48
   case badgeTrading // = 49
   case badgeTradingDistance // = 50
+  case badgePokedexEntriesGen4 // = 51
   case badgeEventMin // = 2000
   case badgeChicagoFestJuly2017 // = 2001
   case badgePikachuOutbreakYokohama2017 // = 2002
@@ -166,6 +167,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 48: self = .badgeMaxLevelFriends
     case 49: self = .badgeTrading
     case 50: self = .badgeTradingDistance
+    case 51: self = .badgePokedexEntriesGen4
     case 2000: self = .badgeEventMin
     case 2001: self = .badgeChicagoFestJuly2017
     case 2002: self = .badgePikachuOutbreakYokohama2017
@@ -258,6 +260,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeMaxLevelFriends: return 48
     case .badgeTrading: return 49
     case .badgeTradingDistance: return 50
+    case .badgePokedexEntriesGen4: return 51
     case .badgeEventMin: return 2000
     case .badgeChicagoFestJuly2017: return 2001
     case .badgePikachuOutbreakYokohama2017: return 2002
@@ -303,7 +306,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_BadgeType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_BadgeType] = [
+  public static var allCases: [POGOProtos_Enums_BadgeType] = [
     .badgeUnset,
     .badgeTravelKm,
     .badgePokedexEntries,
@@ -355,6 +358,7 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeMaxLevelFriends,
     .badgeTrading,
     .badgeTradingDistance,
+    .badgePokedexEntriesGen4,
     .badgeEventMin,
     .badgeChicagoFestJuly2017,
     .badgePikachuOutbreakYokohama2017,
@@ -450,6 +454,7 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     48: .same(proto: "BADGE_MAX_LEVEL_FRIENDS"),
     49: .same(proto: "BADGE_TRADING"),
     50: .same(proto: "BADGE_TRADING_DISTANCE"),
+    51: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN4"),
     2000: .same(proto: "BADGE_EVENT_MIN"),
     2001: .same(proto: "BADGE_CHICAGO_FEST_JULY_2017"),
     2002: .same(proto: "BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017"),

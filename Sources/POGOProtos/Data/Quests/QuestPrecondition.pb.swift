@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Quests_QuestPrecondition {
@@ -188,7 +188,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
 
 extension POGOProtos_Data_Quests_QuestPrecondition.Operator: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Quests_QuestPrecondition.Operator] = [
+  public static var allCases: [POGOProtos_Data_Quests_QuestPrecondition.Operator] = [
     .unset,
     .equals,
     .greaterThan,
@@ -198,7 +198,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition.Operator: CaseIterable {
 
 extension POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType] = [
+  public static var allCases: [POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType] = [
     .questPreconditionUnset,
     .questPreconditionQuest,
     .questPreconditionLevel,
@@ -225,17 +225,17 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
   ]
 
   fileprivate class _StorageClass {
-    public var _type: POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType = .questPreconditionUnset
-    public var _questTemplateID: String = String()
-    public var _level: POGOProtos_Data_Quests_QuestPrecondition.Level? = nil
-    public var _medal: POGOProtos_Data_Quests_QuestPrecondition.Medal? = nil
-    public var _quests: POGOProtos_Data_Quests_QuestPrecondition.Quests? = nil
+    var _type: POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType = .questPreconditionUnset
+    var _questTemplateID: String = String()
+    var _level: POGOProtos_Data_Quests_QuestPrecondition.Level? = nil
+    var _medal: POGOProtos_Data_Quests_QuestPrecondition.Medal? = nil
+    var _quests: POGOProtos_Data_Quests_QuestPrecondition.Quests? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _type = source._type
       _questTemplateID = source._questTemplateID
       _level = source._level

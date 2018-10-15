@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Logs_CatchPokemonLogEntry {
@@ -98,7 +98,7 @@ public struct POGOProtos_Data_Logs_CatchPokemonLogEntry {
 
 extension POGOProtos_Data_Logs_CatchPokemonLogEntry.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Logs_CatchPokemonLogEntry.Result] = [
+  public static var allCases: [POGOProtos_Data_Logs_CatchPokemonLogEntry.Result] = [
     .unset,
     .pokemonCaptured,
     .pokemonFled,
@@ -123,17 +123,17 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Data_Logs_CatchPokemonLogEntry.Result = .unset
-    public var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    public var _combatPoints: Int32 = 0
-    public var _pokemonDataID: UInt64 = 0
-    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    var _result: POGOProtos_Data_Logs_CatchPokemonLogEntry.Result = .unset
+    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _combatPoints: Int32 = 0
+    var _pokemonDataID: UInt64 = 0
+    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _pokemonID = source._pokemonID
       _combatPoints = source._combatPoints

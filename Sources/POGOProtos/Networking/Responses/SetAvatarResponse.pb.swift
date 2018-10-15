@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_SetAvatarResponse {
@@ -92,7 +92,7 @@ public struct POGOProtos_Networking_Responses_SetAvatarResponse {
 
 extension POGOProtos_Networking_Responses_SetAvatarResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_SetAvatarResponse.Status] = [
+  public static var allCases: [POGOProtos_Networking_Responses_SetAvatarResponse.Status] = [
     .unset,
     .success,
     .avatarAlreadySet,
@@ -117,14 +117,14 @@ extension POGOProtos_Networking_Responses_SetAvatarResponse: SwiftProtobuf.Messa
   ]
 
   fileprivate class _StorageClass {
-    public var _status: POGOProtos_Networking_Responses_SetAvatarResponse.Status = .unset
-    public var _playerData: POGOProtos_Data_PlayerData? = nil
+    var _status: POGOProtos_Networking_Responses_SetAvatarResponse.Status = .unset
+    var _playerData: POGOProtos_Data_PlayerData? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _status = source._status
       _playerData = source._playerData
     }

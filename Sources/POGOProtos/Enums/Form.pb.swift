@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
@@ -102,6 +102,43 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case exeggutorAlola // = 78
   case marowakNormal // = 79
   case marowakAlola // = 80
+  case rotomNormal // = 81
+  case rotomFrost // = 82
+  case rotomFan // = 83
+  case rotomMow // = 84
+  case rotomWash // = 85
+  case rotomHeat // = 86
+  case wormadamPlant // = 87
+  case wormadamSandy // = 88
+  case wormadamTrash // = 89
+  case giratinaAltered // = 90
+  case giratinaOrigin // = 91
+  case shayminSky // = 92
+  case shayminLand // = 93
+  case cherrimOvercast // = 94
+  case cherrimSunny // = 95
+  case shellosWestSea // = 96
+  case shellosEastSea // = 97
+  case gastrodonWestSea // = 98
+  case gastrodonEastSea // = 99
+  case arceusNormal // = 100
+  case arceusFighting // = 101
+  case arceusFlying // = 102
+  case arceusPoison // = 103
+  case arceusGround // = 104
+  case arceusRock // = 105
+  case arceusBug // = 106
+  case arceusGhost // = 107
+  case arceusSteel // = 108
+  case arceusFire // = 109
+  case arceusWater // = 110
+  case arceusGrass // = 111
+  case arceusElectric // = 112
+  case arceusPsychic // = 113
+  case arceusIce // = 114
+  case arceusDragon // = 115
+  case arceusDark // = 116
+  case arceusFairy // = 117
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -191,6 +228,43 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 78: self = .exeggutorAlola
     case 79: self = .marowakNormal
     case 80: self = .marowakAlola
+    case 81: self = .rotomNormal
+    case 82: self = .rotomFrost
+    case 83: self = .rotomFan
+    case 84: self = .rotomMow
+    case 85: self = .rotomWash
+    case 86: self = .rotomHeat
+    case 87: self = .wormadamPlant
+    case 88: self = .wormadamSandy
+    case 89: self = .wormadamTrash
+    case 90: self = .giratinaAltered
+    case 91: self = .giratinaOrigin
+    case 92: self = .shayminSky
+    case 93: self = .shayminLand
+    case 94: self = .cherrimOvercast
+    case 95: self = .cherrimSunny
+    case 96: self = .shellosWestSea
+    case 97: self = .shellosEastSea
+    case 98: self = .gastrodonWestSea
+    case 99: self = .gastrodonEastSea
+    case 100: self = .arceusNormal
+    case 101: self = .arceusFighting
+    case 102: self = .arceusFlying
+    case 103: self = .arceusPoison
+    case 104: self = .arceusGround
+    case 105: self = .arceusRock
+    case 106: self = .arceusBug
+    case 107: self = .arceusGhost
+    case 108: self = .arceusSteel
+    case 109: self = .arceusFire
+    case 110: self = .arceusWater
+    case 111: self = .arceusGrass
+    case 112: self = .arceusElectric
+    case 113: self = .arceusPsychic
+    case 114: self = .arceusIce
+    case 115: self = .arceusDragon
+    case 116: self = .arceusDark
+    case 117: self = .arceusFairy
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -278,6 +352,43 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .exeggutorAlola: return 78
     case .marowakNormal: return 79
     case .marowakAlola: return 80
+    case .rotomNormal: return 81
+    case .rotomFrost: return 82
+    case .rotomFan: return 83
+    case .rotomMow: return 84
+    case .rotomWash: return 85
+    case .rotomHeat: return 86
+    case .wormadamPlant: return 87
+    case .wormadamSandy: return 88
+    case .wormadamTrash: return 89
+    case .giratinaAltered: return 90
+    case .giratinaOrigin: return 91
+    case .shayminSky: return 92
+    case .shayminLand: return 93
+    case .cherrimOvercast: return 94
+    case .cherrimSunny: return 95
+    case .shellosWestSea: return 96
+    case .shellosEastSea: return 97
+    case .gastrodonWestSea: return 98
+    case .gastrodonEastSea: return 99
+    case .arceusNormal: return 100
+    case .arceusFighting: return 101
+    case .arceusFlying: return 102
+    case .arceusPoison: return 103
+    case .arceusGround: return 104
+    case .arceusRock: return 105
+    case .arceusBug: return 106
+    case .arceusGhost: return 107
+    case .arceusSteel: return 108
+    case .arceusFire: return 109
+    case .arceusWater: return 110
+    case .arceusGrass: return 111
+    case .arceusElectric: return 112
+    case .arceusPsychic: return 113
+    case .arceusIce: return 114
+    case .arceusDragon: return 115
+    case .arceusDark: return 116
+    case .arceusFairy: return 117
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -288,7 +399,7 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_Form: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_Form] = [
+  public static var allCases: [POGOProtos_Enums_Form] = [
     .unset,
     .unownA,
     .unownB,
@@ -370,6 +481,43 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .exeggutorAlola,
     .marowakNormal,
     .marowakAlola,
+    .rotomNormal,
+    .rotomFrost,
+    .rotomFan,
+    .rotomMow,
+    .rotomWash,
+    .rotomHeat,
+    .wormadamPlant,
+    .wormadamSandy,
+    .wormadamTrash,
+    .giratinaAltered,
+    .giratinaOrigin,
+    .shayminSky,
+    .shayminLand,
+    .cherrimOvercast,
+    .cherrimSunny,
+    .shellosWestSea,
+    .shellosEastSea,
+    .gastrodonWestSea,
+    .gastrodonEastSea,
+    .arceusNormal,
+    .arceusFighting,
+    .arceusFlying,
+    .arceusPoison,
+    .arceusGround,
+    .arceusRock,
+    .arceusBug,
+    .arceusGhost,
+    .arceusSteel,
+    .arceusFire,
+    .arceusWater,
+    .arceusGrass,
+    .arceusElectric,
+    .arceusPsychic,
+    .arceusIce,
+    .arceusDragon,
+    .arceusDark,
+    .arceusFairy,
   ]
 }
 
@@ -460,5 +608,42 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     78: .same(proto: "EXEGGUTOR_ALOLA"),
     79: .same(proto: "MAROWAK_NORMAL"),
     80: .same(proto: "MAROWAK_ALOLA"),
+    81: .same(proto: "ROTOM_NORMAL"),
+    82: .same(proto: "ROTOM_FROST"),
+    83: .same(proto: "ROTOM_FAN"),
+    84: .same(proto: "ROTOM_MOW"),
+    85: .same(proto: "ROTOM_WASH"),
+    86: .same(proto: "ROTOM_HEAT"),
+    87: .same(proto: "WORMADAM_PLANT"),
+    88: .same(proto: "WORMADAM_SANDY"),
+    89: .same(proto: "WORMADAM_TRASH"),
+    90: .same(proto: "GIRATINA_ALTERED"),
+    91: .same(proto: "GIRATINA_ORIGIN"),
+    92: .same(proto: "SHAYMIN_SKY"),
+    93: .same(proto: "SHAYMIN_LAND"),
+    94: .same(proto: "CHERRIM_OVERCAST"),
+    95: .same(proto: "CHERRIM_SUNNY"),
+    96: .same(proto: "SHELLOS_WEST_SEA"),
+    97: .same(proto: "SHELLOS_EAST_SEA"),
+    98: .same(proto: "GASTRODON_WEST_SEA"),
+    99: .same(proto: "GASTRODON_EAST_SEA"),
+    100: .same(proto: "ARCEUS_NORMAL"),
+    101: .same(proto: "ARCEUS_FIGHTING"),
+    102: .same(proto: "ARCEUS_FLYING"),
+    103: .same(proto: "ARCEUS_POISON"),
+    104: .same(proto: "ARCEUS_GROUND"),
+    105: .same(proto: "ARCEUS_ROCK"),
+    106: .same(proto: "ARCEUS_BUG"),
+    107: .same(proto: "ARCEUS_GHOST"),
+    108: .same(proto: "ARCEUS_STEEL"),
+    109: .same(proto: "ARCEUS_FIRE"),
+    110: .same(proto: "ARCEUS_WATER"),
+    111: .same(proto: "ARCEUS_GRASS"),
+    112: .same(proto: "ARCEUS_ELECTRIC"),
+    113: .same(proto: "ARCEUS_PSYCHIC"),
+    114: .same(proto: "ARCEUS_ICE"),
+    115: .same(proto: "ARCEUS_DRAGON"),
+    116: .same(proto: "ARCEUS_DARK"),
+    117: .same(proto: "ARCEUS_FAIRY"),
   ]
 }

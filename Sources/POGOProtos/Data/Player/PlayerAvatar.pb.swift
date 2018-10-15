@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Player_PlayerAvatar {
@@ -167,33 +167,33 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
   ]
 
   fileprivate class _StorageClass {
-    public var _skin: Int32 = 0
-    public var _hair: Int32 = 0
-    public var _shirt: Int32 = 0
-    public var _pants: Int32 = 0
-    public var _hat: Int32 = 0
-    public var _shoes: Int32 = 0
-    public var _avatar: Int32 = 0
-    public var _eyes: Int32 = 0
-    public var _backpack: Int32 = 0
-    public var _avatarHair: String = String()
-    public var _avatarShirt: String = String()
-    public var _avatarPants: String = String()
-    public var _avatarHat: String = String()
-    public var _avatarShoes: String = String()
-    public var _avatarEyes: String = String()
-    public var _avatarBackpack: String = String()
-    public var _avatarGloves: String = String()
-    public var _avatarSocks: String = String()
-    public var _avatarBelt: String = String()
-    public var _avatarGlasses: String = String()
-    public var _avatarNecklace: String = String()
+    var _skin: Int32 = 0
+    var _hair: Int32 = 0
+    var _shirt: Int32 = 0
+    var _pants: Int32 = 0
+    var _hat: Int32 = 0
+    var _shoes: Int32 = 0
+    var _avatar: Int32 = 0
+    var _eyes: Int32 = 0
+    var _backpack: Int32 = 0
+    var _avatarHair: String = String()
+    var _avatarShirt: String = String()
+    var _avatarPants: String = String()
+    var _avatarHat: String = String()
+    var _avatarShoes: String = String()
+    var _avatarEyes: String = String()
+    var _avatarBackpack: String = String()
+    var _avatarGloves: String = String()
+    var _avatarSocks: String = String()
+    var _avatarBelt: String = String()
+    var _avatarGlasses: String = String()
+    var _avatarNecklace: String = String()
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _skin = source._skin
       _hair = source._hair
       _shirt = source._shirt

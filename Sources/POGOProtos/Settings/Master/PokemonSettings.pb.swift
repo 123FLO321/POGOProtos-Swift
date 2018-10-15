@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Settings_Master_PokemonSettings {
@@ -269,48 +269,48 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
   ]
 
   fileprivate class _StorageClass {
-    public var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    public var _modelScale: Float = 0
-    public var _type: POGOProtos_Enums_PokemonType = .none
-    public var _type2: POGOProtos_Enums_PokemonType = .none
-    public var _camera: POGOProtos_Settings_Master_Pokemon_CameraAttributes? = nil
-    public var _encounter: POGOProtos_Settings_Master_Pokemon_EncounterAttributes? = nil
-    public var _stats: POGOProtos_Settings_Master_Pokemon_StatsAttributes? = nil
-    public var _quickMoves: [POGOProtos_Enums_PokemonMove] = []
-    public var _cinematicMoves: [POGOProtos_Enums_PokemonMove] = []
-    public var _animationTime: [Float] = []
-    public var _evolutionIds: [POGOProtos_Enums_PokemonId] = []
-    public var _evolutionPips: Int32 = 0
-    public var _rarity: POGOProtos_Enums_PokemonRarity = .normal
-    public var _pokedexHeightM: Float = 0
-    public var _pokedexWeightKg: Float = 0
-    public var _parentPokemonID: POGOProtos_Enums_PokemonId = .missingno
-    public var _heightStdDev: Float = 0
-    public var _weightStdDev: Float = 0
-    public var _kmDistanceToHatch: Float = 0
-    public var _familyID: POGOProtos_Enums_PokemonFamilyId = .familyUnset
-    public var _candyToEvolve: Int32 = 0
-    public var _kmBuddyDistance: Float = 0
-    public var _buddySize: POGOProtos_Enums_BuddySize = .buddyMedium
-    public var _modelHeight: Float = 0
-    public var _evolutionBranch: [POGOProtos_Settings_Master_Pokemon_EvolutionBranch] = []
-    public var _modelScaleV2: Float = 0
-    public var _form: POGOProtos_Enums_Form = .unset
-    public var _eventQuickMove: POGOProtos_Enums_PokemonMove = .moveUnset
-    public var _eventCinematicMove: POGOProtos_Enums_PokemonMove = .moveUnset
-    public var _buddyOffsetMale: [Float] = []
-    public var _buddyOffsetFemale: [Float] = []
-    public var _buddyScale: Float = 0
-    public var _buddyPortraitOffset: [Float] = []
-    public var _parentForm: POGOProtos_Enums_Form = .unset
-    public var _isTransferable: Bool = false
-    public var _isDeployable: Bool = false
+    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _modelScale: Float = 0
+    var _type: POGOProtos_Enums_PokemonType = .none
+    var _type2: POGOProtos_Enums_PokemonType = .none
+    var _camera: POGOProtos_Settings_Master_Pokemon_CameraAttributes? = nil
+    var _encounter: POGOProtos_Settings_Master_Pokemon_EncounterAttributes? = nil
+    var _stats: POGOProtos_Settings_Master_Pokemon_StatsAttributes? = nil
+    var _quickMoves: [POGOProtos_Enums_PokemonMove] = []
+    var _cinematicMoves: [POGOProtos_Enums_PokemonMove] = []
+    var _animationTime: [Float] = []
+    var _evolutionIds: [POGOProtos_Enums_PokemonId] = []
+    var _evolutionPips: Int32 = 0
+    var _rarity: POGOProtos_Enums_PokemonRarity = .normal
+    var _pokedexHeightM: Float = 0
+    var _pokedexWeightKg: Float = 0
+    var _parentPokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _heightStdDev: Float = 0
+    var _weightStdDev: Float = 0
+    var _kmDistanceToHatch: Float = 0
+    var _familyID: POGOProtos_Enums_PokemonFamilyId = .familyUnset
+    var _candyToEvolve: Int32 = 0
+    var _kmBuddyDistance: Float = 0
+    var _buddySize: POGOProtos_Enums_BuddySize = .buddyMedium
+    var _modelHeight: Float = 0
+    var _evolutionBranch: [POGOProtos_Settings_Master_Pokemon_EvolutionBranch] = []
+    var _modelScaleV2: Float = 0
+    var _form: POGOProtos_Enums_Form = .unset
+    var _eventQuickMove: POGOProtos_Enums_PokemonMove = .moveUnset
+    var _eventCinematicMove: POGOProtos_Enums_PokemonMove = .moveUnset
+    var _buddyOffsetMale: [Float] = []
+    var _buddyOffsetFemale: [Float] = []
+    var _buddyScale: Float = 0
+    var _buddyPortraitOffset: [Float] = []
+    var _parentForm: POGOProtos_Enums_Form = .unset
+    var _isTransferable: Bool = false
+    var _isDeployable: Bool = false
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _pokemonID = source._pokemonID
       _modelScale = source._modelScale
       _type = source._type

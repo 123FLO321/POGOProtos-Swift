@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Platform_Telemetry_PlatformEventData {
@@ -51,13 +51,13 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformEventData: SwiftProto
   ]
 
   fileprivate class _StorageClass {
-    public var _commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon? = nil
+    var _commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _commonTelemetry = source._commonTelemetry
     }
   }

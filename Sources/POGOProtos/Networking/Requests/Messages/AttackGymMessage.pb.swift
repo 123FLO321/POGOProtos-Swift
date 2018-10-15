@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Requests_Messages_AttackGymMessage {
@@ -81,18 +81,18 @@ extension POGOProtos_Networking_Requests_Messages_AttackGymMessage: SwiftProtobu
   ]
 
   fileprivate class _StorageClass {
-    public var _gymID: String = String()
-    public var _battleID: String = String()
-    public var _attackActions: [POGOProtos_Data_Battle_BattleAction] = []
-    public var _lastRetrievedAction: POGOProtos_Data_Battle_BattleAction? = nil
-    public var _playerLatitude: Double = 0
-    public var _playerLongitude: Double = 0
+    var _gymID: String = String()
+    var _battleID: String = String()
+    var _attackActions: [POGOProtos_Data_Battle_BattleAction] = []
+    var _lastRetrievedAction: POGOProtos_Data_Battle_BattleAction? = nil
+    var _playerLatitude: Double = 0
+    var _playerLongitude: Double = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _gymID = source._gymID
       _battleID = source._battleID
       _attackActions = source._attackActions

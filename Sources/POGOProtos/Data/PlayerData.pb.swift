@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_PlayerData {
@@ -90,9 +90,9 @@ public struct POGOProtos_Data_PlayerData {
   /// Clears the value of `contactSettings`. Subsequent reads from it will return its default value.
   public mutating func clearContactSettings() {_uniqueStorage()._contactSettings = nil}
 
-  public var currencies: [POGOProtos_Data_Player_Currency] {
-    get {return _storage._currencies}
-    set {_uniqueStorage()._currencies = newValue}
+  public var currencyBalance: [POGOProtos_Data_Player_Currency] {
+    get {return _storage._currencyBalance}
+    set {_uniqueStorage()._currencyBalance = newValue}
   }
 
   public var remainingCodenameClaims: Int32 {
@@ -128,8 +128,8 @@ public struct POGOProtos_Data_PlayerData {
     set {_uniqueStorage()._nameIsBlacklisted = newValue}
   }
 
-  public var socialPlayerSettings: POGOProtos_Settings_SocialPlayerSettings {
-    get {return _storage._socialPlayerSettings ?? POGOProtos_Settings_SocialPlayerSettings()}
+  public var socialPlayerSettings: POGOProtos_Data_Player_SocialPlayerSettings {
+    get {return _storage._socialPlayerSettings ?? POGOProtos_Data_Player_SocialPlayerSettings()}
     set {_uniqueStorage()._socialPlayerSettings = newValue}
   }
   /// Returns true if `socialPlayerSettings` has been explicitly set.
@@ -161,7 +161,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     11: .standard(proto: "daily_bonus"),
     12: .standard(proto: "equipped_badge"),
     13: .standard(proto: "contact_settings"),
-    14: .same(proto: "currencies"),
+    14: .standard(proto: "currency_balance"),
     15: .standard(proto: "remaining_codename_claims"),
     16: .standard(proto: "buddy_pokemon"),
     17: .standard(proto: "battle_lockout_end_ms"),
@@ -171,29 +171,29 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
   ]
 
   fileprivate class _StorageClass {
-    public var _creationTimestampMs: Int64 = 0
-    public var _username: String = String()
-    public var _team: POGOProtos_Enums_TeamColor = .neutral
-    public var _tutorialState: [POGOProtos_Enums_TutorialState] = []
-    public var _avatar: POGOProtos_Data_Player_PlayerAvatar? = nil
-    public var _maxPokemonStorage: Int32 = 0
-    public var _maxItemStorage: Int32 = 0
-    public var _dailyBonus: POGOProtos_Data_Player_DailyBonus? = nil
-    public var _equippedBadge: POGOProtos_Data_Player_EquippedBadge? = nil
-    public var _contactSettings: POGOProtos_Data_Player_ContactSettings? = nil
-    public var _currencies: [POGOProtos_Data_Player_Currency] = []
-    public var _remainingCodenameClaims: Int32 = 0
-    public var _buddyPokemon: POGOProtos_Data_BuddyPokemon? = nil
-    public var _battleLockoutEndMs: Int64 = 0
-    public var _secondaryPlayerAvatar: POGOProtos_Data_Player_PlayerAvatar? = nil
-    public var _nameIsBlacklisted: Bool = false
-    public var _socialPlayerSettings: POGOProtos_Settings_SocialPlayerSettings? = nil
+    var _creationTimestampMs: Int64 = 0
+    var _username: String = String()
+    var _team: POGOProtos_Enums_TeamColor = .neutral
+    var _tutorialState: [POGOProtos_Enums_TutorialState] = []
+    var _avatar: POGOProtos_Data_Player_PlayerAvatar? = nil
+    var _maxPokemonStorage: Int32 = 0
+    var _maxItemStorage: Int32 = 0
+    var _dailyBonus: POGOProtos_Data_Player_DailyBonus? = nil
+    var _equippedBadge: POGOProtos_Data_Player_EquippedBadge? = nil
+    var _contactSettings: POGOProtos_Data_Player_ContactSettings? = nil
+    var _currencyBalance: [POGOProtos_Data_Player_Currency] = []
+    var _remainingCodenameClaims: Int32 = 0
+    var _buddyPokemon: POGOProtos_Data_BuddyPokemon? = nil
+    var _battleLockoutEndMs: Int64 = 0
+    var _secondaryPlayerAvatar: POGOProtos_Data_Player_PlayerAvatar? = nil
+    var _nameIsBlacklisted: Bool = false
+    var _socialPlayerSettings: POGOProtos_Data_Player_SocialPlayerSettings? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _creationTimestampMs = source._creationTimestampMs
       _username = source._username
       _team = source._team
@@ -204,7 +204,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _dailyBonus = source._dailyBonus
       _equippedBadge = source._equippedBadge
       _contactSettings = source._contactSettings
-      _currencies = source._currencies
+      _currencyBalance = source._currencyBalance
       _remainingCodenameClaims = source._remainingCodenameClaims
       _buddyPokemon = source._buddyPokemon
       _battleLockoutEndMs = source._battleLockoutEndMs
@@ -236,7 +236,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 11: try decoder.decodeSingularMessageField(value: &_storage._dailyBonus)
         case 12: try decoder.decodeSingularMessageField(value: &_storage._equippedBadge)
         case 13: try decoder.decodeSingularMessageField(value: &_storage._contactSettings)
-        case 14: try decoder.decodeRepeatedMessageField(value: &_storage._currencies)
+        case 14: try decoder.decodeRepeatedMessageField(value: &_storage._currencyBalance)
         case 15: try decoder.decodeSingularInt32Field(value: &_storage._remainingCodenameClaims)
         case 16: try decoder.decodeSingularMessageField(value: &_storage._buddyPokemon)
         case 17: try decoder.decodeSingularInt64Field(value: &_storage._battleLockoutEndMs)
@@ -281,8 +281,8 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if let v = _storage._contactSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
       }
-      if !_storage._currencies.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._currencies, fieldNumber: 14)
+      if !_storage._currencyBalance.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._currencyBalance, fieldNumber: 14)
       }
       if _storage._remainingCodenameClaims != 0 {
         try visitor.visitSingularInt32Field(value: _storage._remainingCodenameClaims, fieldNumber: 15)
@@ -321,7 +321,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._dailyBonus != rhs_storage._dailyBonus {return false}
         if _storage._equippedBadge != rhs_storage._equippedBadge {return false}
         if _storage._contactSettings != rhs_storage._contactSettings {return false}
-        if _storage._currencies != rhs_storage._currencies {return false}
+        if _storage._currencyBalance != rhs_storage._currencyBalance {return false}
         if _storage._remainingCodenameClaims != rhs_storage._remainingCodenameClaims {return false}
         if _storage._buddyPokemon != rhs_storage._buddyPokemon {return false}
         if _storage._battleLockoutEndMs != rhs_storage._battleLockoutEndMs {return false}

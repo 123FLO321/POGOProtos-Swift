@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_CatchPokemonResponse {
@@ -154,7 +154,7 @@ public struct POGOProtos_Networking_Responses_CatchPokemonResponse {
 
 extension POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus] = [
+  public static var allCases: [POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus] = [
     .catchError,
     .catchSuccess,
     .catchEscape,
@@ -165,7 +165,7 @@ extension POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus: Case
 
 extension POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason] = [
+  public static var allCases: [POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason] = [
     .unset,
     .default,
     .elementalBadge,
@@ -193,20 +193,20 @@ extension POGOProtos_Networking_Responses_CatchPokemonResponse: SwiftProtobuf.Me
   ]
 
   fileprivate class _StorageClass {
-    public var _status: POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus = .catchError
-    public var _missPercent: Double = 0
-    public var _capturedPokemonID: UInt64 = 0
-    public var _captureAward: POGOProtos_Data_Capture_CaptureAward? = nil
-    public var _captureReason: POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason = .unset
-    public var _displayPokedexID: Int32 = 0
-    public var _throwsRemaining: Int32 = 0
-    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    var _status: POGOProtos_Networking_Responses_CatchPokemonResponse.CatchStatus = .catchError
+    var _missPercent: Double = 0
+    var _capturedPokemonID: UInt64 = 0
+    var _captureAward: POGOProtos_Data_Capture_CaptureAward? = nil
+    var _captureReason: POGOProtos_Networking_Responses_CatchPokemonResponse.CaptureReason = .unset
+    var _displayPokedexID: Int32 = 0
+    var _throwsRemaining: Int32 = 0
+    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _status = source._status
       _missPercent = source._missPercent
       _capturedPokemonID = source._capturedPokemonID

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_RegisterPushNotificationResponse {
@@ -66,7 +66,7 @@ public struct POGOProtos_Networking_Responses_RegisterPushNotificationResponse {
 
 extension POGOProtos_Networking_Responses_RegisterPushNotificationResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_RegisterPushNotificationResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_RegisterPushNotificationResponse.Result] = [
     .unset,
     .success,
     .noChange,
@@ -123,7 +123,7 @@ public struct POGOProtos_Networking_Responses_UpdateNotificationStatusResponse {
 
 extension POGOProtos_Networking_Responses_UpdateNotificationStatusResponse.NotificationState: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_UpdateNotificationStatusResponse.NotificationState] = [
+  public static var allCases: [POGOProtos_Networking_Responses_UpdateNotificationStatusResponse.NotificationState] = [
     .unsetState,
     .viewed,
   ]
@@ -214,7 +214,7 @@ public struct POGOProtos_Networking_Responses_RedeemPasscodeResponse {
 
 extension POGOProtos_Networking_Responses_RedeemPasscodeResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_RedeemPasscodeResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_RedeemPasscodeResponse.Result] = [
     .unset,
     .success,
     .notAvailable,
@@ -283,7 +283,7 @@ public struct POGOProtos_Networking_Responses_AddNewPoiResponse {
 
 extension POGOProtos_Networking_Responses_AddNewPoiResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_AddNewPoiResponse.Status] = [
+  public static var allCases: [POGOProtos_Networking_Responses_AddNewPoiResponse.Status] = [
     .unset,
     .success,
     .failure,
@@ -370,7 +370,7 @@ public struct POGOProtos_Networking_Responses_ProxySocialActionResponse {
 
 extension POGOProtos_Networking_Responses_ProxySocialActionResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_ProxySocialActionResponse.Status] = [
+  public static var allCases: [POGOProtos_Networking_Responses_ProxySocialActionResponse.Status] = [
     .unset,
     .completed,
     .completedAndReassigned,
@@ -454,7 +454,7 @@ public struct POGOProtos_Networking_Responses_PushNotificationRegistryResponse {
 
 extension POGOProtos_Networking_Responses_PushNotificationRegistryResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_PushNotificationRegistryResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_PushNotificationRegistryResponse.Result] = [
     .unset,
     .success,
     .noChange,
@@ -514,7 +514,7 @@ public struct POGOProtos_Networking_Responses_AddLoginActionResponse {
 
 extension POGOProtos_Networking_Responses_AddLoginActionResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_AddLoginActionResponse.Status] = [
+  public static var allCases: [POGOProtos_Networking_Responses_AddLoginActionResponse.Status] = [
     .unset,
     .authFailure,
     .loginTaken,
@@ -571,7 +571,7 @@ public struct POGOProtos_Networking_Responses_RemoveLoginActionResponse {
 
 extension POGOProtos_Networking_Responses_RemoveLoginActionResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_RemoveLoginActionResponse.Status] = [
+  public static var allCases: [POGOProtos_Networking_Responses_RemoveLoginActionResponse.Status] = [
     .unset,
     .loginNotRemovable,
   ]
@@ -641,7 +641,7 @@ public struct POGOProtos_Networking_Responses_SubmitNewPoiResponse {
 
 extension POGOProtos_Networking_Responses_SubmitNewPoiResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_SubmitNewPoiResponse.Status] = [
+  public static var allCases: [POGOProtos_Networking_Responses_SubmitNewPoiResponse.Status] = [
     .unset,
     .success,
     .failure,
@@ -717,7 +717,7 @@ public struct POGOProtos_Networking_Responses_UploadPoiPhotoByUrlResponse {
 
 extension POGOProtos_Networking_Responses_UploadPoiPhotoByUrlResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_UploadPoiPhotoByUrlResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_UploadPoiPhotoByUrlResponse.Result] = [
     .unset,
     .success,
     .featureDisabled,
@@ -804,7 +804,7 @@ public struct POGOProtos_Networking_Responses_ReplaceLoginActionResponse {
 
 extension POGOProtos_Networking_Responses_ReplaceLoginActionResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_ReplaceLoginActionResponse.Status] = [
+  public static var allCases: [POGOProtos_Networking_Responses_ReplaceLoginActionResponse.Status] = [
     .unset,
     .authFailure,
     .loginTaken,

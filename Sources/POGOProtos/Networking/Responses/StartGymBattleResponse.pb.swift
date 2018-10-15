@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_StartGymBattleResponse {
@@ -158,7 +158,7 @@ public struct POGOProtos_Networking_Responses_StartGymBattleResponse {
 
 extension POGOProtos_Networking_Responses_StartGymBattleResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_StartGymBattleResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_StartGymBattleResponse.Result] = [
     .unset,
     .success,
     .errorGymNotFound,
@@ -197,20 +197,20 @@ extension POGOProtos_Networking_Responses_StartGymBattleResponse: SwiftProtobuf.
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_StartGymBattleResponse.Result = .unset
-    public var _battleStartTimestampMs: Int64 = 0
-    public var _battleEndTimestampMs: Int64 = 0
-    public var _battleID: String = String()
-    public var _defender: POGOProtos_Data_Battle_BattleParticipant? = nil
-    public var _battleLog: POGOProtos_Data_Battle_BattleLog? = nil
-    public var _attacker: POGOProtos_Data_Battle_BattleParticipant? = nil
-    public var _battle: POGOProtos_Data_Battle_Battle? = nil
+    var _result: POGOProtos_Networking_Responses_StartGymBattleResponse.Result = .unset
+    var _battleStartTimestampMs: Int64 = 0
+    var _battleEndTimestampMs: Int64 = 0
+    var _battleID: String = String()
+    var _defender: POGOProtos_Data_Battle_BattleParticipant? = nil
+    var _battleLog: POGOProtos_Data_Battle_BattleLog? = nil
+    var _attacker: POGOProtos_Data_Battle_BattleParticipant? = nil
+    var _battle: POGOProtos_Data_Battle_Battle? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _battleStartTimestampMs = source._battleStartTimestampMs
       _battleEndTimestampMs = source._battleEndTimestampMs

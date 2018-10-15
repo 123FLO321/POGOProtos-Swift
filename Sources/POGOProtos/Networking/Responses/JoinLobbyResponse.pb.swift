@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
@@ -101,7 +101,7 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
 
 extension POGOProtos_Networking_Responses_JoinLobbyResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_JoinLobbyResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_JoinLobbyResponse.Result] = [
     .unset,
     .success,
     .errorNotInRange,
@@ -129,14 +129,14 @@ extension POGOProtos_Networking_Responses_JoinLobbyResponse: SwiftProtobuf.Messa
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_JoinLobbyResponse.Result = .unset
-    public var _lobby: POGOProtos_Data_Raid_Lobby? = nil
+    var _result: POGOProtos_Networking_Responses_JoinLobbyResponse.Result = .unset
+    var _lobby: POGOProtos_Data_Raid_Lobby? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _lobby = source._lobby
     }

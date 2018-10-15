@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Quests_ClientQuest {
@@ -87,14 +87,14 @@ extension POGOProtos_Data_Quests_ClientQuest: SwiftProtobuf.Message, SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    public var _quest: POGOProtos_Data_Quests_Quest? = nil
-    public var _questDisplay: POGOProtos_Data_Quests_ClientQuest.QuestDisplay? = nil
+    var _quest: POGOProtos_Data_Quests_Quest? = nil
+    var _questDisplay: POGOProtos_Data_Quests_ClientQuest.QuestDisplay? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _quest = source._quest
       _questDisplay = source._questDisplay
     }

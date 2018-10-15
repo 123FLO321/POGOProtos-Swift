@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Settings_Master_EncounterSettings {
@@ -149,30 +149,30 @@ extension POGOProtos_Settings_Master_EncounterSettings: SwiftProtobuf.Message, S
   ]
 
   fileprivate class _StorageClass {
-    public var _spinBonusThreshold: Float = 0
-    public var _excellentThrowThreshold: Float = 0
-    public var _greatThrowThreshold: Float = 0
-    public var _niceThrowThreshold: Float = 0
-    public var _milestoneThreshold: Int32 = 0
-    public var _arPlusModeEnabled: Bool = false
-    public var _arCloseProximityThreshold: Float = 0
-    public var _arLowAwarenessThreshold: Float = 0
-    public var _arCloseProximityMultiplier: Float = 0
-    public var _arAwarenessPenaltyThreshold: Float = 0
-    public var _arLowAwarenessMaxMultiplier: Float = 0
-    public var _arHighAwarenessMinPenaltyMultiplier: Float = 0
-    public var _arPlusAttemptsUntilFleeMax: Int32 = 0
-    public var _arPlusAttemptsUntilFleeInfinite: Int32 = 0
-    public var _escapedBonusMultiplierMax: Float = 0
-    public var _escapedBonusMultiplierByExcellentThrow: Float = 0
-    public var _escapedBonusMultiplierByGreatThrow: Float = 0
-    public var _escapedBonusMultiplierByNiceThrow: Float = 0
+    var _spinBonusThreshold: Float = 0
+    var _excellentThrowThreshold: Float = 0
+    var _greatThrowThreshold: Float = 0
+    var _niceThrowThreshold: Float = 0
+    var _milestoneThreshold: Int32 = 0
+    var _arPlusModeEnabled: Bool = false
+    var _arCloseProximityThreshold: Float = 0
+    var _arLowAwarenessThreshold: Float = 0
+    var _arCloseProximityMultiplier: Float = 0
+    var _arAwarenessPenaltyThreshold: Float = 0
+    var _arLowAwarenessMaxMultiplier: Float = 0
+    var _arHighAwarenessMinPenaltyMultiplier: Float = 0
+    var _arPlusAttemptsUntilFleeMax: Int32 = 0
+    var _arPlusAttemptsUntilFleeInfinite: Int32 = 0
+    var _escapedBonusMultiplierMax: Float = 0
+    var _escapedBonusMultiplierByExcellentThrow: Float = 0
+    var _escapedBonusMultiplierByGreatThrow: Float = 0
+    var _escapedBonusMultiplierByNiceThrow: Float = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _spinBonusThreshold = source._spinBonusThreshold
       _excellentThrowThreshold = source._excellentThrowThreshold
       _greatThrowThreshold = source._greatThrowThreshold

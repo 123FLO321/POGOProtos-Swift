@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Requests_Social_SaveSocialPlayerSettingsMessage {
@@ -24,8 +24,8 @@ public struct POGOProtos_Networking_Requests_Social_SaveSocialPlayerSettingsMess
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var settings: POGOProtos_Settings_SocialPlayerSettings {
-    get {return _storage._settings ?? POGOProtos_Settings_SocialPlayerSettings()}
+  public var settings: POGOProtos_Data_Player_SocialPlayerSettings {
+    get {return _storage._settings ?? POGOProtos_Data_Player_SocialPlayerSettings()}
     set {_uniqueStorage()._settings = newValue}
   }
   /// Returns true if `settings` has been explicitly set.
@@ -51,13 +51,13 @@ extension POGOProtos_Networking_Requests_Social_SaveSocialPlayerSettingsMessage:
   ]
 
   fileprivate class _StorageClass {
-    public var _settings: POGOProtos_Settings_SocialPlayerSettings? = nil
+    var _settings: POGOProtos_Data_Player_SocialPlayerSettings? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _settings = source._settings
     }
   }

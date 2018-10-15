@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
@@ -57,6 +57,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
   case giftEgg // = 1024
   case friendshipMilestoneRewardDetails // = 1025
   case friendshipLevelDisplay // = 1026
+  case bgmodeBuddyPokemonNickname // = 1027
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -101,6 +102,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case 1024: self = .giftEgg
     case 1025: self = .friendshipMilestoneRewardDetails
     case 1026: self = .friendshipLevelDisplay
+    case 1027: self = .bgmodeBuddyPokemonNickname
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -143,6 +145,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case .giftEgg: return 1024
     case .friendshipMilestoneRewardDetails: return 1025
     case .friendshipLevelDisplay: return 1026
+    case .bgmodeBuddyPokemonNickname: return 1027
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -153,7 +156,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_VariableName: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_VariableName] = [
+  public static var allCases: [POGOProtos_Enums_VariableName] = [
     .unsetVariableName,
     .codeName,
     .team,
@@ -190,6 +193,7 @@ extension POGOProtos_Enums_VariableName: CaseIterable {
     .giftEgg,
     .friendshipMilestoneRewardDetails,
     .friendshipLevelDisplay,
+    .bgmodeBuddyPokemonNickname,
   ]
 }
 
@@ -235,5 +239,6 @@ extension POGOProtos_Enums_VariableName: SwiftProtobuf._ProtoNameProviding {
     1024: .same(proto: "GIFT_EGG"),
     1025: .same(proto: "FRIENDSHIP_MILESTONE_REWARD_DETAILS"),
     1026: .same(proto: "FRIENDSHIP_LEVEL_DISPLAY"),
+    1027: .same(proto: "BGMODE_BUDDY_POKEMON_NICKNAME"),
   ]
 }

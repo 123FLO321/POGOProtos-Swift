@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Battle_BattleAction {
@@ -141,26 +141,26 @@ extension POGOProtos_Data_Battle_BattleAction: SwiftProtobuf.Message, SwiftProto
   ]
 
   fileprivate class _StorageClass {
-    public var _type: POGOProtos_Data_Battle_BattleActionType = .actionUnset
-    public var _actionStartMs: Int64 = 0
-    public var _durationMs: Int32 = 0
-    public var _energyDelta: Int32 = 0
-    public var _attackerIndex: Int32 = 0
-    public var _targetIndex: Int32 = 0
-    public var _activePokemonID: UInt64 = 0
-    public var _playerJoined: POGOProtos_Data_Battle_BattleParticipant? = nil
-    public var _battleResults: POGOProtos_Data_Battle_BattleResults? = nil
-    public var _damageWindowsStartTimestampMs: Int64 = 0
-    public var _damageWindowsEndTimestampMs: Int64 = 0
-    public var _playerLeft: POGOProtos_Data_Battle_BattleParticipant? = nil
-    public var _targetPokemonID: UInt64 = 0
-    public var _leveledUpFriends: POGOProtos_Data_Friends_LeveledUpFriends? = nil
+    var _type: POGOProtos_Data_Battle_BattleActionType = .actionUnset
+    var _actionStartMs: Int64 = 0
+    var _durationMs: Int32 = 0
+    var _energyDelta: Int32 = 0
+    var _attackerIndex: Int32 = 0
+    var _targetIndex: Int32 = 0
+    var _activePokemonID: UInt64 = 0
+    var _playerJoined: POGOProtos_Data_Battle_BattleParticipant? = nil
+    var _battleResults: POGOProtos_Data_Battle_BattleResults? = nil
+    var _damageWindowsStartTimestampMs: Int64 = 0
+    var _damageWindowsEndTimestampMs: Int64 = 0
+    var _playerLeft: POGOProtos_Data_Battle_BattleParticipant? = nil
+    var _targetPokemonID: UInt64 = 0
+    var _leveledUpFriends: POGOProtos_Data_Friends_LeveledUpFriends? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _type = source._type
       _actionStartMs = source._actionStartMs
       _durationMs = source._durationMs

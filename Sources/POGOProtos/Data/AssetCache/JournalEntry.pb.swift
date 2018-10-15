@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_AssetCache_JournalEntry {
@@ -71,15 +71,15 @@ extension POGOProtos_Data_AssetCache_JournalEntry: SwiftProtobuf.Message, SwiftP
   ]
 
   fileprivate class _StorageClass {
-    public var _addEntry: POGOProtos_Data_AssetCache_JournalAddEntry? = nil
-    public var _readEntry: POGOProtos_Data_AssetCache_JournalReadEntry? = nil
-    public var _removeEntry: POGOProtos_Data_AssetCache_JournalRemoveEntry? = nil
+    var _addEntry: POGOProtos_Data_AssetCache_JournalAddEntry? = nil
+    var _readEntry: POGOProtos_Data_AssetCache_JournalReadEntry? = nil
+    var _removeEntry: POGOProtos_Data_AssetCache_JournalRemoveEntry? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _addEntry = source._addEntry
       _readEntry = source._readEntry
       _removeEntry = source._removeEntry

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Logs_PasscodeRewardsLogEntry {
@@ -82,7 +82,7 @@ public struct POGOProtos_Data_Logs_PasscodeRewardsLogEntry {
 
 extension POGOProtos_Data_Logs_PasscodeRewardsLogEntry.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Logs_PasscodeRewardsLogEntry.Result] = [
+  public static var allCases: [POGOProtos_Data_Logs_PasscodeRewardsLogEntry.Result] = [
     .unset,
     .success,
   ]
@@ -103,15 +103,15 @@ extension POGOProtos_Data_Logs_PasscodeRewardsLogEntry: SwiftProtobuf.Message, S
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Data_Logs_PasscodeRewardsLogEntry.Result = .unset
-    public var _passcode: String = String()
-    public var _rewards: POGOProtos_Data_Redeem_RedeemPasscodeReward? = nil
+    var _result: POGOProtos_Data_Logs_PasscodeRewardsLogEntry.Result = .unset
+    var _passcode: String = String()
+    var _rewards: POGOProtos_Data_Redeem_RedeemPasscodeReward? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _passcode = source._passcode
       _rewards = source._rewards

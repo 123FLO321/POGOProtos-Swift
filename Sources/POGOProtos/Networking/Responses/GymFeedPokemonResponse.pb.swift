@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_GymFeedPokemonResponse {
@@ -147,7 +147,7 @@ public struct POGOProtos_Networking_Responses_GymFeedPokemonResponse {
 
 extension POGOProtos_Networking_Responses_GymFeedPokemonResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_GymFeedPokemonResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_GymFeedPokemonResponse.Result] = [
     .unset,
     .success,
     .errorCannotUse,
@@ -185,20 +185,20 @@ extension POGOProtos_Networking_Responses_GymFeedPokemonResponse: SwiftProtobuf.
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_GymFeedPokemonResponse.Result = .unset
-    public var _gymStatusAndDefenders: POGOProtos_Data_Gym_GymStatusAndDefenders? = nil
-    public var _awardedGymBadge: POGOProtos_Data_Badge_AwardedGymBadge? = nil
-    public var _stardustAwarded: Int32 = 0
-    public var _xpAwarded: Int32 = 0
-    public var _numCandyAwarded: Int32 = 0
-    public var _familyCandyID: POGOProtos_Enums_PokemonFamilyId = .familyUnset
-    public var _cooldownComplete: Int64 = 0
+    var _result: POGOProtos_Networking_Responses_GymFeedPokemonResponse.Result = .unset
+    var _gymStatusAndDefenders: POGOProtos_Data_Gym_GymStatusAndDefenders? = nil
+    var _awardedGymBadge: POGOProtos_Data_Badge_AwardedGymBadge? = nil
+    var _stardustAwarded: Int32 = 0
+    var _xpAwarded: Int32 = 0
+    var _numCandyAwarded: Int32 = 0
+    var _familyCandyID: POGOProtos_Enums_PokemonFamilyId = .familyUnset
+    var _cooldownComplete: Int64 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _gymStatusAndDefenders = source._gymStatusAndDefenders
       _awardedGymBadge = source._awardedGymBadge

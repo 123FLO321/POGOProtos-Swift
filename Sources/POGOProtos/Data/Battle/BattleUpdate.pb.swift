@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Battle_BattleUpdate {
@@ -83,17 +83,17 @@ extension POGOProtos_Data_Battle_BattleUpdate: SwiftProtobuf.Message, SwiftProto
   ]
 
   fileprivate class _StorageClass {
-    public var _battleLog: POGOProtos_Data_Battle_BattleLog? = nil
-    public var _battleID: String = String()
-    public var _activeDefender: POGOProtos_Data_Battle_BattlePokemonInfo? = nil
-    public var _activeAttacker: POGOProtos_Data_Battle_BattlePokemonInfo? = nil
-    public var _highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
+    var _battleLog: POGOProtos_Data_Battle_BattleLog? = nil
+    var _battleID: String = String()
+    var _activeDefender: POGOProtos_Data_Battle_BattlePokemonInfo? = nil
+    var _activeAttacker: POGOProtos_Data_Battle_BattlePokemonInfo? = nil
+    var _highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _battleLog = source._battleLog
       _battleID = source._battleID
       _activeDefender = source._activeDefender

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_Social_OpenGiftResponse {
@@ -125,7 +125,7 @@ public struct POGOProtos_Networking_Responses_Social_OpenGiftResponse {
 
 extension POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result] = [
     .unset,
     .success,
     .errorUnknown,
@@ -155,17 +155,17 @@ extension POGOProtos_Networking_Responses_Social_OpenGiftResponse: SwiftProtobuf
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result = .unset
-    public var _items: POGOProtos_Inventory_Loot? = nil
-    public var _eggPokemon: POGOProtos_Data_PokemonData? = nil
-    public var _updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
-    public var _friendProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
+    var _result: POGOProtos_Networking_Responses_Social_OpenGiftResponse.Result = .unset
+    var _items: POGOProtos_Inventory_Loot? = nil
+    var _eggPokemon: POGOProtos_Data_PokemonData? = nil
+    var _updatedFriendshipData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
+    var _friendProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _items = source._items
       _eggPokemon = source._eggPokemon

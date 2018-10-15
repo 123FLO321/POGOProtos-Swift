@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Settings_Master_ItemSettings {
@@ -181,28 +181,28 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
   ]
 
   fileprivate class _StorageClass {
-    public var _itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    public var _itemType: POGOProtos_Inventory_Item_ItemType = .none
-    public var _category: POGOProtos_Enums_ItemCategory = .none
-    public var _dropFreq: Float = 0
-    public var _dropTrainerLevel: Int32 = 0
-    public var _pokeball: POGOProtos_Settings_Master_Item_PokeballAttributes? = nil
-    public var _potion: POGOProtos_Settings_Master_Item_PotionAttributes? = nil
-    public var _revive: POGOProtos_Settings_Master_Item_ReviveAttributes? = nil
-    public var _battle: POGOProtos_Settings_Master_Item_BattleAttributes? = nil
-    public var _food: POGOProtos_Settings_Master_Item_FoodAttributes? = nil
-    public var _inventoryUpgrade: POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes? = nil
-    public var _xpBoost: POGOProtos_Settings_Master_Item_ExperienceBoostAttributes? = nil
-    public var _incense: POGOProtos_Settings_Master_Item_IncenseAttributes? = nil
-    public var _eggIncubator: POGOProtos_Settings_Master_Item_EggIncubatorAttributes? = nil
-    public var _fortModifier: POGOProtos_Settings_Master_Item_FortModifierAttributes? = nil
-    public var _stardustBoost: POGOProtos_Settings_Master_Item_StardustBoostAttributes? = nil
+    var _itemID: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    var _itemType: POGOProtos_Inventory_Item_ItemType = .none
+    var _category: POGOProtos_Enums_ItemCategory = .none
+    var _dropFreq: Float = 0
+    var _dropTrainerLevel: Int32 = 0
+    var _pokeball: POGOProtos_Settings_Master_Item_PokeballAttributes? = nil
+    var _potion: POGOProtos_Settings_Master_Item_PotionAttributes? = nil
+    var _revive: POGOProtos_Settings_Master_Item_ReviveAttributes? = nil
+    var _battle: POGOProtos_Settings_Master_Item_BattleAttributes? = nil
+    var _food: POGOProtos_Settings_Master_Item_FoodAttributes? = nil
+    var _inventoryUpgrade: POGOProtos_Settings_Master_Item_InventoryUpgradeAttributes? = nil
+    var _xpBoost: POGOProtos_Settings_Master_Item_ExperienceBoostAttributes? = nil
+    var _incense: POGOProtos_Settings_Master_Item_IncenseAttributes? = nil
+    var _eggIncubator: POGOProtos_Settings_Master_Item_EggIncubatorAttributes? = nil
+    var _fortModifier: POGOProtos_Settings_Master_Item_FortModifierAttributes? = nil
+    var _stardustBoost: POGOProtos_Settings_Master_Item_StardustBoostAttributes? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _itemID = source._itemID
       _itemType = source._itemType
       _category = source._category

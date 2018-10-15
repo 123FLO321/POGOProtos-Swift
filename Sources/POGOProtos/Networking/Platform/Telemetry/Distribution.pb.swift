@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Platform_Telemetry_Distribution {
@@ -248,7 +248,7 @@ public struct POGOProtos_Networking_Platform_Telemetry_Distribution {
 
 extension POGOProtos_Networking_Platform_Telemetry_Distribution.BucketType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Platform_Telemetry_Distribution.BucketType] = [
+  public static var allCases: [POGOProtos_Networking_Platform_Telemetry_Distribution.BucketType] = [
     .none,
     .linearBuckets,
     .exponentialBuckets,
@@ -274,18 +274,18 @@ extension POGOProtos_Networking_Platform_Telemetry_Distribution: SwiftProtobuf.M
   ]
 
   fileprivate class _StorageClass {
-    public var _count: Int64 = 0
-    public var _mean: Float = 0
-    public var _sumOfSquaredDeviation: Double = 0
-    public var _range: POGOProtos_Networking_Platform_Telemetry_Distribution.Range? = nil
-    public var _bucketOptions: POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions? = nil
-    public var _bucketCounts: [Int64] = []
+    var _count: Int64 = 0
+    var _mean: Float = 0
+    var _sumOfSquaredDeviation: Double = 0
+    var _range: POGOProtos_Networking_Platform_Telemetry_Distribution.Range? = nil
+    var _bucketOptions: POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions? = nil
+    var _bucketCounts: [Int64] = []
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _count = source._count
       _mean = source._mean
       _sumOfSquaredDeviation = source._sumOfSquaredDeviation
@@ -381,15 +381,15 @@ extension POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions: S
   ]
 
   fileprivate class _StorageClass {
-    public var _linearBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.LinearBuckets? = nil
-    public var _exponentialBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.ExponentialBuckets? = nil
-    public var _explicitBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.ExplicitBuckets? = nil
+    var _linearBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.LinearBuckets? = nil
+    var _exponentialBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.ExponentialBuckets? = nil
+    var _explicitBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.ExplicitBuckets? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _linearBuckets = source._linearBuckets
       _exponentialBuckets = source._exponentialBuckets
       _explicitBuckets = source._explicitBuckets

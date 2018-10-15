@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_Social_SearchPlayerResponse {
@@ -83,7 +83,7 @@ public struct POGOProtos_Networking_Responses_Social_SearchPlayerResponse {
 
 extension POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result] = [
     .unset,
     .success,
     .errorUnknown,
@@ -105,14 +105,14 @@ extension POGOProtos_Networking_Responses_Social_SearchPlayerResponse: SwiftProt
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result = .unset
-    public var _player: POGOProtos_Data_Player_PlayerSummary? = nil
+    var _result: POGOProtos_Networking_Responses_Social_SearchPlayerResponse.Result = .unset
+    var _player: POGOProtos_Data_Player_PlayerSummary? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _player = source._player
     }

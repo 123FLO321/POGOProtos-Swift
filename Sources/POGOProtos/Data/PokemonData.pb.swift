@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_PokemonData {
@@ -315,57 +315,57 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
   ]
 
   fileprivate class _StorageClass {
-    public var _id: UInt64 = 0
-    public var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    public var _cp: Int32 = 0
-    public var _stamina: Int32 = 0
-    public var _staminaMax: Int32 = 0
-    public var _move1: POGOProtos_Enums_PokemonMove = .moveUnset
-    public var _move2: POGOProtos_Enums_PokemonMove = .moveUnset
-    public var _deployedFortID: String = String()
-    public var _ownerName: String = String()
-    public var _isEgg: Bool = false
-    public var _eggKmWalkedTarget: Double = 0
-    public var _eggKmWalkedStart: Double = 0
-    public var _origin: Int32 = 0
-    public var _heightM: Float = 0
-    public var _weightKg: Float = 0
-    public var _individualAttack: Int32 = 0
-    public var _individualDefense: Int32 = 0
-    public var _individualStamina: Int32 = 0
-    public var _cpMultiplier: Float = 0
-    public var _pokeball: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    public var _capturedCellID: UInt64 = 0
-    public var _battlesAttacked: Int32 = 0
-    public var _battlesDefended: Int32 = 0
-    public var _eggIncubatorID: String = String()
-    public var _creationTimeMs: UInt64 = 0
-    public var _numUpgrades: Int32 = 0
-    public var _additionalCpMultiplier: Float = 0
-    public var _favorite: Int32 = 0
-    public var _nickname: String = String()
-    public var _fromFort: Int32 = 0
-    public var _buddyCandyAwarded: Int32 = 0
-    public var _buddyTotalKmWalked: Float = 0
-    public var _displayPokemonID: Int32 = 0
-    public var _displayCp: Int32 = 0
-    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-    public var _isBad: Bool = false
-    public var _hatchedFromEgg: Bool = false
-    public var _coinsReturned: Int32 = 0
-    public var _deployedDurationMs: Int64 = 0
-    public var _deployedReturnedTimestampMs: Int64 = 0
-    public var _cpMultiplierBeforeTrading: Float = 0
-    public var _tradingOriginalOwnerHash: Int32 = 0
-    public var _originalOwnerNickname: String = String()
-    public var _tradedTimeMs: Int64 = 0
-    public var _isLucky: Bool = false
+    var _id: UInt64 = 0
+    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _cp: Int32 = 0
+    var _stamina: Int32 = 0
+    var _staminaMax: Int32 = 0
+    var _move1: POGOProtos_Enums_PokemonMove = .moveUnset
+    var _move2: POGOProtos_Enums_PokemonMove = .moveUnset
+    var _deployedFortID: String = String()
+    var _ownerName: String = String()
+    var _isEgg: Bool = false
+    var _eggKmWalkedTarget: Double = 0
+    var _eggKmWalkedStart: Double = 0
+    var _origin: Int32 = 0
+    var _heightM: Float = 0
+    var _weightKg: Float = 0
+    var _individualAttack: Int32 = 0
+    var _individualDefense: Int32 = 0
+    var _individualStamina: Int32 = 0
+    var _cpMultiplier: Float = 0
+    var _pokeball: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    var _capturedCellID: UInt64 = 0
+    var _battlesAttacked: Int32 = 0
+    var _battlesDefended: Int32 = 0
+    var _eggIncubatorID: String = String()
+    var _creationTimeMs: UInt64 = 0
+    var _numUpgrades: Int32 = 0
+    var _additionalCpMultiplier: Float = 0
+    var _favorite: Int32 = 0
+    var _nickname: String = String()
+    var _fromFort: Int32 = 0
+    var _buddyCandyAwarded: Int32 = 0
+    var _buddyTotalKmWalked: Float = 0
+    var _displayPokemonID: Int32 = 0
+    var _displayCp: Int32 = 0
+    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    var _isBad: Bool = false
+    var _hatchedFromEgg: Bool = false
+    var _coinsReturned: Int32 = 0
+    var _deployedDurationMs: Int64 = 0
+    var _deployedReturnedTimestampMs: Int64 = 0
+    var _cpMultiplierBeforeTrading: Float = 0
+    var _tradingOriginalOwnerHash: Int32 = 0
+    var _originalOwnerNickname: String = String()
+    var _tradedTimeMs: Int64 = 0
+    var _isLucky: Bool = false
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _id = source._id
       _pokemonID = source._pokemonID
       _cp = source._cp

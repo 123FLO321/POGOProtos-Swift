@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Friends_IncomingFriendInvite {
@@ -73,7 +73,7 @@ public struct POGOProtos_Data_Friends_IncomingFriendInvite {
 
 extension POGOProtos_Data_Friends_IncomingFriendInvite.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Friends_IncomingFriendInvite.Status] = [
+  public static var allCases: [POGOProtos_Data_Friends_IncomingFriendInvite.Status] = [
     .unset,
     .pending,
     .declined,

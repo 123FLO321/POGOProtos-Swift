@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
@@ -260,6 +260,24 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case blastBurn // = 298
   case hydroCannon // = 299
   case lastResort // = 300
+  case meteorMash // = 301
+  case skullBash // = 302
+  case acidSpray // = 303
+  case earthPower // = 304
+  case crabhammer // = 305
+  case lunge // = 306
+  case crushClaw // = 307
+  case octazooka // = 308
+  case mirrorShot // = 309
+  case superPower // = 310
+  case fellStinger // = 311
+  case leafTornado // = 312
+  case leechLife // = 313
+  case drainPunch // = 314
+  case shadowBone // = 315
+  case muddyWater // = 316
+  case blazeKick // = 317
+  case razorShell // = 318
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -507,6 +525,24 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 298: self = .blastBurn
     case 299: self = .hydroCannon
     case 300: self = .lastResort
+    case 301: self = .meteorMash
+    case 302: self = .skullBash
+    case 303: self = .acidSpray
+    case 304: self = .earthPower
+    case 305: self = .crabhammer
+    case 306: self = .lunge
+    case 307: self = .crushClaw
+    case 308: self = .octazooka
+    case 309: self = .mirrorShot
+    case 310: self = .superPower
+    case 311: self = .fellStinger
+    case 312: self = .leafTornado
+    case 313: self = .leechLife
+    case 314: self = .drainPunch
+    case 315: self = .shadowBone
+    case 316: self = .muddyWater
+    case 317: self = .blazeKick
+    case 318: self = .razorShell
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -752,6 +788,24 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .blastBurn: return 298
     case .hydroCannon: return 299
     case .lastResort: return 300
+    case .meteorMash: return 301
+    case .skullBash: return 302
+    case .acidSpray: return 303
+    case .earthPower: return 304
+    case .crabhammer: return 305
+    case .lunge: return 306
+    case .crushClaw: return 307
+    case .octazooka: return 308
+    case .mirrorShot: return 309
+    case .superPower: return 310
+    case .fellStinger: return 311
+    case .leafTornado: return 312
+    case .leechLife: return 313
+    case .drainPunch: return 314
+    case .shadowBone: return 315
+    case .muddyWater: return 316
+    case .blazeKick: return 317
+    case .razorShell: return 318
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -762,7 +816,7 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_PokemonMove: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_PokemonMove] = [
+  public static var allCases: [POGOProtos_Enums_PokemonMove] = [
     .moveUnset,
     .thunderShock,
     .quickAttack,
@@ -1002,6 +1056,24 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .blastBurn,
     .hydroCannon,
     .lastResort,
+    .meteorMash,
+    .skullBash,
+    .acidSpray,
+    .earthPower,
+    .crabhammer,
+    .lunge,
+    .crushClaw,
+    .octazooka,
+    .mirrorShot,
+    .superPower,
+    .fellStinger,
+    .leafTornado,
+    .leechLife,
+    .drainPunch,
+    .shadowBone,
+    .muddyWater,
+    .blazeKick,
+    .razorShell,
   ]
 }
 
@@ -1250,5 +1322,23 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     298: .same(proto: "BLAST_BURN"),
     299: .same(proto: "HYDRO_CANNON"),
     300: .same(proto: "LAST_RESORT"),
+    301: .same(proto: "METEOR_MASH"),
+    302: .same(proto: "SKULL_BASH"),
+    303: .same(proto: "ACID_SPRAY"),
+    304: .same(proto: "EARTH_POWER"),
+    305: .same(proto: "CRABHAMMER"),
+    306: .same(proto: "LUNGE"),
+    307: .same(proto: "CRUSH_CLAW"),
+    308: .same(proto: "OCTAZOOKA"),
+    309: .same(proto: "MIRROR_SHOT"),
+    310: .same(proto: "SUPER_POWER"),
+    311: .same(proto: "FELL_STINGER"),
+    312: .same(proto: "LEAF_TORNADO"),
+    313: .same(proto: "LEECH_LIFE"),
+    314: .same(proto: "DRAIN_PUNCH"),
+    315: .same(proto: "SHADOW_BONE"),
+    316: .same(proto: "MUDDY_WATER"),
+    317: .same(proto: "BLAZE_KICK"),
+    318: .same(proto: "RAZOR_SHELL"),
   ]
 }

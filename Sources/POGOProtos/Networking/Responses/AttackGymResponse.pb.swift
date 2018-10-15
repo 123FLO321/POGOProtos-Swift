@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_AttackGymResponse {
@@ -115,7 +115,7 @@ public struct POGOProtos_Networking_Responses_AttackGymResponse {
 
 extension POGOProtos_Networking_Responses_AttackGymResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_AttackGymResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_AttackGymResponse.Result] = [
     .unset,
     .success,
     .errorInvalidAttackActions,
@@ -141,18 +141,18 @@ extension POGOProtos_Networking_Responses_AttackGymResponse: SwiftProtobuf.Messa
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_AttackGymResponse.Result = .unset
-    public var _battleLog: POGOProtos_Data_Battle_BattleLog? = nil
-    public var _battleID: String = String()
-    public var _activeDefender: POGOProtos_Data_Battle_BattlePokemonInfo? = nil
-    public var _activeAttacker: POGOProtos_Data_Battle_BattlePokemonInfo? = nil
-    public var _battleUpdate: POGOProtos_Data_Battle_BattleUpdate? = nil
+    var _result: POGOProtos_Networking_Responses_AttackGymResponse.Result = .unset
+    var _battleLog: POGOProtos_Data_Battle_BattleLog? = nil
+    var _battleID: String = String()
+    var _activeDefender: POGOProtos_Data_Battle_BattlePokemonInfo? = nil
+    var _activeAttacker: POGOProtos_Data_Battle_BattlePokemonInfo? = nil
+    var _battleUpdate: POGOProtos_Data_Battle_BattleUpdate? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _battleLog = source._battleLog
       _battleID = source._battleID

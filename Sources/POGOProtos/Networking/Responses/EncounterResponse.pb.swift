@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_EncounterResponse {
@@ -147,7 +147,7 @@ public struct POGOProtos_Networking_Responses_EncounterResponse {
 
 extension POGOProtos_Networking_Responses_EncounterResponse.Background: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_EncounterResponse.Background] = [
+  public static var allCases: [POGOProtos_Networking_Responses_EncounterResponse.Background] = [
     .park,
     .desert,
   ]
@@ -155,7 +155,7 @@ extension POGOProtos_Networking_Responses_EncounterResponse.Background: CaseIter
 
 extension POGOProtos_Networking_Responses_EncounterResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_EncounterResponse.Status] = [
+  public static var allCases: [POGOProtos_Networking_Responses_EncounterResponse.Status] = [
     .encounterError,
     .encounterSuccess,
     .encounterNotFound,
@@ -185,18 +185,18 @@ extension POGOProtos_Networking_Responses_EncounterResponse: SwiftProtobuf.Messa
   ]
 
   fileprivate class _StorageClass {
-    public var _wildPokemon: POGOProtos_Map_Pokemon_WildPokemon? = nil
-    public var _background: POGOProtos_Networking_Responses_EncounterResponse.Background = .park
-    public var _status: POGOProtos_Networking_Responses_EncounterResponse.Status = .encounterError
-    public var _captureProbability: POGOProtos_Data_Capture_CaptureProbability? = nil
-    public var _activeItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    public var _arplusAttemptsUntilFlee: Int32 = 0
+    var _wildPokemon: POGOProtos_Map_Pokemon_WildPokemon? = nil
+    var _background: POGOProtos_Networking_Responses_EncounterResponse.Background = .park
+    var _status: POGOProtos_Networking_Responses_EncounterResponse.Status = .encounterError
+    var _captureProbability: POGOProtos_Data_Capture_CaptureProbability? = nil
+    var _activeItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+    var _arplusAttemptsUntilFlee: Int32 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _wildPokemon = source._wildPokemon
       _background = source._background
       _status = source._status

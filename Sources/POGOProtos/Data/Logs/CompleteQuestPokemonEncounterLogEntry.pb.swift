@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry {
@@ -100,7 +100,7 @@ public struct POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry {
 
 extension POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry.Result] = [
+  public static var allCases: [POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry.Result] = [
     .unset,
     .pokemonCaptured,
     .pokemonFled,
@@ -125,18 +125,18 @@ extension POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry: SwiftProto
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry.Result = .unset
-    public var _pokedexNumber: Int32 = 0
-    public var _combatPoints: Int32 = 0
-    public var _pokemonID: UInt64 = 0
-    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-    public var _encounterType: POGOProtos_Enums_EncounterType = .spawnPoint
+    var _result: POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry.Result = .unset
+    var _pokedexNumber: Int32 = 0
+    var _combatPoints: Int32 = 0
+    var _pokemonID: UInt64 = 0
+    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    var _encounterType: POGOProtos_Enums_EncounterType = .spawnPoint
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _pokedexNumber = source._pokedexNumber
       _combatPoints = source._combatPoints

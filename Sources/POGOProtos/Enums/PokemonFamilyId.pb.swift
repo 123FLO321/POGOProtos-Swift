@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
@@ -227,6 +227,51 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
   case familyRayquaza // = 384
   case familyJirachi // = 385
   case familyDeoxys // = 386
+  case familyTurtwig // = 387
+  case familyChimchar // = 390
+  case familyPiplup // = 393
+  case familyStarly // = 396
+  case familyBidoof // = 399
+  case familyKricketot // = 401
+  case familyShinx // = 403
+  case familyCranidos // = 408
+  case familyShieldon // = 410
+  case familyBurmy // = 412
+  case familyCombee // = 415
+  case familyPachirisu // = 417
+  case familyBuizel // = 418
+  case familyCherubi // = 420
+  case familyShellos // = 422
+  case familyDrifloon // = 425
+  case familyBuneary // = 427
+  case familyGlameow // = 431
+  case familyStunky // = 434
+  case familyBronzor // = 436
+  case familyChatot // = 441
+  case familySpiritomb // = 442
+  case familyGible // = 443
+  case familyLucario // = 448
+  case familyHippopotas // = 449
+  case familySkorupi // = 451
+  case familyCroagunk // = 453
+  case familyCarnivine // = 455
+  case familyFinneon // = 456
+  case familySnover // = 459
+  case familyRotom // = 479
+  case familyUxie // = 480
+  case familyMesprit // = 481
+  case familyAzelf // = 482
+  case familyDialga // = 483
+  case familyPalkia // = 484
+  case familyHeatran // = 485
+  case familyRegigigas // = 486
+  case familyGiratina // = 487
+  case familyCresselia // = 488
+  case familyPhione // = 489
+  case familyManaphy // = 490
+  case familyDarkrai // = 491
+  case familyShaymin // = 492
+  case familyArceus // = 493
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -441,6 +486,51 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
     case 384: self = .familyRayquaza
     case 385: self = .familyJirachi
     case 386: self = .familyDeoxys
+    case 387: self = .familyTurtwig
+    case 390: self = .familyChimchar
+    case 393: self = .familyPiplup
+    case 396: self = .familyStarly
+    case 399: self = .familyBidoof
+    case 401: self = .familyKricketot
+    case 403: self = .familyShinx
+    case 408: self = .familyCranidos
+    case 410: self = .familyShieldon
+    case 412: self = .familyBurmy
+    case 415: self = .familyCombee
+    case 417: self = .familyPachirisu
+    case 418: self = .familyBuizel
+    case 420: self = .familyCherubi
+    case 422: self = .familyShellos
+    case 425: self = .familyDrifloon
+    case 427: self = .familyBuneary
+    case 431: self = .familyGlameow
+    case 434: self = .familyStunky
+    case 436: self = .familyBronzor
+    case 441: self = .familyChatot
+    case 442: self = .familySpiritomb
+    case 443: self = .familyGible
+    case 448: self = .familyLucario
+    case 449: self = .familyHippopotas
+    case 451: self = .familySkorupi
+    case 453: self = .familyCroagunk
+    case 455: self = .familyCarnivine
+    case 456: self = .familyFinneon
+    case 459: self = .familySnover
+    case 479: self = .familyRotom
+    case 480: self = .familyUxie
+    case 481: self = .familyMesprit
+    case 482: self = .familyAzelf
+    case 483: self = .familyDialga
+    case 484: self = .familyPalkia
+    case 485: self = .familyHeatran
+    case 486: self = .familyRegigigas
+    case 487: self = .familyGiratina
+    case 488: self = .familyCresselia
+    case 489: self = .familyPhione
+    case 490: self = .familyManaphy
+    case 491: self = .familyDarkrai
+    case 492: self = .familyShaymin
+    case 493: self = .familyArceus
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -653,6 +743,51 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
     case .familyRayquaza: return 384
     case .familyJirachi: return 385
     case .familyDeoxys: return 386
+    case .familyTurtwig: return 387
+    case .familyChimchar: return 390
+    case .familyPiplup: return 393
+    case .familyStarly: return 396
+    case .familyBidoof: return 399
+    case .familyKricketot: return 401
+    case .familyShinx: return 403
+    case .familyCranidos: return 408
+    case .familyShieldon: return 410
+    case .familyBurmy: return 412
+    case .familyCombee: return 415
+    case .familyPachirisu: return 417
+    case .familyBuizel: return 418
+    case .familyCherubi: return 420
+    case .familyShellos: return 422
+    case .familyDrifloon: return 425
+    case .familyBuneary: return 427
+    case .familyGlameow: return 431
+    case .familyStunky: return 434
+    case .familyBronzor: return 436
+    case .familyChatot: return 441
+    case .familySpiritomb: return 442
+    case .familyGible: return 443
+    case .familyLucario: return 448
+    case .familyHippopotas: return 449
+    case .familySkorupi: return 451
+    case .familyCroagunk: return 453
+    case .familyCarnivine: return 455
+    case .familyFinneon: return 456
+    case .familySnover: return 459
+    case .familyRotom: return 479
+    case .familyUxie: return 480
+    case .familyMesprit: return 481
+    case .familyAzelf: return 482
+    case .familyDialga: return 483
+    case .familyPalkia: return 484
+    case .familyHeatran: return 485
+    case .familyRegigigas: return 486
+    case .familyGiratina: return 487
+    case .familyCresselia: return 488
+    case .familyPhione: return 489
+    case .familyManaphy: return 490
+    case .familyDarkrai: return 491
+    case .familyShaymin: return 492
+    case .familyArceus: return 493
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -663,7 +798,7 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_PokemonFamilyId: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_PokemonFamilyId] = [
+  public static var allCases: [POGOProtos_Enums_PokemonFamilyId] = [
     .familyUnset,
     .familyBulbasaur,
     .familyCharmander,
@@ -870,6 +1005,51 @@ extension POGOProtos_Enums_PokemonFamilyId: CaseIterable {
     .familyRayquaza,
     .familyJirachi,
     .familyDeoxys,
+    .familyTurtwig,
+    .familyChimchar,
+    .familyPiplup,
+    .familyStarly,
+    .familyBidoof,
+    .familyKricketot,
+    .familyShinx,
+    .familyCranidos,
+    .familyShieldon,
+    .familyBurmy,
+    .familyCombee,
+    .familyPachirisu,
+    .familyBuizel,
+    .familyCherubi,
+    .familyShellos,
+    .familyDrifloon,
+    .familyBuneary,
+    .familyGlameow,
+    .familyStunky,
+    .familyBronzor,
+    .familyChatot,
+    .familySpiritomb,
+    .familyGible,
+    .familyLucario,
+    .familyHippopotas,
+    .familySkorupi,
+    .familyCroagunk,
+    .familyCarnivine,
+    .familyFinneon,
+    .familySnover,
+    .familyRotom,
+    .familyUxie,
+    .familyMesprit,
+    .familyAzelf,
+    .familyDialga,
+    .familyPalkia,
+    .familyHeatran,
+    .familyRegigigas,
+    .familyGiratina,
+    .familyCresselia,
+    .familyPhione,
+    .familyManaphy,
+    .familyDarkrai,
+    .familyShaymin,
+    .familyArceus,
   ]
 }
 
@@ -1085,5 +1265,50 @@ extension POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf._ProtoNameProviding {
     384: .same(proto: "FAMILY_RAYQUAZA"),
     385: .same(proto: "FAMILY_JIRACHI"),
     386: .same(proto: "FAMILY_DEOXYS"),
+    387: .same(proto: "FAMILY_TURTWIG"),
+    390: .same(proto: "FAMILY_CHIMCHAR"),
+    393: .same(proto: "FAMILY_PIPLUP"),
+    396: .same(proto: "FAMILY_STARLY"),
+    399: .same(proto: "FAMILY_BIDOOF"),
+    401: .same(proto: "FAMILY_KRICKETOT"),
+    403: .same(proto: "FAMILY_SHINX"),
+    408: .same(proto: "FAMILY_CRANIDOS"),
+    410: .same(proto: "FAMILY_SHIELDON"),
+    412: .same(proto: "FAMILY_BURMY"),
+    415: .same(proto: "FAMILY_COMBEE"),
+    417: .same(proto: "FAMILY_PACHIRISU"),
+    418: .same(proto: "FAMILY_BUIZEL"),
+    420: .same(proto: "FAMILY_CHERUBI"),
+    422: .same(proto: "FAMILY_SHELLOS"),
+    425: .same(proto: "FAMILY_DRIFLOON"),
+    427: .same(proto: "FAMILY_BUNEARY"),
+    431: .same(proto: "FAMILY_GLAMEOW"),
+    434: .same(proto: "FAMILY_STUNKY"),
+    436: .same(proto: "FAMILY_BRONZOR"),
+    441: .same(proto: "FAMILY_CHATOT"),
+    442: .same(proto: "FAMILY_SPIRITOMB"),
+    443: .same(proto: "FAMILY_GIBLE"),
+    448: .same(proto: "FAMILY_LUCARIO"),
+    449: .same(proto: "FAMILY_HIPPOPOTAS"),
+    451: .same(proto: "FAMILY_SKORUPI"),
+    453: .same(proto: "FAMILY_CROAGUNK"),
+    455: .same(proto: "FAMILY_CARNIVINE"),
+    456: .same(proto: "FAMILY_FINNEON"),
+    459: .same(proto: "FAMILY_SNOVER"),
+    479: .same(proto: "FAMILY_ROTOM"),
+    480: .same(proto: "FAMILY_UXIE"),
+    481: .same(proto: "FAMILY_MESPRIT"),
+    482: .same(proto: "FAMILY_AZELF"),
+    483: .same(proto: "FAMILY_DIALGA"),
+    484: .same(proto: "FAMILY_PALKIA"),
+    485: .same(proto: "FAMILY_HEATRAN"),
+    486: .same(proto: "FAMILY_REGIGIGAS"),
+    487: .same(proto: "FAMILY_GIRATINA"),
+    488: .same(proto: "FAMILY_CRESSELIA"),
+    489: .same(proto: "FAMILY_PHIONE"),
+    490: .same(proto: "FAMILY_MANAPHY"),
+    491: .same(proto: "FAMILY_DARKRAI"),
+    492: .same(proto: "FAMILY_SHAYMIN"),
+    493: .same(proto: "FAMILY_ARCEUS"),
   ]
 }

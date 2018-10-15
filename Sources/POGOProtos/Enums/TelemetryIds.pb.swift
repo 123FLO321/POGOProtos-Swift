@@ -15,9 +15,65 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
+
+public enum POGOProtos_Enums_AssetTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case undefinedAssetEvent // = 0
+  case downloadStart // = 1
+  case downloadFinished // = 2
+  case downloadFailed // = 3
+  case assetRetrievedFromCache // = 4
+  case cacheThrash // = 5
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .undefinedAssetEvent
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .undefinedAssetEvent
+    case 1: self = .downloadStart
+    case 2: self = .downloadFinished
+    case 3: self = .downloadFailed
+    case 4: self = .assetRetrievedFromCache
+    case 5: self = .cacheThrash
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public var rawValue: Int {
+    switch self {
+    case .undefinedAssetEvent: return 0
+    case .downloadStart: return 1
+    case .downloadFinished: return 2
+    case .downloadFailed: return 3
+    case .assetRetrievedFromCache: return 4
+    case .cacheThrash: return 5
+    case .UNRECOGNIZED(let i): return i
+    }
+  }
+
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Enums_AssetTelemetryIds: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Enums_AssetTelemetryIds] = [
+    .undefinedAssetEvent,
+    .downloadStart,
+    .downloadFinished,
+    .downloadFailed,
+    .assetRetrievedFromCache,
+    .cacheThrash,
+  ]
+}
+
+#endif  // swift(>=4.2)
 
 public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
   public typealias RawValue = Int
@@ -55,6 +111,11 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
   case pokemonGoPlus // = 31
   case rpcTiming // = 32
   case socialGiftCount // = 33
+  case assetBundleDownload // = 34
+  case assetPoiDownload // = 35
+  case assetStreamDownload // = 36
+  case assetStreamCacheCulled // = 37
+  case rpcSocketTiming // = 38
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -97,6 +158,11 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case 31: self = .pokemonGoPlus
     case 32: self = .rpcTiming
     case 33: self = .socialGiftCount
+    case 34: self = .assetBundleDownload
+    case 35: self = .assetPoiDownload
+    case 36: self = .assetStreamDownload
+    case 37: self = .assetStreamCacheCulled
+    case 38: self = .rpcSocketTiming
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -137,6 +203,11 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case .pokemonGoPlus: return 31
     case .rpcTiming: return 32
     case .socialGiftCount: return 33
+    case .assetBundleDownload: return 34
+    case .assetPoiDownload: return 35
+    case .assetStreamDownload: return 36
+    case .assetStreamCacheCulled: return 37
+    case .rpcSocketTiming: return 38
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -147,7 +218,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_ClientTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_ClientTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_ClientTelemetryIds] = [
     .undefined,
     .bootTime,
     .frameRate,
@@ -182,6 +253,11 @@ extension POGOProtos_Enums_ClientTelemetryIds: CaseIterable {
     .pokemonGoPlus,
     .rpcTiming,
     .socialGiftCount,
+    .assetBundleDownload,
+    .assetPoiDownload,
+    .assetStreamDownload,
+    .assetStreamCacheCulled,
+    .rpcSocketTiming,
   ]
 }
 
@@ -243,7 +319,7 @@ public enum POGOProtos_Enums_AvatarCustomizationTelemetryIds: SwiftProtobuf.Enum
 
 extension POGOProtos_Enums_AvatarCustomizationTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_AvatarCustomizationTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_AvatarCustomizationTelemetryIds] = [
     .undefinedAvatarCustomization,
     .equipItem,
     .openFeatures,
@@ -303,7 +379,7 @@ public enum POGOProtos_Enums_BattlePartyTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_BattlePartyTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_BattlePartyTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_BattlePartyTelemetryIds] = [
     .undefinedBattlePartyEvent,
     .add,
     .remove,
@@ -350,7 +426,7 @@ public enum POGOProtos_Enums_GenericClickTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_GenericClickTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_GenericClickTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_GenericClickTelemetryIds] = [
     .undefinedGenericEvent,
     .speedWarningShow,
     .speedWarningPassenger,
@@ -394,7 +470,7 @@ public enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_ItemUseTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_ItemUseTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_ItemUseTelemetryIds] = [
     .undefinedItemEvent,
     .useItem,
     .recycleItem,
@@ -504,7 +580,7 @@ public enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_LoginActionTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_LoginActionTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_LoginActionTelemetryIds] = [
     .undefinedLoginAction,
     .clickAgeGate,
     .clickNewPlayer,
@@ -597,7 +673,7 @@ public enum POGOProtos_Enums_MapEventsTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_MapEventsTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_MapEventsTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_MapEventsTelemetryIds] = [
     .undefinedMapEvent,
     .itemBag,
     .mainMenu,
@@ -656,7 +732,7 @@ public enum POGOProtos_Enums_NewsPageTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_NewsPageTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_NewsPageTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_NewsPageTelemetryIds] = [
     .undefinedNewsEvent,
     .newsViewed,
     .newsDismissed,
@@ -705,7 +781,7 @@ public enum POGOProtos_Enums_PokemonInventoryTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_PokemonInventoryTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_PokemonInventoryTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_PokemonInventoryTelemetryIds] = [
     .undefinedPokemonInventoryEvent,
     .open,
     .sortingChange,
@@ -756,7 +832,7 @@ public enum POGOProtos_Enums_ProfilePageTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_ProfilePageTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_ProfilePageTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_ProfilePageTelemetryIds] = [
     .undefinedProfilePage,
     .shopFromProfile,
     .log,
@@ -799,7 +875,7 @@ public enum POGOProtos_Enums_PushNotificationTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_PushNotificationTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_PushNotificationTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_PushNotificationTelemetryIds] = [
     .undefinedPushNotificationEvent,
     .openApp,
   ]
@@ -875,7 +951,7 @@ public enum POGOProtos_Enums_RaidTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_RaidTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_RaidTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_RaidTelemetryIds] = [
     .undefinedRaidEvent,
     .approachEnter,
     .approachClickSpinner,
@@ -933,7 +1009,7 @@ public enum POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_ShoppingPageTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_ShoppingPageTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_ShoppingPageTelemetryIds] = [
     .undefinedShoppingPageEvent,
     .clickCustomizeAvatar,
     .quickShopMore,
@@ -993,7 +1069,7 @@ public enum POGOProtos_Enums_SocialTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_SocialTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_SocialTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_SocialTelemetryIds] = [
     .undefinedSocial,
     .friendTab,
     .notificationTab,
@@ -1039,7 +1115,7 @@ public enum POGOProtos_Enums_WebTelemetryIds: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_WebTelemetryIds: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_WebTelemetryIds] = [
+  public static var allCases: [POGOProtos_Enums_WebTelemetryIds] = [
     .undefinedWebEvent,
     .pointOfInterestDescriptionWebClick,
   ]
@@ -1048,6 +1124,17 @@ extension POGOProtos_Enums_WebTelemetryIds: CaseIterable {
 #endif  // swift(>=4.2)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
+
+extension POGOProtos_Enums_AssetTelemetryIds: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNDEFINED_ASSET_EVENT"),
+    1: .same(proto: "DOWNLOAD_START"),
+    2: .same(proto: "DOWNLOAD_FINISHED"),
+    3: .same(proto: "DOWNLOAD_FAILED"),
+    4: .same(proto: "ASSET_RETRIEVED_FROM_CACHE"),
+    5: .same(proto: "CACHE_THRASH"),
+  ]
+}
 
 extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -1085,6 +1172,11 @@ extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding
     31: .same(proto: "POKEMON_GO_PLUS"),
     32: .same(proto: "RPC_TIMING"),
     33: .same(proto: "SOCIAL_GIFT_COUNT"),
+    34: .same(proto: "ASSET_BUNDLE_DOWNLOAD"),
+    35: .same(proto: "ASSET_POI_DOWNLOAD"),
+    36: .same(proto: "ASSET_STREAM_DOWNLOAD"),
+    37: .same(proto: "ASSET_STREAM_CACHE_CULLED"),
+    38: .same(proto: "RPC_SOCKET_TIMING"),
   ]
 }
 

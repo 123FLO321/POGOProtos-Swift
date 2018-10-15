@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
@@ -31,6 +31,10 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case giftboxDelivered // = 7
   case friendshipMilestoneReward // = 8
   case gymBattleFriendshipIncrement // = 9
+  case sharedExclusiveRaidInvite // = 10
+  case bgmodeEggHatch // = 11
+  case bgmodeBuddyCandy // = 12
+  case bgmodeWeeklyFitnessReport // = 13
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -49,6 +53,10 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 7: self = .giftboxDelivered
     case 8: self = .friendshipMilestoneReward
     case 9: self = .gymBattleFriendshipIncrement
+    case 10: self = .sharedExclusiveRaidInvite
+    case 11: self = .bgmodeEggHatch
+    case 12: self = .bgmodeBuddyCandy
+    case 13: self = .bgmodeWeeklyFitnessReport
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -65,6 +73,10 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .giftboxDelivered: return 7
     case .friendshipMilestoneReward: return 8
     case .gymBattleFriendshipIncrement: return 9
+    case .sharedExclusiveRaidInvite: return 10
+    case .bgmodeEggHatch: return 11
+    case .bgmodeBuddyCandy: return 12
+    case .bgmodeWeeklyFitnessReport: return 13
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -75,7 +87,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
 
 extension POGOProtos_Enums_NotificationCategory: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Enums_NotificationCategory] = [
+  public static var allCases: [POGOProtos_Enums_NotificationCategory] = [
     .unsetNotificationCategory,
     .gymRemoval,
     .pokemonHungry,
@@ -86,6 +98,10 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .giftboxDelivered,
     .friendshipMilestoneReward,
     .gymBattleFriendshipIncrement,
+    .sharedExclusiveRaidInvite,
+    .bgmodeEggHatch,
+    .bgmodeBuddyCandy,
+    .bgmodeWeeklyFitnessReport,
   ]
 }
 
@@ -105,5 +121,9 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     7: .same(proto: "GIFTBOX_DELIVERED"),
     8: .same(proto: "FRIENDSHIP_MILESTONE_REWARD"),
     9: .same(proto: "GYM_BATTLE_FRIENDSHIP_INCREMENT"),
+    10: .same(proto: "SHARED_EXCLUSIVE_RAID_INVITE"),
+    11: .same(proto: "BGMODE_EGG_HATCH"),
+    12: .same(proto: "BGMODE_BUDDY_CANDY"),
+    13: .same(proto: "BGMODE_WEEKLY_FITNESS_REPORT"),
   ]
 }

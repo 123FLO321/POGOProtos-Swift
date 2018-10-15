@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
@@ -131,6 +131,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case confirmTrading // = 972
   case cancelTrading // = 973
   case getTrading // = 974
+  case getFitnessRewards // = 980
+  case sendProbe // = 1020
+  case probeData // = 1021
+  case combatData // = 1022
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -249,6 +253,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 972: self = .confirmTrading
     case 973: self = .cancelTrading
     case 974: self = .getTrading
+    case 980: self = .getFitnessRewards
+    case 1020: self = .sendProbe
+    case 1021: self = .probeData
+    case 1022: self = .combatData
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -365,6 +373,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .confirmTrading: return 972
     case .cancelTrading: return 973
     case .getTrading: return 974
+    case .getFitnessRewards: return 980
+    case .sendProbe: return 1020
+    case .probeData: return 1021
+    case .combatData: return 1022
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -375,7 +387,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
 
 extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Requests_RequestType] = [
+  public static var allCases: [POGOProtos_Networking_Requests_RequestType] = [
     .methodUnset,
     .getPlayer,
     .getHoloholoInventory,
@@ -486,6 +498,10 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .confirmTrading,
     .cancelTrading,
     .getTrading,
+    .getFitnessRewards,
+    .sendProbe,
+    .probeData,
+    .combatData,
   ]
 }
 
@@ -605,5 +621,9 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     972: .same(proto: "CONFIRM_TRADING"),
     973: .same(proto: "CANCEL_TRADING"),
     974: .same(proto: "GET_TRADING"),
+    980: .same(proto: "GET_FITNESS_REWARDS"),
+    1020: .same(proto: "SEND_PROBE"),
+    1021: .same(proto: "PROBE_DATA"),
+    1022: .same(proto: "COMBAT_DATA"),
   ]
 }

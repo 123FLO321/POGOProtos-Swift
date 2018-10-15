@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Raid_RaidInfo {
@@ -99,21 +99,21 @@ extension POGOProtos_Data_Raid_RaidInfo: SwiftProtobuf.Message, SwiftProtobuf._M
   ]
 
   fileprivate class _StorageClass {
-    public var _raidSeed: Int64 = 0
-    public var _raidSpawnMs: Int64 = 0
-    public var _raidBattleMs: Int64 = 0
-    public var _raidEndMs: Int64 = 0
-    public var _raidPokemon: POGOProtos_Data_PokemonData? = nil
-    public var _raidLevel: POGOProtos_Enums_RaidLevel = .unset
-    public var _complete: Bool = false
-    public var _isExclusive: Bool = false
-    public var _isRaidHidden: Bool = false
+    var _raidSeed: Int64 = 0
+    var _raidSpawnMs: Int64 = 0
+    var _raidBattleMs: Int64 = 0
+    var _raidEndMs: Int64 = 0
+    var _raidPokemon: POGOProtos_Data_PokemonData? = nil
+    var _raidLevel: POGOProtos_Enums_RaidLevel = .unset
+    var _complete: Bool = false
+    var _isExclusive: Bool = false
+    var _isRaidHidden: Bool = false
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _raidSeed = source._raidSeed
       _raidSpawnMs = source._raidSpawnMs
       _raidBattleMs = source._raidBattleMs

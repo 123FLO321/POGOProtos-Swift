@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Map_Pokemon_MotivatedPokemon {
@@ -93,20 +93,20 @@ extension POGOProtos_Map_Pokemon_MotivatedPokemon: SwiftProtobuf.Message, SwiftP
   ]
 
   fileprivate class _StorageClass {
-    public var _pokemon: POGOProtos_Data_PokemonData? = nil
-    public var _deployMs: Int64 = 0
-    public var _cpWhenDeployed: Int32 = 0
-    public var _motivationNow: Double = 0
-    public var _cpNow: Int32 = 0
-    public var _berryValue: Float = 0
-    public var _feedCooldownDurationMillis: Int64 = 0
-    public var _foodValue: [POGOProtos_Data_FoodValue] = []
+    var _pokemon: POGOProtos_Data_PokemonData? = nil
+    var _deployMs: Int64 = 0
+    var _cpWhenDeployed: Int32 = 0
+    var _motivationNow: Double = 0
+    var _cpNow: Int32 = 0
+    var _berryValue: Float = 0
+    var _feedCooldownDurationMillis: Int64 = 0
+    var _foodValue: [POGOProtos_Data_FoodValue] = []
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _pokemon = source._pokemon
       _deployMs = source._deployMs
       _cpWhenDeployed = source._cpWhenDeployed

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
@@ -321,6 +321,51 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
   /// Clears the value of `socialGiftCountTelemetry`. Subsequent reads from it will return its default value.
   public mutating func clearSocialGiftCountTelemetry() {_uniqueStorage()._socialGiftCountTelemetry = nil}
 
+  public var assetBundleTelemetry: POGOProtos_Data_Telemetry_AssetBundleDownloadTelemetry {
+    get {return _storage._assetBundleTelemetry ?? POGOProtos_Data_Telemetry_AssetBundleDownloadTelemetry()}
+    set {_uniqueStorage()._assetBundleTelemetry = newValue}
+  }
+  /// Returns true if `assetBundleTelemetry` has been explicitly set.
+  public var hasAssetBundleTelemetry: Bool {return _storage._assetBundleTelemetry != nil}
+  /// Clears the value of `assetBundleTelemetry`. Subsequent reads from it will return its default value.
+  public mutating func clearAssetBundleTelemetry() {_uniqueStorage()._assetBundleTelemetry = nil}
+
+  public var assetPoiDownloadTelemetry: POGOProtos_Data_Telemetry_AssetPoiDownloadTelemetry {
+    get {return _storage._assetPoiDownloadTelemetry ?? POGOProtos_Data_Telemetry_AssetPoiDownloadTelemetry()}
+    set {_uniqueStorage()._assetPoiDownloadTelemetry = newValue}
+  }
+  /// Returns true if `assetPoiDownloadTelemetry` has been explicitly set.
+  public var hasAssetPoiDownloadTelemetry: Bool {return _storage._assetPoiDownloadTelemetry != nil}
+  /// Clears the value of `assetPoiDownloadTelemetry`. Subsequent reads from it will return its default value.
+  public mutating func clearAssetPoiDownloadTelemetry() {_uniqueStorage()._assetPoiDownloadTelemetry = nil}
+
+  public var assetStreamDownloadTelemetry: POGOProtos_Data_Telemetry_AssetStreamDownloadTelemetry {
+    get {return _storage._assetStreamDownloadTelemetry ?? POGOProtos_Data_Telemetry_AssetStreamDownloadTelemetry()}
+    set {_uniqueStorage()._assetStreamDownloadTelemetry = newValue}
+  }
+  /// Returns true if `assetStreamDownloadTelemetry` has been explicitly set.
+  public var hasAssetStreamDownloadTelemetry: Bool {return _storage._assetStreamDownloadTelemetry != nil}
+  /// Clears the value of `assetStreamDownloadTelemetry`. Subsequent reads from it will return its default value.
+  public mutating func clearAssetStreamDownloadTelemetry() {_uniqueStorage()._assetStreamDownloadTelemetry = nil}
+
+  public var assetStreamCacheCulledTelemetry: POGOProtos_Data_Telemetry_AssetStreamCacheCulledTelemetry {
+    get {return _storage._assetStreamCacheCulledTelemetry ?? POGOProtos_Data_Telemetry_AssetStreamCacheCulledTelemetry()}
+    set {_uniqueStorage()._assetStreamCacheCulledTelemetry = newValue}
+  }
+  /// Returns true if `assetStreamCacheCulledTelemetry` has been explicitly set.
+  public var hasAssetStreamCacheCulledTelemetry: Bool {return _storage._assetStreamCacheCulledTelemetry != nil}
+  /// Clears the value of `assetStreamCacheCulledTelemetry`. Subsequent reads from it will return its default value.
+  public mutating func clearAssetStreamCacheCulledTelemetry() {_uniqueStorage()._assetStreamCacheCulledTelemetry = nil}
+
+  public var rpcSocketTimingTelemetry: POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry {
+    get {return _storage._rpcSocketTimingTelemetry ?? POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry()}
+    set {_uniqueStorage()._rpcSocketTimingTelemetry = newValue}
+  }
+  /// Returns true if `rpcSocketTimingTelemetry` has been explicitly set.
+  public var hasRpcSocketTimingTelemetry: Bool {return _storage._rpcSocketTimingTelemetry != nil}
+  /// Clears the value of `rpcSocketTimingTelemetry`. Subsequent reads from it will return its default value.
+  public mutating func clearRpcSocketTimingTelemetry() {_uniqueStorage()._rpcSocketTimingTelemetry = nil}
+
   public var serverData: POGOProtos_Networking_Platform_Telemetry_PlatformServerData {
     get {return _storage._serverData ?? POGOProtos_Networking_Platform_Telemetry_PlatformServerData()}
     set {_uniqueStorage()._serverData = newValue}
@@ -377,50 +422,60 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     31: .standard(proto: "pokemon_go_plus_telemetry"),
     32: .standard(proto: "rpc_timing_telemetry"),
     33: .standard(proto: "social_gift_count_telemetry"),
+    34: .standard(proto: "asset_bundle_telemetry"),
+    35: .standard(proto: "asset_poi_download_telemetry"),
+    36: .standard(proto: "asset_stream_download_telemetry"),
+    37: .standard(proto: "asset_stream_cache_culled_telemetry"),
+    38: .standard(proto: "rpc_socket_timing_telemetry"),
     1001: .standard(proto: "server_data"),
   ]
 
   fileprivate class _StorageClass {
-    public var _bootTime: POGOProtos_Data_Telemetry_BootTime? = nil
-    public var _frameRate: POGOProtos_Data_Telemetry_FrameRate? = nil
-    public var _genericClickTelemetry: POGOProtos_Data_Telemetry_GenericClickTelemetry? = nil
-    public var _mapEventsTelemetry: POGOProtos_Data_Telemetry_MapEventsTelemetry? = nil
-    public var _spinPokestopTelemetry: POGOProtos_Data_Telemetry_SpinPokestopTelemetry? = nil
-    public var _profilePageTelemetry: POGOProtos_Data_Telemetry_ProfilePageTelemetry? = nil
-    public var _shoppingPageTelemetry: POGOProtos_Data_Telemetry_ShoppingPageTelemetry? = nil
-    public var _encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry? = nil
-    public var _catchPokemonTelemetry: POGOProtos_Data_Telemetry_CatchPokemonTelemetry? = nil
-    public var _deployPokemonTelemetry: POGOProtos_Data_Telemetry_DeployPokemonTelemetry? = nil
-    public var _feedPokemonTelemetry: POGOProtos_Data_Telemetry_FeedPokemonTelemetry? = nil
-    public var _evolvePokemonTelemetry: POGOProtos_Data_Telemetry_EvolvePokemonTelemetry? = nil
-    public var _releasePokemonTelemetry: POGOProtos_Data_Telemetry_ReleasePokemonTelemetry? = nil
-    public var _nicknamePokemonTelemetry: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry? = nil
-    public var _newsPageTelemetry: POGOProtos_Data_Telemetry_NewsPageTelemetry? = nil
-    public var _itemTelemetry: POGOProtos_Data_Telemetry_ItemTelemetry? = nil
-    public var _battlePartyTelemetry: POGOProtos_Data_Telemetry_BattlePartyTelemetry? = nil
-    public var _passcodeRedeemTelemetry: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry? = nil
-    public var _linkLoginTelemetry: POGOProtos_Data_Telemetry_LinkLoginTelemetry? = nil
-    public var _raidTelemetry: POGOProtos_Data_Telemetry_RaidTelemetry? = nil
-    public var _pushNotificationTelemetry: POGOProtos_Data_Telemetry_PushNotificationTelemetry? = nil
-    public var _avatarCustomizationTelemetry: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry? = nil
-    public var _readPointOfInterestDescriptionTelemetry: POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry? = nil
-    public var _webTelemetry: POGOProtos_Data_Telemetry_WebTelemetry? = nil
-    public var _changeArTelemetry: POGOProtos_Data_Telemetry_ChangeArTelemetry? = nil
-    public var _weatherDetailClickTelemetry: POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry? = nil
-    public var _userIssueWeatherReport: POGOProtos_Data_Player_UserIssueWeatherReport? = nil
-    public var _pokemonInventoryTelemetry: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry? = nil
-    public var _socialTelemetry: POGOProtos_Data_Telemetry_SocialTelemetry? = nil
-    public var _checkEncounterInfoTelemetry: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry? = nil
-    public var _pokemonGoPlusTelemetry: POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry? = nil
-    public var _rpcTimingTelemetry: POGOProtos_Data_Telemetry_RpcResponseTelemetry? = nil
-    public var _socialGiftCountTelemetry: POGOProtos_Settings_SocialGiftCountTelemetry? = nil
-    public var _serverData: POGOProtos_Networking_Platform_Telemetry_PlatformServerData? = nil
+    var _bootTime: POGOProtos_Data_Telemetry_BootTime? = nil
+    var _frameRate: POGOProtos_Data_Telemetry_FrameRate? = nil
+    var _genericClickTelemetry: POGOProtos_Data_Telemetry_GenericClickTelemetry? = nil
+    var _mapEventsTelemetry: POGOProtos_Data_Telemetry_MapEventsTelemetry? = nil
+    var _spinPokestopTelemetry: POGOProtos_Data_Telemetry_SpinPokestopTelemetry? = nil
+    var _profilePageTelemetry: POGOProtos_Data_Telemetry_ProfilePageTelemetry? = nil
+    var _shoppingPageTelemetry: POGOProtos_Data_Telemetry_ShoppingPageTelemetry? = nil
+    var _encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry? = nil
+    var _catchPokemonTelemetry: POGOProtos_Data_Telemetry_CatchPokemonTelemetry? = nil
+    var _deployPokemonTelemetry: POGOProtos_Data_Telemetry_DeployPokemonTelemetry? = nil
+    var _feedPokemonTelemetry: POGOProtos_Data_Telemetry_FeedPokemonTelemetry? = nil
+    var _evolvePokemonTelemetry: POGOProtos_Data_Telemetry_EvolvePokemonTelemetry? = nil
+    var _releasePokemonTelemetry: POGOProtos_Data_Telemetry_ReleasePokemonTelemetry? = nil
+    var _nicknamePokemonTelemetry: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry? = nil
+    var _newsPageTelemetry: POGOProtos_Data_Telemetry_NewsPageTelemetry? = nil
+    var _itemTelemetry: POGOProtos_Data_Telemetry_ItemTelemetry? = nil
+    var _battlePartyTelemetry: POGOProtos_Data_Telemetry_BattlePartyTelemetry? = nil
+    var _passcodeRedeemTelemetry: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry? = nil
+    var _linkLoginTelemetry: POGOProtos_Data_Telemetry_LinkLoginTelemetry? = nil
+    var _raidTelemetry: POGOProtos_Data_Telemetry_RaidTelemetry? = nil
+    var _pushNotificationTelemetry: POGOProtos_Data_Telemetry_PushNotificationTelemetry? = nil
+    var _avatarCustomizationTelemetry: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry? = nil
+    var _readPointOfInterestDescriptionTelemetry: POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry? = nil
+    var _webTelemetry: POGOProtos_Data_Telemetry_WebTelemetry? = nil
+    var _changeArTelemetry: POGOProtos_Data_Telemetry_ChangeArTelemetry? = nil
+    var _weatherDetailClickTelemetry: POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry? = nil
+    var _userIssueWeatherReport: POGOProtos_Data_Player_UserIssueWeatherReport? = nil
+    var _pokemonInventoryTelemetry: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry? = nil
+    var _socialTelemetry: POGOProtos_Data_Telemetry_SocialTelemetry? = nil
+    var _checkEncounterInfoTelemetry: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry? = nil
+    var _pokemonGoPlusTelemetry: POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry? = nil
+    var _rpcTimingTelemetry: POGOProtos_Data_Telemetry_RpcResponseTelemetry? = nil
+    var _socialGiftCountTelemetry: POGOProtos_Settings_SocialGiftCountTelemetry? = nil
+    var _assetBundleTelemetry: POGOProtos_Data_Telemetry_AssetBundleDownloadTelemetry? = nil
+    var _assetPoiDownloadTelemetry: POGOProtos_Data_Telemetry_AssetPoiDownloadTelemetry? = nil
+    var _assetStreamDownloadTelemetry: POGOProtos_Data_Telemetry_AssetStreamDownloadTelemetry? = nil
+    var _assetStreamCacheCulledTelemetry: POGOProtos_Data_Telemetry_AssetStreamCacheCulledTelemetry? = nil
+    var _rpcSocketTimingTelemetry: POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry? = nil
+    var _serverData: POGOProtos_Networking_Platform_Telemetry_PlatformServerData? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _bootTime = source._bootTime
       _frameRate = source._frameRate
       _genericClickTelemetry = source._genericClickTelemetry
@@ -454,6 +509,11 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
       _pokemonGoPlusTelemetry = source._pokemonGoPlusTelemetry
       _rpcTimingTelemetry = source._rpcTimingTelemetry
       _socialGiftCountTelemetry = source._socialGiftCountTelemetry
+      _assetBundleTelemetry = source._assetBundleTelemetry
+      _assetPoiDownloadTelemetry = source._assetPoiDownloadTelemetry
+      _assetStreamDownloadTelemetry = source._assetStreamDownloadTelemetry
+      _assetStreamCacheCulledTelemetry = source._assetStreamCacheCulledTelemetry
+      _rpcSocketTimingTelemetry = source._rpcSocketTimingTelemetry
       _serverData = source._serverData
     }
   }
@@ -503,6 +563,11 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         case 31: try decoder.decodeSingularMessageField(value: &_storage._pokemonGoPlusTelemetry)
         case 32: try decoder.decodeSingularMessageField(value: &_storage._rpcTimingTelemetry)
         case 33: try decoder.decodeSingularMessageField(value: &_storage._socialGiftCountTelemetry)
+        case 34: try decoder.decodeSingularMessageField(value: &_storage._assetBundleTelemetry)
+        case 35: try decoder.decodeSingularMessageField(value: &_storage._assetPoiDownloadTelemetry)
+        case 36: try decoder.decodeSingularMessageField(value: &_storage._assetStreamDownloadTelemetry)
+        case 37: try decoder.decodeSingularMessageField(value: &_storage._assetStreamCacheCulledTelemetry)
+        case 38: try decoder.decodeSingularMessageField(value: &_storage._rpcSocketTimingTelemetry)
         case 1001: try decoder.decodeSingularMessageField(value: &_storage._serverData)
         default: break
         }
@@ -611,6 +676,21 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
       if let v = _storage._socialGiftCountTelemetry {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 33)
       }
+      if let v = _storage._assetBundleTelemetry {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 34)
+      }
+      if let v = _storage._assetPoiDownloadTelemetry {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 35)
+      }
+      if let v = _storage._assetStreamDownloadTelemetry {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 36)
+      }
+      if let v = _storage._assetStreamCacheCulledTelemetry {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 37)
+      }
+      if let v = _storage._rpcSocketTimingTelemetry {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 38)
+      }
       if let v = _storage._serverData {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
       }
@@ -656,6 +736,11 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         if _storage._pokemonGoPlusTelemetry != rhs_storage._pokemonGoPlusTelemetry {return false}
         if _storage._rpcTimingTelemetry != rhs_storage._rpcTimingTelemetry {return false}
         if _storage._socialGiftCountTelemetry != rhs_storage._socialGiftCountTelemetry {return false}
+        if _storage._assetBundleTelemetry != rhs_storage._assetBundleTelemetry {return false}
+        if _storage._assetPoiDownloadTelemetry != rhs_storage._assetPoiDownloadTelemetry {return false}
+        if _storage._assetStreamDownloadTelemetry != rhs_storage._assetStreamDownloadTelemetry {return false}
+        if _storage._assetStreamCacheCulledTelemetry != rhs_storage._assetStreamCacheCulledTelemetry {return false}
+        if _storage._rpcSocketTimingTelemetry != rhs_storage._rpcSocketTimingTelemetry {return false}
         if _storage._serverData != rhs_storage._serverData {return false}
         return true
       }

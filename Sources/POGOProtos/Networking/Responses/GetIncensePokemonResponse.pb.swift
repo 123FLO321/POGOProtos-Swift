@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_GetIncensePokemonResponse {
@@ -110,7 +110,7 @@ public struct POGOProtos_Networking_Responses_GetIncensePokemonResponse {
 
 extension POGOProtos_Networking_Responses_GetIncensePokemonResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_GetIncensePokemonResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_GetIncensePokemonResponse.Result] = [
     .incenseEncounterUnknown,
     .incenseEncounterAvailable,
     .incenseEncounterNotAvailable,
@@ -137,20 +137,20 @@ extension POGOProtos_Networking_Responses_GetIncensePokemonResponse: SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_GetIncensePokemonResponse.Result = .incenseEncounterUnknown
-    public var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    public var _latitude: Double = 0
-    public var _longitude: Double = 0
-    public var _encounterLocation: String = String()
-    public var _encounterID: UInt64 = 0
-    public var _disappearTimestampMs: Int64 = 0
-    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    var _result: POGOProtos_Networking_Responses_GetIncensePokemonResponse.Result = .incenseEncounterUnknown
+    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _latitude: Double = 0
+    var _longitude: Double = 0
+    var _encounterLocation: String = String()
+    var _encounterID: UInt64 = 0
+    var _disappearTimestampMs: Int64 = 0
+    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _pokemonID = source._pokemonID
       _latitude = source._latitude

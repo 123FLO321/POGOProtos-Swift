@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Logs_ActionLogEntry {
@@ -143,6 +143,14 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .declineExRaidPass(newValue)}
   }
 
+  public var fitnessRewards: POGOProtos_Data_Logs_FitnessRewardsLogEntry {
+    get {
+      if case .fitnessRewards(let v)? = _storage._action {return v}
+      return POGOProtos_Data_Logs_FitnessRewardsLogEntry()
+    }
+    set {_uniqueStorage()._action = .fitnessRewards(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Action: Equatable {
@@ -159,6 +167,7 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     case trading(POGOProtos_Data_Logs_TradingLogEntry)
     case shareExRaidPass(POGOProtos_Data_Logs_ShareExRaidPassLogEntry)
     case declineExRaidPass(POGOProtos_Data_Logs_DeclineExRaidPassLogEntry)
+    case fitnessRewards(POGOProtos_Data_Logs_FitnessRewardsLogEntry)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action, rhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action) -> Bool {
@@ -176,6 +185,7 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
       case (.trading(let l), .trading(let r)): return l == r
       case (.shareExRaidPass(let l), .shareExRaidPass(let r)): return l == r
       case (.declineExRaidPass(let l), .declineExRaidPass(let r)): return l == r
+      case (.fitnessRewards(let l), .fitnessRewards(let r)): return l == r
       default: return false
       }
     }
@@ -209,18 +219,19 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
     14: .same(proto: "trading"),
     15: .standard(proto: "share_ex_raid_pass"),
     16: .standard(proto: "decline_ex_raid_pass"),
+    17: .standard(proto: "fitness_rewards"),
   ]
 
   fileprivate class _StorageClass {
-    public var _timestampMs: Int64 = 0
-    public var _sfida: Bool = false
-    public var _action: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action?
+    var _timestampMs: Int64 = 0
+    var _sfida: Bool = false
+    var _action: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action?
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _timestampMs = source._timestampMs
       _sfida = source._sfida
       _action = source._action
@@ -345,6 +356,14 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._action = .declineExRaidPass(v)}
+        case 17:
+          var v: POGOProtos_Data_Logs_FitnessRewardsLogEntry?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .fitnessRewards(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .fitnessRewards(v)}
         default: break
         }
       }
@@ -386,6 +405,8 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
         try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
       case .declineExRaidPass(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
+      case .fitnessRewards(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
       case nil: break
       }
     }

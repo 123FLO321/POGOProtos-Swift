@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Map_Pokemon_WildPokemon {
@@ -87,19 +87,19 @@ extension POGOProtos_Map_Pokemon_WildPokemon: SwiftProtobuf.Message, SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    public var _encounterID: UInt64 = 0
-    public var _lastModifiedTimestampMs: Int64 = 0
-    public var _latitude: Double = 0
-    public var _longitude: Double = 0
-    public var _spawnPointID: String = String()
-    public var _pokemonData: POGOProtos_Data_PokemonData? = nil
-    public var _timeTillHiddenMs: Int32 = 0
+    var _encounterID: UInt64 = 0
+    var _lastModifiedTimestampMs: Int64 = 0
+    var _latitude: Double = 0
+    var _longitude: Double = 0
+    var _spawnPointID: String = String()
+    var _pokemonData: POGOProtos_Data_PokemonData? = nil
+    var _timeTillHiddenMs: Int32 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _encounterID = source._encounterID
       _lastModifiedTimestampMs = source._lastModifiedTimestampMs
       _latitude = source._latitude

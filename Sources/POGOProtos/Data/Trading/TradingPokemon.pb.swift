@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Trading_TradingPokemon {
@@ -173,32 +173,32 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
   ]
 
   fileprivate class _StorageClass {
-    public var _pokemonID: UInt64 = 0
-    public var _pokedexEntryNumber: Int32 = 0
-    public var _originalCp: Int32 = 0
-    public var _adjustedCpMin: Int32 = 0
-    public var _adjustedCpMax: Int32 = 0
-    public var _originalStamina: Int32 = 0
-    public var _adjustedStaminaMin: Int32 = 0
-    public var _adjustedStaminaMax: Int32 = 0
-    public var _friendLevelCap: Bool = false
-    public var _move1: Int32 = 0
-    public var _move2: Int32 = 0
-    public var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-    public var _capturedS2CellID: Int64 = 0
-    public var _tradedPokemon: POGOProtos_Data_PokemonData? = nil
-    public var _pokeball: POGOProtos_Inventory_Item_ItemData? = nil
-    public var _individualAttack: Int32 = 0
-    public var _individualDefense: Int32 = 0
-    public var _individualStamina: Int32 = 0
-    public var _nickname: String = String()
-    public var _favorite: Bool = false
+    var _pokemonID: UInt64 = 0
+    var _pokedexEntryNumber: Int32 = 0
+    var _originalCp: Int32 = 0
+    var _adjustedCpMin: Int32 = 0
+    var _adjustedCpMax: Int32 = 0
+    var _originalStamina: Int32 = 0
+    var _adjustedStaminaMin: Int32 = 0
+    var _adjustedStaminaMax: Int32 = 0
+    var _friendLevelCap: Bool = false
+    var _move1: Int32 = 0
+    var _move2: Int32 = 0
+    var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
+    var _capturedS2CellID: Int64 = 0
+    var _tradedPokemon: POGOProtos_Data_PokemonData? = nil
+    var _pokeball: POGOProtos_Inventory_Item_ItemData? = nil
+    var _individualAttack: Int32 = 0
+    var _individualDefense: Int32 = 0
+    var _individualStamina: Int32 = 0
+    var _nickname: String = String()
+    var _favorite: Bool = false
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _pokemonID = source._pokemonID
       _pokedexEntryNumber = source._pokedexEntryNumber
       _originalCp = source._originalCp

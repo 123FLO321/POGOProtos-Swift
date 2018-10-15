@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Quests_Quests {
@@ -69,16 +69,16 @@ extension POGOProtos_Data_Quests_Quests: SwiftProtobuf.Message, SwiftProtobuf._M
   ]
 
   fileprivate class _StorageClass {
-    public var _quest: [POGOProtos_Data_Quests_Quest] = []
-    public var _completedStoryQuest: [String] = []
-    public var _questPokemonEncounter: [POGOProtos_Data_Quests_QuestPokemonEncounter] = []
-    public var _stampCard: POGOProtos_Data_Quests_QuestStampCard? = nil
+    var _quest: [POGOProtos_Data_Quests_Quest] = []
+    var _completedStoryQuest: [String] = []
+    var _questPokemonEncounter: [POGOProtos_Data_Quests_QuestPokemonEncounter] = []
+    var _stampCard: POGOProtos_Data_Quests_QuestStampCard? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _quest = source._quest
       _completedStoryQuest = source._completedStoryQuest
       _questPokemonEncounter = source._questPokemonEncounter

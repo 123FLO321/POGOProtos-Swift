@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
@@ -330,6 +330,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `exRaidSettings`. Subsequent reads from it will return its default value.
     public mutating func clearExRaidSettings() {_uniqueStorage()._exRaidSettings = nil}
 
+    public var backgroundModeSettings: POGOProtos_Settings_Master_BackgroundModeSettings {
+      get {return _storage._backgroundModeSettings ?? POGOProtos_Settings_Master_BackgroundModeSettings()}
+      set {_uniqueStorage()._backgroundModeSettings = newValue}
+    }
+    /// Returns true if `backgroundModeSettings` has been explicitly set.
+    public var hasBackgroundModeSettings: Bool {return _storage._backgroundModeSettings != nil}
+    /// Clears the value of `backgroundModeSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBackgroundModeSettings() {_uniqueStorage()._backgroundModeSettings = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -344,7 +353,7 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
 
 extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.Result] = [
     .unset,
     .success,
     .page,
@@ -446,44 +455,46 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     31: .standard(proto: "friendship_milestone_settings"),
     32: .standard(proto: "lucky_pokemon_settings"),
     36: .standard(proto: "ex_raid_settings"),
+    38: .standard(proto: "background_mode_settings"),
   ]
 
   fileprivate class _StorageClass {
-    public var _templateID: String = String()
-    public var _pokemonSettings: POGOProtos_Settings_Master_PokemonSettings? = nil
-    public var _itemSettings: POGOProtos_Settings_Master_ItemSettings? = nil
-    public var _moveSettings: POGOProtos_Settings_Master_MoveSettings? = nil
-    public var _moveSequenceSettings: POGOProtos_Settings_Master_MoveSequenceSettings? = nil
-    public var _typeEffective: POGOProtos_Settings_Master_TypeEffectiveSettings? = nil
-    public var _badgeSettings: POGOProtos_Settings_Master_BadgeSettings? = nil
-    public var _camera: POGOProtos_Settings_Master_CameraSettings? = nil
-    public var _playerLevel: POGOProtos_Settings_Master_PlayerLevelSettings? = nil
-    public var _gymLevel: POGOProtos_Settings_Master_GymLevelSettings? = nil
-    public var _battleSettings: POGOProtos_Settings_Master_GymBattleSettings? = nil
-    public var _encounterSettings: POGOProtos_Settings_Master_EncounterSettings? = nil
-    public var _iapItemDisplay: POGOProtos_Settings_Master_IapItemDisplay? = nil
-    public var _iapSettings: POGOProtos_Settings_Master_IapSettings? = nil
-    public var _pokemonUpgrades: POGOProtos_Settings_Master_PokemonUpgradeSettings? = nil
-    public var _equippedBadges: POGOProtos_Settings_Master_EquippedBadgeSettings? = nil
-    public var _questSettings: POGOProtos_Settings_Master_QuestSettings? = nil
-    public var _avatarCustomization: POGOProtos_Settings_Master_AvatarCustomizationSettings? = nil
-    public var _formSettings: POGOProtos_Settings_Master_FormSettings? = nil
-    public var _genderSettings: POGOProtos_Settings_Master_GenderSettings? = nil
-    public var _gymBadgeSettings: POGOProtos_Settings_Master_GymBadgeGmtSettings? = nil
-    public var _weatherAffinities: POGOProtos_Settings_Master_WeatherAffinity? = nil
-    public var _weatherBonusSettings: POGOProtos_Settings_Master_WeatherBonus? = nil
-    public var _pokemonScaleSettings: POGOProtos_Settings_Master_PokemonScaleSetting? = nil
-    public var _iapCategoryDisplay: POGOProtos_Settings_Master_IapItemCategoryDisplay? = nil
-    public var _onboardingSettings: POGOProtos_Settings_Master_OnboardingSettings? = nil
-    public var _friendshipMilestoneSettings: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings? = nil
-    public var _luckyPokemonSettings: POGOProtos_Settings_Master_LuckyPokemonSettings? = nil
-    public var _exRaidSettings: POGOProtos_Settings_Master_ExRaidSettings? = nil
+    var _templateID: String = String()
+    var _pokemonSettings: POGOProtos_Settings_Master_PokemonSettings? = nil
+    var _itemSettings: POGOProtos_Settings_Master_ItemSettings? = nil
+    var _moveSettings: POGOProtos_Settings_Master_MoveSettings? = nil
+    var _moveSequenceSettings: POGOProtos_Settings_Master_MoveSequenceSettings? = nil
+    var _typeEffective: POGOProtos_Settings_Master_TypeEffectiveSettings? = nil
+    var _badgeSettings: POGOProtos_Settings_Master_BadgeSettings? = nil
+    var _camera: POGOProtos_Settings_Master_CameraSettings? = nil
+    var _playerLevel: POGOProtos_Settings_Master_PlayerLevelSettings? = nil
+    var _gymLevel: POGOProtos_Settings_Master_GymLevelSettings? = nil
+    var _battleSettings: POGOProtos_Settings_Master_GymBattleSettings? = nil
+    var _encounterSettings: POGOProtos_Settings_Master_EncounterSettings? = nil
+    var _iapItemDisplay: POGOProtos_Settings_Master_IapItemDisplay? = nil
+    var _iapSettings: POGOProtos_Settings_Master_IapSettings? = nil
+    var _pokemonUpgrades: POGOProtos_Settings_Master_PokemonUpgradeSettings? = nil
+    var _equippedBadges: POGOProtos_Settings_Master_EquippedBadgeSettings? = nil
+    var _questSettings: POGOProtos_Settings_Master_QuestSettings? = nil
+    var _avatarCustomization: POGOProtos_Settings_Master_AvatarCustomizationSettings? = nil
+    var _formSettings: POGOProtos_Settings_Master_FormSettings? = nil
+    var _genderSettings: POGOProtos_Settings_Master_GenderSettings? = nil
+    var _gymBadgeSettings: POGOProtos_Settings_Master_GymBadgeGmtSettings? = nil
+    var _weatherAffinities: POGOProtos_Settings_Master_WeatherAffinity? = nil
+    var _weatherBonusSettings: POGOProtos_Settings_Master_WeatherBonus? = nil
+    var _pokemonScaleSettings: POGOProtos_Settings_Master_PokemonScaleSetting? = nil
+    var _iapCategoryDisplay: POGOProtos_Settings_Master_IapItemCategoryDisplay? = nil
+    var _onboardingSettings: POGOProtos_Settings_Master_OnboardingSettings? = nil
+    var _friendshipMilestoneSettings: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings? = nil
+    var _luckyPokemonSettings: POGOProtos_Settings_Master_LuckyPokemonSettings? = nil
+    var _exRaidSettings: POGOProtos_Settings_Master_ExRaidSettings? = nil
+    var _backgroundModeSettings: POGOProtos_Settings_Master_BackgroundModeSettings? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _templateID = source._templateID
       _pokemonSettings = source._pokemonSettings
       _itemSettings = source._itemSettings
@@ -513,6 +524,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _friendshipMilestoneSettings = source._friendshipMilestoneSettings
       _luckyPokemonSettings = source._luckyPokemonSettings
       _exRaidSettings = source._exRaidSettings
+      _backgroundModeSettings = source._backgroundModeSettings
     }
   }
 
@@ -557,6 +569,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 31: try decoder.decodeSingularMessageField(value: &_storage._friendshipMilestoneSettings)
         case 32: try decoder.decodeSingularMessageField(value: &_storage._luckyPokemonSettings)
         case 36: try decoder.decodeSingularMessageField(value: &_storage._exRaidSettings)
+        case 38: try decoder.decodeSingularMessageField(value: &_storage._backgroundModeSettings)
         default: break
         }
       }
@@ -652,6 +665,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._exRaidSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 36)
       }
+      if let v = _storage._backgroundModeSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 38)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -690,6 +706,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._friendshipMilestoneSettings != rhs_storage._friendshipMilestoneSettings {return false}
         if _storage._luckyPokemonSettings != rhs_storage._luckyPokemonSettings {return false}
         if _storage._exRaidSettings != rhs_storage._exRaidSettings {return false}
+        if _storage._backgroundModeSettings != rhs_storage._backgroundModeSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Logs_TradingLogEntry {
@@ -109,7 +109,7 @@ public struct POGOProtos_Data_Logs_TradingLogEntry {
 
 extension POGOProtos_Data_Logs_TradingLogEntry.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Data_Logs_TradingLogEntry.Result] = [
+  public static var allCases: [POGOProtos_Data_Logs_TradingLogEntry.Result] = [
     .unset,
     .success,
   ]
@@ -133,18 +133,18 @@ extension POGOProtos_Data_Logs_TradingLogEntry: SwiftProtobuf.Message, SwiftProt
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Data_Logs_TradingLogEntry.Result = .unset
-    public var _friendCodename: String = String()
-    public var _tradeOutPokemon: POGOProtos_Data_PokemonData? = nil
-    public var _tradeInPokemon: POGOProtos_Data_PokemonData? = nil
-    public var _rewards: POGOProtos_Inventory_Loot? = nil
-    public var _price: POGOProtos_Inventory_Loot? = nil
+    var _result: POGOProtos_Data_Logs_TradingLogEntry.Result = .unset
+    var _friendCodename: String = String()
+    var _tradeOutPokemon: POGOProtos_Data_PokemonData? = nil
+    var _tradeInPokemon: POGOProtos_Data_PokemonData? = nil
+    var _rewards: POGOProtos_Inventory_Loot? = nil
+    var _price: POGOProtos_Inventory_Loot? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _friendCodename = source._friendCodename
       _tradeOutPokemon = source._tradeOutPokemon

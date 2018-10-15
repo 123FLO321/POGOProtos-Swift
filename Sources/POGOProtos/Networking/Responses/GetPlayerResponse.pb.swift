@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_GetPlayerResponse {
@@ -53,6 +53,26 @@ public struct POGOProtos_Networking_Responses_GetPlayerResponse {
     set {_uniqueStorage()._wasCreated = newValue}
   }
 
+  public var warnMessageAcknowledged: Bool {
+    get {return _storage._warnMessageAcknowledged}
+    set {_uniqueStorage()._warnMessageAcknowledged = newValue}
+  }
+
+  public var wasSuspended: Bool {
+    get {return _storage._wasSuspended}
+    set {_uniqueStorage()._wasSuspended = newValue}
+  }
+
+  public var suspendedMessageAcknowledged: Bool {
+    get {return _storage._suspendedMessageAcknowledged}
+    set {_uniqueStorage()._suspendedMessageAcknowledged = newValue}
+  }
+
+  public var warnExpireMs: Int64 {
+    get {return _storage._warnExpireMs}
+    set {_uniqueStorage()._warnExpireMs = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -72,25 +92,37 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
     3: .same(proto: "banned"),
     4: .same(proto: "warn"),
     5: .standard(proto: "was_created"),
+    6: .standard(proto: "warn_message_acknowledged"),
+    7: .standard(proto: "was_suspended"),
+    8: .standard(proto: "suspended_message_acknowledged"),
+    9: .standard(proto: "warn_expire_ms"),
   ]
 
   fileprivate class _StorageClass {
-    public var _success: Bool = false
-    public var _playerData: POGOProtos_Data_PlayerData? = nil
-    public var _banned: Bool = false
-    public var _warn: Bool = false
-    public var _wasCreated: Bool = false
+    var _success: Bool = false
+    var _playerData: POGOProtos_Data_PlayerData? = nil
+    var _banned: Bool = false
+    var _warn: Bool = false
+    var _wasCreated: Bool = false
+    var _warnMessageAcknowledged: Bool = false
+    var _wasSuspended: Bool = false
+    var _suspendedMessageAcknowledged: Bool = false
+    var _warnExpireMs: Int64 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _success = source._success
       _playerData = source._playerData
       _banned = source._banned
       _warn = source._warn
       _wasCreated = source._wasCreated
+      _warnMessageAcknowledged = source._warnMessageAcknowledged
+      _wasSuspended = source._wasSuspended
+      _suspendedMessageAcknowledged = source._suspendedMessageAcknowledged
+      _warnExpireMs = source._warnExpireMs
     }
   }
 
@@ -111,6 +143,10 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
         case 3: try decoder.decodeSingularBoolField(value: &_storage._banned)
         case 4: try decoder.decodeSingularBoolField(value: &_storage._warn)
         case 5: try decoder.decodeSingularBoolField(value: &_storage._wasCreated)
+        case 6: try decoder.decodeSingularBoolField(value: &_storage._warnMessageAcknowledged)
+        case 7: try decoder.decodeSingularBoolField(value: &_storage._wasSuspended)
+        case 8: try decoder.decodeSingularBoolField(value: &_storage._suspendedMessageAcknowledged)
+        case 9: try decoder.decodeSingularInt64Field(value: &_storage._warnExpireMs)
         default: break
         }
       }
@@ -134,6 +170,18 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
       if _storage._wasCreated != false {
         try visitor.visitSingularBoolField(value: _storage._wasCreated, fieldNumber: 5)
       }
+      if _storage._warnMessageAcknowledged != false {
+        try visitor.visitSingularBoolField(value: _storage._warnMessageAcknowledged, fieldNumber: 6)
+      }
+      if _storage._wasSuspended != false {
+        try visitor.visitSingularBoolField(value: _storage._wasSuspended, fieldNumber: 7)
+      }
+      if _storage._suspendedMessageAcknowledged != false {
+        try visitor.visitSingularBoolField(value: _storage._suspendedMessageAcknowledged, fieldNumber: 8)
+      }
+      if _storage._warnExpireMs != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._warnExpireMs, fieldNumber: 9)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -148,6 +196,10 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
         if _storage._banned != rhs_storage._banned {return false}
         if _storage._warn != rhs_storage._warn {return false}
         if _storage._wasCreated != rhs_storage._wasCreated {return false}
+        if _storage._warnMessageAcknowledged != rhs_storage._warnMessageAcknowledged {return false}
+        if _storage._wasSuspended != rhs_storage._wasSuspended {return false}
+        if _storage._suspendedMessageAcknowledged != rhs_storage._suspendedMessageAcknowledged {return false}
+        if _storage._warnExpireMs != rhs_storage._warnExpireMs {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Envelopes_Signature {
@@ -471,38 +471,38 @@ extension POGOProtos_Networking_Envelopes_Signature: SwiftProtobuf.Message, Swif
   ]
 
   fileprivate class _StorageClass {
-    public var _field1: [POGOProtos_Networking_Envelopes_UnknownMessage] = []
-    public var _timestampSinceStart: UInt64 = 0
-    public var _field3: String = String()
-    public var _locationFix: [POGOProtos_Networking_Envelopes_Signature.LocationFix] = []
-    public var _gpsInfo: [POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo] = []
-    public var _field6: [POGOProtos_Networking_Envelopes_UnknownMessage] = []
-    public var _sensorInfo: [POGOProtos_Networking_Envelopes_Signature.SensorInfo] = []
-    public var _deviceInfo: POGOProtos_Networking_Envelopes_Signature.DeviceInfo? = nil
-    public var _activityStatus: POGOProtos_Networking_Envelopes_Signature.ActivityStatus? = nil
-    public var _locationHash1: Int32 = 0
-    public var _field11: Bool = false
-    public var _field12: Bool = false
-    public var _field13: Int32 = 0
-    public var _field14: Int32 = 0
-    public var _field15: String = String()
-    public var _field16: Int32 = 0
-    public var _field17: String = String()
-    public var _field18: String = String()
-    public var _field19: Bool = false
-    public var _locationHash2: Int32 = 0
-    public var _field21: Bool = false
-    public var _sessionHash: Data = SwiftProtobuf.Internal.emptyData
-    public var _timestamp: UInt64 = 0
-    public var _requestHash: [UInt64] = []
-    public var _unknown25: Int64 = 0
-    public var _unknown27: Int32 = 0
+    var _field1: [POGOProtos_Networking_Envelopes_UnknownMessage] = []
+    var _timestampSinceStart: UInt64 = 0
+    var _field3: String = String()
+    var _locationFix: [POGOProtos_Networking_Envelopes_Signature.LocationFix] = []
+    var _gpsInfo: [POGOProtos_Networking_Envelopes_Signature.AndroidGpsInfo] = []
+    var _field6: [POGOProtos_Networking_Envelopes_UnknownMessage] = []
+    var _sensorInfo: [POGOProtos_Networking_Envelopes_Signature.SensorInfo] = []
+    var _deviceInfo: POGOProtos_Networking_Envelopes_Signature.DeviceInfo? = nil
+    var _activityStatus: POGOProtos_Networking_Envelopes_Signature.ActivityStatus? = nil
+    var _locationHash1: Int32 = 0
+    var _field11: Bool = false
+    var _field12: Bool = false
+    var _field13: Int32 = 0
+    var _field14: Int32 = 0
+    var _field15: String = String()
+    var _field16: Int32 = 0
+    var _field17: String = String()
+    var _field18: String = String()
+    var _field19: Bool = false
+    var _locationHash2: Int32 = 0
+    var _field21: Bool = false
+    var _sessionHash: Data = SwiftProtobuf.Internal.emptyData
+    var _timestamp: UInt64 = 0
+    var _requestHash: [UInt64] = []
+    var _unknown25: Int64 = 0
+    var _unknown27: Int32 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _field1 = source._field1
       _timestampSinceStart = source._timestampSinceStart
       _field3 = source._field3
@@ -890,30 +890,30 @@ extension POGOProtos_Networking_Envelopes_Signature.SensorInfo: SwiftProtobuf.Me
   ]
 
   fileprivate class _StorageClass {
-    public var _timestampSnapshot: UInt64 = 0
-    public var _linearAccelerationX: Double = 0
-    public var _linearAccelerationY: Double = 0
-    public var _linearAccelerationZ: Double = 0
-    public var _magneticFieldX: Double = 0
-    public var _magneticFieldY: Double = 0
-    public var _magneticFieldZ: Double = 0
-    public var _magneticFieldAccuracy: Int32 = 0
-    public var _attitudePitch: Double = 0
-    public var _attitudeYaw: Double = 0
-    public var _attitudeRoll: Double = 0
-    public var _rotationRateX: Double = 0
-    public var _rotationRateY: Double = 0
-    public var _rotationRateZ: Double = 0
-    public var _gravityX: Double = 0
-    public var _gravityY: Double = 0
-    public var _gravityZ: Double = 0
-    public var _status: Int32 = 0
+    var _timestampSnapshot: UInt64 = 0
+    var _linearAccelerationX: Double = 0
+    var _linearAccelerationY: Double = 0
+    var _linearAccelerationZ: Double = 0
+    var _magneticFieldX: Double = 0
+    var _magneticFieldY: Double = 0
+    var _magneticFieldZ: Double = 0
+    var _magneticFieldAccuracy: Int32 = 0
+    var _attitudePitch: Double = 0
+    var _attitudeYaw: Double = 0
+    var _attitudeRoll: Double = 0
+    var _rotationRateX: Double = 0
+    var _rotationRateY: Double = 0
+    var _rotationRateZ: Double = 0
+    var _gravityX: Double = 0
+    var _gravityY: Double = 0
+    var _gravityZ: Double = 0
+    var _status: Int32 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _timestampSnapshot = source._timestampSnapshot
       _linearAccelerationX = source._linearAccelerationX
       _linearAccelerationY = source._linearAccelerationY

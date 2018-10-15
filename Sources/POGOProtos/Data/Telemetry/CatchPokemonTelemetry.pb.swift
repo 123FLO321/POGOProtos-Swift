@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Telemetry_CatchPokemonTelemetry {
@@ -81,18 +81,18 @@ extension POGOProtos_Data_Telemetry_CatchPokemonTelemetry: SwiftProtobuf.Message
   ]
 
   fileprivate class _StorageClass {
-    public var _status: String = String()
-    public var _encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry? = nil
-    public var _balltype: Int32 = 0
-    public var _hitGrade: Int32 = 0
-    public var _curveBall: Bool = false
-    public var _missPercent: Double = 0
+    var _status: String = String()
+    var _encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry? = nil
+    var _balltype: Int32 = 0
+    var _hitGrade: Int32 = 0
+    var _curveBall: Bool = false
+    var _missPercent: Double = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _status = source._status
       _encounterPokemonTelemetry = source._encounterPokemonTelemetry
       _balltype = source._balltype

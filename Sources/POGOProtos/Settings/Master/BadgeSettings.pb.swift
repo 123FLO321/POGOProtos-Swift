@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Settings_Master_BadgeSettings {
@@ -81,18 +81,18 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
   ]
 
   fileprivate class _StorageClass {
-    public var _badgeType: POGOProtos_Enums_BadgeType = .badgeUnset
-    public var _badgeRank: Int32 = 0
-    public var _targets: [Int32] = []
-    public var _captureReward: [POGOProtos_Data_Badge_BadgeCaptureReward] = []
-    public var _eventBadge: Bool = false
-    public var _eventBadgeSettings: POGOProtos_Settings_Master_EventBadgeSettings? = nil
+    var _badgeType: POGOProtos_Enums_BadgeType = .badgeUnset
+    var _badgeRank: Int32 = 0
+    var _targets: [Int32] = []
+    var _captureReward: [POGOProtos_Data_Badge_BadgeCaptureReward] = []
+    var _eventBadge: Bool = false
+    var _eventBadgeSettings: POGOProtos_Settings_Master_EventBadgeSettings? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _badgeType = source._badgeType
       _badgeRank = source._badgeRank
       _targets = source._targets

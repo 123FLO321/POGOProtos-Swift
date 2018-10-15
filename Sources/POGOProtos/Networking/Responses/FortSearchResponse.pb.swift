@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_FortSearchResponse {
@@ -181,7 +181,7 @@ public struct POGOProtos_Networking_Responses_FortSearchResponse {
 
 extension POGOProtos_Networking_Responses_FortSearchResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_FortSearchResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_FortSearchResponse.Result] = [
     .noResultSet,
     .success,
     .outOfRange,
@@ -219,27 +219,27 @@ extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Mess
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_FortSearchResponse.Result = .noResultSet
-    public var _itemsAwarded: [POGOProtos_Inventory_Item_ItemAward] = []
-    public var _gemsAwarded: Int32 = 0
-    public var _pokemonDataEgg: POGOProtos_Data_PokemonData? = nil
-    public var _experienceAwarded: Int32 = 0
-    public var _cooldownCompleteTimestampMs: Int64 = 0
-    public var _chainHackSequenceNumber: Int32 = 0
-    public var _awardedGymBadge: POGOProtos_Data_Badge_AwardedGymBadge? = nil
-    public var _loot: POGOProtos_Inventory_Loot? = nil
-    public var _bonusLoot: POGOProtos_Inventory_Loot? = nil
-    public var _raidTickets: Int32 = 0
-    public var _teamBonusLoot: POGOProtos_Inventory_Loot? = nil
-    public var _fortID: String = String()
-    public var _challengeQuest: POGOProtos_Data_Quests_ClientQuest? = nil
-    public var _giftBox: POGOProtos_Data_Gift_GiftBox? = nil
+    var _result: POGOProtos_Networking_Responses_FortSearchResponse.Result = .noResultSet
+    var _itemsAwarded: [POGOProtos_Inventory_Item_ItemAward] = []
+    var _gemsAwarded: Int32 = 0
+    var _pokemonDataEgg: POGOProtos_Data_PokemonData? = nil
+    var _experienceAwarded: Int32 = 0
+    var _cooldownCompleteTimestampMs: Int64 = 0
+    var _chainHackSequenceNumber: Int32 = 0
+    var _awardedGymBadge: POGOProtos_Data_Badge_AwardedGymBadge? = nil
+    var _loot: POGOProtos_Inventory_Loot? = nil
+    var _bonusLoot: POGOProtos_Inventory_Loot? = nil
+    var _raidTickets: Int32 = 0
+    var _teamBonusLoot: POGOProtos_Inventory_Loot? = nil
+    var _fortID: String = String()
+    var _challengeQuest: POGOProtos_Data_Quests_ClientQuest? = nil
+    var _giftBox: POGOProtos_Data_Gift_GiftBox? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _itemsAwarded = source._itemsAwarded
       _gemsAwarded = source._gemsAwarded

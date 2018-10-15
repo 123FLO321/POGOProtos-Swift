@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Raid_ExclusiveTicketInfo {
@@ -131,25 +131,25 @@ extension POGOProtos_Data_Raid_ExclusiveTicketInfo: SwiftProtobuf.Message, Swift
   ]
 
   fileprivate class _StorageClass {
-    public var _raidSeed: Int64 = 0
-    public var _fortID: String = String()
-    public var _startTimeMs: Int64 = 0
-    public var _endTimeMs: Int64 = 0
-    public var _imageURL: String = String()
-    public var _latitude: Double = 0
-    public var _longitude: Double = 0
-    public var _gymName: String = String()
-    public var _spawnTimeMs: Int64 = 0
-    public var _isCancelled: Bool = false
-    public var _raidPokemon: POGOProtos_Data_PokemonData? = nil
-    public var _inviter: POGOProtos_Data_Raid_SharedExclusiveTicketTrainerInfo? = nil
-    public var _invitee: POGOProtos_Data_Raid_SharedExclusiveTicketTrainerInfo? = nil
+    var _raidSeed: Int64 = 0
+    var _fortID: String = String()
+    var _startTimeMs: Int64 = 0
+    var _endTimeMs: Int64 = 0
+    var _imageURL: String = String()
+    var _latitude: Double = 0
+    var _longitude: Double = 0
+    var _gymName: String = String()
+    var _spawnTimeMs: Int64 = 0
+    var _isCancelled: Bool = false
+    var _raidPokemon: POGOProtos_Data_PokemonData? = nil
+    var _inviter: POGOProtos_Data_Raid_SharedExclusiveTicketTrainerInfo? = nil
+    var _invitee: POGOProtos_Data_Raid_SharedExclusiveTicketTrainerInfo? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _raidSeed = source._raidSeed
       _fortID = source._fortID
       _startTimeMs = source._startTimeMs

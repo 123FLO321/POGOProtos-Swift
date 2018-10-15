@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_GetPlayerProfileResponse {
@@ -101,7 +101,7 @@ public struct POGOProtos_Networking_Responses_GetPlayerProfileResponse {
 
 extension POGOProtos_Networking_Responses_GetPlayerProfileResponse.Result: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_GetPlayerProfileResponse.Result] = [
+  public static var allCases: [POGOProtos_Networking_Responses_GetPlayerProfileResponse.Result] = [
     .unset,
     .success,
   ]
@@ -123,16 +123,16 @@ extension POGOProtos_Networking_Responses_GetPlayerProfileResponse: SwiftProtobu
   ]
 
   fileprivate class _StorageClass {
-    public var _result: POGOProtos_Networking_Responses_GetPlayerProfileResponse.Result = .unset
-    public var _startTime: Int64 = 0
-    public var _badges: [POGOProtos_Data_PlayerBadge] = []
-    public var _gymBadges: POGOProtos_Networking_Responses_GetPlayerProfileResponse.GymBadges? = nil
+    var _result: POGOProtos_Networking_Responses_GetPlayerProfileResponse.Result = .unset
+    var _startTime: Int64 = 0
+    var _badges: [POGOProtos_Data_PlayerBadge] = []
+    var _gymBadges: POGOProtos_Networking_Responses_GetPlayerProfileResponse.GymBadges? = nil
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _result = source._result
       _startTime = source._startTime
       _badges = source._badges

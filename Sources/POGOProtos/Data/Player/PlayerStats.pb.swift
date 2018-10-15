@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Player_PlayerStats {
@@ -209,6 +209,11 @@ public struct POGOProtos_Data_Player_PlayerStats {
     set {_uniqueStorage()._tradeAccumulatedDistanceKm = newValue}
   }
 
+  public var fitnessReportLastCheckBucket: Int64 {
+    get {return _storage._fitnessReportLastCheckBucket}
+    set {_uniqueStorage()._fitnessReportLastCheckBucket = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -260,52 +265,54 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     35: .standard(proto: "num_trades"),
     36: .standard(proto: "num_max_level_friends"),
     37: .standard(proto: "trade_accumulated_distance_km"),
+    38: .standard(proto: "fitness_report_last_check_bucket"),
   ]
 
   fileprivate class _StorageClass {
-    public var _level: Int32 = 0
-    public var _experience: Int64 = 0
-    public var _prevLevelXp: Int64 = 0
-    public var _nextLevelXp: Int64 = 0
-    public var _kmWalked: Float = 0
-    public var _pokemonsEncountered: Int32 = 0
-    public var _uniquePokedexEntries: Int32 = 0
-    public var _pokemonsCaptured: Int32 = 0
-    public var _evolutions: Int32 = 0
-    public var _pokeStopVisits: Int32 = 0
-    public var _pokeballsThrown: Int32 = 0
-    public var _eggsHatched: Int32 = 0
-    public var _bigMagikarpCaught: Int32 = 0
-    public var _battleAttackWon: Int32 = 0
-    public var _battleAttackTotal: Int32 = 0
-    public var _battleDefendedWon: Int32 = 0
-    public var _battleTrainingWon: Int32 = 0
-    public var _battleTrainingTotal: Int32 = 0
-    public var _prestigeRaisedTotal: Int32 = 0
-    public var _prestigeDroppedTotal: Int32 = 0
-    public var _pokemonDeployed: Int32 = 0
-    public var _pokemonCaughtByType: [Int32] = []
-    public var _smallRattataCaught: Int32 = 0
-    public var _usedKmPool: Double = 0
-    public var _lastKmRefillMs: Int64 = 0
-    public var _numRaidBattleWon: Int32 = 0
-    public var _numRaidBattleTotal: Int32 = 0
-    public var _numLegendaryBattleWon: Int32 = 0
-    public var _numLegendaryBattleTotal: Int32 = 0
-    public var _numBerriesFed: Int32 = 0
-    public var _totalDefendedMs: Int64 = 0
-    public var _eventBadges: [POGOProtos_Enums_GymBadgeType] = []
-    public var _kmWalkedPastActiveDay: Float = 0
-    public var _numChallengeQuestsCompleted: Int32 = 0
-    public var _numTrades: Int32 = 0
-    public var _numMaxLevelFriends: Int32 = 0
-    public var _tradeAccumulatedDistanceKm: Int64 = 0
+    var _level: Int32 = 0
+    var _experience: Int64 = 0
+    var _prevLevelXp: Int64 = 0
+    var _nextLevelXp: Int64 = 0
+    var _kmWalked: Float = 0
+    var _pokemonsEncountered: Int32 = 0
+    var _uniquePokedexEntries: Int32 = 0
+    var _pokemonsCaptured: Int32 = 0
+    var _evolutions: Int32 = 0
+    var _pokeStopVisits: Int32 = 0
+    var _pokeballsThrown: Int32 = 0
+    var _eggsHatched: Int32 = 0
+    var _bigMagikarpCaught: Int32 = 0
+    var _battleAttackWon: Int32 = 0
+    var _battleAttackTotal: Int32 = 0
+    var _battleDefendedWon: Int32 = 0
+    var _battleTrainingWon: Int32 = 0
+    var _battleTrainingTotal: Int32 = 0
+    var _prestigeRaisedTotal: Int32 = 0
+    var _prestigeDroppedTotal: Int32 = 0
+    var _pokemonDeployed: Int32 = 0
+    var _pokemonCaughtByType: [Int32] = []
+    var _smallRattataCaught: Int32 = 0
+    var _usedKmPool: Double = 0
+    var _lastKmRefillMs: Int64 = 0
+    var _numRaidBattleWon: Int32 = 0
+    var _numRaidBattleTotal: Int32 = 0
+    var _numLegendaryBattleWon: Int32 = 0
+    var _numLegendaryBattleTotal: Int32 = 0
+    var _numBerriesFed: Int32 = 0
+    var _totalDefendedMs: Int64 = 0
+    var _eventBadges: [POGOProtos_Enums_GymBadgeType] = []
+    var _kmWalkedPastActiveDay: Float = 0
+    var _numChallengeQuestsCompleted: Int32 = 0
+    var _numTrades: Int32 = 0
+    var _numMaxLevelFriends: Int32 = 0
+    var _tradeAccumulatedDistanceKm: Int64 = 0
+    var _fitnessReportLastCheckBucket: Int64 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _level = source._level
       _experience = source._experience
       _prevLevelXp = source._prevLevelXp
@@ -343,6 +350,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       _numTrades = source._numTrades
       _numMaxLevelFriends = source._numMaxLevelFriends
       _tradeAccumulatedDistanceKm = source._tradeAccumulatedDistanceKm
+      _fitnessReportLastCheckBucket = source._fitnessReportLastCheckBucket
     }
   }
 
@@ -395,6 +403,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         case 35: try decoder.decodeSingularInt32Field(value: &_storage._numTrades)
         case 36: try decoder.decodeSingularInt32Field(value: &_storage._numMaxLevelFriends)
         case 37: try decoder.decodeSingularInt64Field(value: &_storage._tradeAccumulatedDistanceKm)
+        case 38: try decoder.decodeSingularInt64Field(value: &_storage._fitnessReportLastCheckBucket)
         default: break
         }
       }
@@ -514,6 +523,9 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       if _storage._tradeAccumulatedDistanceKm != 0 {
         try visitor.visitSingularInt64Field(value: _storage._tradeAccumulatedDistanceKm, fieldNumber: 37)
       }
+      if _storage._fitnessReportLastCheckBucket != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._fitnessReportLastCheckBucket, fieldNumber: 38)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -560,6 +572,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         if _storage._numTrades != rhs_storage._numTrades {return false}
         if _storage._numMaxLevelFriends != rhs_storage._numMaxLevelFriends {return false}
         if _storage._tradeAccumulatedDistanceKm != rhs_storage._tradeAccumulatedDistanceKm {return false}
+        if _storage._fitnessReportLastCheckBucket != rhs_storage._fitnessReportLastCheckBucket {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Gym_GymState {
@@ -63,15 +63,15 @@ extension POGOProtos_Data_Gym_GymState: SwiftProtobuf.Message, SwiftProtobuf._Me
   ]
 
   fileprivate class _StorageClass {
-    public var _fortData: POGOProtos_Map_Fort_FortData? = nil
-    public var _memberships: [POGOProtos_Data_Gym_GymMembership] = []
-    public var _deployLockout: Bool = false
+    var _fortData: POGOProtos_Map_Fort_FortData? = nil
+    var _memberships: [POGOProtos_Data_Gym_GymMembership] = []
+    var _deployLockout: Bool = false
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _fortData = source._fortData
       _memberships = source._memberships
       _deployLockout = source._deployLockout

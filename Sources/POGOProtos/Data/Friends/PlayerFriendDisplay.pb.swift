@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Friends_PlayerFriendDisplay {
@@ -91,19 +91,19 @@ extension POGOProtos_Data_Friends_PlayerFriendDisplay: SwiftProtobuf.Message, Sw
   ]
 
   fileprivate class _StorageClass {
-    public var _buddy: POGOProtos_Data_PokemonDisplay? = nil
-    public var _buddyDisplayPokemonID: Int32 = 0
-    public var _buddyPokemonNickname: String = String()
-    public var _lastPokemonCaught: POGOProtos_Data_PokemonDisplay? = nil
-    public var _lastPokemonCaughtDisplayID: Int32 = 0
-    public var _lastPokemonCaughtTimestamp: Int64 = 0
-    public var _buddyCandyAwarded: Int32 = 0
+    var _buddy: POGOProtos_Data_PokemonDisplay? = nil
+    var _buddyDisplayPokemonID: Int32 = 0
+    var _buddyPokemonNickname: String = String()
+    var _lastPokemonCaught: POGOProtos_Data_PokemonDisplay? = nil
+    var _lastPokemonCaughtDisplayID: Int32 = 0
+    var _lastPokemonCaughtTimestamp: Int64 = 0
+    var _buddyCandyAwarded: Int32 = 0
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _buddy = source._buddy
       _buddyDisplayPokemonID = source._buddyDisplayPokemonID
       _buddyPokemonNickname = source._buddyPokemonNickname

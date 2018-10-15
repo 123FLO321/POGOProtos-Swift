@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Data_Trading_TradingPlayer {
@@ -105,20 +105,20 @@ extension POGOProtos_Data_Trading_TradingPlayer: SwiftProtobuf.Message, SwiftPro
   ]
 
   fileprivate class _StorageClass {
-    public var _playerID: String = String()
-    public var _publicProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
-    public var _excludedPokemon: [POGOProtos_Data_Trading_ExcludedPokemon] = []
-    public var _tradingPokemon: POGOProtos_Data_Trading_TradingPokemon? = nil
-    public var _bonus: POGOProtos_Inventory_Loot? = nil
-    public var _price: POGOProtos_Inventory_Loot? = nil
-    public var _canAffordTrading: Bool = false
-    public var _hasConfirmed_p: Bool = false
+    var _playerID: String = String()
+    var _publicProfile: POGOProtos_Data_Player_PlayerPublicProfile? = nil
+    var _excludedPokemon: [POGOProtos_Data_Trading_ExcludedPokemon] = []
+    var _tradingPokemon: POGOProtos_Data_Trading_TradingPokemon? = nil
+    var _bonus: POGOProtos_Inventory_Loot? = nil
+    var _price: POGOProtos_Inventory_Loot? = nil
+    var _canAffordTrading: Bool = false
+    var _hasConfirmed_p: Bool = false
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _playerID = source._playerID
       _publicProfile = source._publicProfile
       _excludedPokemon = source._excludedPokemon

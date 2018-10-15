@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Settings_Master_AvatarCustomizationSettings {
@@ -129,7 +129,7 @@ public struct POGOProtos_Settings_Master_AvatarCustomizationSettings {
 
 extension POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationPromoType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationPromoType] = [
+  public static var allCases: [POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationPromoType] = [
     .unsetPromoType,
     .sale,
     .featured,
@@ -138,7 +138,7 @@ extension POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomiza
 
 extension POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationUnlockType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationUnlockType] = [
+  public static var allCases: [POGOProtos_Settings_Master_AvatarCustomizationSettings.AvatarCustomizationUnlockType] = [
     .unsetUnlockType,
     .default,
     .medalReward,

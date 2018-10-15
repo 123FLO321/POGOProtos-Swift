@@ -15,8 +15,8 @@ import SwiftProtobuf
 // Please ensure that your are building against the same version of the API
 // that was used to generate this file.
 fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAPIVersionCheck {
-  public struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
-  public typealias Version = _2
+  struct _2: SwiftProtobuf.ProtobufAPIVersion_2 {}
+  typealias Version = _2
 }
 
 public struct POGOProtos_Networking_Responses_ClaimCodenameResponse {
@@ -109,7 +109,7 @@ public struct POGOProtos_Networking_Responses_ClaimCodenameResponse {
 
 extension POGOProtos_Networking_Responses_ClaimCodenameResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  static var allCases: [POGOProtos_Networking_Responses_ClaimCodenameResponse.Status] = [
+  public static var allCases: [POGOProtos_Networking_Responses_ClaimCodenameResponse.Status] = [
     .unset,
     .success,
     .codenameNotAvailable,
@@ -137,18 +137,18 @@ extension POGOProtos_Networking_Responses_ClaimCodenameResponse: SwiftProtobuf.M
   ]
 
   fileprivate class _StorageClass {
-    public var _codename: String = String()
-    public var _userMessage: String = String()
-    public var _isAssignable: Bool = false
-    public var _status: POGOProtos_Networking_Responses_ClaimCodenameResponse.Status = .unset
-    public var _updatedPlayer: POGOProtos_Data_PlayerData? = nil
-    public var _suggestedCodenames: [String] = []
+    var _codename: String = String()
+    var _userMessage: String = String()
+    var _isAssignable: Bool = false
+    var _status: POGOProtos_Networking_Responses_ClaimCodenameResponse.Status = .unset
+    var _updatedPlayer: POGOProtos_Data_PlayerData? = nil
+    var _suggestedCodenames: [String] = []
 
-    public static let defaultInstance = _StorageClass()
+    static let defaultInstance = _StorageClass()
 
     private init() {}
 
-    public init(copying source: _StorageClass) {
+    init(copying source: _StorageClass) {
       _codename = source._codename
       _userMessage = source._userMessage
       _isAssignable = source._isAssignable
