@@ -216,6 +216,11 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._isDeployable = newValue}
   }
 
+  public var isTradable: Bool {
+    get {return _storage._isTradable}
+    set {_uniqueStorage()._isTradable = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -266,6 +271,7 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     35: .standard(proto: "parent_form"),
     37: .standard(proto: "is_transferable"),
     38: .standard(proto: "is_deployable"),
+    40: .standard(proto: "is_tradable"),
   ]
 
   fileprivate class _StorageClass {
@@ -305,6 +311,7 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     var _parentForm: POGOProtos_Enums_Form = .unset
     var _isTransferable: Bool = false
     var _isDeployable: Bool = false
+    var _isTradable: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -347,6 +354,7 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       _parentForm = source._parentForm
       _isTransferable = source._isTransferable
       _isDeployable = source._isDeployable
+      _isTradable = source._isTradable
     }
   }
 
@@ -398,6 +406,7 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         case 35: try decoder.decodeSingularEnumField(value: &_storage._parentForm)
         case 37: try decoder.decodeSingularBoolField(value: &_storage._isTransferable)
         case 38: try decoder.decodeSingularBoolField(value: &_storage._isDeployable)
+        case 40: try decoder.decodeSingularBoolField(value: &_storage._isTradable)
         default: break
         }
       }
@@ -514,6 +523,9 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       if _storage._isDeployable != false {
         try visitor.visitSingularBoolField(value: _storage._isDeployable, fieldNumber: 38)
       }
+      if _storage._isTradable != false {
+        try visitor.visitSingularBoolField(value: _storage._isTradable, fieldNumber: 40)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -559,6 +571,7 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         if _storage._parentForm != rhs_storage._parentForm {return false}
         if _storage._isTransferable != rhs_storage._isTransferable {return false}
         if _storage._isDeployable != rhs_storage._isDeployable {return false}
+        if _storage._isTradable != rhs_storage._isTradable {return false}
         return true
       }
       if !storagesAreEqual {return false}

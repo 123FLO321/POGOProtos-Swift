@@ -29,25 +29,43 @@ public struct POGOProtos_Inventory_InventoryItem {
     set {_uniqueStorage()._modifiedTimestampMs = newValue}
   }
 
-  public var deletedItem: POGOProtos_Inventory_InventoryItem.DeletedItem {
-    get {return _storage._deletedItem ?? POGOProtos_Inventory_InventoryItem.DeletedItem()}
-    set {_uniqueStorage()._deletedItem = newValue}
+  public var inventoryItem: OneOf_InventoryItem? {
+    get {return _storage._inventoryItem}
+    set {_uniqueStorage()._inventoryItem = newValue}
   }
-  /// Returns true if `deletedItem` has been explicitly set.
-  public var hasDeletedItem: Bool {return _storage._deletedItem != nil}
-  /// Clears the value of `deletedItem`. Subsequent reads from it will return its default value.
-  public mutating func clearDeletedItem() {_uniqueStorage()._deletedItem = nil}
+
+  public var deletedItem: POGOProtos_Inventory_InventoryItem.DeletedItem {
+    get {
+      if case .deletedItem(let v)? = _storage._inventoryItem {return v}
+      return POGOProtos_Inventory_InventoryItem.DeletedItem()
+    }
+    set {_uniqueStorage()._inventoryItem = .deletedItem(newValue)}
+  }
 
   public var inventoryItemData: POGOProtos_Inventory_InventoryItemData {
-    get {return _storage._inventoryItemData ?? POGOProtos_Inventory_InventoryItemData()}
-    set {_uniqueStorage()._inventoryItemData = newValue}
+    get {
+      if case .inventoryItemData(let v)? = _storage._inventoryItem {return v}
+      return POGOProtos_Inventory_InventoryItemData()
+    }
+    set {_uniqueStorage()._inventoryItem = .inventoryItemData(newValue)}
   }
-  /// Returns true if `inventoryItemData` has been explicitly set.
-  public var hasInventoryItemData: Bool {return _storage._inventoryItemData != nil}
-  /// Clears the value of `inventoryItemData`. Subsequent reads from it will return its default value.
-  public mutating func clearInventoryItemData() {_uniqueStorage()._inventoryItemData = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_InventoryItem: Equatable {
+    case deletedItem(POGOProtos_Inventory_InventoryItem.DeletedItem)
+    case inventoryItemData(POGOProtos_Inventory_InventoryItemData)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Inventory_InventoryItem.OneOf_InventoryItem, rhs: POGOProtos_Inventory_InventoryItem.OneOf_InventoryItem) -> Bool {
+      switch (lhs, rhs) {
+      case (.deletedItem(let l), .deletedItem(let r)): return l == r
+      case (.inventoryItemData(let l), .inventoryItemData(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public struct DeletedItem {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -80,8 +98,7 @@ extension POGOProtos_Inventory_InventoryItem: SwiftProtobuf.Message, SwiftProtob
 
   fileprivate class _StorageClass {
     var _modifiedTimestampMs: Int64 = 0
-    var _deletedItem: POGOProtos_Inventory_InventoryItem.DeletedItem? = nil
-    var _inventoryItemData: POGOProtos_Inventory_InventoryItemData? = nil
+    var _inventoryItem: POGOProtos_Inventory_InventoryItem.OneOf_InventoryItem?
 
     static let defaultInstance = _StorageClass()
 
@@ -89,8 +106,7 @@ extension POGOProtos_Inventory_InventoryItem: SwiftProtobuf.Message, SwiftProtob
 
     init(copying source: _StorageClass) {
       _modifiedTimestampMs = source._modifiedTimestampMs
-      _deletedItem = source._deletedItem
-      _inventoryItemData = source._inventoryItemData
+      _inventoryItem = source._inventoryItem
     }
   }
 
@@ -107,8 +123,22 @@ extension POGOProtos_Inventory_InventoryItem: SwiftProtobuf.Message, SwiftProtob
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularInt64Field(value: &_storage._modifiedTimestampMs)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._deletedItem)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._inventoryItemData)
+        case 2:
+          var v: POGOProtos_Inventory_InventoryItem.DeletedItem?
+          if let current = _storage._inventoryItem {
+            try decoder.handleConflictingOneOf()
+            if case .deletedItem(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._inventoryItem = .deletedItem(v)}
+        case 3:
+          var v: POGOProtos_Inventory_InventoryItemData?
+          if let current = _storage._inventoryItem {
+            try decoder.handleConflictingOneOf()
+            if case .inventoryItemData(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._inventoryItem = .inventoryItemData(v)}
         default: break
         }
       }
@@ -120,11 +150,12 @@ extension POGOProtos_Inventory_InventoryItem: SwiftProtobuf.Message, SwiftProtob
       if _storage._modifiedTimestampMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._modifiedTimestampMs, fieldNumber: 1)
       }
-      if let v = _storage._deletedItem {
+      switch _storage._inventoryItem {
+      case .deletedItem(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._inventoryItemData {
+      case .inventoryItemData(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      case nil: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -136,8 +167,7 @@ extension POGOProtos_Inventory_InventoryItem: SwiftProtobuf.Message, SwiftProtob
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._modifiedTimestampMs != rhs_storage._modifiedTimestampMs {return false}
-        if _storage._deletedItem != rhs_storage._deletedItem {return false}
-        if _storage._inventoryItemData != rhs_storage._inventoryItemData {return false}
+        if _storage._inventoryItem != rhs_storage._inventoryItem {return false}
         return true
       }
       if !storagesAreEqual {return false}

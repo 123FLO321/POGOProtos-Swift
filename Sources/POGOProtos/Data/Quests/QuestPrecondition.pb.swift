@@ -29,39 +29,63 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
     set {_uniqueStorage()._type = newValue}
   }
 
+  public var condition: OneOf_Condition? {
+    get {return _storage._condition}
+    set {_uniqueStorage()._condition = newValue}
+  }
+
   public var questTemplateID: String {
-    get {return _storage._questTemplateID}
-    set {_uniqueStorage()._questTemplateID = newValue}
+    get {
+      if case .questTemplateID(let v)? = _storage._condition {return v}
+      return String()
+    }
+    set {_uniqueStorage()._condition = .questTemplateID(newValue)}
   }
 
   public var level: POGOProtos_Data_Quests_QuestPrecondition.Level {
-    get {return _storage._level ?? POGOProtos_Data_Quests_QuestPrecondition.Level()}
-    set {_uniqueStorage()._level = newValue}
+    get {
+      if case .level(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestPrecondition.Level()
+    }
+    set {_uniqueStorage()._condition = .level(newValue)}
   }
-  /// Returns true if `level` has been explicitly set.
-  public var hasLevel: Bool {return _storage._level != nil}
-  /// Clears the value of `level`. Subsequent reads from it will return its default value.
-  public mutating func clearLevel() {_uniqueStorage()._level = nil}
 
   public var medal: POGOProtos_Data_Quests_QuestPrecondition.Medal {
-    get {return _storage._medal ?? POGOProtos_Data_Quests_QuestPrecondition.Medal()}
-    set {_uniqueStorage()._medal = newValue}
+    get {
+      if case .medal(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestPrecondition.Medal()
+    }
+    set {_uniqueStorage()._condition = .medal(newValue)}
   }
-  /// Returns true if `medal` has been explicitly set.
-  public var hasMedal: Bool {return _storage._medal != nil}
-  /// Clears the value of `medal`. Subsequent reads from it will return its default value.
-  public mutating func clearMedal() {_uniqueStorage()._medal = nil}
 
   public var quests: POGOProtos_Data_Quests_QuestPrecondition.Quests {
-    get {return _storage._quests ?? POGOProtos_Data_Quests_QuestPrecondition.Quests()}
-    set {_uniqueStorage()._quests = newValue}
+    get {
+      if case .quests(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestPrecondition.Quests()
+    }
+    set {_uniqueStorage()._condition = .quests(newValue)}
   }
-  /// Returns true if `quests` has been explicitly set.
-  public var hasQuests: Bool {return _storage._quests != nil}
-  /// Clears the value of `quests`. Subsequent reads from it will return its default value.
-  public mutating func clearQuests() {_uniqueStorage()._quests = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_Condition: Equatable {
+    case questTemplateID(String)
+    case level(POGOProtos_Data_Quests_QuestPrecondition.Level)
+    case medal(POGOProtos_Data_Quests_QuestPrecondition.Medal)
+    case quests(POGOProtos_Data_Quests_QuestPrecondition.Quests)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.OneOf_Condition, rhs: POGOProtos_Data_Quests_QuestPrecondition.OneOf_Condition) -> Bool {
+      switch (lhs, rhs) {
+      case (.questTemplateID(let l), .questTemplateID(let r)): return l == r
+      case (.level(let l), .level(let r)): return l == r
+      case (.medal(let l), .medal(let r)): return l == r
+      case (.quests(let l), .quests(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public enum Operator: SwiftProtobuf.Enum {
     public typealias RawValue = Int
@@ -226,10 +250,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
 
   fileprivate class _StorageClass {
     var _type: POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType = .questPreconditionUnset
-    var _questTemplateID: String = String()
-    var _level: POGOProtos_Data_Quests_QuestPrecondition.Level? = nil
-    var _medal: POGOProtos_Data_Quests_QuestPrecondition.Medal? = nil
-    var _quests: POGOProtos_Data_Quests_QuestPrecondition.Quests? = nil
+    var _condition: POGOProtos_Data_Quests_QuestPrecondition.OneOf_Condition?
 
     static let defaultInstance = _StorageClass()
 
@@ -237,10 +258,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
 
     init(copying source: _StorageClass) {
       _type = source._type
-      _questTemplateID = source._questTemplateID
-      _level = source._level
-      _medal = source._medal
-      _quests = source._quests
+      _condition = source._condition
     }
   }
 
@@ -257,10 +275,35 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._type)
-        case 2: try decoder.decodeSingularStringField(value: &_storage._questTemplateID)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._level)
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._medal)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._quests)
+        case 2:
+          if _storage._condition != nil {try decoder.handleConflictingOneOf()}
+          var v: String?
+          try decoder.decodeSingularStringField(value: &v)
+          if let v = v {_storage._condition = .questTemplateID(v)}
+        case 3:
+          var v: POGOProtos_Data_Quests_QuestPrecondition.Level?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .level(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .level(v)}
+        case 4:
+          var v: POGOProtos_Data_Quests_QuestPrecondition.Medal?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .medal(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .medal(v)}
+        case 5:
+          var v: POGOProtos_Data_Quests_QuestPrecondition.Quests?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .quests(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .quests(v)}
         default: break
         }
       }
@@ -272,17 +315,16 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
       if _storage._type != .questPreconditionUnset {
         try visitor.visitSingularEnumField(value: _storage._type, fieldNumber: 1)
       }
-      if !_storage._questTemplateID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._questTemplateID, fieldNumber: 2)
-      }
-      if let v = _storage._level {
+      switch _storage._condition {
+      case .questTemplateID(let v)?:
+        try visitor.visitSingularStringField(value: v, fieldNumber: 2)
+      case .level(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._medal {
+      case .medal(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._quests {
+      case .quests(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+      case nil: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -294,10 +336,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._type != rhs_storage._type {return false}
-        if _storage._questTemplateID != rhs_storage._questTemplateID {return false}
-        if _storage._level != rhs_storage._level {return false}
-        if _storage._medal != rhs_storage._medal {return false}
-        if _storage._quests != rhs_storage._quests {return false}
+        if _storage._condition != rhs_storage._condition {return false}
         return true
       }
       if !storagesAreEqual {return false}

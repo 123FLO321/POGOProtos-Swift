@@ -35,6 +35,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case bgmodeEggHatch // = 11
   case bgmodeBuddyCandy // = 12
   case bgmodeWeeklyFitnessReport // = 13
+  case bgmodeOffSessionDistance // = 15
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -57,6 +58,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 11: self = .bgmodeEggHatch
     case 12: self = .bgmodeBuddyCandy
     case 13: self = .bgmodeWeeklyFitnessReport
+    case 15: self = .bgmodeOffSessionDistance
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -77,6 +79,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .bgmodeEggHatch: return 11
     case .bgmodeBuddyCandy: return 12
     case .bgmodeWeeklyFitnessReport: return 13
+    case .bgmodeOffSessionDistance: return 15
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -102,6 +105,7 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .bgmodeEggHatch,
     .bgmodeBuddyCandy,
     .bgmodeWeeklyFitnessReport,
+    .bgmodeOffSessionDistance,
   ]
 }
 
@@ -111,7 +115,7 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
 
 extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "UNSET_NotificationCategory"),
+    0: .same(proto: "UNSET_NOTIFICATION_CATEGORY"),
     1: .same(proto: "GYM_REMOVAL"),
     2: .same(proto: "POKEMON_HUNGRY"),
     3: .same(proto: "POKEMON_WON"),
@@ -125,5 +129,6 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     11: .same(proto: "BGMODE_EGG_HATCH"),
     12: .same(proto: "BGMODE_BUDDY_CANDY"),
     13: .same(proto: "BGMODE_WEEKLY_FITNESS_REPORT"),
+    15: .same(proto: "BGMODE_OFF_SESSION_DISTANCE"),
   ]
 }

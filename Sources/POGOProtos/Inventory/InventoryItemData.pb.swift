@@ -24,142 +24,183 @@ public struct POGOProtos_Inventory_InventoryItemData {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var pokemonData: POGOProtos_Data_PokemonData {
-    get {return _storage._pokemonData ?? POGOProtos_Data_PokemonData()}
-    set {_uniqueStorage()._pokemonData = newValue}
+  public var type: OneOf_Type? {
+    get {return _storage._type}
+    set {_uniqueStorage()._type = newValue}
   }
-  /// Returns true if `pokemonData` has been explicitly set.
-  public var hasPokemonData: Bool {return _storage._pokemonData != nil}
-  /// Clears the value of `pokemonData`. Subsequent reads from it will return its default value.
-  public mutating func clearPokemonData() {_uniqueStorage()._pokemonData = nil}
+
+  public var pokemonData: POGOProtos_Data_PokemonData {
+    get {
+      if case .pokemonData(let v)? = _storage._type {return v}
+      return POGOProtos_Data_PokemonData()
+    }
+    set {_uniqueStorage()._type = .pokemonData(newValue)}
+  }
 
   public var item: POGOProtos_Inventory_Item_ItemData {
-    get {return _storage._item ?? POGOProtos_Inventory_Item_ItemData()}
-    set {_uniqueStorage()._item = newValue}
+    get {
+      if case .item(let v)? = _storage._type {return v}
+      return POGOProtos_Inventory_Item_ItemData()
+    }
+    set {_uniqueStorage()._type = .item(newValue)}
   }
-  /// Returns true if `item` has been explicitly set.
-  public var hasItem: Bool {return _storage._item != nil}
-  /// Clears the value of `item`. Subsequent reads from it will return its default value.
-  public mutating func clearItem() {_uniqueStorage()._item = nil}
 
   public var pokedexEntry: POGOProtos_Data_PokedexEntry {
-    get {return _storage._pokedexEntry ?? POGOProtos_Data_PokedexEntry()}
-    set {_uniqueStorage()._pokedexEntry = newValue}
+    get {
+      if case .pokedexEntry(let v)? = _storage._type {return v}
+      return POGOProtos_Data_PokedexEntry()
+    }
+    set {_uniqueStorage()._type = .pokedexEntry(newValue)}
   }
-  /// Returns true if `pokedexEntry` has been explicitly set.
-  public var hasPokedexEntry: Bool {return _storage._pokedexEntry != nil}
-  /// Clears the value of `pokedexEntry`. Subsequent reads from it will return its default value.
-  public mutating func clearPokedexEntry() {_uniqueStorage()._pokedexEntry = nil}
 
   public var playerStats: POGOProtos_Data_Player_PlayerStats {
-    get {return _storage._playerStats ?? POGOProtos_Data_Player_PlayerStats()}
-    set {_uniqueStorage()._playerStats = newValue}
+    get {
+      if case .playerStats(let v)? = _storage._type {return v}
+      return POGOProtos_Data_Player_PlayerStats()
+    }
+    set {_uniqueStorage()._type = .playerStats(newValue)}
   }
-  /// Returns true if `playerStats` has been explicitly set.
-  public var hasPlayerStats: Bool {return _storage._playerStats != nil}
-  /// Clears the value of `playerStats`. Subsequent reads from it will return its default value.
-  public mutating func clearPlayerStats() {_uniqueStorage()._playerStats = nil}
 
   public var playerCurrency: POGOProtos_Data_Player_PlayerCurrency {
-    get {return _storage._playerCurrency ?? POGOProtos_Data_Player_PlayerCurrency()}
-    set {_uniqueStorage()._playerCurrency = newValue}
+    get {
+      if case .playerCurrency(let v)? = _storage._type {return v}
+      return POGOProtos_Data_Player_PlayerCurrency()
+    }
+    set {_uniqueStorage()._type = .playerCurrency(newValue)}
   }
-  /// Returns true if `playerCurrency` has been explicitly set.
-  public var hasPlayerCurrency: Bool {return _storage._playerCurrency != nil}
-  /// Clears the value of `playerCurrency`. Subsequent reads from it will return its default value.
-  public mutating func clearPlayerCurrency() {_uniqueStorage()._playerCurrency = nil}
 
   public var playerCamera: POGOProtos_Data_Player_PlayerCamera {
-    get {return _storage._playerCamera ?? POGOProtos_Data_Player_PlayerCamera()}
-    set {_uniqueStorage()._playerCamera = newValue}
+    get {
+      if case .playerCamera(let v)? = _storage._type {return v}
+      return POGOProtos_Data_Player_PlayerCamera()
+    }
+    set {_uniqueStorage()._type = .playerCamera(newValue)}
   }
-  /// Returns true if `playerCamera` has been explicitly set.
-  public var hasPlayerCamera: Bool {return _storage._playerCamera != nil}
-  /// Clears the value of `playerCamera`. Subsequent reads from it will return its default value.
-  public mutating func clearPlayerCamera() {_uniqueStorage()._playerCamera = nil}
 
   public var inventoryUpgrades: POGOProtos_Inventory_InventoryUpgrades {
-    get {return _storage._inventoryUpgrades ?? POGOProtos_Inventory_InventoryUpgrades()}
-    set {_uniqueStorage()._inventoryUpgrades = newValue}
+    get {
+      if case .inventoryUpgrades(let v)? = _storage._type {return v}
+      return POGOProtos_Inventory_InventoryUpgrades()
+    }
+    set {_uniqueStorage()._type = .inventoryUpgrades(newValue)}
   }
-  /// Returns true if `inventoryUpgrades` has been explicitly set.
-  public var hasInventoryUpgrades: Bool {return _storage._inventoryUpgrades != nil}
-  /// Clears the value of `inventoryUpgrades`. Subsequent reads from it will return its default value.
-  public mutating func clearInventoryUpgrades() {_uniqueStorage()._inventoryUpgrades = nil}
 
   public var appliedItems: POGOProtos_Inventory_AppliedItems {
-    get {return _storage._appliedItems ?? POGOProtos_Inventory_AppliedItems()}
-    set {_uniqueStorage()._appliedItems = newValue}
+    get {
+      if case .appliedItems(let v)? = _storage._type {return v}
+      return POGOProtos_Inventory_AppliedItems()
+    }
+    set {_uniqueStorage()._type = .appliedItems(newValue)}
   }
-  /// Returns true if `appliedItems` has been explicitly set.
-  public var hasAppliedItems: Bool {return _storage._appliedItems != nil}
-  /// Clears the value of `appliedItems`. Subsequent reads from it will return its default value.
-  public mutating func clearAppliedItems() {_uniqueStorage()._appliedItems = nil}
 
   public var eggIncubators: POGOProtos_Inventory_EggIncubators {
-    get {return _storage._eggIncubators ?? POGOProtos_Inventory_EggIncubators()}
-    set {_uniqueStorage()._eggIncubators = newValue}
+    get {
+      if case .eggIncubators(let v)? = _storage._type {return v}
+      return POGOProtos_Inventory_EggIncubators()
+    }
+    set {_uniqueStorage()._type = .eggIncubators(newValue)}
   }
-  /// Returns true if `eggIncubators` has been explicitly set.
-  public var hasEggIncubators: Bool {return _storage._eggIncubators != nil}
-  /// Clears the value of `eggIncubators`. Subsequent reads from it will return its default value.
-  public mutating func clearEggIncubators() {_uniqueStorage()._eggIncubators = nil}
 
   public var candy: POGOProtos_Inventory_Candy {
-    get {return _storage._candy ?? POGOProtos_Inventory_Candy()}
-    set {_uniqueStorage()._candy = newValue}
+    get {
+      if case .candy(let v)? = _storage._type {return v}
+      return POGOProtos_Inventory_Candy()
+    }
+    set {_uniqueStorage()._type = .candy(newValue)}
   }
-  /// Returns true if `candy` has been explicitly set.
-  public var hasCandy: Bool {return _storage._candy != nil}
-  /// Clears the value of `candy`. Subsequent reads from it will return its default value.
-  public mutating func clearCandy() {_uniqueStorage()._candy = nil}
 
   public var quest: POGOProtos_Data_Quests_Quest {
-    get {return _storage._quest ?? POGOProtos_Data_Quests_Quest()}
-    set {_uniqueStorage()._quest = newValue}
+    get {
+      if case .quest(let v)? = _storage._type {return v}
+      return POGOProtos_Data_Quests_Quest()
+    }
+    set {_uniqueStorage()._type = .quest(newValue)}
   }
-  /// Returns true if `quest` has been explicitly set.
-  public var hasQuest: Bool {return _storage._quest != nil}
-  /// Clears the value of `quest`. Subsequent reads from it will return its default value.
-  public mutating func clearQuest() {_uniqueStorage()._quest = nil}
 
   public var avatarItem: POGOProtos_Data_Avatar_AvatarItem {
-    get {return _storage._avatarItem ?? POGOProtos_Data_Avatar_AvatarItem()}
-    set {_uniqueStorage()._avatarItem = newValue}
+    get {
+      if case .avatarItem(let v)? = _storage._type {return v}
+      return POGOProtos_Data_Avatar_AvatarItem()
+    }
+    set {_uniqueStorage()._type = .avatarItem(newValue)}
   }
-  /// Returns true if `avatarItem` has been explicitly set.
-  public var hasAvatarItem: Bool {return _storage._avatarItem != nil}
-  /// Clears the value of `avatarItem`. Subsequent reads from it will return its default value.
-  public mutating func clearAvatarItem() {_uniqueStorage()._avatarItem = nil}
 
   public var raidTickets: POGOProtos_Inventory_RaidTickets {
-    get {return _storage._raidTickets ?? POGOProtos_Inventory_RaidTickets()}
-    set {_uniqueStorage()._raidTickets = newValue}
+    get {
+      if case .raidTickets(let v)? = _storage._type {return v}
+      return POGOProtos_Inventory_RaidTickets()
+    }
+    set {_uniqueStorage()._type = .raidTickets(newValue)}
   }
-  /// Returns true if `raidTickets` has been explicitly set.
-  public var hasRaidTickets: Bool {return _storage._raidTickets != nil}
-  /// Clears the value of `raidTickets`. Subsequent reads from it will return its default value.
-  public mutating func clearRaidTickets() {_uniqueStorage()._raidTickets = nil}
 
   public var quests: POGOProtos_Data_Quests_Quests {
-    get {return _storage._quests ?? POGOProtos_Data_Quests_Quests()}
-    set {_uniqueStorage()._quests = newValue}
+    get {
+      if case .quests(let v)? = _storage._type {return v}
+      return POGOProtos_Data_Quests_Quests()
+    }
+    set {_uniqueStorage()._type = .quests(newValue)}
   }
-  /// Returns true if `quests` has been explicitly set.
-  public var hasQuests: Bool {return _storage._quests != nil}
-  /// Clears the value of `quests`. Subsequent reads from it will return its default value.
-  public mutating func clearQuests() {_uniqueStorage()._quests = nil}
 
   public var giftBoxes: POGOProtos_Data_Gift_GiftBoxes {
-    get {return _storage._giftBoxes ?? POGOProtos_Data_Gift_GiftBoxes()}
-    set {_uniqueStorage()._giftBoxes = newValue}
+    get {
+      if case .giftBoxes(let v)? = _storage._type {return v}
+      return POGOProtos_Data_Gift_GiftBoxes()
+    }
+    set {_uniqueStorage()._type = .giftBoxes(newValue)}
   }
-  /// Returns true if `giftBoxes` has been explicitly set.
-  public var hasGiftBoxes: Bool {return _storage._giftBoxes != nil}
-  /// Clears the value of `giftBoxes`. Subsequent reads from it will return its default value.
-  public mutating func clearGiftBoxes() {_uniqueStorage()._giftBoxes = nil}
+
+  public var belugaIncense: POGOProtos_Data_Beluga_BelugaIncenseBox {
+    get {
+      if case .belugaIncense(let v)? = _storage._type {return v}
+      return POGOProtos_Data_Beluga_BelugaIncenseBox()
+    }
+    set {_uniqueStorage()._type = .belugaIncense(newValue)}
+  }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_Type: Equatable {
+    case pokemonData(POGOProtos_Data_PokemonData)
+    case item(POGOProtos_Inventory_Item_ItemData)
+    case pokedexEntry(POGOProtos_Data_PokedexEntry)
+    case playerStats(POGOProtos_Data_Player_PlayerStats)
+    case playerCurrency(POGOProtos_Data_Player_PlayerCurrency)
+    case playerCamera(POGOProtos_Data_Player_PlayerCamera)
+    case inventoryUpgrades(POGOProtos_Inventory_InventoryUpgrades)
+    case appliedItems(POGOProtos_Inventory_AppliedItems)
+    case eggIncubators(POGOProtos_Inventory_EggIncubators)
+    case candy(POGOProtos_Inventory_Candy)
+    case quest(POGOProtos_Data_Quests_Quest)
+    case avatarItem(POGOProtos_Data_Avatar_AvatarItem)
+    case raidTickets(POGOProtos_Inventory_RaidTickets)
+    case quests(POGOProtos_Data_Quests_Quests)
+    case giftBoxes(POGOProtos_Data_Gift_GiftBoxes)
+    case belugaIncense(POGOProtos_Data_Beluga_BelugaIncenseBox)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.OneOf_Type, rhs: POGOProtos_Inventory_InventoryItemData.OneOf_Type) -> Bool {
+      switch (lhs, rhs) {
+      case (.pokemonData(let l), .pokemonData(let r)): return l == r
+      case (.item(let l), .item(let r)): return l == r
+      case (.pokedexEntry(let l), .pokedexEntry(let r)): return l == r
+      case (.playerStats(let l), .playerStats(let r)): return l == r
+      case (.playerCurrency(let l), .playerCurrency(let r)): return l == r
+      case (.playerCamera(let l), .playerCamera(let r)): return l == r
+      case (.inventoryUpgrades(let l), .inventoryUpgrades(let r)): return l == r
+      case (.appliedItems(let l), .appliedItems(let r)): return l == r
+      case (.eggIncubators(let l), .eggIncubators(let r)): return l == r
+      case (.candy(let l), .candy(let r)): return l == r
+      case (.quest(let l), .quest(let r)): return l == r
+      case (.avatarItem(let l), .avatarItem(let r)): return l == r
+      case (.raidTickets(let l), .raidTickets(let r)): return l == r
+      case (.quests(let l), .quests(let r)): return l == r
+      case (.giftBoxes(let l), .giftBoxes(let r)): return l == r
+      case (.belugaIncense(let l), .belugaIncense(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public init() {}
 
@@ -188,45 +229,18 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
     13: .standard(proto: "raid_tickets"),
     14: .same(proto: "quests"),
     15: .standard(proto: "gift_boxes"),
+    16: .standard(proto: "beluga_incense"),
   ]
 
   fileprivate class _StorageClass {
-    var _pokemonData: POGOProtos_Data_PokemonData? = nil
-    var _item: POGOProtos_Inventory_Item_ItemData? = nil
-    var _pokedexEntry: POGOProtos_Data_PokedexEntry? = nil
-    var _playerStats: POGOProtos_Data_Player_PlayerStats? = nil
-    var _playerCurrency: POGOProtos_Data_Player_PlayerCurrency? = nil
-    var _playerCamera: POGOProtos_Data_Player_PlayerCamera? = nil
-    var _inventoryUpgrades: POGOProtos_Inventory_InventoryUpgrades? = nil
-    var _appliedItems: POGOProtos_Inventory_AppliedItems? = nil
-    var _eggIncubators: POGOProtos_Inventory_EggIncubators? = nil
-    var _candy: POGOProtos_Inventory_Candy? = nil
-    var _quest: POGOProtos_Data_Quests_Quest? = nil
-    var _avatarItem: POGOProtos_Data_Avatar_AvatarItem? = nil
-    var _raidTickets: POGOProtos_Inventory_RaidTickets? = nil
-    var _quests: POGOProtos_Data_Quests_Quests? = nil
-    var _giftBoxes: POGOProtos_Data_Gift_GiftBoxes? = nil
+    var _type: POGOProtos_Inventory_InventoryItemData.OneOf_Type?
 
     static let defaultInstance = _StorageClass()
 
     private init() {}
 
     init(copying source: _StorageClass) {
-      _pokemonData = source._pokemonData
-      _item = source._item
-      _pokedexEntry = source._pokedexEntry
-      _playerStats = source._playerStats
-      _playerCurrency = source._playerCurrency
-      _playerCamera = source._playerCamera
-      _inventoryUpgrades = source._inventoryUpgrades
-      _appliedItems = source._appliedItems
-      _eggIncubators = source._eggIncubators
-      _candy = source._candy
-      _quest = source._quest
-      _avatarItem = source._avatarItem
-      _raidTickets = source._raidTickets
-      _quests = source._quests
-      _giftBoxes = source._giftBoxes
+      _type = source._type
     }
   }
 
@@ -242,21 +256,134 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._pokemonData)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._item)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._pokedexEntry)
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._playerStats)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._playerCurrency)
-        case 6: try decoder.decodeSingularMessageField(value: &_storage._playerCamera)
-        case 7: try decoder.decodeSingularMessageField(value: &_storage._inventoryUpgrades)
-        case 8: try decoder.decodeSingularMessageField(value: &_storage._appliedItems)
-        case 9: try decoder.decodeSingularMessageField(value: &_storage._eggIncubators)
-        case 10: try decoder.decodeSingularMessageField(value: &_storage._candy)
-        case 11: try decoder.decodeSingularMessageField(value: &_storage._quest)
-        case 12: try decoder.decodeSingularMessageField(value: &_storage._avatarItem)
-        case 13: try decoder.decodeSingularMessageField(value: &_storage._raidTickets)
-        case 14: try decoder.decodeSingularMessageField(value: &_storage._quests)
-        case 15: try decoder.decodeSingularMessageField(value: &_storage._giftBoxes)
+        case 1:
+          var v: POGOProtos_Data_PokemonData?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .pokemonData(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .pokemonData(v)}
+        case 2:
+          var v: POGOProtos_Inventory_Item_ItemData?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .item(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .item(v)}
+        case 3:
+          var v: POGOProtos_Data_PokedexEntry?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .pokedexEntry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .pokedexEntry(v)}
+        case 4:
+          var v: POGOProtos_Data_Player_PlayerStats?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .playerStats(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .playerStats(v)}
+        case 5:
+          var v: POGOProtos_Data_Player_PlayerCurrency?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .playerCurrency(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .playerCurrency(v)}
+        case 6:
+          var v: POGOProtos_Data_Player_PlayerCamera?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .playerCamera(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .playerCamera(v)}
+        case 7:
+          var v: POGOProtos_Inventory_InventoryUpgrades?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .inventoryUpgrades(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .inventoryUpgrades(v)}
+        case 8:
+          var v: POGOProtos_Inventory_AppliedItems?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .appliedItems(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .appliedItems(v)}
+        case 9:
+          var v: POGOProtos_Inventory_EggIncubators?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .eggIncubators(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .eggIncubators(v)}
+        case 10:
+          var v: POGOProtos_Inventory_Candy?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .candy(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .candy(v)}
+        case 11:
+          var v: POGOProtos_Data_Quests_Quest?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .quest(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .quest(v)}
+        case 12:
+          var v: POGOProtos_Data_Avatar_AvatarItem?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .avatarItem(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .avatarItem(v)}
+        case 13:
+          var v: POGOProtos_Inventory_RaidTickets?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .raidTickets(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .raidTickets(v)}
+        case 14:
+          var v: POGOProtos_Data_Quests_Quests?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .quests(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .quests(v)}
+        case 15:
+          var v: POGOProtos_Data_Gift_GiftBoxes?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .giftBoxes(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .giftBoxes(v)}
+        case 16:
+          var v: POGOProtos_Data_Beluga_BelugaIncenseBox?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .belugaIncense(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .belugaIncense(v)}
         default: break
         }
       }
@@ -265,50 +392,40 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._pokemonData {
+      switch _storage._type {
+      case .pokemonData(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._item {
+      case .item(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._pokedexEntry {
+      case .pokedexEntry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._playerStats {
+      case .playerStats(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._playerCurrency {
+      case .playerCurrency(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._playerCamera {
+      case .playerCamera(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      }
-      if let v = _storage._inventoryUpgrades {
+      case .inventoryUpgrades(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      }
-      if let v = _storage._appliedItems {
+      case .appliedItems(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-      }
-      if let v = _storage._eggIncubators {
+      case .eggIncubators(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-      }
-      if let v = _storage._candy {
+      case .candy(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._quest {
+      case .quest(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._avatarItem {
+      case .avatarItem(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._raidTickets {
+      case .raidTickets(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._quests {
+      case .quests(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
-      }
-      if let v = _storage._giftBoxes {
+      case .giftBoxes(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
+      case .belugaIncense(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
+      case nil: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -319,21 +436,7 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._pokemonData != rhs_storage._pokemonData {return false}
-        if _storage._item != rhs_storage._item {return false}
-        if _storage._pokedexEntry != rhs_storage._pokedexEntry {return false}
-        if _storage._playerStats != rhs_storage._playerStats {return false}
-        if _storage._playerCurrency != rhs_storage._playerCurrency {return false}
-        if _storage._playerCamera != rhs_storage._playerCamera {return false}
-        if _storage._inventoryUpgrades != rhs_storage._inventoryUpgrades {return false}
-        if _storage._appliedItems != rhs_storage._appliedItems {return false}
-        if _storage._eggIncubators != rhs_storage._eggIncubators {return false}
-        if _storage._candy != rhs_storage._candy {return false}
-        if _storage._quest != rhs_storage._quest {return false}
-        if _storage._avatarItem != rhs_storage._avatarItem {return false}
-        if _storage._raidTickets != rhs_storage._raidTickets {return false}
-        if _storage._quests != rhs_storage._quests {return false}
-        if _storage._giftBoxes != rhs_storage._giftBoxes {return false}
+        if _storage._type != rhs_storage._type {return false}
         return true
       }
       if !storagesAreEqual {return false}

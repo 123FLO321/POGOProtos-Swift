@@ -174,6 +174,15 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `questGlobalSettings`. Subsequent reads from it will return its default value.
   public mutating func clearQuestGlobalSettings() {_uniqueStorage()._questGlobalSettings = nil}
 
+  public var belugaGlobalSettings: POGOProtos_Settings_BelugaGlobalSettings {
+    get {return _storage._belugaGlobalSettings ?? POGOProtos_Settings_BelugaGlobalSettings()}
+    set {_uniqueStorage()._belugaGlobalSettings = newValue}
+  }
+  /// Returns true if `belugaGlobalSettings` has been explicitly set.
+  public var hasBelugaGlobalSettings: Bool {return _storage._belugaGlobalSettings != nil}
+  /// Clears the value of `belugaGlobalSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearBelugaGlobalSettings() {_uniqueStorage()._belugaGlobalSettings = nil}
+
   public var telemetryGlobalSettings: POGOProtos_Settings_TelemetryGlobalSettings {
     get {return _storage._telemetryGlobalSettings ?? POGOProtos_Settings_TelemetryGlobalSettings()}
     set {_uniqueStorage()._telemetryGlobalSettings = newValue}
@@ -242,6 +251,15 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `probeSettings`. Subsequent reads from it will return its default value.
   public mutating func clearProbeSettings() {_uniqueStorage()._probeSettings = nil}
 
+  public var purchasedSettings: POGOProtos_Settings_PokecoinPurchaseDisplaySettings {
+    get {return _storage._purchasedSettings ?? POGOProtos_Settings_PokecoinPurchaseDisplaySettings()}
+    set {_uniqueStorage()._purchasedSettings = newValue}
+  }
+  /// Returns true if `purchasedSettings` has been explicitly set.
+  public var hasPurchasedSettings: Bool {return _storage._purchasedSettings != nil}
+  /// Clears the value of `purchasedSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearPurchasedSettings() {_uniqueStorage()._purchasedSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -274,6 +292,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     17: .standard(proto: "client_perf_settings"),
     18: .standard(proto: "news_global_settings"),
     19: .standard(proto: "quest_global_settings"),
+    20: .standard(proto: "beluga_global_settings"),
     21: .standard(proto: "telemetry_global_settings"),
     22: .standard(proto: "login_settings"),
     23: .standard(proto: "social_settings"),
@@ -282,6 +301,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     26: .standard(proto: "upsight_logging_settings"),
     30: .standard(proto: "bgmode_global_settings"),
     31: .standard(proto: "probe_settings"),
+    32: .standard(proto: "purchased_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -303,6 +323,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _clientPerfSettings: POGOProtos_Settings_ClientPerformanceSettings? = nil
     var _newsGlobalSettings: POGOProtos_Settings_NewsGlobalSettings? = nil
     var _questGlobalSettings: POGOProtos_Settings_QuestGlobalSettings? = nil
+    var _belugaGlobalSettings: POGOProtos_Settings_BelugaGlobalSettings? = nil
     var _telemetryGlobalSettings: POGOProtos_Settings_TelemetryGlobalSettings? = nil
     var _loginSettings: POGOProtos_Settings_LoginSettings? = nil
     var _socialSettings: POGOProtos_Settings_SocialClientSettings? = nil
@@ -311,6 +332,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _upsightLoggingSettings: POGOProtos_Settings_UpsightLoggingSettings? = nil
     var _bgmodeGlobalSettings: POGOProtos_Settings_BackgroundModeGlobalSettings? = nil
     var _probeSettings: POGOProtos_Settings_ProbeSettings? = nil
+    var _purchasedSettings: POGOProtos_Settings_PokecoinPurchaseDisplaySettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -335,6 +357,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _clientPerfSettings = source._clientPerfSettings
       _newsGlobalSettings = source._newsGlobalSettings
       _questGlobalSettings = source._questGlobalSettings
+      _belugaGlobalSettings = source._belugaGlobalSettings
       _telemetryGlobalSettings = source._telemetryGlobalSettings
       _loginSettings = source._loginSettings
       _socialSettings = source._socialSettings
@@ -343,6 +366,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _upsightLoggingSettings = source._upsightLoggingSettings
       _bgmodeGlobalSettings = source._bgmodeGlobalSettings
       _probeSettings = source._probeSettings
+      _purchasedSettings = source._purchasedSettings
     }
   }
 
@@ -376,6 +400,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 17: try decoder.decodeSingularMessageField(value: &_storage._clientPerfSettings)
         case 18: try decoder.decodeSingularMessageField(value: &_storage._newsGlobalSettings)
         case 19: try decoder.decodeSingularMessageField(value: &_storage._questGlobalSettings)
+        case 20: try decoder.decodeSingularMessageField(value: &_storage._belugaGlobalSettings)
         case 21: try decoder.decodeSingularMessageField(value: &_storage._telemetryGlobalSettings)
         case 22: try decoder.decodeSingularMessageField(value: &_storage._loginSettings)
         case 23: try decoder.decodeSingularMessageField(value: &_storage._socialSettings)
@@ -384,6 +409,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 26: try decoder.decodeSingularMessageField(value: &_storage._upsightLoggingSettings)
         case 30: try decoder.decodeSingularMessageField(value: &_storage._bgmodeGlobalSettings)
         case 31: try decoder.decodeSingularMessageField(value: &_storage._probeSettings)
+        case 32: try decoder.decodeSingularMessageField(value: &_storage._purchasedSettings)
         default: break
         }
       }
@@ -446,6 +472,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._questGlobalSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
       }
+      if let v = _storage._belugaGlobalSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 20)
+      }
       if let v = _storage._telemetryGlobalSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
       }
@@ -469,6 +498,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       }
       if let v = _storage._probeSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
+      }
+      if let v = _storage._purchasedSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 32)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -497,6 +529,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._clientPerfSettings != rhs_storage._clientPerfSettings {return false}
         if _storage._newsGlobalSettings != rhs_storage._newsGlobalSettings {return false}
         if _storage._questGlobalSettings != rhs_storage._questGlobalSettings {return false}
+        if _storage._belugaGlobalSettings != rhs_storage._belugaGlobalSettings {return false}
         if _storage._telemetryGlobalSettings != rhs_storage._telemetryGlobalSettings {return false}
         if _storage._loginSettings != rhs_storage._loginSettings {return false}
         if _storage._socialSettings != rhs_storage._socialSettings {return false}
@@ -505,6 +538,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._upsightLoggingSettings != rhs_storage._upsightLoggingSettings {return false}
         if _storage._bgmodeGlobalSettings != rhs_storage._bgmodeGlobalSettings {return false}
         if _storage._probeSettings != rhs_storage._probeSettings {return false}
+        if _storage._purchasedSettings != rhs_storage._purchasedSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -145,7 +145,7 @@ public struct POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCate
   public init() {}
 }
 
-public struct POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage {
+public struct POGOProtos_Networking_Requests_Messages_RedeemPasscodeRequest {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
@@ -354,6 +354,8 @@ public struct POGOProtos_Networking_Requests_Messages_PingMessage {
   public var randomRequestBytes: String = String()
 
   public var useCacheForRandomRequestBytes: Bool = false
+
+  public var returnValue: String = String()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -606,8 +608,8 @@ extension POGOProtos_Networking_Requests_Messages_OptOutPushNotificationCategory
   }
 }
 
-extension POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = _protobuf_package + ".RedeemPasscodeMessage"
+extension POGOProtos_Networking_Requests_Messages_RedeemPasscodeRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".RedeemPasscodeRequest"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "passcode"),
   ]
@@ -628,7 +630,7 @@ extension POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage: SwiftPr
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage, rhs: POGOProtos_Networking_Requests_Messages_RedeemPasscodeMessage) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_RedeemPasscodeRequest, rhs: POGOProtos_Networking_Requests_Messages_RedeemPasscodeRequest) -> Bool {
     if lhs.passcode != rhs.passcode {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -1063,6 +1065,7 @@ extension POGOProtos_Networking_Requests_Messages_PingMessage: SwiftProtobuf.Mes
     1: .standard(proto: "response_size_bytes"),
     2: .standard(proto: "random_request_bytes"),
     3: .standard(proto: "use_cache_for_random_request_bytes"),
+    4: .standard(proto: "return_value"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1071,6 +1074,7 @@ extension POGOProtos_Networking_Requests_Messages_PingMessage: SwiftProtobuf.Mes
       case 1: try decoder.decodeSingularInt32Field(value: &self.responseSizeBytes)
       case 2: try decoder.decodeSingularStringField(value: &self.randomRequestBytes)
       case 3: try decoder.decodeSingularBoolField(value: &self.useCacheForRandomRequestBytes)
+      case 4: try decoder.decodeSingularStringField(value: &self.returnValue)
       default: break
       }
     }
@@ -1086,6 +1090,9 @@ extension POGOProtos_Networking_Requests_Messages_PingMessage: SwiftProtobuf.Mes
     if self.useCacheForRandomRequestBytes != false {
       try visitor.visitSingularBoolField(value: self.useCacheForRandomRequestBytes, fieldNumber: 3)
     }
+    if !self.returnValue.isEmpty {
+      try visitor.visitSingularStringField(value: self.returnValue, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1093,6 +1100,7 @@ extension POGOProtos_Networking_Requests_Messages_PingMessage: SwiftProtobuf.Mes
     if lhs.responseSizeBytes != rhs.responseSizeBytes {return false}
     if lhs.randomRequestBytes != rhs.randomRequestBytes {return false}
     if lhs.useCacheForRandomRequestBytes != rhs.useCacheForRandomRequestBytes {return false}
+    if lhs.returnValue != rhs.returnValue {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

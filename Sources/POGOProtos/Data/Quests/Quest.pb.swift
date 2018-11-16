@@ -29,50 +29,50 @@ public struct POGOProtos_Data_Quests_Quest {
     set {_uniqueStorage()._questType = newValue}
   }
 
-  public var dailyQuest: POGOProtos_Data_Quests_DailyQuest {
-    get {return _storage._dailyQuest ?? POGOProtos_Data_Quests_DailyQuest()}
-    set {_uniqueStorage()._dailyQuest = newValue}
+  public var quest: OneOf_Quest? {
+    get {return _storage._quest}
+    set {_uniqueStorage()._quest = newValue}
   }
-  /// Returns true if `dailyQuest` has been explicitly set.
-  public var hasDailyQuest: Bool {return _storage._dailyQuest != nil}
-  /// Clears the value of `dailyQuest`. Subsequent reads from it will return its default value.
-  public mutating func clearDailyQuest() {_uniqueStorage()._dailyQuest = nil}
+
+  public var dailyQuest: POGOProtos_Data_Quests_Quest.DailyQuest {
+    get {
+      if case .dailyQuest(let v)? = _storage._quest {return v}
+      return POGOProtos_Data_Quests_Quest.DailyQuest()
+    }
+    set {_uniqueStorage()._quest = .dailyQuest(newValue)}
+  }
 
   public var multiPart: POGOProtos_Data_Quests_Quest.MultiPartQuest {
-    get {return _storage._multiPart ?? POGOProtos_Data_Quests_Quest.MultiPartQuest()}
-    set {_uniqueStorage()._multiPart = newValue}
+    get {
+      if case .multiPart(let v)? = _storage._quest {return v}
+      return POGOProtos_Data_Quests_Quest.MultiPartQuest()
+    }
+    set {_uniqueStorage()._quest = .multiPart(newValue)}
   }
-  /// Returns true if `multiPart` has been explicitly set.
-  public var hasMultiPart: Bool {return _storage._multiPart != nil}
-  /// Clears the value of `multiPart`. Subsequent reads from it will return its default value.
-  public mutating func clearMultiPart() {_uniqueStorage()._multiPart = nil}
 
   public var catchPokemon: POGOProtos_Data_Quests_CatchPokemonQuest {
-    get {return _storage._catchPokemon ?? POGOProtos_Data_Quests_CatchPokemonQuest()}
-    set {_uniqueStorage()._catchPokemon = newValue}
+    get {
+      if case .catchPokemon(let v)? = _storage._quest {return v}
+      return POGOProtos_Data_Quests_CatchPokemonQuest()
+    }
+    set {_uniqueStorage()._quest = .catchPokemon(newValue)}
   }
-  /// Returns true if `catchPokemon` has been explicitly set.
-  public var hasCatchPokemon: Bool {return _storage._catchPokemon != nil}
-  /// Clears the value of `catchPokemon`. Subsequent reads from it will return its default value.
-  public mutating func clearCatchPokemon() {_uniqueStorage()._catchPokemon = nil}
 
   public var addFriend: POGOProtos_Data_Quests_AddFriendQuest {
-    get {return _storage._addFriend ?? POGOProtos_Data_Quests_AddFriendQuest()}
-    set {_uniqueStorage()._addFriend = newValue}
+    get {
+      if case .addFriend(let v)? = _storage._quest {return v}
+      return POGOProtos_Data_Quests_AddFriendQuest()
+    }
+    set {_uniqueStorage()._quest = .addFriend(newValue)}
   }
-  /// Returns true if `addFriend` has been explicitly set.
-  public var hasAddFriend: Bool {return _storage._addFriend != nil}
-  /// Clears the value of `addFriend`. Subsequent reads from it will return its default value.
-  public mutating func clearAddFriend() {_uniqueStorage()._addFriend = nil}
 
   public var tradePokemon: POGOProtos_Data_Quests_TradePokemonQuest {
-    get {return _storage._tradePokemon ?? POGOProtos_Data_Quests_TradePokemonQuest()}
-    set {_uniqueStorage()._tradePokemon = newValue}
+    get {
+      if case .tradePokemon(let v)? = _storage._quest {return v}
+      return POGOProtos_Data_Quests_TradePokemonQuest()
+    }
+    set {_uniqueStorage()._quest = .tradePokemon(newValue)}
   }
-  /// Returns true if `tradePokemon` has been explicitly set.
-  public var hasTradePokemon: Bool {return _storage._tradePokemon != nil}
-  /// Clears the value of `tradePokemon`. Subsequent reads from it will return its default value.
-  public mutating func clearTradePokemon() {_uniqueStorage()._tradePokemon = nil}
 
   public var questID: String {
     get {return _storage._questID}
@@ -163,8 +163,8 @@ public struct POGOProtos_Data_Quests_Quest {
     set {_uniqueStorage()._storyQuestTemplateVersion = newValue}
   }
 
-  public var dailyCounter: POGOProtos_Data_Player_DailyCounter {
-    get {return _storage._dailyCounter ?? POGOProtos_Data_Player_DailyCounter()}
+  public var dailyCounter: POGOProtos_Data_Quests_Quest.DailyCounter {
+    get {return _storage._dailyCounter ?? POGOProtos_Data_Quests_Quest.DailyCounter()}
     set {_uniqueStorage()._dailyCounter = newValue}
   }
   /// Returns true if `dailyCounter` has been explicitly set.
@@ -178,6 +178,27 @@ public struct POGOProtos_Data_Quests_Quest {
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_Quest: Equatable {
+    case dailyQuest(POGOProtos_Data_Quests_Quest.DailyQuest)
+    case multiPart(POGOProtos_Data_Quests_Quest.MultiPartQuest)
+    case catchPokemon(POGOProtos_Data_Quests_CatchPokemonQuest)
+    case addFriend(POGOProtos_Data_Quests_AddFriendQuest)
+    case tradePokemon(POGOProtos_Data_Quests_TradePokemonQuest)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Data_Quests_Quest.OneOf_Quest, rhs: POGOProtos_Data_Quests_Quest.OneOf_Quest) -> Bool {
+      switch (lhs, rhs) {
+      case (.dailyQuest(let l), .dailyQuest(let r)): return l == r
+      case (.multiPart(let l), .multiPart(let r)): return l == r
+      case (.catchPokemon(let l), .catchPokemon(let r)): return l == r
+      case (.addFriend(let l), .addFriend(let r)): return l == r
+      case (.tradePokemon(let l), .tradePokemon(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public enum Context: SwiftProtobuf.Enum {
     public typealias RawValue = Int
@@ -253,6 +274,34 @@ public struct POGOProtos_Data_Quests_Quest {
     public init() {}
   }
 
+  public struct DailyQuest {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var currentPeriodBucket: Int32 = 0
+
+    public var currentStreakCount: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct DailyCounter {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var window: Int64 = 0
+
+    public var count: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
@@ -316,11 +365,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
 
   fileprivate class _StorageClass {
     var _questType: POGOProtos_Enums_QuestType = .questUnknownType
-    var _dailyQuest: POGOProtos_Data_Quests_DailyQuest? = nil
-    var _multiPart: POGOProtos_Data_Quests_Quest.MultiPartQuest? = nil
-    var _catchPokemon: POGOProtos_Data_Quests_CatchPokemonQuest? = nil
-    var _addFriend: POGOProtos_Data_Quests_AddFriendQuest? = nil
-    var _tradePokemon: POGOProtos_Data_Quests_TradePokemonQuest? = nil
+    var _quest: POGOProtos_Data_Quests_Quest.OneOf_Quest?
     var _questID: String = String()
     var _questSeed: Int64 = 0
     var _questContext: POGOProtos_Data_Quests_Quest.Context = .unset
@@ -338,7 +383,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _stampCountOverride: Int32 = 0
     var _s2CellID: Int64 = 0
     var _storyQuestTemplateVersion: Int32 = 0
-    var _dailyCounter: POGOProtos_Data_Player_DailyCounter? = nil
+    var _dailyCounter: POGOProtos_Data_Quests_Quest.DailyCounter? = nil
     var _rewardPokemonIconURL: String = String()
 
     static let defaultInstance = _StorageClass()
@@ -347,11 +392,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
 
     init(copying source: _StorageClass) {
       _questType = source._questType
-      _dailyQuest = source._dailyQuest
-      _multiPart = source._multiPart
-      _catchPokemon = source._catchPokemon
-      _addFriend = source._addFriend
-      _tradePokemon = source._tradePokemon
+      _quest = source._quest
       _questID = source._questID
       _questSeed = source._questSeed
       _questContext = source._questContext
@@ -387,11 +428,46 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._questType)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._dailyQuest)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._multiPart)
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._catchPokemon)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._addFriend)
-        case 6: try decoder.decodeSingularMessageField(value: &_storage._tradePokemon)
+        case 2:
+          var v: POGOProtos_Data_Quests_Quest.DailyQuest?
+          if let current = _storage._quest {
+            try decoder.handleConflictingOneOf()
+            if case .dailyQuest(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._quest = .dailyQuest(v)}
+        case 3:
+          var v: POGOProtos_Data_Quests_Quest.MultiPartQuest?
+          if let current = _storage._quest {
+            try decoder.handleConflictingOneOf()
+            if case .multiPart(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._quest = .multiPart(v)}
+        case 4:
+          var v: POGOProtos_Data_Quests_CatchPokemonQuest?
+          if let current = _storage._quest {
+            try decoder.handleConflictingOneOf()
+            if case .catchPokemon(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._quest = .catchPokemon(v)}
+        case 5:
+          var v: POGOProtos_Data_Quests_AddFriendQuest?
+          if let current = _storage._quest {
+            try decoder.handleConflictingOneOf()
+            if case .addFriend(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._quest = .addFriend(v)}
+        case 6:
+          var v: POGOProtos_Data_Quests_TradePokemonQuest?
+          if let current = _storage._quest {
+            try decoder.handleConflictingOneOf()
+            if case .tradePokemon(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._quest = .tradePokemon(v)}
         case 100: try decoder.decodeSingularStringField(value: &_storage._questID)
         case 101: try decoder.decodeSingularInt64Field(value: &_storage._questSeed)
         case 102: try decoder.decodeSingularEnumField(value: &_storage._questContext)
@@ -422,20 +498,18 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
       if _storage._questType != .questUnknownType {
         try visitor.visitSingularEnumField(value: _storage._questType, fieldNumber: 1)
       }
-      if let v = _storage._dailyQuest {
+      switch _storage._quest {
+      case .dailyQuest(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._multiPart {
+      case .multiPart(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._catchPokemon {
+      case .catchPokemon(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._addFriend {
+      case .addFriend(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._tradePokemon {
+      case .tradePokemon(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+      case nil: break
       }
       if !_storage._questID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._questID, fieldNumber: 100)
@@ -504,11 +578,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._questType != rhs_storage._questType {return false}
-        if _storage._dailyQuest != rhs_storage._dailyQuest {return false}
-        if _storage._multiPart != rhs_storage._multiPart {return false}
-        if _storage._catchPokemon != rhs_storage._catchPokemon {return false}
-        if _storage._addFriend != rhs_storage._addFriend {return false}
-        if _storage._tradePokemon != rhs_storage._tradePokemon {return false}
+        if _storage._quest != rhs_storage._quest {return false}
         if _storage._questID != rhs_storage._questID {return false}
         if _storage._questSeed != rhs_storage._questSeed {return false}
         if _storage._questContext != rhs_storage._questContext {return false}
@@ -577,6 +647,76 @@ extension POGOProtos_Data_Quests_Quest.MultiPartQuest: SwiftProtobuf.Message, Sw
 
   public static func ==(lhs: POGOProtos_Data_Quests_Quest.MultiPartQuest, rhs: POGOProtos_Data_Quests_Quest.MultiPartQuest) -> Bool {
     if lhs.subQuests != rhs.subQuests {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_Quest.DailyQuest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_Quest.protoMessageName + ".DailyQuest"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "current_period_bucket"),
+    2: .standard(proto: "current_streak_count"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.currentPeriodBucket)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.currentStreakCount)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.currentPeriodBucket != 0 {
+      try visitor.visitSingularInt32Field(value: self.currentPeriodBucket, fieldNumber: 1)
+    }
+    if self.currentStreakCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.currentStreakCount, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_Quest.DailyQuest, rhs: POGOProtos_Data_Quests_Quest.DailyQuest) -> Bool {
+    if lhs.currentPeriodBucket != rhs.currentPeriodBucket {return false}
+    if lhs.currentStreakCount != rhs.currentStreakCount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_Quest.DailyCounter: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_Quest.protoMessageName + ".DailyCounter"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "window"),
+    2: .same(proto: "count"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt64Field(value: &self.window)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.count)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.window != 0 {
+      try visitor.visitSingularInt64Field(value: self.window, fieldNumber: 1)
+    }
+    if self.count != 0 {
+      try visitor.visitSingularInt32Field(value: self.count, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_Quest.DailyCounter, rhs: POGOProtos_Data_Quests_Quest.DailyCounter) -> Bool {
+    if lhs.window != rhs.window {return false}
+    if lhs.count != rhs.count {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -36,6 +36,12 @@ public struct POGOProtos_Settings_SocialClientSettings {
 
   public var enableShareExPass: Bool = false
 
+  public var enableFacebookFriends: Bool = false
+
+  public var facebookFriendLimitPerRequest: Int32 = 0
+
+  public var disableFacebookFriendsOpeningPrompt: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -68,6 +74,9 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     4: .standard(proto: "max_friend_nickname_length"),
     5: .standard(proto: "enable_add_friend_via_qr_code"),
     6: .standard(proto: "enable_share_ex_pass"),
+    7: .standard(proto: "enable_facebook_friends"),
+    8: .standard(proto: "facebook_friend_limit_per_request"),
+    9: .standard(proto: "disable_facebook_friends_opening_prompt"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -79,6 +88,9 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
       case 4: try decoder.decodeSingularInt32Field(value: &self.maxFriendNicknameLength)
       case 5: try decoder.decodeSingularBoolField(value: &self.enableAddFriendViaQrCode)
       case 6: try decoder.decodeSingularBoolField(value: &self.enableShareExPass)
+      case 7: try decoder.decodeSingularBoolField(value: &self.enableFacebookFriends)
+      case 8: try decoder.decodeSingularInt32Field(value: &self.facebookFriendLimitPerRequest)
+      case 9: try decoder.decodeSingularBoolField(value: &self.disableFacebookFriendsOpeningPrompt)
       default: break
       }
     }
@@ -103,6 +115,15 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     if self.enableShareExPass != false {
       try visitor.visitSingularBoolField(value: self.enableShareExPass, fieldNumber: 6)
     }
+    if self.enableFacebookFriends != false {
+      try visitor.visitSingularBoolField(value: self.enableFacebookFriends, fieldNumber: 7)
+    }
+    if self.facebookFriendLimitPerRequest != 0 {
+      try visitor.visitSingularInt32Field(value: self.facebookFriendLimitPerRequest, fieldNumber: 8)
+    }
+    if self.disableFacebookFriendsOpeningPrompt != false {
+      try visitor.visitSingularBoolField(value: self.disableFacebookFriendsOpeningPrompt, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -113,6 +134,9 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     if lhs.maxFriendNicknameLength != rhs.maxFriendNicknameLength {return false}
     if lhs.enableAddFriendViaQrCode != rhs.enableAddFriendViaQrCode {return false}
     if lhs.enableShareExPass != rhs.enableShareExPass {return false}
+    if lhs.enableFacebookFriends != rhs.enableFacebookFriends {return false}
+    if lhs.facebookFriendLimitPerRequest != rhs.facebookFriendLimitPerRequest {return false}
+    if lhs.disableFacebookFriendsOpeningPrompt != rhs.disableFacebookFriendsOpeningPrompt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

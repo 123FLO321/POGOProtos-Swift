@@ -29,54 +29,93 @@ public struct POGOProtos_Data_Quests_QuestReward {
     set {_uniqueStorage()._type = newValue}
   }
 
+  public var reward: OneOf_Reward? {
+    get {return _storage._reward}
+    set {_uniqueStorage()._reward = newValue}
+  }
+
   public var exp: Int32 {
-    get {return _storage._exp}
-    set {_uniqueStorage()._exp = newValue}
+    get {
+      if case .exp(let v)? = _storage._reward {return v}
+      return 0
+    }
+    set {_uniqueStorage()._reward = .exp(newValue)}
   }
 
   public var item: POGOProtos_Data_Quests_QuestReward.ItemReward {
-    get {return _storage._item ?? POGOProtos_Data_Quests_QuestReward.ItemReward()}
-    set {_uniqueStorage()._item = newValue}
+    get {
+      if case .item(let v)? = _storage._reward {return v}
+      return POGOProtos_Data_Quests_QuestReward.ItemReward()
+    }
+    set {_uniqueStorage()._reward = .item(newValue)}
   }
-  /// Returns true if `item` has been explicitly set.
-  public var hasItem: Bool {return _storage._item != nil}
-  /// Clears the value of `item`. Subsequent reads from it will return its default value.
-  public mutating func clearItem() {_uniqueStorage()._item = nil}
 
   public var stardust: Int32 {
-    get {return _storage._stardust}
-    set {_uniqueStorage()._stardust = newValue}
+    get {
+      if case .stardust(let v)? = _storage._reward {return v}
+      return 0
+    }
+    set {_uniqueStorage()._reward = .stardust(newValue)}
   }
 
   public var candy: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward {
-    get {return _storage._candy ?? POGOProtos_Data_Quests_QuestReward.PokemonCandyReward()}
-    set {_uniqueStorage()._candy = newValue}
+    get {
+      if case .candy(let v)? = _storage._reward {return v}
+      return POGOProtos_Data_Quests_QuestReward.PokemonCandyReward()
+    }
+    set {_uniqueStorage()._reward = .candy(newValue)}
   }
-  /// Returns true if `candy` has been explicitly set.
-  public var hasCandy: Bool {return _storage._candy != nil}
-  /// Clears the value of `candy`. Subsequent reads from it will return its default value.
-  public mutating func clearCandy() {_uniqueStorage()._candy = nil}
 
   public var avatarTemplateID: String {
-    get {return _storage._avatarTemplateID}
-    set {_uniqueStorage()._avatarTemplateID = newValue}
+    get {
+      if case .avatarTemplateID(let v)? = _storage._reward {return v}
+      return String()
+    }
+    set {_uniqueStorage()._reward = .avatarTemplateID(newValue)}
   }
 
   public var questTemplateID: String {
-    get {return _storage._questTemplateID}
-    set {_uniqueStorage()._questTemplateID = newValue}
+    get {
+      if case .questTemplateID(let v)? = _storage._reward {return v}
+      return String()
+    }
+    set {_uniqueStorage()._reward = .questTemplateID(newValue)}
   }
 
   public var pokemonEncounter: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward {
-    get {return _storage._pokemonEncounter ?? POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward()}
-    set {_uniqueStorage()._pokemonEncounter = newValue}
+    get {
+      if case .pokemonEncounter(let v)? = _storage._reward {return v}
+      return POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward()
+    }
+    set {_uniqueStorage()._reward = .pokemonEncounter(newValue)}
   }
-  /// Returns true if `pokemonEncounter` has been explicitly set.
-  public var hasPokemonEncounter: Bool {return _storage._pokemonEncounter != nil}
-  /// Clears the value of `pokemonEncounter`. Subsequent reads from it will return its default value.
-  public mutating func clearPokemonEncounter() {_uniqueStorage()._pokemonEncounter = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_Reward: Equatable {
+    case exp(Int32)
+    case item(POGOProtos_Data_Quests_QuestReward.ItemReward)
+    case stardust(Int32)
+    case candy(POGOProtos_Data_Quests_QuestReward.PokemonCandyReward)
+    case avatarTemplateID(String)
+    case questTemplateID(String)
+    case pokemonEncounter(POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Data_Quests_QuestReward.OneOf_Reward, rhs: POGOProtos_Data_Quests_QuestReward.OneOf_Reward) -> Bool {
+      switch (lhs, rhs) {
+      case (.exp(let l), .exp(let r)): return l == r
+      case (.item(let l), .item(let r)): return l == r
+      case (.stardust(let l), .stardust(let r)): return l == r
+      case (.candy(let l), .candy(let r)): return l == r
+      case (.avatarTemplateID(let l), .avatarTemplateID(let r)): return l == r
+      case (.questTemplateID(let l), .questTemplateID(let r)): return l == r
+      case (.pokemonEncounter(let l), .pokemonEncounter(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public enum TypeEnum: SwiftProtobuf.Enum {
     public typealias RawValue = Int
@@ -157,14 +196,25 @@ public struct POGOProtos_Data_Quests_QuestReward {
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
+    public var type: OneOf_Type? {
+      get {return _storage._type}
+      set {_uniqueStorage()._type = newValue}
+    }
+
     public var pokemonID: POGOProtos_Enums_PokemonId {
-      get {return _storage._pokemonID}
-      set {_uniqueStorage()._pokemonID = newValue}
+      get {
+        if case .pokemonID(let v)? = _storage._type {return v}
+        return .missingno
+      }
+      set {_uniqueStorage()._type = .pokemonID(newValue)}
     }
 
     public var useQuestPokemonEncounterDistribuition: Bool {
-      get {return _storage._useQuestPokemonEncounterDistribuition}
-      set {_uniqueStorage()._useQuestPokemonEncounterDistribuition = newValue}
+      get {
+        if case .useQuestPokemonEncounterDistribuition(let v)? = _storage._type {return v}
+        return false
+      }
+      set {_uniqueStorage()._type = .useQuestPokemonEncounterDistribuition(newValue)}
     }
 
     public var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
@@ -191,6 +241,21 @@ public struct POGOProtos_Data_Quests_QuestReward {
     public mutating func clearDittoDisplay() {_uniqueStorage()._dittoDisplay = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public enum OneOf_Type: Equatable {
+      case pokemonID(POGOProtos_Enums_PokemonId)
+      case useQuestPokemonEncounterDistribuition(Bool)
+
+    #if !swift(>=4.1)
+      public static func ==(lhs: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward.OneOf_Type, rhs: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward.OneOf_Type) -> Bool {
+        switch (lhs, rhs) {
+        case (.pokemonID(let l), .pokemonID(let r)): return l == r
+        case (.useQuestPokemonEncounterDistribuition(let l), .useQuestPokemonEncounterDistribuition(let r)): return l == r
+        default: return false
+        }
+      }
+    #endif
+    }
 
     public init() {}
 
@@ -239,13 +304,7 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
 
   fileprivate class _StorageClass {
     var _type: POGOProtos_Data_Quests_QuestReward.TypeEnum = .unset
-    var _exp: Int32 = 0
-    var _item: POGOProtos_Data_Quests_QuestReward.ItemReward? = nil
-    var _stardust: Int32 = 0
-    var _candy: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward? = nil
-    var _avatarTemplateID: String = String()
-    var _questTemplateID: String = String()
-    var _pokemonEncounter: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward? = nil
+    var _reward: POGOProtos_Data_Quests_QuestReward.OneOf_Reward?
 
     static let defaultInstance = _StorageClass()
 
@@ -253,13 +312,7 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
 
     init(copying source: _StorageClass) {
       _type = source._type
-      _exp = source._exp
-      _item = source._item
-      _stardust = source._stardust
-      _candy = source._candy
-      _avatarTemplateID = source._avatarTemplateID
-      _questTemplateID = source._questTemplateID
-      _pokemonEncounter = source._pokemonEncounter
+      _reward = source._reward
     }
   }
 
@@ -276,13 +329,50 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._type)
-        case 2: try decoder.decodeSingularInt32Field(value: &_storage._exp)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._item)
-        case 4: try decoder.decodeSingularInt32Field(value: &_storage._stardust)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._candy)
-        case 6: try decoder.decodeSingularStringField(value: &_storage._avatarTemplateID)
-        case 7: try decoder.decodeSingularStringField(value: &_storage._questTemplateID)
-        case 8: try decoder.decodeSingularMessageField(value: &_storage._pokemonEncounter)
+        case 2:
+          if _storage._reward != nil {try decoder.handleConflictingOneOf()}
+          var v: Int32?
+          try decoder.decodeSingularInt32Field(value: &v)
+          if let v = v {_storage._reward = .exp(v)}
+        case 3:
+          var v: POGOProtos_Data_Quests_QuestReward.ItemReward?
+          if let current = _storage._reward {
+            try decoder.handleConflictingOneOf()
+            if case .item(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._reward = .item(v)}
+        case 4:
+          if _storage._reward != nil {try decoder.handleConflictingOneOf()}
+          var v: Int32?
+          try decoder.decodeSingularInt32Field(value: &v)
+          if let v = v {_storage._reward = .stardust(v)}
+        case 5:
+          var v: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward?
+          if let current = _storage._reward {
+            try decoder.handleConflictingOneOf()
+            if case .candy(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._reward = .candy(v)}
+        case 6:
+          if _storage._reward != nil {try decoder.handleConflictingOneOf()}
+          var v: String?
+          try decoder.decodeSingularStringField(value: &v)
+          if let v = v {_storage._reward = .avatarTemplateID(v)}
+        case 7:
+          if _storage._reward != nil {try decoder.handleConflictingOneOf()}
+          var v: String?
+          try decoder.decodeSingularStringField(value: &v)
+          if let v = v {_storage._reward = .questTemplateID(v)}
+        case 8:
+          var v: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward?
+          if let current = _storage._reward {
+            try decoder.handleConflictingOneOf()
+            if case .pokemonEncounter(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._reward = .pokemonEncounter(v)}
         default: break
         }
       }
@@ -294,26 +384,22 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
       if _storage._type != .unset {
         try visitor.visitSingularEnumField(value: _storage._type, fieldNumber: 1)
       }
-      if _storage._exp != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._exp, fieldNumber: 2)
-      }
-      if let v = _storage._item {
+      switch _storage._reward {
+      case .exp(let v)?:
+        try visitor.visitSingularInt32Field(value: v, fieldNumber: 2)
+      case .item(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
-      if _storage._stardust != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._stardust, fieldNumber: 4)
-      }
-      if let v = _storage._candy {
+      case .stardust(let v)?:
+        try visitor.visitSingularInt32Field(value: v, fieldNumber: 4)
+      case .candy(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
-      if !_storage._avatarTemplateID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._avatarTemplateID, fieldNumber: 6)
-      }
-      if !_storage._questTemplateID.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._questTemplateID, fieldNumber: 7)
-      }
-      if let v = _storage._pokemonEncounter {
+      case .avatarTemplateID(let v)?:
+        try visitor.visitSingularStringField(value: v, fieldNumber: 6)
+      case .questTemplateID(let v)?:
+        try visitor.visitSingularStringField(value: v, fieldNumber: 7)
+      case .pokemonEncounter(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+      case nil: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -325,13 +411,7 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._type != rhs_storage._type {return false}
-        if _storage._exp != rhs_storage._exp {return false}
-        if _storage._item != rhs_storage._item {return false}
-        if _storage._stardust != rhs_storage._stardust {return false}
-        if _storage._candy != rhs_storage._candy {return false}
-        if _storage._avatarTemplateID != rhs_storage._avatarTemplateID {return false}
-        if _storage._questTemplateID != rhs_storage._questTemplateID {return false}
-        if _storage._pokemonEncounter != rhs_storage._pokemonEncounter {return false}
+        if _storage._reward != rhs_storage._reward {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -435,8 +515,7 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    var _useQuestPokemonEncounterDistribuition: Bool = false
+    var _type: POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward.OneOf_Type?
     var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
     var _isHiddenDitto: Bool = false
     var _dittoDisplay: POGOProtos_Data_PokemonDisplay? = nil
@@ -446,8 +525,7 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtob
     private init() {}
 
     init(copying source: _StorageClass) {
-      _pokemonID = source._pokemonID
-      _useQuestPokemonEncounterDistribuition = source._useQuestPokemonEncounterDistribuition
+      _type = source._type
       _pokemonDisplay = source._pokemonDisplay
       _isHiddenDitto = source._isHiddenDitto
       _dittoDisplay = source._dittoDisplay
@@ -466,8 +544,16 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtob
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularEnumField(value: &_storage._pokemonID)
-        case 2: try decoder.decodeSingularBoolField(value: &_storage._useQuestPokemonEncounterDistribuition)
+        case 1:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: POGOProtos_Enums_PokemonId?
+          try decoder.decodeSingularEnumField(value: &v)
+          if let v = v {_storage._type = .pokemonID(v)}
+        case 2:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .useQuestPokemonEncounterDistribuition(v)}
         case 3: try decoder.decodeSingularMessageField(value: &_storage._pokemonDisplay)
         case 4: try decoder.decodeSingularBoolField(value: &_storage._isHiddenDitto)
         case 5: try decoder.decodeSingularMessageField(value: &_storage._dittoDisplay)
@@ -479,11 +565,12 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtob
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._pokemonID != .missingno {
-        try visitor.visitSingularEnumField(value: _storage._pokemonID, fieldNumber: 1)
-      }
-      if _storage._useQuestPokemonEncounterDistribuition != false {
-        try visitor.visitSingularBoolField(value: _storage._useQuestPokemonEncounterDistribuition, fieldNumber: 2)
+      switch _storage._type {
+      case .pokemonID(let v)?:
+        try visitor.visitSingularEnumField(value: v, fieldNumber: 1)
+      case .useQuestPokemonEncounterDistribuition(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
+      case nil: break
       }
       if let v = _storage._pokemonDisplay {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
@@ -503,8 +590,7 @@ extension POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward: SwiftProtob
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._pokemonID != rhs_storage._pokemonID {return false}
-        if _storage._useQuestPokemonEncounterDistribuition != rhs_storage._useQuestPokemonEncounterDistribuition {return false}
+        if _storage._type != rhs_storage._type {return false}
         if _storage._pokemonDisplay != rhs_storage._pokemonDisplay {return false}
         if _storage._isHiddenDitto != rhs_storage._isHiddenDitto {return false}
         if _storage._dittoDisplay != rhs_storage._dittoDisplay {return false}

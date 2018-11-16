@@ -27,7 +27,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case pokemonCapture // = 3
   case nameSelection // = 4
   case pokemonBerry // = 5
-  case useItemTutorial // = 6
+  case useItemTutorialState // = 6
   case firstTimeExperienceComplete // = 7
   case pokestopTutorial // = 8
   case gymTutorial // = 9
@@ -35,6 +35,13 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case privacyPolicyConfirmation // = 11
   case tradingTutorial // = 12
   case poiSubmissionTutorial // = 13
+  case v1StartTutorial // = 14
+  case v2StartTutorial // = 15
+  case v2CustomizedAvatar // = 16
+  case v2CaughtStarter // = 17
+  case v2FinishedTutorialCatches // = 18
+  case v2NameSelection // = 19
+  case v2EggGiven // = 20
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -49,7 +56,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case 3: self = .pokemonCapture
     case 4: self = .nameSelection
     case 5: self = .pokemonBerry
-    case 6: self = .useItemTutorial
+    case 6: self = .useItemTutorialState
     case 7: self = .firstTimeExperienceComplete
     case 8: self = .pokestopTutorial
     case 9: self = .gymTutorial
@@ -57,6 +64,13 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case 11: self = .privacyPolicyConfirmation
     case 12: self = .tradingTutorial
     case 13: self = .poiSubmissionTutorial
+    case 14: self = .v1StartTutorial
+    case 15: self = .v2StartTutorial
+    case 16: self = .v2CustomizedAvatar
+    case 17: self = .v2CaughtStarter
+    case 18: self = .v2FinishedTutorialCatches
+    case 19: self = .v2NameSelection
+    case 20: self = .v2EggGiven
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -69,7 +83,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .pokemonCapture: return 3
     case .nameSelection: return 4
     case .pokemonBerry: return 5
-    case .useItemTutorial: return 6
+    case .useItemTutorialState: return 6
     case .firstTimeExperienceComplete: return 7
     case .pokestopTutorial: return 8
     case .gymTutorial: return 9
@@ -77,6 +91,13 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .privacyPolicyConfirmation: return 11
     case .tradingTutorial: return 12
     case .poiSubmissionTutorial: return 13
+    case .v1StartTutorial: return 14
+    case .v2StartTutorial: return 15
+    case .v2CustomizedAvatar: return 16
+    case .v2CaughtStarter: return 17
+    case .v2FinishedTutorialCatches: return 18
+    case .v2NameSelection: return 19
+    case .v2EggGiven: return 20
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -94,7 +115,7 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
     .pokemonCapture,
     .nameSelection,
     .pokemonBerry,
-    .useItemTutorial,
+    .useItemTutorialState,
     .firstTimeExperienceComplete,
     .pokestopTutorial,
     .gymTutorial,
@@ -102,6 +123,13 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
     .privacyPolicyConfirmation,
     .tradingTutorial,
     .poiSubmissionTutorial,
+    .v1StartTutorial,
+    .v2StartTutorial,
+    .v2CustomizedAvatar,
+    .v2CaughtStarter,
+    .v2FinishedTutorialCatches,
+    .v2NameSelection,
+    .v2EggGiven,
   ]
 }
 
@@ -117,7 +145,7 @@ extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
     3: .same(proto: "POKEMON_CAPTURE"),
     4: .same(proto: "NAME_SELECTION"),
     5: .same(proto: "POKEMON_BERRY"),
-    6: .same(proto: "USE_ITEM_TUTORIAL"),
+    6: .same(proto: "USE_ITEM_TUTORIAL_STATE"),
     7: .same(proto: "FIRST_TIME_EXPERIENCE_COMPLETE"),
     8: .same(proto: "POKESTOP_TUTORIAL"),
     9: .same(proto: "GYM_TUTORIAL"),
@@ -125,5 +153,12 @@ extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
     11: .same(proto: "PRIVACY_POLICY_CONFIRMATION"),
     12: .same(proto: "TRADING_TUTORIAL"),
     13: .same(proto: "POI_SUBMISSION_TUTORIAL"),
+    14: .same(proto: "V1_START_TUTORIAL"),
+    15: .same(proto: "V2_START_TUTORIAL"),
+    16: .same(proto: "V2_CUSTOMIZED_AVATAR"),
+    17: .same(proto: "V2_CAUGHT_STARTER"),
+    18: .same(proto: "V2_FINISHED_TUTORIAL_CATCHES"),
+    19: .same(proto: "V2_NAME_SELECTION"),
+    20: .same(proto: "V2_EGG_GIVEN"),
   ]
 }

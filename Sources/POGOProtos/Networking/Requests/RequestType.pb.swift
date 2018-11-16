@@ -107,6 +107,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case fetchAllNews // = 816
   case markReadNewsArticle // = 817
   case getPlayerDisplayInfo // = 818
+  case belugaTransactionStart // = 819
+  case belugaTransactionComplete // = 820
   case getNewQuests // = 900
   case getQuestDetails // = 901
   case completeQuest // = 902
@@ -229,6 +231,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 816: self = .fetchAllNews
     case 817: self = .markReadNewsArticle
     case 818: self = .getPlayerDisplayInfo
+    case 819: self = .belugaTransactionStart
+    case 820: self = .belugaTransactionComplete
     case 900: self = .getNewQuests
     case 901: self = .getQuestDetails
     case 902: self = .completeQuest
@@ -349,6 +353,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .fetchAllNews: return 816
     case .markReadNewsArticle: return 817
     case .getPlayerDisplayInfo: return 818
+    case .belugaTransactionStart: return 819
+    case .belugaTransactionComplete: return 820
     case .getNewQuests: return 900
     case .getQuestDetails: return 901
     case .completeQuest: return 902
@@ -474,6 +480,8 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .fetchAllNews,
     .markReadNewsArticle,
     .getPlayerDisplayInfo,
+    .belugaTransactionStart,
+    .belugaTransactionComplete,
     .getNewQuests,
     .getQuestDetails,
     .completeQuest,
@@ -597,6 +605,8 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     816: .same(proto: "FETCH_ALL_NEWS"),
     817: .same(proto: "MARK_READ_NEWS_ARTICLE"),
     818: .same(proto: "GET_PLAYER_DISPLAY_INFO"),
+    819: .same(proto: "BELUGA_TRANSACTION_START"),
+    820: .same(proto: "BELUGA_TRANSACTION_COMPLETE"),
     900: .same(proto: "GET_NEW_QUESTS"),
     901: .same(proto: "GET_QUEST_DETAILS"),
     902: .same(proto: "COMPLETE_QUEST"),

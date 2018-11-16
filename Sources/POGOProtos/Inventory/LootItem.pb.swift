@@ -24,46 +24,93 @@ public struct POGOProtos_Inventory_LootItem {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
+  public var type: OneOf_Type? {
+    get {return _storage._type}
+    set {_uniqueStorage()._type = newValue}
+  }
+
   public var item: POGOProtos_Inventory_Item_ItemId {
-    get {return _storage._item}
-    set {_uniqueStorage()._item = newValue}
+    get {
+      if case .item(let v)? = _storage._type {return v}
+      return .itemUnknown
+    }
+    set {_uniqueStorage()._type = .item(newValue)}
   }
 
   public var stardust: Bool {
-    get {return _storage._stardust}
-    set {_uniqueStorage()._stardust = newValue}
+    get {
+      if case .stardust(let v)? = _storage._type {return v}
+      return false
+    }
+    set {_uniqueStorage()._type = .stardust(newValue)}
   }
 
   public var pokecoin: Bool {
-    get {return _storage._pokecoin}
-    set {_uniqueStorage()._pokecoin = newValue}
+    get {
+      if case .pokecoin(let v)? = _storage._type {return v}
+      return false
+    }
+    set {_uniqueStorage()._type = .pokecoin(newValue)}
   }
 
   public var pokemonCandy: POGOProtos_Enums_PokemonId {
-    get {return _storage._pokemonCandy}
-    set {_uniqueStorage()._pokemonCandy = newValue}
+    get {
+      if case .pokemonCandy(let v)? = _storage._type {return v}
+      return .missingno
+    }
+    set {_uniqueStorage()._type = .pokemonCandy(newValue)}
   }
 
   public var count: Int32 {
-    get {return _storage._count}
-    set {_uniqueStorage()._count = newValue}
+    get {
+      if case .count(let v)? = _storage._type {return v}
+      return 0
+    }
+    set {_uniqueStorage()._type = .count(newValue)}
   }
 
   public var experience: Bool {
-    get {return _storage._experience}
-    set {_uniqueStorage()._experience = newValue}
+    get {
+      if case .experience(let v)? = _storage._type {return v}
+      return false
+    }
+    set {_uniqueStorage()._type = .experience(newValue)}
   }
 
   public var pokemonEgg: POGOProtos_Data_PokemonData {
-    get {return _storage._pokemonEgg ?? POGOProtos_Data_PokemonData()}
-    set {_uniqueStorage()._pokemonEgg = newValue}
+    get {
+      if case .pokemonEgg(let v)? = _storage._type {return v}
+      return POGOProtos_Data_PokemonData()
+    }
+    set {_uniqueStorage()._type = .pokemonEgg(newValue)}
   }
-  /// Returns true if `pokemonEgg` has been explicitly set.
-  public var hasPokemonEgg: Bool {return _storage._pokemonEgg != nil}
-  /// Clears the value of `pokemonEgg`. Subsequent reads from it will return its default value.
-  public mutating func clearPokemonEgg() {_uniqueStorage()._pokemonEgg = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_Type: Equatable {
+    case item(POGOProtos_Inventory_Item_ItemId)
+    case stardust(Bool)
+    case pokecoin(Bool)
+    case pokemonCandy(POGOProtos_Enums_PokemonId)
+    case count(Int32)
+    case experience(Bool)
+    case pokemonEgg(POGOProtos_Data_PokemonData)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Inventory_LootItem.OneOf_Type, rhs: POGOProtos_Inventory_LootItem.OneOf_Type) -> Bool {
+      switch (lhs, rhs) {
+      case (.item(let l), .item(let r)): return l == r
+      case (.stardust(let l), .stardust(let r)): return l == r
+      case (.pokecoin(let l), .pokecoin(let r)): return l == r
+      case (.pokemonCandy(let l), .pokemonCandy(let r)): return l == r
+      case (.count(let l), .count(let r)): return l == r
+      case (.experience(let l), .experience(let r)): return l == r
+      case (.pokemonEgg(let l), .pokemonEgg(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public init() {}
 
@@ -87,26 +134,14 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
   ]
 
   fileprivate class _StorageClass {
-    var _item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
-    var _stardust: Bool = false
-    var _pokecoin: Bool = false
-    var _pokemonCandy: POGOProtos_Enums_PokemonId = .missingno
-    var _count: Int32 = 0
-    var _experience: Bool = false
-    var _pokemonEgg: POGOProtos_Data_PokemonData? = nil
+    var _type: POGOProtos_Inventory_LootItem.OneOf_Type?
 
     static let defaultInstance = _StorageClass()
 
     private init() {}
 
     init(copying source: _StorageClass) {
-      _item = source._item
-      _stardust = source._stardust
-      _pokecoin = source._pokecoin
-      _pokemonCandy = source._pokemonCandy
-      _count = source._count
-      _experience = source._experience
-      _pokemonEgg = source._pokemonEgg
+      _type = source._type
     }
   }
 
@@ -122,13 +157,44 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularEnumField(value: &_storage._item)
-        case 2: try decoder.decodeSingularBoolField(value: &_storage._stardust)
-        case 3: try decoder.decodeSingularBoolField(value: &_storage._pokecoin)
-        case 4: try decoder.decodeSingularEnumField(value: &_storage._pokemonCandy)
-        case 5: try decoder.decodeSingularInt32Field(value: &_storage._count)
-        case 6: try decoder.decodeSingularBoolField(value: &_storage._experience)
-        case 7: try decoder.decodeSingularMessageField(value: &_storage._pokemonEgg)
+        case 1:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: POGOProtos_Inventory_Item_ItemId?
+          try decoder.decodeSingularEnumField(value: &v)
+          if let v = v {_storage._type = .item(v)}
+        case 2:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .stardust(v)}
+        case 3:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .pokecoin(v)}
+        case 4:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: POGOProtos_Enums_PokemonId?
+          try decoder.decodeSingularEnumField(value: &v)
+          if let v = v {_storage._type = .pokemonCandy(v)}
+        case 5:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Int32?
+          try decoder.decodeSingularInt32Field(value: &v)
+          if let v = v {_storage._type = .count(v)}
+        case 6:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .experience(v)}
+        case 7:
+          var v: POGOProtos_Data_PokemonData?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .pokemonEgg(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .pokemonEgg(v)}
         default: break
         }
       }
@@ -137,26 +203,22 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._item != .itemUnknown {
-        try visitor.visitSingularEnumField(value: _storage._item, fieldNumber: 1)
-      }
-      if _storage._stardust != false {
-        try visitor.visitSingularBoolField(value: _storage._stardust, fieldNumber: 2)
-      }
-      if _storage._pokecoin != false {
-        try visitor.visitSingularBoolField(value: _storage._pokecoin, fieldNumber: 3)
-      }
-      if _storage._pokemonCandy != .missingno {
-        try visitor.visitSingularEnumField(value: _storage._pokemonCandy, fieldNumber: 4)
-      }
-      if _storage._count != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._count, fieldNumber: 5)
-      }
-      if _storage._experience != false {
-        try visitor.visitSingularBoolField(value: _storage._experience, fieldNumber: 6)
-      }
-      if let v = _storage._pokemonEgg {
+      switch _storage._type {
+      case .item(let v)?:
+        try visitor.visitSingularEnumField(value: v, fieldNumber: 1)
+      case .stardust(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
+      case .pokecoin(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
+      case .pokemonCandy(let v)?:
+        try visitor.visitSingularEnumField(value: v, fieldNumber: 4)
+      case .count(let v)?:
+        try visitor.visitSingularInt32Field(value: v, fieldNumber: 5)
+      case .experience(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
+      case .pokemonEgg(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+      case nil: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -167,13 +229,7 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._item != rhs_storage._item {return false}
-        if _storage._stardust != rhs_storage._stardust {return false}
-        if _storage._pokecoin != rhs_storage._pokecoin {return false}
-        if _storage._pokemonCandy != rhs_storage._pokemonCandy {return false}
-        if _storage._count != rhs_storage._count {return false}
-        if _storage._experience != rhs_storage._experience {return false}
-        if _storage._pokemonEgg != rhs_storage._pokemonEgg {return false}
+        if _storage._type != rhs_storage._type {return false}
         return true
       }
       if !storagesAreEqual {return false}

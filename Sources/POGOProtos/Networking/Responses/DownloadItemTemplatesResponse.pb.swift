@@ -294,6 +294,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `iapCategoryDisplay`. Subsequent reads from it will return its default value.
     public mutating func clearIapCategoryDisplay() {_uniqueStorage()._iapCategoryDisplay = nil}
 
+    public var belugaPokemonWhitelist: POGOProtos_Settings_Master_BelugaPokemonWhitelist {
+      get {return _storage._belugaPokemonWhitelist ?? POGOProtos_Settings_Master_BelugaPokemonWhitelist()}
+      set {_uniqueStorage()._belugaPokemonWhitelist = newValue}
+    }
+    /// Returns true if `belugaPokemonWhitelist` has been explicitly set.
+    public var hasBelugaPokemonWhitelist: Bool {return _storage._belugaPokemonWhitelist != nil}
+    /// Clears the value of `belugaPokemonWhitelist`. Subsequent reads from it will return its default value.
+    public mutating func clearBelugaPokemonWhitelist() {_uniqueStorage()._belugaPokemonWhitelist = nil}
+
     public var onboardingSettings: POGOProtos_Settings_Master_OnboardingSettings {
       get {return _storage._onboardingSettings ?? POGOProtos_Settings_Master_OnboardingSettings()}
       set {_uniqueStorage()._onboardingSettings = newValue}
@@ -451,6 +460,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     26: .standard(proto: "weather_bonus_settings"),
     27: .standard(proto: "pokemon_scale_settings"),
     28: .standard(proto: "iap_category_display"),
+    29: .standard(proto: "beluga_pokemon_whitelist"),
     30: .standard(proto: "onboarding_settings"),
     31: .standard(proto: "friendship_milestone_settings"),
     32: .standard(proto: "lucky_pokemon_settings"),
@@ -484,6 +494,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _weatherBonusSettings: POGOProtos_Settings_Master_WeatherBonus? = nil
     var _pokemonScaleSettings: POGOProtos_Settings_Master_PokemonScaleSetting? = nil
     var _iapCategoryDisplay: POGOProtos_Settings_Master_IapItemCategoryDisplay? = nil
+    var _belugaPokemonWhitelist: POGOProtos_Settings_Master_BelugaPokemonWhitelist? = nil
     var _onboardingSettings: POGOProtos_Settings_Master_OnboardingSettings? = nil
     var _friendshipMilestoneSettings: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings? = nil
     var _luckyPokemonSettings: POGOProtos_Settings_Master_LuckyPokemonSettings? = nil
@@ -520,6 +531,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _weatherBonusSettings = source._weatherBonusSettings
       _pokemonScaleSettings = source._pokemonScaleSettings
       _iapCategoryDisplay = source._iapCategoryDisplay
+      _belugaPokemonWhitelist = source._belugaPokemonWhitelist
       _onboardingSettings = source._onboardingSettings
       _friendshipMilestoneSettings = source._friendshipMilestoneSettings
       _luckyPokemonSettings = source._luckyPokemonSettings
@@ -565,6 +577,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 26: try decoder.decodeSingularMessageField(value: &_storage._weatherBonusSettings)
         case 27: try decoder.decodeSingularMessageField(value: &_storage._pokemonScaleSettings)
         case 28: try decoder.decodeSingularMessageField(value: &_storage._iapCategoryDisplay)
+        case 29: try decoder.decodeSingularMessageField(value: &_storage._belugaPokemonWhitelist)
         case 30: try decoder.decodeSingularMessageField(value: &_storage._onboardingSettings)
         case 31: try decoder.decodeSingularMessageField(value: &_storage._friendshipMilestoneSettings)
         case 32: try decoder.decodeSingularMessageField(value: &_storage._luckyPokemonSettings)
@@ -653,6 +666,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._iapCategoryDisplay {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 28)
       }
+      if let v = _storage._belugaPokemonWhitelist {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 29)
+      }
       if let v = _storage._onboardingSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 30)
       }
@@ -702,6 +718,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._weatherBonusSettings != rhs_storage._weatherBonusSettings {return false}
         if _storage._pokemonScaleSettings != rhs_storage._pokemonScaleSettings {return false}
         if _storage._iapCategoryDisplay != rhs_storage._iapCategoryDisplay {return false}
+        if _storage._belugaPokemonWhitelist != rhs_storage._belugaPokemonWhitelist {return false}
         if _storage._onboardingSettings != rhs_storage._onboardingSettings {return false}
         if _storage._friendshipMilestoneSettings != rhs_storage._friendshipMilestoneSettings {return false}
         if _storage._luckyPokemonSettings != rhs_storage._luckyPokemonSettings {return false}

@@ -64,73 +64,58 @@ public struct POGOProtos_Networking_Platform_Telemetry_Distribution {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum BucketType: SwiftProtobuf.Enum {
-    public typealias RawValue = Int
-    case none // = 0
-    case linearBuckets // = 1
-    case exponentialBuckets // = 2
-    case explicitBuckets // = 3
-    case UNRECOGNIZED(Int)
-
-    public init() {
-      self = .none
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .none
-      case 1: self = .linearBuckets
-      case 2: self = .exponentialBuckets
-      case 3: self = .explicitBuckets
-      default: self = .UNRECOGNIZED(rawValue)
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .none: return 0
-      case .linearBuckets: return 1
-      case .exponentialBuckets: return 2
-      case .explicitBuckets: return 3
-      case .UNRECOGNIZED(let i): return i
-      }
-    }
-
-  }
-
   public struct BucketOptions {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    public var linearBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.LinearBuckets {
-      get {return _storage._linearBuckets ?? POGOProtos_Networking_Platform_Telemetry_Distribution.LinearBuckets()}
-      set {_uniqueStorage()._linearBuckets = newValue}
+    public var bucketType: OneOf_BucketType? {
+      get {return _storage._bucketType}
+      set {_uniqueStorage()._bucketType = newValue}
     }
-    /// Returns true if `linearBuckets` has been explicitly set.
-    public var hasLinearBuckets: Bool {return _storage._linearBuckets != nil}
-    /// Clears the value of `linearBuckets`. Subsequent reads from it will return its default value.
-    public mutating func clearLinearBuckets() {_uniqueStorage()._linearBuckets = nil}
+
+    public var linearBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.LinearBuckets {
+      get {
+        if case .linearBuckets(let v)? = _storage._bucketType {return v}
+        return POGOProtos_Networking_Platform_Telemetry_Distribution.LinearBuckets()
+      }
+      set {_uniqueStorage()._bucketType = .linearBuckets(newValue)}
+    }
 
     public var exponentialBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.ExponentialBuckets {
-      get {return _storage._exponentialBuckets ?? POGOProtos_Networking_Platform_Telemetry_Distribution.ExponentialBuckets()}
-      set {_uniqueStorage()._exponentialBuckets = newValue}
+      get {
+        if case .exponentialBuckets(let v)? = _storage._bucketType {return v}
+        return POGOProtos_Networking_Platform_Telemetry_Distribution.ExponentialBuckets()
+      }
+      set {_uniqueStorage()._bucketType = .exponentialBuckets(newValue)}
     }
-    /// Returns true if `exponentialBuckets` has been explicitly set.
-    public var hasExponentialBuckets: Bool {return _storage._exponentialBuckets != nil}
-    /// Clears the value of `exponentialBuckets`. Subsequent reads from it will return its default value.
-    public mutating func clearExponentialBuckets() {_uniqueStorage()._exponentialBuckets = nil}
 
     public var explicitBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.ExplicitBuckets {
-      get {return _storage._explicitBuckets ?? POGOProtos_Networking_Platform_Telemetry_Distribution.ExplicitBuckets()}
-      set {_uniqueStorage()._explicitBuckets = newValue}
+      get {
+        if case .explicitBuckets(let v)? = _storage._bucketType {return v}
+        return POGOProtos_Networking_Platform_Telemetry_Distribution.ExplicitBuckets()
+      }
+      set {_uniqueStorage()._bucketType = .explicitBuckets(newValue)}
     }
-    /// Returns true if `explicitBuckets` has been explicitly set.
-    public var hasExplicitBuckets: Bool {return _storage._explicitBuckets != nil}
-    /// Clears the value of `explicitBuckets`. Subsequent reads from it will return its default value.
-    public mutating func clearExplicitBuckets() {_uniqueStorage()._explicitBuckets = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public enum OneOf_BucketType: Equatable {
+      case linearBuckets(POGOProtos_Networking_Platform_Telemetry_Distribution.LinearBuckets)
+      case exponentialBuckets(POGOProtos_Networking_Platform_Telemetry_Distribution.ExponentialBuckets)
+      case explicitBuckets(POGOProtos_Networking_Platform_Telemetry_Distribution.ExplicitBuckets)
+
+    #if !swift(>=4.1)
+      public static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions.OneOf_BucketType, rhs: POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions.OneOf_BucketType) -> Bool {
+        switch (lhs, rhs) {
+        case (.linearBuckets(let l), .linearBuckets(let r)): return l == r
+        case (.exponentialBuckets(let l), .exponentialBuckets(let r)): return l == r
+        case (.explicitBuckets(let l), .explicitBuckets(let r)): return l == r
+        default: return false
+        }
+      }
+    #endif
+    }
 
     public struct ExplicitBuckets {
       // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -244,20 +229,6 @@ public struct POGOProtos_Networking_Platform_Telemetry_Distribution {
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
-#if swift(>=4.2)
-
-extension POGOProtos_Networking_Platform_Telemetry_Distribution.BucketType: CaseIterable {
-  // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static var allCases: [POGOProtos_Networking_Platform_Telemetry_Distribution.BucketType] = [
-    .none,
-    .linearBuckets,
-    .exponentialBuckets,
-    .explicitBuckets,
-  ]
-}
-
-#endif  // swift(>=4.2)
-
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Telemetry"
@@ -363,15 +334,6 @@ extension POGOProtos_Networking_Platform_Telemetry_Distribution: SwiftProtobuf.M
   }
 }
 
-extension POGOProtos_Networking_Platform_Telemetry_Distribution.BucketType: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "none"),
-    1: .same(proto: "linear_buckets"),
-    2: .same(proto: "exponential_buckets"),
-    3: .same(proto: "explicit_buckets"),
-  ]
-}
-
 extension POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = POGOProtos_Networking_Platform_Telemetry_Distribution.protoMessageName + ".BucketOptions"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -381,18 +343,14 @@ extension POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions: S
   ]
 
   fileprivate class _StorageClass {
-    var _linearBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.LinearBuckets? = nil
-    var _exponentialBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.ExponentialBuckets? = nil
-    var _explicitBuckets: POGOProtos_Networking_Platform_Telemetry_Distribution.ExplicitBuckets? = nil
+    var _bucketType: POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions.OneOf_BucketType?
 
     static let defaultInstance = _StorageClass()
 
     private init() {}
 
     init(copying source: _StorageClass) {
-      _linearBuckets = source._linearBuckets
-      _exponentialBuckets = source._exponentialBuckets
-      _explicitBuckets = source._explicitBuckets
+      _bucketType = source._bucketType
     }
   }
 
@@ -408,9 +366,30 @@ extension POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions: S
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._linearBuckets)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._exponentialBuckets)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._explicitBuckets)
+        case 1:
+          var v: POGOProtos_Networking_Platform_Telemetry_Distribution.LinearBuckets?
+          if let current = _storage._bucketType {
+            try decoder.handleConflictingOneOf()
+            if case .linearBuckets(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._bucketType = .linearBuckets(v)}
+        case 2:
+          var v: POGOProtos_Networking_Platform_Telemetry_Distribution.ExponentialBuckets?
+          if let current = _storage._bucketType {
+            try decoder.handleConflictingOneOf()
+            if case .exponentialBuckets(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._bucketType = .exponentialBuckets(v)}
+        case 3:
+          var v: POGOProtos_Networking_Platform_Telemetry_Distribution.ExplicitBuckets?
+          if let current = _storage._bucketType {
+            try decoder.handleConflictingOneOf()
+            if case .explicitBuckets(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._bucketType = .explicitBuckets(v)}
         default: break
         }
       }
@@ -419,14 +398,14 @@ extension POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions: S
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._linearBuckets {
+      switch _storage._bucketType {
+      case .linearBuckets(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._exponentialBuckets {
+      case .exponentialBuckets(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._explicitBuckets {
+      case .explicitBuckets(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      case nil: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -437,9 +416,7 @@ extension POGOProtos_Networking_Platform_Telemetry_Distribution.BucketOptions: S
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._linearBuckets != rhs_storage._linearBuckets {return false}
-        if _storage._exponentialBuckets != rhs_storage._exponentialBuckets {return false}
-        if _storage._explicitBuckets != rhs_storage._explicitBuckets {return false}
+        if _storage._bucketType != rhs_storage._bucketType {return false}
         return true
       }
       if !storagesAreEqual {return false}

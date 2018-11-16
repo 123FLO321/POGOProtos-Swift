@@ -35,9 +35,8 @@ public struct POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse {
     case unset // = 0
     case success // = 1
     case failure // = 2
-    case errorInvalidRequest // = 3
-    case errorInvalidProto // = 4
-    case errorUnsetTelemetryID // = 5
+    case partialFailure // = 3
+    case invalidRequest // = 4
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -49,9 +48,8 @@ public struct POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse {
       case 0: self = .unset
       case 1: self = .success
       case 2: self = .failure
-      case 3: self = .errorInvalidRequest
-      case 4: self = .errorInvalidProto
-      case 5: self = .errorUnsetTelemetryID
+      case 3: self = .partialFailure
+      case 4: self = .invalidRequest
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -61,9 +59,8 @@ public struct POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse {
       case .unset: return 0
       case .success: return 1
       case .failure: return 2
-      case .errorInvalidRequest: return 3
-      case .errorInvalidProto: return 4
-      case .errorUnsetTelemetryID: return 5
+      case .partialFailure: return 3
+      case .invalidRequest: return 4
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -81,9 +78,8 @@ extension POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse.Statu
     .unset,
     .success,
     .failure,
-    .errorInvalidRequest,
-    .errorInvalidProto,
-    .errorUnsetTelemetryID,
+    .partialFailure,
+    .invalidRequest,
   ]
 }
 
@@ -133,8 +129,7 @@ extension POGOProtos_Networking_Platform_Responses_ClientTelemetryResponse.Statu
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "FAILURE"),
-    3: .same(proto: "ERROR_INVALID_REQUEST"),
-    4: .same(proto: "ERROR_INVALID_PROTO"),
-    5: .same(proto: "ERROR_UNSET_TELEMETRY_ID"),
+    3: .same(proto: "PARTIAL_FAILURE"),
+    4: .same(proto: "INVALID_REQUEST"),
   ]
 }

@@ -33,29 +33,42 @@ public struct POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
   /// Clears the value of `commonTelemetry`. Subsequent reads from it will return its default value.
   public mutating func clearCommonTelemetry() {_uniqueStorage()._commonTelemetry = nil}
 
+  public var datapointValue: OneOf_DatapointValue? {
+    get {return _storage._datapointValue}
+    set {_uniqueStorage()._datapointValue = newValue}
+  }
+
   public var longValue: Int64 {
-    get {return _storage._longValue}
-    set {_uniqueStorage()._longValue = newValue}
+    get {
+      if case .longValue(let v)? = _storage._datapointValue {return v}
+      return 0
+    }
+    set {_uniqueStorage()._datapointValue = .longValue(newValue)}
   }
 
   public var doubleValue: Double {
-    get {return _storage._doubleValue}
-    set {_uniqueStorage()._doubleValue = newValue}
+    get {
+      if case .doubleValue(let v)? = _storage._datapointValue {return v}
+      return 0
+    }
+    set {_uniqueStorage()._datapointValue = .doubleValue(newValue)}
   }
 
   public var booleanValue: Bool {
-    get {return _storage._booleanValue}
-    set {_uniqueStorage()._booleanValue = newValue}
+    get {
+      if case .booleanValue(let v)? = _storage._datapointValue {return v}
+      return false
+    }
+    set {_uniqueStorage()._datapointValue = .booleanValue(newValue)}
   }
 
   public var distribution: POGOProtos_Networking_Platform_Telemetry_Distribution {
-    get {return _storage._distribution ?? POGOProtos_Networking_Platform_Telemetry_Distribution()}
-    set {_uniqueStorage()._distribution = newValue}
+    get {
+      if case .distribution(let v)? = _storage._datapointValue {return v}
+      return POGOProtos_Networking_Platform_Telemetry_Distribution()
+    }
+    set {_uniqueStorage()._datapointValue = .distribution(newValue)}
   }
-  /// Returns true if `distribution` has been explicitly set.
-  public var hasDistribution: Bool {return _storage._distribution != nil}
-  /// Clears the value of `distribution`. Subsequent reads from it will return its default value.
-  public mutating func clearDistribution() {_uniqueStorage()._distribution = nil}
 
   public var metricKind: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind {
     get {return _storage._metricKind}
@@ -63,6 +76,25 @@ public struct POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_DatapointValue: Equatable {
+    case longValue(Int64)
+    case doubleValue(Double)
+    case booleanValue(Bool)
+    case distribution(POGOProtos_Networking_Platform_Telemetry_Distribution)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.OneOf_DatapointValue, rhs: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.OneOf_DatapointValue) -> Bool {
+      switch (lhs, rhs) {
+      case (.longValue(let l), .longValue(let r)): return l == r
+      case (.doubleValue(let l), .doubleValue(let r)): return l == r
+      case (.booleanValue(let l), .booleanValue(let r)): return l == r
+      case (.distribution(let l), .distribution(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public enum Kind: SwiftProtobuf.Enum {
     public typealias RawValue = Int
@@ -134,10 +166,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
 
   fileprivate class _StorageClass {
     var _commonTelemetry: POGOProtos_Networking_Platform_Telemetry_TelemetryCommon? = nil
-    var _longValue: Int64 = 0
-    var _doubleValue: Double = 0
-    var _booleanValue: Bool = false
-    var _distribution: POGOProtos_Networking_Platform_Telemetry_Distribution? = nil
+    var _datapointValue: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.OneOf_DatapointValue?
     var _metricKind: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData.Kind = .unspecified
 
     static let defaultInstance = _StorageClass()
@@ -146,10 +175,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
 
     init(copying source: _StorageClass) {
       _commonTelemetry = source._commonTelemetry
-      _longValue = source._longValue
-      _doubleValue = source._doubleValue
-      _booleanValue = source._booleanValue
-      _distribution = source._distribution
+      _datapointValue = source._datapointValue
       _metricKind = source._metricKind
     }
   }
@@ -167,10 +193,29 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularMessageField(value: &_storage._commonTelemetry)
-        case 2: try decoder.decodeSingularInt64Field(value: &_storage._longValue)
-        case 3: try decoder.decodeSingularDoubleField(value: &_storage._doubleValue)
-        case 4: try decoder.decodeSingularBoolField(value: &_storage._booleanValue)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._distribution)
+        case 2:
+          if _storage._datapointValue != nil {try decoder.handleConflictingOneOf()}
+          var v: Int64?
+          try decoder.decodeSingularInt64Field(value: &v)
+          if let v = v {_storage._datapointValue = .longValue(v)}
+        case 3:
+          if _storage._datapointValue != nil {try decoder.handleConflictingOneOf()}
+          var v: Double?
+          try decoder.decodeSingularDoubleField(value: &v)
+          if let v = v {_storage._datapointValue = .doubleValue(v)}
+        case 4:
+          if _storage._datapointValue != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._datapointValue = .booleanValue(v)}
+        case 5:
+          var v: POGOProtos_Networking_Platform_Telemetry_Distribution?
+          if let current = _storage._datapointValue {
+            try decoder.handleConflictingOneOf()
+            if case .distribution(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._datapointValue = .distribution(v)}
         case 6: try decoder.decodeSingularEnumField(value: &_storage._metricKind)
         default: break
         }
@@ -183,17 +228,16 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
       if let v = _storage._commonTelemetry {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       }
-      if _storage._longValue != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._longValue, fieldNumber: 2)
-      }
-      if _storage._doubleValue != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._doubleValue, fieldNumber: 3)
-      }
-      if _storage._booleanValue != false {
-        try visitor.visitSingularBoolField(value: _storage._booleanValue, fieldNumber: 4)
-      }
-      if let v = _storage._distribution {
+      switch _storage._datapointValue {
+      case .longValue(let v)?:
+        try visitor.visitSingularInt64Field(value: v, fieldNumber: 2)
+      case .doubleValue(let v)?:
+        try visitor.visitSingularDoubleField(value: v, fieldNumber: 3)
+      case .booleanValue(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
+      case .distribution(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+      case nil: break
       }
       if _storage._metricKind != .unspecified {
         try visitor.visitSingularEnumField(value: _storage._metricKind, fieldNumber: 6)
@@ -208,10 +252,7 @@ extension POGOProtos_Networking_Platform_Telemetry_PlatformMetricData: SwiftProt
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._commonTelemetry != rhs_storage._commonTelemetry {return false}
-        if _storage._longValue != rhs_storage._longValue {return false}
-        if _storage._doubleValue != rhs_storage._doubleValue {return false}
-        if _storage._booleanValue != rhs_storage._booleanValue {return false}
-        if _storage._distribution != rhs_storage._distribution {return false}
+        if _storage._datapointValue != rhs_storage._datapointValue {return false}
         if _storage._metricKind != rhs_storage._metricKind {return false}
         return true
       }

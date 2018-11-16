@@ -19,6 +19,162 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
+public enum POGOProtos_Enums_DeviceServiceTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case undefinedDeviceService // = 0
+  case fitness // = 1
+  case smartWatch // = 2
+  case sfidaDeviceService // = 3
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .undefinedDeviceService
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .undefinedDeviceService
+    case 1: self = .fitness
+    case 2: self = .smartWatch
+    case 3: self = .sfidaDeviceService
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public var rawValue: Int {
+    switch self {
+    case .undefinedDeviceService: return 0
+    case .fitness: return 1
+    case .smartWatch: return 2
+    case .sfidaDeviceService: return 3
+    case .UNRECOGNIZED(let i): return i
+    }
+  }
+
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Enums_DeviceServiceTelemetryIds: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Enums_DeviceServiceTelemetryIds] = [
+    .undefinedDeviceService,
+    .fitness,
+    .smartWatch,
+    .sfidaDeviceService,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
+public enum POGOProtos_Enums_PermissionContextTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case undefinedPermissionContext // = 0
+  case eggHatch // = 1
+  case buddyCandyFound // = 2
+  case playerProfileClicked // = 3
+  case smartWatchInstalled // = 4
+  case sfidaSessionStarted // = 5
+  case settingsToggle // = 6
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .undefinedPermissionContext
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .undefinedPermissionContext
+    case 1: self = .eggHatch
+    case 2: self = .buddyCandyFound
+    case 3: self = .playerProfileClicked
+    case 4: self = .smartWatchInstalled
+    case 5: self = .sfidaSessionStarted
+    case 6: self = .settingsToggle
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public var rawValue: Int {
+    switch self {
+    case .undefinedPermissionContext: return 0
+    case .eggHatch: return 1
+    case .buddyCandyFound: return 2
+    case .playerProfileClicked: return 3
+    case .smartWatchInstalled: return 4
+    case .sfidaSessionStarted: return 5
+    case .settingsToggle: return 6
+    case .UNRECOGNIZED(let i): return i
+    }
+  }
+
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Enums_PermissionContextTelemetryIds: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Enums_PermissionContextTelemetryIds] = [
+    .undefinedPermissionContext,
+    .eggHatch,
+    .buddyCandyFound,
+    .playerProfileClicked,
+    .smartWatchInstalled,
+    .sfidaSessionStarted,
+    .settingsToggle,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
+public enum POGOProtos_Enums_PermissionFlowStepTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case undefinedPermissionFlowStep // = 0
+  case initialPrompt // = 1
+  case fitnessPermission // = 2
+  case locationPermission // = 3
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .undefinedPermissionFlowStep
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .undefinedPermissionFlowStep
+    case 1: self = .initialPrompt
+    case 2: self = .fitnessPermission
+    case 3: self = .locationPermission
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public var rawValue: Int {
+    switch self {
+    case .undefinedPermissionFlowStep: return 0
+    case .initialPrompt: return 1
+    case .fitnessPermission: return 2
+    case .locationPermission: return 3
+    case .UNRECOGNIZED(let i): return i
+    }
+  }
+
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Enums_PermissionFlowStepTelemetryIds: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Enums_PermissionFlowStepTelemetryIds] = [
+    .undefinedPermissionFlowStep,
+    .initialPrompt,
+    .fitnessPermission,
+    .locationPermission,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
 public enum POGOProtos_Enums_AssetTelemetryIds: SwiftProtobuf.Enum {
   public typealias RawValue = Int
   case undefinedAssetEvent // = 0
@@ -116,6 +272,9 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
   case assetStreamDownload // = 36
   case assetStreamCacheCulled // = 37
   case rpcSocketTiming // = 38
+  case permissionsFlow // = 39
+  case deviceServiceToggle // = 40
+  case bootTelemetry // = 41
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -163,6 +322,9 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case 36: self = .assetStreamDownload
     case 37: self = .assetStreamCacheCulled
     case 38: self = .rpcSocketTiming
+    case 39: self = .permissionsFlow
+    case 40: self = .deviceServiceToggle
+    case 41: self = .bootTelemetry
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -208,6 +370,9 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case .assetStreamDownload: return 36
     case .assetStreamCacheCulled: return 37
     case .rpcSocketTiming: return 38
+    case .permissionsFlow: return 39
+    case .deviceServiceToggle: return 40
+    case .bootTelemetry: return 41
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -258,6 +423,9 @@ extension POGOProtos_Enums_ClientTelemetryIds: CaseIterable {
     .assetStreamDownload,
     .assetStreamCacheCulled,
     .rpcSocketTiming,
+    .permissionsFlow,
+    .deviceServiceToggle,
+    .bootTelemetry,
   ]
 }
 
@@ -1125,6 +1293,36 @@ extension POGOProtos_Enums_WebTelemetryIds: CaseIterable {
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
+extension POGOProtos_Enums_DeviceServiceTelemetryIds: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNDEFINED_DEVICE_SERVICE"),
+    1: .same(proto: "FITNESS"),
+    2: .same(proto: "SMART_WATCH"),
+    3: .same(proto: "SFIDA_DEVICE_SERVICE"),
+  ]
+}
+
+extension POGOProtos_Enums_PermissionContextTelemetryIds: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNDEFINED_PERMISSION_CONTEXT"),
+    1: .same(proto: "EGG_HATCH"),
+    2: .same(proto: "BUDDY_CANDY_FOUND"),
+    3: .same(proto: "PLAYER_PROFILE_CLICKED"),
+    4: .same(proto: "SMART_WATCH_INSTALLED"),
+    5: .same(proto: "SFIDA_SESSION_STARTED"),
+    6: .same(proto: "SETTINGS_TOGGLE"),
+  ]
+}
+
+extension POGOProtos_Enums_PermissionFlowStepTelemetryIds: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNDEFINED_PERMISSION_FLOW_STEP"),
+    1: .same(proto: "INITIAL_PROMPT"),
+    2: .same(proto: "FITNESS_PERMISSION"),
+    3: .same(proto: "LOCATION_PERMISSION"),
+  ]
+}
+
 extension POGOProtos_Enums_AssetTelemetryIds: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_ASSET_EVENT"),
@@ -1177,6 +1375,9 @@ extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding
     36: .same(proto: "ASSET_STREAM_DOWNLOAD"),
     37: .same(proto: "ASSET_STREAM_CACHE_CULLED"),
     38: .same(proto: "RPC_SOCKET_TIMING"),
+    39: .same(proto: "PERMISSIONS_FLOW"),
+    40: .same(proto: "DEVICE_SERVICE_TOGGLE"),
+    41: .same(proto: "BOOT_TELEMETRY"),
   ]
 }
 

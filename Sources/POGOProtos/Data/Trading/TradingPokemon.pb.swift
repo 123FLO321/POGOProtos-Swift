@@ -136,6 +136,11 @@ public struct POGOProtos_Data_Trading_TradingPokemon {
     set {_uniqueStorage()._favorite = newValue}
   }
 
+  public var creationTimeMs: Int64 {
+    get {return _storage._creationTimeMs}
+    set {_uniqueStorage()._creationTimeMs = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -170,6 +175,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
     18: .standard(proto: "individual_stamina"),
     19: .same(proto: "nickname"),
     20: .same(proto: "favorite"),
+    22: .standard(proto: "creation_time_ms"),
   ]
 
   fileprivate class _StorageClass {
@@ -193,6 +199,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
     var _individualStamina: Int32 = 0
     var _nickname: String = String()
     var _favorite: Bool = false
+    var _creationTimeMs: Int64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -219,6 +226,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
       _individualStamina = source._individualStamina
       _nickname = source._nickname
       _favorite = source._favorite
+      _creationTimeMs = source._creationTimeMs
     }
   }
 
@@ -254,6 +262,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
         case 18: try decoder.decodeSingularInt32Field(value: &_storage._individualStamina)
         case 19: try decoder.decodeSingularStringField(value: &_storage._nickname)
         case 20: try decoder.decodeSingularBoolField(value: &_storage._favorite)
+        case 22: try decoder.decodeSingularInt64Field(value: &_storage._creationTimeMs)
         default: break
         }
       }
@@ -322,6 +331,9 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
       if _storage._favorite != false {
         try visitor.visitSingularBoolField(value: _storage._favorite, fieldNumber: 20)
       }
+      if _storage._creationTimeMs != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._creationTimeMs, fieldNumber: 22)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -351,6 +363,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
         if _storage._individualStamina != rhs_storage._individualStamina {return false}
         if _storage._nickname != rhs_storage._nickname {return false}
         if _storage._favorite != rhs_storage._favorite {return false}
+        if _storage._creationTimeMs != rhs_storage._creationTimeMs {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -115,6 +115,46 @@ extension POGOProtos_Enums_PokemonGoPlusIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
+public enum POGOProtos_Enums_DeviceKind: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case pokemonGoPlusKind // = 0
+  case pokeBallPlus // = 1
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .pokemonGoPlusKind
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .pokemonGoPlusKind
+    case 1: self = .pokeBallPlus
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public var rawValue: Int {
+    switch self {
+    case .pokemonGoPlusKind: return 0
+    case .pokeBallPlus: return 1
+    case .UNRECOGNIZED(let i): return i
+    }
+  }
+
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Enums_DeviceKind: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Enums_DeviceKind] = [
+    .pokemonGoPlusKind,
+    .pokeBallPlus,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_PokemonGoPlusIds: SwiftProtobuf._ProtoNameProviding {
@@ -135,5 +175,12 @@ extension POGOProtos_Enums_PokemonGoPlusIds: SwiftProtobuf._ProtoNameProviding {
     13: .same(proto: "POKEMON_NOT_CAUGHT_DUE_ERROR"),
     14: .same(proto: "POKESTOP_SPUN"),
     15: .same(proto: "POKESTOP_NOT_SPUN_DUE_ERROR"),
+  ]
+}
+
+extension POGOProtos_Enums_DeviceKind: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "POKEMON_GO_PLUS_KIND"),
+    1: .same(proto: "POKE_BALL_PLUS"),
   ]
 }

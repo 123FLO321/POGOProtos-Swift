@@ -515,6 +515,8 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
   case darkrai // = 491
   case shaymin // = 492
   case arceus // = 493
+  case meltan // = 808
+  case melmetal // = 809
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -1017,6 +1019,8 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case 491: self = .darkrai
     case 492: self = .shaymin
     case 493: self = .arceus
+    case 808: self = .meltan
+    case 809: self = .melmetal
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -1517,6 +1521,8 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case .darkrai: return 491
     case .shaymin: return 492
     case .arceus: return 493
+    case .meltan: return 808
+    case .melmetal: return 809
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -2022,6 +2028,8 @@ extension POGOProtos_Enums_PokemonId: CaseIterable {
     .darkrai,
     .shaymin,
     .arceus,
+    .meltan,
+    .melmetal,
   ]
 }
 
@@ -2525,5 +2533,7 @@ extension POGOProtos_Enums_PokemonId: SwiftProtobuf._ProtoNameProviding {
     491: .same(proto: "DARKRAI"),
     492: .same(proto: "SHAYMIN"),
     493: .same(proto: "ARCEUS"),
+    808: .same(proto: "MELTAN"),
+    809: .same(proto: "MELMETAL"),
   ]
 }

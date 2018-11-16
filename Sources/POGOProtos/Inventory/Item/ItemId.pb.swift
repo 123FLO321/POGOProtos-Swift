@@ -38,6 +38,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemIncenseSpicy // = 402
   case itemIncenseCool // = 403
   case itemIncenseFloral // = 404
+  case itemIncenseBelugaBox // = 405
   case itemTroyDisk // = 501
   case itemXAttack // = 602
   case itemXDefense // = 603
@@ -94,6 +95,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 402: self = .itemIncenseSpicy
     case 403: self = .itemIncenseCool
     case 404: self = .itemIncenseFloral
+    case 405: self = .itemIncenseBelugaBox
     case 501: self = .itemTroyDisk
     case 602: self = .itemXAttack
     case 603: self = .itemXDefense
@@ -148,6 +150,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemIncenseSpicy: return 402
     case .itemIncenseCool: return 403
     case .itemIncenseFloral: return 404
+    case .itemIncenseBelugaBox: return 405
     case .itemTroyDisk: return 501
     case .itemXAttack: return 602
     case .itemXDefense: return 603
@@ -207,6 +210,7 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemIncenseSpicy,
     .itemIncenseCool,
     .itemIncenseFloral,
+    .itemIncenseBelugaBox,
     .itemTroyDisk,
     .itemXAttack,
     .itemXDefense,
@@ -264,6 +268,7 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     402: .same(proto: "ITEM_INCENSE_SPICY"),
     403: .same(proto: "ITEM_INCENSE_COOL"),
     404: .same(proto: "ITEM_INCENSE_FLORAL"),
+    405: .same(proto: "ITEM_INCENSE_BELUGA_BOX"),
     501: .same(proto: "ITEM_TROY_DISK"),
     602: .same(proto: "ITEM_X_ATTACK"),
     603: .same(proto: "ITEM_X_DEFENSE"),

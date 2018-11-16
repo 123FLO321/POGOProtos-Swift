@@ -29,151 +29,183 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     set {_uniqueStorage()._type = newValue}
   }
 
-  public var withPokemonType: POGOProtos_Data_Quests_QuestCondition.WithPokemonType {
-    get {return _storage._withPokemonType ?? POGOProtos_Data_Quests_QuestCondition.WithPokemonType()}
-    set {_uniqueStorage()._withPokemonType = newValue}
+  public var condition: OneOf_Condition? {
+    get {return _storage._condition}
+    set {_uniqueStorage()._condition = newValue}
   }
-  /// Returns true if `withPokemonType` has been explicitly set.
-  public var hasWithPokemonType: Bool {return _storage._withPokemonType != nil}
-  /// Clears the value of `withPokemonType`. Subsequent reads from it will return its default value.
-  public mutating func clearWithPokemonType() {_uniqueStorage()._withPokemonType = nil}
+
+  public var withPokemonType: POGOProtos_Data_Quests_QuestCondition.WithPokemonType {
+    get {
+      if case .withPokemonType(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithPokemonType()
+    }
+    set {_uniqueStorage()._condition = .withPokemonType(newValue)}
+  }
 
   public var withPokemonCategory: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory {
-    get {return _storage._withPokemonCategory ?? POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory()}
-    set {_uniqueStorage()._withPokemonCategory = newValue}
+    get {
+      if case .withPokemonCategory(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory()
+    }
+    set {_uniqueStorage()._condition = .withPokemonCategory(newValue)}
   }
-  /// Returns true if `withPokemonCategory` has been explicitly set.
-  public var hasWithPokemonCategory: Bool {return _storage._withPokemonCategory != nil}
-  /// Clears the value of `withPokemonCategory`. Subsequent reads from it will return its default value.
-  public mutating func clearWithPokemonCategory() {_uniqueStorage()._withPokemonCategory = nil}
 
   public var withWeatherBoost: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost {
-    get {return _storage._withWeatherBoost ?? POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost()}
-    set {_uniqueStorage()._withWeatherBoost = newValue}
+    get {
+      if case .withWeatherBoost(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost()
+    }
+    set {_uniqueStorage()._condition = .withWeatherBoost(newValue)}
   }
-  /// Returns true if `withWeatherBoost` has been explicitly set.
-  public var hasWithWeatherBoost: Bool {return _storage._withWeatherBoost != nil}
-  /// Clears the value of `withWeatherBoost`. Subsequent reads from it will return its default value.
-  public mutating func clearWithWeatherBoost() {_uniqueStorage()._withWeatherBoost = nil}
 
   public var withDailyCaptureBonus: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus {
-    get {return _storage._withDailyCaptureBonus ?? POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus()}
-    set {_uniqueStorage()._withDailyCaptureBonus = newValue}
+    get {
+      if case .withDailyCaptureBonus(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus()
+    }
+    set {_uniqueStorage()._condition = .withDailyCaptureBonus(newValue)}
   }
-  /// Returns true if `withDailyCaptureBonus` has been explicitly set.
-  public var hasWithDailyCaptureBonus: Bool {return _storage._withDailyCaptureBonus != nil}
-  /// Clears the value of `withDailyCaptureBonus`. Subsequent reads from it will return its default value.
-  public mutating func clearWithDailyCaptureBonus() {_uniqueStorage()._withDailyCaptureBonus = nil}
 
   public var withDailySpinBonus: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus {
-    get {return _storage._withDailySpinBonus ?? POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus()}
-    set {_uniqueStorage()._withDailySpinBonus = newValue}
+    get {
+      if case .withDailySpinBonus(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus()
+    }
+    set {_uniqueStorage()._condition = .withDailySpinBonus(newValue)}
   }
-  /// Returns true if `withDailySpinBonus` has been explicitly set.
-  public var hasWithDailySpinBonus: Bool {return _storage._withDailySpinBonus != nil}
-  /// Clears the value of `withDailySpinBonus`. Subsequent reads from it will return its default value.
-  public mutating func clearWithDailySpinBonus() {_uniqueStorage()._withDailySpinBonus = nil}
 
   public var withWinRaidStatus: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus {
-    get {return _storage._withWinRaidStatus ?? POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus()}
-    set {_uniqueStorage()._withWinRaidStatus = newValue}
+    get {
+      if case .withWinRaidStatus(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus()
+    }
+    set {_uniqueStorage()._condition = .withWinRaidStatus(newValue)}
   }
-  /// Returns true if `withWinRaidStatus` has been explicitly set.
-  public var hasWithWinRaidStatus: Bool {return _storage._withWinRaidStatus != nil}
-  /// Clears the value of `withWinRaidStatus`. Subsequent reads from it will return its default value.
-  public mutating func clearWithWinRaidStatus() {_uniqueStorage()._withWinRaidStatus = nil}
 
   public var withRaidLevel: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel {
-    get {return _storage._withRaidLevel ?? POGOProtos_Data_Quests_QuestCondition.WithRaidLevel()}
-    set {_uniqueStorage()._withRaidLevel = newValue}
+    get {
+      if case .withRaidLevel(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithRaidLevel()
+    }
+    set {_uniqueStorage()._condition = .withRaidLevel(newValue)}
   }
-  /// Returns true if `withRaidLevel` has been explicitly set.
-  public var hasWithRaidLevel: Bool {return _storage._withRaidLevel != nil}
-  /// Clears the value of `withRaidLevel`. Subsequent reads from it will return its default value.
-  public mutating func clearWithRaidLevel() {_uniqueStorage()._withRaidLevel = nil}
 
   public var withThrowType: POGOProtos_Data_Quests_QuestCondition.WithThrowType {
-    get {return _storage._withThrowType ?? POGOProtos_Data_Quests_QuestCondition.WithThrowType()}
-    set {_uniqueStorage()._withThrowType = newValue}
+    get {
+      if case .withThrowType(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithThrowType()
+    }
+    set {_uniqueStorage()._condition = .withThrowType(newValue)}
   }
-  /// Returns true if `withThrowType` has been explicitly set.
-  public var hasWithThrowType: Bool {return _storage._withThrowType != nil}
-  /// Clears the value of `withThrowType`. Subsequent reads from it will return its default value.
-  public mutating func clearWithThrowType() {_uniqueStorage()._withThrowType = nil}
 
   public var withWinGymBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus {
-    get {return _storage._withWinGymBattleStatus ?? POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus()}
-    set {_uniqueStorage()._withWinGymBattleStatus = newValue}
+    get {
+      if case .withWinGymBattleStatus(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus()
+    }
+    set {_uniqueStorage()._condition = .withWinGymBattleStatus(newValue)}
   }
-  /// Returns true if `withWinGymBattleStatus` has been explicitly set.
-  public var hasWithWinGymBattleStatus: Bool {return _storage._withWinGymBattleStatus != nil}
-  /// Clears the value of `withWinGymBattleStatus`. Subsequent reads from it will return its default value.
-  public mutating func clearWithWinGymBattleStatus() {_uniqueStorage()._withWinGymBattleStatus = nil}
 
   public var withSuperEffectiveChargeMove: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove {
-    get {return _storage._withSuperEffectiveChargeMove ?? POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove()}
-    set {_uniqueStorage()._withSuperEffectiveChargeMove = newValue}
+    get {
+      if case .withSuperEffectiveChargeMove(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove()
+    }
+    set {_uniqueStorage()._condition = .withSuperEffectiveChargeMove(newValue)}
   }
-  /// Returns true if `withSuperEffectiveChargeMove` has been explicitly set.
-  public var hasWithSuperEffectiveChargeMove: Bool {return _storage._withSuperEffectiveChargeMove != nil}
-  /// Clears the value of `withSuperEffectiveChargeMove`. Subsequent reads from it will return its default value.
-  public mutating func clearWithSuperEffectiveChargeMove() {_uniqueStorage()._withSuperEffectiveChargeMove = nil}
 
   public var withItem: POGOProtos_Data_Quests_QuestCondition.WithItem {
-    get {return _storage._withItem ?? POGOProtos_Data_Quests_QuestCondition.WithItem()}
-    set {_uniqueStorage()._withItem = newValue}
+    get {
+      if case .withItem(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithItem()
+    }
+    set {_uniqueStorage()._condition = .withItem(newValue)}
   }
-  /// Returns true if `withItem` has been explicitly set.
-  public var hasWithItem: Bool {return _storage._withItem != nil}
-  /// Clears the value of `withItem`. Subsequent reads from it will return its default value.
-  public mutating func clearWithItem() {_uniqueStorage()._withItem = nil}
 
   public var withUniquePokestop: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop {
-    get {return _storage._withUniquePokestop ?? POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop()}
-    set {_uniqueStorage()._withUniquePokestop = newValue}
+    get {
+      if case .withUniquePokestop(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop()
+    }
+    set {_uniqueStorage()._condition = .withUniquePokestop(newValue)}
   }
-  /// Returns true if `withUniquePokestop` has been explicitly set.
-  public var hasWithUniquePokestop: Bool {return _storage._withUniquePokestop != nil}
-  /// Clears the value of `withUniquePokestop`. Subsequent reads from it will return its default value.
-  public mutating func clearWithUniquePokestop() {_uniqueStorage()._withUniquePokestop = nil}
 
   public var withQuestContext: POGOProtos_Data_Quests_QuestCondition.WithQuestContext {
-    get {return _storage._withQuestContext ?? POGOProtos_Data_Quests_QuestCondition.WithQuestContext()}
-    set {_uniqueStorage()._withQuestContext = newValue}
+    get {
+      if case .withQuestContext(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithQuestContext()
+    }
+    set {_uniqueStorage()._condition = .withQuestContext(newValue)}
   }
-  /// Returns true if `withQuestContext` has been explicitly set.
-  public var hasWithQuestContext: Bool {return _storage._withQuestContext != nil}
-  /// Clears the value of `withQuestContext`. Subsequent reads from it will return its default value.
-  public mutating func clearWithQuestContext() {_uniqueStorage()._withQuestContext = nil}
 
   public var withBadgeType: POGOProtos_Data_Quests_QuestCondition.WithBadgeType {
-    get {return _storage._withBadgeType ?? POGOProtos_Data_Quests_QuestCondition.WithBadgeType()}
-    set {_uniqueStorage()._withBadgeType = newValue}
+    get {
+      if case .withBadgeType(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithBadgeType()
+    }
+    set {_uniqueStorage()._condition = .withBadgeType(newValue)}
   }
-  /// Returns true if `withBadgeType` has been explicitly set.
-  public var hasWithBadgeType: Bool {return _storage._withBadgeType != nil}
-  /// Clears the value of `withBadgeType`. Subsequent reads from it will return its default value.
-  public mutating func clearWithBadgeType() {_uniqueStorage()._withBadgeType = nil}
 
   public var withPlayerLevel: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel {
-    get {return _storage._withPlayerLevel ?? POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel()}
-    set {_uniqueStorage()._withPlayerLevel = newValue}
+    get {
+      if case .withPlayerLevel(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel()
+    }
+    set {_uniqueStorage()._condition = .withPlayerLevel(newValue)}
   }
-  /// Returns true if `withPlayerLevel` has been explicitly set.
-  public var hasWithPlayerLevel: Bool {return _storage._withPlayerLevel != nil}
-  /// Clears the value of `withPlayerLevel`. Subsequent reads from it will return its default value.
-  public mutating func clearWithPlayerLevel() {_uniqueStorage()._withPlayerLevel = nil}
 
   public var withWinBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus {
-    get {return _storage._withWinBattleStatus ?? POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus()}
-    set {_uniqueStorage()._withWinBattleStatus = newValue}
+    get {
+      if case .withWinBattleStatus(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus()
+    }
+    set {_uniqueStorage()._condition = .withWinBattleStatus(newValue)}
   }
-  /// Returns true if `withWinBattleStatus` has been explicitly set.
-  public var hasWithWinBattleStatus: Bool {return _storage._withWinBattleStatus != nil}
-  /// Clears the value of `withWinBattleStatus`. Subsequent reads from it will return its default value.
-  public mutating func clearWithWinBattleStatus() {_uniqueStorage()._withWinBattleStatus = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_Condition: Equatable {
+    case withPokemonType(POGOProtos_Data_Quests_QuestCondition.WithPokemonType)
+    case withPokemonCategory(POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory)
+    case withWeatherBoost(POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost)
+    case withDailyCaptureBonus(POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus)
+    case withDailySpinBonus(POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus)
+    case withWinRaidStatus(POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus)
+    case withRaidLevel(POGOProtos_Data_Quests_QuestCondition.WithRaidLevel)
+    case withThrowType(POGOProtos_Data_Quests_QuestCondition.WithThrowType)
+    case withWinGymBattleStatus(POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus)
+    case withSuperEffectiveChargeMove(POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove)
+    case withItem(POGOProtos_Data_Quests_QuestCondition.WithItem)
+    case withUniquePokestop(POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop)
+    case withQuestContext(POGOProtos_Data_Quests_QuestCondition.WithQuestContext)
+    case withBadgeType(POGOProtos_Data_Quests_QuestCondition.WithBadgeType)
+    case withPlayerLevel(POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel)
+    case withWinBattleStatus(POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition, rhs: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition) -> Bool {
+      switch (lhs, rhs) {
+      case (.withPokemonType(let l), .withPokemonType(let r)): return l == r
+      case (.withPokemonCategory(let l), .withPokemonCategory(let r)): return l == r
+      case (.withWeatherBoost(let l), .withWeatherBoost(let r)): return l == r
+      case (.withDailyCaptureBonus(let l), .withDailyCaptureBonus(let r)): return l == r
+      case (.withDailySpinBonus(let l), .withDailySpinBonus(let r)): return l == r
+      case (.withWinRaidStatus(let l), .withWinRaidStatus(let r)): return l == r
+      case (.withRaidLevel(let l), .withRaidLevel(let r)): return l == r
+      case (.withThrowType(let l), .withThrowType(let r)): return l == r
+      case (.withWinGymBattleStatus(let l), .withWinGymBattleStatus(let r)): return l == r
+      case (.withSuperEffectiveChargeMove(let l), .withSuperEffectiveChargeMove(let r)): return l == r
+      case (.withItem(let l), .withItem(let r)): return l == r
+      case (.withUniquePokestop(let l), .withUniquePokestop(let r)): return l == r
+      case (.withQuestContext(let l), .withQuestContext(let r)): return l == r
+      case (.withBadgeType(let l), .withBadgeType(let r)): return l == r
+      case (.withPlayerLevel(let l), .withPlayerLevel(let r)): return l == r
+      case (.withWinBattleStatus(let l), .withWinBattleStatus(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public enum ConditionType: SwiftProtobuf.Enum {
     public typealias RawValue = Int
@@ -343,11 +375,40 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    public var throwType: POGOProtos_Enums_ActivityType = .activityUnknown
+    public var `throw`: POGOProtos_Data_Quests_QuestCondition.WithThrowType.OneOf_Throw? = nil
 
-    public var hit: Bool = false
+    public var throwType: POGOProtos_Enums_ActivityType {
+      get {
+        if case .throwType(let v)? = `throw` {return v}
+        return .activityUnknown
+      }
+      set {`throw` = .throwType(newValue)}
+    }
+
+    public var hit: Bool {
+      get {
+        if case .hit(let v)? = `throw` {return v}
+        return false
+      }
+      set {`throw` = .hit(newValue)}
+    }
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public enum OneOf_Throw: Equatable {
+      case throwType(POGOProtos_Enums_ActivityType)
+      case hit(Bool)
+
+    #if !swift(>=4.1)
+      public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithThrowType.OneOf_Throw, rhs: POGOProtos_Data_Quests_QuestCondition.WithThrowType.OneOf_Throw) -> Bool {
+        switch (lhs, rhs) {
+        case (.throwType(let l), .throwType(let r)): return l == r
+        case (.hit(let l), .hit(let r)): return l == r
+        default: return false
+        }
+      }
+    #endif
+    }
 
     public init() {}
   }
@@ -549,22 +610,7 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
 
   fileprivate class _StorageClass {
     var _type: POGOProtos_Data_Quests_QuestCondition.ConditionType = .unset
-    var _withPokemonType: POGOProtos_Data_Quests_QuestCondition.WithPokemonType? = nil
-    var _withPokemonCategory: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory? = nil
-    var _withWeatherBoost: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost? = nil
-    var _withDailyCaptureBonus: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus? = nil
-    var _withDailySpinBonus: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus? = nil
-    var _withWinRaidStatus: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus? = nil
-    var _withRaidLevel: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel? = nil
-    var _withThrowType: POGOProtos_Data_Quests_QuestCondition.WithThrowType? = nil
-    var _withWinGymBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus? = nil
-    var _withSuperEffectiveChargeMove: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove? = nil
-    var _withItem: POGOProtos_Data_Quests_QuestCondition.WithItem? = nil
-    var _withUniquePokestop: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop? = nil
-    var _withQuestContext: POGOProtos_Data_Quests_QuestCondition.WithQuestContext? = nil
-    var _withBadgeType: POGOProtos_Data_Quests_QuestCondition.WithBadgeType? = nil
-    var _withPlayerLevel: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel? = nil
-    var _withWinBattleStatus: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus? = nil
+    var _condition: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition?
 
     static let defaultInstance = _StorageClass()
 
@@ -572,22 +618,7 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
 
     init(copying source: _StorageClass) {
       _type = source._type
-      _withPokemonType = source._withPokemonType
-      _withPokemonCategory = source._withPokemonCategory
-      _withWeatherBoost = source._withWeatherBoost
-      _withDailyCaptureBonus = source._withDailyCaptureBonus
-      _withDailySpinBonus = source._withDailySpinBonus
-      _withWinRaidStatus = source._withWinRaidStatus
-      _withRaidLevel = source._withRaidLevel
-      _withThrowType = source._withThrowType
-      _withWinGymBattleStatus = source._withWinGymBattleStatus
-      _withSuperEffectiveChargeMove = source._withSuperEffectiveChargeMove
-      _withItem = source._withItem
-      _withUniquePokestop = source._withUniquePokestop
-      _withQuestContext = source._withQuestContext
-      _withBadgeType = source._withBadgeType
-      _withPlayerLevel = source._withPlayerLevel
-      _withWinBattleStatus = source._withWinBattleStatus
+      _condition = source._condition
     }
   }
 
@@ -604,22 +635,134 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._type)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._withPokemonType)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._withPokemonCategory)
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._withWeatherBoost)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._withDailyCaptureBonus)
-        case 6: try decoder.decodeSingularMessageField(value: &_storage._withDailySpinBonus)
-        case 7: try decoder.decodeSingularMessageField(value: &_storage._withWinRaidStatus)
-        case 8: try decoder.decodeSingularMessageField(value: &_storage._withRaidLevel)
-        case 9: try decoder.decodeSingularMessageField(value: &_storage._withThrowType)
-        case 10: try decoder.decodeSingularMessageField(value: &_storage._withWinGymBattleStatus)
-        case 11: try decoder.decodeSingularMessageField(value: &_storage._withSuperEffectiveChargeMove)
-        case 12: try decoder.decodeSingularMessageField(value: &_storage._withItem)
-        case 13: try decoder.decodeSingularMessageField(value: &_storage._withUniquePokestop)
-        case 14: try decoder.decodeSingularMessageField(value: &_storage._withQuestContext)
-        case 15: try decoder.decodeSingularMessageField(value: &_storage._withBadgeType)
-        case 16: try decoder.decodeSingularMessageField(value: &_storage._withPlayerLevel)
-        case 17: try decoder.decodeSingularMessageField(value: &_storage._withWinBattleStatus)
+        case 2:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithPokemonType?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withPokemonType(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withPokemonType(v)}
+        case 3:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithPokemonCategory?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withPokemonCategory(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withPokemonCategory(v)}
+        case 4:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithWeatherBoost?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withWeatherBoost(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withWeatherBoost(v)}
+        case 5:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithDailyCaptureBonus?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withDailyCaptureBonus(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withDailyCaptureBonus(v)}
+        case 6:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithDailySpinBonus?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withDailySpinBonus(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withDailySpinBonus(v)}
+        case 7:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithWinRaidStatus?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withWinRaidStatus(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withWinRaidStatus(v)}
+        case 8:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithRaidLevel?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withRaidLevel(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withRaidLevel(v)}
+        case 9:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithThrowType?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withThrowType(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withThrowType(v)}
+        case 10:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithWinGymBattleStatus?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withWinGymBattleStatus(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withWinGymBattleStatus(v)}
+        case 11:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithSuperEffectiveChargeMove?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withSuperEffectiveChargeMove(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withSuperEffectiveChargeMove(v)}
+        case 12:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithItem?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withItem(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withItem(v)}
+        case 13:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithUniquePokestop?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withUniquePokestop(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withUniquePokestop(v)}
+        case 14:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithQuestContext?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withQuestContext(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withQuestContext(v)}
+        case 15:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithBadgeType?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withBadgeType(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withBadgeType(v)}
+        case 16:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withPlayerLevel(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withPlayerLevel(v)}
+        case 17:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withWinBattleStatus(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withWinBattleStatus(v)}
         default: break
         }
       }
@@ -631,53 +774,40 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
       if _storage._type != .unset {
         try visitor.visitSingularEnumField(value: _storage._type, fieldNumber: 1)
       }
-      if let v = _storage._withPokemonType {
+      switch _storage._condition {
+      case .withPokemonType(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._withPokemonCategory {
+      case .withPokemonCategory(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._withWeatherBoost {
+      case .withWeatherBoost(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._withDailyCaptureBonus {
+      case .withDailyCaptureBonus(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._withDailySpinBonus {
+      case .withDailySpinBonus(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      }
-      if let v = _storage._withWinRaidStatus {
+      case .withWinRaidStatus(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      }
-      if let v = _storage._withRaidLevel {
+      case .withRaidLevel(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-      }
-      if let v = _storage._withThrowType {
+      case .withThrowType(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-      }
-      if let v = _storage._withWinGymBattleStatus {
+      case .withWinGymBattleStatus(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._withSuperEffectiveChargeMove {
+      case .withSuperEffectiveChargeMove(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._withItem {
+      case .withItem(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._withUniquePokestop {
+      case .withUniquePokestop(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._withQuestContext {
+      case .withQuestContext(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
-      }
-      if let v = _storage._withBadgeType {
+      case .withBadgeType(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
-      }
-      if let v = _storage._withPlayerLevel {
+      case .withPlayerLevel(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
-      }
-      if let v = _storage._withWinBattleStatus {
+      case .withWinBattleStatus(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
+      case nil: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -689,22 +819,7 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._type != rhs_storage._type {return false}
-        if _storage._withPokemonType != rhs_storage._withPokemonType {return false}
-        if _storage._withPokemonCategory != rhs_storage._withPokemonCategory {return false}
-        if _storage._withWeatherBoost != rhs_storage._withWeatherBoost {return false}
-        if _storage._withDailyCaptureBonus != rhs_storage._withDailyCaptureBonus {return false}
-        if _storage._withDailySpinBonus != rhs_storage._withDailySpinBonus {return false}
-        if _storage._withWinRaidStatus != rhs_storage._withWinRaidStatus {return false}
-        if _storage._withRaidLevel != rhs_storage._withRaidLevel {return false}
-        if _storage._withThrowType != rhs_storage._withThrowType {return false}
-        if _storage._withWinGymBattleStatus != rhs_storage._withWinGymBattleStatus {return false}
-        if _storage._withSuperEffectiveChargeMove != rhs_storage._withSuperEffectiveChargeMove {return false}
-        if _storage._withItem != rhs_storage._withItem {return false}
-        if _storage._withUniquePokestop != rhs_storage._withUniquePokestop {return false}
-        if _storage._withQuestContext != rhs_storage._withQuestContext {return false}
-        if _storage._withBadgeType != rhs_storage._withBadgeType {return false}
-        if _storage._withPlayerLevel != rhs_storage._withPlayerLevel {return false}
-        if _storage._withWinBattleStatus != rhs_storage._withWinBattleStatus {return false}
+        if _storage._condition != rhs_storage._condition {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -919,26 +1034,34 @@ extension POGOProtos_Data_Quests_QuestCondition.WithThrowType: SwiftProtobuf.Mes
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularEnumField(value: &self.throwType)
-      case 2: try decoder.decodeSingularBoolField(value: &self.hit)
+      case 1:
+        if self.`throw` != nil {try decoder.handleConflictingOneOf()}
+        var v: POGOProtos_Enums_ActivityType?
+        try decoder.decodeSingularEnumField(value: &v)
+        if let v = v {self.`throw` = .throwType(v)}
+      case 2:
+        if self.`throw` != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.`throw` = .hit(v)}
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.throwType != .activityUnknown {
-      try visitor.visitSingularEnumField(value: self.throwType, fieldNumber: 1)
-    }
-    if self.hit != false {
-      try visitor.visitSingularBoolField(value: self.hit, fieldNumber: 2)
+    switch self.`throw` {
+    case .throwType(let v)?:
+      try visitor.visitSingularEnumField(value: v, fieldNumber: 1)
+    case .hit(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
+    case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithThrowType, rhs: POGOProtos_Data_Quests_QuestCondition.WithThrowType) -> Bool {
-    if lhs.throwType != rhs.throwType {return false}
-    if lhs.hit != rhs.hit {return false}
+    if lhs.`throw` != rhs.`throw` {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

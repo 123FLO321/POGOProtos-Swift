@@ -103,6 +103,14 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .completeQuestPokemonEncounter(newValue)}
   }
 
+  public var belugaTransfer: POGOProtos_Data_Logs_BelugaDailyTransferLogEntry {
+    get {
+      if case .belugaTransfer(let v)? = _storage._action {return v}
+      return POGOProtos_Data_Logs_BelugaDailyTransferLogEntry()
+    }
+    set {_uniqueStorage()._action = .belugaTransfer(newValue)}
+  }
+
   public var openGift: POGOProtos_Data_Logs_OpenGiftLogEntry {
     get {
       if case .openGift(let v)? = _storage._action {return v}
@@ -162,6 +170,7 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     case completeQuest(POGOProtos_Data_Logs_CompleteQuestLogEntry)
     case completeQuestStampCard(POGOProtos_Data_Logs_CompleteQuestStampCardLogEntry)
     case completeQuestPokemonEncounter(POGOProtos_Data_Logs_CompleteQuestPokemonEncounterLogEntry)
+    case belugaTransfer(POGOProtos_Data_Logs_BelugaDailyTransferLogEntry)
     case openGift(POGOProtos_Data_Logs_OpenGiftLogEntry)
     case sendGift(POGOProtos_Data_Logs_SendGiftLogEntry)
     case trading(POGOProtos_Data_Logs_TradingLogEntry)
@@ -180,6 +189,7 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
       case (.completeQuest(let l), .completeQuest(let r)): return l == r
       case (.completeQuestStampCard(let l), .completeQuestStampCard(let r)): return l == r
       case (.completeQuestPokemonEncounter(let l), .completeQuestPokemonEncounter(let r)): return l == r
+      case (.belugaTransfer(let l), .belugaTransfer(let r)): return l == r
       case (.openGift(let l), .openGift(let r)): return l == r
       case (.sendGift(let l), .sendGift(let r)): return l == r
       case (.trading(let l), .trading(let r)): return l == r
@@ -214,6 +224,7 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
     8: .standard(proto: "complete_quest"),
     9: .standard(proto: "complete_quest_stamp_card"),
     10: .standard(proto: "complete_quest_pokemon_encounter"),
+    11: .standard(proto: "beluga_transfer"),
     12: .standard(proto: "open_gift"),
     13: .standard(proto: "send_gift"),
     14: .same(proto: "trading"),
@@ -316,6 +327,14 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._action = .completeQuestPokemonEncounter(v)}
+        case 11:
+          var v: POGOProtos_Data_Logs_BelugaDailyTransferLogEntry?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .belugaTransfer(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .belugaTransfer(v)}
         case 12:
           var v: POGOProtos_Data_Logs_OpenGiftLogEntry?
           if let current = _storage._action {
@@ -395,6 +414,8 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
       case .completeQuestPokemonEncounter(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+      case .belugaTransfer(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
       case .openGift(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
       case .sendGift(let v)?:

@@ -35,10 +35,10 @@ public enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
   case inviteFacebookFriend // = 10011
   case isMyFriend // = 10012
   case createInviteCode // = 10013
-  case registerPushNotification // = 10101
-  case unregisterPushNotification // = 10102
+  case registerPushNotificationSocialAction // = 10101
+  case unregisterPushNotificationSocialAction // = 10102
   case updateNotification // = 10103
-  case optOutPushNotificationCategory // = 10104
+  case optOutPushNotificationCategorySocialAction // = 10104
   case getInbox // = 10105
   case UNRECOGNIZED(Int)
 
@@ -62,10 +62,10 @@ public enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
     case 10011: self = .inviteFacebookFriend
     case 10012: self = .isMyFriend
     case 10013: self = .createInviteCode
-    case 10101: self = .registerPushNotification
-    case 10102: self = .unregisterPushNotification
+    case 10101: self = .registerPushNotificationSocialAction
+    case 10102: self = .unregisterPushNotificationSocialAction
     case 10103: self = .updateNotification
-    case 10104: self = .optOutPushNotificationCategory
+    case 10104: self = .optOutPushNotificationCategorySocialAction
     case 10105: self = .getInbox
     default: self = .UNRECOGNIZED(rawValue)
     }
@@ -87,10 +87,10 @@ public enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
     case .inviteFacebookFriend: return 10011
     case .isMyFriend: return 10012
     case .createInviteCode: return 10013
-    case .registerPushNotification: return 10101
-    case .unregisterPushNotification: return 10102
+    case .registerPushNotificationSocialAction: return 10101
+    case .unregisterPushNotificationSocialAction: return 10102
     case .updateNotification: return 10103
-    case .optOutPushNotificationCategory: return 10104
+    case .optOutPushNotificationCategorySocialAction: return 10104
     case .getInbox: return 10105
     case .UNRECOGNIZED(let i): return i
     }
@@ -117,10 +117,10 @@ extension POGOProtos_Enums_SocialAction: CaseIterable {
     .inviteFacebookFriend,
     .isMyFriend,
     .createInviteCode,
-    .registerPushNotification,
-    .unregisterPushNotification,
+    .registerPushNotificationSocialAction,
+    .unregisterPushNotificationSocialAction,
     .updateNotification,
-    .optOutPushNotificationCategory,
+    .optOutPushNotificationCategorySocialAction,
     .getInbox,
   ]
 }
@@ -145,10 +145,10 @@ extension POGOProtos_Enums_SocialAction: SwiftProtobuf._ProtoNameProviding {
     10011: .same(proto: "INVITE_FACEBOOK_FRIEND"),
     10012: .same(proto: "IS_MY_FRIEND"),
     10013: .same(proto: "CREATE_INVITE_CODE"),
-    10101: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
-    10102: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
+    10101: .same(proto: "REGISTER_PUSH_NOTIFICATION_SOCIAL_ACTION"),
+    10102: .same(proto: "UNREGISTER_PUSH_NOTIFICATION_SOCIAL_ACTION"),
     10103: .same(proto: "UPDATE_NOTIFICATION"),
-    10104: .same(proto: "OPT_OUT_PUSH_NOTIFICATION_CATEGORY"),
+    10104: .same(proto: "OPT_OUT_PUSH_NOTIFICATION_CATEGORY_SOCIAL_ACTION"),
     10105: .same(proto: "GET_INBOX"),
   ]
 }

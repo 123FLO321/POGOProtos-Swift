@@ -28,6 +28,7 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
   case halloween2017 // = 4
   case summer2018 // = 5
   case fall2018 // = 6
+  case november2018 // = 7
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -43,6 +44,7 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case 4: self = .halloween2017
     case 5: self = .summer2018
     case 6: self = .fall2018
+    case 7: self = .november2018
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -56,6 +58,7 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case .halloween2017: return 4
     case .summer2018: return 5
     case .fall2018: return 6
+    case .november2018: return 7
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -74,6 +77,7 @@ extension POGOProtos_Enums_Costume: CaseIterable {
     .halloween2017,
     .summer2018,
     .fall2018,
+    .november2018,
   ]
 }
 
@@ -90,5 +94,6 @@ extension POGOProtos_Enums_Costume: SwiftProtobuf._ProtoNameProviding {
     4: .same(proto: "HALLOWEEN_2017"),
     5: .same(proto: "SUMMER_2018"),
     6: .same(proto: "FALL_2018"),
+    7: .same(proto: "NOVEMBER_2018"),
   ]
 }

@@ -24,358 +24,443 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var bootTime: POGOProtos_Data_Telemetry_BootTime {
-    get {return _storage._bootTime ?? POGOProtos_Data_Telemetry_BootTime()}
-    set {_uniqueStorage()._bootTime = newValue}
+  public var telemetryData: OneOf_TelemetryData? {
+    get {return _storage._telemetryData}
+    set {_uniqueStorage()._telemetryData = newValue}
   }
-  /// Returns true if `bootTime` has been explicitly set.
-  public var hasBootTime: Bool {return _storage._bootTime != nil}
-  /// Clears the value of `bootTime`. Subsequent reads from it will return its default value.
-  public mutating func clearBootTime() {_uniqueStorage()._bootTime = nil}
+
+  public var bootTime: POGOProtos_Data_Telemetry_BootTime {
+    get {
+      if case .bootTime(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_BootTime()
+    }
+    set {_uniqueStorage()._telemetryData = .bootTime(newValue)}
+  }
 
   public var frameRate: POGOProtos_Data_Telemetry_FrameRate {
-    get {return _storage._frameRate ?? POGOProtos_Data_Telemetry_FrameRate()}
-    set {_uniqueStorage()._frameRate = newValue}
+    get {
+      if case .frameRate(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_FrameRate()
+    }
+    set {_uniqueStorage()._telemetryData = .frameRate(newValue)}
   }
-  /// Returns true if `frameRate` has been explicitly set.
-  public var hasFrameRate: Bool {return _storage._frameRate != nil}
-  /// Clears the value of `frameRate`. Subsequent reads from it will return its default value.
-  public mutating func clearFrameRate() {_uniqueStorage()._frameRate = nil}
 
   public var genericClickTelemetry: POGOProtos_Data_Telemetry_GenericClickTelemetry {
-    get {return _storage._genericClickTelemetry ?? POGOProtos_Data_Telemetry_GenericClickTelemetry()}
-    set {_uniqueStorage()._genericClickTelemetry = newValue}
+    get {
+      if case .genericClickTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_GenericClickTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .genericClickTelemetry(newValue)}
   }
-  /// Returns true if `genericClickTelemetry` has been explicitly set.
-  public var hasGenericClickTelemetry: Bool {return _storage._genericClickTelemetry != nil}
-  /// Clears the value of `genericClickTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearGenericClickTelemetry() {_uniqueStorage()._genericClickTelemetry = nil}
 
   public var mapEventsTelemetry: POGOProtos_Data_Telemetry_MapEventsTelemetry {
-    get {return _storage._mapEventsTelemetry ?? POGOProtos_Data_Telemetry_MapEventsTelemetry()}
-    set {_uniqueStorage()._mapEventsTelemetry = newValue}
+    get {
+      if case .mapEventsTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_MapEventsTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .mapEventsTelemetry(newValue)}
   }
-  /// Returns true if `mapEventsTelemetry` has been explicitly set.
-  public var hasMapEventsTelemetry: Bool {return _storage._mapEventsTelemetry != nil}
-  /// Clears the value of `mapEventsTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearMapEventsTelemetry() {_uniqueStorage()._mapEventsTelemetry = nil}
 
   public var spinPokestopTelemetry: POGOProtos_Data_Telemetry_SpinPokestopTelemetry {
-    get {return _storage._spinPokestopTelemetry ?? POGOProtos_Data_Telemetry_SpinPokestopTelemetry()}
-    set {_uniqueStorage()._spinPokestopTelemetry = newValue}
+    get {
+      if case .spinPokestopTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_SpinPokestopTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .spinPokestopTelemetry(newValue)}
   }
-  /// Returns true if `spinPokestopTelemetry` has been explicitly set.
-  public var hasSpinPokestopTelemetry: Bool {return _storage._spinPokestopTelemetry != nil}
-  /// Clears the value of `spinPokestopTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearSpinPokestopTelemetry() {_uniqueStorage()._spinPokestopTelemetry = nil}
 
   public var profilePageTelemetry: POGOProtos_Data_Telemetry_ProfilePageTelemetry {
-    get {return _storage._profilePageTelemetry ?? POGOProtos_Data_Telemetry_ProfilePageTelemetry()}
-    set {_uniqueStorage()._profilePageTelemetry = newValue}
+    get {
+      if case .profilePageTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ProfilePageTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .profilePageTelemetry(newValue)}
   }
-  /// Returns true if `profilePageTelemetry` has been explicitly set.
-  public var hasProfilePageTelemetry: Bool {return _storage._profilePageTelemetry != nil}
-  /// Clears the value of `profilePageTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearProfilePageTelemetry() {_uniqueStorage()._profilePageTelemetry = nil}
 
   public var shoppingPageTelemetry: POGOProtos_Data_Telemetry_ShoppingPageTelemetry {
-    get {return _storage._shoppingPageTelemetry ?? POGOProtos_Data_Telemetry_ShoppingPageTelemetry()}
-    set {_uniqueStorage()._shoppingPageTelemetry = newValue}
+    get {
+      if case .shoppingPageTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ShoppingPageTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .shoppingPageTelemetry(newValue)}
   }
-  /// Returns true if `shoppingPageTelemetry` has been explicitly set.
-  public var hasShoppingPageTelemetry: Bool {return _storage._shoppingPageTelemetry != nil}
-  /// Clears the value of `shoppingPageTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearShoppingPageTelemetry() {_uniqueStorage()._shoppingPageTelemetry = nil}
 
   public var encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry {
-    get {return _storage._encounterPokemonTelemetry ?? POGOProtos_Data_Telemetry_EncounterPokemonTelemetry()}
-    set {_uniqueStorage()._encounterPokemonTelemetry = newValue}
+    get {
+      if case .encounterPokemonTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_EncounterPokemonTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .encounterPokemonTelemetry(newValue)}
   }
-  /// Returns true if `encounterPokemonTelemetry` has been explicitly set.
-  public var hasEncounterPokemonTelemetry: Bool {return _storage._encounterPokemonTelemetry != nil}
-  /// Clears the value of `encounterPokemonTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearEncounterPokemonTelemetry() {_uniqueStorage()._encounterPokemonTelemetry = nil}
 
   public var catchPokemonTelemetry: POGOProtos_Data_Telemetry_CatchPokemonTelemetry {
-    get {return _storage._catchPokemonTelemetry ?? POGOProtos_Data_Telemetry_CatchPokemonTelemetry()}
-    set {_uniqueStorage()._catchPokemonTelemetry = newValue}
+    get {
+      if case .catchPokemonTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_CatchPokemonTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .catchPokemonTelemetry(newValue)}
   }
-  /// Returns true if `catchPokemonTelemetry` has been explicitly set.
-  public var hasCatchPokemonTelemetry: Bool {return _storage._catchPokemonTelemetry != nil}
-  /// Clears the value of `catchPokemonTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearCatchPokemonTelemetry() {_uniqueStorage()._catchPokemonTelemetry = nil}
 
   public var deployPokemonTelemetry: POGOProtos_Data_Telemetry_DeployPokemonTelemetry {
-    get {return _storage._deployPokemonTelemetry ?? POGOProtos_Data_Telemetry_DeployPokemonTelemetry()}
-    set {_uniqueStorage()._deployPokemonTelemetry = newValue}
+    get {
+      if case .deployPokemonTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_DeployPokemonTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .deployPokemonTelemetry(newValue)}
   }
-  /// Returns true if `deployPokemonTelemetry` has been explicitly set.
-  public var hasDeployPokemonTelemetry: Bool {return _storage._deployPokemonTelemetry != nil}
-  /// Clears the value of `deployPokemonTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearDeployPokemonTelemetry() {_uniqueStorage()._deployPokemonTelemetry = nil}
 
   public var feedPokemonTelemetry: POGOProtos_Data_Telemetry_FeedPokemonTelemetry {
-    get {return _storage._feedPokemonTelemetry ?? POGOProtos_Data_Telemetry_FeedPokemonTelemetry()}
-    set {_uniqueStorage()._feedPokemonTelemetry = newValue}
+    get {
+      if case .feedPokemonTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_FeedPokemonTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .feedPokemonTelemetry(newValue)}
   }
-  /// Returns true if `feedPokemonTelemetry` has been explicitly set.
-  public var hasFeedPokemonTelemetry: Bool {return _storage._feedPokemonTelemetry != nil}
-  /// Clears the value of `feedPokemonTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearFeedPokemonTelemetry() {_uniqueStorage()._feedPokemonTelemetry = nil}
 
   public var evolvePokemonTelemetry: POGOProtos_Data_Telemetry_EvolvePokemonTelemetry {
-    get {return _storage._evolvePokemonTelemetry ?? POGOProtos_Data_Telemetry_EvolvePokemonTelemetry()}
-    set {_uniqueStorage()._evolvePokemonTelemetry = newValue}
+    get {
+      if case .evolvePokemonTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_EvolvePokemonTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .evolvePokemonTelemetry(newValue)}
   }
-  /// Returns true if `evolvePokemonTelemetry` has been explicitly set.
-  public var hasEvolvePokemonTelemetry: Bool {return _storage._evolvePokemonTelemetry != nil}
-  /// Clears the value of `evolvePokemonTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearEvolvePokemonTelemetry() {_uniqueStorage()._evolvePokemonTelemetry = nil}
 
   public var releasePokemonTelemetry: POGOProtos_Data_Telemetry_ReleasePokemonTelemetry {
-    get {return _storage._releasePokemonTelemetry ?? POGOProtos_Data_Telemetry_ReleasePokemonTelemetry()}
-    set {_uniqueStorage()._releasePokemonTelemetry = newValue}
+    get {
+      if case .releasePokemonTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ReleasePokemonTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .releasePokemonTelemetry(newValue)}
   }
-  /// Returns true if `releasePokemonTelemetry` has been explicitly set.
-  public var hasReleasePokemonTelemetry: Bool {return _storage._releasePokemonTelemetry != nil}
-  /// Clears the value of `releasePokemonTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearReleasePokemonTelemetry() {_uniqueStorage()._releasePokemonTelemetry = nil}
 
   public var nicknamePokemonTelemetry: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry {
-    get {return _storage._nicknamePokemonTelemetry ?? POGOProtos_Data_Telemetry_NicknamePokemonTelemetry()}
-    set {_uniqueStorage()._nicknamePokemonTelemetry = newValue}
+    get {
+      if case .nicknamePokemonTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_NicknamePokemonTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .nicknamePokemonTelemetry(newValue)}
   }
-  /// Returns true if `nicknamePokemonTelemetry` has been explicitly set.
-  public var hasNicknamePokemonTelemetry: Bool {return _storage._nicknamePokemonTelemetry != nil}
-  /// Clears the value of `nicknamePokemonTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearNicknamePokemonTelemetry() {_uniqueStorage()._nicknamePokemonTelemetry = nil}
 
   public var newsPageTelemetry: POGOProtos_Data_Telemetry_NewsPageTelemetry {
-    get {return _storage._newsPageTelemetry ?? POGOProtos_Data_Telemetry_NewsPageTelemetry()}
-    set {_uniqueStorage()._newsPageTelemetry = newValue}
+    get {
+      if case .newsPageTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_NewsPageTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .newsPageTelemetry(newValue)}
   }
-  /// Returns true if `newsPageTelemetry` has been explicitly set.
-  public var hasNewsPageTelemetry: Bool {return _storage._newsPageTelemetry != nil}
-  /// Clears the value of `newsPageTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearNewsPageTelemetry() {_uniqueStorage()._newsPageTelemetry = nil}
 
   public var itemTelemetry: POGOProtos_Data_Telemetry_ItemTelemetry {
-    get {return _storage._itemTelemetry ?? POGOProtos_Data_Telemetry_ItemTelemetry()}
-    set {_uniqueStorage()._itemTelemetry = newValue}
+    get {
+      if case .itemTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ItemTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .itemTelemetry(newValue)}
   }
-  /// Returns true if `itemTelemetry` has been explicitly set.
-  public var hasItemTelemetry: Bool {return _storage._itemTelemetry != nil}
-  /// Clears the value of `itemTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearItemTelemetry() {_uniqueStorage()._itemTelemetry = nil}
 
   public var battlePartyTelemetry: POGOProtos_Data_Telemetry_BattlePartyTelemetry {
-    get {return _storage._battlePartyTelemetry ?? POGOProtos_Data_Telemetry_BattlePartyTelemetry()}
-    set {_uniqueStorage()._battlePartyTelemetry = newValue}
+    get {
+      if case .battlePartyTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_BattlePartyTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .battlePartyTelemetry(newValue)}
   }
-  /// Returns true if `battlePartyTelemetry` has been explicitly set.
-  public var hasBattlePartyTelemetry: Bool {return _storage._battlePartyTelemetry != nil}
-  /// Clears the value of `battlePartyTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearBattlePartyTelemetry() {_uniqueStorage()._battlePartyTelemetry = nil}
 
   public var passcodeRedeemTelemetry: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry {
-    get {return _storage._passcodeRedeemTelemetry ?? POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry()}
-    set {_uniqueStorage()._passcodeRedeemTelemetry = newValue}
+    get {
+      if case .passcodeRedeemTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .passcodeRedeemTelemetry(newValue)}
   }
-  /// Returns true if `passcodeRedeemTelemetry` has been explicitly set.
-  public var hasPasscodeRedeemTelemetry: Bool {return _storage._passcodeRedeemTelemetry != nil}
-  /// Clears the value of `passcodeRedeemTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearPasscodeRedeemTelemetry() {_uniqueStorage()._passcodeRedeemTelemetry = nil}
 
   public var linkLoginTelemetry: POGOProtos_Data_Telemetry_LinkLoginTelemetry {
-    get {return _storage._linkLoginTelemetry ?? POGOProtos_Data_Telemetry_LinkLoginTelemetry()}
-    set {_uniqueStorage()._linkLoginTelemetry = newValue}
+    get {
+      if case .linkLoginTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_LinkLoginTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .linkLoginTelemetry(newValue)}
   }
-  /// Returns true if `linkLoginTelemetry` has been explicitly set.
-  public var hasLinkLoginTelemetry: Bool {return _storage._linkLoginTelemetry != nil}
-  /// Clears the value of `linkLoginTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearLinkLoginTelemetry() {_uniqueStorage()._linkLoginTelemetry = nil}
 
   public var raidTelemetry: POGOProtos_Data_Telemetry_RaidTelemetry {
-    get {return _storage._raidTelemetry ?? POGOProtos_Data_Telemetry_RaidTelemetry()}
-    set {_uniqueStorage()._raidTelemetry = newValue}
+    get {
+      if case .raidTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_RaidTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .raidTelemetry(newValue)}
   }
-  /// Returns true if `raidTelemetry` has been explicitly set.
-  public var hasRaidTelemetry: Bool {return _storage._raidTelemetry != nil}
-  /// Clears the value of `raidTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearRaidTelemetry() {_uniqueStorage()._raidTelemetry = nil}
 
   public var pushNotificationTelemetry: POGOProtos_Data_Telemetry_PushNotificationTelemetry {
-    get {return _storage._pushNotificationTelemetry ?? POGOProtos_Data_Telemetry_PushNotificationTelemetry()}
-    set {_uniqueStorage()._pushNotificationTelemetry = newValue}
+    get {
+      if case .pushNotificationTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PushNotificationTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .pushNotificationTelemetry(newValue)}
   }
-  /// Returns true if `pushNotificationTelemetry` has been explicitly set.
-  public var hasPushNotificationTelemetry: Bool {return _storage._pushNotificationTelemetry != nil}
-  /// Clears the value of `pushNotificationTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearPushNotificationTelemetry() {_uniqueStorage()._pushNotificationTelemetry = nil}
 
   public var avatarCustomizationTelemetry: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry {
-    get {return _storage._avatarCustomizationTelemetry ?? POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry()}
-    set {_uniqueStorage()._avatarCustomizationTelemetry = newValue}
+    get {
+      if case .avatarCustomizationTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .avatarCustomizationTelemetry(newValue)}
   }
-  /// Returns true if `avatarCustomizationTelemetry` has been explicitly set.
-  public var hasAvatarCustomizationTelemetry: Bool {return _storage._avatarCustomizationTelemetry != nil}
-  /// Clears the value of `avatarCustomizationTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearAvatarCustomizationTelemetry() {_uniqueStorage()._avatarCustomizationTelemetry = nil}
 
   public var readPointOfInterestDescriptionTelemetry: POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry {
-    get {return _storage._readPointOfInterestDescriptionTelemetry ?? POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry()}
-    set {_uniqueStorage()._readPointOfInterestDescriptionTelemetry = newValue}
+    get {
+      if case .readPointOfInterestDescriptionTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .readPointOfInterestDescriptionTelemetry(newValue)}
   }
-  /// Returns true if `readPointOfInterestDescriptionTelemetry` has been explicitly set.
-  public var hasReadPointOfInterestDescriptionTelemetry: Bool {return _storage._readPointOfInterestDescriptionTelemetry != nil}
-  /// Clears the value of `readPointOfInterestDescriptionTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearReadPointOfInterestDescriptionTelemetry() {_uniqueStorage()._readPointOfInterestDescriptionTelemetry = nil}
 
   public var webTelemetry: POGOProtos_Data_Telemetry_WebTelemetry {
-    get {return _storage._webTelemetry ?? POGOProtos_Data_Telemetry_WebTelemetry()}
-    set {_uniqueStorage()._webTelemetry = newValue}
+    get {
+      if case .webTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_WebTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .webTelemetry(newValue)}
   }
-  /// Returns true if `webTelemetry` has been explicitly set.
-  public var hasWebTelemetry: Bool {return _storage._webTelemetry != nil}
-  /// Clears the value of `webTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearWebTelemetry() {_uniqueStorage()._webTelemetry = nil}
 
   public var changeArTelemetry: POGOProtos_Data_Telemetry_ChangeArTelemetry {
-    get {return _storage._changeArTelemetry ?? POGOProtos_Data_Telemetry_ChangeArTelemetry()}
-    set {_uniqueStorage()._changeArTelemetry = newValue}
+    get {
+      if case .changeArTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ChangeArTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .changeArTelemetry(newValue)}
   }
-  /// Returns true if `changeArTelemetry` has been explicitly set.
-  public var hasChangeArTelemetry: Bool {return _storage._changeArTelemetry != nil}
-  /// Clears the value of `changeArTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearChangeArTelemetry() {_uniqueStorage()._changeArTelemetry = nil}
 
   public var weatherDetailClickTelemetry: POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry {
-    get {return _storage._weatherDetailClickTelemetry ?? POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry()}
-    set {_uniqueStorage()._weatherDetailClickTelemetry = newValue}
+    get {
+      if case .weatherDetailClickTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .weatherDetailClickTelemetry(newValue)}
   }
-  /// Returns true if `weatherDetailClickTelemetry` has been explicitly set.
-  public var hasWeatherDetailClickTelemetry: Bool {return _storage._weatherDetailClickTelemetry != nil}
-  /// Clears the value of `weatherDetailClickTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearWeatherDetailClickTelemetry() {_uniqueStorage()._weatherDetailClickTelemetry = nil}
 
   public var userIssueWeatherReport: POGOProtos_Data_Player_UserIssueWeatherReport {
-    get {return _storage._userIssueWeatherReport ?? POGOProtos_Data_Player_UserIssueWeatherReport()}
-    set {_uniqueStorage()._userIssueWeatherReport = newValue}
+    get {
+      if case .userIssueWeatherReport(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Player_UserIssueWeatherReport()
+    }
+    set {_uniqueStorage()._telemetryData = .userIssueWeatherReport(newValue)}
   }
-  /// Returns true if `userIssueWeatherReport` has been explicitly set.
-  public var hasUserIssueWeatherReport: Bool {return _storage._userIssueWeatherReport != nil}
-  /// Clears the value of `userIssueWeatherReport`. Subsequent reads from it will return its default value.
-  public mutating func clearUserIssueWeatherReport() {_uniqueStorage()._userIssueWeatherReport = nil}
 
   public var pokemonInventoryTelemetry: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry {
-    get {return _storage._pokemonInventoryTelemetry ?? POGOProtos_Data_Telemetry_PokemonInventoryTelemetry()}
-    set {_uniqueStorage()._pokemonInventoryTelemetry = newValue}
+    get {
+      if case .pokemonInventoryTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PokemonInventoryTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .pokemonInventoryTelemetry(newValue)}
   }
-  /// Returns true if `pokemonInventoryTelemetry` has been explicitly set.
-  public var hasPokemonInventoryTelemetry: Bool {return _storage._pokemonInventoryTelemetry != nil}
-  /// Clears the value of `pokemonInventoryTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearPokemonInventoryTelemetry() {_uniqueStorage()._pokemonInventoryTelemetry = nil}
 
   public var socialTelemetry: POGOProtos_Data_Telemetry_SocialTelemetry {
-    get {return _storage._socialTelemetry ?? POGOProtos_Data_Telemetry_SocialTelemetry()}
-    set {_uniqueStorage()._socialTelemetry = newValue}
+    get {
+      if case .socialTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_SocialTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .socialTelemetry(newValue)}
   }
-  /// Returns true if `socialTelemetry` has been explicitly set.
-  public var hasSocialTelemetry: Bool {return _storage._socialTelemetry != nil}
-  /// Clears the value of `socialTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearSocialTelemetry() {_uniqueStorage()._socialTelemetry = nil}
 
   public var checkEncounterInfoTelemetry: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry {
-    get {return _storage._checkEncounterInfoTelemetry ?? POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry()}
-    set {_uniqueStorage()._checkEncounterInfoTelemetry = newValue}
+    get {
+      if case .checkEncounterInfoTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .checkEncounterInfoTelemetry(newValue)}
   }
-  /// Returns true if `checkEncounterInfoTelemetry` has been explicitly set.
-  public var hasCheckEncounterInfoTelemetry: Bool {return _storage._checkEncounterInfoTelemetry != nil}
-  /// Clears the value of `checkEncounterInfoTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearCheckEncounterInfoTelemetry() {_uniqueStorage()._checkEncounterInfoTelemetry = nil}
 
   public var pokemonGoPlusTelemetry: POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry {
-    get {return _storage._pokemonGoPlusTelemetry ?? POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry()}
-    set {_uniqueStorage()._pokemonGoPlusTelemetry = newValue}
+    get {
+      if case .pokemonGoPlusTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .pokemonGoPlusTelemetry(newValue)}
   }
-  /// Returns true if `pokemonGoPlusTelemetry` has been explicitly set.
-  public var hasPokemonGoPlusTelemetry: Bool {return _storage._pokemonGoPlusTelemetry != nil}
-  /// Clears the value of `pokemonGoPlusTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearPokemonGoPlusTelemetry() {_uniqueStorage()._pokemonGoPlusTelemetry = nil}
 
   public var rpcTimingTelemetry: POGOProtos_Data_Telemetry_RpcResponseTelemetry {
-    get {return _storage._rpcTimingTelemetry ?? POGOProtos_Data_Telemetry_RpcResponseTelemetry()}
-    set {_uniqueStorage()._rpcTimingTelemetry = newValue}
+    get {
+      if case .rpcTimingTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_RpcResponseTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .rpcTimingTelemetry(newValue)}
   }
-  /// Returns true if `rpcTimingTelemetry` has been explicitly set.
-  public var hasRpcTimingTelemetry: Bool {return _storage._rpcTimingTelemetry != nil}
-  /// Clears the value of `rpcTimingTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearRpcTimingTelemetry() {_uniqueStorage()._rpcTimingTelemetry = nil}
 
   public var socialGiftCountTelemetry: POGOProtos_Settings_SocialGiftCountTelemetry {
-    get {return _storage._socialGiftCountTelemetry ?? POGOProtos_Settings_SocialGiftCountTelemetry()}
-    set {_uniqueStorage()._socialGiftCountTelemetry = newValue}
+    get {
+      if case .socialGiftCountTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Settings_SocialGiftCountTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .socialGiftCountTelemetry(newValue)}
   }
-  /// Returns true if `socialGiftCountTelemetry` has been explicitly set.
-  public var hasSocialGiftCountTelemetry: Bool {return _storage._socialGiftCountTelemetry != nil}
-  /// Clears the value of `socialGiftCountTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearSocialGiftCountTelemetry() {_uniqueStorage()._socialGiftCountTelemetry = nil}
 
   public var assetBundleTelemetry: POGOProtos_Data_Telemetry_AssetBundleDownloadTelemetry {
-    get {return _storage._assetBundleTelemetry ?? POGOProtos_Data_Telemetry_AssetBundleDownloadTelemetry()}
-    set {_uniqueStorage()._assetBundleTelemetry = newValue}
+    get {
+      if case .assetBundleTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_AssetBundleDownloadTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .assetBundleTelemetry(newValue)}
   }
-  /// Returns true if `assetBundleTelemetry` has been explicitly set.
-  public var hasAssetBundleTelemetry: Bool {return _storage._assetBundleTelemetry != nil}
-  /// Clears the value of `assetBundleTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearAssetBundleTelemetry() {_uniqueStorage()._assetBundleTelemetry = nil}
 
   public var assetPoiDownloadTelemetry: POGOProtos_Data_Telemetry_AssetPoiDownloadTelemetry {
-    get {return _storage._assetPoiDownloadTelemetry ?? POGOProtos_Data_Telemetry_AssetPoiDownloadTelemetry()}
-    set {_uniqueStorage()._assetPoiDownloadTelemetry = newValue}
+    get {
+      if case .assetPoiDownloadTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_AssetPoiDownloadTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .assetPoiDownloadTelemetry(newValue)}
   }
-  /// Returns true if `assetPoiDownloadTelemetry` has been explicitly set.
-  public var hasAssetPoiDownloadTelemetry: Bool {return _storage._assetPoiDownloadTelemetry != nil}
-  /// Clears the value of `assetPoiDownloadTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearAssetPoiDownloadTelemetry() {_uniqueStorage()._assetPoiDownloadTelemetry = nil}
 
   public var assetStreamDownloadTelemetry: POGOProtos_Data_Telemetry_AssetStreamDownloadTelemetry {
-    get {return _storage._assetStreamDownloadTelemetry ?? POGOProtos_Data_Telemetry_AssetStreamDownloadTelemetry()}
-    set {_uniqueStorage()._assetStreamDownloadTelemetry = newValue}
+    get {
+      if case .assetStreamDownloadTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_AssetStreamDownloadTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .assetStreamDownloadTelemetry(newValue)}
   }
-  /// Returns true if `assetStreamDownloadTelemetry` has been explicitly set.
-  public var hasAssetStreamDownloadTelemetry: Bool {return _storage._assetStreamDownloadTelemetry != nil}
-  /// Clears the value of `assetStreamDownloadTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearAssetStreamDownloadTelemetry() {_uniqueStorage()._assetStreamDownloadTelemetry = nil}
 
   public var assetStreamCacheCulledTelemetry: POGOProtos_Data_Telemetry_AssetStreamCacheCulledTelemetry {
-    get {return _storage._assetStreamCacheCulledTelemetry ?? POGOProtos_Data_Telemetry_AssetStreamCacheCulledTelemetry()}
-    set {_uniqueStorage()._assetStreamCacheCulledTelemetry = newValue}
+    get {
+      if case .assetStreamCacheCulledTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_AssetStreamCacheCulledTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .assetStreamCacheCulledTelemetry(newValue)}
   }
-  /// Returns true if `assetStreamCacheCulledTelemetry` has been explicitly set.
-  public var hasAssetStreamCacheCulledTelemetry: Bool {return _storage._assetStreamCacheCulledTelemetry != nil}
-  /// Clears the value of `assetStreamCacheCulledTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearAssetStreamCacheCulledTelemetry() {_uniqueStorage()._assetStreamCacheCulledTelemetry = nil}
 
   public var rpcSocketTimingTelemetry: POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry {
-    get {return _storage._rpcSocketTimingTelemetry ?? POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry()}
-    set {_uniqueStorage()._rpcSocketTimingTelemetry = newValue}
+    get {
+      if case .rpcSocketTimingTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .rpcSocketTimingTelemetry(newValue)}
   }
-  /// Returns true if `rpcSocketTimingTelemetry` has been explicitly set.
-  public var hasRpcSocketTimingTelemetry: Bool {return _storage._rpcSocketTimingTelemetry != nil}
-  /// Clears the value of `rpcSocketTimingTelemetry`. Subsequent reads from it will return its default value.
-  public mutating func clearRpcSocketTimingTelemetry() {_uniqueStorage()._rpcSocketTimingTelemetry = nil}
+
+  public var permissionsFlow: POGOProtos_Data_Telemetry_PermissionsFlowTelemetry {
+    get {
+      if case .permissionsFlow(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PermissionsFlowTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .permissionsFlow(newValue)}
+  }
+
+  public var deviceServiceToggle: POGOProtos_Data_Telemetry_DeviceServiceToggleTelemetry {
+    get {
+      if case .deviceServiceToggle(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_DeviceServiceToggleTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .deviceServiceToggle(newValue)}
+  }
+
+  public var bootTelemetry: POGOProtos_Data_Telemetry_BootTelemetry {
+    get {
+      if case .bootTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_BootTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .bootTelemetry(newValue)}
+  }
 
   public var serverData: POGOProtos_Networking_Platform_Telemetry_PlatformServerData {
-    get {return _storage._serverData ?? POGOProtos_Networking_Platform_Telemetry_PlatformServerData()}
-    set {_uniqueStorage()._serverData = newValue}
+    get {
+      if case .serverData(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Networking_Platform_Telemetry_PlatformServerData()
+    }
+    set {_uniqueStorage()._telemetryData = .serverData(newValue)}
   }
-  /// Returns true if `serverData` has been explicitly set.
-  public var hasServerData: Bool {return _storage._serverData != nil}
-  /// Clears the value of `serverData`. Subsequent reads from it will return its default value.
-  public mutating func clearServerData() {_uniqueStorage()._serverData = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_TelemetryData: Equatable {
+    case bootTime(POGOProtos_Data_Telemetry_BootTime)
+    case frameRate(POGOProtos_Data_Telemetry_FrameRate)
+    case genericClickTelemetry(POGOProtos_Data_Telemetry_GenericClickTelemetry)
+    case mapEventsTelemetry(POGOProtos_Data_Telemetry_MapEventsTelemetry)
+    case spinPokestopTelemetry(POGOProtos_Data_Telemetry_SpinPokestopTelemetry)
+    case profilePageTelemetry(POGOProtos_Data_Telemetry_ProfilePageTelemetry)
+    case shoppingPageTelemetry(POGOProtos_Data_Telemetry_ShoppingPageTelemetry)
+    case encounterPokemonTelemetry(POGOProtos_Data_Telemetry_EncounterPokemonTelemetry)
+    case catchPokemonTelemetry(POGOProtos_Data_Telemetry_CatchPokemonTelemetry)
+    case deployPokemonTelemetry(POGOProtos_Data_Telemetry_DeployPokemonTelemetry)
+    case feedPokemonTelemetry(POGOProtos_Data_Telemetry_FeedPokemonTelemetry)
+    case evolvePokemonTelemetry(POGOProtos_Data_Telemetry_EvolvePokemonTelemetry)
+    case releasePokemonTelemetry(POGOProtos_Data_Telemetry_ReleasePokemonTelemetry)
+    case nicknamePokemonTelemetry(POGOProtos_Data_Telemetry_NicknamePokemonTelemetry)
+    case newsPageTelemetry(POGOProtos_Data_Telemetry_NewsPageTelemetry)
+    case itemTelemetry(POGOProtos_Data_Telemetry_ItemTelemetry)
+    case battlePartyTelemetry(POGOProtos_Data_Telemetry_BattlePartyTelemetry)
+    case passcodeRedeemTelemetry(POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry)
+    case linkLoginTelemetry(POGOProtos_Data_Telemetry_LinkLoginTelemetry)
+    case raidTelemetry(POGOProtos_Data_Telemetry_RaidTelemetry)
+    case pushNotificationTelemetry(POGOProtos_Data_Telemetry_PushNotificationTelemetry)
+    case avatarCustomizationTelemetry(POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry)
+    case readPointOfInterestDescriptionTelemetry(POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry)
+    case webTelemetry(POGOProtos_Data_Telemetry_WebTelemetry)
+    case changeArTelemetry(POGOProtos_Data_Telemetry_ChangeArTelemetry)
+    case weatherDetailClickTelemetry(POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry)
+    case userIssueWeatherReport(POGOProtos_Data_Player_UserIssueWeatherReport)
+    case pokemonInventoryTelemetry(POGOProtos_Data_Telemetry_PokemonInventoryTelemetry)
+    case socialTelemetry(POGOProtos_Data_Telemetry_SocialTelemetry)
+    case checkEncounterInfoTelemetry(POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry)
+    case pokemonGoPlusTelemetry(POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry)
+    case rpcTimingTelemetry(POGOProtos_Data_Telemetry_RpcResponseTelemetry)
+    case socialGiftCountTelemetry(POGOProtos_Settings_SocialGiftCountTelemetry)
+    case assetBundleTelemetry(POGOProtos_Data_Telemetry_AssetBundleDownloadTelemetry)
+    case assetPoiDownloadTelemetry(POGOProtos_Data_Telemetry_AssetPoiDownloadTelemetry)
+    case assetStreamDownloadTelemetry(POGOProtos_Data_Telemetry_AssetStreamDownloadTelemetry)
+    case assetStreamCacheCulledTelemetry(POGOProtos_Data_Telemetry_AssetStreamCacheCulledTelemetry)
+    case rpcSocketTimingTelemetry(POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry)
+    case permissionsFlow(POGOProtos_Data_Telemetry_PermissionsFlowTelemetry)
+    case deviceServiceToggle(POGOProtos_Data_Telemetry_DeviceServiceToggleTelemetry)
+    case bootTelemetry(POGOProtos_Data_Telemetry_BootTelemetry)
+    case serverData(POGOProtos_Networking_Platform_Telemetry_PlatformServerData)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData, rhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData) -> Bool {
+      switch (lhs, rhs) {
+      case (.bootTime(let l), .bootTime(let r)): return l == r
+      case (.frameRate(let l), .frameRate(let r)): return l == r
+      case (.genericClickTelemetry(let l), .genericClickTelemetry(let r)): return l == r
+      case (.mapEventsTelemetry(let l), .mapEventsTelemetry(let r)): return l == r
+      case (.spinPokestopTelemetry(let l), .spinPokestopTelemetry(let r)): return l == r
+      case (.profilePageTelemetry(let l), .profilePageTelemetry(let r)): return l == r
+      case (.shoppingPageTelemetry(let l), .shoppingPageTelemetry(let r)): return l == r
+      case (.encounterPokemonTelemetry(let l), .encounterPokemonTelemetry(let r)): return l == r
+      case (.catchPokemonTelemetry(let l), .catchPokemonTelemetry(let r)): return l == r
+      case (.deployPokemonTelemetry(let l), .deployPokemonTelemetry(let r)): return l == r
+      case (.feedPokemonTelemetry(let l), .feedPokemonTelemetry(let r)): return l == r
+      case (.evolvePokemonTelemetry(let l), .evolvePokemonTelemetry(let r)): return l == r
+      case (.releasePokemonTelemetry(let l), .releasePokemonTelemetry(let r)): return l == r
+      case (.nicknamePokemonTelemetry(let l), .nicknamePokemonTelemetry(let r)): return l == r
+      case (.newsPageTelemetry(let l), .newsPageTelemetry(let r)): return l == r
+      case (.itemTelemetry(let l), .itemTelemetry(let r)): return l == r
+      case (.battlePartyTelemetry(let l), .battlePartyTelemetry(let r)): return l == r
+      case (.passcodeRedeemTelemetry(let l), .passcodeRedeemTelemetry(let r)): return l == r
+      case (.linkLoginTelemetry(let l), .linkLoginTelemetry(let r)): return l == r
+      case (.raidTelemetry(let l), .raidTelemetry(let r)): return l == r
+      case (.pushNotificationTelemetry(let l), .pushNotificationTelemetry(let r)): return l == r
+      case (.avatarCustomizationTelemetry(let l), .avatarCustomizationTelemetry(let r)): return l == r
+      case (.readPointOfInterestDescriptionTelemetry(let l), .readPointOfInterestDescriptionTelemetry(let r)): return l == r
+      case (.webTelemetry(let l), .webTelemetry(let r)): return l == r
+      case (.changeArTelemetry(let l), .changeArTelemetry(let r)): return l == r
+      case (.weatherDetailClickTelemetry(let l), .weatherDetailClickTelemetry(let r)): return l == r
+      case (.userIssueWeatherReport(let l), .userIssueWeatherReport(let r)): return l == r
+      case (.pokemonInventoryTelemetry(let l), .pokemonInventoryTelemetry(let r)): return l == r
+      case (.socialTelemetry(let l), .socialTelemetry(let r)): return l == r
+      case (.checkEncounterInfoTelemetry(let l), .checkEncounterInfoTelemetry(let r)): return l == r
+      case (.pokemonGoPlusTelemetry(let l), .pokemonGoPlusTelemetry(let r)): return l == r
+      case (.rpcTimingTelemetry(let l), .rpcTimingTelemetry(let r)): return l == r
+      case (.socialGiftCountTelemetry(let l), .socialGiftCountTelemetry(let r)): return l == r
+      case (.assetBundleTelemetry(let l), .assetBundleTelemetry(let r)): return l == r
+      case (.assetPoiDownloadTelemetry(let l), .assetPoiDownloadTelemetry(let r)): return l == r
+      case (.assetStreamDownloadTelemetry(let l), .assetStreamDownloadTelemetry(let r)): return l == r
+      case (.assetStreamCacheCulledTelemetry(let l), .assetStreamCacheCulledTelemetry(let r)): return l == r
+      case (.rpcSocketTimingTelemetry(let l), .rpcSocketTimingTelemetry(let r)): return l == r
+      case (.permissionsFlow(let l), .permissionsFlow(let r)): return l == r
+      case (.deviceServiceToggle(let l), .deviceServiceToggle(let r)): return l == r
+      case (.bootTelemetry(let l), .bootTelemetry(let r)): return l == r
+      case (.serverData(let l), .serverData(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public init() {}
 
@@ -427,94 +512,21 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     36: .standard(proto: "asset_stream_download_telemetry"),
     37: .standard(proto: "asset_stream_cache_culled_telemetry"),
     38: .standard(proto: "rpc_socket_timing_telemetry"),
+    39: .standard(proto: "permissions_flow"),
+    40: .standard(proto: "device_service_toggle"),
+    41: .standard(proto: "boot_telemetry"),
     1001: .standard(proto: "server_data"),
   ]
 
   fileprivate class _StorageClass {
-    var _bootTime: POGOProtos_Data_Telemetry_BootTime? = nil
-    var _frameRate: POGOProtos_Data_Telemetry_FrameRate? = nil
-    var _genericClickTelemetry: POGOProtos_Data_Telemetry_GenericClickTelemetry? = nil
-    var _mapEventsTelemetry: POGOProtos_Data_Telemetry_MapEventsTelemetry? = nil
-    var _spinPokestopTelemetry: POGOProtos_Data_Telemetry_SpinPokestopTelemetry? = nil
-    var _profilePageTelemetry: POGOProtos_Data_Telemetry_ProfilePageTelemetry? = nil
-    var _shoppingPageTelemetry: POGOProtos_Data_Telemetry_ShoppingPageTelemetry? = nil
-    var _encounterPokemonTelemetry: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry? = nil
-    var _catchPokemonTelemetry: POGOProtos_Data_Telemetry_CatchPokemonTelemetry? = nil
-    var _deployPokemonTelemetry: POGOProtos_Data_Telemetry_DeployPokemonTelemetry? = nil
-    var _feedPokemonTelemetry: POGOProtos_Data_Telemetry_FeedPokemonTelemetry? = nil
-    var _evolvePokemonTelemetry: POGOProtos_Data_Telemetry_EvolvePokemonTelemetry? = nil
-    var _releasePokemonTelemetry: POGOProtos_Data_Telemetry_ReleasePokemonTelemetry? = nil
-    var _nicknamePokemonTelemetry: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry? = nil
-    var _newsPageTelemetry: POGOProtos_Data_Telemetry_NewsPageTelemetry? = nil
-    var _itemTelemetry: POGOProtos_Data_Telemetry_ItemTelemetry? = nil
-    var _battlePartyTelemetry: POGOProtos_Data_Telemetry_BattlePartyTelemetry? = nil
-    var _passcodeRedeemTelemetry: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry? = nil
-    var _linkLoginTelemetry: POGOProtos_Data_Telemetry_LinkLoginTelemetry? = nil
-    var _raidTelemetry: POGOProtos_Data_Telemetry_RaidTelemetry? = nil
-    var _pushNotificationTelemetry: POGOProtos_Data_Telemetry_PushNotificationTelemetry? = nil
-    var _avatarCustomizationTelemetry: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry? = nil
-    var _readPointOfInterestDescriptionTelemetry: POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry? = nil
-    var _webTelemetry: POGOProtos_Data_Telemetry_WebTelemetry? = nil
-    var _changeArTelemetry: POGOProtos_Data_Telemetry_ChangeArTelemetry? = nil
-    var _weatherDetailClickTelemetry: POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry? = nil
-    var _userIssueWeatherReport: POGOProtos_Data_Player_UserIssueWeatherReport? = nil
-    var _pokemonInventoryTelemetry: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry? = nil
-    var _socialTelemetry: POGOProtos_Data_Telemetry_SocialTelemetry? = nil
-    var _checkEncounterInfoTelemetry: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry? = nil
-    var _pokemonGoPlusTelemetry: POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry? = nil
-    var _rpcTimingTelemetry: POGOProtos_Data_Telemetry_RpcResponseTelemetry? = nil
-    var _socialGiftCountTelemetry: POGOProtos_Settings_SocialGiftCountTelemetry? = nil
-    var _assetBundleTelemetry: POGOProtos_Data_Telemetry_AssetBundleDownloadTelemetry? = nil
-    var _assetPoiDownloadTelemetry: POGOProtos_Data_Telemetry_AssetPoiDownloadTelemetry? = nil
-    var _assetStreamDownloadTelemetry: POGOProtos_Data_Telemetry_AssetStreamDownloadTelemetry? = nil
-    var _assetStreamCacheCulledTelemetry: POGOProtos_Data_Telemetry_AssetStreamCacheCulledTelemetry? = nil
-    var _rpcSocketTimingTelemetry: POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry? = nil
-    var _serverData: POGOProtos_Networking_Platform_Telemetry_PlatformServerData? = nil
+    var _telemetryData: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData?
 
     static let defaultInstance = _StorageClass()
 
     private init() {}
 
     init(copying source: _StorageClass) {
-      _bootTime = source._bootTime
-      _frameRate = source._frameRate
-      _genericClickTelemetry = source._genericClickTelemetry
-      _mapEventsTelemetry = source._mapEventsTelemetry
-      _spinPokestopTelemetry = source._spinPokestopTelemetry
-      _profilePageTelemetry = source._profilePageTelemetry
-      _shoppingPageTelemetry = source._shoppingPageTelemetry
-      _encounterPokemonTelemetry = source._encounterPokemonTelemetry
-      _catchPokemonTelemetry = source._catchPokemonTelemetry
-      _deployPokemonTelemetry = source._deployPokemonTelemetry
-      _feedPokemonTelemetry = source._feedPokemonTelemetry
-      _evolvePokemonTelemetry = source._evolvePokemonTelemetry
-      _releasePokemonTelemetry = source._releasePokemonTelemetry
-      _nicknamePokemonTelemetry = source._nicknamePokemonTelemetry
-      _newsPageTelemetry = source._newsPageTelemetry
-      _itemTelemetry = source._itemTelemetry
-      _battlePartyTelemetry = source._battlePartyTelemetry
-      _passcodeRedeemTelemetry = source._passcodeRedeemTelemetry
-      _linkLoginTelemetry = source._linkLoginTelemetry
-      _raidTelemetry = source._raidTelemetry
-      _pushNotificationTelemetry = source._pushNotificationTelemetry
-      _avatarCustomizationTelemetry = source._avatarCustomizationTelemetry
-      _readPointOfInterestDescriptionTelemetry = source._readPointOfInterestDescriptionTelemetry
-      _webTelemetry = source._webTelemetry
-      _changeArTelemetry = source._changeArTelemetry
-      _weatherDetailClickTelemetry = source._weatherDetailClickTelemetry
-      _userIssueWeatherReport = source._userIssueWeatherReport
-      _pokemonInventoryTelemetry = source._pokemonInventoryTelemetry
-      _socialTelemetry = source._socialTelemetry
-      _checkEncounterInfoTelemetry = source._checkEncounterInfoTelemetry
-      _pokemonGoPlusTelemetry = source._pokemonGoPlusTelemetry
-      _rpcTimingTelemetry = source._rpcTimingTelemetry
-      _socialGiftCountTelemetry = source._socialGiftCountTelemetry
-      _assetBundleTelemetry = source._assetBundleTelemetry
-      _assetPoiDownloadTelemetry = source._assetPoiDownloadTelemetry
-      _assetStreamDownloadTelemetry = source._assetStreamDownloadTelemetry
-      _assetStreamCacheCulledTelemetry = source._assetStreamCacheCulledTelemetry
-      _rpcSocketTimingTelemetry = source._rpcSocketTimingTelemetry
-      _serverData = source._serverData
+      _telemetryData = source._telemetryData
     }
   }
 
@@ -530,45 +542,342 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._bootTime)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._frameRate)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._genericClickTelemetry)
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._mapEventsTelemetry)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._spinPokestopTelemetry)
-        case 6: try decoder.decodeSingularMessageField(value: &_storage._profilePageTelemetry)
-        case 7: try decoder.decodeSingularMessageField(value: &_storage._shoppingPageTelemetry)
-        case 8: try decoder.decodeSingularMessageField(value: &_storage._encounterPokemonTelemetry)
-        case 9: try decoder.decodeSingularMessageField(value: &_storage._catchPokemonTelemetry)
-        case 10: try decoder.decodeSingularMessageField(value: &_storage._deployPokemonTelemetry)
-        case 11: try decoder.decodeSingularMessageField(value: &_storage._feedPokemonTelemetry)
-        case 12: try decoder.decodeSingularMessageField(value: &_storage._evolvePokemonTelemetry)
-        case 13: try decoder.decodeSingularMessageField(value: &_storage._releasePokemonTelemetry)
-        case 14: try decoder.decodeSingularMessageField(value: &_storage._nicknamePokemonTelemetry)
-        case 15: try decoder.decodeSingularMessageField(value: &_storage._newsPageTelemetry)
-        case 16: try decoder.decodeSingularMessageField(value: &_storage._itemTelemetry)
-        case 17: try decoder.decodeSingularMessageField(value: &_storage._battlePartyTelemetry)
-        case 18: try decoder.decodeSingularMessageField(value: &_storage._passcodeRedeemTelemetry)
-        case 19: try decoder.decodeSingularMessageField(value: &_storage._linkLoginTelemetry)
-        case 20: try decoder.decodeSingularMessageField(value: &_storage._raidTelemetry)
-        case 21: try decoder.decodeSingularMessageField(value: &_storage._pushNotificationTelemetry)
-        case 22: try decoder.decodeSingularMessageField(value: &_storage._avatarCustomizationTelemetry)
-        case 23: try decoder.decodeSingularMessageField(value: &_storage._readPointOfInterestDescriptionTelemetry)
-        case 24: try decoder.decodeSingularMessageField(value: &_storage._webTelemetry)
-        case 25: try decoder.decodeSingularMessageField(value: &_storage._changeArTelemetry)
-        case 26: try decoder.decodeSingularMessageField(value: &_storage._weatherDetailClickTelemetry)
-        case 27: try decoder.decodeSingularMessageField(value: &_storage._userIssueWeatherReport)
-        case 28: try decoder.decodeSingularMessageField(value: &_storage._pokemonInventoryTelemetry)
-        case 29: try decoder.decodeSingularMessageField(value: &_storage._socialTelemetry)
-        case 30: try decoder.decodeSingularMessageField(value: &_storage._checkEncounterInfoTelemetry)
-        case 31: try decoder.decodeSingularMessageField(value: &_storage._pokemonGoPlusTelemetry)
-        case 32: try decoder.decodeSingularMessageField(value: &_storage._rpcTimingTelemetry)
-        case 33: try decoder.decodeSingularMessageField(value: &_storage._socialGiftCountTelemetry)
-        case 34: try decoder.decodeSingularMessageField(value: &_storage._assetBundleTelemetry)
-        case 35: try decoder.decodeSingularMessageField(value: &_storage._assetPoiDownloadTelemetry)
-        case 36: try decoder.decodeSingularMessageField(value: &_storage._assetStreamDownloadTelemetry)
-        case 37: try decoder.decodeSingularMessageField(value: &_storage._assetStreamCacheCulledTelemetry)
-        case 38: try decoder.decodeSingularMessageField(value: &_storage._rpcSocketTimingTelemetry)
-        case 1001: try decoder.decodeSingularMessageField(value: &_storage._serverData)
+        case 1:
+          var v: POGOProtos_Data_Telemetry_BootTime?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .bootTime(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .bootTime(v)}
+        case 2:
+          var v: POGOProtos_Data_Telemetry_FrameRate?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .frameRate(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .frameRate(v)}
+        case 3:
+          var v: POGOProtos_Data_Telemetry_GenericClickTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .genericClickTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .genericClickTelemetry(v)}
+        case 4:
+          var v: POGOProtos_Data_Telemetry_MapEventsTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .mapEventsTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .mapEventsTelemetry(v)}
+        case 5:
+          var v: POGOProtos_Data_Telemetry_SpinPokestopTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .spinPokestopTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .spinPokestopTelemetry(v)}
+        case 6:
+          var v: POGOProtos_Data_Telemetry_ProfilePageTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .profilePageTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .profilePageTelemetry(v)}
+        case 7:
+          var v: POGOProtos_Data_Telemetry_ShoppingPageTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .shoppingPageTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .shoppingPageTelemetry(v)}
+        case 8:
+          var v: POGOProtos_Data_Telemetry_EncounterPokemonTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .encounterPokemonTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .encounterPokemonTelemetry(v)}
+        case 9:
+          var v: POGOProtos_Data_Telemetry_CatchPokemonTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .catchPokemonTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .catchPokemonTelemetry(v)}
+        case 10:
+          var v: POGOProtos_Data_Telemetry_DeployPokemonTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .deployPokemonTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .deployPokemonTelemetry(v)}
+        case 11:
+          var v: POGOProtos_Data_Telemetry_FeedPokemonTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .feedPokemonTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .feedPokemonTelemetry(v)}
+        case 12:
+          var v: POGOProtos_Data_Telemetry_EvolvePokemonTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .evolvePokemonTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .evolvePokemonTelemetry(v)}
+        case 13:
+          var v: POGOProtos_Data_Telemetry_ReleasePokemonTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .releasePokemonTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .releasePokemonTelemetry(v)}
+        case 14:
+          var v: POGOProtos_Data_Telemetry_NicknamePokemonTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .nicknamePokemonTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .nicknamePokemonTelemetry(v)}
+        case 15:
+          var v: POGOProtos_Data_Telemetry_NewsPageTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .newsPageTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .newsPageTelemetry(v)}
+        case 16:
+          var v: POGOProtos_Data_Telemetry_ItemTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .itemTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .itemTelemetry(v)}
+        case 17:
+          var v: POGOProtos_Data_Telemetry_BattlePartyTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .battlePartyTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .battlePartyTelemetry(v)}
+        case 18:
+          var v: POGOProtos_Data_Telemetry_PasscodeRedeemTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .passcodeRedeemTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .passcodeRedeemTelemetry(v)}
+        case 19:
+          var v: POGOProtos_Data_Telemetry_LinkLoginTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .linkLoginTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .linkLoginTelemetry(v)}
+        case 20:
+          var v: POGOProtos_Data_Telemetry_RaidTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .raidTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .raidTelemetry(v)}
+        case 21:
+          var v: POGOProtos_Data_Telemetry_PushNotificationTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .pushNotificationTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .pushNotificationTelemetry(v)}
+        case 22:
+          var v: POGOProtos_Data_Telemetry_AvatarCustomizationTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .avatarCustomizationTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .avatarCustomizationTelemetry(v)}
+        case 23:
+          var v: POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .readPointOfInterestDescriptionTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .readPointOfInterestDescriptionTelemetry(v)}
+        case 24:
+          var v: POGOProtos_Data_Telemetry_WebTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .webTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .webTelemetry(v)}
+        case 25:
+          var v: POGOProtos_Data_Telemetry_ChangeArTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .changeArTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .changeArTelemetry(v)}
+        case 26:
+          var v: POGOProtos_Data_Telemetry_WeatherDetailClickTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .weatherDetailClickTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .weatherDetailClickTelemetry(v)}
+        case 27:
+          var v: POGOProtos_Data_Player_UserIssueWeatherReport?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .userIssueWeatherReport(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .userIssueWeatherReport(v)}
+        case 28:
+          var v: POGOProtos_Data_Telemetry_PokemonInventoryTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .pokemonInventoryTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .pokemonInventoryTelemetry(v)}
+        case 29:
+          var v: POGOProtos_Data_Telemetry_SocialTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .socialTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .socialTelemetry(v)}
+        case 30:
+          var v: POGOProtos_Data_Telemetry_CheckEncounterTrayInfoTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .checkEncounterInfoTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .checkEncounterInfoTelemetry(v)}
+        case 31:
+          var v: POGOProtos_Data_Telemetry_PokemonGoPlusTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .pokemonGoPlusTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .pokemonGoPlusTelemetry(v)}
+        case 32:
+          var v: POGOProtos_Data_Telemetry_RpcResponseTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .rpcTimingTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .rpcTimingTelemetry(v)}
+        case 33:
+          var v: POGOProtos_Settings_SocialGiftCountTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .socialGiftCountTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .socialGiftCountTelemetry(v)}
+        case 34:
+          var v: POGOProtos_Data_Telemetry_AssetBundleDownloadTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .assetBundleTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .assetBundleTelemetry(v)}
+        case 35:
+          var v: POGOProtos_Data_Telemetry_AssetPoiDownloadTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .assetPoiDownloadTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .assetPoiDownloadTelemetry(v)}
+        case 36:
+          var v: POGOProtos_Data_Telemetry_AssetStreamDownloadTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .assetStreamDownloadTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .assetStreamDownloadTelemetry(v)}
+        case 37:
+          var v: POGOProtos_Data_Telemetry_AssetStreamCacheCulledTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .assetStreamCacheCulledTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .assetStreamCacheCulledTelemetry(v)}
+        case 38:
+          var v: POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .rpcSocketTimingTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .rpcSocketTimingTelemetry(v)}
+        case 39:
+          var v: POGOProtos_Data_Telemetry_PermissionsFlowTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .permissionsFlow(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .permissionsFlow(v)}
+        case 40:
+          var v: POGOProtos_Data_Telemetry_DeviceServiceToggleTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .deviceServiceToggle(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .deviceServiceToggle(v)}
+        case 41:
+          var v: POGOProtos_Data_Telemetry_BootTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .bootTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .bootTelemetry(v)}
+        case 1001:
+          var v: POGOProtos_Networking_Platform_Telemetry_PlatformServerData?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .serverData(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .serverData(v)}
         default: break
         }
       }
@@ -577,122 +886,92 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._bootTime {
+      switch _storage._telemetryData {
+      case .bootTime(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._frameRate {
+      case .frameRate(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._genericClickTelemetry {
+      case .genericClickTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
-      if let v = _storage._mapEventsTelemetry {
+      case .mapEventsTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._spinPokestopTelemetry {
+      case .spinPokestopTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
-      if let v = _storage._profilePageTelemetry {
+      case .profilePageTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
-      }
-      if let v = _storage._shoppingPageTelemetry {
+      case .shoppingPageTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
-      }
-      if let v = _storage._encounterPokemonTelemetry {
+      case .encounterPokemonTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
-      }
-      if let v = _storage._catchPokemonTelemetry {
+      case .catchPokemonTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
-      }
-      if let v = _storage._deployPokemonTelemetry {
+      case .deployPokemonTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
-      }
-      if let v = _storage._feedPokemonTelemetry {
+      case .feedPokemonTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 11)
-      }
-      if let v = _storage._evolvePokemonTelemetry {
+      case .evolvePokemonTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
-      }
-      if let v = _storage._releasePokemonTelemetry {
+      case .releasePokemonTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
-      }
-      if let v = _storage._nicknamePokemonTelemetry {
+      case .nicknamePokemonTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
-      }
-      if let v = _storage._newsPageTelemetry {
+      case .newsPageTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
-      }
-      if let v = _storage._itemTelemetry {
+      case .itemTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
-      }
-      if let v = _storage._battlePartyTelemetry {
+      case .battlePartyTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
-      }
-      if let v = _storage._passcodeRedeemTelemetry {
+      case .passcodeRedeemTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
-      }
-      if let v = _storage._linkLoginTelemetry {
+      case .linkLoginTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
-      }
-      if let v = _storage._raidTelemetry {
+      case .raidTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 20)
-      }
-      if let v = _storage._pushNotificationTelemetry {
+      case .pushNotificationTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      }
-      if let v = _storage._avatarCustomizationTelemetry {
+      case .avatarCustomizationTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
-      }
-      if let v = _storage._readPointOfInterestDescriptionTelemetry {
+      case .readPointOfInterestDescriptionTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
-      }
-      if let v = _storage._webTelemetry {
+      case .webTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 24)
-      }
-      if let v = _storage._changeArTelemetry {
+      case .changeArTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 25)
-      }
-      if let v = _storage._weatherDetailClickTelemetry {
+      case .weatherDetailClickTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 26)
-      }
-      if let v = _storage._userIssueWeatherReport {
+      case .userIssueWeatherReport(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 27)
-      }
-      if let v = _storage._pokemonInventoryTelemetry {
+      case .pokemonInventoryTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 28)
-      }
-      if let v = _storage._socialTelemetry {
+      case .socialTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 29)
-      }
-      if let v = _storage._checkEncounterInfoTelemetry {
+      case .checkEncounterInfoTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 30)
-      }
-      if let v = _storage._pokemonGoPlusTelemetry {
+      case .pokemonGoPlusTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
-      }
-      if let v = _storage._rpcTimingTelemetry {
+      case .rpcTimingTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 32)
-      }
-      if let v = _storage._socialGiftCountTelemetry {
+      case .socialGiftCountTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 33)
-      }
-      if let v = _storage._assetBundleTelemetry {
+      case .assetBundleTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 34)
-      }
-      if let v = _storage._assetPoiDownloadTelemetry {
+      case .assetPoiDownloadTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 35)
-      }
-      if let v = _storage._assetStreamDownloadTelemetry {
+      case .assetStreamDownloadTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 36)
-      }
-      if let v = _storage._assetStreamCacheCulledTelemetry {
+      case .assetStreamCacheCulledTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 37)
-      }
-      if let v = _storage._rpcSocketTimingTelemetry {
+      case .rpcSocketTimingTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 38)
-      }
-      if let v = _storage._serverData {
+      case .permissionsFlow(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 39)
+      case .deviceServiceToggle(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 40)
+      case .bootTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
+      case .serverData(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
+      case nil: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -703,45 +982,7 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._bootTime != rhs_storage._bootTime {return false}
-        if _storage._frameRate != rhs_storage._frameRate {return false}
-        if _storage._genericClickTelemetry != rhs_storage._genericClickTelemetry {return false}
-        if _storage._mapEventsTelemetry != rhs_storage._mapEventsTelemetry {return false}
-        if _storage._spinPokestopTelemetry != rhs_storage._spinPokestopTelemetry {return false}
-        if _storage._profilePageTelemetry != rhs_storage._profilePageTelemetry {return false}
-        if _storage._shoppingPageTelemetry != rhs_storage._shoppingPageTelemetry {return false}
-        if _storage._encounterPokemonTelemetry != rhs_storage._encounterPokemonTelemetry {return false}
-        if _storage._catchPokemonTelemetry != rhs_storage._catchPokemonTelemetry {return false}
-        if _storage._deployPokemonTelemetry != rhs_storage._deployPokemonTelemetry {return false}
-        if _storage._feedPokemonTelemetry != rhs_storage._feedPokemonTelemetry {return false}
-        if _storage._evolvePokemonTelemetry != rhs_storage._evolvePokemonTelemetry {return false}
-        if _storage._releasePokemonTelemetry != rhs_storage._releasePokemonTelemetry {return false}
-        if _storage._nicknamePokemonTelemetry != rhs_storage._nicknamePokemonTelemetry {return false}
-        if _storage._newsPageTelemetry != rhs_storage._newsPageTelemetry {return false}
-        if _storage._itemTelemetry != rhs_storage._itemTelemetry {return false}
-        if _storage._battlePartyTelemetry != rhs_storage._battlePartyTelemetry {return false}
-        if _storage._passcodeRedeemTelemetry != rhs_storage._passcodeRedeemTelemetry {return false}
-        if _storage._linkLoginTelemetry != rhs_storage._linkLoginTelemetry {return false}
-        if _storage._raidTelemetry != rhs_storage._raidTelemetry {return false}
-        if _storage._pushNotificationTelemetry != rhs_storage._pushNotificationTelemetry {return false}
-        if _storage._avatarCustomizationTelemetry != rhs_storage._avatarCustomizationTelemetry {return false}
-        if _storage._readPointOfInterestDescriptionTelemetry != rhs_storage._readPointOfInterestDescriptionTelemetry {return false}
-        if _storage._webTelemetry != rhs_storage._webTelemetry {return false}
-        if _storage._changeArTelemetry != rhs_storage._changeArTelemetry {return false}
-        if _storage._weatherDetailClickTelemetry != rhs_storage._weatherDetailClickTelemetry {return false}
-        if _storage._userIssueWeatherReport != rhs_storage._userIssueWeatherReport {return false}
-        if _storage._pokemonInventoryTelemetry != rhs_storage._pokemonInventoryTelemetry {return false}
-        if _storage._socialTelemetry != rhs_storage._socialTelemetry {return false}
-        if _storage._checkEncounterInfoTelemetry != rhs_storage._checkEncounterInfoTelemetry {return false}
-        if _storage._pokemonGoPlusTelemetry != rhs_storage._pokemonGoPlusTelemetry {return false}
-        if _storage._rpcTimingTelemetry != rhs_storage._rpcTimingTelemetry {return false}
-        if _storage._socialGiftCountTelemetry != rhs_storage._socialGiftCountTelemetry {return false}
-        if _storage._assetBundleTelemetry != rhs_storage._assetBundleTelemetry {return false}
-        if _storage._assetPoiDownloadTelemetry != rhs_storage._assetPoiDownloadTelemetry {return false}
-        if _storage._assetStreamDownloadTelemetry != rhs_storage._assetStreamDownloadTelemetry {return false}
-        if _storage._assetStreamCacheCulledTelemetry != rhs_storage._assetStreamCacheCulledTelemetry {return false}
-        if _storage._rpcSocketTimingTelemetry != rhs_storage._rpcSocketTimingTelemetry {return false}
-        if _storage._serverData != rhs_storage._serverData {return false}
+        if _storage._telemetryData != rhs_storage._telemetryData {return false}
         return true
       }
       if !storagesAreEqual {return false}

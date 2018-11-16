@@ -163,6 +163,7 @@ public struct POGOProtos_Networking_Responses_RedeemPasscodeResponse {
     case notAvailable // = 2
     case overInventoryLimit // = 3
     case alreadyRedeemed // = 4
+    case overPlayerRedemptionLimit // = 5
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -176,6 +177,7 @@ public struct POGOProtos_Networking_Responses_RedeemPasscodeResponse {
       case 2: self = .notAvailable
       case 3: self = .overInventoryLimit
       case 4: self = .alreadyRedeemed
+      case 5: self = .overPlayerRedemptionLimit
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -187,6 +189,7 @@ public struct POGOProtos_Networking_Responses_RedeemPasscodeResponse {
       case .notAvailable: return 2
       case .overInventoryLimit: return 3
       case .alreadyRedeemed: return 4
+      case .overPlayerRedemptionLimit: return 5
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -220,6 +223,7 @@ extension POGOProtos_Networking_Responses_RedeemPasscodeResponse.Result: CaseIte
     .notAvailable,
     .overInventoryLimit,
     .alreadyRedeemed,
+    .overPlayerRedemptionLimit,
   ]
 }
 
@@ -400,7 +404,7 @@ public struct POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse {
 
   public var isFeatureEnabled: Bool = false
 
-  public var timeWindowForSubmissionsLimitMs: Int32 = 0
+  public var timeWindowForSubmissionsLimitMs: Int64 = 0
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -742,6 +746,8 @@ public struct POGOProtos_Networking_Responses_PingResponse {
 
   public var randomResponseBytes: String = String()
 
+  public var returnValue: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -977,6 +983,7 @@ extension POGOProtos_Networking_Responses_RedeemPasscodeResponse.Result: SwiftPr
     2: .same(proto: "NOT_AVAILABLE"),
     3: .same(proto: "OVER_INVENTORY_LIMIT"),
     4: .same(proto: "ALREADY_REDEEMED"),
+    5: .same(proto: "OVER_PLAYER_REDEMPTION_LIMIT"),
   ]
 }
 
@@ -1135,7 +1142,7 @@ extension POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse: Swift
       case 2: try decoder.decodeSingularInt32Field(value: &self.minPlayerLevel)
       case 3: try decoder.decodeSingularBoolField(value: &self.hasValidEmail_p)
       case 4: try decoder.decodeSingularBoolField(value: &self.isFeatureEnabled)
-      case 5: try decoder.decodeSingularInt32Field(value: &self.timeWindowForSubmissionsLimitMs)
+      case 5: try decoder.decodeSingularInt64Field(value: &self.timeWindowForSubmissionsLimitMs)
       default: break
       }
     }
@@ -1155,7 +1162,7 @@ extension POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse: Swift
       try visitor.visitSingularBoolField(value: self.isFeatureEnabled, fieldNumber: 4)
     }
     if self.timeWindowForSubmissionsLimitMs != 0 {
-      try visitor.visitSingularInt32Field(value: self.timeWindowForSubmissionsLimitMs, fieldNumber: 5)
+      try visitor.visitSingularInt64Field(value: self.timeWindowForSubmissionsLimitMs, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1395,6 +1402,7 @@ extension POGOProtos_Networking_Responses_PingResponse: SwiftProtobuf.Message, S
     1: .standard(proto: "user_info"),
     2: .standard(proto: "server_info"),
     3: .standard(proto: "random_response_bytes"),
+    4: .standard(proto: "return_value"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1403,6 +1411,7 @@ extension POGOProtos_Networking_Responses_PingResponse: SwiftProtobuf.Message, S
       case 1: try decoder.decodeSingularStringField(value: &self.userInfo)
       case 2: try decoder.decodeSingularStringField(value: &self.serverInfo)
       case 3: try decoder.decodeSingularStringField(value: &self.randomResponseBytes)
+      case 4: try decoder.decodeSingularStringField(value: &self.returnValue)
       default: break
       }
     }
@@ -1418,6 +1427,9 @@ extension POGOProtos_Networking_Responses_PingResponse: SwiftProtobuf.Message, S
     if !self.randomResponseBytes.isEmpty {
       try visitor.visitSingularStringField(value: self.randomResponseBytes, fieldNumber: 3)
     }
+    if !self.returnValue.isEmpty {
+      try visitor.visitSingularStringField(value: self.returnValue, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1425,6 +1437,7 @@ extension POGOProtos_Networking_Responses_PingResponse: SwiftProtobuf.Message, S
     if lhs.userInfo != rhs.userInfo {return false}
     if lhs.serverInfo != rhs.serverInfo {return false}
     if lhs.randomResponseBytes != rhs.randomResponseBytes {return false}
+    if lhs.returnValue != rhs.returnValue {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

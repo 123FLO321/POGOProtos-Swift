@@ -24,34 +24,53 @@ public struct POGOProtos_Data_AssetCache_JournalEntry {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var addEntry: POGOProtos_Data_AssetCache_JournalAddEntry {
-    get {return _storage._addEntry ?? POGOProtos_Data_AssetCache_JournalAddEntry()}
-    set {_uniqueStorage()._addEntry = newValue}
+  public var subentry: OneOf_Subentry? {
+    get {return _storage._subentry}
+    set {_uniqueStorage()._subentry = newValue}
   }
-  /// Returns true if `addEntry` has been explicitly set.
-  public var hasAddEntry: Bool {return _storage._addEntry != nil}
-  /// Clears the value of `addEntry`. Subsequent reads from it will return its default value.
-  public mutating func clearAddEntry() {_uniqueStorage()._addEntry = nil}
+
+  public var addEntry: POGOProtos_Data_AssetCache_JournalAddEntry {
+    get {
+      if case .addEntry(let v)? = _storage._subentry {return v}
+      return POGOProtos_Data_AssetCache_JournalAddEntry()
+    }
+    set {_uniqueStorage()._subentry = .addEntry(newValue)}
+  }
 
   public var readEntry: POGOProtos_Data_AssetCache_JournalReadEntry {
-    get {return _storage._readEntry ?? POGOProtos_Data_AssetCache_JournalReadEntry()}
-    set {_uniqueStorage()._readEntry = newValue}
+    get {
+      if case .readEntry(let v)? = _storage._subentry {return v}
+      return POGOProtos_Data_AssetCache_JournalReadEntry()
+    }
+    set {_uniqueStorage()._subentry = .readEntry(newValue)}
   }
-  /// Returns true if `readEntry` has been explicitly set.
-  public var hasReadEntry: Bool {return _storage._readEntry != nil}
-  /// Clears the value of `readEntry`. Subsequent reads from it will return its default value.
-  public mutating func clearReadEntry() {_uniqueStorage()._readEntry = nil}
 
   public var removeEntry: POGOProtos_Data_AssetCache_JournalRemoveEntry {
-    get {return _storage._removeEntry ?? POGOProtos_Data_AssetCache_JournalRemoveEntry()}
-    set {_uniqueStorage()._removeEntry = newValue}
+    get {
+      if case .removeEntry(let v)? = _storage._subentry {return v}
+      return POGOProtos_Data_AssetCache_JournalRemoveEntry()
+    }
+    set {_uniqueStorage()._subentry = .removeEntry(newValue)}
   }
-  /// Returns true if `removeEntry` has been explicitly set.
-  public var hasRemoveEntry: Bool {return _storage._removeEntry != nil}
-  /// Clears the value of `removeEntry`. Subsequent reads from it will return its default value.
-  public mutating func clearRemoveEntry() {_uniqueStorage()._removeEntry = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_Subentry: Equatable {
+    case addEntry(POGOProtos_Data_AssetCache_JournalAddEntry)
+    case readEntry(POGOProtos_Data_AssetCache_JournalReadEntry)
+    case removeEntry(POGOProtos_Data_AssetCache_JournalRemoveEntry)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Data_AssetCache_JournalEntry.OneOf_Subentry, rhs: POGOProtos_Data_AssetCache_JournalEntry.OneOf_Subentry) -> Bool {
+      switch (lhs, rhs) {
+      case (.addEntry(let l), .addEntry(let r)): return l == r
+      case (.readEntry(let l), .readEntry(let r)): return l == r
+      case (.removeEntry(let l), .removeEntry(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public init() {}
 
@@ -71,18 +90,14 @@ extension POGOProtos_Data_AssetCache_JournalEntry: SwiftProtobuf.Message, SwiftP
   ]
 
   fileprivate class _StorageClass {
-    var _addEntry: POGOProtos_Data_AssetCache_JournalAddEntry? = nil
-    var _readEntry: POGOProtos_Data_AssetCache_JournalReadEntry? = nil
-    var _removeEntry: POGOProtos_Data_AssetCache_JournalRemoveEntry? = nil
+    var _subentry: POGOProtos_Data_AssetCache_JournalEntry.OneOf_Subentry?
 
     static let defaultInstance = _StorageClass()
 
     private init() {}
 
     init(copying source: _StorageClass) {
-      _addEntry = source._addEntry
-      _readEntry = source._readEntry
-      _removeEntry = source._removeEntry
+      _subentry = source._subentry
     }
   }
 
@@ -98,9 +113,30 @@ extension POGOProtos_Data_AssetCache_JournalEntry: SwiftProtobuf.Message, SwiftP
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._addEntry)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._readEntry)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._removeEntry)
+        case 1:
+          var v: POGOProtos_Data_AssetCache_JournalAddEntry?
+          if let current = _storage._subentry {
+            try decoder.handleConflictingOneOf()
+            if case .addEntry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._subentry = .addEntry(v)}
+        case 2:
+          var v: POGOProtos_Data_AssetCache_JournalReadEntry?
+          if let current = _storage._subentry {
+            try decoder.handleConflictingOneOf()
+            if case .readEntry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._subentry = .readEntry(v)}
+        case 3:
+          var v: POGOProtos_Data_AssetCache_JournalRemoveEntry?
+          if let current = _storage._subentry {
+            try decoder.handleConflictingOneOf()
+            if case .removeEntry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._subentry = .removeEntry(v)}
         default: break
         }
       }
@@ -109,14 +145,14 @@ extension POGOProtos_Data_AssetCache_JournalEntry: SwiftProtobuf.Message, SwiftP
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._addEntry {
+      switch _storage._subentry {
+      case .addEntry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if let v = _storage._readEntry {
+      case .readEntry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._removeEntry {
+      case .removeEntry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      case nil: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -127,9 +163,7 @@ extension POGOProtos_Data_AssetCache_JournalEntry: SwiftProtobuf.Message, SwiftP
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._addEntry != rhs_storage._addEntry {return false}
-        if _storage._readEntry != rhs_storage._readEntry {return false}
-        if _storage._removeEntry != rhs_storage._removeEntry {return false}
+        if _storage._subentry != rhs_storage._subentry {return false}
         return true
       }
       if !storagesAreEqual {return false}

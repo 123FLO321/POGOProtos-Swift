@@ -19,44 +19,185 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-/// Usage unknown.
-/// - Maybe used in envelope (?)
 public struct POGOProtos_Inventory_InventoryKey {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var pokemonID: UInt64 = 0
+  public var type: POGOProtos_Inventory_InventoryKey.OneOf_Type? = nil
 
-  public var item: POGOProtos_Inventory_Item_ItemId = .itemUnknown
+  public var pokemonID: UInt64 {
+    get {
+      if case .pokemonID(let v)? = type {return v}
+      return 0
+    }
+    set {type = .pokemonID(newValue)}
+  }
 
-  public var pokedexEntryID: Int32 = 0
+  public var item: POGOProtos_Inventory_Item_ItemId {
+    get {
+      if case .item(let v)? = type {return v}
+      return .itemUnknown
+    }
+    set {type = .item(newValue)}
+  }
 
-  public var playerStats: Bool = false
+  public var pokedexEntryID: Int32 {
+    get {
+      if case .pokedexEntryID(let v)? = type {return v}
+      return 0
+    }
+    set {type = .pokedexEntryID(newValue)}
+  }
 
-  public var playerCurrency: Bool = false
+  public var playerStats: Bool {
+    get {
+      if case .playerStats(let v)? = type {return v}
+      return false
+    }
+    set {type = .playerStats(newValue)}
+  }
 
-  public var playerCamera: Bool = false
+  public var playerCurrency: Bool {
+    get {
+      if case .playerCurrency(let v)? = type {return v}
+      return false
+    }
+    set {type = .playerCurrency(newValue)}
+  }
 
-  public var inventoryUpgrades: Bool = false
+  public var playerCamera: Bool {
+    get {
+      if case .playerCamera(let v)? = type {return v}
+      return false
+    }
+    set {type = .playerCamera(newValue)}
+  }
 
-  public var appliedItems: Bool = false
+  public var inventoryUpgrades: Bool {
+    get {
+      if case .inventoryUpgrades(let v)? = type {return v}
+      return false
+    }
+    set {type = .inventoryUpgrades(newValue)}
+  }
 
-  public var eggIncubators: Bool = false
+  public var appliedItems: Bool {
+    get {
+      if case .appliedItems(let v)? = type {return v}
+      return false
+    }
+    set {type = .appliedItems(newValue)}
+  }
 
-  public var pokemonFamilyID: POGOProtos_Enums_PokemonFamilyId = .familyUnset
+  public var eggIncubators: Bool {
+    get {
+      if case .eggIncubators(let v)? = type {return v}
+      return false
+    }
+    set {type = .eggIncubators(newValue)}
+  }
 
-  public var questType: POGOProtos_Enums_QuestType = .questUnknownType
+  public var pokemonFamilyID: POGOProtos_Enums_PokemonFamilyId {
+    get {
+      if case .pokemonFamilyID(let v)? = type {return v}
+      return .familyUnset
+    }
+    set {type = .pokemonFamilyID(newValue)}
+  }
 
-  public var avatarTemplateID: String = String()
+  public var questType: POGOProtos_Enums_QuestType {
+    get {
+      if case .questType(let v)? = type {return v}
+      return .questUnknownType
+    }
+    set {type = .questType(newValue)}
+  }
 
-  public var raidTickets: Bool = false
+  public var avatarTemplateID: String {
+    get {
+      if case .avatarTemplateID(let v)? = type {return v}
+      return String()
+    }
+    set {type = .avatarTemplateID(newValue)}
+  }
 
-  public var quests: Bool = false
+  public var raidTickets: Bool {
+    get {
+      if case .raidTickets(let v)? = type {return v}
+      return false
+    }
+    set {type = .raidTickets(newValue)}
+  }
 
-  public var giftBoxes: Bool = false
+  public var quests: Bool {
+    get {
+      if case .quests(let v)? = type {return v}
+      return false
+    }
+    set {type = .quests(newValue)}
+  }
+
+  public var giftBoxes: Bool {
+    get {
+      if case .giftBoxes(let v)? = type {return v}
+      return false
+    }
+    set {type = .giftBoxes(newValue)}
+  }
+
+  public var belugaIncenseBox: Bool {
+    get {
+      if case .belugaIncenseBox(let v)? = type {return v}
+      return false
+    }
+    set {type = .belugaIncenseBox(newValue)}
+  }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OneOf_Type: Equatable {
+    case pokemonID(UInt64)
+    case item(POGOProtos_Inventory_Item_ItemId)
+    case pokedexEntryID(Int32)
+    case playerStats(Bool)
+    case playerCurrency(Bool)
+    case playerCamera(Bool)
+    case inventoryUpgrades(Bool)
+    case appliedItems(Bool)
+    case eggIncubators(Bool)
+    case pokemonFamilyID(POGOProtos_Enums_PokemonFamilyId)
+    case questType(POGOProtos_Enums_QuestType)
+    case avatarTemplateID(String)
+    case raidTickets(Bool)
+    case quests(Bool)
+    case giftBoxes(Bool)
+    case belugaIncenseBox(Bool)
+
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Inventory_InventoryKey.OneOf_Type, rhs: POGOProtos_Inventory_InventoryKey.OneOf_Type) -> Bool {
+      switch (lhs, rhs) {
+      case (.pokemonID(let l), .pokemonID(let r)): return l == r
+      case (.item(let l), .item(let r)): return l == r
+      case (.pokedexEntryID(let l), .pokedexEntryID(let r)): return l == r
+      case (.playerStats(let l), .playerStats(let r)): return l == r
+      case (.playerCurrency(let l), .playerCurrency(let r)): return l == r
+      case (.playerCamera(let l), .playerCamera(let r)): return l == r
+      case (.inventoryUpgrades(let l), .inventoryUpgrades(let r)): return l == r
+      case (.appliedItems(let l), .appliedItems(let r)): return l == r
+      case (.eggIncubators(let l), .eggIncubators(let r)): return l == r
+      case (.pokemonFamilyID(let l), .pokemonFamilyID(let r)): return l == r
+      case (.questType(let l), .questType(let r)): return l == r
+      case (.avatarTemplateID(let l), .avatarTemplateID(let r)): return l == r
+      case (.raidTickets(let l), .raidTickets(let r)): return l == r
+      case (.quests(let l), .quests(let r)): return l == r
+      case (.giftBoxes(let l), .giftBoxes(let r)): return l == r
+      case (.belugaIncenseBox(let l), .belugaIncenseBox(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
 
   public init() {}
 }
@@ -83,96 +224,138 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
     13: .standard(proto: "raid_tickets"),
     14: .same(proto: "quests"),
     15: .standard(proto: "gift_boxes"),
+    16: .standard(proto: "beluga_incense_box"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularFixed64Field(value: &self.pokemonID)
-      case 2: try decoder.decodeSingularEnumField(value: &self.item)
-      case 3: try decoder.decodeSingularInt32Field(value: &self.pokedexEntryID)
-      case 4: try decoder.decodeSingularBoolField(value: &self.playerStats)
-      case 5: try decoder.decodeSingularBoolField(value: &self.playerCurrency)
-      case 6: try decoder.decodeSingularBoolField(value: &self.playerCamera)
-      case 7: try decoder.decodeSingularBoolField(value: &self.inventoryUpgrades)
-      case 8: try decoder.decodeSingularBoolField(value: &self.appliedItems)
-      case 9: try decoder.decodeSingularBoolField(value: &self.eggIncubators)
-      case 10: try decoder.decodeSingularEnumField(value: &self.pokemonFamilyID)
-      case 11: try decoder.decodeSingularEnumField(value: &self.questType)
-      case 12: try decoder.decodeSingularStringField(value: &self.avatarTemplateID)
-      case 13: try decoder.decodeSingularBoolField(value: &self.raidTickets)
-      case 14: try decoder.decodeSingularBoolField(value: &self.quests)
-      case 15: try decoder.decodeSingularBoolField(value: &self.giftBoxes)
+      case 1:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: UInt64?
+        try decoder.decodeSingularFixed64Field(value: &v)
+        if let v = v {self.type = .pokemonID(v)}
+      case 2:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: POGOProtos_Inventory_Item_ItemId?
+        try decoder.decodeSingularEnumField(value: &v)
+        if let v = v {self.type = .item(v)}
+      case 3:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Int32?
+        try decoder.decodeSingularInt32Field(value: &v)
+        if let v = v {self.type = .pokedexEntryID(v)}
+      case 4:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.type = .playerStats(v)}
+      case 5:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.type = .playerCurrency(v)}
+      case 6:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.type = .playerCamera(v)}
+      case 7:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.type = .inventoryUpgrades(v)}
+      case 8:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.type = .appliedItems(v)}
+      case 9:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.type = .eggIncubators(v)}
+      case 10:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: POGOProtos_Enums_PokemonFamilyId?
+        try decoder.decodeSingularEnumField(value: &v)
+        if let v = v {self.type = .pokemonFamilyID(v)}
+      case 11:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: POGOProtos_Enums_QuestType?
+        try decoder.decodeSingularEnumField(value: &v)
+        if let v = v {self.type = .questType(v)}
+      case 12:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: String?
+        try decoder.decodeSingularStringField(value: &v)
+        if let v = v {self.type = .avatarTemplateID(v)}
+      case 13:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.type = .raidTickets(v)}
+      case 14:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.type = .quests(v)}
+      case 15:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.type = .giftBoxes(v)}
+      case 16:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: Bool?
+        try decoder.decodeSingularBoolField(value: &v)
+        if let v = v {self.type = .belugaIncenseBox(v)}
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.pokemonID != 0 {
-      try visitor.visitSingularFixed64Field(value: self.pokemonID, fieldNumber: 1)
-    }
-    if self.item != .itemUnknown {
-      try visitor.visitSingularEnumField(value: self.item, fieldNumber: 2)
-    }
-    if self.pokedexEntryID != 0 {
-      try visitor.visitSingularInt32Field(value: self.pokedexEntryID, fieldNumber: 3)
-    }
-    if self.playerStats != false {
-      try visitor.visitSingularBoolField(value: self.playerStats, fieldNumber: 4)
-    }
-    if self.playerCurrency != false {
-      try visitor.visitSingularBoolField(value: self.playerCurrency, fieldNumber: 5)
-    }
-    if self.playerCamera != false {
-      try visitor.visitSingularBoolField(value: self.playerCamera, fieldNumber: 6)
-    }
-    if self.inventoryUpgrades != false {
-      try visitor.visitSingularBoolField(value: self.inventoryUpgrades, fieldNumber: 7)
-    }
-    if self.appliedItems != false {
-      try visitor.visitSingularBoolField(value: self.appliedItems, fieldNumber: 8)
-    }
-    if self.eggIncubators != false {
-      try visitor.visitSingularBoolField(value: self.eggIncubators, fieldNumber: 9)
-    }
-    if self.pokemonFamilyID != .familyUnset {
-      try visitor.visitSingularEnumField(value: self.pokemonFamilyID, fieldNumber: 10)
-    }
-    if self.questType != .questUnknownType {
-      try visitor.visitSingularEnumField(value: self.questType, fieldNumber: 11)
-    }
-    if !self.avatarTemplateID.isEmpty {
-      try visitor.visitSingularStringField(value: self.avatarTemplateID, fieldNumber: 12)
-    }
-    if self.raidTickets != false {
-      try visitor.visitSingularBoolField(value: self.raidTickets, fieldNumber: 13)
-    }
-    if self.quests != false {
-      try visitor.visitSingularBoolField(value: self.quests, fieldNumber: 14)
-    }
-    if self.giftBoxes != false {
-      try visitor.visitSingularBoolField(value: self.giftBoxes, fieldNumber: 15)
+    switch self.type {
+    case .pokemonID(let v)?:
+      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
+    case .item(let v)?:
+      try visitor.visitSingularEnumField(value: v, fieldNumber: 2)
+    case .pokedexEntryID(let v)?:
+      try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
+    case .playerStats(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
+    case .playerCurrency(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
+    case .playerCamera(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
+    case .inventoryUpgrades(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
+    case .appliedItems(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 8)
+    case .eggIncubators(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
+    case .pokemonFamilyID(let v)?:
+      try visitor.visitSingularEnumField(value: v, fieldNumber: 10)
+    case .questType(let v)?:
+      try visitor.visitSingularEnumField(value: v, fieldNumber: 11)
+    case .avatarTemplateID(let v)?:
+      try visitor.visitSingularStringField(value: v, fieldNumber: 12)
+    case .raidTickets(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 13)
+    case .quests(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 14)
+    case .giftBoxes(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 15)
+    case .belugaIncenseBox(let v)?:
+      try visitor.visitSingularBoolField(value: v, fieldNumber: 16)
+    case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Inventory_InventoryKey, rhs: POGOProtos_Inventory_InventoryKey) -> Bool {
-    if lhs.pokemonID != rhs.pokemonID {return false}
-    if lhs.item != rhs.item {return false}
-    if lhs.pokedexEntryID != rhs.pokedexEntryID {return false}
-    if lhs.playerStats != rhs.playerStats {return false}
-    if lhs.playerCurrency != rhs.playerCurrency {return false}
-    if lhs.playerCamera != rhs.playerCamera {return false}
-    if lhs.inventoryUpgrades != rhs.inventoryUpgrades {return false}
-    if lhs.appliedItems != rhs.appliedItems {return false}
-    if lhs.eggIncubators != rhs.eggIncubators {return false}
-    if lhs.pokemonFamilyID != rhs.pokemonFamilyID {return false}
-    if lhs.questType != rhs.questType {return false}
-    if lhs.avatarTemplateID != rhs.avatarTemplateID {return false}
-    if lhs.raidTickets != rhs.raidTickets {return false}
-    if lhs.quests != rhs.quests {return false}
-    if lhs.giftBoxes != rhs.giftBoxes {return false}
+    if lhs.type != rhs.type {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
