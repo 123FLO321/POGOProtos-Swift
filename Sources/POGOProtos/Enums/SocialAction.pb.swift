@@ -32,9 +32,11 @@ public enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
   case listIncomingFriendInvites // = 10008
   case removeFriend // = 10009
   case listFriendStatus // = 10010
-  case inviteFacebookFriend // = 10011
+  case sendFacebookFriendInvite // = 10011
   case isMyFriend // = 10012
   case createInviteCode // = 10013
+  case getFacebookFriendList // = 10014
+  case updateFacebookStatus // = 10015
   case registerPushNotificationSocialAction // = 10101
   case unregisterPushNotificationSocialAction // = 10102
   case updateNotification // = 10103
@@ -59,9 +61,11 @@ public enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
     case 10008: self = .listIncomingFriendInvites
     case 10009: self = .removeFriend
     case 10010: self = .listFriendStatus
-    case 10011: self = .inviteFacebookFriend
+    case 10011: self = .sendFacebookFriendInvite
     case 10012: self = .isMyFriend
     case 10013: self = .createInviteCode
+    case 10014: self = .getFacebookFriendList
+    case 10015: self = .updateFacebookStatus
     case 10101: self = .registerPushNotificationSocialAction
     case 10102: self = .unregisterPushNotificationSocialAction
     case 10103: self = .updateNotification
@@ -84,9 +88,11 @@ public enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
     case .listIncomingFriendInvites: return 10008
     case .removeFriend: return 10009
     case .listFriendStatus: return 10010
-    case .inviteFacebookFriend: return 10011
+    case .sendFacebookFriendInvite: return 10011
     case .isMyFriend: return 10012
     case .createInviteCode: return 10013
+    case .getFacebookFriendList: return 10014
+    case .updateFacebookStatus: return 10015
     case .registerPushNotificationSocialAction: return 10101
     case .unregisterPushNotificationSocialAction: return 10102
     case .updateNotification: return 10103
@@ -114,9 +120,11 @@ extension POGOProtos_Enums_SocialAction: CaseIterable {
     .listIncomingFriendInvites,
     .removeFriend,
     .listFriendStatus,
-    .inviteFacebookFriend,
+    .sendFacebookFriendInvite,
     .isMyFriend,
     .createInviteCode,
+    .getFacebookFriendList,
+    .updateFacebookStatus,
     .registerPushNotificationSocialAction,
     .unregisterPushNotificationSocialAction,
     .updateNotification,
@@ -142,9 +150,11 @@ extension POGOProtos_Enums_SocialAction: SwiftProtobuf._ProtoNameProviding {
     10008: .same(proto: "LIST_INCOMING_FRIEND_INVITES"),
     10009: .same(proto: "REMOVE_FRIEND"),
     10010: .same(proto: "LIST_FRIEND_STATUS"),
-    10011: .same(proto: "INVITE_FACEBOOK_FRIEND"),
+    10011: .same(proto: "SEND_FACEBOOK_FRIEND_INVITE"),
     10012: .same(proto: "IS_MY_FRIEND"),
     10013: .same(proto: "CREATE_INVITE_CODE"),
+    10014: .same(proto: "GET_FACEBOOK_FRIEND_LIST"),
+    10015: .same(proto: "UPDATE_FACEBOOK_STATUS"),
     10101: .same(proto: "REGISTER_PUSH_NOTIFICATION_SOCIAL_ACTION"),
     10102: .same(proto: "UNREGISTER_PUSH_NOTIFICATION_SOCIAL_ACTION"),
     10103: .same(proto: "UPDATE_NOTIFICATION"),

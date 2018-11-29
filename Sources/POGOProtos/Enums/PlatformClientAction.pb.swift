@@ -54,6 +54,9 @@ public enum POGOProtos_Enums_PlatformClientAction: SwiftProtobuf.Enum {
   case getClientBgmodeSettings // = 5029
   case pingDownstream // = 5030
   case setInGameCurrencyExchangeRate // = 5032
+  case requestGeofenceUpdates // = 5033
+  case updatePlayerLocation // = 5034
+  case profanityFilterAction // = 5035
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -95,6 +98,9 @@ public enum POGOProtos_Enums_PlatformClientAction: SwiftProtobuf.Enum {
     case 5029: self = .getClientBgmodeSettings
     case 5030: self = .pingDownstream
     case 5032: self = .setInGameCurrencyExchangeRate
+    case 5033: self = .requestGeofenceUpdates
+    case 5034: self = .updatePlayerLocation
+    case 5035: self = .profanityFilterAction
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -134,6 +140,9 @@ public enum POGOProtos_Enums_PlatformClientAction: SwiftProtobuf.Enum {
     case .getClientBgmodeSettings: return 5029
     case .pingDownstream: return 5030
     case .setInGameCurrencyExchangeRate: return 5032
+    case .requestGeofenceUpdates: return 5033
+    case .updatePlayerLocation: return 5034
+    case .profanityFilterAction: return 5035
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -178,6 +187,9 @@ extension POGOProtos_Enums_PlatformClientAction: CaseIterable {
     .getClientBgmodeSettings,
     .pingDownstream,
     .setInGameCurrencyExchangeRate,
+    .requestGeofenceUpdates,
+    .updatePlayerLocation,
+    .profanityFilterAction,
   ]
 }
 
@@ -220,5 +232,8 @@ extension POGOProtos_Enums_PlatformClientAction: SwiftProtobuf._ProtoNameProvidi
     5029: .same(proto: "GET_CLIENT_BGMODE_SETTINGS"),
     5030: .same(proto: "PING_DOWNSTREAM"),
     5032: .same(proto: "SET_IN_GAME_CURRENCY_EXCHANGE_RATE"),
+    5033: .same(proto: "REQUEST_GEOFENCE_UPDATES"),
+    5034: .same(proto: "UPDATE_PLAYER_LOCATION"),
+    5035: .same(proto: "PROFANITY_FILTER_ACTION"),
   ]
 }

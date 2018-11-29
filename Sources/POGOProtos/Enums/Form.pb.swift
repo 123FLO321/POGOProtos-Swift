@@ -139,6 +139,9 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case arceusDragon // = 115
   case arceusDark // = 116
   case arceusFairy // = 117
+  case burmyPlant // = 118
+  case burmySandy // = 119
+  case burmyTrash // = 120
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -265,6 +268,9 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 115: self = .arceusDragon
     case 116: self = .arceusDark
     case 117: self = .arceusFairy
+    case 118: self = .burmyPlant
+    case 119: self = .burmySandy
+    case 120: self = .burmyTrash
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -389,6 +395,9 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .arceusDragon: return 115
     case .arceusDark: return 116
     case .arceusFairy: return 117
+    case .burmyPlant: return 118
+    case .burmySandy: return 119
+    case .burmyTrash: return 120
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -518,6 +527,9 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .arceusDragon,
     .arceusDark,
     .arceusFairy,
+    .burmyPlant,
+    .burmySandy,
+    .burmyTrash,
   ]
 }
 
@@ -645,5 +657,8 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     115: .same(proto: "ARCEUS_DRAGON"),
     116: .same(proto: "ARCEUS_DARK"),
     117: .same(proto: "ARCEUS_FAIRY"),
+    118: .same(proto: "BURMY_PLANT"),
+    119: .same(proto: "BURMY_SANDY"),
+    120: .same(proto: "BURMY_TRASH"),
   ]
 }

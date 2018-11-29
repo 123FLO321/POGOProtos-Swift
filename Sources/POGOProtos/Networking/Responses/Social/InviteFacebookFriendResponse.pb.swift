@@ -33,10 +33,18 @@ public struct POGOProtos_Networking_Responses_Social_InviteFacebookFriendRespons
     case unset // = 0
     case success // = 1
     case errorUnknown // = 2
-    case errorAlreadyAFriend // = 3
-    case errorPlayerDoesNotExist // = 4
+    case errorPlayerNotFound // = 3
+    case errorPlayerOutboxFull // = 4
     case errorPlayerInboxFull // = 5
-    case errorPlayerOutboxFull // = 6
+    case errorSenderHasMaxFriends // = 6
+    case errorReceiverHasMaxFriends // = 7
+    case errorAlreadyAFriend // = 8
+    case errorInviteAlreadySent // = 9
+    case errorInviteAlreadyReceived // = 10
+    case errorCannotSendInvitesToYourself // = 11
+    case errorFriendCacheExpired // = 12
+    case errorFriendNotCached // = 13
+    case errorInvalidSenderFacebookID // = 14
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -48,10 +56,18 @@ public struct POGOProtos_Networking_Responses_Social_InviteFacebookFriendRespons
       case 0: self = .unset
       case 1: self = .success
       case 2: self = .errorUnknown
-      case 3: self = .errorAlreadyAFriend
-      case 4: self = .errorPlayerDoesNotExist
+      case 3: self = .errorPlayerNotFound
+      case 4: self = .errorPlayerOutboxFull
       case 5: self = .errorPlayerInboxFull
-      case 6: self = .errorPlayerOutboxFull
+      case 6: self = .errorSenderHasMaxFriends
+      case 7: self = .errorReceiverHasMaxFriends
+      case 8: self = .errorAlreadyAFriend
+      case 9: self = .errorInviteAlreadySent
+      case 10: self = .errorInviteAlreadyReceived
+      case 11: self = .errorCannotSendInvitesToYourself
+      case 12: self = .errorFriendCacheExpired
+      case 13: self = .errorFriendNotCached
+      case 14: self = .errorInvalidSenderFacebookID
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -61,10 +77,18 @@ public struct POGOProtos_Networking_Responses_Social_InviteFacebookFriendRespons
       case .unset: return 0
       case .success: return 1
       case .errorUnknown: return 2
-      case .errorAlreadyAFriend: return 3
-      case .errorPlayerDoesNotExist: return 4
+      case .errorPlayerNotFound: return 3
+      case .errorPlayerOutboxFull: return 4
       case .errorPlayerInboxFull: return 5
-      case .errorPlayerOutboxFull: return 6
+      case .errorSenderHasMaxFriends: return 6
+      case .errorReceiverHasMaxFriends: return 7
+      case .errorAlreadyAFriend: return 8
+      case .errorInviteAlreadySent: return 9
+      case .errorInviteAlreadyReceived: return 10
+      case .errorCannotSendInvitesToYourself: return 11
+      case .errorFriendCacheExpired: return 12
+      case .errorFriendNotCached: return 13
+      case .errorInvalidSenderFacebookID: return 14
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -82,10 +106,18 @@ extension POGOProtos_Networking_Responses_Social_InviteFacebookFriendResponse.Re
     .unset,
     .success,
     .errorUnknown,
-    .errorAlreadyAFriend,
-    .errorPlayerDoesNotExist,
-    .errorPlayerInboxFull,
+    .errorPlayerNotFound,
     .errorPlayerOutboxFull,
+    .errorPlayerInboxFull,
+    .errorSenderHasMaxFriends,
+    .errorReceiverHasMaxFriends,
+    .errorAlreadyAFriend,
+    .errorInviteAlreadySent,
+    .errorInviteAlreadyReceived,
+    .errorCannotSendInvitesToYourself,
+    .errorFriendCacheExpired,
+    .errorFriendNotCached,
+    .errorInvalidSenderFacebookID,
   ]
 }
 
@@ -129,9 +161,17 @@ extension POGOProtos_Networking_Responses_Social_InviteFacebookFriendResponse.Re
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),
     2: .same(proto: "ERROR_UNKNOWN"),
-    3: .same(proto: "ERROR_ALREADY_A_FRIEND"),
-    4: .same(proto: "ERROR_PLAYER_DOES_NOT_EXIST"),
+    3: .same(proto: "ERROR_PLAYER_NOT_FOUND"),
+    4: .same(proto: "ERROR_PLAYER_OUTBOX_FULL"),
     5: .same(proto: "ERROR_PLAYER_INBOX_FULL"),
-    6: .same(proto: "ERROR_PLAYER_OUTBOX_FULL"),
+    6: .same(proto: "ERROR_SENDER_HAS_MAX_FRIENDS"),
+    7: .same(proto: "ERROR_RECEIVER_HAS_MAX_FRIENDS"),
+    8: .same(proto: "ERROR_ALREADY_A_FRIEND"),
+    9: .same(proto: "ERROR_INVITE_ALREADY_SENT"),
+    10: .same(proto: "ERROR_INVITE_ALREADY_RECEIVED"),
+    11: .same(proto: "ERROR_CANNOT_SEND_INVITES_TO_YOURSELF"),
+    12: .same(proto: "ERROR_FRIEND_CACHE_EXPIRED"),
+    13: .same(proto: "ERROR_FRIEND_NOT_CACHED"),
+    14: .same(proto: "ERROR_INVALID_SENDER_FACEBOOK_ID"),
   ]
 }

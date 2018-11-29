@@ -38,6 +38,15 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
   /// Clears the value of `upgradedPokemon`. Subsequent reads from it will return its default value.
   public mutating func clearUpgradedPokemon() {_uniqueStorage()._upgradedPokemon = nil}
 
+  public var nextUpgradedPokemon: POGOProtos_Data_PokemonData {
+    get {return _storage._nextUpgradedPokemon ?? POGOProtos_Data_PokemonData()}
+    set {_uniqueStorage()._nextUpgradedPokemon = newValue}
+  }
+  /// Returns true if `nextUpgradedPokemon` has been explicitly set.
+  public var hasNextUpgradedPokemon: Bool {return _storage._nextUpgradedPokemon != nil}
+  /// Clears the value of `nextUpgradedPokemon`. Subsequent reads from it will return its default value.
+  public mutating func clearNextUpgradedPokemon() {_uniqueStorage()._nextUpgradedPokemon = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -118,11 +127,13 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse: SwiftProtob
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "upgraded_pokemon"),
+    3: .standard(proto: "next_upgraded_pokemon"),
   ]
 
   fileprivate class _StorageClass {
     var _result: POGOProtos_Networking_Responses_UseItemMoveRerollResponse.Result = .unset
     var _upgradedPokemon: POGOProtos_Data_PokemonData? = nil
+    var _nextUpgradedPokemon: POGOProtos_Data_PokemonData? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -131,6 +142,7 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse: SwiftProtob
     init(copying source: _StorageClass) {
       _result = source._result
       _upgradedPokemon = source._upgradedPokemon
+      _nextUpgradedPokemon = source._nextUpgradedPokemon
     }
   }
 
@@ -148,6 +160,7 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse: SwiftProtob
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._result)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._upgradedPokemon)
+        case 3: try decoder.decodeSingularMessageField(value: &_storage._nextUpgradedPokemon)
         default: break
         }
       }
@@ -162,6 +175,9 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse: SwiftProtob
       if let v = _storage._upgradedPokemon {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
+      if let v = _storage._nextUpgradedPokemon {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -173,6 +189,7 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse: SwiftProtob
         let rhs_storage = _args.1
         if _storage._result != rhs_storage._result {return false}
         if _storage._upgradedPokemon != rhs_storage._upgradedPokemon {return false}
+        if _storage._nextUpgradedPokemon != rhs_storage._nextUpgradedPokemon {return false}
         return true
       }
       if !storagesAreEqual {return false}

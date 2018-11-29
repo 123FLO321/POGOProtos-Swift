@@ -24,7 +24,9 @@ public struct POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage 
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var businessToken: String = String()
+  public var fbAccessToken: String = String()
+
+  public var friendFbUserID: String = String()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -38,27 +40,33 @@ fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Social"
 extension POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".InviteFacebookFriendMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "business_token"),
+    1: .standard(proto: "fb_access_token"),
+    2: .standard(proto: "friend_fb_user_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.businessToken)
+      case 1: try decoder.decodeSingularStringField(value: &self.fbAccessToken)
+      case 2: try decoder.decodeSingularStringField(value: &self.friendFbUserID)
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.businessToken.isEmpty {
-      try visitor.visitSingularStringField(value: self.businessToken, fieldNumber: 1)
+    if !self.fbAccessToken.isEmpty {
+      try visitor.visitSingularStringField(value: self.fbAccessToken, fieldNumber: 1)
+    }
+    if !self.friendFbUserID.isEmpty {
+      try visitor.visitSingularStringField(value: self.friendFbUserID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage, rhs: POGOProtos_Networking_Requests_Social_InviteFacebookFriendMessage) -> Bool {
-    if lhs.businessToken != rhs.businessToken {return false}
+    if lhs.fbAccessToken != rhs.fbAccessToken {return false}
+    if lhs.friendFbUserID != rhs.friendFbUserID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

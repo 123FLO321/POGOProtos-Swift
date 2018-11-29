@@ -62,6 +62,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemMetalCoat // = 1103
   case itemDragonScale // = 1104
   case itemUpGrade // = 1105
+  case itemGen4EvolutionStone // = 1106
   case itemMoveRerollFastAttack // = 1201
   case itemMoveRerollSpecialAttack // = 1202
   case itemRareCandy // = 1301
@@ -119,6 +120,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 1103: self = .itemMetalCoat
     case 1104: self = .itemDragonScale
     case 1105: self = .itemUpGrade
+    case 1106: self = .itemGen4EvolutionStone
     case 1201: self = .itemMoveRerollFastAttack
     case 1202: self = .itemMoveRerollSpecialAttack
     case 1301: self = .itemRareCandy
@@ -174,6 +176,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemMetalCoat: return 1103
     case .itemDragonScale: return 1104
     case .itemUpGrade: return 1105
+    case .itemGen4EvolutionStone: return 1106
     case .itemMoveRerollFastAttack: return 1201
     case .itemMoveRerollSpecialAttack: return 1202
     case .itemRareCandy: return 1301
@@ -234,6 +237,7 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemMetalCoat,
     .itemDragonScale,
     .itemUpGrade,
+    .itemGen4EvolutionStone,
     .itemMoveRerollFastAttack,
     .itemMoveRerollSpecialAttack,
     .itemRareCandy,
@@ -292,6 +296,7 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     1103: .same(proto: "ITEM_METAL_COAT"),
     1104: .same(proto: "ITEM_DRAGON_SCALE"),
     1105: .same(proto: "ITEM_UP_GRADE"),
+    1106: .same(proto: "ITEM_GEN4_EVOLUTION_STONE"),
     1201: .same(proto: "ITEM_MOVE_REROLL_FAST_ATTACK"),
     1202: .same(proto: "ITEM_MOVE_REROLL_SPECIAL_ATTACK"),
     1301: .same(proto: "ITEM_RARE_CANDY"),

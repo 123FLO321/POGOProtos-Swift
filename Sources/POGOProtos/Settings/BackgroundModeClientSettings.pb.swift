@@ -34,6 +34,8 @@ public struct POGOProtos_Settings_BackgroundModeClientSettings {
 
   public var maxUploadSizeInBytes: Int32 = 0
 
+  public var minEnclosingGeofenceRadiusM: Double = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +53,7 @@ extension POGOProtos_Settings_BackgroundModeClientSettings: SwiftProtobuf.Messag
     3: .standard(proto: "minimum_location_accuracy_meters"),
     4: .standard(proto: "background_wake_up_interval_minutes"),
     5: .standard(proto: "max_upload_size_in_bytes"),
+    6: .standard(proto: "min_enclosing_geofence_radius_m"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -61,6 +64,7 @@ extension POGOProtos_Settings_BackgroundModeClientSettings: SwiftProtobuf.Messag
       case 3: try decoder.decodeSingularDoubleField(value: &self.minimumLocationAccuracyMeters)
       case 4: try decoder.decodeSingularInt32Field(value: &self.backgroundWakeUpIntervalMinutes)
       case 5: try decoder.decodeSingularInt32Field(value: &self.maxUploadSizeInBytes)
+      case 6: try decoder.decodeSingularDoubleField(value: &self.minEnclosingGeofenceRadiusM)
       default: break
       }
     }
@@ -82,6 +86,9 @@ extension POGOProtos_Settings_BackgroundModeClientSettings: SwiftProtobuf.Messag
     if self.maxUploadSizeInBytes != 0 {
       try visitor.visitSingularInt32Field(value: self.maxUploadSizeInBytes, fieldNumber: 5)
     }
+    if self.minEnclosingGeofenceRadiusM != 0 {
+      try visitor.visitSingularDoubleField(value: self.minEnclosingGeofenceRadiusM, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -91,6 +98,7 @@ extension POGOProtos_Settings_BackgroundModeClientSettings: SwiftProtobuf.Messag
     if lhs.minimumLocationAccuracyMeters != rhs.minimumLocationAccuracyMeters {return false}
     if lhs.backgroundWakeUpIntervalMinutes != rhs.backgroundWakeUpIntervalMinutes {return false}
     if lhs.maxUploadSizeInBytes != rhs.maxUploadSizeInBytes {return false}
+    if lhs.minEnclosingGeofenceRadiusM != rhs.minEnclosingGeofenceRadiusM {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

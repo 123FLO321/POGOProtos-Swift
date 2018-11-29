@@ -26,13 +26,7 @@ public struct POGOProtos_Data_Player_UserAttributes {
 
   public var level: Int32 = 0
 
-  public var xp: Int64 = 0
-
-  public var avatar: Int32 = 0
-
-  public var itemCount: Int64 = 0
-
-  public var pokemonCount: Int64 = 0
+  public var xpPercentage: Int64 = 0
 
   public var pokecoinCount: Int64 = 0
 
@@ -55,28 +49,22 @@ extension POGOProtos_Data_Player_UserAttributes: SwiftProtobuf.Message, SwiftPro
   public static let protoMessageName: String = _protobuf_package + ".UserAttributes"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "level"),
-    2: .same(proto: "xp"),
-    3: .same(proto: "avatar"),
-    4: .standard(proto: "item_count"),
-    5: .standard(proto: "pokemon_count"),
-    6: .standard(proto: "pokecoin_count"),
-    7: .same(proto: "team"),
-    8: .standard(proto: "catch_streak"),
-    9: .standard(proto: "spin_streak"),
+    2: .standard(proto: "xp_percentage"),
+    3: .standard(proto: "pokecoin_count"),
+    4: .same(proto: "team"),
+    5: .standard(proto: "catch_streak"),
+    6: .standard(proto: "spin_streak"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.level)
-      case 2: try decoder.decodeSingularInt64Field(value: &self.xp)
-      case 3: try decoder.decodeSingularInt32Field(value: &self.avatar)
-      case 4: try decoder.decodeSingularInt64Field(value: &self.itemCount)
-      case 5: try decoder.decodeSingularInt64Field(value: &self.pokemonCount)
-      case 6: try decoder.decodeSingularInt64Field(value: &self.pokecoinCount)
-      case 7: try decoder.decodeSingularInt32Field(value: &self.team)
-      case 8: try decoder.decodeSingularInt32Field(value: &self.catchStreak)
-      case 9: try decoder.decodeSingularInt32Field(value: &self.spinStreak)
+      case 2: try decoder.decodeSingularInt64Field(value: &self.xpPercentage)
+      case 3: try decoder.decodeSingularInt64Field(value: &self.pokecoinCount)
+      case 4: try decoder.decodeSingularInt32Field(value: &self.team)
+      case 5: try decoder.decodeSingularInt32Field(value: &self.catchStreak)
+      case 6: try decoder.decodeSingularInt32Field(value: &self.spinStreak)
       default: break
       }
     }
@@ -86,39 +74,27 @@ extension POGOProtos_Data_Player_UserAttributes: SwiftProtobuf.Message, SwiftPro
     if self.level != 0 {
       try visitor.visitSingularInt32Field(value: self.level, fieldNumber: 1)
     }
-    if self.xp != 0 {
-      try visitor.visitSingularInt64Field(value: self.xp, fieldNumber: 2)
-    }
-    if self.avatar != 0 {
-      try visitor.visitSingularInt32Field(value: self.avatar, fieldNumber: 3)
-    }
-    if self.itemCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.itemCount, fieldNumber: 4)
-    }
-    if self.pokemonCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.pokemonCount, fieldNumber: 5)
+    if self.xpPercentage != 0 {
+      try visitor.visitSingularInt64Field(value: self.xpPercentage, fieldNumber: 2)
     }
     if self.pokecoinCount != 0 {
-      try visitor.visitSingularInt64Field(value: self.pokecoinCount, fieldNumber: 6)
+      try visitor.visitSingularInt64Field(value: self.pokecoinCount, fieldNumber: 3)
     }
     if self.team != 0 {
-      try visitor.visitSingularInt32Field(value: self.team, fieldNumber: 7)
+      try visitor.visitSingularInt32Field(value: self.team, fieldNumber: 4)
     }
     if self.catchStreak != 0 {
-      try visitor.visitSingularInt32Field(value: self.catchStreak, fieldNumber: 8)
+      try visitor.visitSingularInt32Field(value: self.catchStreak, fieldNumber: 5)
     }
     if self.spinStreak != 0 {
-      try visitor.visitSingularInt32Field(value: self.spinStreak, fieldNumber: 9)
+      try visitor.visitSingularInt32Field(value: self.spinStreak, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Player_UserAttributes, rhs: POGOProtos_Data_Player_UserAttributes) -> Bool {
     if lhs.level != rhs.level {return false}
-    if lhs.xp != rhs.xp {return false}
-    if lhs.avatar != rhs.avatar {return false}
-    if lhs.itemCount != rhs.itemCount {return false}
-    if lhs.pokemonCount != rhs.pokemonCount {return false}
+    if lhs.xpPercentage != rhs.xpPercentage {return false}
     if lhs.pokecoinCount != rhs.pokecoinCount {return false}
     if lhs.team != rhs.team {return false}
     if lhs.catchStreak != rhs.catchStreak {return false}

@@ -30,6 +30,8 @@ public struct POGOProtos_Networking_Responses_GetBuddyWalkedResponse {
 
   public var candyEarnedCount: Int32 = 0
 
+  public var kmRemaining: Double = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -45,6 +47,7 @@ extension POGOProtos_Networking_Responses_GetBuddyWalkedResponse: SwiftProtobuf.
     1: .same(proto: "success"),
     2: .standard(proto: "family_candy_id"),
     3: .standard(proto: "candy_earned_count"),
+    4: .standard(proto: "km_remaining"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -53,6 +56,7 @@ extension POGOProtos_Networking_Responses_GetBuddyWalkedResponse: SwiftProtobuf.
       case 1: try decoder.decodeSingularBoolField(value: &self.success)
       case 2: try decoder.decodeSingularEnumField(value: &self.familyCandyID)
       case 3: try decoder.decodeSingularInt32Field(value: &self.candyEarnedCount)
+      case 4: try decoder.decodeSingularDoubleField(value: &self.kmRemaining)
       default: break
       }
     }
@@ -68,6 +72,9 @@ extension POGOProtos_Networking_Responses_GetBuddyWalkedResponse: SwiftProtobuf.
     if self.candyEarnedCount != 0 {
       try visitor.visitSingularInt32Field(value: self.candyEarnedCount, fieldNumber: 3)
     }
+    if self.kmRemaining != 0 {
+      try visitor.visitSingularDoubleField(value: self.kmRemaining, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -75,6 +82,7 @@ extension POGOProtos_Networking_Responses_GetBuddyWalkedResponse: SwiftProtobuf.
     if lhs.success != rhs.success {return false}
     if lhs.familyCandyID != rhs.familyCandyID {return false}
     if lhs.candyEarnedCount != rhs.candyEarnedCount {return false}
+    if lhs.kmRemaining != rhs.kmRemaining {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

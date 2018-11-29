@@ -40,6 +40,10 @@ public struct POGOProtos_Networking_Platform_Analytics_ClientTelemetryClientSett
 
   public var playerHash: Double = 0
 
+  public var playerExternalOmniID: String = String()
+
+  public var disableOmniSending: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -60,6 +64,8 @@ extension POGOProtos_Networking_Platform_Analytics_ClientTelemetryClientSettings
     6: .standard(proto: "sampling_probability"),
     7: .standard(proto: "use_player_based_sampling"),
     8: .standard(proto: "player_hash"),
+    9: .standard(proto: "player_external_omni_id"),
+    10: .standard(proto: "disable_omni_sending"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -73,6 +79,8 @@ extension POGOProtos_Networking_Platform_Analytics_ClientTelemetryClientSettings
       case 6: try decoder.decodeSingularDoubleField(value: &self.samplingProbability)
       case 7: try decoder.decodeSingularBoolField(value: &self.usePlayerBasedSampling)
       case 8: try decoder.decodeSingularDoubleField(value: &self.playerHash)
+      case 9: try decoder.decodeSingularStringField(value: &self.playerExternalOmniID)
+      case 10: try decoder.decodeSingularBoolField(value: &self.disableOmniSending)
       default: break
       }
     }
@@ -103,6 +111,12 @@ extension POGOProtos_Networking_Platform_Analytics_ClientTelemetryClientSettings
     if self.playerHash != 0 {
       try visitor.visitSingularDoubleField(value: self.playerHash, fieldNumber: 8)
     }
+    if !self.playerExternalOmniID.isEmpty {
+      try visitor.visitSingularStringField(value: self.playerExternalOmniID, fieldNumber: 9)
+    }
+    if self.disableOmniSending != false {
+      try visitor.visitSingularBoolField(value: self.disableOmniSending, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -115,6 +129,8 @@ extension POGOProtos_Networking_Platform_Analytics_ClientTelemetryClientSettings
     if lhs.samplingProbability != rhs.samplingProbability {return false}
     if lhs.usePlayerBasedSampling != rhs.usePlayerBasedSampling {return false}
     if lhs.playerHash != rhs.playerHash {return false}
+    if lhs.playerExternalOmniID != rhs.playerExternalOmniID {return false}
+    if lhs.disableOmniSending != rhs.disableOmniSending {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

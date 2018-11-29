@@ -80,6 +80,10 @@ public struct POGOProtos_Networking_Responses_Social_GetFriendsListResponse {
 
     public var createdMs: Int64 = 0
 
+    public var fbUserID: String = String()
+
+    public var isFacebookFriendship: Bool = false
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -158,6 +162,8 @@ extension POGOProtos_Networking_Responses_Social_GetFriendsListResponse.Friend: 
     5: .standard(proto: "data_with_me"),
     6: .same(proto: "version"),
     7: .standard(proto: "created_ms"),
+    8: .standard(proto: "fb_user_id"),
+    9: .standard(proto: "is_facebook_friendship"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -170,6 +176,8 @@ extension POGOProtos_Networking_Responses_Social_GetFriendsListResponse.Friend: 
       case 5: try decoder.decodeSingularBytesField(value: &self.dataWithMe)
       case 6: try decoder.decodeSingularInt64Field(value: &self.version)
       case 7: try decoder.decodeSingularInt64Field(value: &self.createdMs)
+      case 8: try decoder.decodeSingularStringField(value: &self.fbUserID)
+      case 9: try decoder.decodeSingularBoolField(value: &self.isFacebookFriendship)
       default: break
       }
     }
@@ -197,6 +205,12 @@ extension POGOProtos_Networking_Responses_Social_GetFriendsListResponse.Friend: 
     if self.createdMs != 0 {
       try visitor.visitSingularInt64Field(value: self.createdMs, fieldNumber: 7)
     }
+    if !self.fbUserID.isEmpty {
+      try visitor.visitSingularStringField(value: self.fbUserID, fieldNumber: 8)
+    }
+    if self.isFacebookFriendship != false {
+      try visitor.visitSingularBoolField(value: self.isFacebookFriendship, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -208,6 +222,8 @@ extension POGOProtos_Networking_Responses_Social_GetFriendsListResponse.Friend: 
     if lhs.dataWithMe != rhs.dataWithMe {return false}
     if lhs.version != rhs.version {return false}
     if lhs.createdMs != rhs.createdMs {return false}
+    if lhs.fbUserID != rhs.fbUserID {return false}
+    if lhs.isFacebookFriendship != rhs.isFacebookFriendship {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

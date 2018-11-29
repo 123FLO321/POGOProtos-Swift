@@ -30,6 +30,10 @@ public struct POGOProtos_Data_Friends_IncomingFriendInvite {
 
   public var createdMs: Int64 = 0
 
+  public var invitationType: POGOProtos_Enums_InvitationType = .unset
+
+  public var fullName: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Status: SwiftProtobuf.Enum {
@@ -93,6 +97,8 @@ extension POGOProtos_Data_Friends_IncomingFriendInvite: SwiftProtobuf.Message, S
     1: .same(proto: "status"),
     2: .standard(proto: "player_id"),
     3: .standard(proto: "created_ms"),
+    4: .standard(proto: "invitation_type"),
+    5: .standard(proto: "full_name"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -101,6 +107,8 @@ extension POGOProtos_Data_Friends_IncomingFriendInvite: SwiftProtobuf.Message, S
       case 1: try decoder.decodeSingularEnumField(value: &self.status)
       case 2: try decoder.decodeSingularStringField(value: &self.playerID)
       case 3: try decoder.decodeSingularInt64Field(value: &self.createdMs)
+      case 4: try decoder.decodeSingularEnumField(value: &self.invitationType)
+      case 5: try decoder.decodeSingularStringField(value: &self.fullName)
       default: break
       }
     }
@@ -116,6 +124,12 @@ extension POGOProtos_Data_Friends_IncomingFriendInvite: SwiftProtobuf.Message, S
     if self.createdMs != 0 {
       try visitor.visitSingularInt64Field(value: self.createdMs, fieldNumber: 3)
     }
+    if self.invitationType != .unset {
+      try visitor.visitSingularEnumField(value: self.invitationType, fieldNumber: 4)
+    }
+    if !self.fullName.isEmpty {
+      try visitor.visitSingularStringField(value: self.fullName, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -123,6 +137,8 @@ extension POGOProtos_Data_Friends_IncomingFriendInvite: SwiftProtobuf.Message, S
     if lhs.status != rhs.status {return false}
     if lhs.playerID != rhs.playerID {return false}
     if lhs.createdMs != rhs.createdMs {return false}
+    if lhs.invitationType != rhs.invitationType {return false}
+    if lhs.fullName != rhs.fullName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

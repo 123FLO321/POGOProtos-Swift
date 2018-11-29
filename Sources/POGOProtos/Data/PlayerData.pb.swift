@@ -137,6 +137,11 @@ public struct POGOProtos_Data_PlayerData {
   /// Clears the value of `socialPlayerSettings`. Subsequent reads from it will return its default value.
   public mutating func clearSocialPlayerSettings() {_uniqueStorage()._socialPlayerSettings = nil}
 
+  public var playerSupportID: String {
+    get {return _storage._playerSupportID}
+    set {_uniqueStorage()._playerSupportID = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -168,6 +173,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     18: .standard(proto: "secondary_player_avatar"),
     19: .standard(proto: "name_is_blacklisted"),
     20: .standard(proto: "social_player_settings"),
+    22: .standard(proto: "player_support_id"),
   ]
 
   fileprivate class _StorageClass {
@@ -188,6 +194,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _secondaryPlayerAvatar: POGOProtos_Data_Player_PlayerAvatar? = nil
     var _nameIsBlacklisted: Bool = false
     var _socialPlayerSettings: POGOProtos_Data_Player_SocialPlayerSettings? = nil
+    var _playerSupportID: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -211,6 +218,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _secondaryPlayerAvatar = source._secondaryPlayerAvatar
       _nameIsBlacklisted = source._nameIsBlacklisted
       _socialPlayerSettings = source._socialPlayerSettings
+      _playerSupportID = source._playerSupportID
     }
   }
 
@@ -243,6 +251,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 18: try decoder.decodeSingularMessageField(value: &_storage._secondaryPlayerAvatar)
         case 19: try decoder.decodeSingularBoolField(value: &_storage._nameIsBlacklisted)
         case 20: try decoder.decodeSingularMessageField(value: &_storage._socialPlayerSettings)
+        case 22: try decoder.decodeSingularStringField(value: &_storage._playerSupportID)
         default: break
         }
       }
@@ -302,6 +311,9 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if let v = _storage._socialPlayerSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 20)
       }
+      if !_storage._playerSupportID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._playerSupportID, fieldNumber: 22)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -328,6 +340,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._secondaryPlayerAvatar != rhs_storage._secondaryPlayerAvatar {return false}
         if _storage._nameIsBlacklisted != rhs_storage._nameIsBlacklisted {return false}
         if _storage._socialPlayerSettings != rhs_storage._socialPlayerSettings {return false}
+        if _storage._playerSupportID != rhs_storage._playerSupportID {return false}
         return true
       }
       if !storagesAreEqual {return false}

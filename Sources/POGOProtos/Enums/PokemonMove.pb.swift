@@ -278,6 +278,7 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case muddyWater // = 316
   case blazeKick // = 317
   case razorShell // = 318
+  case powerUpPunch // = 319
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -543,6 +544,7 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 316: self = .muddyWater
     case 317: self = .blazeKick
     case 318: self = .razorShell
+    case 319: self = .powerUpPunch
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -806,6 +808,7 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .muddyWater: return 316
     case .blazeKick: return 317
     case .razorShell: return 318
+    case .powerUpPunch: return 319
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1074,6 +1077,7 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .muddyWater,
     .blazeKick,
     .razorShell,
+    .powerUpPunch,
   ]
 }
 
@@ -1340,5 +1344,6 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     316: .same(proto: "MUDDY_WATER"),
     317: .same(proto: "BLAZE_KICK"),
     318: .same(proto: "RAZOR_SHELL"),
+    319: .same(proto: "POWER_UP_PUNCH"),
   ]
 }

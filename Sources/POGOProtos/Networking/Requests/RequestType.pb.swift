@@ -137,6 +137,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case sendProbe // = 1020
   case probeData // = 1021
   case combatData // = 1022
+  case combatChallengeData // = 1023
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -261,6 +262,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1020: self = .sendProbe
     case 1021: self = .probeData
     case 1022: self = .combatData
+    case 1023: self = .combatChallengeData
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -383,6 +385,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .sendProbe: return 1020
     case .probeData: return 1021
     case .combatData: return 1022
+    case .combatChallengeData: return 1023
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -510,6 +513,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .sendProbe,
     .probeData,
     .combatData,
+    .combatChallengeData,
   ]
 }
 
@@ -635,5 +639,6 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1020: .same(proto: "SEND_PROBE"),
     1021: .same(proto: "PROBE_DATA"),
     1022: .same(proto: "COMBAT_DATA"),
+    1023: .same(proto: "COMBAT_CHALLENGE_DATA"),
   ]
 }

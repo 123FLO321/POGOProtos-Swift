@@ -260,6 +260,15 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `purchasedSettings`. Subsequent reads from it will return its default value.
   public mutating func clearPurchasedSettings() {_uniqueStorage()._purchasedSettings = nil}
 
+  public var helpshiftSettings: POGOProtos_Settings_HelpshiftSettings {
+    get {return _storage._helpshiftSettings ?? POGOProtos_Settings_HelpshiftSettings()}
+    set {_uniqueStorage()._helpshiftSettings = newValue}
+  }
+  /// Returns true if `helpshiftSettings` has been explicitly set.
+  public var hasHelpshiftSettings: Bool {return _storage._helpshiftSettings != nil}
+  /// Clears the value of `helpshiftSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearHelpshiftSettings() {_uniqueStorage()._helpshiftSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -302,6 +311,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     30: .standard(proto: "bgmode_global_settings"),
     31: .standard(proto: "probe_settings"),
     32: .standard(proto: "purchased_settings"),
+    33: .standard(proto: "helpshift_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -333,6 +343,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _bgmodeGlobalSettings: POGOProtos_Settings_BackgroundModeGlobalSettings? = nil
     var _probeSettings: POGOProtos_Settings_ProbeSettings? = nil
     var _purchasedSettings: POGOProtos_Settings_PokecoinPurchaseDisplaySettings? = nil
+    var _helpshiftSettings: POGOProtos_Settings_HelpshiftSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -367,6 +378,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _bgmodeGlobalSettings = source._bgmodeGlobalSettings
       _probeSettings = source._probeSettings
       _purchasedSettings = source._purchasedSettings
+      _helpshiftSettings = source._helpshiftSettings
     }
   }
 
@@ -410,6 +422,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 30: try decoder.decodeSingularMessageField(value: &_storage._bgmodeGlobalSettings)
         case 31: try decoder.decodeSingularMessageField(value: &_storage._probeSettings)
         case 32: try decoder.decodeSingularMessageField(value: &_storage._purchasedSettings)
+        case 33: try decoder.decodeSingularMessageField(value: &_storage._helpshiftSettings)
         default: break
         }
       }
@@ -502,6 +515,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._purchasedSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 32)
       }
+      if let v = _storage._helpshiftSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 33)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -539,6 +555,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._bgmodeGlobalSettings != rhs_storage._bgmodeGlobalSettings {return false}
         if _storage._probeSettings != rhs_storage._probeSettings {return false}
         if _storage._purchasedSettings != rhs_storage._purchasedSettings {return false}
+        if _storage._helpshiftSettings != rhs_storage._helpshiftSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

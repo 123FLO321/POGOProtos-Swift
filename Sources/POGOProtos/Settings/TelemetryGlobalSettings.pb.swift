@@ -38,6 +38,8 @@ public struct POGOProtos_Settings_TelemetryGlobalSettings {
 
   public var frameRateSamplePeriodMs: Int64 = 0
 
+  public var enableOmniWrapperSending: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -57,6 +59,7 @@ extension POGOProtos_Settings_TelemetryGlobalSettings: SwiftProtobuf.Message, Sw
     5: .standard(proto: "update_interval_ms"),
     6: .standard(proto: "frame_rate_sample_interval_ms"),
     7: .standard(proto: "frame_rate_sample_period_ms"),
+    8: .standard(proto: "enable_omni_wrapper_sending"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -69,6 +72,7 @@ extension POGOProtos_Settings_TelemetryGlobalSettings: SwiftProtobuf.Message, Sw
       case 5: try decoder.decodeSingularInt64Field(value: &self.updateIntervalMs)
       case 6: try decoder.decodeSingularInt64Field(value: &self.frameRateSampleIntervalMs)
       case 7: try decoder.decodeSingularInt64Field(value: &self.frameRateSamplePeriodMs)
+      case 8: try decoder.decodeSingularBoolField(value: &self.enableOmniWrapperSending)
       default: break
       }
     }
@@ -96,6 +100,9 @@ extension POGOProtos_Settings_TelemetryGlobalSettings: SwiftProtobuf.Message, Sw
     if self.frameRateSamplePeriodMs != 0 {
       try visitor.visitSingularInt64Field(value: self.frameRateSamplePeriodMs, fieldNumber: 7)
     }
+    if self.enableOmniWrapperSending != false {
+      try visitor.visitSingularBoolField(value: self.enableOmniWrapperSending, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -107,6 +114,7 @@ extension POGOProtos_Settings_TelemetryGlobalSettings: SwiftProtobuf.Message, Sw
     if lhs.updateIntervalMs != rhs.updateIntervalMs {return false}
     if lhs.frameRateSampleIntervalMs != rhs.frameRateSampleIntervalMs {return false}
     if lhs.frameRateSamplePeriodMs != rhs.frameRateSamplePeriodMs {return false}
+    if lhs.enableOmniWrapperSending != rhs.enableOmniWrapperSending {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

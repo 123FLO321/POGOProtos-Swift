@@ -32,6 +32,8 @@ public struct POGOProtos_Data_Player_PlayerSummary {
 
   public var team: String = String()
 
+  public var fbUserID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,6 +50,7 @@ extension POGOProtos_Data_Player_PlayerSummary: SwiftProtobuf.Message, SwiftProt
     2: .same(proto: "codename"),
     3: .standard(proto: "public_data"),
     4: .same(proto: "team"),
+    5: .standard(proto: "fb_user_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +60,7 @@ extension POGOProtos_Data_Player_PlayerSummary: SwiftProtobuf.Message, SwiftProt
       case 2: try decoder.decodeSingularStringField(value: &self.codename)
       case 3: try decoder.decodeSingularBytesField(value: &self.publicData)
       case 4: try decoder.decodeSingularStringField(value: &self.team)
+      case 5: try decoder.decodeSingularStringField(value: &self.fbUserID)
       default: break
       }
     }
@@ -75,6 +79,9 @@ extension POGOProtos_Data_Player_PlayerSummary: SwiftProtobuf.Message, SwiftProt
     if !self.team.isEmpty {
       try visitor.visitSingularStringField(value: self.team, fieldNumber: 4)
     }
+    if !self.fbUserID.isEmpty {
+      try visitor.visitSingularStringField(value: self.fbUserID, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +90,7 @@ extension POGOProtos_Data_Player_PlayerSummary: SwiftProtobuf.Message, SwiftProt
     if lhs.codename != rhs.codename {return false}
     if lhs.publicData != rhs.publicData {return false}
     if lhs.team != rhs.team {return false}
+    if lhs.fbUserID != rhs.fbUserID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
