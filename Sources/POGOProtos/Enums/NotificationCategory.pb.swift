@@ -35,8 +35,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case bgmodeBuddyCandy // = 11
   case bgmodeWeeklyFitnessReport // = 12
   case bgmodeOffSessionDistance // = 13
-  case friendInviteReceived // = 14
-  case friendInviteAccepted // = 15
+  case combatChallengeOpened // = 14
+  case friendInviteReceived // = 15
+  case friendInviteAccepted // = 16
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -59,8 +60,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 11: self = .bgmodeBuddyCandy
     case 12: self = .bgmodeWeeklyFitnessReport
     case 13: self = .bgmodeOffSessionDistance
-    case 14: self = .friendInviteReceived
-    case 15: self = .friendInviteAccepted
+    case 14: self = .combatChallengeOpened
+    case 15: self = .friendInviteReceived
+    case 16: self = .friendInviteAccepted
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -81,8 +83,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .bgmodeBuddyCandy: return 11
     case .bgmodeWeeklyFitnessReport: return 12
     case .bgmodeOffSessionDistance: return 13
-    case .friendInviteReceived: return 14
-    case .friendInviteAccepted: return 15
+    case .combatChallengeOpened: return 14
+    case .friendInviteReceived: return 15
+    case .friendInviteAccepted: return 16
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -108,6 +111,7 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .bgmodeBuddyCandy,
     .bgmodeWeeklyFitnessReport,
     .bgmodeOffSessionDistance,
+    .combatChallengeOpened,
     .friendInviteReceived,
     .friendInviteAccepted,
   ]
@@ -133,7 +137,8 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     11: .same(proto: "BGMODE_BUDDY_CANDY"),
     12: .same(proto: "BGMODE_WEEKLY_FITNESS_REPORT"),
     13: .same(proto: "BGMODE_OFF_SESSION_DISTANCE"),
-    14: .same(proto: "FRIEND_INVITE_RECEIVED"),
-    15: .same(proto: "FRIEND_INVITE_ACCEPTED"),
+    14: .same(proto: "COMBAT_CHALLENGE_OPENED"),
+    15: .same(proto: "FRIEND_INVITE_RECEIVED"),
+    16: .same(proto: "FRIEND_INVITE_ACCEPTED"),
   ]
 }

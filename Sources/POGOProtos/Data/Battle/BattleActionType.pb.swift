@@ -32,6 +32,7 @@ public enum POGOProtos_Data_Battle_BattleActionType: SwiftProtobuf.Enum {
   case actionVictory // = 8
   case actionDefeat // = 9
   case actionTimedOut // = 10
+  case actionSpecialAttack2 // = 11
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -51,6 +52,7 @@ public enum POGOProtos_Data_Battle_BattleActionType: SwiftProtobuf.Enum {
     case 8: self = .actionVictory
     case 9: self = .actionDefeat
     case 10: self = .actionTimedOut
+    case 11: self = .actionSpecialAttack2
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -68,6 +70,7 @@ public enum POGOProtos_Data_Battle_BattleActionType: SwiftProtobuf.Enum {
     case .actionVictory: return 8
     case .actionDefeat: return 9
     case .actionTimedOut: return 10
+    case .actionSpecialAttack2: return 11
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -90,6 +93,7 @@ extension POGOProtos_Data_Battle_BattleActionType: CaseIterable {
     .actionVictory,
     .actionDefeat,
     .actionTimedOut,
+    .actionSpecialAttack2,
   ]
 }
 
@@ -110,5 +114,6 @@ extension POGOProtos_Data_Battle_BattleActionType: SwiftProtobuf._ProtoNameProvi
     8: .same(proto: "ACTION_VICTORY"),
     9: .same(proto: "ACTION_DEFEAT"),
     10: .same(proto: "ACTION_TIMED_OUT"),
+    11: .same(proto: "ACTION_SPECIAL_ATTACK_2"),
   ]
 }

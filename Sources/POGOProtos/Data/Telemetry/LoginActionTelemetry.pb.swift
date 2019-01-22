@@ -28,11 +28,11 @@ public struct POGOProtos_Data_Telemetry_LoginActionTelemetry {
 
   public var firstTime: Bool = false
 
-  public var success: String = String()
+  public var success: Bool = false
+
+  public var intentExisting: Bool = false
 
   public var error: String = String()
-
-  public var intentExisting: String = String()
 
   public var authStatus: String = String()
 
@@ -51,8 +51,8 @@ extension POGOProtos_Data_Telemetry_LoginActionTelemetry: SwiftProtobuf.Message,
     1: .standard(proto: "login_action_id"),
     2: .standard(proto: "first_time"),
     3: .same(proto: "success"),
-    4: .same(proto: "error"),
-    5: .standard(proto: "intent_existing"),
+    4: .standard(proto: "intent_existing"),
+    5: .same(proto: "error"),
     6: .standard(proto: "auth_status"),
   ]
 
@@ -61,9 +61,9 @@ extension POGOProtos_Data_Telemetry_LoginActionTelemetry: SwiftProtobuf.Message,
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.loginActionID)
       case 2: try decoder.decodeSingularBoolField(value: &self.firstTime)
-      case 3: try decoder.decodeSingularStringField(value: &self.success)
-      case 4: try decoder.decodeSingularStringField(value: &self.error)
-      case 5: try decoder.decodeSingularStringField(value: &self.intentExisting)
+      case 3: try decoder.decodeSingularBoolField(value: &self.success)
+      case 4: try decoder.decodeSingularBoolField(value: &self.intentExisting)
+      case 5: try decoder.decodeSingularStringField(value: &self.error)
       case 6: try decoder.decodeSingularStringField(value: &self.authStatus)
       default: break
       }
@@ -77,14 +77,14 @@ extension POGOProtos_Data_Telemetry_LoginActionTelemetry: SwiftProtobuf.Message,
     if self.firstTime != false {
       try visitor.visitSingularBoolField(value: self.firstTime, fieldNumber: 2)
     }
-    if !self.success.isEmpty {
-      try visitor.visitSingularStringField(value: self.success, fieldNumber: 3)
+    if self.success != false {
+      try visitor.visitSingularBoolField(value: self.success, fieldNumber: 3)
+    }
+    if self.intentExisting != false {
+      try visitor.visitSingularBoolField(value: self.intentExisting, fieldNumber: 4)
     }
     if !self.error.isEmpty {
-      try visitor.visitSingularStringField(value: self.error, fieldNumber: 4)
-    }
-    if !self.intentExisting.isEmpty {
-      try visitor.visitSingularStringField(value: self.intentExisting, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.error, fieldNumber: 5)
     }
     if !self.authStatus.isEmpty {
       try visitor.visitSingularStringField(value: self.authStatus, fieldNumber: 6)
@@ -96,8 +96,8 @@ extension POGOProtos_Data_Telemetry_LoginActionTelemetry: SwiftProtobuf.Message,
     if lhs.loginActionID != rhs.loginActionID {return false}
     if lhs.firstTime != rhs.firstTime {return false}
     if lhs.success != rhs.success {return false}
-    if lhs.error != rhs.error {return false}
     if lhs.intentExisting != rhs.intentExisting {return false}
+    if lhs.error != rhs.error {return false}
     if lhs.authStatus != rhs.authStatus {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

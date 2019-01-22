@@ -34,15 +34,14 @@ public struct POGOProtos_Map_Pokemon_MapPokemon {
     set {_uniqueStorage()._encounterID = newValue}
   }
 
-  public var pokemonID: POGOProtos_Enums_PokemonId {
-    get {return _storage._pokemonID}
-    set {_uniqueStorage()._pokemonID = newValue}
+  public var pokedexTypeID: POGOProtos_Enums_PokemonId {
+    get {return _storage._pokedexTypeID}
+    set {_uniqueStorage()._pokedexTypeID = newValue}
   }
 
-  /// After this timestamp, the pokemon will be gone.
-  public var expirationTimestampMs: Int64 {
-    get {return _storage._expirationTimestampMs}
-    set {_uniqueStorage()._expirationTimestampMs = newValue}
+  public var expirationTimeMs: Int64 {
+    get {return _storage._expirationTimeMs}
+    set {_uniqueStorage()._expirationTimeMs = newValue}
   }
 
   public var latitude: Double {
@@ -80,8 +79,8 @@ extension POGOProtos_Map_Pokemon_MapPokemon: SwiftProtobuf.Message, SwiftProtobu
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "spawn_point_id"),
     2: .standard(proto: "encounter_id"),
-    3: .standard(proto: "pokemon_id"),
-    4: .standard(proto: "expiration_timestamp_ms"),
+    3: .standard(proto: "pokedex_type_id"),
+    4: .standard(proto: "expiration_time_ms"),
     5: .same(proto: "latitude"),
     6: .same(proto: "longitude"),
     7: .standard(proto: "pokemon_display"),
@@ -90,8 +89,8 @@ extension POGOProtos_Map_Pokemon_MapPokemon: SwiftProtobuf.Message, SwiftProtobu
   fileprivate class _StorageClass {
     var _spawnPointID: String = String()
     var _encounterID: UInt64 = 0
-    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
-    var _expirationTimestampMs: Int64 = 0
+    var _pokedexTypeID: POGOProtos_Enums_PokemonId = .missingno
+    var _expirationTimeMs: Int64 = 0
     var _latitude: Double = 0
     var _longitude: Double = 0
     var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
@@ -103,8 +102,8 @@ extension POGOProtos_Map_Pokemon_MapPokemon: SwiftProtobuf.Message, SwiftProtobu
     init(copying source: _StorageClass) {
       _spawnPointID = source._spawnPointID
       _encounterID = source._encounterID
-      _pokemonID = source._pokemonID
-      _expirationTimestampMs = source._expirationTimestampMs
+      _pokedexTypeID = source._pokedexTypeID
+      _expirationTimeMs = source._expirationTimeMs
       _latitude = source._latitude
       _longitude = source._longitude
       _pokemonDisplay = source._pokemonDisplay
@@ -125,8 +124,8 @@ extension POGOProtos_Map_Pokemon_MapPokemon: SwiftProtobuf.Message, SwiftProtobu
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &_storage._spawnPointID)
         case 2: try decoder.decodeSingularFixed64Field(value: &_storage._encounterID)
-        case 3: try decoder.decodeSingularEnumField(value: &_storage._pokemonID)
-        case 4: try decoder.decodeSingularInt64Field(value: &_storage._expirationTimestampMs)
+        case 3: try decoder.decodeSingularEnumField(value: &_storage._pokedexTypeID)
+        case 4: try decoder.decodeSingularInt64Field(value: &_storage._expirationTimeMs)
         case 5: try decoder.decodeSingularDoubleField(value: &_storage._latitude)
         case 6: try decoder.decodeSingularDoubleField(value: &_storage._longitude)
         case 7: try decoder.decodeSingularMessageField(value: &_storage._pokemonDisplay)
@@ -144,11 +143,11 @@ extension POGOProtos_Map_Pokemon_MapPokemon: SwiftProtobuf.Message, SwiftProtobu
       if _storage._encounterID != 0 {
         try visitor.visitSingularFixed64Field(value: _storage._encounterID, fieldNumber: 2)
       }
-      if _storage._pokemonID != .missingno {
-        try visitor.visitSingularEnumField(value: _storage._pokemonID, fieldNumber: 3)
+      if _storage._pokedexTypeID != .missingno {
+        try visitor.visitSingularEnumField(value: _storage._pokedexTypeID, fieldNumber: 3)
       }
-      if _storage._expirationTimestampMs != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._expirationTimestampMs, fieldNumber: 4)
+      if _storage._expirationTimeMs != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._expirationTimeMs, fieldNumber: 4)
       }
       if _storage._latitude != 0 {
         try visitor.visitSingularDoubleField(value: _storage._latitude, fieldNumber: 5)
@@ -170,8 +169,8 @@ extension POGOProtos_Map_Pokemon_MapPokemon: SwiftProtobuf.Message, SwiftProtobu
         let rhs_storage = _args.1
         if _storage._spawnPointID != rhs_storage._spawnPointID {return false}
         if _storage._encounterID != rhs_storage._encounterID {return false}
-        if _storage._pokemonID != rhs_storage._pokemonID {return false}
-        if _storage._expirationTimestampMs != rhs_storage._expirationTimestampMs {return false}
+        if _storage._pokedexTypeID != rhs_storage._pokedexTypeID {return false}
+        if _storage._expirationTimeMs != rhs_storage._expirationTimeMs {return false}
         if _storage._latitude != rhs_storage._latitude {return false}
         if _storage._longitude != rhs_storage._longitude {return false}
         if _storage._pokemonDisplay != rhs_storage._pokemonDisplay {return false}

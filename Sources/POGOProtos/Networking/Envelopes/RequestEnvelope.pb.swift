@@ -103,6 +103,15 @@ public struct POGOProtos_Networking_Envelopes_RequestEnvelope {
     /// Clears the value of `token`. Subsequent reads from it will return its default value.
     public mutating func clearToken() {_uniqueStorage()._token = nil}
 
+    public var options: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.AuthOptions {
+      get {return _storage._options ?? POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.AuthOptions()}
+      set {_uniqueStorage()._options = newValue}
+    }
+    /// Returns true if `options` has been explicitly set.
+    public var hasOptions: Bool {return _storage._options != nil}
+    /// Clears the value of `options`. Subsequent reads from it will return its default value.
+    public mutating func clearOptions() {_uniqueStorage()._options = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public struct JWT {
@@ -119,6 +128,18 @@ public struct POGOProtos_Networking_Envelopes_RequestEnvelope {
       public init() {}
     }
 
+    public struct AuthOptions {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var preventAccountCreation: Bool = false
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
     public init() {}
 
     fileprivate var _storage = _StorageClass.defaultInstance
@@ -129,7 +150,7 @@ public struct POGOProtos_Networking_Envelopes_RequestEnvelope {
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    public var type: POGOProtos_Networking_Platform_PlatformRequestType = .methodUnset
+    public var type: POGOProtos_Networking_Platform_PlatformRequestType = .unknown
 
     public var requestMessage: Data = SwiftProtobuf.Internal.emptyData
 
@@ -285,11 +306,13 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobu
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "provider"),
     2: .same(proto: "token"),
+    3: .same(proto: "options"),
   ]
 
   fileprivate class _StorageClass {
     var _provider: String = String()
     var _token: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT? = nil
+    var _options: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.AuthOptions? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -298,6 +321,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobu
     init(copying source: _StorageClass) {
       _provider = source._provider
       _token = source._token
+      _options = source._options
     }
   }
 
@@ -315,6 +339,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobu
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &_storage._provider)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._token)
+        case 3: try decoder.decodeSingularMessageField(value: &_storage._options)
         default: break
         }
       }
@@ -329,6 +354,9 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobu
       if let v = _storage._token {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
+      if let v = _storage._options {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -340,6 +368,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo: SwiftProtobu
         let rhs_storage = _args.1
         if _storage._provider != rhs_storage._provider {return false}
         if _storage._token != rhs_storage._token {return false}
+        if _storage._options != rhs_storage._options {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -384,6 +413,35 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.JWT: SwiftPro
   }
 }
 
+extension POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.AuthOptions: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.protoMessageName + ".AuthOptions"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "prevent_account_creation"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.preventAccountCreation)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.preventAccountCreation != false {
+      try visitor.visitSingularBoolField(value: self.preventAccountCreation, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.AuthOptions, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope.AuthInfo.AuthOptions) -> Bool {
+    if lhs.preventAccountCreation != rhs.preventAccountCreation {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
 extension POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = POGOProtos_Networking_Envelopes_RequestEnvelope.protoMessageName + ".PlatformRequest"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
@@ -402,7 +460,7 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest: Swift
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.type != .methodUnset {
+    if self.type != .unknown {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
     if !self.requestMessage.isEmpty {

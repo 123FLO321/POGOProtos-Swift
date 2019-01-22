@@ -73,6 +73,9 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeTrading // = 49
   case badgeTradingDistance // = 50
   case badgePokedexEntriesGen4 // = 51
+  case badgeGreatLeague // = 52
+  case badgeUltraLeague // = 53
+  case badgeMasterLeague // = 54
   case badgeEventMin // = 2000
   case badgeChicagoFestJuly2017 // = 2001
   case badgePikachuOutbreakYokohama2017 // = 2002
@@ -108,6 +111,9 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeYokosuka2Sep2018Mikasa // = 2032
   case badgeYokosuka2Sep2018Verny // = 2033
   case badgeYokosuka2Sep2018Kurihama // = 2034
+  case badgeTopBanana1 // = 2035
+  case badgeTopBanana2 // = 2036
+  case badgeTopBanana3 // = 2037
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -168,6 +174,9 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 49: self = .badgeTrading
     case 50: self = .badgeTradingDistance
     case 51: self = .badgePokedexEntriesGen4
+    case 52: self = .badgeGreatLeague
+    case 53: self = .badgeUltraLeague
+    case 54: self = .badgeMasterLeague
     case 2000: self = .badgeEventMin
     case 2001: self = .badgeChicagoFestJuly2017
     case 2002: self = .badgePikachuOutbreakYokohama2017
@@ -203,6 +212,9 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 2032: self = .badgeYokosuka2Sep2018Mikasa
     case 2033: self = .badgeYokosuka2Sep2018Verny
     case 2034: self = .badgeYokosuka2Sep2018Kurihama
+    case 2035: self = .badgeTopBanana1
+    case 2036: self = .badgeTopBanana2
+    case 2037: self = .badgeTopBanana3
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -261,6 +273,9 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeTrading: return 49
     case .badgeTradingDistance: return 50
     case .badgePokedexEntriesGen4: return 51
+    case .badgeGreatLeague: return 52
+    case .badgeUltraLeague: return 53
+    case .badgeMasterLeague: return 54
     case .badgeEventMin: return 2000
     case .badgeChicagoFestJuly2017: return 2001
     case .badgePikachuOutbreakYokohama2017: return 2002
@@ -296,6 +311,9 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeYokosuka2Sep2018Mikasa: return 2032
     case .badgeYokosuka2Sep2018Verny: return 2033
     case .badgeYokosuka2Sep2018Kurihama: return 2034
+    case .badgeTopBanana1: return 2035
+    case .badgeTopBanana2: return 2036
+    case .badgeTopBanana3: return 2037
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -359,6 +377,9 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeTrading,
     .badgeTradingDistance,
     .badgePokedexEntriesGen4,
+    .badgeGreatLeague,
+    .badgeUltraLeague,
+    .badgeMasterLeague,
     .badgeEventMin,
     .badgeChicagoFestJuly2017,
     .badgePikachuOutbreakYokohama2017,
@@ -394,6 +415,9 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeYokosuka2Sep2018Mikasa,
     .badgeYokosuka2Sep2018Verny,
     .badgeYokosuka2Sep2018Kurihama,
+    .badgeTopBanana1,
+    .badgeTopBanana2,
+    .badgeTopBanana3,
   ]
 }
 
@@ -455,6 +479,9 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     49: .same(proto: "BADGE_TRADING"),
     50: .same(proto: "BADGE_TRADING_DISTANCE"),
     51: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN4"),
+    52: .same(proto: "BADGE_GREAT_LEAGUE"),
+    53: .same(proto: "BADGE_ULTRA_LEAGUE"),
+    54: .same(proto: "BADGE_MASTER_LEAGUE"),
     2000: .same(proto: "BADGE_EVENT_MIN"),
     2001: .same(proto: "BADGE_CHICAGO_FEST_JULY_2017"),
     2002: .same(proto: "BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017"),
@@ -490,5 +517,8 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     2032: .same(proto: "BADGE_YOKOSUKA_2_SEP_2018_MIKASA"),
     2033: .same(proto: "BADGE_YOKOSUKA_2_SEP_2018_VERNY"),
     2034: .same(proto: "BADGE_YOKOSUKA_2_SEP_2018_KURIHAMA"),
+    2035: .same(proto: "BADGE_TOP_BANANA_1"),
+    2036: .same(proto: "BADGE_TOP_BANANA_2"),
+    2037: .same(proto: "BADGE_TOP_BANANA_3"),
   ]
 }

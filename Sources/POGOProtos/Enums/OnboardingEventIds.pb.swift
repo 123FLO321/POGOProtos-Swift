@@ -45,6 +45,10 @@ public enum POGOProtos_Enums_OnboardingEventIds: SwiftProtobuf.Enum {
   case pokestopLetsgo // = 21
   case wildPokemonEncounterEntered // = 22
   case wildPokemonCaught // = 23
+  case arStandardEnabled // = 24
+  case arStandardRejected // = 25
+  case arPlusEnabled // = 26
+  case arPlusRejected // = 27
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -77,6 +81,10 @@ public enum POGOProtos_Enums_OnboardingEventIds: SwiftProtobuf.Enum {
     case 21: self = .pokestopLetsgo
     case 22: self = .wildPokemonEncounterEntered
     case 23: self = .wildPokemonCaught
+    case 24: self = .arStandardEnabled
+    case 25: self = .arStandardRejected
+    case 26: self = .arPlusEnabled
+    case 27: self = .arPlusRejected
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -107,6 +115,10 @@ public enum POGOProtos_Enums_OnboardingEventIds: SwiftProtobuf.Enum {
     case .pokestopLetsgo: return 21
     case .wildPokemonEncounterEntered: return 22
     case .wildPokemonCaught: return 23
+    case .arStandardEnabled: return 24
+    case .arStandardRejected: return 25
+    case .arPlusEnabled: return 26
+    case .arPlusRejected: return 27
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -142,6 +154,10 @@ extension POGOProtos_Enums_OnboardingEventIds: CaseIterable {
     .pokestopLetsgo,
     .wildPokemonEncounterEntered,
     .wildPokemonCaught,
+    .arStandardEnabled,
+    .arStandardRejected,
+    .arPlusEnabled,
+    .arPlusRejected,
   ]
 }
 
@@ -215,6 +231,10 @@ extension POGOProtos_Enums_OnboardingEventIds: SwiftProtobuf._ProtoNameProviding
     21: .same(proto: "POKESTOP_LETSGO"),
     22: .same(proto: "WILD_POKEMON_ENCOUNTER_ENTERED"),
     23: .same(proto: "WILD_POKEMON_CAUGHT"),
+    24: .same(proto: "AR_STANDARD_ENABLED"),
+    25: .same(proto: "AR_STANDARD_REJECTED"),
+    26: .same(proto: "AR_PLUS_ENABLED"),
+    27: .same(proto: "AR_PLUS_REJECTED"),
   ]
 }
 

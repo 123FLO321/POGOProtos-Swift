@@ -24,8 +24,8 @@ public struct POGOProtos_Data_Telemetry_FrameRate {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var sampledFrameRate: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
-    get {return _storage._sampledFrameRate ?? POGOProtos_Networking_Platform_Telemetry_PlatformMetricData()}
+  public var sampledFrameRate: POGOProtos_Data_Telemetry_PlatformMetricData {
+    get {return _storage._sampledFrameRate ?? POGOProtos_Data_Telemetry_PlatformMetricData()}
     set {_uniqueStorage()._sampledFrameRate = newValue}
   }
   /// Returns true if `sampledFrameRate` has been explicitly set.
@@ -51,7 +51,7 @@ extension POGOProtos_Data_Telemetry_FrameRate: SwiftProtobuf.Message, SwiftProto
   ]
 
   fileprivate class _StorageClass {
-    var _sampledFrameRate: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData? = nil
+    var _sampledFrameRate: POGOProtos_Data_Telemetry_PlatformMetricData? = nil
 
     static let defaultInstance = _StorageClass()
 

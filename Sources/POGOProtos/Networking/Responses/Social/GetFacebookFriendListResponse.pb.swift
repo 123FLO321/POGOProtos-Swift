@@ -26,7 +26,7 @@ public struct POGOProtos_Networking_Responses_Social_GetFacebookFriendListRespon
 
   public var result: POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.Result = .unset
 
-  public var friend: [POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.FacebookFriendProto] = []
+  public var friend: [POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.FacebookFriend] = []
 
   public var nextCursor: String = String()
 
@@ -72,7 +72,7 @@ public struct POGOProtos_Networking_Responses_Social_GetFacebookFriendListRespon
 
   }
 
-  public struct FacebookFriendProto {
+  public struct FacebookFriend {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -173,8 +173,8 @@ extension POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.R
   ]
 }
 
-extension POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.FacebookFriendProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.protoMessageName + ".FacebookFriendProto"
+extension POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.FacebookFriend: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.protoMessageName + ".FacebookFriend"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "player"),
     2: .standard(proto: "full_name"),
@@ -226,7 +226,7 @@ extension POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.F
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.FacebookFriendProto, rhs: POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.FacebookFriendProto) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.FacebookFriend, rhs: POGOProtos_Networking_Responses_Social_GetFacebookFriendListResponse.FacebookFriend) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0

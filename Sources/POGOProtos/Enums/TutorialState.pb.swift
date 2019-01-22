@@ -35,6 +35,15 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case privacyPolicyConfirmation // = 11
   case tradingTutorial // = 12
   case poiSubmissionTutorial // = 13
+  case v1StartTutorial // = 14
+  case v2StartTutorial // = 15
+  case v2CustomizedAvatar // = 16
+  case v2CaughtFirstWild // = 17
+  case v2FinishedTutorialCatches // = 18
+  case v2NameSelection // = 19
+  case v2EggGiven // = 20
+  case v2StartEggTutorial // = 21
+  case v2CompletedEggTutorial // = 22
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -57,6 +66,15 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case 11: self = .privacyPolicyConfirmation
     case 12: self = .tradingTutorial
     case 13: self = .poiSubmissionTutorial
+    case 14: self = .v1StartTutorial
+    case 15: self = .v2StartTutorial
+    case 16: self = .v2CustomizedAvatar
+    case 17: self = .v2CaughtFirstWild
+    case 18: self = .v2FinishedTutorialCatches
+    case 19: self = .v2NameSelection
+    case 20: self = .v2EggGiven
+    case 21: self = .v2StartEggTutorial
+    case 22: self = .v2CompletedEggTutorial
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -77,6 +95,15 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .privacyPolicyConfirmation: return 11
     case .tradingTutorial: return 12
     case .poiSubmissionTutorial: return 13
+    case .v1StartTutorial: return 14
+    case .v2StartTutorial: return 15
+    case .v2CustomizedAvatar: return 16
+    case .v2CaughtFirstWild: return 17
+    case .v2FinishedTutorialCatches: return 18
+    case .v2NameSelection: return 19
+    case .v2EggGiven: return 20
+    case .v2StartEggTutorial: return 21
+    case .v2CompletedEggTutorial: return 22
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -102,6 +129,15 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
     .privacyPolicyConfirmation,
     .tradingTutorial,
     .poiSubmissionTutorial,
+    .v1StartTutorial,
+    .v2StartTutorial,
+    .v2CustomizedAvatar,
+    .v2CaughtFirstWild,
+    .v2FinishedTutorialCatches,
+    .v2NameSelection,
+    .v2EggGiven,
+    .v2StartEggTutorial,
+    .v2CompletedEggTutorial,
   ]
 }
 
@@ -125,5 +161,14 @@ extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
     11: .same(proto: "PRIVACY_POLICY_CONFIRMATION"),
     12: .same(proto: "TRADING_TUTORIAL"),
     13: .same(proto: "POI_SUBMISSION_TUTORIAL"),
+    14: .same(proto: "V1_START_TUTORIAL"),
+    15: .same(proto: "V2_START_TUTORIAL"),
+    16: .same(proto: "V2_CUSTOMIZED_AVATAR"),
+    17: .same(proto: "V2_CAUGHT_FIRST_WILD"),
+    18: .same(proto: "V2_FINISHED_TUTORIAL_CATCHES"),
+    19: .same(proto: "V2_NAME_SELECTION"),
+    20: .same(proto: "V2_EGG_GIVEN"),
+    21: .same(proto: "V2_START_EGG_TUTORIAL"),
+    22: .same(proto: "V2_COMPLETED_EGG_TUTORIAL"),
   ]
 }

@@ -24,8 +24,8 @@ public struct POGOProtos_Data_Telemetry_BootTime {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var duration: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData {
-    get {return _storage._duration ?? POGOProtos_Networking_Platform_Telemetry_PlatformMetricData()}
+  public var duration: POGOProtos_Data_Telemetry_PlatformMetricData {
+    get {return _storage._duration ?? POGOProtos_Data_Telemetry_PlatformMetricData()}
     set {_uniqueStorage()._duration = newValue}
   }
   /// Returns true if `duration` has been explicitly set.
@@ -157,7 +157,7 @@ extension POGOProtos_Data_Telemetry_BootTime: SwiftProtobuf.Message, SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    var _duration: POGOProtos_Networking_Platform_Telemetry_PlatformMetricData? = nil
+    var _duration: POGOProtos_Data_Telemetry_PlatformMetricData? = nil
     var _bootPhase: POGOProtos_Data_Telemetry_BootTime.BootPhase = .undefined
 
     static let defaultInstance = _StorageClass()

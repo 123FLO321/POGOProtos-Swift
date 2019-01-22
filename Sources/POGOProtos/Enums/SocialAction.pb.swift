@@ -21,26 +21,68 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 public enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
   public typealias RawValue = Int
+
+  /// No implementation required
   case unknownSocialAction // = 0
+
+  /// Implemented
   case searchPlayer // = 10000
+
+  /// Implemented
   case sendFriendInvite // = 10002
+
+  /// Implemented
   case cancelFriendInvite // = 10003
+
+  /// Implemented
   case acceptFriendInvite // = 10004
+
+  /// Implemented
   case declineFriendInvite // = 10005
+
+  /// Implemented
   case listFriends // = 10006
+
+  /// Implemented
   case listOutgoingFriendInvites // = 10007
+
+  /// Implemented
   case listIncomingFriendInvites // = 10008
+
+  /// Implemented
   case removeFriend // = 10009
+
+  /// Implemented
   case listFriendStatus // = 10010
+
+  /// Implemented
   case sendFacebookFriendInvite // = 10011
+
+  /// Implemented
   case isMyFriend // = 10012
+
+  /// Implemented
   case createInviteCode // = 10013
+
+  /// Implemented
   case getFacebookFriendList // = 10014
+
+  /// Implemented
   case updateFacebookStatus // = 10015
+
+  /// ???
   case registerPushNotificationSocialAction // = 10101
+
+  /// ???
   case unregisterPushNotificationSocialAction // = 10102
+
+  /// Implemented
   case updateNotification // = 10103
+
+  /// ???
   case optOutPushNotificationCategorySocialAction // = 10104
+
+  /// Implemented
   case getInbox // = 10105
   case UNRECOGNIZED(Int)
 

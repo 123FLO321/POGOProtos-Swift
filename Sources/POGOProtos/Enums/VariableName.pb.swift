@@ -58,6 +58,8 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
   case friendshipMilestoneRewardDetails // = 1025
   case friendshipLevelDisplay // = 1026
   case bgmodeBuddyPokemonNickname // = 1027
+  case combatChallenge // = 1028
+  case combatChallengerCodename // = 1029
   case bgmodeOffSessionDistanceKm // = 1030
   case UNRECOGNIZED(Int)
 
@@ -104,6 +106,8 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case 1025: self = .friendshipMilestoneRewardDetails
     case 1026: self = .friendshipLevelDisplay
     case 1027: self = .bgmodeBuddyPokemonNickname
+    case 1028: self = .combatChallenge
+    case 1029: self = .combatChallengerCodename
     case 1030: self = .bgmodeOffSessionDistanceKm
     default: self = .UNRECOGNIZED(rawValue)
     }
@@ -148,6 +152,8 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case .friendshipMilestoneRewardDetails: return 1025
     case .friendshipLevelDisplay: return 1026
     case .bgmodeBuddyPokemonNickname: return 1027
+    case .combatChallenge: return 1028
+    case .combatChallengerCodename: return 1029
     case .bgmodeOffSessionDistanceKm: return 1030
     case .UNRECOGNIZED(let i): return i
     }
@@ -197,6 +203,8 @@ extension POGOProtos_Enums_VariableName: CaseIterable {
     .friendshipMilestoneRewardDetails,
     .friendshipLevelDisplay,
     .bgmodeBuddyPokemonNickname,
+    .combatChallenge,
+    .combatChallengerCodename,
     .bgmodeOffSessionDistanceKm,
   ]
 }
@@ -244,6 +252,8 @@ extension POGOProtos_Enums_VariableName: SwiftProtobuf._ProtoNameProviding {
     1025: .same(proto: "FRIENDSHIP_MILESTONE_REWARD_DETAILS"),
     1026: .same(proto: "FRIENDSHIP_LEVEL_DISPLAY"),
     1027: .same(proto: "BGMODE_BUDDY_POKEMON_NICKNAME"),
+    1028: .same(proto: "COMBAT_CHALLENGE"),
+    1029: .same(proto: "COMBAT_CHALLENGER_CODENAME"),
     1030: .same(proto: "BGMODE_OFF_SESSION_DISTANCE_KM"),
   ]
 }

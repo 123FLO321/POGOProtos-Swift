@@ -47,7 +47,7 @@ extension POGOProtos_Networking_Requests_Messages_UpgradePokemonMessage: SwiftPr
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt64Field(value: &self.pokemonID)
+      case 1: try decoder.decodeSingularFixed64Field(value: &self.pokemonID)
       case 2: try decoder.decodeSingularBoolField(value: &self.preview)
       default: break
       }
@@ -56,7 +56,7 @@ extension POGOProtos_Networking_Requests_Messages_UpgradePokemonMessage: SwiftPr
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemonID != 0 {
-      try visitor.visitSingularUInt64Field(value: self.pokemonID, fieldNumber: 1)
+      try visitor.visitSingularFixed64Field(value: self.pokemonID, fieldNumber: 1)
     }
     if self.preview != false {
       try visitor.visitSingularBoolField(value: self.preview, fieldNumber: 2)

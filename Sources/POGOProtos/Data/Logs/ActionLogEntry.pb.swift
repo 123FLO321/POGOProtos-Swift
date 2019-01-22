@@ -159,6 +159,14 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .fitnessRewards(newValue)}
   }
 
+  public var combat: POGOProtos_Data_Logs_CombatLogEntry {
+    get {
+      if case .combat(let v)? = _storage._action {return v}
+      return POGOProtos_Data_Logs_CombatLogEntry()
+    }
+    set {_uniqueStorage()._action = .combat(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Action: Equatable {
@@ -177,6 +185,7 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     case shareExRaidPass(POGOProtos_Data_Logs_ShareExRaidPassLogEntry)
     case declineExRaidPass(POGOProtos_Data_Logs_DeclineExRaidPassLogEntry)
     case fitnessRewards(POGOProtos_Data_Logs_FitnessRewardsLogEntry)
+    case combat(POGOProtos_Data_Logs_CombatLogEntry)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action, rhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action) -> Bool {
@@ -196,6 +205,7 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
       case (.shareExRaidPass(let l), .shareExRaidPass(let r)): return l == r
       case (.declineExRaidPass(let l), .declineExRaidPass(let r)): return l == r
       case (.fitnessRewards(let l), .fitnessRewards(let r)): return l == r
+      case (.combat(let l), .combat(let r)): return l == r
       default: return false
       }
     }
@@ -231,6 +241,7 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
     15: .standard(proto: "share_ex_raid_pass"),
     16: .standard(proto: "decline_ex_raid_pass"),
     17: .standard(proto: "fitness_rewards"),
+    18: .same(proto: "combat"),
   ]
 
   fileprivate class _StorageClass {
@@ -383,6 +394,14 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._action = .fitnessRewards(v)}
+        case 18:
+          var v: POGOProtos_Data_Logs_CombatLogEntry?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .combat(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .combat(v)}
         default: break
         }
       }
@@ -428,6 +447,8 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
       case .fitnessRewards(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
+      case .combat(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
       case nil: break
       }
     }

@@ -84,52 +84,12 @@ public struct POGOProtos_Networking_Responses_UpdateNotificationStatusResponse {
 
   public var createTimestampMs: [Int64] = []
 
-  public var state: POGOProtos_Networking_Responses_UpdateNotificationStatusResponse.NotificationState = .unsetState
+  public var state: POGOProtos_Enums_NotificationState = .unsetState
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public enum NotificationState: SwiftProtobuf.Enum {
-    public typealias RawValue = Int
-    case unsetState // = 0
-    case viewed // = 1
-    case UNRECOGNIZED(Int)
-
-    public init() {
-      self = .unsetState
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .unsetState
-      case 1: self = .viewed
-      default: self = .UNRECOGNIZED(rawValue)
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .unsetState: return 0
-      case .viewed: return 1
-      case .UNRECOGNIZED(let i): return i
-      }
-    }
-
-  }
-
   public init() {}
 }
-
-#if swift(>=4.2)
-
-extension POGOProtos_Networking_Responses_UpdateNotificationStatusResponse.NotificationState: CaseIterable {
-  // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static var allCases: [POGOProtos_Networking_Responses_UpdateNotificationStatusResponse.NotificationState] = [
-    .unsetState,
-    .viewed,
-  ]
-}
-
-#endif  // swift(>=4.2)
 
 public struct POGOProtos_Networking_Responses_OptOutPushNotificationCategoryResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -375,6 +335,98 @@ public struct POGOProtos_Networking_Responses_ProxySocialActionResponse {
 extension POGOProtos_Networking_Responses_ProxySocialActionResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   public static var allCases: [POGOProtos_Networking_Responses_ProxySocialActionResponse.Status] = [
+    .unset,
+    .completed,
+    .completedAndReassigned,
+    .actionNotFound,
+    .assignmentError,
+    .proxyUnauthorizedError,
+    .internalError,
+    .badRequest,
+    .accessDenied,
+    .timeoutError,
+    .rateLimited,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
+public struct POGOProtos_Networking_Responses_ProxySocialSideChannelActionResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var status: POGOProtos_Networking_Responses_ProxySocialSideChannelActionResponse.Status = .unset
+
+  public var assignedHost: String = String()
+
+  public var payload: Data = SwiftProtobuf.Internal.emptyData
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unset // = 0
+    case completed // = 1
+    case completedAndReassigned // = 2
+    case actionNotFound // = 3
+    case assignmentError // = 4
+    case proxyUnauthorizedError // = 5
+    case internalError // = 6
+    case badRequest // = 7
+    case accessDenied // = 8
+    case timeoutError // = 9
+    case rateLimited // = 10
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unset
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unset
+      case 1: self = .completed
+      case 2: self = .completedAndReassigned
+      case 3: self = .actionNotFound
+      case 4: self = .assignmentError
+      case 5: self = .proxyUnauthorizedError
+      case 6: self = .internalError
+      case 7: self = .badRequest
+      case 8: self = .accessDenied
+      case 9: self = .timeoutError
+      case 10: self = .rateLimited
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unset: return 0
+      case .completed: return 1
+      case .completedAndReassigned: return 2
+      case .actionNotFound: return 3
+      case .assignmentError: return 4
+      case .proxyUnauthorizedError: return 5
+      case .internalError: return 6
+      case .badRequest: return 7
+      case .accessDenied: return 8
+      case .timeoutError: return 9
+      case .rateLimited: return 10
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+
+  }
+
+  public init() {}
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Networking_Responses_ProxySocialSideChannelActionResponse.Status: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Networking_Responses_ProxySocialSideChannelActionResponse.Status] = [
     .unset,
     .completed,
     .completedAndReassigned,
@@ -821,6 +873,20 @@ extension POGOProtos_Networking_Responses_ReplaceLoginActionResponse.Status: Cas
 
 #endif  // swift(>=4.2)
 
+public struct POGOProtos_Networking_Responses_ListLoginActionResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var success: Bool = false
+
+  public var loginDetail: [POGOProtos_Data_Login_LoginDetail] = []
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
@@ -901,13 +967,6 @@ extension POGOProtos_Networking_Responses_UpdateNotificationStatusResponse: Swif
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
-}
-
-extension POGOProtos_Networking_Responses_UpdateNotificationStatusResponse.NotificationState: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "UNSET_STATE"),
-    1: .same(proto: "VIEWED"),
-  ]
 }
 
 extension POGOProtos_Networking_Responses_OptOutPushNotificationCategoryResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
@@ -1110,6 +1169,63 @@ extension POGOProtos_Networking_Responses_ProxySocialActionResponse: SwiftProtob
 }
 
 extension POGOProtos_Networking_Responses_ProxySocialActionResponse.Status: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNSET"),
+    1: .same(proto: "COMPLETED"),
+    2: .same(proto: "COMPLETED_AND_REASSIGNED"),
+    3: .same(proto: "ACTION_NOT_FOUND"),
+    4: .same(proto: "ASSIGNMENT_ERROR"),
+    5: .same(proto: "PROXY_UNAUTHORIZED_ERROR"),
+    6: .same(proto: "INTERNAL_ERROR"),
+    7: .same(proto: "BAD_REQUEST"),
+    8: .same(proto: "ACCESS_DENIED"),
+    9: .same(proto: "TIMEOUT_ERROR"),
+    10: .same(proto: "RATE_LIMITED"),
+  ]
+}
+
+extension POGOProtos_Networking_Responses_ProxySocialSideChannelActionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ProxySocialSideChannelActionResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "status"),
+    2: .standard(proto: "assigned_host"),
+    3: .same(proto: "payload"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.status)
+      case 2: try decoder.decodeSingularStringField(value: &self.assignedHost)
+      case 3: try decoder.decodeSingularBytesField(value: &self.payload)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.status != .unset {
+      try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
+    }
+    if !self.assignedHost.isEmpty {
+      try visitor.visitSingularStringField(value: self.assignedHost, fieldNumber: 2)
+    }
+    if !self.payload.isEmpty {
+      try visitor.visitSingularBytesField(value: self.payload, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_ProxySocialSideChannelActionResponse, rhs: POGOProtos_Networking_Responses_ProxySocialSideChannelActionResponse) -> Bool {
+    if lhs.status != rhs.status {return false}
+    if lhs.assignedHost != rhs.assignedHost {return false}
+    if lhs.payload != rhs.payload {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_ProxySocialSideChannelActionResponse.Status: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "COMPLETED"),
@@ -1492,4 +1608,39 @@ extension POGOProtos_Networking_Responses_ReplaceLoginActionResponse.Status: Swi
     3: .same(proto: "LOGIN_ALREADY_HAVE"),
     4: .same(proto: "LOGIN_NOT_REPLACEABLE"),
   ]
+}
+
+extension POGOProtos_Networking_Responses_ListLoginActionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ListLoginActionResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "success"),
+    2: .standard(proto: "login_detail"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.success)
+      case 2: try decoder.decodeRepeatedMessageField(value: &self.loginDetail)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.success != false {
+      try visitor.visitSingularBoolField(value: self.success, fieldNumber: 1)
+    }
+    if !self.loginDetail.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.loginDetail, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_ListLoginActionResponse, rhs: POGOProtos_Networking_Responses_ListLoginActionResponse) -> Bool {
+    if lhs.success != rhs.success {return false}
+    if lhs.loginDetail != rhs.loginDetail {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }

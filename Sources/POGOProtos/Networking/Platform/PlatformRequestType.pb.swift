@@ -21,44 +21,160 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.Enum {
   public typealias RawValue = Int
-  case methodUnset // = 0
-  case buyItemPokecoins // = 2
-  case buyItemAndroid // = 3
-  case buyItemIos // = 4
-  case getStoreItems // = 5
+
+  /// No implementation required
+  case unknown // = 0
+
+  /// ???
+  case mapQueryRequest // = 1
+
+  /// Implemented
+  case purchaseSku // = 2
+
+  /// Implemented
+  case redeemGoogleReceipt // = 3
+
+  /// ???
+  case redeemAppleReceipt // = 4
+
+  /// Implemented
+  case getAvailableSkusAndBalances // = 5
+
+  /// Implemented
   case sendEncryptedSignature // = 6
-  case unknownPtr8 // = 8
-  case joinEvent // = 9
+
+  /// ???
+  case redeemDesktopReceipt // = 7
+
+  /// Implemented
+  case downloadPlatformClientSettings // = 8
+
+  /// Implemented
+  case redeemPasscode // = 9
+
+  /// Implemented
+  case registerPushNotification // = 10
+
+  /// ???
+  case unregisterPushNotification // = 11
+
+  /// Implemented
+  case updateNotificationStatus // = 12
+
+  /// Implemented
+  case addNewPoi // = 13
+
+  /// Implemented
+  case addLoginAction // = 14
+
+  /// Implemented
+  case removeLoginAction // = 15
+
+  /// Implemented
+  case listLoginAction // = 16
+
+  /// ???
+  case collectClientTelemetry // = 17
+
+  /// ???
+  case getSignedURLForPhotoUpload // = 18
+
+  /// Implemented
+  case replaceLoginAction // = 19
+
+  /// ???
+  case challenge // = 20
+
+  /// ???
+  case safetyNetChallenge // = 21
+
+  /// Implemented
+  case updateFitnessMetrics // = 22
+
+  /// Implemented
+  case getFitnessReport // = 23
+
+  /// Implemented
+  case setInGameCurrencyExchangeRate // = 24
+
+  /// Implemented
+  case registerDownstreamServerActions // = 30
+
+  /// ???
+  case downstreamServerActions // = 31
+
+  /// ???
+  case tempTestResult // = 101
   case UNRECOGNIZED(Int)
 
   public init() {
-    self = .methodUnset
+    self = .unknown
   }
 
   public init?(rawValue: Int) {
     switch rawValue {
-    case 0: self = .methodUnset
-    case 2: self = .buyItemPokecoins
-    case 3: self = .buyItemAndroid
-    case 4: self = .buyItemIos
-    case 5: self = .getStoreItems
+    case 0: self = .unknown
+    case 1: self = .mapQueryRequest
+    case 2: self = .purchaseSku
+    case 3: self = .redeemGoogleReceipt
+    case 4: self = .redeemAppleReceipt
+    case 5: self = .getAvailableSkusAndBalances
     case 6: self = .sendEncryptedSignature
-    case 8: self = .unknownPtr8
-    case 9: self = .joinEvent
+    case 7: self = .redeemDesktopReceipt
+    case 8: self = .downloadPlatformClientSettings
+    case 9: self = .redeemPasscode
+    case 10: self = .registerPushNotification
+    case 11: self = .unregisterPushNotification
+    case 12: self = .updateNotificationStatus
+    case 13: self = .addNewPoi
+    case 14: self = .addLoginAction
+    case 15: self = .removeLoginAction
+    case 16: self = .listLoginAction
+    case 17: self = .collectClientTelemetry
+    case 18: self = .getSignedURLForPhotoUpload
+    case 19: self = .replaceLoginAction
+    case 20: self = .challenge
+    case 21: self = .safetyNetChallenge
+    case 22: self = .updateFitnessMetrics
+    case 23: self = .getFitnessReport
+    case 24: self = .setInGameCurrencyExchangeRate
+    case 30: self = .registerDownstreamServerActions
+    case 31: self = .downstreamServerActions
+    case 101: self = .tempTestResult
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
 
   public var rawValue: Int {
     switch self {
-    case .methodUnset: return 0
-    case .buyItemPokecoins: return 2
-    case .buyItemAndroid: return 3
-    case .buyItemIos: return 4
-    case .getStoreItems: return 5
+    case .unknown: return 0
+    case .mapQueryRequest: return 1
+    case .purchaseSku: return 2
+    case .redeemGoogleReceipt: return 3
+    case .redeemAppleReceipt: return 4
+    case .getAvailableSkusAndBalances: return 5
     case .sendEncryptedSignature: return 6
-    case .unknownPtr8: return 8
-    case .joinEvent: return 9
+    case .redeemDesktopReceipt: return 7
+    case .downloadPlatformClientSettings: return 8
+    case .redeemPasscode: return 9
+    case .registerPushNotification: return 10
+    case .unregisterPushNotification: return 11
+    case .updateNotificationStatus: return 12
+    case .addNewPoi: return 13
+    case .addLoginAction: return 14
+    case .removeLoginAction: return 15
+    case .listLoginAction: return 16
+    case .collectClientTelemetry: return 17
+    case .getSignedURLForPhotoUpload: return 18
+    case .replaceLoginAction: return 19
+    case .challenge: return 20
+    case .safetyNetChallenge: return 21
+    case .updateFitnessMetrics: return 22
+    case .getFitnessReport: return 23
+    case .setInGameCurrencyExchangeRate: return 24
+    case .registerDownstreamServerActions: return 30
+    case .downstreamServerActions: return 31
+    case .tempTestResult: return 101
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -70,14 +186,34 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
 extension POGOProtos_Networking_Platform_PlatformRequestType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   public static var allCases: [POGOProtos_Networking_Platform_PlatformRequestType] = [
-    .methodUnset,
-    .buyItemPokecoins,
-    .buyItemAndroid,
-    .buyItemIos,
-    .getStoreItems,
+    .unknown,
+    .mapQueryRequest,
+    .purchaseSku,
+    .redeemGoogleReceipt,
+    .redeemAppleReceipt,
+    .getAvailableSkusAndBalances,
     .sendEncryptedSignature,
-    .unknownPtr8,
-    .joinEvent,
+    .redeemDesktopReceipt,
+    .downloadPlatformClientSettings,
+    .redeemPasscode,
+    .registerPushNotification,
+    .unregisterPushNotification,
+    .updateNotificationStatus,
+    .addNewPoi,
+    .addLoginAction,
+    .removeLoginAction,
+    .listLoginAction,
+    .collectClientTelemetry,
+    .getSignedURLForPhotoUpload,
+    .replaceLoginAction,
+    .challenge,
+    .safetyNetChallenge,
+    .updateFitnessMetrics,
+    .getFitnessReport,
+    .setInGameCurrencyExchangeRate,
+    .registerDownstreamServerActions,
+    .downstreamServerActions,
+    .tempTestResult,
   ]
 }
 
@@ -87,13 +223,33 @@ extension POGOProtos_Networking_Platform_PlatformRequestType: CaseIterable {
 
 extension POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "METHOD_UNSET"),
-    2: .same(proto: "BUY_ITEM_POKECOINS"),
-    3: .same(proto: "BUY_ITEM_ANDROID"),
-    4: .same(proto: "BUY_ITEM_IOS"),
-    5: .same(proto: "GET_STORE_ITEMS"),
+    0: .same(proto: "UNKNOWN"),
+    1: .same(proto: "MAP_QUERY_REQUEST"),
+    2: .same(proto: "PURCHASE_SKU"),
+    3: .same(proto: "REDEEM_GOOGLE_RECEIPT"),
+    4: .same(proto: "REDEEM_APPLE_RECEIPT"),
+    5: .same(proto: "GET_AVAILABLE_SKUS_AND_BALANCES"),
     6: .same(proto: "SEND_ENCRYPTED_SIGNATURE"),
-    8: .same(proto: "UNKNOWN_PTR_8"),
-    9: .same(proto: "JOIN_EVENT"),
+    7: .same(proto: "REDEEM_DESKTOP_RECEIPT"),
+    8: .same(proto: "DOWNLOAD_PLATFORM_CLIENT_SETTINGS"),
+    9: .same(proto: "REDEEM_PASSCODE"),
+    10: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
+    11: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
+    12: .same(proto: "UPDATE_NOTIFICATION_STATUS"),
+    13: .same(proto: "ADD_NEW_POI"),
+    14: .same(proto: "ADD_LOGIN_ACTION"),
+    15: .same(proto: "REMOVE_LOGIN_ACTION"),
+    16: .same(proto: "LIST_LOGIN_ACTION"),
+    17: .same(proto: "COLLECT_CLIENT_TELEMETRY"),
+    18: .same(proto: "GET_SIGNED_URL_FOR_PHOTO_UPLOAD"),
+    19: .same(proto: "REPLACE_LOGIN_ACTION"),
+    20: .same(proto: "CHALLENGE"),
+    21: .same(proto: "SAFETY_NET_CHALLENGE"),
+    22: .same(proto: "UPDATE_FITNESS_METRICS"),
+    23: .same(proto: "GET_FITNESS_REPORT"),
+    24: .same(proto: "SET_IN_GAME_CURRENCY_EXCHANGE_RATE"),
+    30: .same(proto: "REGISTER_DOWNSTREAM_SERVER_ACTIONS"),
+    31: .same(proto: "DOWNSTREAM_SERVER_ACTIONS"),
+    101: .same(proto: "TEMP_TEST_RESULT"),
   ]
 }

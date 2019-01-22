@@ -21,123 +21,540 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
 
 public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   public typealias RawValue = Int
+
+  /// No implementation required
   case methodUnset // = 0
+
+  /// Implemented
   case getPlayer // = 2
-  case getHoloholoInventory // = 4
+
+  /// Implemented
+  case getHoloInventory // = 4
+
+  /// Implemented
   case downloadSettings // = 5
+
+  /// Implemented
   case downloadItemTemplates // = 6
+
+  /// Implemented
   case downloadRemoteConfigVersion // = 7
+
+  /// Implemented
   case registerBackgroundDevice // = 8
+
+  /// Implemented
   case getPlayerDay // = 9
+
+  /// Implemented
   case acknowledgePunishment // = 10
+
+  /// Implemented
   case fortSearch // = 101
+
+  /// Implemented
   case encounter // = 102
+
+  /// Implemented
   case catchPokemon // = 103
+
+  /// Implemented
   case fortDetails // = 104
+
+  /// Implemented
   case getMapObjects // = 106
+
+  /// Implemented
   case fortDeployPokemon // = 110
+
+  /// Implemented
   case fortRecallPokemon // = 111
+
+  /// Implemented
   case releasePokemon // = 112
+
+  /// Implemented
   case useItemPotion // = 113
+
+  /// Implemented
   case useItemCapture // = 114
+
+  /// Can't find this one
   case useItemFlee // = 115
+
+  /// Implemented
   case useItemRevive // = 116
+
+  /// Implemented
   case getPlayerProfile // = 121
+
+  /// Implemented
   case evolvePokemon // = 125
+
+  /// Implemented
   case getHatchedEggs // = 126
+
+  /// Implemented
   case encounterTutorialComplete // = 127
+
+  /// Implemented
   case levelUpRewards // = 128
+
+  /// Implemented
   case checkAwardedBadges // = 129
+
+  /// UnUsed - Implemented
+  case useItemGym // = 133
+
+  /// UnUsed - Implemented
+  case getGymDetails // = 134
+
+  /// UnUsed - Implemented
+  case startGymBattle // = 135
+
+  /// UnUsed - Implemented
+  case attackGym // = 136
+
+  /// Implemented
   case recycleInventoryItem // = 137
+
+  /// Implemented
   case collectDailyBonus // = 138
+
+  /// Implemented
   case useItemXpBoost // = 139
+
+  /// Implemented
   case useItemEggIncubator // = 140
+
+  /// Implemented
   case useIncense // = 141
+
+  /// Implemented
   case getIncensePokemon // = 142
+
+  /// Implemented
   case incenseEncounter // = 143
+
+  /// Implemented
   case addFortModifier // = 144
+
+  /// Implemented
   case diskEncounter // = 145
+
+  /// UnUsed - Implemented
+  case collectDailyDefenderBonus // = 146
+
+  /// Implemented
   case upgradePokemon // = 147
+
+  /// Implemented
   case setFavoritePokemon // = 148
+
+  /// Implemented
   case nicknamePokemon // = 149
+
+  /// Implemented
   case equipBadge // = 150
+
+  /// Implemented
   case setContactSettings // = 151
+
+  /// Implemented
   case setBuddyPokemon // = 152
+
+  /// Implemented
   case getBuddyWalked // = 153
+
+  /// Implemented
   case useItemEncounter // = 154
+
+  /// Implemented
   case gymDeploy // = 155
+
+  /// Implemented
   case gymGetInfo // = 156
+
+  /// Implemented
   case gymStartSession // = 157
+
+  /// Implemented
   case gymBattleAttack // = 158
+
+  /// Implemented
   case joinLobby // = 159
+
+  /// Implemented
   case leaveLobby // = 160
+
+  /// Implemented
   case setLobbyVisibility // = 161
+
+  /// Implemented
   case setLobbyPokemon // = 162
+
+  /// Implemented
   case getRaidDetails // = 163
+
+  /// Implemented
   case gymFeedPokemon // = 164
+
+  /// Implemented
   case startRaidBattle // = 165
+
+  /// Implemented
   case attackRaid // = 166
+
+  /// ???
   case awardPokecoin // = 167
+
+  /// Implemented
   case useItemStardustBoost // = 168
+
+  /// Implemented
   case getAssetDigest // = 300
+
+  /// Implemented
   case getDownloadUrls // = 301
+
+  /// Implemented
   case claimCodename // = 403
+
+  /// Implemented
   case setAvatar // = 404
+
+  /// Implemented
   case setPlayerTeam // = 405
+
+  /// Implemented
   case markTutorialComplete // = 406
+
+  /// ???
   case updatePerformanceMetrics // = 407
+
+  /// Implemented
   case checkChallenge // = 600
+
+  /// Implemented
   case verifyChallenge // = 601
+
+  /// Implemented
   case echo // = 666
+
+  /// Implemented
   case sfidaRegistration // = 800
+
+  /// Implemented
   case sfidaActionLog // = 801
+
+  /// Implemented
   case sfidaCertification // = 802
+
+  /// Implemented
   case sfidaUpdate // = 803
+
+  /// ???
   case sfidaAction // = 804
+
+  /// Implemented
   case sfidaDowser // = 805
+
+  /// Implemented
   case sfidaCapture // = 806
+
+  /// Implemented
   case listAvatarCustomizations // = 807
+
+  /// Implemented
   case setAvatarItemAsViewed // = 808
+
+  /// Implemented
   case getInbox // = 809
+
+  /// Implemented
   case listGymBadges // = 811
+
+  /// Implemented
   case getGymBadgeDetails // = 812
+
+  /// Implemented
   case useItemMoveReroll // = 813
+
+  /// Implemented
   case useItemRareCandy // = 814
+
+  /// Implemented
   case awardFreeRaidTicket // = 815
+
+  /// Implemented
   case fetchAllNews // = 816
+
+  /// Implemented
   case markReadNewsArticle // = 817
+
+  /// Implemented
   case getPlayerDisplayInfo // = 818
+
+  /// Implemented
   case belugaTransactionStart // = 819
+
+  /// Implemented
   case belugaTransactionComplete // = 820
+
+  /// Implemented
   case getNewQuests // = 900
+
+  /// Implemented
   case getQuestDetails // = 901
+
+  /// Implemented
   case completeQuest // = 902
+
+  /// Implemented
   case removeQuest // = 903
+
+  /// Implemented
   case questEncounter // = 904
+
+  /// Implemented
   case completeQuestStampCard // = 905
+
+  /// Implemented
   case sendGift // = 950
+
+  /// Implemented
   case openGift // = 951
+
+  /// Implemented
   case giftDetails // = 952
+
+  /// Implemented
   case deleteGift // = 953
+
+  /// Implemented
   case savePlayerSnapshot // = 954
+
+  /// Implemented
   case getFriendshipMilestoneRewards // = 955
+
+  /// Implemented
   case checkSendGift // = 956
+
+  /// Implemented
   case setFriendNickname // = 957
+
+  /// Implemented
   case deleteGiftFromInventory // = 958
+
+  /// Implemented
   case saveSocialPlayerSettings // = 959
+
+  /// Implemented
   case shareExRaidPass // = 960
+
+  /// Implemented
   case checkShareExRaidPass // = 961
+
+  /// Implemented
   case declineSharedExRaidPass // = 962
+
+  /// Implemented
   case openTrading // = 970
+
+  /// Implemented
   case updateTrading // = 971
+
+  /// Implemented
   case confirmTrading // = 972
+
+  /// Implemented
   case cancelTrading // = 973
+
+  /// Implemented
   case getTrading // = 974
+
+  /// Implemented
   case getFitnessRewards // = 980
+
+  /// Implemented
+  case getCombatPlayerProfile // = 990
+
+  /// Implemented
+  case generateCombatChallengeID // = 991
+
+  /// Implemented
+  case createCombatChallenge // = 992
+
+  /// Implemented
+  case openCombatChallenge // = 993
+
+  /// Implemented
+  case getCombatChallenge // = 994
+
+  /// Implemented
+  case acceptCombatChallenge // = 995
+
+  /// Implemented
+  case declineCombatChallenge // = 996
+
+  /// Implemented
+  case cancelCombatChallenge // = 997
+
+  /// Implemented
+  case submitCombatChallengePokemons // = 998
+
+  /// Implemented
+  case saveCombatPlayerPreferences // = 999
+
+  /// Implemented
+  case openCombatSession // = 1000
+
+  /// Implemented
+  case updateCombat // = 1001
+
+  /// Implemented
+  case quitCombat // = 1002
+
+  /// Implemented
+  case getCombatResults // = 1003
+
+  /// Implemented
+  case unlockSpecialMove // = 1004
+
+  /// Implemented
+  case getNpcCombatRewards // = 1005
+
+  /// Implemented
+  case combatFriendRequest // = 1006
+
+  /// Implemented
+  case openNpcCombatSession // = 1007
+
+  /// Implemented
+  case startTutorialAction // = 1008
+
+  /// Implemented
+  case getTutorialEggAction // = 1009
+
+  /// Implemented
   case sendProbe // = 1020
+
+  /// ???
   case probeData // = 1021
+
+  /// ???
   case combatData // = 1022
+
+  /// ???
   case combatChallengeData // = 1023
+
+  /// Implemented
+  case getSignedGmapURL // = 1105
+
+  /// Implemented
+  case registerPushNotification // = 5000
+
+  /// ???
+  case unregisterPushNotification // = 5001
+
+  /// Implemented
+  case updateNotificationStatus // = 5002
+
+  /// Implemented
+  case optOutPushNotificationCategory // = 5003
+
+  /// Implemented
+  case downloadGameMasterTemplates // = 5004
+
+  /// UnUsed - Implemented
+  case getInventory // = 5005
+
+  /// Implemented
+  case redeemPasscode // = 5006
+
+  /// Implemented
+  case ping // = 5007
+
+  /// Implemented
+  case addLoginAction // = 5008
+
+  /// Implemented
+  case removeLoginAction // = 5009
+
+  /// Implemented
+  case listLoginAction // = 5010
+
+  /// Implemented
+  case addNewPoi // = 5011
+
+  /// Implemented
+  case proxySocialAction // = 5012
+
+  /// Implemented
+  case clientTelemetry // = 5013
+
+  /// Implemented
+  case getAvailableSubmissions // = 5014
+
+  /// Implemented
+  case getSignedURLForPhotoUpload // = 5015
+
+  /// Implemented
+  case replaceLoginAction // = 5016
+
+  /// Implemented
+  case proxySocialSideChannelAction // = 5017
+
+  /// Implemented
+  case collectClientTelemetry // = 5018
+
+  /// Implemented
+  case purchaseSku // = 5019
+
+  /// Implemented
+  case getAvailableSkusAndBalances // = 5020
+
+  /// Implemented
+  case redeemGoogleReceipt // = 5021
+
+  /// ???
+  case redeemAppleReceipt // = 5022
+
+  /// ???
+  case redeemDesktopReceipt // = 5023
+
+  /// Implemented
+  case updateFitnessMetrics // = 5024
+
+  /// Implemented
+  case getFitnessReport // = 5025
+
+  /// Implemented
+  case getClientTelemetrySettings // = 5026
+
+  /// ???
+  case registerBackgroundService // = 5028
+
+  /// Implemented
+  case getClientBgmodeSettings // = 5029
+
+  /// ???
+  case pingAsync // = 5027
+
+  /// ???
+  case pingDownstream // = 5030
+
+  /// Implemented
+  case setInGameCurrencyExchangeRate // = 5032
+
+  /// Implemented
+  case requestGeofenceUpdates // = 5033
+
+  /// Implemented
+  case updatePlayerLocation // = 5034
+
+  /// ???
+  case profanityFilterAction // = 5035
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -148,7 +565,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     switch rawValue {
     case 0: self = .methodUnset
     case 2: self = .getPlayer
-    case 4: self = .getHoloholoInventory
+    case 4: self = .getHoloInventory
     case 5: self = .downloadSettings
     case 6: self = .downloadItemTemplates
     case 7: self = .downloadRemoteConfigVersion
@@ -173,6 +590,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 127: self = .encounterTutorialComplete
     case 128: self = .levelUpRewards
     case 129: self = .checkAwardedBadges
+    case 133: self = .useItemGym
+    case 134: self = .getGymDetails
+    case 135: self = .startGymBattle
+    case 136: self = .attackGym
     case 137: self = .recycleInventoryItem
     case 138: self = .collectDailyBonus
     case 139: self = .useItemXpBoost
@@ -182,6 +603,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 143: self = .incenseEncounter
     case 144: self = .addFortModifier
     case 145: self = .diskEncounter
+    case 146: self = .collectDailyDefenderBonus
     case 147: self = .upgradePokemon
     case 148: self = .setFavoritePokemon
     case 149: self = .nicknamePokemon
@@ -259,10 +681,66 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 973: self = .cancelTrading
     case 974: self = .getTrading
     case 980: self = .getFitnessRewards
+    case 990: self = .getCombatPlayerProfile
+    case 991: self = .generateCombatChallengeID
+    case 992: self = .createCombatChallenge
+    case 993: self = .openCombatChallenge
+    case 994: self = .getCombatChallenge
+    case 995: self = .acceptCombatChallenge
+    case 996: self = .declineCombatChallenge
+    case 997: self = .cancelCombatChallenge
+    case 998: self = .submitCombatChallengePokemons
+    case 999: self = .saveCombatPlayerPreferences
+    case 1000: self = .openCombatSession
+    case 1001: self = .updateCombat
+    case 1002: self = .quitCombat
+    case 1003: self = .getCombatResults
+    case 1004: self = .unlockSpecialMove
+    case 1005: self = .getNpcCombatRewards
+    case 1006: self = .combatFriendRequest
+    case 1007: self = .openNpcCombatSession
+    case 1008: self = .startTutorialAction
+    case 1009: self = .getTutorialEggAction
     case 1020: self = .sendProbe
     case 1021: self = .probeData
     case 1022: self = .combatData
     case 1023: self = .combatChallengeData
+    case 1105: self = .getSignedGmapURL
+    case 5000: self = .registerPushNotification
+    case 5001: self = .unregisterPushNotification
+    case 5002: self = .updateNotificationStatus
+    case 5003: self = .optOutPushNotificationCategory
+    case 5004: self = .downloadGameMasterTemplates
+    case 5005: self = .getInventory
+    case 5006: self = .redeemPasscode
+    case 5007: self = .ping
+    case 5008: self = .addLoginAction
+    case 5009: self = .removeLoginAction
+    case 5010: self = .listLoginAction
+    case 5011: self = .addNewPoi
+    case 5012: self = .proxySocialAction
+    case 5013: self = .clientTelemetry
+    case 5014: self = .getAvailableSubmissions
+    case 5015: self = .getSignedURLForPhotoUpload
+    case 5016: self = .replaceLoginAction
+    case 5017: self = .proxySocialSideChannelAction
+    case 5018: self = .collectClientTelemetry
+    case 5019: self = .purchaseSku
+    case 5020: self = .getAvailableSkusAndBalances
+    case 5021: self = .redeemGoogleReceipt
+    case 5022: self = .redeemAppleReceipt
+    case 5023: self = .redeemDesktopReceipt
+    case 5024: self = .updateFitnessMetrics
+    case 5025: self = .getFitnessReport
+    case 5026: self = .getClientTelemetrySettings
+    case 5027: self = .pingAsync
+    case 5028: self = .registerBackgroundService
+    case 5029: self = .getClientBgmodeSettings
+    case 5030: self = .pingDownstream
+    case 5032: self = .setInGameCurrencyExchangeRate
+    case 5033: self = .requestGeofenceUpdates
+    case 5034: self = .updatePlayerLocation
+    case 5035: self = .profanityFilterAction
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -271,7 +749,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     switch self {
     case .methodUnset: return 0
     case .getPlayer: return 2
-    case .getHoloholoInventory: return 4
+    case .getHoloInventory: return 4
     case .downloadSettings: return 5
     case .downloadItemTemplates: return 6
     case .downloadRemoteConfigVersion: return 7
@@ -296,6 +774,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .encounterTutorialComplete: return 127
     case .levelUpRewards: return 128
     case .checkAwardedBadges: return 129
+    case .useItemGym: return 133
+    case .getGymDetails: return 134
+    case .startGymBattle: return 135
+    case .attackGym: return 136
     case .recycleInventoryItem: return 137
     case .collectDailyBonus: return 138
     case .useItemXpBoost: return 139
@@ -305,6 +787,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .incenseEncounter: return 143
     case .addFortModifier: return 144
     case .diskEncounter: return 145
+    case .collectDailyDefenderBonus: return 146
     case .upgradePokemon: return 147
     case .setFavoritePokemon: return 148
     case .nicknamePokemon: return 149
@@ -382,10 +865,66 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .cancelTrading: return 973
     case .getTrading: return 974
     case .getFitnessRewards: return 980
+    case .getCombatPlayerProfile: return 990
+    case .generateCombatChallengeID: return 991
+    case .createCombatChallenge: return 992
+    case .openCombatChallenge: return 993
+    case .getCombatChallenge: return 994
+    case .acceptCombatChallenge: return 995
+    case .declineCombatChallenge: return 996
+    case .cancelCombatChallenge: return 997
+    case .submitCombatChallengePokemons: return 998
+    case .saveCombatPlayerPreferences: return 999
+    case .openCombatSession: return 1000
+    case .updateCombat: return 1001
+    case .quitCombat: return 1002
+    case .getCombatResults: return 1003
+    case .unlockSpecialMove: return 1004
+    case .getNpcCombatRewards: return 1005
+    case .combatFriendRequest: return 1006
+    case .openNpcCombatSession: return 1007
+    case .startTutorialAction: return 1008
+    case .getTutorialEggAction: return 1009
     case .sendProbe: return 1020
     case .probeData: return 1021
     case .combatData: return 1022
     case .combatChallengeData: return 1023
+    case .getSignedGmapURL: return 1105
+    case .registerPushNotification: return 5000
+    case .unregisterPushNotification: return 5001
+    case .updateNotificationStatus: return 5002
+    case .optOutPushNotificationCategory: return 5003
+    case .downloadGameMasterTemplates: return 5004
+    case .getInventory: return 5005
+    case .redeemPasscode: return 5006
+    case .ping: return 5007
+    case .addLoginAction: return 5008
+    case .removeLoginAction: return 5009
+    case .listLoginAction: return 5010
+    case .addNewPoi: return 5011
+    case .proxySocialAction: return 5012
+    case .clientTelemetry: return 5013
+    case .getAvailableSubmissions: return 5014
+    case .getSignedURLForPhotoUpload: return 5015
+    case .replaceLoginAction: return 5016
+    case .proxySocialSideChannelAction: return 5017
+    case .collectClientTelemetry: return 5018
+    case .purchaseSku: return 5019
+    case .getAvailableSkusAndBalances: return 5020
+    case .redeemGoogleReceipt: return 5021
+    case .redeemAppleReceipt: return 5022
+    case .redeemDesktopReceipt: return 5023
+    case .updateFitnessMetrics: return 5024
+    case .getFitnessReport: return 5025
+    case .getClientTelemetrySettings: return 5026
+    case .pingAsync: return 5027
+    case .registerBackgroundService: return 5028
+    case .getClientBgmodeSettings: return 5029
+    case .pingDownstream: return 5030
+    case .setInGameCurrencyExchangeRate: return 5032
+    case .requestGeofenceUpdates: return 5033
+    case .updatePlayerLocation: return 5034
+    case .profanityFilterAction: return 5035
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -399,7 +938,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
   public static var allCases: [POGOProtos_Networking_Requests_RequestType] = [
     .methodUnset,
     .getPlayer,
-    .getHoloholoInventory,
+    .getHoloInventory,
     .downloadSettings,
     .downloadItemTemplates,
     .downloadRemoteConfigVersion,
@@ -424,6 +963,10 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .encounterTutorialComplete,
     .levelUpRewards,
     .checkAwardedBadges,
+    .useItemGym,
+    .getGymDetails,
+    .startGymBattle,
+    .attackGym,
     .recycleInventoryItem,
     .collectDailyBonus,
     .useItemXpBoost,
@@ -433,6 +976,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .incenseEncounter,
     .addFortModifier,
     .diskEncounter,
+    .collectDailyDefenderBonus,
     .upgradePokemon,
     .setFavoritePokemon,
     .nicknamePokemon,
@@ -510,10 +1054,66 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .cancelTrading,
     .getTrading,
     .getFitnessRewards,
+    .getCombatPlayerProfile,
+    .generateCombatChallengeID,
+    .createCombatChallenge,
+    .openCombatChallenge,
+    .getCombatChallenge,
+    .acceptCombatChallenge,
+    .declineCombatChallenge,
+    .cancelCombatChallenge,
+    .submitCombatChallengePokemons,
+    .saveCombatPlayerPreferences,
+    .openCombatSession,
+    .updateCombat,
+    .quitCombat,
+    .getCombatResults,
+    .unlockSpecialMove,
+    .getNpcCombatRewards,
+    .combatFriendRequest,
+    .openNpcCombatSession,
+    .startTutorialAction,
+    .getTutorialEggAction,
     .sendProbe,
     .probeData,
     .combatData,
     .combatChallengeData,
+    .getSignedGmapURL,
+    .registerPushNotification,
+    .unregisterPushNotification,
+    .updateNotificationStatus,
+    .optOutPushNotificationCategory,
+    .downloadGameMasterTemplates,
+    .getInventory,
+    .redeemPasscode,
+    .ping,
+    .addLoginAction,
+    .removeLoginAction,
+    .listLoginAction,
+    .addNewPoi,
+    .proxySocialAction,
+    .clientTelemetry,
+    .getAvailableSubmissions,
+    .getSignedURLForPhotoUpload,
+    .replaceLoginAction,
+    .proxySocialSideChannelAction,
+    .collectClientTelemetry,
+    .purchaseSku,
+    .getAvailableSkusAndBalances,
+    .redeemGoogleReceipt,
+    .redeemAppleReceipt,
+    .redeemDesktopReceipt,
+    .updateFitnessMetrics,
+    .getFitnessReport,
+    .getClientTelemetrySettings,
+    .registerBackgroundService,
+    .getClientBgmodeSettings,
+    .pingAsync,
+    .pingDownstream,
+    .setInGameCurrencyExchangeRate,
+    .requestGeofenceUpdates,
+    .updatePlayerLocation,
+    .profanityFilterAction,
   ]
 }
 
@@ -525,7 +1125,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "METHOD_UNSET"),
     2: .same(proto: "GET_PLAYER"),
-    4: .same(proto: "GET_HOLOHOLO_INVENTORY"),
+    4: .same(proto: "GET_HOLO_INVENTORY"),
     5: .same(proto: "DOWNLOAD_SETTINGS"),
     6: .same(proto: "DOWNLOAD_ITEM_TEMPLATES"),
     7: .same(proto: "DOWNLOAD_REMOTE_CONFIG_VERSION"),
@@ -550,6 +1150,10 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     127: .same(proto: "ENCOUNTER_TUTORIAL_COMPLETE"),
     128: .same(proto: "LEVEL_UP_REWARDS"),
     129: .same(proto: "CHECK_AWARDED_BADGES"),
+    133: .same(proto: "USE_ITEM_GYM"),
+    134: .same(proto: "GET_GYM_DETAILS"),
+    135: .same(proto: "START_GYM_BATTLE"),
+    136: .same(proto: "ATTACK_GYM"),
     137: .same(proto: "RECYCLE_INVENTORY_ITEM"),
     138: .same(proto: "COLLECT_DAILY_BONUS"),
     139: .same(proto: "USE_ITEM_XP_BOOST"),
@@ -559,6 +1163,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     143: .same(proto: "INCENSE_ENCOUNTER"),
     144: .same(proto: "ADD_FORT_MODIFIER"),
     145: .same(proto: "DISK_ENCOUNTER"),
+    146: .same(proto: "COLLECT_DAILY_DEFENDER_BONUS"),
     147: .same(proto: "UPGRADE_POKEMON"),
     148: .same(proto: "SET_FAVORITE_POKEMON"),
     149: .same(proto: "NICKNAME_POKEMON"),
@@ -636,9 +1241,65 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     973: .same(proto: "CANCEL_TRADING"),
     974: .same(proto: "GET_TRADING"),
     980: .same(proto: "GET_FITNESS_REWARDS"),
+    990: .same(proto: "GET_COMBAT_PLAYER_PROFILE"),
+    991: .same(proto: "GENERATE_COMBAT_CHALLENGE_ID"),
+    992: .same(proto: "CREATE_COMBAT_CHALLENGE"),
+    993: .same(proto: "OPEN_COMBAT_CHALLENGE"),
+    994: .same(proto: "GET_COMBAT_CHALLENGE"),
+    995: .same(proto: "ACCEPT_COMBAT_CHALLENGE"),
+    996: .same(proto: "DECLINE_COMBAT_CHALLENGE"),
+    997: .same(proto: "CANCEL_COMBAT_CHALLENGE"),
+    998: .same(proto: "SUBMIT_COMBAT_CHALLENGE_POKEMONS"),
+    999: .same(proto: "SAVE_COMBAT_PLAYER_PREFERENCES"),
+    1000: .same(proto: "OPEN_COMBAT_SESSION"),
+    1001: .same(proto: "UPDATE_COMBAT"),
+    1002: .same(proto: "QUIT_COMBAT"),
+    1003: .same(proto: "GET_COMBAT_RESULTS"),
+    1004: .same(proto: "UNLOCK_SPECIAL_MOVE"),
+    1005: .same(proto: "GET_NPC_COMBAT_REWARDS"),
+    1006: .same(proto: "COMBAT_FRIEND_REQUEST"),
+    1007: .same(proto: "OPEN_NPC_COMBAT_SESSION"),
+    1008: .same(proto: "START_TUTORIAL_ACTION"),
+    1009: .same(proto: "GET_TUTORIAL_EGG_ACTION"),
     1020: .same(proto: "SEND_PROBE"),
     1021: .same(proto: "PROBE_DATA"),
     1022: .same(proto: "COMBAT_DATA"),
     1023: .same(proto: "COMBAT_CHALLENGE_DATA"),
+    1105: .same(proto: "GET_SIGNED_GMAP_URL"),
+    5000: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
+    5001: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
+    5002: .same(proto: "UPDATE_NOTIFICATION_STATUS"),
+    5003: .same(proto: "OPT_OUT_PUSH_NOTIFICATION_CATEGORY"),
+    5004: .same(proto: "DOWNLOAD_GAME_MASTER_TEMPLATES"),
+    5005: .same(proto: "GET_INVENTORY"),
+    5006: .same(proto: "REDEEM_PASSCODE"),
+    5007: .same(proto: "PING"),
+    5008: .same(proto: "ADD_LOGIN_ACTION"),
+    5009: .same(proto: "REMOVE_LOGIN_ACTION"),
+    5010: .same(proto: "LIST_LOGIN_ACTION"),
+    5011: .same(proto: "ADD_NEW_POI"),
+    5012: .same(proto: "PROXY_SOCIAL_ACTION"),
+    5013: .same(proto: "CLIENT_TELEMETRY"),
+    5014: .same(proto: "GET_AVAILABLE_SUBMISSIONS"),
+    5015: .same(proto: "GET_SIGNED_URL_FOR_PHOTO_UPLOAD"),
+    5016: .same(proto: "REPLACE_LOGIN_ACTION"),
+    5017: .same(proto: "PROXY_SOCIAL_SIDE_CHANNEL_ACTION"),
+    5018: .same(proto: "COLLECT_CLIENT_TELEMETRY"),
+    5019: .same(proto: "PURCHASE_SKU"),
+    5020: .same(proto: "GET_AVAILABLE_SKUS_AND_BALANCES"),
+    5021: .same(proto: "REDEEM_GOOGLE_RECEIPT"),
+    5022: .same(proto: "REDEEM_APPLE_RECEIPT"),
+    5023: .same(proto: "REDEEM_DESKTOP_RECEIPT"),
+    5024: .same(proto: "UPDATE_FITNESS_METRICS"),
+    5025: .same(proto: "GET_FITNESS_REPORT"),
+    5026: .same(proto: "GET_CLIENT_TELEMETRY_SETTINGS"),
+    5027: .same(proto: "PING_ASYNC"),
+    5028: .same(proto: "REGISTER_BACKGROUND_SERVICE"),
+    5029: .same(proto: "GET_CLIENT_BGMODE_SETTINGS"),
+    5030: .same(proto: "PING_DOWNSTREAM"),
+    5032: .same(proto: "SET_IN_GAME_CURRENCY_EXCHANGE_RATE"),
+    5033: .same(proto: "REQUEST_GEOFENCE_UPDATES"),
+    5034: .same(proto: "UPDATE_PLAYER_LOCATION"),
+    5035: .same(proto: "PROFANITY_FILTER_ACTION"),
   ]
 }

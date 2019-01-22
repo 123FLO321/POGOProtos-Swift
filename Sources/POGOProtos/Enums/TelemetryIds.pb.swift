@@ -674,6 +674,7 @@ public enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
   case completeSuperawesomeSignIn // = 22
   case exitNewPlayer // = 23
   case exitExistingPlayer // = 24
+  case loginStarted // = 25
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -707,6 +708,7 @@ public enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
     case 22: self = .completeSuperawesomeSignIn
     case 23: self = .exitNewPlayer
     case 24: self = .exitExistingPlayer
+    case 25: self = .loginStarted
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -738,6 +740,7 @@ public enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
     case .completeSuperawesomeSignIn: return 22
     case .exitNewPlayer: return 23
     case .exitExistingPlayer: return 24
+    case .loginStarted: return 25
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -774,6 +777,7 @@ extension POGOProtos_Enums_LoginActionTelemetryIds: CaseIterable {
     .completeSuperawesomeSignIn,
     .exitNewPlayer,
     .exitExistingPlayer,
+    .loginStarted,
   ]
 }
 
@@ -1450,6 +1454,7 @@ extension POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf._ProtoNameProv
     22: .same(proto: "COMPLETE_SUPERAWESOME_SIGN_IN"),
     23: .same(proto: "EXIT_NEW_PLAYER"),
     24: .same(proto: "EXIT_EXISTING_PLAYER"),
+    25: .same(proto: "LOGIN_STARTED"),
   ]
 }
 

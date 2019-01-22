@@ -214,6 +214,25 @@ public struct POGOProtos_Data_Player_PlayerStats {
     set {_uniqueStorage()._fitnessReportLastCheckBucket = newValue}
   }
 
+  public var combatStats: POGOProtos_Data_Combat_PlayerCombatStats {
+    get {return _storage._combatStats ?? POGOProtos_Data_Combat_PlayerCombatStats()}
+    set {_uniqueStorage()._combatStats = newValue}
+  }
+  /// Returns true if `combatStats` has been explicitly set.
+  public var hasCombatStats: Bool {return _storage._combatStats != nil}
+  /// Clears the value of `combatStats`. Subsequent reads from it will return its default value.
+  public mutating func clearCombatStats() {_uniqueStorage()._combatStats = nil}
+
+  public var numNpcCombatsWon: Int32 {
+    get {return _storage._numNpcCombatsWon}
+    set {_uniqueStorage()._numNpcCombatsWon = newValue}
+  }
+
+  public var numNpcCombatsTotal: Int32 {
+    get {return _storage._numNpcCombatsTotal}
+    set {_uniqueStorage()._numNpcCombatsTotal = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -266,6 +285,9 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     36: .standard(proto: "num_max_level_friends"),
     37: .standard(proto: "trade_accumulated_distance_km"),
     38: .standard(proto: "fitness_report_last_check_bucket"),
+    39: .standard(proto: "combat_stats"),
+    40: .standard(proto: "num_npc_combats_won"),
+    41: .standard(proto: "num_npc_combats_total"),
   ]
 
   fileprivate class _StorageClass {
@@ -307,6 +329,9 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     var _numMaxLevelFriends: Int32 = 0
     var _tradeAccumulatedDistanceKm: Int64 = 0
     var _fitnessReportLastCheckBucket: Int64 = 0
+    var _combatStats: POGOProtos_Data_Combat_PlayerCombatStats? = nil
+    var _numNpcCombatsWon: Int32 = 0
+    var _numNpcCombatsTotal: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -351,6 +376,9 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       _numMaxLevelFriends = source._numMaxLevelFriends
       _tradeAccumulatedDistanceKm = source._tradeAccumulatedDistanceKm
       _fitnessReportLastCheckBucket = source._fitnessReportLastCheckBucket
+      _combatStats = source._combatStats
+      _numNpcCombatsWon = source._numNpcCombatsWon
+      _numNpcCombatsTotal = source._numNpcCombatsTotal
     }
   }
 
@@ -404,6 +432,9 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         case 36: try decoder.decodeSingularInt32Field(value: &_storage._numMaxLevelFriends)
         case 37: try decoder.decodeSingularInt64Field(value: &_storage._tradeAccumulatedDistanceKm)
         case 38: try decoder.decodeSingularInt64Field(value: &_storage._fitnessReportLastCheckBucket)
+        case 39: try decoder.decodeSingularMessageField(value: &_storage._combatStats)
+        case 40: try decoder.decodeSingularInt32Field(value: &_storage._numNpcCombatsWon)
+        case 41: try decoder.decodeSingularInt32Field(value: &_storage._numNpcCombatsTotal)
         default: break
         }
       }
@@ -526,6 +557,15 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       if _storage._fitnessReportLastCheckBucket != 0 {
         try visitor.visitSingularInt64Field(value: _storage._fitnessReportLastCheckBucket, fieldNumber: 38)
       }
+      if let v = _storage._combatStats {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 39)
+      }
+      if _storage._numNpcCombatsWon != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numNpcCombatsWon, fieldNumber: 40)
+      }
+      if _storage._numNpcCombatsTotal != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numNpcCombatsTotal, fieldNumber: 41)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -573,6 +613,9 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         if _storage._numMaxLevelFriends != rhs_storage._numMaxLevelFriends {return false}
         if _storage._tradeAccumulatedDistanceKm != rhs_storage._tradeAccumulatedDistanceKm {return false}
         if _storage._fitnessReportLastCheckBucket != rhs_storage._fitnessReportLastCheckBucket {return false}
+        if _storage._combatStats != rhs_storage._combatStats {return false}
+        if _storage._numNpcCombatsWon != rhs_storage._numNpcCombatsWon {return false}
+        if _storage._numNpcCombatsTotal != rhs_storage._numNpcCombatsTotal {return false}
         return true
       }
       if !storagesAreEqual {return false}

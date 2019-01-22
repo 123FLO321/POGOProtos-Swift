@@ -30,6 +30,8 @@ public struct POGOProtos_Data_Battle_BattleParty {
 
   public var ids: [UInt64] = []
 
+  public var combatLeagueID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -45,6 +47,7 @@ extension POGOProtos_Data_Battle_BattleParty: SwiftProtobuf.Message, SwiftProtob
     1: .same(proto: "name"),
     2: .standard(proto: "team_number"),
     3: .same(proto: "ids"),
+    4: .standard(proto: "combat_league_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -53,6 +56,7 @@ extension POGOProtos_Data_Battle_BattleParty: SwiftProtobuf.Message, SwiftProtob
       case 1: try decoder.decodeSingularStringField(value: &self.name)
       case 2: try decoder.decodeSingularInt32Field(value: &self.teamNumber)
       case 3: try decoder.decodeRepeatedUInt64Field(value: &self.ids)
+      case 4: try decoder.decodeSingularStringField(value: &self.combatLeagueID)
       default: break
       }
     }
@@ -68,6 +72,9 @@ extension POGOProtos_Data_Battle_BattleParty: SwiftProtobuf.Message, SwiftProtob
     if !self.ids.isEmpty {
       try visitor.visitPackedUInt64Field(value: self.ids, fieldNumber: 3)
     }
+    if !self.combatLeagueID.isEmpty {
+      try visitor.visitSingularStringField(value: self.combatLeagueID, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -75,6 +82,7 @@ extension POGOProtos_Data_Battle_BattleParty: SwiftProtobuf.Message, SwiftProtob
     if lhs.name != rhs.name {return false}
     if lhs.teamNumber != rhs.teamNumber {return false}
     if lhs.ids != rhs.ids {return false}
+    if lhs.combatLeagueID != rhs.combatLeagueID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

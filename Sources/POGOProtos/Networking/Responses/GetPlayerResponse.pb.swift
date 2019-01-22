@@ -73,6 +73,11 @@ public struct POGOProtos_Networking_Responses_GetPlayerResponse {
     set {_uniqueStorage()._warnExpireMs = newValue}
   }
 
+  public var userPermission: [Int32] {
+    get {return _storage._userPermission}
+    set {_uniqueStorage()._userPermission = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -96,6 +101,7 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
     7: .standard(proto: "was_suspended"),
     8: .standard(proto: "suspended_message_acknowledged"),
     9: .standard(proto: "warn_expire_ms"),
+    10: .standard(proto: "user_permission"),
   ]
 
   fileprivate class _StorageClass {
@@ -108,6 +114,7 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
     var _wasSuspended: Bool = false
     var _suspendedMessageAcknowledged: Bool = false
     var _warnExpireMs: Int64 = 0
+    var _userPermission: [Int32] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -123,6 +130,7 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
       _wasSuspended = source._wasSuspended
       _suspendedMessageAcknowledged = source._suspendedMessageAcknowledged
       _warnExpireMs = source._warnExpireMs
+      _userPermission = source._userPermission
     }
   }
 
@@ -147,6 +155,7 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
         case 7: try decoder.decodeSingularBoolField(value: &_storage._wasSuspended)
         case 8: try decoder.decodeSingularBoolField(value: &_storage._suspendedMessageAcknowledged)
         case 9: try decoder.decodeSingularInt64Field(value: &_storage._warnExpireMs)
+        case 10: try decoder.decodeRepeatedInt32Field(value: &_storage._userPermission)
         default: break
         }
       }
@@ -182,6 +191,9 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
       if _storage._warnExpireMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._warnExpireMs, fieldNumber: 9)
       }
+      if !_storage._userPermission.isEmpty {
+        try visitor.visitPackedInt32Field(value: _storage._userPermission, fieldNumber: 10)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -200,6 +212,7 @@ extension POGOProtos_Networking_Responses_GetPlayerResponse: SwiftProtobuf.Messa
         if _storage._wasSuspended != rhs_storage._wasSuspended {return false}
         if _storage._suspendedMessageAcknowledged != rhs_storage._suspendedMessageAcknowledged {return false}
         if _storage._warnExpireMs != rhs_storage._warnExpireMs {return false}
+        if _storage._userPermission != rhs_storage._userPermission {return false}
         return true
       }
       if !storagesAreEqual {return false}

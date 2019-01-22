@@ -233,6 +233,33 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `upsightLoggingSettings`. Subsequent reads from it will return its default value.
   public mutating func clearUpsightLoggingSettings() {_uniqueStorage()._upsightLoggingSettings = nil}
 
+  public var combatGlobalSettings: POGOProtos_Settings_CombatGlobalSettings {
+    get {return _storage._combatGlobalSettings ?? POGOProtos_Settings_CombatGlobalSettings()}
+    set {_uniqueStorage()._combatGlobalSettings = newValue}
+  }
+  /// Returns true if `combatGlobalSettings` has been explicitly set.
+  public var hasCombatGlobalSettings: Bool {return _storage._combatGlobalSettings != nil}
+  /// Clears the value of `combatGlobalSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearCombatGlobalSettings() {_uniqueStorage()._combatGlobalSettings = nil}
+
+  public var thirdMoveSettings: POGOProtos_Settings_ThirdMoveGlobalSettings {
+    get {return _storage._thirdMoveSettings ?? POGOProtos_Settings_ThirdMoveGlobalSettings()}
+    set {_uniqueStorage()._thirdMoveSettings = newValue}
+  }
+  /// Returns true if `thirdMoveSettings` has been explicitly set.
+  public var hasThirdMoveSettings: Bool {return _storage._thirdMoveSettings != nil}
+  /// Clears the value of `thirdMoveSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearThirdMoveSettings() {_uniqueStorage()._thirdMoveSettings = nil}
+
+  public var combatChallengeGlobalSettings: POGOProtos_Settings_CombatChallengeGlobalSettings {
+    get {return _storage._combatChallengeGlobalSettings ?? POGOProtos_Settings_CombatChallengeGlobalSettings()}
+    set {_uniqueStorage()._combatChallengeGlobalSettings = newValue}
+  }
+  /// Returns true if `combatChallengeGlobalSettings` has been explicitly set.
+  public var hasCombatChallengeGlobalSettings: Bool {return _storage._combatChallengeGlobalSettings != nil}
+  /// Clears the value of `combatChallengeGlobalSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearCombatChallengeGlobalSettings() {_uniqueStorage()._combatChallengeGlobalSettings = nil}
+
   public var bgmodeGlobalSettings: POGOProtos_Settings_BackgroundModeGlobalSettings {
     get {return _storage._bgmodeGlobalSettings ?? POGOProtos_Settings_BackgroundModeGlobalSettings()}
     set {_uniqueStorage()._bgmodeGlobalSettings = newValue}
@@ -268,6 +295,15 @@ public struct POGOProtos_Settings_GlobalSettings {
   public var hasHelpshiftSettings: Bool {return _storage._helpshiftSettings != nil}
   /// Clears the value of `helpshiftSettings`. Subsequent reads from it will return its default value.
   public mutating func clearHelpshiftSettings() {_uniqueStorage()._helpshiftSettings = nil}
+
+  public var poiSettings: POGOProtos_Settings_PoiGlobalSettings {
+    get {return _storage._poiSettings ?? POGOProtos_Settings_PoiGlobalSettings()}
+    set {_uniqueStorage()._poiSettings = newValue}
+  }
+  /// Returns true if `poiSettings` has been explicitly set.
+  public var hasPoiSettings: Bool {return _storage._poiSettings != nil}
+  /// Clears the value of `poiSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearPoiSettings() {_uniqueStorage()._poiSettings = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -308,10 +344,14 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     24: .standard(proto: "trading_global_settings"),
     25: .standard(proto: "additional_allowed_pokemon_ids"),
     26: .standard(proto: "upsight_logging_settings"),
+    27: .standard(proto: "combat_global_settings"),
+    28: .standard(proto: "third_move_settings"),
+    29: .standard(proto: "combat_challenge_global_settings"),
     30: .standard(proto: "bgmode_global_settings"),
     31: .standard(proto: "probe_settings"),
     32: .standard(proto: "purchased_settings"),
     33: .standard(proto: "helpshift_settings"),
+    35: .standard(proto: "poi_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -340,10 +380,14 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _tradingGlobalSettings: POGOProtos_Settings_TradingGlobalSettings? = nil
     var _additionalAllowedPokemonIds: [POGOProtos_Enums_PokemonId] = []
     var _upsightLoggingSettings: POGOProtos_Settings_UpsightLoggingSettings? = nil
+    var _combatGlobalSettings: POGOProtos_Settings_CombatGlobalSettings? = nil
+    var _thirdMoveSettings: POGOProtos_Settings_ThirdMoveGlobalSettings? = nil
+    var _combatChallengeGlobalSettings: POGOProtos_Settings_CombatChallengeGlobalSettings? = nil
     var _bgmodeGlobalSettings: POGOProtos_Settings_BackgroundModeGlobalSettings? = nil
     var _probeSettings: POGOProtos_Settings_ProbeSettings? = nil
     var _purchasedSettings: POGOProtos_Settings_PokecoinPurchaseDisplaySettings? = nil
     var _helpshiftSettings: POGOProtos_Settings_HelpshiftSettings? = nil
+    var _poiSettings: POGOProtos_Settings_PoiGlobalSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -375,10 +419,14 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _tradingGlobalSettings = source._tradingGlobalSettings
       _additionalAllowedPokemonIds = source._additionalAllowedPokemonIds
       _upsightLoggingSettings = source._upsightLoggingSettings
+      _combatGlobalSettings = source._combatGlobalSettings
+      _thirdMoveSettings = source._thirdMoveSettings
+      _combatChallengeGlobalSettings = source._combatChallengeGlobalSettings
       _bgmodeGlobalSettings = source._bgmodeGlobalSettings
       _probeSettings = source._probeSettings
       _purchasedSettings = source._purchasedSettings
       _helpshiftSettings = source._helpshiftSettings
+      _poiSettings = source._poiSettings
     }
   }
 
@@ -419,10 +467,14 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 24: try decoder.decodeSingularMessageField(value: &_storage._tradingGlobalSettings)
         case 25: try decoder.decodeRepeatedEnumField(value: &_storage._additionalAllowedPokemonIds)
         case 26: try decoder.decodeSingularMessageField(value: &_storage._upsightLoggingSettings)
+        case 27: try decoder.decodeSingularMessageField(value: &_storage._combatGlobalSettings)
+        case 28: try decoder.decodeSingularMessageField(value: &_storage._thirdMoveSettings)
+        case 29: try decoder.decodeSingularMessageField(value: &_storage._combatChallengeGlobalSettings)
         case 30: try decoder.decodeSingularMessageField(value: &_storage._bgmodeGlobalSettings)
         case 31: try decoder.decodeSingularMessageField(value: &_storage._probeSettings)
         case 32: try decoder.decodeSingularMessageField(value: &_storage._purchasedSettings)
         case 33: try decoder.decodeSingularMessageField(value: &_storage._helpshiftSettings)
+        case 35: try decoder.decodeSingularMessageField(value: &_storage._poiSettings)
         default: break
         }
       }
@@ -506,6 +558,15 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._upsightLoggingSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 26)
       }
+      if let v = _storage._combatGlobalSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 27)
+      }
+      if let v = _storage._thirdMoveSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 28)
+      }
+      if let v = _storage._combatChallengeGlobalSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 29)
+      }
       if let v = _storage._bgmodeGlobalSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 30)
       }
@@ -517,6 +578,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       }
       if let v = _storage._helpshiftSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 33)
+      }
+      if let v = _storage._poiSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 35)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -552,10 +616,14 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._tradingGlobalSettings != rhs_storage._tradingGlobalSettings {return false}
         if _storage._additionalAllowedPokemonIds != rhs_storage._additionalAllowedPokemonIds {return false}
         if _storage._upsightLoggingSettings != rhs_storage._upsightLoggingSettings {return false}
+        if _storage._combatGlobalSettings != rhs_storage._combatGlobalSettings {return false}
+        if _storage._thirdMoveSettings != rhs_storage._thirdMoveSettings {return false}
+        if _storage._combatChallengeGlobalSettings != rhs_storage._combatChallengeGlobalSettings {return false}
         if _storage._bgmodeGlobalSettings != rhs_storage._bgmodeGlobalSettings {return false}
         if _storage._probeSettings != rhs_storage._probeSettings {return false}
         if _storage._purchasedSettings != rhs_storage._purchasedSettings {return false}
         if _storage._helpshiftSettings != rhs_storage._helpshiftSettings {return false}
+        if _storage._poiSettings != rhs_storage._poiSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

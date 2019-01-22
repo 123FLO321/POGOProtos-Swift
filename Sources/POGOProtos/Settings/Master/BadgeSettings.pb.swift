@@ -58,6 +58,11 @@ public struct POGOProtos_Settings_Master_BadgeSettings {
   /// Clears the value of `eventBadgeSettings`. Subsequent reads from it will return its default value.
   public mutating func clearEventBadgeSettings() {_uniqueStorage()._eventBadgeSettings = nil}
 
+  public var combatLeagueTemplateID: String {
+    get {return _storage._combatLeagueTemplateID}
+    set {_uniqueStorage()._combatLeagueTemplateID = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -78,6 +83,7 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
     4: .standard(proto: "capture_reward"),
     5: .standard(proto: "event_badge"),
     6: .standard(proto: "event_badge_settings"),
+    7: .standard(proto: "combat_league_template_id"),
   ]
 
   fileprivate class _StorageClass {
@@ -87,6 +93,7 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
     var _captureReward: [POGOProtos_Data_Badge_BadgeCaptureReward] = []
     var _eventBadge: Bool = false
     var _eventBadgeSettings: POGOProtos_Settings_Master_EventBadgeSettings? = nil
+    var _combatLeagueTemplateID: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -99,6 +106,7 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
       _captureReward = source._captureReward
       _eventBadge = source._eventBadge
       _eventBadgeSettings = source._eventBadgeSettings
+      _combatLeagueTemplateID = source._combatLeagueTemplateID
     }
   }
 
@@ -120,6 +128,7 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
         case 4: try decoder.decodeRepeatedMessageField(value: &_storage._captureReward)
         case 5: try decoder.decodeSingularBoolField(value: &_storage._eventBadge)
         case 6: try decoder.decodeSingularMessageField(value: &_storage._eventBadgeSettings)
+        case 7: try decoder.decodeSingularStringField(value: &_storage._combatLeagueTemplateID)
         default: break
         }
       }
@@ -146,6 +155,9 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
       if let v = _storage._eventBadgeSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
       }
+      if !_storage._combatLeagueTemplateID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._combatLeagueTemplateID, fieldNumber: 7)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -161,6 +173,7 @@ extension POGOProtos_Settings_Master_BadgeSettings: SwiftProtobuf.Message, Swift
         if _storage._captureReward != rhs_storage._captureReward {return false}
         if _storage._eventBadge != rhs_storage._eventBadge {return false}
         if _storage._eventBadgeSettings != rhs_storage._eventBadgeSettings {return false}
+        if _storage._combatLeagueTemplateID != rhs_storage._combatLeagueTemplateID {return false}
         return true
       }
       if !storagesAreEqual {return false}

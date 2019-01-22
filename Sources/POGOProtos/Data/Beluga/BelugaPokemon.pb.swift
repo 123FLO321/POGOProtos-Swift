@@ -34,7 +34,7 @@ public struct POGOProtos_Data_Beluga_BelugaPokemon {
     set {_uniqueStorage()._trainerGender = newValue}
   }
 
-  public var trainerTeam: POGOProtos_Data_Beluga_BelugaPokemon.Team {
+  public var trainerTeam: POGOProtos_Enums_TeamColor {
     get {return _storage._trainerTeam}
     set {_uniqueStorage()._trainerTeam = newValue}
   }
@@ -119,12 +119,12 @@ public struct POGOProtos_Data_Beluga_BelugaPokemon {
     set {_uniqueStorage()._nickname = newValue}
   }
 
-  public var gender: POGOProtos_Data_Beluga_BelugaPokemon.PokemonGender {
+  public var gender: POGOProtos_Enums_Gender {
     get {return _storage._gender}
     set {_uniqueStorage()._gender = newValue}
   }
 
-  public var costume: POGOProtos_Data_Beluga_BelugaPokemon.PokemonCostume {
+  public var costume: POGOProtos_Enums_Costume {
     get {return _storage._costume}
     set {_uniqueStorage()._costume = newValue}
   }
@@ -139,54 +139,17 @@ public struct POGOProtos_Data_Beluga_BelugaPokemon {
     set {_uniqueStorage()._shiny = newValue}
   }
 
-  public var move1: Int32 {
+  public var move1: POGOProtos_Enums_PokemonMove {
     get {return _storage._move1}
     set {_uniqueStorage()._move1 = newValue}
   }
 
-  public var move2: Int32 {
+  public var move2: POGOProtos_Enums_PokemonMove {
     get {return _storage._move2}
     set {_uniqueStorage()._move2 = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-  public enum PokemonCostume: SwiftProtobuf.Enum {
-    public typealias RawValue = Int
-    case unset // = 0
-    case holiday2016 // = 1
-    case anniversary // = 2
-    case oneYearAnniversary // = 3
-    case halloween2017 // = 4
-    case UNRECOGNIZED(Int)
-
-    public init() {
-      self = .unset
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .unset
-      case 1: self = .holiday2016
-      case 2: self = .anniversary
-      case 3: self = .oneYearAnniversary
-      case 4: self = .halloween2017
-      default: self = .UNRECOGNIZED(rawValue)
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .unset: return 0
-      case .holiday2016: return 1
-      case .anniversary: return 2
-      case .oneYearAnniversary: return 3
-      case .halloween2017: return 4
-      case .UNRECOGNIZED(let i): return i
-      }
-    }
-
-  }
 
   public enum PokemonForm: SwiftProtobuf.Enum {
     public typealias RawValue = Int
@@ -210,74 +173,6 @@ public struct POGOProtos_Data_Beluga_BelugaPokemon {
       switch self {
       case .formUnset: return 0
       case .alola: return 1
-      case .UNRECOGNIZED(let i): return i
-      }
-    }
-
-  }
-
-  public enum PokemonGender: SwiftProtobuf.Enum {
-    public typealias RawValue = Int
-    case genderUnset // = 0
-    case male // = 1
-    case female // = 2
-    case genderless // = 3
-    case UNRECOGNIZED(Int)
-
-    public init() {
-      self = .genderUnset
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .genderUnset
-      case 1: self = .male
-      case 2: self = .female
-      case 3: self = .genderless
-      default: self = .UNRECOGNIZED(rawValue)
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .genderUnset: return 0
-      case .male: return 1
-      case .female: return 2
-      case .genderless: return 3
-      case .UNRECOGNIZED(let i): return i
-      }
-    }
-
-  }
-
-  public enum Team: SwiftProtobuf.Enum {
-    public typealias RawValue = Int
-    case none // = 0
-    case blue // = 1
-    case red // = 2
-    case yellow // = 3
-    case UNRECOGNIZED(Int)
-
-    public init() {
-      self = .none
-    }
-
-    public init?(rawValue: Int) {
-      switch rawValue {
-      case 0: self = .none
-      case 1: self = .blue
-      case 2: self = .red
-      case 3: self = .yellow
-      default: self = .UNRECOGNIZED(rawValue)
-      }
-    }
-
-    public var rawValue: Int {
-      switch self {
-      case .none: return 0
-      case .blue: return 1
-      case .red: return 2
-      case .yellow: return 3
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -319,42 +214,11 @@ public struct POGOProtos_Data_Beluga_BelugaPokemon {
 
 #if swift(>=4.2)
 
-extension POGOProtos_Data_Beluga_BelugaPokemon.PokemonCostume: CaseIterable {
-  // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static var allCases: [POGOProtos_Data_Beluga_BelugaPokemon.PokemonCostume] = [
-    .unset,
-    .holiday2016,
-    .anniversary,
-    .oneYearAnniversary,
-    .halloween2017,
-  ]
-}
-
 extension POGOProtos_Data_Beluga_BelugaPokemon.PokemonForm: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   public static var allCases: [POGOProtos_Data_Beluga_BelugaPokemon.PokemonForm] = [
     .formUnset,
     .alola,
-  ]
-}
-
-extension POGOProtos_Data_Beluga_BelugaPokemon.PokemonGender: CaseIterable {
-  // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static var allCases: [POGOProtos_Data_Beluga_BelugaPokemon.PokemonGender] = [
-    .genderUnset,
-    .male,
-    .female,
-    .genderless,
-  ]
-}
-
-extension POGOProtos_Data_Beluga_BelugaPokemon.Team: CaseIterable {
-  // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static var allCases: [POGOProtos_Data_Beluga_BelugaPokemon.Team] = [
-    .none,
-    .blue,
-    .red,
-    .yellow,
   ]
 }
 
@@ -405,7 +269,7 @@ extension POGOProtos_Data_Beluga_BelugaPokemon: SwiftProtobuf.Message, SwiftProt
   fileprivate class _StorageClass {
     var _trainerName: String = String()
     var _trainerGender: POGOProtos_Data_Beluga_BelugaPokemon.TrainerGender = .trainerMale
-    var _trainerTeam: POGOProtos_Data_Beluga_BelugaPokemon.Team = .none
+    var _trainerTeam: POGOProtos_Enums_TeamColor = .neutral
     var _trainerLevel: Int32 = 0
     var _pokedexID: Int32 = 0
     var _cp: Int32 = 0
@@ -422,12 +286,12 @@ extension POGOProtos_Data_Beluga_BelugaPokemon: SwiftProtobuf.Message, SwiftProt
     var _creationMonth: Int32 = 0
     var _creationYear: Int32 = 0
     var _nickname: String = String()
-    var _gender: POGOProtos_Data_Beluga_BelugaPokemon.PokemonGender = .genderUnset
-    var _costume: POGOProtos_Data_Beluga_BelugaPokemon.PokemonCostume = .unset
+    var _gender: POGOProtos_Enums_Gender = .unset
+    var _costume: POGOProtos_Enums_Costume = .unset
     var _form: POGOProtos_Data_Beluga_BelugaPokemon.PokemonForm = .formUnset
     var _shiny: Bool = false
-    var _move1: Int32 = 0
-    var _move2: Int32 = 0
+    var _move1: POGOProtos_Enums_PokemonMove = .moveUnset
+    var _move2: POGOProtos_Enums_PokemonMove = .moveUnset
 
     static let defaultInstance = _StorageClass()
 
@@ -497,8 +361,8 @@ extension POGOProtos_Data_Beluga_BelugaPokemon: SwiftProtobuf.Message, SwiftProt
         case 21: try decoder.decodeSingularEnumField(value: &_storage._costume)
         case 22: try decoder.decodeSingularEnumField(value: &_storage._form)
         case 23: try decoder.decodeSingularBoolField(value: &_storage._shiny)
-        case 24: try decoder.decodeSingularInt32Field(value: &_storage._move1)
-        case 25: try decoder.decodeSingularInt32Field(value: &_storage._move2)
+        case 24: try decoder.decodeSingularEnumField(value: &_storage._move1)
+        case 25: try decoder.decodeSingularEnumField(value: &_storage._move2)
         default: break
         }
       }
@@ -513,7 +377,7 @@ extension POGOProtos_Data_Beluga_BelugaPokemon: SwiftProtobuf.Message, SwiftProt
       if _storage._trainerGender != .trainerMale {
         try visitor.visitSingularEnumField(value: _storage._trainerGender, fieldNumber: 2)
       }
-      if _storage._trainerTeam != .none {
+      if _storage._trainerTeam != .neutral {
         try visitor.visitSingularEnumField(value: _storage._trainerTeam, fieldNumber: 3)
       }
       if _storage._trainerLevel != 0 {
@@ -564,7 +428,7 @@ extension POGOProtos_Data_Beluga_BelugaPokemon: SwiftProtobuf.Message, SwiftProt
       if !_storage._nickname.isEmpty {
         try visitor.visitSingularStringField(value: _storage._nickname, fieldNumber: 19)
       }
-      if _storage._gender != .genderUnset {
+      if _storage._gender != .unset {
         try visitor.visitSingularEnumField(value: _storage._gender, fieldNumber: 20)
       }
       if _storage._costume != .unset {
@@ -576,11 +440,11 @@ extension POGOProtos_Data_Beluga_BelugaPokemon: SwiftProtobuf.Message, SwiftProt
       if _storage._shiny != false {
         try visitor.visitSingularBoolField(value: _storage._shiny, fieldNumber: 23)
       }
-      if _storage._move1 != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._move1, fieldNumber: 24)
+      if _storage._move1 != .moveUnset {
+        try visitor.visitSingularEnumField(value: _storage._move1, fieldNumber: 24)
       }
-      if _storage._move2 != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._move2, fieldNumber: 25)
+      if _storage._move2 != .moveUnset {
+        try visitor.visitSingularEnumField(value: _storage._move2, fieldNumber: 25)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -625,38 +489,10 @@ extension POGOProtos_Data_Beluga_BelugaPokemon: SwiftProtobuf.Message, SwiftProt
   }
 }
 
-extension POGOProtos_Data_Beluga_BelugaPokemon.PokemonCostume: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "UNSET"),
-    1: .same(proto: "HOLIDAY_2016"),
-    2: .same(proto: "ANNIVERSARY"),
-    3: .same(proto: "ONE_YEAR_ANNIVERSARY"),
-    4: .same(proto: "HALLOWEEN_2017"),
-  ]
-}
-
 extension POGOProtos_Data_Beluga_BelugaPokemon.PokemonForm: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "FORM_UNSET"),
     1: .same(proto: "ALOLA"),
-  ]
-}
-
-extension POGOProtos_Data_Beluga_BelugaPokemon.PokemonGender: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "GENDER_UNSET"),
-    1: .same(proto: "MALE"),
-    2: .same(proto: "FEMALE"),
-    3: .same(proto: "GENDERLESS"),
-  ]
-}
-
-extension POGOProtos_Data_Beluga_BelugaPokemon.Team: SwiftProtobuf._ProtoNameProviding {
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    0: .same(proto: "NONE"),
-    1: .same(proto: "TEAM_BLUE"),
-    2: .same(proto: "TEAM_RED"),
-    3: .same(proto: "TEAM_YELLOW"),
   ]
 }
 

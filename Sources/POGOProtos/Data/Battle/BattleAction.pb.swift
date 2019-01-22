@@ -196,13 +196,13 @@ extension POGOProtos_Data_Battle_BattleAction: SwiftProtobuf.Message, SwiftProto
         case 5: try decoder.decodeSingularInt32Field(value: &_storage._energyDelta)
         case 6: try decoder.decodeSingularInt32Field(value: &_storage._attackerIndex)
         case 7: try decoder.decodeSingularInt32Field(value: &_storage._targetIndex)
-        case 8: try decoder.decodeSingularUInt64Field(value: &_storage._activePokemonID)
+        case 8: try decoder.decodeSingularFixed64Field(value: &_storage._activePokemonID)
         case 9: try decoder.decodeSingularMessageField(value: &_storage._playerJoined)
         case 10: try decoder.decodeSingularMessageField(value: &_storage._battleResults)
         case 11: try decoder.decodeSingularInt64Field(value: &_storage._damageWindowsStartTimestampMs)
         case 12: try decoder.decodeSingularInt64Field(value: &_storage._damageWindowsEndTimestampMs)
         case 13: try decoder.decodeSingularMessageField(value: &_storage._playerLeft)
-        case 14: try decoder.decodeSingularUInt64Field(value: &_storage._targetPokemonID)
+        case 14: try decoder.decodeSingularFixed64Field(value: &_storage._targetPokemonID)
         case 15: try decoder.decodeSingularMessageField(value: &_storage._leveledUpFriends)
         default: break
         }
@@ -231,7 +231,7 @@ extension POGOProtos_Data_Battle_BattleAction: SwiftProtobuf.Message, SwiftProto
         try visitor.visitSingularInt32Field(value: _storage._targetIndex, fieldNumber: 7)
       }
       if _storage._activePokemonID != 0 {
-        try visitor.visitSingularUInt64Field(value: _storage._activePokemonID, fieldNumber: 8)
+        try visitor.visitSingularFixed64Field(value: _storage._activePokemonID, fieldNumber: 8)
       }
       if let v = _storage._playerJoined {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
@@ -249,7 +249,7 @@ extension POGOProtos_Data_Battle_BattleAction: SwiftProtobuf.Message, SwiftProto
         try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
       }
       if _storage._targetPokemonID != 0 {
-        try visitor.visitSingularUInt64Field(value: _storage._targetPokemonID, fieldNumber: 14)
+        try visitor.visitSingularFixed64Field(value: _storage._targetPokemonID, fieldNumber: 14)
       }
       if let v = _storage._leveledUpFriends {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 15)

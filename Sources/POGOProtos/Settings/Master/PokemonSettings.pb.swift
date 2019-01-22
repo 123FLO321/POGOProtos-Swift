@@ -206,6 +206,15 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._parentForm = newValue}
   }
 
+  public var thirdMove: POGOProtos_Settings_Master_PokemonSettings.PokemonThirdMoveAttributes {
+    get {return _storage._thirdMove ?? POGOProtos_Settings_Master_PokemonSettings.PokemonThirdMoveAttributes()}
+    set {_uniqueStorage()._thirdMove = newValue}
+  }
+  /// Returns true if `thirdMove` has been explicitly set.
+  public var hasThirdMove: Bool {return _storage._thirdMove != nil}
+  /// Clears the value of `thirdMove`. Subsequent reads from it will return its default value.
+  public mutating func clearThirdMove() {_uniqueStorage()._thirdMove = nil}
+
   public var isTransferable: Bool {
     get {return _storage._isTransferable}
     set {_uniqueStorage()._isTransferable = newValue}
@@ -216,12 +225,51 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._isDeployable = newValue}
   }
 
+  public var combatShoulderCameraAngle: [Float] {
+    get {return _storage._combatShoulderCameraAngle}
+    set {_uniqueStorage()._combatShoulderCameraAngle = newValue}
+  }
+
   public var isTradable: Bool {
     get {return _storage._isTradable}
     set {_uniqueStorage()._isTradable = newValue}
   }
 
+  public var combatDefaultCameraAngle: [Float] {
+    get {return _storage._combatDefaultCameraAngle}
+    set {_uniqueStorage()._combatDefaultCameraAngle = newValue}
+  }
+
+  public var combatOpponentFocusCameraAngle: [Float] {
+    get {return _storage._combatOpponentFocusCameraAngle}
+    set {_uniqueStorage()._combatOpponentFocusCameraAngle = newValue}
+  }
+
+  public var combatPlayerFocusCameraAngle: [Float] {
+    get {return _storage._combatPlayerFocusCameraAngle}
+    set {_uniqueStorage()._combatPlayerFocusCameraAngle = newValue}
+  }
+
+  public var combatPlayerPokemonPositionOffset: [Float] {
+    get {return _storage._combatPlayerPokemonPositionOffset}
+    set {_uniqueStorage()._combatPlayerPokemonPositionOffset = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public struct PokemonThirdMoveAttributes {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var stardustToUnlock: Int32 = 0
+
+    public var candyToUnlock: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
 
   public init() {}
 
@@ -269,9 +317,15 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     33: .standard(proto: "buddy_scale"),
     34: .standard(proto: "buddy_portrait_offset"),
     35: .standard(proto: "parent_form"),
+    36: .standard(proto: "third_move"),
     37: .standard(proto: "is_transferable"),
     38: .standard(proto: "is_deployable"),
+    39: .standard(proto: "combat_shoulder_camera_angle"),
     40: .standard(proto: "is_tradable"),
+    41: .standard(proto: "combat_default_camera_angle"),
+    42: .standard(proto: "combat_opponent_focus_camera_angle"),
+    43: .standard(proto: "combat_player_focus_camera_angle"),
+    44: .standard(proto: "combat_player_pokemon_position_offset"),
   ]
 
   fileprivate class _StorageClass {
@@ -309,9 +363,15 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     var _buddyScale: Float = 0
     var _buddyPortraitOffset: [Float] = []
     var _parentForm: POGOProtos_Enums_Form = .unset
+    var _thirdMove: POGOProtos_Settings_Master_PokemonSettings.PokemonThirdMoveAttributes? = nil
     var _isTransferable: Bool = false
     var _isDeployable: Bool = false
+    var _combatShoulderCameraAngle: [Float] = []
     var _isTradable: Bool = false
+    var _combatDefaultCameraAngle: [Float] = []
+    var _combatOpponentFocusCameraAngle: [Float] = []
+    var _combatPlayerFocusCameraAngle: [Float] = []
+    var _combatPlayerPokemonPositionOffset: [Float] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -352,9 +412,15 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       _buddyScale = source._buddyScale
       _buddyPortraitOffset = source._buddyPortraitOffset
       _parentForm = source._parentForm
+      _thirdMove = source._thirdMove
       _isTransferable = source._isTransferable
       _isDeployable = source._isDeployable
+      _combatShoulderCameraAngle = source._combatShoulderCameraAngle
       _isTradable = source._isTradable
+      _combatDefaultCameraAngle = source._combatDefaultCameraAngle
+      _combatOpponentFocusCameraAngle = source._combatOpponentFocusCameraAngle
+      _combatPlayerFocusCameraAngle = source._combatPlayerFocusCameraAngle
+      _combatPlayerPokemonPositionOffset = source._combatPlayerPokemonPositionOffset
     }
   }
 
@@ -404,9 +470,15 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         case 33: try decoder.decodeSingularFloatField(value: &_storage._buddyScale)
         case 34: try decoder.decodeRepeatedFloatField(value: &_storage._buddyPortraitOffset)
         case 35: try decoder.decodeSingularEnumField(value: &_storage._parentForm)
+        case 36: try decoder.decodeSingularMessageField(value: &_storage._thirdMove)
         case 37: try decoder.decodeSingularBoolField(value: &_storage._isTransferable)
         case 38: try decoder.decodeSingularBoolField(value: &_storage._isDeployable)
+        case 39: try decoder.decodeRepeatedFloatField(value: &_storage._combatShoulderCameraAngle)
         case 40: try decoder.decodeSingularBoolField(value: &_storage._isTradable)
+        case 41: try decoder.decodeRepeatedFloatField(value: &_storage._combatDefaultCameraAngle)
+        case 42: try decoder.decodeRepeatedFloatField(value: &_storage._combatOpponentFocusCameraAngle)
+        case 43: try decoder.decodeRepeatedFloatField(value: &_storage._combatPlayerFocusCameraAngle)
+        case 44: try decoder.decodeRepeatedFloatField(value: &_storage._combatPlayerPokemonPositionOffset)
         default: break
         }
       }
@@ -517,14 +589,32 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       if _storage._parentForm != .unset {
         try visitor.visitSingularEnumField(value: _storage._parentForm, fieldNumber: 35)
       }
+      if let v = _storage._thirdMove {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 36)
+      }
       if _storage._isTransferable != false {
         try visitor.visitSingularBoolField(value: _storage._isTransferable, fieldNumber: 37)
       }
       if _storage._isDeployable != false {
         try visitor.visitSingularBoolField(value: _storage._isDeployable, fieldNumber: 38)
       }
+      if !_storage._combatShoulderCameraAngle.isEmpty {
+        try visitor.visitPackedFloatField(value: _storage._combatShoulderCameraAngle, fieldNumber: 39)
+      }
       if _storage._isTradable != false {
         try visitor.visitSingularBoolField(value: _storage._isTradable, fieldNumber: 40)
+      }
+      if !_storage._combatDefaultCameraAngle.isEmpty {
+        try visitor.visitPackedFloatField(value: _storage._combatDefaultCameraAngle, fieldNumber: 41)
+      }
+      if !_storage._combatOpponentFocusCameraAngle.isEmpty {
+        try visitor.visitPackedFloatField(value: _storage._combatOpponentFocusCameraAngle, fieldNumber: 42)
+      }
+      if !_storage._combatPlayerFocusCameraAngle.isEmpty {
+        try visitor.visitPackedFloatField(value: _storage._combatPlayerFocusCameraAngle, fieldNumber: 43)
+      }
+      if !_storage._combatPlayerPokemonPositionOffset.isEmpty {
+        try visitor.visitPackedFloatField(value: _storage._combatPlayerPokemonPositionOffset, fieldNumber: 44)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -569,13 +659,54 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         if _storage._buddyScale != rhs_storage._buddyScale {return false}
         if _storage._buddyPortraitOffset != rhs_storage._buddyPortraitOffset {return false}
         if _storage._parentForm != rhs_storage._parentForm {return false}
+        if _storage._thirdMove != rhs_storage._thirdMove {return false}
         if _storage._isTransferable != rhs_storage._isTransferable {return false}
         if _storage._isDeployable != rhs_storage._isDeployable {return false}
+        if _storage._combatShoulderCameraAngle != rhs_storage._combatShoulderCameraAngle {return false}
         if _storage._isTradable != rhs_storage._isTradable {return false}
+        if _storage._combatDefaultCameraAngle != rhs_storage._combatDefaultCameraAngle {return false}
+        if _storage._combatOpponentFocusCameraAngle != rhs_storage._combatOpponentFocusCameraAngle {return false}
+        if _storage._combatPlayerFocusCameraAngle != rhs_storage._combatPlayerFocusCameraAngle {return false}
+        if _storage._combatPlayerPokemonPositionOffset != rhs_storage._combatPlayerPokemonPositionOffset {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Settings_Master_PokemonSettings.PokemonThirdMoveAttributes: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Settings_Master_PokemonSettings.protoMessageName + ".PokemonThirdMoveAttributes"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "stardust_to_unlock"),
+    2: .standard(proto: "candy_to_unlock"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.stardustToUnlock)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.candyToUnlock)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.stardustToUnlock != 0 {
+      try visitor.visitSingularInt32Field(value: self.stardustToUnlock, fieldNumber: 1)
+    }
+    if self.candyToUnlock != 0 {
+      try visitor.visitSingularInt32Field(value: self.candyToUnlock, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Settings_Master_PokemonSettings.PokemonThirdMoveAttributes, rhs: POGOProtos_Settings_Master_PokemonSettings.PokemonThirdMoveAttributes) -> Bool {
+    if lhs.stardustToUnlock != rhs.stardustToUnlock {return false}
+    if lhs.candyToUnlock != rhs.candyToUnlock {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

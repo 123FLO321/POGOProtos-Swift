@@ -253,6 +253,29 @@ public struct POGOProtos_Data_PokemonData {
     set {_uniqueStorage()._isLucky = newValue}
   }
 
+  public var move3: POGOProtos_Enums_PokemonMove {
+    get {return _storage._move3}
+    set {_uniqueStorage()._move3 = newValue}
+  }
+
+  public var pvpCombatStats: POGOProtos_Data_Combat_PokemonCombatStats {
+    get {return _storage._pvpCombatStats ?? POGOProtos_Data_Combat_PokemonCombatStats()}
+    set {_uniqueStorage()._pvpCombatStats = newValue}
+  }
+  /// Returns true if `pvpCombatStats` has been explicitly set.
+  public var hasPvpCombatStats: Bool {return _storage._pvpCombatStats != nil}
+  /// Clears the value of `pvpCombatStats`. Subsequent reads from it will return its default value.
+  public mutating func clearPvpCombatStats() {_uniqueStorage()._pvpCombatStats = nil}
+
+  public var npcCombatStats: POGOProtos_Data_Combat_PokemonCombatStats {
+    get {return _storage._npcCombatStats ?? POGOProtos_Data_Combat_PokemonCombatStats()}
+    set {_uniqueStorage()._npcCombatStats = newValue}
+  }
+  /// Returns true if `npcCombatStats` has been explicitly set.
+  public var hasNpcCombatStats: Bool {return _storage._npcCombatStats != nil}
+  /// Clears the value of `npcCombatStats`. Subsequent reads from it will return its default value.
+  public mutating func clearNpcCombatStats() {_uniqueStorage()._npcCombatStats = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -312,6 +335,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     44: .standard(proto: "original_owner_nickname"),
     45: .standard(proto: "traded_time_ms"),
     46: .standard(proto: "is_lucky"),
+    47: .standard(proto: "move_3"),
+    48: .standard(proto: "pvp_combat_stats"),
+    49: .standard(proto: "npc_combat_stats"),
   ]
 
   fileprivate class _StorageClass {
@@ -360,6 +386,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _originalOwnerNickname: String = String()
     var _tradedTimeMs: Int64 = 0
     var _isLucky: Bool = false
+    var _move3: POGOProtos_Enums_PokemonMove = .moveUnset
+    var _pvpCombatStats: POGOProtos_Data_Combat_PokemonCombatStats? = nil
+    var _npcCombatStats: POGOProtos_Data_Combat_PokemonCombatStats? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -411,6 +440,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _originalOwnerNickname = source._originalOwnerNickname
       _tradedTimeMs = source._tradedTimeMs
       _isLucky = source._isLucky
+      _move3 = source._move3
+      _pvpCombatStats = source._pvpCombatStats
+      _npcCombatStats = source._npcCombatStats
     }
   }
 
@@ -471,6 +503,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 44: try decoder.decodeSingularStringField(value: &_storage._originalOwnerNickname)
         case 45: try decoder.decodeSingularInt64Field(value: &_storage._tradedTimeMs)
         case 46: try decoder.decodeSingularBoolField(value: &_storage._isLucky)
+        case 47: try decoder.decodeSingularEnumField(value: &_storage._move3)
+        case 48: try decoder.decodeSingularMessageField(value: &_storage._pvpCombatStats)
+        case 49: try decoder.decodeSingularMessageField(value: &_storage._npcCombatStats)
         default: break
         }
       }
@@ -614,6 +649,15 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if _storage._isLucky != false {
         try visitor.visitSingularBoolField(value: _storage._isLucky, fieldNumber: 46)
       }
+      if _storage._move3 != .moveUnset {
+        try visitor.visitSingularEnumField(value: _storage._move3, fieldNumber: 47)
+      }
+      if let v = _storage._pvpCombatStats {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
+      }
+      if let v = _storage._npcCombatStats {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 49)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -668,6 +712,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._originalOwnerNickname != rhs_storage._originalOwnerNickname {return false}
         if _storage._tradedTimeMs != rhs_storage._tradedTimeMs {return false}
         if _storage._isLucky != rhs_storage._isLucky {return false}
+        if _storage._move3 != rhs_storage._move3 {return false}
+        if _storage._pvpCombatStats != rhs_storage._pvpCombatStats {return false}
+        if _storage._npcCombatStats != rhs_storage._npcCombatStats {return false}
         return true
       }
       if !storagesAreEqual {return false}

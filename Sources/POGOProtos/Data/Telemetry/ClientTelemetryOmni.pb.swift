@@ -373,10 +373,18 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .onboardingTelemetry(newValue)}
   }
 
-  public var serverData: POGOProtos_Networking_Platform_Telemetry_PlatformServerData {
+  public var loginActionTelemetry: POGOProtos_Data_Telemetry_LoginActionTelemetry {
+    get {
+      if case .loginActionTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_LoginActionTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .loginActionTelemetry(newValue)}
+  }
+
+  public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
     get {
       if case .serverData(let v)? = _storage._telemetryData {return v}
-      return POGOProtos_Networking_Platform_Telemetry_PlatformServerData()
+      return POGOProtos_Data_Telemetry_PlatformServerData()
     }
     set {_uniqueStorage()._telemetryData = .serverData(newValue)}
   }
@@ -427,7 +435,8 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     case bootTelemetry(POGOProtos_Data_Telemetry_BootTelemetry)
     case userAttributes(POGOProtos_Data_Player_UserAttributes)
     case onboardingTelemetry(POGOProtos_Data_Telemetry_OnboardingTelemetry)
-    case serverData(POGOProtos_Networking_Platform_Telemetry_PlatformServerData)
+    case loginActionTelemetry(POGOProtos_Data_Telemetry_LoginActionTelemetry)
+    case serverData(POGOProtos_Data_Telemetry_PlatformServerData)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData, rhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData) -> Bool {
@@ -475,6 +484,7 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
       case (.bootTelemetry(let l), .bootTelemetry(let r)): return l == r
       case (.userAttributes(let l), .userAttributes(let r)): return l == r
       case (.onboardingTelemetry(let l), .onboardingTelemetry(let r)): return l == r
+      case (.loginActionTelemetry(let l), .loginActionTelemetry(let r)): return l == r
       case (.serverData(let l), .serverData(let r)): return l == r
       default: return false
       }
@@ -537,6 +547,7 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     41: .standard(proto: "boot_telemetry"),
     42: .standard(proto: "user_attributes"),
     43: .standard(proto: "onboarding_telemetry"),
+    44: .standard(proto: "login_action_telemetry"),
     1001: .standard(proto: "server_data"),
   ]
 
@@ -908,8 +919,16 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .onboardingTelemetry(v)}
+        case 44:
+          var v: POGOProtos_Data_Telemetry_LoginActionTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .loginActionTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .loginActionTelemetry(v)}
         case 1001:
-          var v: POGOProtos_Networking_Platform_Telemetry_PlatformServerData?
+          var v: POGOProtos_Data_Telemetry_PlatformServerData?
           if let current = _storage._telemetryData {
             try decoder.handleConflictingOneOf()
             if case .serverData(let m) = current {v = m}
@@ -1011,6 +1030,8 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         try visitor.visitSingularMessageField(value: v, fieldNumber: 42)
       case .onboardingTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 43)
+      case .loginActionTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 44)
       case .serverData(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
       case nil: break

@@ -69,12 +69,12 @@ public struct POGOProtos_Data_Trading_TradingPokemon {
     set {_uniqueStorage()._friendLevelCap = newValue}
   }
 
-  public var move1: Int32 {
+  public var move1: POGOProtos_Enums_PokemonMove {
     get {return _storage._move1}
     set {_uniqueStorage()._move1 = newValue}
   }
 
-  public var move2: Int32 {
+  public var move2: POGOProtos_Enums_PokemonMove {
     get {return _storage._move2}
     set {_uniqueStorage()._move2 = newValue}
   }
@@ -136,6 +136,11 @@ public struct POGOProtos_Data_Trading_TradingPokemon {
     set {_uniqueStorage()._favorite = newValue}
   }
 
+  public var move3: POGOProtos_Enums_PokemonMove {
+    get {return _storage._move3}
+    set {_uniqueStorage()._move3 = newValue}
+  }
+
   public var creationTimeMs: Int64 {
     get {return _storage._creationTimeMs}
     set {_uniqueStorage()._creationTimeMs = newValue}
@@ -175,6 +180,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
     18: .standard(proto: "individual_stamina"),
     19: .same(proto: "nickname"),
     20: .same(proto: "favorite"),
+    21: .same(proto: "move3"),
     22: .standard(proto: "creation_time_ms"),
   ]
 
@@ -188,8 +194,8 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
     var _adjustedStaminaMin: Int32 = 0
     var _adjustedStaminaMax: Int32 = 0
     var _friendLevelCap: Bool = false
-    var _move1: Int32 = 0
-    var _move2: Int32 = 0
+    var _move1: POGOProtos_Enums_PokemonMove = .moveUnset
+    var _move2: POGOProtos_Enums_PokemonMove = .moveUnset
     var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
     var _capturedS2CellID: Int64 = 0
     var _tradedPokemon: POGOProtos_Data_PokemonData? = nil
@@ -199,6 +205,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
     var _individualStamina: Int32 = 0
     var _nickname: String = String()
     var _favorite: Bool = false
+    var _move3: POGOProtos_Enums_PokemonMove = .moveUnset
     var _creationTimeMs: Int64 = 0
 
     static let defaultInstance = _StorageClass()
@@ -226,6 +233,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
       _individualStamina = source._individualStamina
       _nickname = source._nickname
       _favorite = source._favorite
+      _move3 = source._move3
       _creationTimeMs = source._creationTimeMs
     }
   }
@@ -251,8 +259,8 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
         case 7: try decoder.decodeSingularInt32Field(value: &_storage._adjustedStaminaMin)
         case 8: try decoder.decodeSingularInt32Field(value: &_storage._adjustedStaminaMax)
         case 9: try decoder.decodeSingularBoolField(value: &_storage._friendLevelCap)
-        case 10: try decoder.decodeSingularInt32Field(value: &_storage._move1)
-        case 11: try decoder.decodeSingularInt32Field(value: &_storage._move2)
+        case 10: try decoder.decodeSingularEnumField(value: &_storage._move1)
+        case 11: try decoder.decodeSingularEnumField(value: &_storage._move2)
         case 12: try decoder.decodeSingularMessageField(value: &_storage._pokemonDisplay)
         case 13: try decoder.decodeSingularInt64Field(value: &_storage._capturedS2CellID)
         case 14: try decoder.decodeSingularMessageField(value: &_storage._tradedPokemon)
@@ -262,6 +270,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
         case 18: try decoder.decodeSingularInt32Field(value: &_storage._individualStamina)
         case 19: try decoder.decodeSingularStringField(value: &_storage._nickname)
         case 20: try decoder.decodeSingularBoolField(value: &_storage._favorite)
+        case 21: try decoder.decodeSingularEnumField(value: &_storage._move3)
         case 22: try decoder.decodeSingularInt64Field(value: &_storage._creationTimeMs)
         default: break
         }
@@ -298,11 +307,11 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
       if _storage._friendLevelCap != false {
         try visitor.visitSingularBoolField(value: _storage._friendLevelCap, fieldNumber: 9)
       }
-      if _storage._move1 != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._move1, fieldNumber: 10)
+      if _storage._move1 != .moveUnset {
+        try visitor.visitSingularEnumField(value: _storage._move1, fieldNumber: 10)
       }
-      if _storage._move2 != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._move2, fieldNumber: 11)
+      if _storage._move2 != .moveUnset {
+        try visitor.visitSingularEnumField(value: _storage._move2, fieldNumber: 11)
       }
       if let v = _storage._pokemonDisplay {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
@@ -330,6 +339,9 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
       }
       if _storage._favorite != false {
         try visitor.visitSingularBoolField(value: _storage._favorite, fieldNumber: 20)
+      }
+      if _storage._move3 != .moveUnset {
+        try visitor.visitSingularEnumField(value: _storage._move3, fieldNumber: 21)
       }
       if _storage._creationTimeMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._creationTimeMs, fieldNumber: 22)
@@ -363,6 +375,7 @@ extension POGOProtos_Data_Trading_TradingPokemon: SwiftProtobuf.Message, SwiftPr
         if _storage._individualStamina != rhs_storage._individualStamina {return false}
         if _storage._nickname != rhs_storage._nickname {return false}
         if _storage._favorite != rhs_storage._favorite {return false}
+        if _storage._move3 != rhs_storage._move3 {return false}
         if _storage._creationTimeMs != rhs_storage._creationTimeMs {return false}
         return true
       }

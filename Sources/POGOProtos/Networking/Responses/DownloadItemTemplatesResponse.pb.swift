@@ -222,8 +222,8 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `questSettings`. Subsequent reads from it will return its default value.
     public mutating func clearQuestSettings() {_uniqueStorage()._questSettings = nil}
 
-    public var avatarCustomization: POGOProtos_Settings_Master_AvatarCustomizationSettings {
-      get {return _storage._avatarCustomization ?? POGOProtos_Settings_Master_AvatarCustomizationSettings()}
+    public var avatarCustomization: POGOProtos_Data_Avatar_AvatarCustomization {
+      get {return _storage._avatarCustomization ?? POGOProtos_Data_Avatar_AvatarCustomization()}
       set {_uniqueStorage()._avatarCustomization = newValue}
     }
     /// Returns true if `avatarCustomization` has been explicitly set.
@@ -330,6 +330,33 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `luckyPokemonSettings`. Subsequent reads from it will return its default value.
     public mutating func clearLuckyPokemonSettings() {_uniqueStorage()._luckyPokemonSettings = nil}
 
+    public var combatSettings: POGOProtos_Settings_Master_CombatSettings {
+      get {return _storage._combatSettings ?? POGOProtos_Settings_Master_CombatSettings()}
+      set {_uniqueStorage()._combatSettings = newValue}
+    }
+    /// Returns true if `combatSettings` has been explicitly set.
+    public var hasCombatSettings: Bool {return _storage._combatSettings != nil}
+    /// Clears the value of `combatSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearCombatSettings() {_uniqueStorage()._combatSettings = nil}
+
+    public var combatLeagueSettings: POGOProtos_Settings_Master_CombatLeagueSettings {
+      get {return _storage._combatLeagueSettings ?? POGOProtos_Settings_Master_CombatLeagueSettings()}
+      set {_uniqueStorage()._combatLeagueSettings = newValue}
+    }
+    /// Returns true if `combatLeagueSettings` has been explicitly set.
+    public var hasCombatLeagueSettings: Bool {return _storage._combatLeagueSettings != nil}
+    /// Clears the value of `combatLeagueSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearCombatLeagueSettings() {_uniqueStorage()._combatLeagueSettings = nil}
+
+    public var combatLeague: POGOProtos_Settings_Master_CombatLeague {
+      get {return _storage._combatLeague ?? POGOProtos_Settings_Master_CombatLeague()}
+      set {_uniqueStorage()._combatLeague = newValue}
+    }
+    /// Returns true if `combatLeague` has been explicitly set.
+    public var hasCombatLeague: Bool {return _storage._combatLeague != nil}
+    /// Clears the value of `combatLeague`. Subsequent reads from it will return its default value.
+    public mutating func clearCombatLeague() {_uniqueStorage()._combatLeague = nil}
+
     public var exRaidSettings: POGOProtos_Settings_Master_ExRaidSettings {
       get {return _storage._exRaidSettings ?? POGOProtos_Settings_Master_ExRaidSettings()}
       set {_uniqueStorage()._exRaidSettings = newValue}
@@ -339,6 +366,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `exRaidSettings`. Subsequent reads from it will return its default value.
     public mutating func clearExRaidSettings() {_uniqueStorage()._exRaidSettings = nil}
 
+    public var combatMove: POGOProtos_Settings_Master_CombatMoveSettings {
+      get {return _storage._combatMove ?? POGOProtos_Settings_Master_CombatMoveSettings()}
+      set {_uniqueStorage()._combatMove = newValue}
+    }
+    /// Returns true if `combatMove` has been explicitly set.
+    public var hasCombatMove: Bool {return _storage._combatMove != nil}
+    /// Clears the value of `combatMove`. Subsequent reads from it will return its default value.
+    public mutating func clearCombatMove() {_uniqueStorage()._combatMove = nil}
+
     public var backgroundModeSettings: POGOProtos_Settings_Master_BackgroundModeSettings {
       get {return _storage._backgroundModeSettings ?? POGOProtos_Settings_Master_BackgroundModeSettings()}
       set {_uniqueStorage()._backgroundModeSettings = newValue}
@@ -347,6 +383,42 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     public var hasBackgroundModeSettings: Bool {return _storage._backgroundModeSettings != nil}
     /// Clears the value of `backgroundModeSettings`. Subsequent reads from it will return its default value.
     public mutating func clearBackgroundModeSettings() {_uniqueStorage()._backgroundModeSettings = nil}
+
+    public var combatStatStageSettings: POGOProtos_Settings_Master_CombatStatStageSettings {
+      get {return _storage._combatStatStageSettings ?? POGOProtos_Settings_Master_CombatStatStageSettings()}
+      set {_uniqueStorage()._combatStatStageSettings = newValue}
+    }
+    /// Returns true if `combatStatStageSettings` has been explicitly set.
+    public var hasCombatStatStageSettings: Bool {return _storage._combatStatStageSettings != nil}
+    /// Clears the value of `combatStatStageSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearCombatStatStageSettings() {_uniqueStorage()._combatStatStageSettings = nil}
+
+    public var combatNpcTrainer: POGOProtos_Settings_Master_CombatNpcTrainer {
+      get {return _storage._combatNpcTrainer ?? POGOProtos_Settings_Master_CombatNpcTrainer()}
+      set {_uniqueStorage()._combatNpcTrainer = newValue}
+    }
+    /// Returns true if `combatNpcTrainer` has been explicitly set.
+    public var hasCombatNpcTrainer: Bool {return _storage._combatNpcTrainer != nil}
+    /// Clears the value of `combatNpcTrainer`. Subsequent reads from it will return its default value.
+    public mutating func clearCombatNpcTrainer() {_uniqueStorage()._combatNpcTrainer = nil}
+
+    public var combatNpcPersonality: POGOProtos_Settings_Master_CombatNpcPersonality {
+      get {return _storage._combatNpcPersonality ?? POGOProtos_Settings_Master_CombatNpcPersonality()}
+      set {_uniqueStorage()._combatNpcPersonality = newValue}
+    }
+    /// Returns true if `combatNpcPersonality` has been explicitly set.
+    public var hasCombatNpcPersonality: Bool {return _storage._combatNpcPersonality != nil}
+    /// Clears the value of `combatNpcPersonality`. Subsequent reads from it will return its default value.
+    public mutating func clearCombatNpcPersonality() {_uniqueStorage()._combatNpcPersonality = nil}
+
+    public var onboardingV2Settings: POGOProtos_Settings_Master_OnboardingV2Settings {
+      get {return _storage._onboardingV2Settings ?? POGOProtos_Settings_Master_OnboardingV2Settings()}
+      set {_uniqueStorage()._onboardingV2Settings = newValue}
+    }
+    /// Returns true if `onboardingV2Settings` has been explicitly set.
+    public var hasOnboardingV2Settings: Bool {return _storage._onboardingV2Settings != nil}
+    /// Clears the value of `onboardingV2Settings`. Subsequent reads from it will return its default value.
+    public mutating func clearOnboardingV2Settings() {_uniqueStorage()._onboardingV2Settings = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -464,8 +536,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     30: .standard(proto: "onboarding_settings"),
     31: .standard(proto: "friendship_milestone_settings"),
     32: .standard(proto: "lucky_pokemon_settings"),
+    33: .standard(proto: "combat_settings"),
+    34: .standard(proto: "combat_league_settings"),
+    35: .standard(proto: "combat_league"),
     36: .standard(proto: "ex_raid_settings"),
+    37: .standard(proto: "combat_move"),
     38: .standard(proto: "background_mode_settings"),
+    39: .standard(proto: "combat_stat_stage_settings"),
+    40: .standard(proto: "combat_npc_trainer"),
+    41: .standard(proto: "combat_npc_personality"),
+    42: .standard(proto: "onboarding_v2_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -486,7 +566,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _pokemonUpgrades: POGOProtos_Settings_Master_PokemonUpgradeSettings? = nil
     var _equippedBadges: POGOProtos_Settings_Master_EquippedBadgeSettings? = nil
     var _questSettings: POGOProtos_Settings_Master_QuestSettings? = nil
-    var _avatarCustomization: POGOProtos_Settings_Master_AvatarCustomizationSettings? = nil
+    var _avatarCustomization: POGOProtos_Data_Avatar_AvatarCustomization? = nil
     var _formSettings: POGOProtos_Settings_Master_FormSettings? = nil
     var _genderSettings: POGOProtos_Settings_Master_GenderSettings? = nil
     var _gymBadgeSettings: POGOProtos_Settings_Master_GymBadgeGmtSettings? = nil
@@ -498,8 +578,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _onboardingSettings: POGOProtos_Settings_Master_OnboardingSettings? = nil
     var _friendshipMilestoneSettings: POGOProtos_Settings_Master_FriendshipLevelMilestoneSettings? = nil
     var _luckyPokemonSettings: POGOProtos_Settings_Master_LuckyPokemonSettings? = nil
+    var _combatSettings: POGOProtos_Settings_Master_CombatSettings? = nil
+    var _combatLeagueSettings: POGOProtos_Settings_Master_CombatLeagueSettings? = nil
+    var _combatLeague: POGOProtos_Settings_Master_CombatLeague? = nil
     var _exRaidSettings: POGOProtos_Settings_Master_ExRaidSettings? = nil
+    var _combatMove: POGOProtos_Settings_Master_CombatMoveSettings? = nil
     var _backgroundModeSettings: POGOProtos_Settings_Master_BackgroundModeSettings? = nil
+    var _combatStatStageSettings: POGOProtos_Settings_Master_CombatStatStageSettings? = nil
+    var _combatNpcTrainer: POGOProtos_Settings_Master_CombatNpcTrainer? = nil
+    var _combatNpcPersonality: POGOProtos_Settings_Master_CombatNpcPersonality? = nil
+    var _onboardingV2Settings: POGOProtos_Settings_Master_OnboardingV2Settings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -535,8 +623,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _onboardingSettings = source._onboardingSettings
       _friendshipMilestoneSettings = source._friendshipMilestoneSettings
       _luckyPokemonSettings = source._luckyPokemonSettings
+      _combatSettings = source._combatSettings
+      _combatLeagueSettings = source._combatLeagueSettings
+      _combatLeague = source._combatLeague
       _exRaidSettings = source._exRaidSettings
+      _combatMove = source._combatMove
       _backgroundModeSettings = source._backgroundModeSettings
+      _combatStatStageSettings = source._combatStatStageSettings
+      _combatNpcTrainer = source._combatNpcTrainer
+      _combatNpcPersonality = source._combatNpcPersonality
+      _onboardingV2Settings = source._onboardingV2Settings
     }
   }
 
@@ -581,8 +677,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 30: try decoder.decodeSingularMessageField(value: &_storage._onboardingSettings)
         case 31: try decoder.decodeSingularMessageField(value: &_storage._friendshipMilestoneSettings)
         case 32: try decoder.decodeSingularMessageField(value: &_storage._luckyPokemonSettings)
+        case 33: try decoder.decodeSingularMessageField(value: &_storage._combatSettings)
+        case 34: try decoder.decodeSingularMessageField(value: &_storage._combatLeagueSettings)
+        case 35: try decoder.decodeSingularMessageField(value: &_storage._combatLeague)
         case 36: try decoder.decodeSingularMessageField(value: &_storage._exRaidSettings)
+        case 37: try decoder.decodeSingularMessageField(value: &_storage._combatMove)
         case 38: try decoder.decodeSingularMessageField(value: &_storage._backgroundModeSettings)
+        case 39: try decoder.decodeSingularMessageField(value: &_storage._combatStatStageSettings)
+        case 40: try decoder.decodeSingularMessageField(value: &_storage._combatNpcTrainer)
+        case 41: try decoder.decodeSingularMessageField(value: &_storage._combatNpcPersonality)
+        case 42: try decoder.decodeSingularMessageField(value: &_storage._onboardingV2Settings)
         default: break
         }
       }
@@ -678,11 +782,35 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._luckyPokemonSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 32)
       }
+      if let v = _storage._combatSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 33)
+      }
+      if let v = _storage._combatLeagueSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 34)
+      }
+      if let v = _storage._combatLeague {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 35)
+      }
       if let v = _storage._exRaidSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 36)
       }
+      if let v = _storage._combatMove {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 37)
+      }
       if let v = _storage._backgroundModeSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 38)
+      }
+      if let v = _storage._combatStatStageSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 39)
+      }
+      if let v = _storage._combatNpcTrainer {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 40)
+      }
+      if let v = _storage._combatNpcPersonality {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
+      }
+      if let v = _storage._onboardingV2Settings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 42)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -722,8 +850,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._onboardingSettings != rhs_storage._onboardingSettings {return false}
         if _storage._friendshipMilestoneSettings != rhs_storage._friendshipMilestoneSettings {return false}
         if _storage._luckyPokemonSettings != rhs_storage._luckyPokemonSettings {return false}
+        if _storage._combatSettings != rhs_storage._combatSettings {return false}
+        if _storage._combatLeagueSettings != rhs_storage._combatLeagueSettings {return false}
+        if _storage._combatLeague != rhs_storage._combatLeague {return false}
         if _storage._exRaidSettings != rhs_storage._exRaidSettings {return false}
+        if _storage._combatMove != rhs_storage._combatMove {return false}
         if _storage._backgroundModeSettings != rhs_storage._backgroundModeSettings {return false}
+        if _storage._combatStatStageSettings != rhs_storage._combatStatStageSettings {return false}
+        if _storage._combatNpcTrainer != rhs_storage._combatNpcTrainer {return false}
+        if _storage._combatNpcPersonality != rhs_storage._combatNpcPersonality {return false}
+        if _storage._onboardingV2Settings != rhs_storage._onboardingV2Settings {return false}
         return true
       }
       if !storagesAreEqual {return false}

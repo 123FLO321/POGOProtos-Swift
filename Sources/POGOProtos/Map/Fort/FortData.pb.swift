@@ -56,10 +56,9 @@ public struct POGOProtos_Map_Fort_FortData {
     set {_uniqueStorage()._guardPokemonID = newValue}
   }
 
-  /// (Gym only) Highest CP Pokemon at the gym.
-  public var guardPokemonCp: Int32 {
-    get {return _storage._guardPokemonCp}
-    set {_uniqueStorage()._guardPokemonCp = newValue}
+  public var guardPokemonLevel: Int32 {
+    get {return _storage._guardPokemonLevel}
+    set {_uniqueStorage()._guardPokemonLevel = newValue}
   }
 
   public var enabled: Bool {
@@ -90,20 +89,19 @@ public struct POGOProtos_Map_Fort_FortData {
     set {_uniqueStorage()._activeFortModifier = newValue}
   }
 
-  /// (Pokestop only)
-  public var lureInfo: POGOProtos_Map_Fort_FortLureInfo {
-    get {return _storage._lureInfo ?? POGOProtos_Map_Fort_FortLureInfo()}
-    set {_uniqueStorage()._lureInfo = newValue}
+  public var activePokemon: POGOProtos_Map_Pokemon_MapPokemon {
+    get {return _storage._activePokemon ?? POGOProtos_Map_Pokemon_MapPokemon()}
+    set {_uniqueStorage()._activePokemon = newValue}
   }
-  /// Returns true if `lureInfo` has been explicitly set.
-  public var hasLureInfo: Bool {return _storage._lureInfo != nil}
-  /// Clears the value of `lureInfo`. Subsequent reads from it will return its default value.
-  public mutating func clearLureInfo() {_uniqueStorage()._lureInfo = nil}
+  /// Returns true if `activePokemon` has been explicitly set.
+  public var hasActivePokemon: Bool {return _storage._activePokemon != nil}
+  /// Clears the value of `activePokemon`. Subsequent reads from it will return its default value.
+  public mutating func clearActivePokemon() {_uniqueStorage()._activePokemon = nil}
 
   /// (Pokestop only) Timestamp when the pokestop can be activated again to get items / xp.
-  public var cooldownCompleteTimestampMs: Int64 {
-    get {return _storage._cooldownCompleteTimestampMs}
-    set {_uniqueStorage()._cooldownCompleteTimestampMs = newValue}
+  public var cooldownCompleteMs: Int64 {
+    get {return _storage._cooldownCompleteMs}
+    set {_uniqueStorage()._cooldownCompleteMs = newValue}
   }
 
   public var sponsor: POGOProtos_Map_Fort_FortSponsor {
@@ -218,14 +216,14 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     4: .same(proto: "longitude"),
     5: .standard(proto: "owned_by_team"),
     6: .standard(proto: "guard_pokemon_id"),
-    7: .standard(proto: "guard_pokemon_cp"),
+    7: .standard(proto: "guard_pokemon_level"),
     8: .same(proto: "enabled"),
     9: .same(proto: "type"),
     10: .standard(proto: "gym_points"),
     11: .standard(proto: "is_in_battle"),
     12: .standard(proto: "active_fort_modifier"),
-    13: .standard(proto: "lure_info"),
-    14: .standard(proto: "cooldown_complete_timestamp_ms"),
+    13: .standard(proto: "active_pokemon"),
+    14: .standard(proto: "cooldown_complete_ms"),
     15: .same(proto: "sponsor"),
     16: .standard(proto: "rendering_type"),
     17: .standard(proto: "deploy_lockout_end_ms"),
@@ -251,14 +249,14 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _longitude: Double = 0
     var _ownedByTeam: POGOProtos_Enums_TeamColor = .neutral
     var _guardPokemonID: POGOProtos_Enums_PokemonId = .missingno
-    var _guardPokemonCp: Int32 = 0
+    var _guardPokemonLevel: Int32 = 0
     var _enabled: Bool = false
     var _type: POGOProtos_Map_Fort_FortType = .gym
     var _gymPoints: Int64 = 0
     var _isInBattle: Bool = false
     var _activeFortModifier: [POGOProtos_Inventory_Item_ItemId] = []
-    var _lureInfo: POGOProtos_Map_Fort_FortLureInfo? = nil
-    var _cooldownCompleteTimestampMs: Int64 = 0
+    var _activePokemon: POGOProtos_Map_Pokemon_MapPokemon? = nil
+    var _cooldownCompleteMs: Int64 = 0
     var _sponsor: POGOProtos_Map_Fort_FortSponsor = .unsetSponsor
     var _renderingType: POGOProtos_Map_Fort_FortRenderingType = .default
     var _deployLockoutEndMs: Int64 = 0
@@ -287,14 +285,14 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       _longitude = source._longitude
       _ownedByTeam = source._ownedByTeam
       _guardPokemonID = source._guardPokemonID
-      _guardPokemonCp = source._guardPokemonCp
+      _guardPokemonLevel = source._guardPokemonLevel
       _enabled = source._enabled
       _type = source._type
       _gymPoints = source._gymPoints
       _isInBattle = source._isInBattle
       _activeFortModifier = source._activeFortModifier
-      _lureInfo = source._lureInfo
-      _cooldownCompleteTimestampMs = source._cooldownCompleteTimestampMs
+      _activePokemon = source._activePokemon
+      _cooldownCompleteMs = source._cooldownCompleteMs
       _sponsor = source._sponsor
       _renderingType = source._renderingType
       _deployLockoutEndMs = source._deployLockoutEndMs
@@ -332,14 +330,14 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
         case 4: try decoder.decodeSingularDoubleField(value: &_storage._longitude)
         case 5: try decoder.decodeSingularEnumField(value: &_storage._ownedByTeam)
         case 6: try decoder.decodeSingularEnumField(value: &_storage._guardPokemonID)
-        case 7: try decoder.decodeSingularInt32Field(value: &_storage._guardPokemonCp)
+        case 7: try decoder.decodeSingularInt32Field(value: &_storage._guardPokemonLevel)
         case 8: try decoder.decodeSingularBoolField(value: &_storage._enabled)
         case 9: try decoder.decodeSingularEnumField(value: &_storage._type)
         case 10: try decoder.decodeSingularInt64Field(value: &_storage._gymPoints)
         case 11: try decoder.decodeSingularBoolField(value: &_storage._isInBattle)
         case 12: try decoder.decodeRepeatedEnumField(value: &_storage._activeFortModifier)
-        case 13: try decoder.decodeSingularMessageField(value: &_storage._lureInfo)
-        case 14: try decoder.decodeSingularInt64Field(value: &_storage._cooldownCompleteTimestampMs)
+        case 13: try decoder.decodeSingularMessageField(value: &_storage._activePokemon)
+        case 14: try decoder.decodeSingularInt64Field(value: &_storage._cooldownCompleteMs)
         case 15: try decoder.decodeSingularEnumField(value: &_storage._sponsor)
         case 16: try decoder.decodeSingularEnumField(value: &_storage._renderingType)
         case 17: try decoder.decodeSingularInt64Field(value: &_storage._deployLockoutEndMs)
@@ -382,8 +380,8 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       if _storage._guardPokemonID != .missingno {
         try visitor.visitSingularEnumField(value: _storage._guardPokemonID, fieldNumber: 6)
       }
-      if _storage._guardPokemonCp != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._guardPokemonCp, fieldNumber: 7)
+      if _storage._guardPokemonLevel != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._guardPokemonLevel, fieldNumber: 7)
       }
       if _storage._enabled != false {
         try visitor.visitSingularBoolField(value: _storage._enabled, fieldNumber: 8)
@@ -400,11 +398,11 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       if !_storage._activeFortModifier.isEmpty {
         try visitor.visitPackedEnumField(value: _storage._activeFortModifier, fieldNumber: 12)
       }
-      if let v = _storage._lureInfo {
+      if let v = _storage._activePokemon {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
       }
-      if _storage._cooldownCompleteTimestampMs != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._cooldownCompleteTimestampMs, fieldNumber: 14)
+      if _storage._cooldownCompleteMs != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._cooldownCompleteMs, fieldNumber: 14)
       }
       if _storage._sponsor != .unsetSponsor {
         try visitor.visitSingularEnumField(value: _storage._sponsor, fieldNumber: 15)
@@ -469,14 +467,14 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
         if _storage._longitude != rhs_storage._longitude {return false}
         if _storage._ownedByTeam != rhs_storage._ownedByTeam {return false}
         if _storage._guardPokemonID != rhs_storage._guardPokemonID {return false}
-        if _storage._guardPokemonCp != rhs_storage._guardPokemonCp {return false}
+        if _storage._guardPokemonLevel != rhs_storage._guardPokemonLevel {return false}
         if _storage._enabled != rhs_storage._enabled {return false}
         if _storage._type != rhs_storage._type {return false}
         if _storage._gymPoints != rhs_storage._gymPoints {return false}
         if _storage._isInBattle != rhs_storage._isInBattle {return false}
         if _storage._activeFortModifier != rhs_storage._activeFortModifier {return false}
-        if _storage._lureInfo != rhs_storage._lureInfo {return false}
-        if _storage._cooldownCompleteTimestampMs != rhs_storage._cooldownCompleteTimestampMs {return false}
+        if _storage._activePokemon != rhs_storage._activePokemon {return false}
+        if _storage._cooldownCompleteMs != rhs_storage._cooldownCompleteMs {return false}
         if _storage._sponsor != rhs_storage._sponsor {return false}
         if _storage._renderingType != rhs_storage._renderingType {return false}
         if _storage._deployLockoutEndMs != rhs_storage._deployLockoutEndMs {return false}

@@ -29,23 +29,14 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
     set {_uniqueStorage()._result = newValue}
   }
 
-  public var upgradedPokemon: POGOProtos_Data_PokemonData {
-    get {return _storage._upgradedPokemon ?? POGOProtos_Data_PokemonData()}
-    set {_uniqueStorage()._upgradedPokemon = newValue}
+  public var updatedPokemon: POGOProtos_Data_PokemonData {
+    get {return _storage._updatedPokemon ?? POGOProtos_Data_PokemonData()}
+    set {_uniqueStorage()._updatedPokemon = newValue}
   }
-  /// Returns true if `upgradedPokemon` has been explicitly set.
-  public var hasUpgradedPokemon: Bool {return _storage._upgradedPokemon != nil}
-  /// Clears the value of `upgradedPokemon`. Subsequent reads from it will return its default value.
-  public mutating func clearUpgradedPokemon() {_uniqueStorage()._upgradedPokemon = nil}
-
-  public var nextUpgradedPokemon: POGOProtos_Data_PokemonData {
-    get {return _storage._nextUpgradedPokemon ?? POGOProtos_Data_PokemonData()}
-    set {_uniqueStorage()._nextUpgradedPokemon = newValue}
-  }
-  /// Returns true if `nextUpgradedPokemon` has been explicitly set.
-  public var hasNextUpgradedPokemon: Bool {return _storage._nextUpgradedPokemon != nil}
-  /// Clears the value of `nextUpgradedPokemon`. Subsequent reads from it will return its default value.
-  public mutating func clearNextUpgradedPokemon() {_uniqueStorage()._nextUpgradedPokemon = nil}
+  /// Returns true if `updatedPokemon` has been explicitly set.
+  public var hasUpdatedPokemon: Bool {return _storage._updatedPokemon != nil}
+  /// Clears the value of `updatedPokemon`. Subsequent reads from it will return its default value.
+  public mutating func clearUpdatedPokemon() {_uniqueStorage()._updatedPokemon = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -59,6 +50,7 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
     case wrongItemType // = 5
     case itemNotInInventory // = 6
     case invalidPokemon // = 7
+    case moveLocked // = 8
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -75,6 +67,7 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
       case 5: self = .wrongItemType
       case 6: self = .itemNotInInventory
       case 7: self = .invalidPokemon
+      case 8: self = .moveLocked
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -89,6 +82,7 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
       case .wrongItemType: return 5
       case .itemNotInInventory: return 6
       case .invalidPokemon: return 7
+      case .moveLocked: return 8
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -113,6 +107,7 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse.Result: Case
     .wrongItemType,
     .itemNotInInventory,
     .invalidPokemon,
+    .moveLocked,
   ]
 }
 
@@ -126,14 +121,12 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse: SwiftProtob
   public static let protoMessageName: String = _protobuf_package + ".UseItemMoveRerollResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
-    2: .standard(proto: "upgraded_pokemon"),
-    3: .standard(proto: "next_upgraded_pokemon"),
+    2: .standard(proto: "updated_pokemon"),
   ]
 
   fileprivate class _StorageClass {
     var _result: POGOProtos_Networking_Responses_UseItemMoveRerollResponse.Result = .unset
-    var _upgradedPokemon: POGOProtos_Data_PokemonData? = nil
-    var _nextUpgradedPokemon: POGOProtos_Data_PokemonData? = nil
+    var _updatedPokemon: POGOProtos_Data_PokemonData? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -141,8 +134,7 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse: SwiftProtob
 
     init(copying source: _StorageClass) {
       _result = source._result
-      _upgradedPokemon = source._upgradedPokemon
-      _nextUpgradedPokemon = source._nextUpgradedPokemon
+      _updatedPokemon = source._updatedPokemon
     }
   }
 
@@ -159,8 +151,7 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse: SwiftProtob
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._result)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._upgradedPokemon)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._nextUpgradedPokemon)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._updatedPokemon)
         default: break
         }
       }
@@ -172,11 +163,8 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse: SwiftProtob
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
       }
-      if let v = _storage._upgradedPokemon {
+      if let v = _storage._updatedPokemon {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-      if let v = _storage._nextUpgradedPokemon {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -188,8 +176,7 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse: SwiftProtob
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._result != rhs_storage._result {return false}
-        if _storage._upgradedPokemon != rhs_storage._upgradedPokemon {return false}
-        if _storage._nextUpgradedPokemon != rhs_storage._nextUpgradedPokemon {return false}
+        if _storage._updatedPokemon != rhs_storage._updatedPokemon {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -209,5 +196,6 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse.Result: Swif
     5: .same(proto: "WRONG_ITEM_TYPE"),
     6: .same(proto: "ITEM_NOT_IN_INVENTORY"),
     7: .same(proto: "INVALID_POKEMON"),
+    8: .same(proto: "MOVE_LOCKED"),
   ]
 }
