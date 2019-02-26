@@ -70,7 +70,7 @@ public enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
   /// Implemented
   case updateFacebookStatus // = 10015
 
-  /// ???
+  /// Implemented
   case registerPushNotificationSocialAction // = 10101
 
   /// ???
@@ -79,7 +79,7 @@ public enum POGOProtos_Enums_SocialAction: SwiftProtobuf.Enum {
   /// Implemented
   case updateNotification // = 10103
 
-  /// ???
+  /// Implemented
   case optOutPushNotificationCategorySocialAction // = 10104
 
   /// Implemented

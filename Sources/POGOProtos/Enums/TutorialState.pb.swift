@@ -44,6 +44,11 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case v2EggGiven // = 20
   case v2StartEggTutorial // = 21
   case v2CompletedEggTutorial // = 22
+  case arPhotoTutorial // = 23
+  case starterPokemonCaptured // = 24
+  case arPhotoFirstTimeDialog // = 25
+  case arClassicPhotoTutorial // = 26
+  case arPlusPhotoTutorial // = 27
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -75,6 +80,11 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case 20: self = .v2EggGiven
     case 21: self = .v2StartEggTutorial
     case 22: self = .v2CompletedEggTutorial
+    case 23: self = .arPhotoTutorial
+    case 24: self = .starterPokemonCaptured
+    case 25: self = .arPhotoFirstTimeDialog
+    case 26: self = .arClassicPhotoTutorial
+    case 27: self = .arPlusPhotoTutorial
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -104,6 +114,11 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .v2EggGiven: return 20
     case .v2StartEggTutorial: return 21
     case .v2CompletedEggTutorial: return 22
+    case .arPhotoTutorial: return 23
+    case .starterPokemonCaptured: return 24
+    case .arPhotoFirstTimeDialog: return 25
+    case .arClassicPhotoTutorial: return 26
+    case .arPlusPhotoTutorial: return 27
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -138,6 +153,11 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
     .v2EggGiven,
     .v2StartEggTutorial,
     .v2CompletedEggTutorial,
+    .arPhotoTutorial,
+    .starterPokemonCaptured,
+    .arPhotoFirstTimeDialog,
+    .arClassicPhotoTutorial,
+    .arPlusPhotoTutorial,
   ]
 }
 
@@ -170,5 +190,10 @@ extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
     20: .same(proto: "V2_EGG_GIVEN"),
     21: .same(proto: "V2_START_EGG_TUTORIAL"),
     22: .same(proto: "V2_COMPLETED_EGG_TUTORIAL"),
+    23: .same(proto: "AR_PHOTO_TUTORIAL"),
+    24: .same(proto: "STARTER_POKEMON_CAPTURED"),
+    25: .same(proto: "AR_PHOTO_FIRST_TIME_DIALOG"),
+    26: .same(proto: "AR_CLASSIC_PHOTO_TUTORIAL"),
+    27: .same(proto: "AR_PLUS_PHOTO_TUTORIAL"),
   ]
 }

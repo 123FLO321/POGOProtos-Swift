@@ -3,6 +3,7 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 rm -rf $DIR/../Sources/POGOProtos
 cd $DIR/../../POGOProtos/src/
+git pull
 FILES=$(find . -type f \( -iname "*.proto" \))
 protoc --swift_out=$DIR/../Sources --swift_opt=Visibility=Public $FILES
 mv $DIR/../Sources/POGOProtos/Data/Player/PlayerBadge.pb.swift $DIR/../Sources/POGOProtos/Data/Player/PlayerPlayerBadge.pb.swift
@@ -18,6 +19,9 @@ mv $DIR/../Sources/POGOProtos/Networking/Responses/RedeemGoogleReceiptResponse.p
 mv $DIR/../Sources/POGOProtos/Networking/Responses/SetInGameCurrencyExchangeRateResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/ResponsesSetInGameCurrencyExchangeRateResponse.pb.swift
 mv $DIR/../Sources/POGOProtos/Networking/Responses/UpdateFitnessMetricsResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/ResponsesUpdateFitnessMetricsResponse.pb.swift
 mv $DIR/../Sources/POGOProtos/Networking/Responses/Social/GetInboxResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/Social/SocialGetInboxResponse.pb.swift
+mv $DIR/../Sources/POGOProtos/Networking/Requests/Social/RegisterPushNotificationMessage.pb.swift $DIR/../Sources/POGOProtos/Networking/Requests/Social/SocialRegisterPushNotificationMessage.pb.swift
+mv $DIR/../Sources/POGOProtos/Networking/Responses/Social/RegisterPushNotificationResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/Social/SocialRegisterPushNotificationResponse.pb.swift
+
 cd $DIR/../
 swift build
 echo Success!

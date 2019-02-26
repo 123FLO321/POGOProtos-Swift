@@ -275,6 +275,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
   case permissionsFlow // = 39
   case deviceServiceToggle // = 40
   case bootTelemetry // = 41
+  case arPhotoSessionTelemetry // = 42
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -325,6 +326,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case 39: self = .permissionsFlow
     case 40: self = .deviceServiceToggle
     case 41: self = .bootTelemetry
+    case 42: self = .arPhotoSessionTelemetry
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -373,6 +375,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case .permissionsFlow: return 39
     case .deviceServiceToggle: return 40
     case .bootTelemetry: return 41
+    case .arPhotoSessionTelemetry: return 42
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -426,6 +429,7 @@ extension POGOProtos_Enums_ClientTelemetryIds: CaseIterable {
     .permissionsFlow,
     .deviceServiceToggle,
     .bootTelemetry,
+    .arPhotoSessionTelemetry,
   ]
 }
 
@@ -1382,6 +1386,7 @@ extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding
     39: .same(proto: "PERMISSIONS_FLOW"),
     40: .same(proto: "DEVICE_SERVICE_TOGGLE"),
     41: .same(proto: "BOOT_TELEMETRY"),
+    42: .same(proto: "AR_PHOTO_SESSION_TELEMETRY"),
   ]
 }
 

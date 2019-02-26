@@ -47,6 +47,16 @@ public struct POGOProtos_Data_Fitness_FitnessStats {
   /// Clears the value of `pending`. Subsequent reads from it will return its default value.
   public mutating func clearPending() {_uniqueStorage()._pending = nil}
 
+  public var playerInitialWalkKm: Double {
+    get {return _storage._playerInitialWalkKm}
+    set {_uniqueStorage()._playerInitialWalkKm = newValue}
+  }
+
+  public var playerTotalWalkKm: Double {
+    get {return _storage._playerTotalWalkKm}
+    set {_uniqueStorage()._playerTotalWalkKm = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -64,12 +74,16 @@ extension POGOProtos_Data_Fitness_FitnessStats: SwiftProtobuf.Message, SwiftProt
     1: .standard(proto: "last_accumulated_timestamp_ms"),
     2: .same(proto: "accumulated"),
     3: .same(proto: "pending"),
+    4: .standard(proto: "player_initial_walk_km"),
+    5: .standard(proto: "player_total_walk_km"),
   ]
 
   fileprivate class _StorageClass {
     var _lastAccumulatedTimestampMs: Int64 = 0
     var _accumulated: POGOProtos_Data_Fitness_FitnessMetrics? = nil
     var _pending: POGOProtos_Data_Fitness_FitnessMetrics? = nil
+    var _playerInitialWalkKm: Double = 0
+    var _playerTotalWalkKm: Double = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -79,6 +93,8 @@ extension POGOProtos_Data_Fitness_FitnessStats: SwiftProtobuf.Message, SwiftProt
       _lastAccumulatedTimestampMs = source._lastAccumulatedTimestampMs
       _accumulated = source._accumulated
       _pending = source._pending
+      _playerInitialWalkKm = source._playerInitialWalkKm
+      _playerTotalWalkKm = source._playerTotalWalkKm
     }
   }
 
@@ -97,6 +113,8 @@ extension POGOProtos_Data_Fitness_FitnessStats: SwiftProtobuf.Message, SwiftProt
         case 1: try decoder.decodeSingularInt64Field(value: &_storage._lastAccumulatedTimestampMs)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._accumulated)
         case 3: try decoder.decodeSingularMessageField(value: &_storage._pending)
+        case 4: try decoder.decodeSingularDoubleField(value: &_storage._playerInitialWalkKm)
+        case 5: try decoder.decodeSingularDoubleField(value: &_storage._playerTotalWalkKm)
         default: break
         }
       }
@@ -114,6 +132,12 @@ extension POGOProtos_Data_Fitness_FitnessStats: SwiftProtobuf.Message, SwiftProt
       if let v = _storage._pending {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
       }
+      if _storage._playerInitialWalkKm != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._playerInitialWalkKm, fieldNumber: 4)
+      }
+      if _storage._playerTotalWalkKm != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._playerTotalWalkKm, fieldNumber: 5)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -126,6 +150,8 @@ extension POGOProtos_Data_Fitness_FitnessStats: SwiftProtobuf.Message, SwiftProt
         if _storage._lastAccumulatedTimestampMs != rhs_storage._lastAccumulatedTimestampMs {return false}
         if _storage._accumulated != rhs_storage._accumulated {return false}
         if _storage._pending != rhs_storage._pending {return false}
+        if _storage._playerInitialWalkKm != rhs_storage._playerInitialWalkKm {return false}
+        if _storage._playerTotalWalkKm != rhs_storage._playerTotalWalkKm {return false}
         return true
       }
       if !storagesAreEqual {return false}

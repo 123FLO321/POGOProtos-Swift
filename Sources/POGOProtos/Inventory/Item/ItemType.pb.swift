@@ -40,6 +40,7 @@ public enum POGOProtos_Inventory_Item_ItemType: SwiftProtobuf.Enum {
   case raidTicket // = 16
   case stardustBoost // = 17
   case friendGiftBox // = 18
+  case teamChange // = 19
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -67,6 +68,7 @@ public enum POGOProtos_Inventory_Item_ItemType: SwiftProtobuf.Enum {
     case 16: self = .raidTicket
     case 17: self = .stardustBoost
     case 18: self = .friendGiftBox
+    case 19: self = .teamChange
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -92,6 +94,7 @@ public enum POGOProtos_Inventory_Item_ItemType: SwiftProtobuf.Enum {
     case .raidTicket: return 16
     case .stardustBoost: return 17
     case .friendGiftBox: return 18
+    case .teamChange: return 19
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -122,6 +125,7 @@ extension POGOProtos_Inventory_Item_ItemType: CaseIterable {
     .raidTicket,
     .stardustBoost,
     .friendGiftBox,
+    .teamChange,
   ]
 }
 
@@ -150,5 +154,6 @@ extension POGOProtos_Inventory_Item_ItemType: SwiftProtobuf._ProtoNameProviding 
     16: .same(proto: "ITEM_TYPE_RAID_TICKET"),
     17: .same(proto: "ITEM_TYPE_STARDUST_BOOST"),
     18: .same(proto: "ITEM_TYPE_FRIEND_GIFT_BOX"),
+    19: .same(proto: "ITEM_TYPE_TEAM_CHANGE"),
   ]
 }

@@ -84,6 +84,8 @@ public struct POGOProtos_Data_Fitness_FitnessSample {
     case sourceUnset // = 0
     case healthkit // = 1
     case googleFit // = 2
+    case appleWatch // = 3
+    case gps // = 4
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -95,6 +97,8 @@ public struct POGOProtos_Data_Fitness_FitnessSample {
       case 0: self = .sourceUnset
       case 1: self = .healthkit
       case 2: self = .googleFit
+      case 3: self = .appleWatch
+      case 4: self = .gps
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -104,6 +108,8 @@ public struct POGOProtos_Data_Fitness_FitnessSample {
       case .sourceUnset: return 0
       case .healthkit: return 1
       case .googleFit: return 2
+      case .appleWatch: return 3
+      case .gps: return 4
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -134,6 +140,8 @@ extension POGOProtos_Data_Fitness_FitnessSample.FitnessSourceType: CaseIterable 
     .sourceUnset,
     .healthkit,
     .googleFit,
+    .appleWatch,
+    .gps,
   ]
 }
 
@@ -213,5 +221,7 @@ extension POGOProtos_Data_Fitness_FitnessSample.FitnessSourceType: SwiftProtobuf
     0: .same(proto: "SOURCE_UNSET"),
     1: .same(proto: "HEALTHKIT"),
     2: .same(proto: "GOOGLE_FIT"),
+    3: .same(proto: "APPLE_WATCH"),
+    4: .same(proto: "GPS"),
   ]
 }

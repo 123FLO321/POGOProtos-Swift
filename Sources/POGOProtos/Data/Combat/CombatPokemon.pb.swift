@@ -123,6 +123,11 @@ public struct POGOProtos_Data_Combat_CombatPokemon {
     set {_uniqueStorage()._nickname = newValue}
   }
 
+  public var pokeball: POGOProtos_Inventory_Item_ItemId {
+    get {return _storage._pokeball}
+    set {_uniqueStorage()._pokeball = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -156,6 +161,7 @@ extension POGOProtos_Data_Combat_CombatPokemon: SwiftProtobuf.Message, SwiftProt
     17: .standard(proto: "battles_won"),
     18: .standard(proto: "battles_lost"),
     19: .same(proto: "nickname"),
+    20: .same(proto: "pokeball"),
   ]
 
   fileprivate class _StorageClass {
@@ -178,6 +184,7 @@ extension POGOProtos_Data_Combat_CombatPokemon: SwiftProtobuf.Message, SwiftProt
     var _battlesWon: Int32 = 0
     var _battlesLost: Int32 = 0
     var _nickname: String = String()
+    var _pokeball: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
     static let defaultInstance = _StorageClass()
 
@@ -203,6 +210,7 @@ extension POGOProtos_Data_Combat_CombatPokemon: SwiftProtobuf.Message, SwiftProt
       _battlesWon = source._battlesWon
       _battlesLost = source._battlesLost
       _nickname = source._nickname
+      _pokeball = source._pokeball
     }
   }
 
@@ -237,6 +245,7 @@ extension POGOProtos_Data_Combat_CombatPokemon: SwiftProtobuf.Message, SwiftProt
         case 17: try decoder.decodeSingularInt32Field(value: &_storage._battlesWon)
         case 18: try decoder.decodeSingularInt32Field(value: &_storage._battlesLost)
         case 19: try decoder.decodeSingularStringField(value: &_storage._nickname)
+        case 20: try decoder.decodeSingularEnumField(value: &_storage._pokeball)
         default: break
         }
       }
@@ -302,6 +311,9 @@ extension POGOProtos_Data_Combat_CombatPokemon: SwiftProtobuf.Message, SwiftProt
       if !_storage._nickname.isEmpty {
         try visitor.visitSingularStringField(value: _storage._nickname, fieldNumber: 19)
       }
+      if _storage._pokeball != .itemUnknown {
+        try visitor.visitSingularEnumField(value: _storage._pokeball, fieldNumber: 20)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -330,6 +342,7 @@ extension POGOProtos_Data_Combat_CombatPokemon: SwiftProtobuf.Message, SwiftProt
         if _storage._battlesWon != rhs_storage._battlesWon {return false}
         if _storage._battlesLost != rhs_storage._battlesLost {return false}
         if _storage._nickname != rhs_storage._nickname {return false}
+        if _storage._pokeball != rhs_storage._pokeball {return false}
         return true
       }
       if !storagesAreEqual {return false}

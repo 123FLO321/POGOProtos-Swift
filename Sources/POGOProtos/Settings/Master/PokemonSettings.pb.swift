@@ -255,6 +255,11 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._combatPlayerPokemonPositionOffset = newValue}
   }
 
+  public var photobombAnimationOverrides: [POGOProtos_Settings_Master_Pokemon_AnimationOverride] {
+    get {return _storage._photobombAnimationOverrides}
+    set {_uniqueStorage()._photobombAnimationOverrides = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct PokemonThirdMoveAttributes {
@@ -326,6 +331,7 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     42: .standard(proto: "combat_opponent_focus_camera_angle"),
     43: .standard(proto: "combat_player_focus_camera_angle"),
     44: .standard(proto: "combat_player_pokemon_position_offset"),
+    45: .standard(proto: "photobomb_animation_overrides"),
   ]
 
   fileprivate class _StorageClass {
@@ -372,6 +378,7 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     var _combatOpponentFocusCameraAngle: [Float] = []
     var _combatPlayerFocusCameraAngle: [Float] = []
     var _combatPlayerPokemonPositionOffset: [Float] = []
+    var _photobombAnimationOverrides: [POGOProtos_Settings_Master_Pokemon_AnimationOverride] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -421,6 +428,7 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       _combatOpponentFocusCameraAngle = source._combatOpponentFocusCameraAngle
       _combatPlayerFocusCameraAngle = source._combatPlayerFocusCameraAngle
       _combatPlayerPokemonPositionOffset = source._combatPlayerPokemonPositionOffset
+      _photobombAnimationOverrides = source._photobombAnimationOverrides
     }
   }
 
@@ -479,6 +487,7 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         case 42: try decoder.decodeRepeatedFloatField(value: &_storage._combatOpponentFocusCameraAngle)
         case 43: try decoder.decodeRepeatedFloatField(value: &_storage._combatPlayerFocusCameraAngle)
         case 44: try decoder.decodeRepeatedFloatField(value: &_storage._combatPlayerPokemonPositionOffset)
+        case 45: try decoder.decodeRepeatedMessageField(value: &_storage._photobombAnimationOverrides)
         default: break
         }
       }
@@ -616,6 +625,9 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       if !_storage._combatPlayerPokemonPositionOffset.isEmpty {
         try visitor.visitPackedFloatField(value: _storage._combatPlayerPokemonPositionOffset, fieldNumber: 44)
       }
+      if !_storage._photobombAnimationOverrides.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._photobombAnimationOverrides, fieldNumber: 45)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -668,6 +680,7 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         if _storage._combatOpponentFocusCameraAngle != rhs_storage._combatOpponentFocusCameraAngle {return false}
         if _storage._combatPlayerFocusCameraAngle != rhs_storage._combatPlayerFocusCameraAngle {return false}
         if _storage._combatPlayerPokemonPositionOffset != rhs_storage._combatPlayerPokemonPositionOffset {return false}
+        if _storage._photobombAnimationOverrides != rhs_storage._photobombAnimationOverrides {return false}
         return true
       }
       if !storagesAreEqual {return false}

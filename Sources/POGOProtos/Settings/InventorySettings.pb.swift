@@ -34,6 +34,10 @@ public struct POGOProtos_Settings_InventorySettings {
 
   public var baseEggs: Int32 = 0
 
+  public var maxTeamChanges: Int32 = 0
+
+  public var teamChangeItemResetPeriodInDays: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +55,8 @@ extension POGOProtos_Settings_InventorySettings: SwiftProtobuf.Message, SwiftPro
     3: .standard(proto: "base_pokemon"),
     4: .standard(proto: "base_bag_items"),
     5: .standard(proto: "base_eggs"),
+    6: .standard(proto: "max_team_changes"),
+    7: .standard(proto: "team_change_item_reset_period_in_days"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -61,6 +67,8 @@ extension POGOProtos_Settings_InventorySettings: SwiftProtobuf.Message, SwiftPro
       case 3: try decoder.decodeSingularInt32Field(value: &self.basePokemon)
       case 4: try decoder.decodeSingularInt32Field(value: &self.baseBagItems)
       case 5: try decoder.decodeSingularInt32Field(value: &self.baseEggs)
+      case 6: try decoder.decodeSingularInt32Field(value: &self.maxTeamChanges)
+      case 7: try decoder.decodeSingularInt64Field(value: &self.teamChangeItemResetPeriodInDays)
       default: break
       }
     }
@@ -82,6 +90,12 @@ extension POGOProtos_Settings_InventorySettings: SwiftProtobuf.Message, SwiftPro
     if self.baseEggs != 0 {
       try visitor.visitSingularInt32Field(value: self.baseEggs, fieldNumber: 5)
     }
+    if self.maxTeamChanges != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxTeamChanges, fieldNumber: 6)
+    }
+    if self.teamChangeItemResetPeriodInDays != 0 {
+      try visitor.visitSingularInt64Field(value: self.teamChangeItemResetPeriodInDays, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -91,6 +105,8 @@ extension POGOProtos_Settings_InventorySettings: SwiftProtobuf.Message, SwiftPro
     if lhs.basePokemon != rhs.basePokemon {return false}
     if lhs.baseBagItems != rhs.baseBagItems {return false}
     if lhs.baseEggs != rhs.baseEggs {return false}
+    if lhs.maxTeamChanges != rhs.maxTeamChanges {return false}
+    if lhs.teamChangeItemResetPeriodInDays != rhs.teamChangeItemResetPeriodInDays {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

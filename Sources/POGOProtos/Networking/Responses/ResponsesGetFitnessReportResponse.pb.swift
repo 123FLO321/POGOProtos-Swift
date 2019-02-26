@@ -30,6 +30,8 @@ public struct POGOProtos_Networking_Responses_GetFitnessReportResponse {
 
   public var weeklyReports: [POGOProtos_Data_Fitness_FitnessReport] = []
 
+  public var weekResetTimestampSinceMondayMs: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Status: SwiftProtobuf.Enum {
@@ -101,6 +103,7 @@ extension POGOProtos_Networking_Responses_GetFitnessReportResponse: SwiftProtobu
     1: .same(proto: "status"),
     2: .standard(proto: "daily_reports"),
     3: .standard(proto: "weekly_reports"),
+    4: .standard(proto: "week_reset_timestamp_since_monday_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -109,6 +112,7 @@ extension POGOProtos_Networking_Responses_GetFitnessReportResponse: SwiftProtobu
       case 1: try decoder.decodeSingularEnumField(value: &self.status)
       case 2: try decoder.decodeRepeatedMessageField(value: &self.dailyReports)
       case 3: try decoder.decodeRepeatedMessageField(value: &self.weeklyReports)
+      case 4: try decoder.decodeSingularInt64Field(value: &self.weekResetTimestampSinceMondayMs)
       default: break
       }
     }
@@ -124,6 +128,9 @@ extension POGOProtos_Networking_Responses_GetFitnessReportResponse: SwiftProtobu
     if !self.weeklyReports.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.weeklyReports, fieldNumber: 3)
     }
+    if self.weekResetTimestampSinceMondayMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.weekResetTimestampSinceMondayMs, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -131,6 +138,7 @@ extension POGOProtos_Networking_Responses_GetFitnessReportResponse: SwiftProtobu
     if lhs.status != rhs.status {return false}
     if lhs.dailyReports != rhs.dailyReports {return false}
     if lhs.weeklyReports != rhs.weeklyReports {return false}
+    if lhs.weekResetTimestampSinceMondayMs != rhs.weekResetTimestampSinceMondayMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

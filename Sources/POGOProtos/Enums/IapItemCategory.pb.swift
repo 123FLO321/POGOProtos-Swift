@@ -28,6 +28,7 @@ public enum POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf.Enum {
   case iapCategoryPokecoins // = 4
   case iapCategoryAvatar // = 5
   case iapCategoryAvatarStoreLink // = 6
+  case iapCategoryTeamChange // = 7
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -43,6 +44,7 @@ public enum POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf.Enum {
     case 4: self = .iapCategoryPokecoins
     case 5: self = .iapCategoryAvatar
     case 6: self = .iapCategoryAvatarStoreLink
+    case 7: self = .iapCategoryTeamChange
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -56,6 +58,7 @@ public enum POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf.Enum {
     case .iapCategoryPokecoins: return 4
     case .iapCategoryAvatar: return 5
     case .iapCategoryAvatarStoreLink: return 6
+    case .iapCategoryTeamChange: return 7
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -74,6 +77,7 @@ extension POGOProtos_Enums_HoloIapItemCategory: CaseIterable {
     .iapCategoryPokecoins,
     .iapCategoryAvatar,
     .iapCategoryAvatarStoreLink,
+    .iapCategoryTeamChange,
   ]
 }
 
@@ -90,5 +94,6 @@ extension POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf._ProtoNameProvidin
     4: .same(proto: "IAP_CATEGORY_POKECOINS"),
     5: .same(proto: "IAP_CATEGORY_AVATAR"),
     6: .same(proto: "IAP_CATEGORY_AVATAR_STORE_LINK"),
+    7: .same(proto: "IAP_CATEGORY_TEAM_CHANGE"),
   ]
 }

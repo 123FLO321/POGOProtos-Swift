@@ -212,6 +212,9 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case useItemStardustBoost // = 168
 
   /// Implemented
+  case reassignPlayer // = 169
+
+  /// Implemented
   case getAssetDigest // = 300
 
   /// Implemented
@@ -449,7 +452,22 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case combatChallengeData // = 1023
 
   /// Implemented
+  case checkPhotobomb // = 1101
+
+  /// Implemented
+  case confirmPhotobomb // = 1102
+
+  /// Implemented
+  case getPhotobomb // = 1103
+
+  /// Implemented
+  case encounterPhotobomb // = 1104
+
+  /// Implemented
   case getSignedGmapURL // = 1105
+
+  /// Implemented
+  case changeTeam // = 1106
 
   /// Implemented
   case registerPushNotification // = 5000
@@ -553,8 +571,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   /// Implemented
   case updatePlayerLocation // = 5034
 
-  /// ???
-  case profanityFilterAction // = 5035
+  /// Implemented
+  case generateGmapSignedURL // = 5035
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -626,6 +644,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 166: self = .attackRaid
     case 167: self = .awardPokecoin
     case 168: self = .useItemStardustBoost
+    case 169: self = .reassignPlayer
     case 300: self = .getAssetDigest
     case 301: self = .getDownloadUrls
     case 403: self = .claimCodename
@@ -705,7 +724,12 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1021: self = .probeData
     case 1022: self = .combatData
     case 1023: self = .combatChallengeData
+    case 1101: self = .checkPhotobomb
+    case 1102: self = .confirmPhotobomb
+    case 1103: self = .getPhotobomb
+    case 1104: self = .encounterPhotobomb
     case 1105: self = .getSignedGmapURL
+    case 1106: self = .changeTeam
     case 5000: self = .registerPushNotification
     case 5001: self = .unregisterPushNotification
     case 5002: self = .updateNotificationStatus
@@ -740,7 +764,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 5032: self = .setInGameCurrencyExchangeRate
     case 5033: self = .requestGeofenceUpdates
     case 5034: self = .updatePlayerLocation
-    case 5035: self = .profanityFilterAction
+    case 5035: self = .generateGmapSignedURL
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -810,6 +834,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .attackRaid: return 166
     case .awardPokecoin: return 167
     case .useItemStardustBoost: return 168
+    case .reassignPlayer: return 169
     case .getAssetDigest: return 300
     case .getDownloadUrls: return 301
     case .claimCodename: return 403
@@ -889,7 +914,12 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .probeData: return 1021
     case .combatData: return 1022
     case .combatChallengeData: return 1023
+    case .checkPhotobomb: return 1101
+    case .confirmPhotobomb: return 1102
+    case .getPhotobomb: return 1103
+    case .encounterPhotobomb: return 1104
     case .getSignedGmapURL: return 1105
+    case .changeTeam: return 1106
     case .registerPushNotification: return 5000
     case .unregisterPushNotification: return 5001
     case .updateNotificationStatus: return 5002
@@ -924,7 +954,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .setInGameCurrencyExchangeRate: return 5032
     case .requestGeofenceUpdates: return 5033
     case .updatePlayerLocation: return 5034
-    case .profanityFilterAction: return 5035
+    case .generateGmapSignedURL: return 5035
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -999,6 +1029,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .attackRaid,
     .awardPokecoin,
     .useItemStardustBoost,
+    .reassignPlayer,
     .getAssetDigest,
     .getDownloadUrls,
     .claimCodename,
@@ -1078,7 +1109,12 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .probeData,
     .combatData,
     .combatChallengeData,
+    .checkPhotobomb,
+    .confirmPhotobomb,
+    .getPhotobomb,
+    .encounterPhotobomb,
     .getSignedGmapURL,
+    .changeTeam,
     .registerPushNotification,
     .unregisterPushNotification,
     .updateNotificationStatus,
@@ -1113,7 +1149,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .setInGameCurrencyExchangeRate,
     .requestGeofenceUpdates,
     .updatePlayerLocation,
-    .profanityFilterAction,
+    .generateGmapSignedURL,
   ]
 }
 
@@ -1186,6 +1222,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     166: .same(proto: "ATTACK_RAID"),
     167: .same(proto: "AWARD_POKECOIN"),
     168: .same(proto: "USE_ITEM_STARDUST_BOOST"),
+    169: .same(proto: "REASSIGN_PLAYER"),
     300: .same(proto: "GET_ASSET_DIGEST"),
     301: .same(proto: "GET_DOWNLOAD_URLS"),
     403: .same(proto: "CLAIM_CODENAME"),
@@ -1265,7 +1302,12 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1021: .same(proto: "PROBE_DATA"),
     1022: .same(proto: "COMBAT_DATA"),
     1023: .same(proto: "COMBAT_CHALLENGE_DATA"),
+    1101: .same(proto: "CHECK_PHOTOBOMB"),
+    1102: .same(proto: "CONFIRM_PHOTOBOMB"),
+    1103: .same(proto: "GET_PHOTOBOMB"),
+    1104: .same(proto: "ENCOUNTER_PHOTOBOMB"),
     1105: .same(proto: "GET_SIGNED_GMAP_URL"),
+    1106: .same(proto: "CHANGE_TEAM"),
     5000: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
     5001: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
     5002: .same(proto: "UPDATE_NOTIFICATION_STATUS"),
@@ -1300,6 +1342,6 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     5032: .same(proto: "SET_IN_GAME_CURRENCY_EXCHANGE_RATE"),
     5033: .same(proto: "REQUEST_GEOFENCE_UPDATES"),
     5034: .same(proto: "UPDATE_PLAYER_LOCATION"),
-    5035: .same(proto: "PROFANITY_FILTER_ACTION"),
+    5035: .same(proto: "GENERATE_GMAP_SIGNED_URL"),
   ]
 }

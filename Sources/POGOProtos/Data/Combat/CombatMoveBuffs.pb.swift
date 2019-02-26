@@ -32,6 +32,8 @@ public struct POGOProtos_Data_Combat_CombatMoveBuffs {
 
   public var targetDefenseStatStageChange: Int32 = 0
 
+  public var buffActivationChance: Float = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,6 +50,7 @@ extension POGOProtos_Data_Combat_CombatMoveBuffs: SwiftProtobuf.Message, SwiftPr
     2: .standard(proto: "attacker_defense_stat_stage_change"),
     3: .standard(proto: "target_attack_stat_stage_change"),
     4: .standard(proto: "target_defense_stat_stage_change"),
+    5: .standard(proto: "buff_activation_chance"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +60,7 @@ extension POGOProtos_Data_Combat_CombatMoveBuffs: SwiftProtobuf.Message, SwiftPr
       case 2: try decoder.decodeSingularInt32Field(value: &self.attackerDefenseStatStageChange)
       case 3: try decoder.decodeSingularInt32Field(value: &self.targetAttackStatStageChange)
       case 4: try decoder.decodeSingularInt32Field(value: &self.targetDefenseStatStageChange)
+      case 5: try decoder.decodeSingularFloatField(value: &self.buffActivationChance)
       default: break
       }
     }
@@ -75,6 +79,9 @@ extension POGOProtos_Data_Combat_CombatMoveBuffs: SwiftProtobuf.Message, SwiftPr
     if self.targetDefenseStatStageChange != 0 {
       try visitor.visitSingularInt32Field(value: self.targetDefenseStatStageChange, fieldNumber: 4)
     }
+    if self.buffActivationChance != 0 {
+      try visitor.visitSingularFloatField(value: self.buffActivationChance, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +90,7 @@ extension POGOProtos_Data_Combat_CombatMoveBuffs: SwiftProtobuf.Message, SwiftPr
     if lhs.attackerDefenseStatStageChange != rhs.attackerDefenseStatStageChange {return false}
     if lhs.targetAttackStatStageChange != rhs.targetAttackStatStageChange {return false}
     if lhs.targetDefenseStatStageChange != rhs.targetDefenseStatStageChange {return false}
+    if lhs.buffActivationChance != rhs.buffActivationChance {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

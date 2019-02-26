@@ -34,6 +34,8 @@ public struct POGOProtos_Settings_Master_Pokemon_EvolutionBranch {
 
   public var form: POGOProtos_Enums_Form = .unset
 
+  public var genderRequirement: POGOProtos_Enums_Gender = .unset
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +53,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     3: .standard(proto: "candy_cost"),
     4: .standard(proto: "km_buddy_distance_requirement"),
     5: .same(proto: "form"),
+    6: .standard(proto: "gender_requirement"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -61,6 +64,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
       case 3: try decoder.decodeSingularInt32Field(value: &self.candyCost)
       case 4: try decoder.decodeSingularFloatField(value: &self.kmBuddyDistanceRequirement)
       case 5: try decoder.decodeSingularEnumField(value: &self.form)
+      case 6: try decoder.decodeSingularEnumField(value: &self.genderRequirement)
       default: break
       }
     }
@@ -82,6 +86,9 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     if self.form != .unset {
       try visitor.visitSingularEnumField(value: self.form, fieldNumber: 5)
     }
+    if self.genderRequirement != .unset {
+      try visitor.visitSingularEnumField(value: self.genderRequirement, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -91,6 +98,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     if lhs.candyCost != rhs.candyCost {return false}
     if lhs.kmBuddyDistanceRequirement != rhs.kmBuddyDistanceRequirement {return false}
     if lhs.form != rhs.form {return false}
+    if lhs.genderRequirement != rhs.genderRequirement {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

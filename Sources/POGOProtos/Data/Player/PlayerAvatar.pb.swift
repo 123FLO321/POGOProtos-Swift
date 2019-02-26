@@ -129,6 +129,16 @@ public struct POGOProtos_Data_Player_PlayerAvatar {
     set {_uniqueStorage()._avatarNecklace = newValue}
   }
 
+  public var avatarSkin: String {
+    get {return _storage._avatarSkin}
+    set {_uniqueStorage()._avatarSkin = newValue}
+  }
+
+  public var avatarPose: String {
+    get {return _storage._avatarPose}
+    set {_uniqueStorage()._avatarPose = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -164,6 +174,8 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
     20: .standard(proto: "avatar_belt"),
     21: .standard(proto: "avatar_glasses"),
     22: .standard(proto: "avatar_necklace"),
+    23: .standard(proto: "avatar_skin"),
+    24: .standard(proto: "avatar_pose"),
   ]
 
   fileprivate class _StorageClass {
@@ -188,6 +200,8 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
     var _avatarBelt: String = String()
     var _avatarGlasses: String = String()
     var _avatarNecklace: String = String()
+    var _avatarSkin: String = String()
+    var _avatarPose: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -215,6 +229,8 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
       _avatarBelt = source._avatarBelt
       _avatarGlasses = source._avatarGlasses
       _avatarNecklace = source._avatarNecklace
+      _avatarSkin = source._avatarSkin
+      _avatarPose = source._avatarPose
     }
   }
 
@@ -251,6 +267,8 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
         case 20: try decoder.decodeSingularStringField(value: &_storage._avatarBelt)
         case 21: try decoder.decodeSingularStringField(value: &_storage._avatarGlasses)
         case 22: try decoder.decodeSingularStringField(value: &_storage._avatarNecklace)
+        case 23: try decoder.decodeSingularStringField(value: &_storage._avatarSkin)
+        case 24: try decoder.decodeSingularStringField(value: &_storage._avatarPose)
         default: break
         }
       }
@@ -322,6 +340,12 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
       if !_storage._avatarNecklace.isEmpty {
         try visitor.visitSingularStringField(value: _storage._avatarNecklace, fieldNumber: 22)
       }
+      if !_storage._avatarSkin.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._avatarSkin, fieldNumber: 23)
+      }
+      if !_storage._avatarPose.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._avatarPose, fieldNumber: 24)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -352,6 +376,8 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
         if _storage._avatarBelt != rhs_storage._avatarBelt {return false}
         if _storage._avatarGlasses != rhs_storage._avatarGlasses {return false}
         if _storage._avatarNecklace != rhs_storage._avatarNecklace {return false}
+        if _storage._avatarSkin != rhs_storage._avatarSkin {return false}
+        if _storage._avatarPose != rhs_storage._avatarPose {return false}
         return true
       }
       if !storagesAreEqual {return false}

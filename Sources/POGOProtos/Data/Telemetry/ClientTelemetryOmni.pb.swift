@@ -381,6 +381,14 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .loginActionTelemetry(newValue)}
   }
 
+  public var arPhotoSessionTelemetry: POGOProtos_Data_Telemetry_ArPhotoSession {
+    get {
+      if case .arPhotoSessionTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ArPhotoSession()
+    }
+    set {_uniqueStorage()._telemetryData = .arPhotoSessionTelemetry(newValue)}
+  }
+
   public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
     get {
       if case .serverData(let v)? = _storage._telemetryData {return v}
@@ -436,6 +444,7 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     case userAttributes(POGOProtos_Data_Player_UserAttributes)
     case onboardingTelemetry(POGOProtos_Data_Telemetry_OnboardingTelemetry)
     case loginActionTelemetry(POGOProtos_Data_Telemetry_LoginActionTelemetry)
+    case arPhotoSessionTelemetry(POGOProtos_Data_Telemetry_ArPhotoSession)
     case serverData(POGOProtos_Data_Telemetry_PlatformServerData)
 
   #if !swift(>=4.1)
@@ -485,6 +494,7 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
       case (.userAttributes(let l), .userAttributes(let r)): return l == r
       case (.onboardingTelemetry(let l), .onboardingTelemetry(let r)): return l == r
       case (.loginActionTelemetry(let l), .loginActionTelemetry(let r)): return l == r
+      case (.arPhotoSessionTelemetry(let l), .arPhotoSessionTelemetry(let r)): return l == r
       case (.serverData(let l), .serverData(let r)): return l == r
       default: return false
       }
@@ -548,6 +558,7 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     42: .standard(proto: "user_attributes"),
     43: .standard(proto: "onboarding_telemetry"),
     44: .standard(proto: "login_action_telemetry"),
+    45: .standard(proto: "ar_photo_session_telemetry"),
     1001: .standard(proto: "server_data"),
   ]
 
@@ -927,6 +938,14 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .loginActionTelemetry(v)}
+        case 45:
+          var v: POGOProtos_Data_Telemetry_ArPhotoSession?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .arPhotoSessionTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .arPhotoSessionTelemetry(v)}
         case 1001:
           var v: POGOProtos_Data_Telemetry_PlatformServerData?
           if let current = _storage._telemetryData {
@@ -1032,6 +1051,8 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         try visitor.visitSingularMessageField(value: v, fieldNumber: 43)
       case .loginActionTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 44)
+      case .arPhotoSessionTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 45)
       case .serverData(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
       case nil: break

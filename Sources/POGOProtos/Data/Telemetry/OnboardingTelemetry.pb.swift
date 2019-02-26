@@ -32,6 +32,8 @@ public struct POGOProtos_Data_Telemetry_OnboardingTelemetry {
 
   public var conversation: String = String()
 
+  public var arStatus: POGOProtos_Enums_OnboardingArStatus = .unsetOnboardingArStatus
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,6 +50,7 @@ extension POGOProtos_Data_Telemetry_OnboardingTelemetry: SwiftProtobuf.Message, 
     2: .standard(proto: "event_id"),
     3: .same(proto: "data"),
     4: .same(proto: "conversation"),
+    5: .standard(proto: "ar_status"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +60,7 @@ extension POGOProtos_Data_Telemetry_OnboardingTelemetry: SwiftProtobuf.Message, 
       case 2: try decoder.decodeSingularEnumField(value: &self.eventID)
       case 3: try decoder.decodeSingularInt32Field(value: &self.data)
       case 4: try decoder.decodeSingularStringField(value: &self.conversation)
+      case 5: try decoder.decodeSingularEnumField(value: &self.arStatus)
       default: break
       }
     }
@@ -75,6 +79,9 @@ extension POGOProtos_Data_Telemetry_OnboardingTelemetry: SwiftProtobuf.Message, 
     if !self.conversation.isEmpty {
       try visitor.visitSingularStringField(value: self.conversation, fieldNumber: 4)
     }
+    if self.arStatus != .unsetOnboardingArStatus {
+      try visitor.visitSingularEnumField(value: self.arStatus, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +90,7 @@ extension POGOProtos_Data_Telemetry_OnboardingTelemetry: SwiftProtobuf.Message, 
     if lhs.eventID != rhs.eventID {return false}
     if lhs.data != rhs.data {return false}
     if lhs.conversation != rhs.conversation {return false}
+    if lhs.arStatus != rhs.arStatus {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

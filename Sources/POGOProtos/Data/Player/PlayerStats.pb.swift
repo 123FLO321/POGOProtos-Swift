@@ -233,6 +233,11 @@ public struct POGOProtos_Data_Player_PlayerStats {
     set {_uniqueStorage()._numNpcCombatsTotal = newValue}
   }
 
+  public var numPhotobombSeen: Int32 {
+    get {return _storage._numPhotobombSeen}
+    set {_uniqueStorage()._numPhotobombSeen = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -288,6 +293,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     39: .standard(proto: "combat_stats"),
     40: .standard(proto: "num_npc_combats_won"),
     41: .standard(proto: "num_npc_combats_total"),
+    42: .standard(proto: "num_photobomb_seen"),
   ]
 
   fileprivate class _StorageClass {
@@ -332,6 +338,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     var _combatStats: POGOProtos_Data_Combat_PlayerCombatStats? = nil
     var _numNpcCombatsWon: Int32 = 0
     var _numNpcCombatsTotal: Int32 = 0
+    var _numPhotobombSeen: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -379,6 +386,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       _combatStats = source._combatStats
       _numNpcCombatsWon = source._numNpcCombatsWon
       _numNpcCombatsTotal = source._numNpcCombatsTotal
+      _numPhotobombSeen = source._numPhotobombSeen
     }
   }
 
@@ -435,6 +443,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         case 39: try decoder.decodeSingularMessageField(value: &_storage._combatStats)
         case 40: try decoder.decodeSingularInt32Field(value: &_storage._numNpcCombatsWon)
         case 41: try decoder.decodeSingularInt32Field(value: &_storage._numNpcCombatsTotal)
+        case 42: try decoder.decodeSingularInt32Field(value: &_storage._numPhotobombSeen)
         default: break
         }
       }
@@ -566,6 +575,9 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       if _storage._numNpcCombatsTotal != 0 {
         try visitor.visitSingularInt32Field(value: _storage._numNpcCombatsTotal, fieldNumber: 41)
       }
+      if _storage._numPhotobombSeen != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numPhotobombSeen, fieldNumber: 42)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -616,6 +628,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         if _storage._combatStats != rhs_storage._combatStats {return false}
         if _storage._numNpcCombatsWon != rhs_storage._numNpcCombatsWon {return false}
         if _storage._numNpcCombatsTotal != rhs_storage._numNpcCombatsTotal {return false}
+        if _storage._numPhotobombSeen != rhs_storage._numPhotobombSeen {return false}
         return true
       }
       if !storagesAreEqual {return false}

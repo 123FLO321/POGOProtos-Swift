@@ -61,6 +61,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
   case combatChallenge // = 1028
   case combatChallengerCodename // = 1029
   case bgmodeOffSessionDistanceKm // = 1030
+  case poiName // = 1031
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -109,6 +110,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case 1028: self = .combatChallenge
     case 1029: self = .combatChallengerCodename
     case 1030: self = .bgmodeOffSessionDistanceKm
+    case 1031: self = .poiName
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -155,6 +157,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case .combatChallenge: return 1028
     case .combatChallengerCodename: return 1029
     case .bgmodeOffSessionDistanceKm: return 1030
+    case .poiName: return 1031
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -206,6 +209,7 @@ extension POGOProtos_Enums_VariableName: CaseIterable {
     .combatChallenge,
     .combatChallengerCodename,
     .bgmodeOffSessionDistanceKm,
+    .poiName,
   ]
 }
 
@@ -255,5 +259,6 @@ extension POGOProtos_Enums_VariableName: SwiftProtobuf._ProtoNameProviding {
     1028: .same(proto: "COMBAT_CHALLENGE"),
     1029: .same(proto: "COMBAT_CHALLENGER_CODENAME"),
     1030: .same(proto: "BGMODE_OFF_SESSION_DISTANCE_KM"),
+    1031: .same(proto: "POI_NAME"),
   ]
 }

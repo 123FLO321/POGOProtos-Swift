@@ -91,6 +91,11 @@ public struct POGOProtos_Networking_Responses_GetRaidDetailsResponse {
     set {_uniqueStorage()._serverMs = newValue}
   }
 
+  public var serverInstance: Int32 {
+    get {return _storage._serverInstance}
+    set {_uniqueStorage()._serverInstance = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -176,6 +181,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
     9: .standard(proto: "received_rewards"),
     10: .standard(proto: "num_players_in_lobby"),
     11: .standard(proto: "server_ms"),
+    12: .standard(proto: "server_instance"),
   ]
 
   fileprivate class _StorageClass {
@@ -190,6 +196,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
     var _receivedRewards: Bool = false
     var _numPlayersInLobby: Int32 = 0
     var _serverMs: Int64 = 0
+    var _serverInstance: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -207,6 +214,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
       _receivedRewards = source._receivedRewards
       _numPlayersInLobby = source._numPlayersInLobby
       _serverMs = source._serverMs
+      _serverInstance = source._serverInstance
     }
   }
 
@@ -233,6 +241,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
         case 9: try decoder.decodeSingularBoolField(value: &_storage._receivedRewards)
         case 10: try decoder.decodeSingularInt32Field(value: &_storage._numPlayersInLobby)
         case 11: try decoder.decodeSingularInt64Field(value: &_storage._serverMs)
+        case 12: try decoder.decodeSingularInt32Field(value: &_storage._serverInstance)
         default: break
         }
       }
@@ -274,6 +283,9 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
       if _storage._serverMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._serverMs, fieldNumber: 11)
       }
+      if _storage._serverInstance != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._serverInstance, fieldNumber: 12)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -294,6 +306,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
         if _storage._receivedRewards != rhs_storage._receivedRewards {return false}
         if _storage._numPlayersInLobby != rhs_storage._numPlayersInLobby {return false}
         if _storage._serverMs != rhs_storage._serverMs {return false}
+        if _storage._serverInstance != rhs_storage._serverInstance {return false}
         return true
       }
       if !storagesAreEqual {return false}

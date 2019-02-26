@@ -71,6 +71,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemLegendaryRaidTicket // = 1403
   case itemStarPiece // = 1404
   case itemFriendGiftBox // = 1405
+  case itemTeamChange // = 1406
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -129,6 +130,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 1403: self = .itemLegendaryRaidTicket
     case 1404: self = .itemStarPiece
     case 1405: self = .itemFriendGiftBox
+    case 1406: self = .itemTeamChange
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -185,6 +187,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemLegendaryRaidTicket: return 1403
     case .itemStarPiece: return 1404
     case .itemFriendGiftBox: return 1405
+    case .itemTeamChange: return 1406
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -246,6 +249,7 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemLegendaryRaidTicket,
     .itemStarPiece,
     .itemFriendGiftBox,
+    .itemTeamChange,
   ]
 }
 
@@ -305,5 +309,6 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     1403: .same(proto: "ITEM_LEGENDARY_RAID_TICKET"),
     1404: .same(proto: "ITEM_STAR_PIECE"),
     1405: .same(proto: "ITEM_FRIEND_GIFT_BOX"),
+    1406: .same(proto: "ITEM_TEAM_CHANGE"),
   ]
 }

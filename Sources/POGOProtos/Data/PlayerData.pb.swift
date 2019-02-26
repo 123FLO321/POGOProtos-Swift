@@ -151,6 +151,15 @@ public struct POGOProtos_Data_PlayerData {
     set {_uniqueStorage()._playerSupportID = newValue}
   }
 
+  public var teamChangeInfo: POGOProtos_Data_Player_TeamChangeInfo {
+    get {return _storage._teamChangeInfo ?? POGOProtos_Data_Player_TeamChangeInfo()}
+    set {_uniqueStorage()._teamChangeInfo = newValue}
+  }
+  /// Returns true if `teamChangeInfo` has been explicitly set.
+  public var hasTeamChangeInfo: Bool {return _storage._teamChangeInfo != nil}
+  /// Clears the value of `teamChangeInfo`. Subsequent reads from it will return its default value.
+  public mutating func clearTeamChangeInfo() {_uniqueStorage()._teamChangeInfo = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -184,6 +193,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     20: .standard(proto: "social_player_settings"),
     21: .standard(proto: "combat_player_preferences"),
     22: .standard(proto: "player_support_id"),
+    23: .standard(proto: "team_change_info"),
   ]
 
   fileprivate class _StorageClass {
@@ -206,6 +216,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _socialPlayerSettings: POGOProtos_Data_Player_SocialPlayerSettings? = nil
     var _combatPlayerPreferences: POGOProtos_Data_Combat_CombatPlayerPreferences? = nil
     var _playerSupportID: String = String()
+    var _teamChangeInfo: POGOProtos_Data_Player_TeamChangeInfo? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -231,6 +242,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _socialPlayerSettings = source._socialPlayerSettings
       _combatPlayerPreferences = source._combatPlayerPreferences
       _playerSupportID = source._playerSupportID
+      _teamChangeInfo = source._teamChangeInfo
     }
   }
 
@@ -265,6 +277,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 20: try decoder.decodeSingularMessageField(value: &_storage._socialPlayerSettings)
         case 21: try decoder.decodeSingularMessageField(value: &_storage._combatPlayerPreferences)
         case 22: try decoder.decodeSingularStringField(value: &_storage._playerSupportID)
+        case 23: try decoder.decodeSingularMessageField(value: &_storage._teamChangeInfo)
         default: break
         }
       }
@@ -330,6 +343,9 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if !_storage._playerSupportID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._playerSupportID, fieldNumber: 22)
       }
+      if let v = _storage._teamChangeInfo {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -358,6 +374,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._socialPlayerSettings != rhs_storage._socialPlayerSettings {return false}
         if _storage._combatPlayerPreferences != rhs_storage._combatPlayerPreferences {return false}
         if _storage._playerSupportID != rhs_storage._playerSupportID {return false}
+        if _storage._teamChangeInfo != rhs_storage._teamChangeInfo {return false}
         return true
       }
       if !storagesAreEqual {return false}

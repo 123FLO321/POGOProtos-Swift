@@ -142,6 +142,18 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case burmyPlant // = 118
   case burmySandy // = 119
   case burmyTrash // = 120
+  case spinda08 // = 121
+  case spinda09 // = 122
+  case spinda10 // = 123
+  case spinda11 // = 124
+  case spinda12 // = 125
+  case spinda13 // = 126
+  case spinda14 // = 127
+  case spinda15 // = 128
+  case spinda16 // = 129
+  case spinda17 // = 130
+  case spinda18 // = 131
+  case spinda19 // = 132
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -271,6 +283,18 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 118: self = .burmyPlant
     case 119: self = .burmySandy
     case 120: self = .burmyTrash
+    case 121: self = .spinda08
+    case 122: self = .spinda09
+    case 123: self = .spinda10
+    case 124: self = .spinda11
+    case 125: self = .spinda12
+    case 126: self = .spinda13
+    case 127: self = .spinda14
+    case 128: self = .spinda15
+    case 129: self = .spinda16
+    case 130: self = .spinda17
+    case 131: self = .spinda18
+    case 132: self = .spinda19
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -398,6 +422,18 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .burmyPlant: return 118
     case .burmySandy: return 119
     case .burmyTrash: return 120
+    case .spinda08: return 121
+    case .spinda09: return 122
+    case .spinda10: return 123
+    case .spinda11: return 124
+    case .spinda12: return 125
+    case .spinda13: return 126
+    case .spinda14: return 127
+    case .spinda15: return 128
+    case .spinda16: return 129
+    case .spinda17: return 130
+    case .spinda18: return 131
+    case .spinda19: return 132
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -530,6 +566,18 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .burmyPlant,
     .burmySandy,
     .burmyTrash,
+    .spinda08,
+    .spinda09,
+    .spinda10,
+    .spinda11,
+    .spinda12,
+    .spinda13,
+    .spinda14,
+    .spinda15,
+    .spinda16,
+    .spinda17,
+    .spinda18,
+    .spinda19,
   ]
 }
 
@@ -660,5 +708,17 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     118: .same(proto: "BURMY_PLANT"),
     119: .same(proto: "BURMY_SANDY"),
     120: .same(proto: "BURMY_TRASH"),
+    121: .same(proto: "SPINDA_08"),
+    122: .same(proto: "SPINDA_09"),
+    123: .same(proto: "SPINDA_10"),
+    124: .same(proto: "SPINDA_11"),
+    125: .same(proto: "SPINDA_12"),
+    126: .same(proto: "SPINDA_13"),
+    127: .same(proto: "SPINDA_14"),
+    128: .same(proto: "SPINDA_15"),
+    129: .same(proto: "SPINDA_16"),
+    130: .same(proto: "SPINDA_17"),
+    131: .same(proto: "SPINDA_18"),
+    132: .same(proto: "SPINDA_19"),
   ]
 }

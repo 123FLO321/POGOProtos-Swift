@@ -420,6 +420,24 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `onboardingV2Settings`. Subsequent reads from it will return its default value.
     public mutating func clearOnboardingV2Settings() {_uniqueStorage()._onboardingV2Settings = nil}
 
+    public var partyRecommendationSettings: POGOProtos_Settings_Master_PartyRecommendationSettings {
+      get {return _storage._partyRecommendationSettings ?? POGOProtos_Settings_Master_PartyRecommendationSettings()}
+      set {_uniqueStorage()._partyRecommendationSettings = newValue}
+    }
+    /// Returns true if `partyRecommendationSettings` has been explicitly set.
+    public var hasPartyRecommendationSettings: Bool {return _storage._partyRecommendationSettings != nil}
+    /// Clears the value of `partyRecommendationSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearPartyRecommendationSettings() {_uniqueStorage()._partyRecommendationSettings = nil}
+
+    public var smeargleMovesSettings: POGOProtos_Settings_Master_SmeargleMovesSettings {
+      get {return _storage._smeargleMovesSettings ?? POGOProtos_Settings_Master_SmeargleMovesSettings()}
+      set {_uniqueStorage()._smeargleMovesSettings = newValue}
+    }
+    /// Returns true if `smeargleMovesSettings` has been explicitly set.
+    public var hasSmeargleMovesSettings: Bool {return _storage._smeargleMovesSettings != nil}
+    /// Clears the value of `smeargleMovesSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearSmeargleMovesSettings() {_uniqueStorage()._smeargleMovesSettings = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -546,6 +564,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     40: .standard(proto: "combat_npc_trainer"),
     41: .standard(proto: "combat_npc_personality"),
     42: .standard(proto: "onboarding_v2_settings"),
+    43: .standard(proto: "party_recommendation_settings"),
+    44: .standard(proto: "smeargle_moves_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -588,6 +608,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _combatNpcTrainer: POGOProtos_Settings_Master_CombatNpcTrainer? = nil
     var _combatNpcPersonality: POGOProtos_Settings_Master_CombatNpcPersonality? = nil
     var _onboardingV2Settings: POGOProtos_Settings_Master_OnboardingV2Settings? = nil
+    var _partyRecommendationSettings: POGOProtos_Settings_Master_PartyRecommendationSettings? = nil
+    var _smeargleMovesSettings: POGOProtos_Settings_Master_SmeargleMovesSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -633,6 +655,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _combatNpcTrainer = source._combatNpcTrainer
       _combatNpcPersonality = source._combatNpcPersonality
       _onboardingV2Settings = source._onboardingV2Settings
+      _partyRecommendationSettings = source._partyRecommendationSettings
+      _smeargleMovesSettings = source._smeargleMovesSettings
     }
   }
 
@@ -687,6 +711,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 40: try decoder.decodeSingularMessageField(value: &_storage._combatNpcTrainer)
         case 41: try decoder.decodeSingularMessageField(value: &_storage._combatNpcPersonality)
         case 42: try decoder.decodeSingularMessageField(value: &_storage._onboardingV2Settings)
+        case 43: try decoder.decodeSingularMessageField(value: &_storage._partyRecommendationSettings)
+        case 44: try decoder.decodeSingularMessageField(value: &_storage._smeargleMovesSettings)
         default: break
         }
       }
@@ -812,6 +838,12 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._onboardingV2Settings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 42)
       }
+      if let v = _storage._partyRecommendationSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 43)
+      }
+      if let v = _storage._smeargleMovesSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 44)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -860,6 +892,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._combatNpcTrainer != rhs_storage._combatNpcTrainer {return false}
         if _storage._combatNpcPersonality != rhs_storage._combatNpcPersonality {return false}
         if _storage._onboardingV2Settings != rhs_storage._onboardingV2Settings {return false}
+        if _storage._partyRecommendationSettings != rhs_storage._partyRecommendationSettings {return false}
+        if _storage._smeargleMovesSettings != rhs_storage._smeargleMovesSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

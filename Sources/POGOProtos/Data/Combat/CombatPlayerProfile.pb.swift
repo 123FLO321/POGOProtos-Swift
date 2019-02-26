@@ -57,6 +57,15 @@ public struct POGOProtos_Data_Combat_CombatPlayerProfile {
   /// Clears the value of `location`. Subsequent reads from it will return its default value.
   public mutating func clearLocation() {_uniqueStorage()._location = nil}
 
+  public var combatPlayerPreferences: POGOProtos_Data_Combat_CombatPlayerPreferences {
+    get {return _storage._combatPlayerPreferences ?? POGOProtos_Data_Combat_CombatPlayerPreferences()}
+    set {_uniqueStorage()._combatPlayerPreferences = newValue}
+  }
+  /// Returns true if `combatPlayerPreferences` has been explicitly set.
+  public var hasCombatPlayerPreferences: Bool {return _storage._combatPlayerPreferences != nil}
+  /// Clears the value of `combatPlayerPreferences`. Subsequent reads from it will return its default value.
+  public mutating func clearCombatPlayerPreferences() {_uniqueStorage()._combatPlayerPreferences = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -76,6 +85,7 @@ extension POGOProtos_Data_Combat_CombatPlayerProfile: SwiftProtobuf.Message, Swi
     3: .standard(proto: "combat_league_template_id"),
     4: .standard(proto: "buddy_pokemon_id"),
     5: .same(proto: "location"),
+    6: .standard(proto: "combat_player_preferences"),
   ]
 
   fileprivate class _StorageClass {
@@ -84,6 +94,7 @@ extension POGOProtos_Data_Combat_CombatPlayerProfile: SwiftProtobuf.Message, Swi
     var _combatLeagueTemplateID: [String] = []
     var _buddyPokemonID: UInt64 = 0
     var _location: POGOProtos_Data_Location? = nil
+    var _combatPlayerPreferences: POGOProtos_Data_Combat_CombatPlayerPreferences? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -95,6 +106,7 @@ extension POGOProtos_Data_Combat_CombatPlayerProfile: SwiftProtobuf.Message, Swi
       _combatLeagueTemplateID = source._combatLeagueTemplateID
       _buddyPokemonID = source._buddyPokemonID
       _location = source._location
+      _combatPlayerPreferences = source._combatPlayerPreferences
     }
   }
 
@@ -115,6 +127,7 @@ extension POGOProtos_Data_Combat_CombatPlayerProfile: SwiftProtobuf.Message, Swi
         case 3: try decoder.decodeRepeatedStringField(value: &_storage._combatLeagueTemplateID)
         case 4: try decoder.decodeSingularFixed64Field(value: &_storage._buddyPokemonID)
         case 5: try decoder.decodeSingularMessageField(value: &_storage._location)
+        case 6: try decoder.decodeSingularMessageField(value: &_storage._combatPlayerPreferences)
         default: break
         }
       }
@@ -138,6 +151,9 @@ extension POGOProtos_Data_Combat_CombatPlayerProfile: SwiftProtobuf.Message, Swi
       if let v = _storage._location {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
       }
+      if let v = _storage._combatPlayerPreferences {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -152,6 +168,7 @@ extension POGOProtos_Data_Combat_CombatPlayerProfile: SwiftProtobuf.Message, Swi
         if _storage._combatLeagueTemplateID != rhs_storage._combatLeagueTemplateID {return false}
         if _storage._buddyPokemonID != rhs_storage._buddyPokemonID {return false}
         if _storage._location != rhs_storage._location {return false}
+        if _storage._combatPlayerPreferences != rhs_storage._combatPlayerPreferences {return false}
         return true
       }
       if !storagesAreEqual {return false}

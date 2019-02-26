@@ -39,6 +39,7 @@ public enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
   case raidTicket // = 15
   case stardustBoost // = 16
   case friendGiftBox // = 17
+  case teamChange // = 18
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -65,6 +66,7 @@ public enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
     case 15: self = .raidTicket
     case 16: self = .stardustBoost
     case 17: self = .friendGiftBox
+    case 18: self = .teamChange
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -89,6 +91,7 @@ public enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
     case .raidTicket: return 15
     case .stardustBoost: return 16
     case .friendGiftBox: return 17
+    case .teamChange: return 18
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -118,6 +121,7 @@ extension POGOProtos_Enums_ItemCategory: CaseIterable {
     .raidTicket,
     .stardustBoost,
     .friendGiftBox,
+    .teamChange,
   ]
 }
 
@@ -145,5 +149,6 @@ extension POGOProtos_Enums_ItemCategory: SwiftProtobuf._ProtoNameProviding {
     15: .same(proto: "ITEM_CATEGORY_RAID_TICKET"),
     16: .same(proto: "ITEM_CATEGORY_STARDUST_BOOST"),
     17: .same(proto: "ITEM_CATEGORY_FRIEND_GIFT_BOX"),
+    18: .same(proto: "ITEM_CATEGORY_TEAM_CHANGE"),
   ]
 }
