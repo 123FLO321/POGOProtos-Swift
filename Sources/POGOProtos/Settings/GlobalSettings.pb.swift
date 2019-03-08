@@ -323,6 +323,15 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `pokemonSettings`. Subsequent reads from it will return its default value.
   public mutating func clearPokemonSettings() {_uniqueStorage()._pokemonSettings = nil}
 
+  public var avatarSettings: POGOProtos_Settings_AvatarGlobalSettings {
+    get {return _storage._avatarSettings ?? POGOProtos_Settings_AvatarGlobalSettings()}
+    set {_uniqueStorage()._avatarSettings = newValue}
+  }
+  /// Returns true if `avatarSettings` has been explicitly set.
+  public var hasAvatarSettings: Bool {return _storage._avatarSettings != nil}
+  /// Clears the value of `avatarSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearAvatarSettings() {_uniqueStorage()._avatarSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -372,6 +381,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     34: .standard(proto: "ar_photo_settings"),
     35: .standard(proto: "poi_settings"),
     36: .standard(proto: "pokemon_settings"),
+    37: .standard(proto: "avatar_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -410,6 +420,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _arPhotoSettings: POGOProtos_Settings_ArPhotoGlobalSettings? = nil
     var _poiSettings: POGOProtos_Settings_PoiGlobalSettings? = nil
     var _pokemonSettings: POGOProtos_Settings_PokemonGlobalSettings? = nil
+    var _avatarSettings: POGOProtos_Settings_AvatarGlobalSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -451,6 +462,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _arPhotoSettings = source._arPhotoSettings
       _poiSettings = source._poiSettings
       _pokemonSettings = source._pokemonSettings
+      _avatarSettings = source._avatarSettings
     }
   }
 
@@ -501,6 +513,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 34: try decoder.decodeSingularMessageField(value: &_storage._arPhotoSettings)
         case 35: try decoder.decodeSingularMessageField(value: &_storage._poiSettings)
         case 36: try decoder.decodeSingularMessageField(value: &_storage._pokemonSettings)
+        case 37: try decoder.decodeSingularMessageField(value: &_storage._avatarSettings)
         default: break
         }
       }
@@ -614,6 +627,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._pokemonSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 36)
       }
+      if let v = _storage._avatarSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 37)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -658,6 +674,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._arPhotoSettings != rhs_storage._arPhotoSettings {return false}
         if _storage._poiSettings != rhs_storage._poiSettings {return false}
         if _storage._pokemonSettings != rhs_storage._pokemonSettings {return false}
+        if _storage._avatarSettings != rhs_storage._avatarSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

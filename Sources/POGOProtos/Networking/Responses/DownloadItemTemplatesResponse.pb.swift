@@ -438,6 +438,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `smeargleMovesSettings`. Subsequent reads from it will return its default value.
     public mutating func clearSmeargleMovesSettings() {_uniqueStorage()._smeargleMovesSettings = nil}
 
+    public var pokecoinPurchaseDisplayGmt: POGOProtos_Settings_Master_PokecoinPurchaseDisplayGmt {
+      get {return _storage._pokecoinPurchaseDisplayGmt ?? POGOProtos_Settings_Master_PokecoinPurchaseDisplayGmt()}
+      set {_uniqueStorage()._pokecoinPurchaseDisplayGmt = newValue}
+    }
+    /// Returns true if `pokecoinPurchaseDisplayGmt` has been explicitly set.
+    public var hasPokecoinPurchaseDisplayGmt: Bool {return _storage._pokecoinPurchaseDisplayGmt != nil}
+    /// Clears the value of `pokecoinPurchaseDisplayGmt`. Subsequent reads from it will return its default value.
+    public mutating func clearPokecoinPurchaseDisplayGmt() {_uniqueStorage()._pokecoinPurchaseDisplayGmt = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -566,6 +575,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     42: .standard(proto: "onboarding_v2_settings"),
     43: .standard(proto: "party_recommendation_settings"),
     44: .standard(proto: "smeargle_moves_settings"),
+    45: .standard(proto: "pokecoin_purchase_display_gmt"),
   ]
 
   fileprivate class _StorageClass {
@@ -610,6 +620,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _onboardingV2Settings: POGOProtos_Settings_Master_OnboardingV2Settings? = nil
     var _partyRecommendationSettings: POGOProtos_Settings_Master_PartyRecommendationSettings? = nil
     var _smeargleMovesSettings: POGOProtos_Settings_Master_SmeargleMovesSettings? = nil
+    var _pokecoinPurchaseDisplayGmt: POGOProtos_Settings_Master_PokecoinPurchaseDisplayGmt? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -657,6 +668,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _onboardingV2Settings = source._onboardingV2Settings
       _partyRecommendationSettings = source._partyRecommendationSettings
       _smeargleMovesSettings = source._smeargleMovesSettings
+      _pokecoinPurchaseDisplayGmt = source._pokecoinPurchaseDisplayGmt
     }
   }
 
@@ -713,6 +725,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 42: try decoder.decodeSingularMessageField(value: &_storage._onboardingV2Settings)
         case 43: try decoder.decodeSingularMessageField(value: &_storage._partyRecommendationSettings)
         case 44: try decoder.decodeSingularMessageField(value: &_storage._smeargleMovesSettings)
+        case 45: try decoder.decodeSingularMessageField(value: &_storage._pokecoinPurchaseDisplayGmt)
         default: break
         }
       }
@@ -844,6 +857,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._smeargleMovesSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 44)
       }
+      if let v = _storage._pokecoinPurchaseDisplayGmt {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 45)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -894,6 +910,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._onboardingV2Settings != rhs_storage._onboardingV2Settings {return false}
         if _storage._partyRecommendationSettings != rhs_storage._partyRecommendationSettings {return false}
         if _storage._smeargleMovesSettings != rhs_storage._smeargleMovesSettings {return false}
+        if _storage._pokecoinPurchaseDisplayGmt != rhs_storage._pokecoinPurchaseDisplayGmt {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -48,6 +48,11 @@ public struct POGOProtos_Networking_Responses_CheckPhotobombResponse {
     set {_uniqueStorage()._encounterID = newValue}
   }
 
+  public var uri: String {
+    get {return _storage._uri}
+    set {_uniqueStorage()._uri = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Status: SwiftProtobuf.Enum {
@@ -114,6 +119,7 @@ extension POGOProtos_Networking_Responses_CheckPhotobombResponse: SwiftProtobuf.
     2: .standard(proto: "photobomb_pokemon_id"),
     3: .standard(proto: "photobomb_pokemon_display"),
     4: .standard(proto: "encounter_id"),
+    5: .same(proto: "uri"),
   ]
 
   fileprivate class _StorageClass {
@@ -121,6 +127,7 @@ extension POGOProtos_Networking_Responses_CheckPhotobombResponse: SwiftProtobuf.
     var _photobombPokemonID: POGOProtos_Enums_PokemonId = .missingno
     var _photobombPokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
     var _encounterID: UInt64 = 0
+    var _uri: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -131,6 +138,7 @@ extension POGOProtos_Networking_Responses_CheckPhotobombResponse: SwiftProtobuf.
       _photobombPokemonID = source._photobombPokemonID
       _photobombPokemonDisplay = source._photobombPokemonDisplay
       _encounterID = source._encounterID
+      _uri = source._uri
     }
   }
 
@@ -150,6 +158,7 @@ extension POGOProtos_Networking_Responses_CheckPhotobombResponse: SwiftProtobuf.
         case 2: try decoder.decodeSingularEnumField(value: &_storage._photobombPokemonID)
         case 3: try decoder.decodeSingularMessageField(value: &_storage._photobombPokemonDisplay)
         case 4: try decoder.decodeSingularFixed64Field(value: &_storage._encounterID)
+        case 5: try decoder.decodeSingularStringField(value: &_storage._uri)
         default: break
         }
       }
@@ -170,6 +179,9 @@ extension POGOProtos_Networking_Responses_CheckPhotobombResponse: SwiftProtobuf.
       if _storage._encounterID != 0 {
         try visitor.visitSingularFixed64Field(value: _storage._encounterID, fieldNumber: 4)
       }
+      if !_storage._uri.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._uri, fieldNumber: 5)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -183,6 +195,7 @@ extension POGOProtos_Networking_Responses_CheckPhotobombResponse: SwiftProtobuf.
         if _storage._photobombPokemonID != rhs_storage._photobombPokemonID {return false}
         if _storage._photobombPokemonDisplay != rhs_storage._photobombPokemonDisplay {return false}
         if _storage._encounterID != rhs_storage._encounterID {return false}
+        if _storage._uri != rhs_storage._uri {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -463,8 +463,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   /// Implemented
   case encounterPhotobomb // = 1104
 
-  /// Implemented
-  case getSignedGmapURL // = 1105
+  /// UnUsed - Implemented
+  case getSignedGmapURLDeprecated // = 1105
 
   /// Implemented
   case changeTeam // = 1106
@@ -728,7 +728,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1102: self = .confirmPhotobomb
     case 1103: self = .getPhotobomb
     case 1104: self = .encounterPhotobomb
-    case 1105: self = .getSignedGmapURL
+    case 1105: self = .getSignedGmapURLDeprecated
     case 1106: self = .changeTeam
     case 5000: self = .registerPushNotification
     case 5001: self = .unregisterPushNotification
@@ -918,7 +918,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .confirmPhotobomb: return 1102
     case .getPhotobomb: return 1103
     case .encounterPhotobomb: return 1104
-    case .getSignedGmapURL: return 1105
+    case .getSignedGmapURLDeprecated: return 1105
     case .changeTeam: return 1106
     case .registerPushNotification: return 5000
     case .unregisterPushNotification: return 5001
@@ -1113,7 +1113,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .confirmPhotobomb,
     .getPhotobomb,
     .encounterPhotobomb,
-    .getSignedGmapURL,
+    .getSignedGmapURLDeprecated,
     .changeTeam,
     .registerPushNotification,
     .unregisterPushNotification,
@@ -1306,7 +1306,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1102: .same(proto: "CONFIRM_PHOTOBOMB"),
     1103: .same(proto: "GET_PHOTOBOMB"),
     1104: .same(proto: "ENCOUNTER_PHOTOBOMB"),
-    1105: .same(proto: "GET_SIGNED_GMAP_URL"),
+    1105: .same(proto: "GET_SIGNED_GMAP_URL_DEPRECATED"),
     1106: .same(proto: "CHANGE_TEAM"),
     5000: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
     5001: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),

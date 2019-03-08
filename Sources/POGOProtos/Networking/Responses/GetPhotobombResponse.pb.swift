@@ -187,7 +187,7 @@ extension POGOProtos_Networking_Responses_GetPhotobombResponse: SwiftProtobuf.Me
         case 3: try decoder.decodeSingularDoubleField(value: &_storage._lat)
         case 4: try decoder.decodeSingularDoubleField(value: &_storage._lng)
         case 5: try decoder.decodeSingularStringField(value: &_storage._encounterLocation)
-        case 6: try decoder.decodeSingularUInt64Field(value: &_storage._encounterID)
+        case 6: try decoder.decodeSingularFixed64Field(value: &_storage._encounterID)
         case 7: try decoder.decodeSingularInt64Field(value: &_storage._disappearTimeMs)
         case 8: try decoder.decodeSingularMessageField(value: &_storage._pokemonDisplay)
         default: break
@@ -214,7 +214,7 @@ extension POGOProtos_Networking_Responses_GetPhotobombResponse: SwiftProtobuf.Me
         try visitor.visitSingularStringField(value: _storage._encounterLocation, fieldNumber: 5)
       }
       if _storage._encounterID != 0 {
-        try visitor.visitSingularUInt64Field(value: _storage._encounterID, fieldNumber: 6)
+        try visitor.visitSingularFixed64Field(value: _storage._encounterID, fieldNumber: 6)
       }
       if _storage._disappearTimeMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._disappearTimeMs, fieldNumber: 7)

@@ -28,6 +28,10 @@ public struct POGOProtos_Settings_PokecoinPurchaseDisplaySettings {
 
   public var enabledCountries: [String] = []
 
+  public var enabledCurrencies: [String] = []
+
+  public var usePokecoinPurchaseDisplayGmt: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -42,6 +46,8 @@ extension POGOProtos_Settings_PokecoinPurchaseDisplaySettings: SwiftProtobuf.Mes
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "feature_enabled"),
     2: .standard(proto: "enabled_countries"),
+    3: .standard(proto: "enabled_currencies"),
+    4: .standard(proto: "use_pokecoin_purchase_display_gmt"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +55,8 @@ extension POGOProtos_Settings_PokecoinPurchaseDisplaySettings: SwiftProtobuf.Mes
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.featureEnabled)
       case 2: try decoder.decodeRepeatedStringField(value: &self.enabledCountries)
+      case 3: try decoder.decodeRepeatedStringField(value: &self.enabledCurrencies)
+      case 4: try decoder.decodeSingularBoolField(value: &self.usePokecoinPurchaseDisplayGmt)
       default: break
       }
     }
@@ -61,12 +69,20 @@ extension POGOProtos_Settings_PokecoinPurchaseDisplaySettings: SwiftProtobuf.Mes
     if !self.enabledCountries.isEmpty {
       try visitor.visitRepeatedStringField(value: self.enabledCountries, fieldNumber: 2)
     }
+    if !self.enabledCurrencies.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.enabledCurrencies, fieldNumber: 3)
+    }
+    if self.usePokecoinPurchaseDisplayGmt != false {
+      try visitor.visitSingularBoolField(value: self.usePokecoinPurchaseDisplayGmt, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_PokecoinPurchaseDisplaySettings, rhs: POGOProtos_Settings_PokecoinPurchaseDisplaySettings) -> Bool {
     if lhs.featureEnabled != rhs.featureEnabled {return false}
     if lhs.enabledCountries != rhs.enabledCountries {return false}
+    if lhs.enabledCurrencies != rhs.enabledCurrencies {return false}
+    if lhs.usePokecoinPurchaseDisplayGmt != rhs.usePokecoinPurchaseDisplayGmt {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

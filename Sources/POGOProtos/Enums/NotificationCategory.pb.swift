@@ -36,11 +36,11 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case bgmodeWeeklyFitnessReport // = 12
   case bgmodeOffSessionDistance // = 13
   case bgmodePoiProximity // = 14
-  case combatChallengeOpened // = 15
-  case friendInviteReceived // = 16
-  case friendInviteAccepted // = 17
-  case bgmodeNamedBuddyCandy // = 18
-  case appBadgeOnly // = 19
+  case bgmodeNamedBuddyCandy // = 15
+  case appBadgeOnly // = 16
+  case combatChallengeOpened // = 17
+  case friendInviteReceived // = 18
+  case friendInviteAccepted // = 19
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -64,11 +64,11 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 12: self = .bgmodeWeeklyFitnessReport
     case 13: self = .bgmodeOffSessionDistance
     case 14: self = .bgmodePoiProximity
-    case 15: self = .combatChallengeOpened
-    case 16: self = .friendInviteReceived
-    case 17: self = .friendInviteAccepted
-    case 18: self = .bgmodeNamedBuddyCandy
-    case 19: self = .appBadgeOnly
+    case 15: self = .bgmodeNamedBuddyCandy
+    case 16: self = .appBadgeOnly
+    case 17: self = .combatChallengeOpened
+    case 18: self = .friendInviteReceived
+    case 19: self = .friendInviteAccepted
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -90,11 +90,11 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .bgmodeWeeklyFitnessReport: return 12
     case .bgmodeOffSessionDistance: return 13
     case .bgmodePoiProximity: return 14
-    case .combatChallengeOpened: return 15
-    case .friendInviteReceived: return 16
-    case .friendInviteAccepted: return 17
-    case .bgmodeNamedBuddyCandy: return 18
-    case .appBadgeOnly: return 19
+    case .bgmodeNamedBuddyCandy: return 15
+    case .appBadgeOnly: return 16
+    case .combatChallengeOpened: return 17
+    case .friendInviteReceived: return 18
+    case .friendInviteAccepted: return 19
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -121,11 +121,11 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .bgmodeWeeklyFitnessReport,
     .bgmodeOffSessionDistance,
     .bgmodePoiProximity,
+    .bgmodeNamedBuddyCandy,
+    .appBadgeOnly,
     .combatChallengeOpened,
     .friendInviteReceived,
     .friendInviteAccepted,
-    .bgmodeNamedBuddyCandy,
-    .appBadgeOnly,
   ]
 }
 
@@ -150,10 +150,10 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     12: .same(proto: "BGMODE_WEEKLY_FITNESS_REPORT"),
     13: .same(proto: "BGMODE_OFF_SESSION_DISTANCE"),
     14: .same(proto: "BGMODE_POI_PROXIMITY"),
-    15: .same(proto: "COMBAT_CHALLENGE_OPENED"),
-    16: .same(proto: "FRIEND_INVITE_RECEIVED"),
-    17: .same(proto: "FRIEND_INVITE_ACCEPTED"),
-    18: .same(proto: "BGMODE_NAMED_BUDDY_CANDY"),
-    19: .same(proto: "APP_BADGE_ONLY"),
+    15: .same(proto: "BGMODE_NAMED_BUDDY_CANDY"),
+    16: .same(proto: "APP_BADGE_ONLY"),
+    17: .same(proto: "COMBAT_CHALLENGE_OPENED"),
+    18: .same(proto: "FRIEND_INVITE_RECEIVED"),
+    19: .same(proto: "FRIEND_INVITE_ACCEPTED"),
   ]
 }

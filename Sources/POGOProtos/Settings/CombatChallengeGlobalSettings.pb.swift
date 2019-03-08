@@ -28,6 +28,10 @@ public struct POGOProtos_Settings_CombatChallengeGlobalSettings {
 
   public var getCombatChallengePollingIntervalSec: Int32 = 0
 
+  public var enableDownstreamDispatch: Bool = false
+
+  public var enableChallengeNotifications: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -42,6 +46,8 @@ extension POGOProtos_Settings_CombatChallengeGlobalSettings: SwiftProtobuf.Messa
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "distance_check_override_friendship_level"),
     2: .standard(proto: "get_combat_challenge_polling_interval_sec"),
+    3: .standard(proto: "enable_downstream_dispatch"),
+    4: .standard(proto: "enable_challenge_notifications"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +55,8 @@ extension POGOProtos_Settings_CombatChallengeGlobalSettings: SwiftProtobuf.Messa
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.distanceCheckOverrideFriendshipLevel)
       case 2: try decoder.decodeSingularInt32Field(value: &self.getCombatChallengePollingIntervalSec)
+      case 3: try decoder.decodeSingularBoolField(value: &self.enableDownstreamDispatch)
+      case 4: try decoder.decodeSingularBoolField(value: &self.enableChallengeNotifications)
       default: break
       }
     }
@@ -61,12 +69,20 @@ extension POGOProtos_Settings_CombatChallengeGlobalSettings: SwiftProtobuf.Messa
     if self.getCombatChallengePollingIntervalSec != 0 {
       try visitor.visitSingularInt32Field(value: self.getCombatChallengePollingIntervalSec, fieldNumber: 2)
     }
+    if self.enableDownstreamDispatch != false {
+      try visitor.visitSingularBoolField(value: self.enableDownstreamDispatch, fieldNumber: 3)
+    }
+    if self.enableChallengeNotifications != false {
+      try visitor.visitSingularBoolField(value: self.enableChallengeNotifications, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_CombatChallengeGlobalSettings, rhs: POGOProtos_Settings_CombatChallengeGlobalSettings) -> Bool {
     if lhs.distanceCheckOverrideFriendshipLevel != rhs.distanceCheckOverrideFriendshipLevel {return false}
     if lhs.getCombatChallengePollingIntervalSec != rhs.getCombatChallengePollingIntervalSec {return false}
+    if lhs.enableDownstreamDispatch != rhs.enableDownstreamDispatch {return false}
+    if lhs.enableChallengeNotifications != rhs.enableChallengeNotifications {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
