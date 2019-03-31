@@ -39,6 +39,8 @@ public struct POGOProtos_Settings_Master_FormSettings {
 
     public var assetBundleValue: Int32 = 0
 
+    public var assetBundleSuffix: String = String()
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -91,6 +93,7 @@ extension POGOProtos_Settings_Master_FormSettings.Form: SwiftProtobuf.Message, S
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "form"),
     2: .standard(proto: "asset_bundle_value"),
+    3: .standard(proto: "asset_bundle_suffix"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -98,6 +101,7 @@ extension POGOProtos_Settings_Master_FormSettings.Form: SwiftProtobuf.Message, S
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.form)
       case 2: try decoder.decodeSingularInt32Field(value: &self.assetBundleValue)
+      case 3: try decoder.decodeSingularStringField(value: &self.assetBundleSuffix)
       default: break
       }
     }
@@ -110,12 +114,16 @@ extension POGOProtos_Settings_Master_FormSettings.Form: SwiftProtobuf.Message, S
     if self.assetBundleValue != 0 {
       try visitor.visitSingularInt32Field(value: self.assetBundleValue, fieldNumber: 2)
     }
+    if !self.assetBundleSuffix.isEmpty {
+      try visitor.visitSingularStringField(value: self.assetBundleSuffix, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_Master_FormSettings.Form, rhs: POGOProtos_Settings_Master_FormSettings.Form) -> Bool {
     if lhs.form != rhs.form {return false}
     if lhs.assetBundleValue != rhs.assetBundleValue {return false}
+    if lhs.assetBundleSuffix != rhs.assetBundleSuffix {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

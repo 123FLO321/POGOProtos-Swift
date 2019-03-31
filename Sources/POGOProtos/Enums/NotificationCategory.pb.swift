@@ -39,8 +39,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case bgmodeNamedBuddyCandy // = 15
   case appBadgeOnly // = 16
   case combatChallengeOpened // = 17
-  case friendInviteReceived // = 18
-  case friendInviteAccepted // = 19
+  case luckyFriend // = 18
+  case friendInviteReceived // = 19
+  case friendInviteAccepted // = 20
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -67,8 +68,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 15: self = .bgmodeNamedBuddyCandy
     case 16: self = .appBadgeOnly
     case 17: self = .combatChallengeOpened
-    case 18: self = .friendInviteReceived
-    case 19: self = .friendInviteAccepted
+    case 18: self = .luckyFriend
+    case 19: self = .friendInviteReceived
+    case 20: self = .friendInviteAccepted
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -93,8 +95,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .bgmodeNamedBuddyCandy: return 15
     case .appBadgeOnly: return 16
     case .combatChallengeOpened: return 17
-    case .friendInviteReceived: return 18
-    case .friendInviteAccepted: return 19
+    case .luckyFriend: return 18
+    case .friendInviteReceived: return 19
+    case .friendInviteAccepted: return 20
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -124,6 +127,7 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .bgmodeNamedBuddyCandy,
     .appBadgeOnly,
     .combatChallengeOpened,
+    .luckyFriend,
     .friendInviteReceived,
     .friendInviteAccepted,
   ]
@@ -153,7 +157,8 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     15: .same(proto: "BGMODE_NAMED_BUDDY_CANDY"),
     16: .same(proto: "APP_BADGE_ONLY"),
     17: .same(proto: "COMBAT_CHALLENGE_OPENED"),
-    18: .same(proto: "FRIEND_INVITE_RECEIVED"),
-    19: .same(proto: "FRIEND_INVITE_ACCEPTED"),
+    18: .same(proto: "LUCKY_FRIEND"),
+    19: .same(proto: "FRIEND_INVITE_RECEIVED"),
+    20: .same(proto: "FRIEND_INVITE_ACCEPTED"),
   ]
 }

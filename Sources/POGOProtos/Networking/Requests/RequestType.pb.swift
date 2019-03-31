@@ -50,6 +50,9 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case acknowledgePunishment // = 10
 
   /// Implemented
+  case getServerTime // = 11
+
+  /// Implemented
   case fortSearch // = 101
 
   /// Implemented
@@ -470,6 +473,9 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case changeTeam // = 1106
 
   /// Implemented
+  case getWebToken // = 1107
+
+  /// Implemented
   case registerPushNotification // = 5000
 
   /// ???
@@ -590,6 +596,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 8: self = .registerBackgroundDevice
     case 9: self = .getPlayerDay
     case 10: self = .acknowledgePunishment
+    case 11: self = .getServerTime
     case 101: self = .fortSearch
     case 102: self = .encounter
     case 103: self = .catchPokemon
@@ -730,6 +737,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1104: self = .encounterPhotobomb
     case 1105: self = .getSignedGmapURLDeprecated
     case 1106: self = .changeTeam
+    case 1107: self = .getWebToken
     case 5000: self = .registerPushNotification
     case 5001: self = .unregisterPushNotification
     case 5002: self = .updateNotificationStatus
@@ -780,6 +788,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .registerBackgroundDevice: return 8
     case .getPlayerDay: return 9
     case .acknowledgePunishment: return 10
+    case .getServerTime: return 11
     case .fortSearch: return 101
     case .encounter: return 102
     case .catchPokemon: return 103
@@ -920,6 +929,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .encounterPhotobomb: return 1104
     case .getSignedGmapURLDeprecated: return 1105
     case .changeTeam: return 1106
+    case .getWebToken: return 1107
     case .registerPushNotification: return 5000
     case .unregisterPushNotification: return 5001
     case .updateNotificationStatus: return 5002
@@ -975,6 +985,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .registerBackgroundDevice,
     .getPlayerDay,
     .acknowledgePunishment,
+    .getServerTime,
     .fortSearch,
     .encounter,
     .catchPokemon,
@@ -1115,6 +1126,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .encounterPhotobomb,
     .getSignedGmapURLDeprecated,
     .changeTeam,
+    .getWebToken,
     .registerPushNotification,
     .unregisterPushNotification,
     .updateNotificationStatus,
@@ -1168,6 +1180,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     8: .same(proto: "REGISTER_BACKGROUND_DEVICE"),
     9: .same(proto: "GET_PLAYER_DAY"),
     10: .same(proto: "ACKNOWLEDGE_PUNISHMENT"),
+    11: .same(proto: "GET_SERVER_TIME"),
     101: .same(proto: "FORT_SEARCH"),
     102: .same(proto: "ENCOUNTER"),
     103: .same(proto: "CATCH_POKEMON"),
@@ -1308,6 +1321,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1104: .same(proto: "ENCOUNTER_PHOTOBOMB"),
     1105: .same(proto: "GET_SIGNED_GMAP_URL_DEPRECATED"),
     1106: .same(proto: "CHANGE_TEAM"),
+    1107: .same(proto: "GET_WEB_TOKEN"),
     5000: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
     5001: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
     5002: .same(proto: "UPDATE_NOTIFICATION_STATUS"),

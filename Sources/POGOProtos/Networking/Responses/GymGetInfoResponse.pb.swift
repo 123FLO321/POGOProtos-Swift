@@ -90,6 +90,21 @@ public struct POGOProtos_Networking_Responses_GymGetInfoResponse {
   /// Clears the value of `displayWeather`. Subsequent reads from it will return its default value.
   public mutating func clearDisplayWeather() {_uniqueStorage()._displayWeather = nil}
 
+  public var promoImage: [String] {
+    get {return _storage._promoImage}
+    set {_uniqueStorage()._promoImage = newValue}
+  }
+
+  public var promoDescription: [String] {
+    get {return _storage._promoDescription}
+    set {_uniqueStorage()._promoDescription = newValue}
+  }
+
+  public var callToActionLink: String {
+    get {return _storage._callToActionLink}
+    set {_uniqueStorage()._callToActionLink = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -162,6 +177,9 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
     8: .standard(proto: "checkin_image_url"),
     9: .standard(proto: "event_info"),
     10: .standard(proto: "display_weather"),
+    11: .standard(proto: "promo_image"),
+    12: .standard(proto: "promo_description"),
+    13: .standard(proto: "call_to_action_link"),
   ]
 
   fileprivate class _StorageClass {
@@ -175,6 +193,9 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
     var _checkinImageURL: String = String()
     var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
     var _displayWeather: POGOProtos_Map_Weather_DisplayWeather? = nil
+    var _promoImage: [String] = []
+    var _promoDescription: [String] = []
+    var _callToActionLink: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -191,6 +212,9 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
       _checkinImageURL = source._checkinImageURL
       _eventInfo = source._eventInfo
       _displayWeather = source._displayWeather
+      _promoImage = source._promoImage
+      _promoDescription = source._promoDescription
+      _callToActionLink = source._callToActionLink
     }
   }
 
@@ -216,6 +240,9 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
         case 8: try decoder.decodeSingularStringField(value: &_storage._checkinImageURL)
         case 9: try decoder.decodeSingularMessageField(value: &_storage._eventInfo)
         case 10: try decoder.decodeSingularMessageField(value: &_storage._displayWeather)
+        case 11: try decoder.decodeRepeatedStringField(value: &_storage._promoImage)
+        case 12: try decoder.decodeRepeatedStringField(value: &_storage._promoDescription)
+        case 13: try decoder.decodeSingularStringField(value: &_storage._callToActionLink)
         default: break
         }
       }
@@ -254,6 +281,15 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
       if let v = _storage._displayWeather {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
       }
+      if !_storage._promoImage.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._promoImage, fieldNumber: 11)
+      }
+      if !_storage._promoDescription.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._promoDescription, fieldNumber: 12)
+      }
+      if !_storage._callToActionLink.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._callToActionLink, fieldNumber: 13)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -273,6 +309,9 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
         if _storage._checkinImageURL != rhs_storage._checkinImageURL {return false}
         if _storage._eventInfo != rhs_storage._eventInfo {return false}
         if _storage._displayWeather != rhs_storage._displayWeather {return false}
+        if _storage._promoImage != rhs_storage._promoImage {return false}
+        if _storage._promoDescription != rhs_storage._promoDescription {return false}
+        if _storage._callToActionLink != rhs_storage._callToActionLink {return false}
         return true
       }
       if !storagesAreEqual {return false}

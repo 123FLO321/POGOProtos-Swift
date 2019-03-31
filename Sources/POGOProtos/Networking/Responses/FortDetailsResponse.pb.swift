@@ -112,6 +112,16 @@ public struct POGOProtos_Networking_Responses_FortDetailsResponse {
   /// Clears the value of `eventInfo`. Subsequent reads from it will return its default value.
   public mutating func clearEventInfo() {_uniqueStorage()._eventInfo = nil}
 
+  public var promoDescription: [String] {
+    get {return _storage._promoDescription}
+    set {_uniqueStorage()._promoDescription = newValue}
+  }
+
+  public var callToActionLink: String {
+    get {return _storage._callToActionLink}
+    set {_uniqueStorage()._callToActionLink = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -142,6 +152,8 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
     14: .standard(proto: "close_soon"),
     15: .standard(proto: "checkin_image_url"),
     16: .standard(proto: "event_info"),
+    17: .standard(proto: "promo_description"),
+    18: .standard(proto: "call_to_action_link"),
   ]
 
   fileprivate class _StorageClass {
@@ -161,6 +173,8 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
     var _closeSoon: Bool = false
     var _checkinImageURL: String = String()
     var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
+    var _promoDescription: [String] = []
+    var _callToActionLink: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -183,6 +197,8 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
       _closeSoon = source._closeSoon
       _checkinImageURL = source._checkinImageURL
       _eventInfo = source._eventInfo
+      _promoDescription = source._promoDescription
+      _callToActionLink = source._callToActionLink
     }
   }
 
@@ -214,6 +230,8 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
         case 14: try decoder.decodeSingularBoolField(value: &_storage._closeSoon)
         case 15: try decoder.decodeSingularStringField(value: &_storage._checkinImageURL)
         case 16: try decoder.decodeSingularMessageField(value: &_storage._eventInfo)
+        case 17: try decoder.decodeRepeatedStringField(value: &_storage._promoDescription)
+        case 18: try decoder.decodeSingularStringField(value: &_storage._callToActionLink)
         default: break
         }
       }
@@ -270,6 +288,12 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
       if let v = _storage._eventInfo {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
       }
+      if !_storage._promoDescription.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._promoDescription, fieldNumber: 17)
+      }
+      if !_storage._callToActionLink.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._callToActionLink, fieldNumber: 18)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -295,6 +319,8 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
         if _storage._closeSoon != rhs_storage._closeSoon {return false}
         if _storage._checkinImageURL != rhs_storage._checkinImageURL {return false}
         if _storage._eventInfo != rhs_storage._eventInfo {return false}
+        if _storage._promoDescription != rhs_storage._promoDescription {return false}
+        if _storage._callToActionLink != rhs_storage._callToActionLink {return false}
         return true
       }
       if !storagesAreEqual {return false}

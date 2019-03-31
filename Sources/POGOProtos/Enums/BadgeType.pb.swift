@@ -125,6 +125,11 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgePartnerEvent20197 // = 2045
   case badgePartnerEvent20198 // = 2046
   case badgePartnerEvent20199 // = 2047
+  case badgeSentosa18Apr2019 // = 2048
+  case badgeSentosa19Apr2019 // = 2049
+  case badgeSentosa20Apr2019 // = 2050
+  case badgeSentosa21Apr2019 // = 2051
+  case badgeSentosa22Apr2019 // = 2052
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -237,6 +242,11 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 2045: self = .badgePartnerEvent20197
     case 2046: self = .badgePartnerEvent20198
     case 2047: self = .badgePartnerEvent20199
+    case 2048: self = .badgeSentosa18Apr2019
+    case 2049: self = .badgeSentosa19Apr2019
+    case 2050: self = .badgeSentosa20Apr2019
+    case 2051: self = .badgeSentosa21Apr2019
+    case 2052: self = .badgeSentosa22Apr2019
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -347,6 +357,11 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgePartnerEvent20197: return 2045
     case .badgePartnerEvent20198: return 2046
     case .badgePartnerEvent20199: return 2047
+    case .badgeSentosa18Apr2019: return 2048
+    case .badgeSentosa19Apr2019: return 2049
+    case .badgeSentosa20Apr2019: return 2050
+    case .badgeSentosa21Apr2019: return 2051
+    case .badgeSentosa22Apr2019: return 2052
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -462,6 +477,11 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgePartnerEvent20197,
     .badgePartnerEvent20198,
     .badgePartnerEvent20199,
+    .badgeSentosa18Apr2019,
+    .badgeSentosa19Apr2019,
+    .badgeSentosa20Apr2019,
+    .badgeSentosa21Apr2019,
+    .badgeSentosa22Apr2019,
   ]
 }
 
@@ -575,5 +595,10 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     2045: .same(proto: "BADGE_PARTNER_EVENT_2019_7"),
     2046: .same(proto: "BADGE_PARTNER_EVENT_2019_8"),
     2047: .same(proto: "BADGE_PARTNER_EVENT_2019_9"),
+    2048: .same(proto: "BADGE_SENTOSA_18_APR_2019"),
+    2049: .same(proto: "BADGE_SENTOSA_19_APR_2019"),
+    2050: .same(proto: "BADGE_SENTOSA_20_APR_2019"),
+    2051: .same(proto: "BADGE_SENTOSA_21_APR_2019"),
+    2052: .same(proto: "BADGE_SENTOSA_22_APR_2019"),
   ]
 }

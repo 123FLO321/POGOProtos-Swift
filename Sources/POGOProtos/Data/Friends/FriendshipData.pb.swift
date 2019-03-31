@@ -53,6 +53,16 @@ public struct POGOProtos_Data_Friends_FriendshipData {
     set {_uniqueStorage()._openTradeExpireMs = newValue}
   }
 
+  public var isLucky: Bool {
+    get {return _storage._isLucky}
+    set {_uniqueStorage()._isLucky = newValue}
+  }
+
+  public var luckyCount: Int32 {
+    get {return _storage._luckyCount}
+    set {_uniqueStorage()._luckyCount = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -72,6 +82,8 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
     3: .same(proto: "codename"),
     4: .same(proto: "nickname"),
     5: .standard(proto: "open_trade_expire_ms"),
+    6: .standard(proto: "is_lucky"),
+    7: .standard(proto: "lucky_count"),
   ]
 
   fileprivate class _StorageClass {
@@ -80,6 +92,8 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
     var _codename: String = String()
     var _nickname: String = String()
     var _openTradeExpireMs: Int64 = 0
+    var _isLucky: Bool = false
+    var _luckyCount: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -91,6 +105,8 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
       _codename = source._codename
       _nickname = source._nickname
       _openTradeExpireMs = source._openTradeExpireMs
+      _isLucky = source._isLucky
+      _luckyCount = source._luckyCount
     }
   }
 
@@ -111,6 +127,8 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
         case 3: try decoder.decodeSingularStringField(value: &_storage._codename)
         case 4: try decoder.decodeSingularStringField(value: &_storage._nickname)
         case 5: try decoder.decodeSingularInt64Field(value: &_storage._openTradeExpireMs)
+        case 6: try decoder.decodeSingularBoolField(value: &_storage._isLucky)
+        case 7: try decoder.decodeSingularInt32Field(value: &_storage._luckyCount)
         default: break
         }
       }
@@ -134,6 +152,12 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
       if _storage._openTradeExpireMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._openTradeExpireMs, fieldNumber: 5)
       }
+      if _storage._isLucky != false {
+        try visitor.visitSingularBoolField(value: _storage._isLucky, fieldNumber: 6)
+      }
+      if _storage._luckyCount != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._luckyCount, fieldNumber: 7)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -148,6 +172,8 @@ extension POGOProtos_Data_Friends_FriendshipData: SwiftProtobuf.Message, SwiftPr
         if _storage._codename != rhs_storage._codename {return false}
         if _storage._nickname != rhs_storage._nickname {return false}
         if _storage._openTradeExpireMs != rhs_storage._openTradeExpireMs {return false}
+        if _storage._isLucky != rhs_storage._isLucky {return false}
+        if _storage._luckyCount != rhs_storage._luckyCount {return false}
         return true
       }
       if !storagesAreEqual {return false}

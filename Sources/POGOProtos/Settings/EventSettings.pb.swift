@@ -26,6 +26,12 @@ public struct POGOProtos_Settings_EventSettings {
 
   public var condolenceRibbonCountry: [String] = []
 
+  public var enableEventLink: Bool = false
+
+  public var enableEventLinkForChildren: Bool = false
+
+  public var eventWebtokenServerURL: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -39,12 +45,18 @@ extension POGOProtos_Settings_EventSettings: SwiftProtobuf.Message, SwiftProtobu
   public static let protoMessageName: String = _protobuf_package + ".EventSettings"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "condolence_ribbon_country"),
+    2: .standard(proto: "enable_event_link"),
+    3: .standard(proto: "enable_event_link_for_children"),
+    4: .standard(proto: "event_webtoken_server_url"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedStringField(value: &self.condolenceRibbonCountry)
+      case 2: try decoder.decodeSingularBoolField(value: &self.enableEventLink)
+      case 3: try decoder.decodeSingularBoolField(value: &self.enableEventLinkForChildren)
+      case 4: try decoder.decodeSingularStringField(value: &self.eventWebtokenServerURL)
       default: break
       }
     }
@@ -54,11 +66,23 @@ extension POGOProtos_Settings_EventSettings: SwiftProtobuf.Message, SwiftProtobu
     if !self.condolenceRibbonCountry.isEmpty {
       try visitor.visitRepeatedStringField(value: self.condolenceRibbonCountry, fieldNumber: 1)
     }
+    if self.enableEventLink != false {
+      try visitor.visitSingularBoolField(value: self.enableEventLink, fieldNumber: 2)
+    }
+    if self.enableEventLinkForChildren != false {
+      try visitor.visitSingularBoolField(value: self.enableEventLinkForChildren, fieldNumber: 3)
+    }
+    if !self.eventWebtokenServerURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.eventWebtokenServerURL, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_EventSettings, rhs: POGOProtos_Settings_EventSettings) -> Bool {
     if lhs.condolenceRibbonCountry != rhs.condolenceRibbonCountry {return false}
+    if lhs.enableEventLink != rhs.enableEventLink {return false}
+    if lhs.enableEventLinkForChildren != rhs.enableEventLinkForChildren {return false}
+    if lhs.eventWebtokenServerURL != rhs.eventWebtokenServerURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -73,6 +73,21 @@ public struct POGOProtos_Data_Raid_RaidInfo {
     set {_uniqueStorage()._isRaidHidden = newValue}
   }
 
+  public var isScheduledRaid: Bool {
+    get {return _storage._isScheduledRaid}
+    set {_uniqueStorage()._isScheduledRaid = newValue}
+  }
+
+  public var isFree: Bool {
+    get {return _storage._isFree}
+    set {_uniqueStorage()._isFree = newValue}
+  }
+
+  public var campaignID: String {
+    get {return _storage._campaignID}
+    set {_uniqueStorage()._campaignID = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -96,6 +111,9 @@ extension POGOProtos_Data_Raid_RaidInfo: SwiftProtobuf.Message, SwiftProtobuf._M
     7: .same(proto: "complete"),
     8: .standard(proto: "is_exclusive"),
     9: .standard(proto: "is_raid_hidden"),
+    10: .standard(proto: "is_scheduled_raid"),
+    11: .standard(proto: "is_free"),
+    12: .standard(proto: "campaign_id"),
   ]
 
   fileprivate class _StorageClass {
@@ -108,6 +126,9 @@ extension POGOProtos_Data_Raid_RaidInfo: SwiftProtobuf.Message, SwiftProtobuf._M
     var _complete: Bool = false
     var _isExclusive: Bool = false
     var _isRaidHidden: Bool = false
+    var _isScheduledRaid: Bool = false
+    var _isFree: Bool = false
+    var _campaignID: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -123,6 +144,9 @@ extension POGOProtos_Data_Raid_RaidInfo: SwiftProtobuf.Message, SwiftProtobuf._M
       _complete = source._complete
       _isExclusive = source._isExclusive
       _isRaidHidden = source._isRaidHidden
+      _isScheduledRaid = source._isScheduledRaid
+      _isFree = source._isFree
+      _campaignID = source._campaignID
     }
   }
 
@@ -147,6 +171,9 @@ extension POGOProtos_Data_Raid_RaidInfo: SwiftProtobuf.Message, SwiftProtobuf._M
         case 7: try decoder.decodeSingularBoolField(value: &_storage._complete)
         case 8: try decoder.decodeSingularBoolField(value: &_storage._isExclusive)
         case 9: try decoder.decodeSingularBoolField(value: &_storage._isRaidHidden)
+        case 10: try decoder.decodeSingularBoolField(value: &_storage._isScheduledRaid)
+        case 11: try decoder.decodeSingularBoolField(value: &_storage._isFree)
+        case 12: try decoder.decodeSingularStringField(value: &_storage._campaignID)
         default: break
         }
       }
@@ -182,6 +209,15 @@ extension POGOProtos_Data_Raid_RaidInfo: SwiftProtobuf.Message, SwiftProtobuf._M
       if _storage._isRaidHidden != false {
         try visitor.visitSingularBoolField(value: _storage._isRaidHidden, fieldNumber: 9)
       }
+      if _storage._isScheduledRaid != false {
+        try visitor.visitSingularBoolField(value: _storage._isScheduledRaid, fieldNumber: 10)
+      }
+      if _storage._isFree != false {
+        try visitor.visitSingularBoolField(value: _storage._isFree, fieldNumber: 11)
+      }
+      if !_storage._campaignID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._campaignID, fieldNumber: 12)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -200,6 +236,9 @@ extension POGOProtos_Data_Raid_RaidInfo: SwiftProtobuf.Message, SwiftProtobuf._M
         if _storage._complete != rhs_storage._complete {return false}
         if _storage._isExclusive != rhs_storage._isExclusive {return false}
         if _storage._isRaidHidden != rhs_storage._isRaidHidden {return false}
+        if _storage._isScheduledRaid != rhs_storage._isScheduledRaid {return false}
+        if _storage._isFree != rhs_storage._isFree {return false}
+        if _storage._campaignID != rhs_storage._campaignID {return false}
         return true
       }
       if !storagesAreEqual {return false}

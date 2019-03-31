@@ -34,6 +34,10 @@ public struct POGOProtos_Networking_Requests_Messages_GetRaidDetailsMessage {
 
   public var playerLngDegrees: Double = 0
 
+  public var gymLatDegrees: Double = 0
+
+  public var gymLngDegrees: Double = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +55,8 @@ extension POGOProtos_Networking_Requests_Messages_GetRaidDetailsMessage: SwiftPr
     3: .standard(proto: "lobby_id"),
     4: .standard(proto: "player_lat_degrees"),
     5: .standard(proto: "player_lng_degrees"),
+    6: .standard(proto: "gym_lat_degrees"),
+    7: .standard(proto: "gym_lng_degrees"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -61,6 +67,8 @@ extension POGOProtos_Networking_Requests_Messages_GetRaidDetailsMessage: SwiftPr
       case 3: try decoder.decodeRepeatedInt32Field(value: &self.lobbyID)
       case 4: try decoder.decodeSingularDoubleField(value: &self.playerLatDegrees)
       case 5: try decoder.decodeSingularDoubleField(value: &self.playerLngDegrees)
+      case 6: try decoder.decodeSingularDoubleField(value: &self.gymLatDegrees)
+      case 7: try decoder.decodeSingularDoubleField(value: &self.gymLngDegrees)
       default: break
       }
     }
@@ -82,6 +90,12 @@ extension POGOProtos_Networking_Requests_Messages_GetRaidDetailsMessage: SwiftPr
     if self.playerLngDegrees != 0 {
       try visitor.visitSingularDoubleField(value: self.playerLngDegrees, fieldNumber: 5)
     }
+    if self.gymLatDegrees != 0 {
+      try visitor.visitSingularDoubleField(value: self.gymLatDegrees, fieldNumber: 6)
+    }
+    if self.gymLngDegrees != 0 {
+      try visitor.visitSingularDoubleField(value: self.gymLngDegrees, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -91,6 +105,8 @@ extension POGOProtos_Networking_Requests_Messages_GetRaidDetailsMessage: SwiftPr
     if lhs.lobbyID != rhs.lobbyID {return false}
     if lhs.playerLatDegrees != rhs.playerLatDegrees {return false}
     if lhs.playerLngDegrees != rhs.playerLngDegrees {return false}
+    if lhs.gymLatDegrees != rhs.gymLatDegrees {return false}
+    if lhs.gymLngDegrees != rhs.gymLngDegrees {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
