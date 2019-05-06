@@ -154,6 +154,9 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case spinda17 // = 130
   case spinda18 // = 131
   case spinda19 // = 132
+  case mewtwoA // = 133
+  case mewtwoAIntro // = 134
+  case mewtwoNormal // = 135
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -295,6 +298,9 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 130: self = .spinda17
     case 131: self = .spinda18
     case 132: self = .spinda19
+    case 133: self = .mewtwoA
+    case 134: self = .mewtwoAIntro
+    case 135: self = .mewtwoNormal
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -434,6 +440,9 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .spinda17: return 130
     case .spinda18: return 131
     case .spinda19: return 132
+    case .mewtwoA: return 133
+    case .mewtwoAIntro: return 134
+    case .mewtwoNormal: return 135
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -578,6 +587,9 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .spinda17,
     .spinda18,
     .spinda19,
+    .mewtwoA,
+    .mewtwoAIntro,
+    .mewtwoNormal,
   ]
 }
 
@@ -720,5 +732,8 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     130: .same(proto: "SPINDA_17"),
     131: .same(proto: "SPINDA_18"),
     132: .same(proto: "SPINDA_19"),
+    133: .same(proto: "MEWTWO_A"),
+    134: .same(proto: "MEWTWO_A_INTRO"),
+    135: .same(proto: "MEWTWO_NORMAL"),
   ]
 }

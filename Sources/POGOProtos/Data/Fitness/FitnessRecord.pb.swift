@@ -24,7 +24,7 @@ public struct POGOProtos_Data_Fitness_FitnessRecord {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var hourlyReports: [POGOProtos_Data_Fitness_FitnessRecord.HourlyReportsEntry] {
+  public var hourlyReports: Dictionary<Int64,POGOProtos_Data_Fitness_FitnessMetrics> {
     get {return _storage._hourlyReports}
     set {_uniqueStorage()._hourlyReports = newValue}
   }
@@ -59,32 +59,6 @@ public struct POGOProtos_Data_Fitness_FitnessRecord {
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct HourlyReportsEntry {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var key: Int64 {
-      get {return _storage._key}
-      set {_uniqueStorage()._key = newValue}
-    }
-
-    public var value: POGOProtos_Data_Fitness_FitnessMetrics {
-      get {return _storage._value ?? POGOProtos_Data_Fitness_FitnessMetrics()}
-      set {_uniqueStorage()._value = newValue}
-    }
-    /// Returns true if `value` has been explicitly set.
-    public var hasValue: Bool {return _storage._value != nil}
-    /// Clears the value of `value`. Subsequent reads from it will return its default value.
-    public mutating func clearValue() {_uniqueStorage()._value = nil}
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-
-    fileprivate var _storage = _StorageClass.defaultInstance
-  }
-
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
@@ -105,7 +79,7 @@ extension POGOProtos_Data_Fitness_FitnessRecord: SwiftProtobuf.Message, SwiftPro
   ]
 
   fileprivate class _StorageClass {
-    var _hourlyReports: [POGOProtos_Data_Fitness_FitnessRecord.HourlyReportsEntry] = []
+    var _hourlyReports: Dictionary<Int64,POGOProtos_Data_Fitness_FitnessMetrics> = [:]
     var _rawSamples: [POGOProtos_Data_Fitness_FitnessSample] = []
     var _lastAggregationTimestampMs: Int64 = 0
     var _fitnessStats: POGOProtos_Data_Fitness_FitnessStats? = nil
@@ -136,7 +110,7 @@ extension POGOProtos_Data_Fitness_FitnessRecord: SwiftProtobuf.Message, SwiftPro
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeRepeatedMessageField(value: &_storage._hourlyReports)
+        case 1: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufInt64,POGOProtos_Data_Fitness_FitnessMetrics>.self, value: &_storage._hourlyReports)
         case 2: try decoder.decodeRepeatedMessageField(value: &_storage._rawSamples)
         case 3: try decoder.decodeSingularInt64Field(value: &_storage._lastAggregationTimestampMs)
         case 4: try decoder.decodeSingularMessageField(value: &_storage._fitnessStats)
@@ -150,7 +124,7 @@ extension POGOProtos_Data_Fitness_FitnessRecord: SwiftProtobuf.Message, SwiftPro
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       if !_storage._hourlyReports.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._hourlyReports, fieldNumber: 1)
+        try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufInt64,POGOProtos_Data_Fitness_FitnessMetrics>.self, value: _storage._hourlyReports, fieldNumber: 1)
       }
       if !_storage._rawSamples.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._rawSamples, fieldNumber: 2)
@@ -178,75 +152,6 @@ extension POGOProtos_Data_Fitness_FitnessRecord: SwiftProtobuf.Message, SwiftPro
         if _storage._lastAggregationTimestampMs != rhs_storage._lastAggregationTimestampMs {return false}
         if _storage._fitnessStats != rhs_storage._fitnessStats {return false}
         if _storage._reportHistory != rhs_storage._reportHistory {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension POGOProtos_Data_Fitness_FitnessRecord.HourlyReportsEntry: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Data_Fitness_FitnessRecord.protoMessageName + ".HourlyReportsEntry"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "key"),
-    2: .same(proto: "value"),
-  ]
-
-  fileprivate class _StorageClass {
-    var _key: Int64 = 0
-    var _value: POGOProtos_Data_Fitness_FitnessMetrics? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _key = source._key
-      _value = source._value
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularInt64Field(value: &_storage._key)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._value)
-        default: break
-        }
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._key != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._key, fieldNumber: 1)
-      }
-      if let v = _storage._value {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Data_Fitness_FitnessRecord.HourlyReportsEntry, rhs: POGOProtos_Data_Fitness_FitnessRecord.HourlyReportsEntry) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._key != rhs_storage._key {return false}
-        if _storage._value != rhs_storage._value {return false}
         return true
       }
       if !storagesAreEqual {return false}

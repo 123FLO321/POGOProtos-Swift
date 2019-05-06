@@ -38,13 +38,13 @@ public struct POGOProtos_Settings_Master_Item_IncenseAttributes {
 
   public var pokemonAttractedLengthSec: Int32 = 0
 
-  public var spawnTable: [POGOProtos_Settings_Master_Item_IncenseAttributes.IncensedPokemon] = []
+  public var spawnTable: [POGOProtos_Settings_Master_Item_IncenseAttributes.SpawnTablePokemon] = []
 
   public var spawnTableProbability: Float = 0
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public struct IncensedPokemon {
+  public struct SpawnTablePokemon {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -52,6 +52,8 @@ public struct POGOProtos_Settings_Master_Item_IncenseAttributes {
     public var pokemonID: POGOProtos_Enums_PokemonId = .missingno
 
     public var weight: Float = 0
+
+    public var form: POGOProtos_Enums_Form = .unset
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -142,11 +144,12 @@ extension POGOProtos_Settings_Master_Item_IncenseAttributes: SwiftProtobuf.Messa
   }
 }
 
-extension POGOProtos_Settings_Master_Item_IncenseAttributes.IncensedPokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Settings_Master_Item_IncenseAttributes.protoMessageName + ".IncensedPokemon"
+extension POGOProtos_Settings_Master_Item_IncenseAttributes.SpawnTablePokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Settings_Master_Item_IncenseAttributes.protoMessageName + ".SpawnTablePokemon"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_id"),
     2: .same(proto: "weight"),
+    3: .same(proto: "form"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -154,6 +157,7 @@ extension POGOProtos_Settings_Master_Item_IncenseAttributes.IncensedPokemon: Swi
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.pokemonID)
       case 2: try decoder.decodeSingularFloatField(value: &self.weight)
+      case 3: try decoder.decodeSingularEnumField(value: &self.form)
       default: break
       }
     }
@@ -166,12 +170,16 @@ extension POGOProtos_Settings_Master_Item_IncenseAttributes.IncensedPokemon: Swi
     if self.weight != 0 {
       try visitor.visitSingularFloatField(value: self.weight, fieldNumber: 2)
     }
+    if self.form != .unset {
+      try visitor.visitSingularEnumField(value: self.form, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: POGOProtos_Settings_Master_Item_IncenseAttributes.IncensedPokemon, rhs: POGOProtos_Settings_Master_Item_IncenseAttributes.IncensedPokemon) -> Bool {
+  public static func ==(lhs: POGOProtos_Settings_Master_Item_IncenseAttributes.SpawnTablePokemon, rhs: POGOProtos_Settings_Master_Item_IncenseAttributes.SpawnTablePokemon) -> Bool {
     if lhs.pokemonID != rhs.pokemonID {return false}
     if lhs.weight != rhs.weight {return false}
+    if lhs.form != rhs.form {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

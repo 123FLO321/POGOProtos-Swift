@@ -78,9 +78,9 @@ public struct POGOProtos_Settings_Master_CombatNpcTrainer {
     set {_uniqueStorage()._iconURL = newValue}
   }
 
-  public var backdropURL: String {
-    get {return _storage._backdropURL}
-    set {_uniqueStorage()._backdropURL = newValue}
+  public var backdropImageBundle: String {
+    get {return _storage._backdropImageBundle}
+    set {_uniqueStorage()._backdropImageBundle = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -107,7 +107,7 @@ extension POGOProtos_Settings_Master_CombatNpcTrainer: SwiftProtobuf.Message, Sw
     9: .standard(proto: "trainer_title"),
     10: .standard(proto: "trainer_quote"),
     11: .standard(proto: "icon_url"),
-    12: .standard(proto: "backdrop_url"),
+    12: .standard(proto: "backdrop_image_bundle"),
   ]
 
   fileprivate class _StorageClass {
@@ -121,7 +121,7 @@ extension POGOProtos_Settings_Master_CombatNpcTrainer: SwiftProtobuf.Message, Sw
     var _trainerTitle: String = String()
     var _trainerQuote: String = String()
     var _iconURL: String = String()
-    var _backdropURL: String = String()
+    var _backdropImageBundle: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -138,7 +138,7 @@ extension POGOProtos_Settings_Master_CombatNpcTrainer: SwiftProtobuf.Message, Sw
       _trainerTitle = source._trainerTitle
       _trainerQuote = source._trainerQuote
       _iconURL = source._iconURL
-      _backdropURL = source._backdropURL
+      _backdropImageBundle = source._backdropImageBundle
     }
   }
 
@@ -164,7 +164,7 @@ extension POGOProtos_Settings_Master_CombatNpcTrainer: SwiftProtobuf.Message, Sw
         case 9: try decoder.decodeSingularStringField(value: &_storage._trainerTitle)
         case 10: try decoder.decodeSingularStringField(value: &_storage._trainerQuote)
         case 11: try decoder.decodeSingularStringField(value: &_storage._iconURL)
-        case 12: try decoder.decodeSingularStringField(value: &_storage._backdropURL)
+        case 12: try decoder.decodeSingularStringField(value: &_storage._backdropImageBundle)
         default: break
         }
       }
@@ -203,8 +203,8 @@ extension POGOProtos_Settings_Master_CombatNpcTrainer: SwiftProtobuf.Message, Sw
       if !_storage._iconURL.isEmpty {
         try visitor.visitSingularStringField(value: _storage._iconURL, fieldNumber: 11)
       }
-      if !_storage._backdropURL.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._backdropURL, fieldNumber: 12)
+      if !_storage._backdropImageBundle.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._backdropImageBundle, fieldNumber: 12)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -225,7 +225,7 @@ extension POGOProtos_Settings_Master_CombatNpcTrainer: SwiftProtobuf.Message, Sw
         if _storage._trainerTitle != rhs_storage._trainerTitle {return false}
         if _storage._trainerQuote != rhs_storage._trainerQuote {return false}
         if _storage._iconURL != rhs_storage._iconURL {return false}
-        if _storage._backdropURL != rhs_storage._backdropURL {return false}
+        if _storage._backdropImageBundle != rhs_storage._backdropImageBundle {return false}
         return true
       }
       if !storagesAreEqual {return false}
