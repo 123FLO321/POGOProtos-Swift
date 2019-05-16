@@ -46,6 +46,8 @@ public struct POGOProtos_Settings_FortSettings {
 
   public var enableRightToLeftTextDisplay: Bool = false
 
+  public var enableSponsoredPoiDecorators: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -69,6 +71,7 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
     9: .standard(proto: "max_player_total_deployed_pokemon"),
     10: .standard(proto: "enable_hyperlinks_in_poi_descriptions"),
     11: .standard(proto: "enable_right_to_left_text_display"),
+    12: .standard(proto: "enable_sponsored_poi_decorators"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -85,6 +88,7 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
       case 9: try decoder.decodeSingularInt32Field(value: &self.maxPlayerTotalDeployedPokemon)
       case 10: try decoder.decodeSingularBoolField(value: &self.enableHyperlinksInPoiDescriptions)
       case 11: try decoder.decodeSingularBoolField(value: &self.enableRightToLeftTextDisplay)
+      case 12: try decoder.decodeSingularBoolField(value: &self.enableSponsoredPoiDecorators)
       default: break
       }
     }
@@ -124,6 +128,9 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
     if self.enableRightToLeftTextDisplay != false {
       try visitor.visitSingularBoolField(value: self.enableRightToLeftTextDisplay, fieldNumber: 11)
     }
+    if self.enableSponsoredPoiDecorators != false {
+      try visitor.visitSingularBoolField(value: self.enableSponsoredPoiDecorators, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -139,6 +146,7 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
     if lhs.maxPlayerTotalDeployedPokemon != rhs.maxPlayerTotalDeployedPokemon {return false}
     if lhs.enableHyperlinksInPoiDescriptions != rhs.enableHyperlinksInPoiDescriptions {return false}
     if lhs.enableRightToLeftTextDisplay != rhs.enableRightToLeftTextDisplay {return false}
+    if lhs.enableSponsoredPoiDecorators != rhs.enableSponsoredPoiDecorators {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

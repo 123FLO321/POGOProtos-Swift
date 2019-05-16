@@ -44,6 +44,10 @@ public struct POGOProtos_Data_Analytics_ClientTelemetryClientSettings {
 
   public var disableOmniSending: Bool = false
 
+  public var specialSamplingProbabilityMap: Dictionary<String,Double> = [:]
+
+  public var playerExternalUaID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -66,6 +70,8 @@ extension POGOProtos_Data_Analytics_ClientTelemetryClientSettings: SwiftProtobuf
     8: .standard(proto: "player_hash"),
     9: .standard(proto: "player_external_omni_id"),
     10: .standard(proto: "disable_omni_sending"),
+    11: .standard(proto: "special_sampling_probability_map"),
+    12: .standard(proto: "player_external_ua_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -81,6 +87,8 @@ extension POGOProtos_Data_Analytics_ClientTelemetryClientSettings: SwiftProtobuf
       case 8: try decoder.decodeSingularDoubleField(value: &self.playerHash)
       case 9: try decoder.decodeSingularStringField(value: &self.playerExternalOmniID)
       case 10: try decoder.decodeSingularBoolField(value: &self.disableOmniSending)
+      case 11: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufDouble>.self, value: &self.specialSamplingProbabilityMap)
+      case 12: try decoder.decodeSingularStringField(value: &self.playerExternalUaID)
       default: break
       }
     }
@@ -117,6 +125,12 @@ extension POGOProtos_Data_Analytics_ClientTelemetryClientSettings: SwiftProtobuf
     if self.disableOmniSending != false {
       try visitor.visitSingularBoolField(value: self.disableOmniSending, fieldNumber: 10)
     }
+    if !self.specialSamplingProbabilityMap.isEmpty {
+      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufDouble>.self, value: self.specialSamplingProbabilityMap, fieldNumber: 11)
+    }
+    if !self.playerExternalUaID.isEmpty {
+      try visitor.visitSingularStringField(value: self.playerExternalUaID, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -131,6 +145,8 @@ extension POGOProtos_Data_Analytics_ClientTelemetryClientSettings: SwiftProtobuf
     if lhs.playerHash != rhs.playerHash {return false}
     if lhs.playerExternalOmniID != rhs.playerExternalOmniID {return false}
     if lhs.disableOmniSending != rhs.disableOmniSending {return false}
+    if lhs.specialSamplingProbabilityMap != rhs.specialSamplingProbabilityMap {return false}
+    if lhs.playerExternalUaID != rhs.playerExternalUaID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

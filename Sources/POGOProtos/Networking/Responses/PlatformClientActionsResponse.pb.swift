@@ -458,8 +458,6 @@ public struct POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse {
 
   public var timeWindowForSubmissionsLimitMs: Int64 = 0
 
-  public var maxPoiDistanceInMeters: Int32 = 0
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -1251,7 +1249,6 @@ extension POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse: Swift
     3: .standard(proto: "has_valid_email"),
     4: .standard(proto: "is_feature_enabled"),
     5: .standard(proto: "time_window_for_submissions_limit_ms"),
-    6: .standard(proto: "max_poi_distance_in_meters"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1262,7 +1259,6 @@ extension POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse: Swift
       case 3: try decoder.decodeSingularBoolField(value: &self.hasValidEmail_p)
       case 4: try decoder.decodeSingularBoolField(value: &self.isFeatureEnabled)
       case 5: try decoder.decodeSingularInt64Field(value: &self.timeWindowForSubmissionsLimitMs)
-      case 6: try decoder.decodeSingularInt32Field(value: &self.maxPoiDistanceInMeters)
       default: break
       }
     }
@@ -1284,9 +1280,6 @@ extension POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse: Swift
     if self.timeWindowForSubmissionsLimitMs != 0 {
       try visitor.visitSingularInt64Field(value: self.timeWindowForSubmissionsLimitMs, fieldNumber: 5)
     }
-    if self.maxPoiDistanceInMeters != 0 {
-      try visitor.visitSingularInt32Field(value: self.maxPoiDistanceInMeters, fieldNumber: 6)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1296,7 +1289,6 @@ extension POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse: Swift
     if lhs.hasValidEmail_p != rhs.hasValidEmail_p {return false}
     if lhs.isFeatureEnabled != rhs.isFeatureEnabled {return false}
     if lhs.timeWindowForSubmissionsLimitMs != rhs.timeWindowForSubmissionsLimitMs {return false}
-    if lhs.maxPoiDistanceInMeters != rhs.maxPoiDistanceInMeters {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

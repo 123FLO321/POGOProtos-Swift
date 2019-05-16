@@ -25,6 +25,8 @@ public enum POGOProtos_Enums_DeviceServiceTelemetryIds: SwiftProtobuf.Enum {
   case fitness // = 1
   case smartWatch // = 2
   case sfidaDeviceService // = 3
+  case awareness // = 4
+  case adventureSync // = 5
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -37,6 +39,8 @@ public enum POGOProtos_Enums_DeviceServiceTelemetryIds: SwiftProtobuf.Enum {
     case 1: self = .fitness
     case 2: self = .smartWatch
     case 3: self = .sfidaDeviceService
+    case 4: self = .awareness
+    case 5: self = .adventureSync
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -47,6 +51,8 @@ public enum POGOProtos_Enums_DeviceServiceTelemetryIds: SwiftProtobuf.Enum {
     case .fitness: return 1
     case .smartWatch: return 2
     case .sfidaDeviceService: return 3
+    case .awareness: return 4
+    case .adventureSync: return 5
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -62,6 +68,8 @@ extension POGOProtos_Enums_DeviceServiceTelemetryIds: CaseIterable {
     .fitness,
     .smartWatch,
     .sfidaDeviceService,
+    .awareness,
+    .adventureSync,
   ]
 }
 
@@ -76,6 +84,7 @@ public enum POGOProtos_Enums_PermissionContextTelemetryIds: SwiftProtobuf.Enum {
   case smartWatchInstalled // = 4
   case sfidaSessionStarted // = 5
   case settingsToggle // = 6
+  case nearbyPanelOpened // = 7
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -91,6 +100,7 @@ public enum POGOProtos_Enums_PermissionContextTelemetryIds: SwiftProtobuf.Enum {
     case 4: self = .smartWatchInstalled
     case 5: self = .sfidaSessionStarted
     case 6: self = .settingsToggle
+    case 7: self = .nearbyPanelOpened
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -104,6 +114,7 @@ public enum POGOProtos_Enums_PermissionContextTelemetryIds: SwiftProtobuf.Enum {
     case .smartWatchInstalled: return 4
     case .sfidaSessionStarted: return 5
     case .settingsToggle: return 6
+    case .nearbyPanelOpened: return 7
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -122,6 +133,7 @@ extension POGOProtos_Enums_PermissionContextTelemetryIds: CaseIterable {
     .smartWatchInstalled,
     .sfidaSessionStarted,
     .settingsToggle,
+    .nearbyPanelOpened,
   ]
 }
 
@@ -133,6 +145,7 @@ public enum POGOProtos_Enums_PermissionFlowStepTelemetryIds: SwiftProtobuf.Enum 
   case initialPrompt // = 1
   case fitnessPermission // = 2
   case locationPermission // = 3
+  case activityPermissions // = 4
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -145,6 +158,7 @@ public enum POGOProtos_Enums_PermissionFlowStepTelemetryIds: SwiftProtobuf.Enum 
     case 1: self = .initialPrompt
     case 2: self = .fitnessPermission
     case 3: self = .locationPermission
+    case 4: self = .activityPermissions
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -155,6 +169,7 @@ public enum POGOProtos_Enums_PermissionFlowStepTelemetryIds: SwiftProtobuf.Enum 
     case .initialPrompt: return 1
     case .fitnessPermission: return 2
     case .locationPermission: return 3
+    case .activityPermissions: return 4
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -170,6 +185,7 @@ extension POGOProtos_Enums_PermissionFlowStepTelemetryIds: CaseIterable {
     .initialPrompt,
     .fitnessPermission,
     .locationPermission,
+    .activityPermissions,
   ]
 }
 
@@ -1307,6 +1323,8 @@ extension POGOProtos_Enums_DeviceServiceTelemetryIds: SwiftProtobuf._ProtoNamePr
     1: .same(proto: "FITNESS"),
     2: .same(proto: "SMART_WATCH"),
     3: .same(proto: "SFIDA_DEVICE_SERVICE"),
+    4: .same(proto: "AWARENESS"),
+    5: .same(proto: "ADVENTURE_SYNC"),
   ]
 }
 
@@ -1319,6 +1337,7 @@ extension POGOProtos_Enums_PermissionContextTelemetryIds: SwiftProtobuf._ProtoNa
     4: .same(proto: "SMART_WATCH_INSTALLED"),
     5: .same(proto: "SFIDA_SESSION_STARTED"),
     6: .same(proto: "SETTINGS_TOGGLE"),
+    7: .same(proto: "NEARBY_PANEL_OPENED"),
   ]
 }
 
@@ -1328,6 +1347,7 @@ extension POGOProtos_Enums_PermissionFlowStepTelemetryIds: SwiftProtobuf._ProtoN
     1: .same(proto: "INITIAL_PROMPT"),
     2: .same(proto: "FITNESS_PERMISSION"),
     3: .same(proto: "LOCATION_PERMISSION"),
+    4: .same(proto: "ACTIVITY_PERMISSIONS"),
   ]
 }
 

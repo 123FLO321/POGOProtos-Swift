@@ -47,6 +47,8 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
   case questTradePokemon // = 23
   case questSendGift // = 24
   case questEvolveIntoPokemon // = 25
+  case questCompleteCombat // = 27
+  case questTakeSnapshot // = 28
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -81,6 +83,8 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case 23: self = .questTradePokemon
     case 24: self = .questSendGift
     case 25: self = .questEvolveIntoPokemon
+    case 27: self = .questCompleteCombat
+    case 28: self = .questTakeSnapshot
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -113,6 +117,8 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case .questTradePokemon: return 23
     case .questSendGift: return 24
     case .questEvolveIntoPokemon: return 25
+    case .questCompleteCombat: return 27
+    case .questTakeSnapshot: return 28
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -150,6 +156,8 @@ extension POGOProtos_Enums_QuestType: CaseIterable {
     .questTradePokemon,
     .questSendGift,
     .questEvolveIntoPokemon,
+    .questCompleteCombat,
+    .questTakeSnapshot,
   ]
 }
 
@@ -185,5 +193,7 @@ extension POGOProtos_Enums_QuestType: SwiftProtobuf._ProtoNameProviding {
     23: .same(proto: "QUEST_TRADE_POKEMON"),
     24: .same(proto: "QUEST_SEND_GIFT"),
     25: .same(proto: "QUEST_EVOLVE_INTO_POKEMON"),
+    27: .same(proto: "QUEST_COMPLETE_COMBAT"),
+    28: .same(proto: "QUEST_TAKE_SNAPSHOT"),
   ]
 }

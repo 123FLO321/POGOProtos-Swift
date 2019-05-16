@@ -21,7 +21,8 @@ mv $DIR/../Sources/POGOProtos/Networking/Responses/UpdateFitnessMetricsResponse.
 mv $DIR/../Sources/POGOProtos/Networking/Responses/Social/GetInboxResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/Social/SocialGetInboxResponse.pb.swift
 mv $DIR/../Sources/POGOProtos/Networking/Requests/Social/RegisterPushNotificationMessage.pb.swift $DIR/../Sources/POGOProtos/Networking/Requests/Social/SocialRegisterPushNotificationMessage.pb.swift
 mv $DIR/../Sources/POGOProtos/Networking/Responses/Social/RegisterPushNotificationResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/Social/SocialRegisterPushNotificationResponse.pb.swift
-
-cd $DIR/../
+mv $DIR/../Sources/POGOProtos/Networking/Platform/Requests/GetGmapSettingsMessage.pb.swift $DIR/../Sources/POGOProtos/Networking/Platform/Requests/PlatformGetGmapSettingsMessage.pb.swift
+mv $DIR/../Sources/POGOProtos/Networking/Platform/Responses/GetGmapSettingsResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Platform/Responses/PlatformGetGmapSettingsResponse.pb.swift
+cd $DIR
 swift build
 echo Success!

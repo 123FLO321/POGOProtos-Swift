@@ -162,6 +162,46 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     set {_uniqueStorage()._condition = .withWinBattleStatus(newValue)}
   }
 
+  public var withUniquePokemon: POGOProtos_Data_Quests_QuestCondition.WithUniquePokemon {
+    get {
+      if case .withUniquePokemon(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithUniquePokemon()
+    }
+    set {_uniqueStorage()._condition = .withUniquePokemon(newValue)}
+  }
+
+  public var withNpcCombat: POGOProtos_Data_Quests_QuestCondition.WithNpcCombat {
+    get {
+      if case .withNpcCombat(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithNpcCombat()
+    }
+    set {_uniqueStorage()._condition = .withNpcCombat(newValue)}
+  }
+
+  public var withPvpCombat: POGOProtos_Data_Quests_QuestCondition.WithPvpCombat {
+    get {
+      if case .withPvpCombat(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithPvpCombat()
+    }
+    set {_uniqueStorage()._condition = .withPvpCombat(newValue)}
+  }
+
+  public var withLocation: POGOProtos_Data_Quests_QuestCondition.WithLocation {
+    get {
+      if case .withLocation(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithLocation()
+    }
+    set {_uniqueStorage()._condition = .withLocation(newValue)}
+  }
+
+  public var withDistance: POGOProtos_Data_Quests_QuestCondition.WithDistance {
+    get {
+      if case .withDistance(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithDistance()
+    }
+    set {_uniqueStorage()._condition = .withDistance(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Condition: Equatable {
@@ -181,6 +221,11 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     case withBadgeType(POGOProtos_Data_Quests_QuestCondition.WithBadgeType)
     case withPlayerLevel(POGOProtos_Data_Quests_QuestCondition.WithPlayerLevel)
     case withWinBattleStatus(POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus)
+    case withUniquePokemon(POGOProtos_Data_Quests_QuestCondition.WithUniquePokemon)
+    case withNpcCombat(POGOProtos_Data_Quests_QuestCondition.WithNpcCombat)
+    case withPvpCombat(POGOProtos_Data_Quests_QuestCondition.WithPvpCombat)
+    case withLocation(POGOProtos_Data_Quests_QuestCondition.WithLocation)
+    case withDistance(POGOProtos_Data_Quests_QuestCondition.WithDistance)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition, rhs: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition) -> Bool {
@@ -201,6 +246,11 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case (.withBadgeType(let l), .withBadgeType(let r)): return l == r
       case (.withPlayerLevel(let l), .withPlayerLevel(let r)): return l == r
       case (.withWinBattleStatus(let l), .withWinBattleStatus(let r)): return l == r
+      case (.withUniquePokemon(let l), .withUniquePokemon(let r)): return l == r
+      case (.withNpcCombat(let l), .withNpcCombat(let r)): return l == r
+      case (.withPvpCombat(let l), .withPvpCombat(let r)): return l == r
+      case (.withLocation(let l), .withLocation(let r)): return l == r
+      case (.withDistance(let l), .withDistance(let r)): return l == r
       default: return false
       }
     }
@@ -230,6 +280,11 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     case withWinBattleStatus // = 18
     case withNewFriend // = 19
     case withDaysInARow // = 20
+    case withUniquePokemon // = 21
+    case withNpcCombat // = 22
+    case withPvpCombat // = 23
+    case withLocation // = 24
+    case withDistance // = 25
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -259,6 +314,11 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case 18: self = .withWinBattleStatus
       case 19: self = .withNewFriend
       case 20: self = .withDaysInARow
+      case 21: self = .withUniquePokemon
+      case 22: self = .withNpcCombat
+      case 23: self = .withPvpCombat
+      case 24: self = .withLocation
+      case 25: self = .withDistance
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -286,10 +346,77 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case .withWinBattleStatus: return 18
       case .withNewFriend: return 19
       case .withDaysInARow: return 20
+      case .withUniquePokemon: return 21
+      case .withNpcCombat: return 22
+      case .withPvpCombat: return 23
+      case .withLocation: return 24
+      case .withDistance: return 25
       case .UNRECOGNIZED(let i): return i
       }
     }
 
+  }
+
+  public struct WithUniquePokemon {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithPvpCombat {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var requiresWin: Bool = false
+
+    public var combatLeagueTemplateID: [String] = []
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithNpcCombat {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var requiresWin: Bool = false
+
+    public var combatNpcTrainerID: [String] = []
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithLocation {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var s2CellID: [Int64] = []
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithDistance {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var distanceKm: Double = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
   }
 
   public struct WithPokemonType {
@@ -577,6 +704,11 @@ extension POGOProtos_Data_Quests_QuestCondition.ConditionType: CaseIterable {
     .withWinBattleStatus,
     .withNewFriend,
     .withDaysInARow,
+    .withUniquePokemon,
+    .withNpcCombat,
+    .withPvpCombat,
+    .withLocation,
+    .withDistance,
   ]
 }
 
@@ -606,6 +738,11 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
     15: .standard(proto: "with_badge_type"),
     16: .standard(proto: "with_player_level"),
     17: .standard(proto: "with_win_battle_status"),
+    18: .standard(proto: "with_unique_pokemon"),
+    19: .standard(proto: "with_npc_combat"),
+    20: .standard(proto: "with_pvp_combat"),
+    21: .standard(proto: "with_location"),
+    22: .standard(proto: "with_distance"),
   ]
 
   fileprivate class _StorageClass {
@@ -763,6 +900,46 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._condition = .withWinBattleStatus(v)}
+        case 18:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithUniquePokemon?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withUniquePokemon(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withUniquePokemon(v)}
+        case 19:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithNpcCombat?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withNpcCombat(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withNpcCombat(v)}
+        case 20:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithPvpCombat?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withPvpCombat(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withPvpCombat(v)}
+        case 21:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithLocation?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withLocation(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withLocation(v)}
+        case 22:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithDistance?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withDistance(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withDistance(v)}
         default: break
         }
       }
@@ -807,6 +984,16 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
       case .withWinBattleStatus(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
+      case .withUniquePokemon(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
+      case .withNpcCombat(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
+      case .withPvpCombat(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 20)
+      case .withLocation(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
+      case .withDistance(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
       case nil: break
       }
     }
@@ -852,7 +1039,159 @@ extension POGOProtos_Data_Quests_QuestCondition.ConditionType: SwiftProtobuf._Pr
     18: .same(proto: "WITH_WIN_BATTLE_STATUS"),
     19: .same(proto: "WITH_NEW_FRIEND"),
     20: .same(proto: "WITH_DAYS_IN_A_ROW"),
+    21: .same(proto: "WITH_UNIQUE_POKEMON"),
+    22: .same(proto: "WITH_NPC_COMBAT"),
+    23: .same(proto: "WITH_PVP_COMBAT"),
+    24: .same(proto: "WITH_LOCATION"),
+    25: .same(proto: "WITH_DISTANCE"),
   ]
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithUniquePokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithUniquePokemon"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithUniquePokemon, rhs: POGOProtos_Data_Quests_QuestCondition.WithUniquePokemon) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithPvpCombat: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithPvpCombat"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "requires_win"),
+    2: .standard(proto: "combat_league_template_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.requiresWin)
+      case 2: try decoder.decodeRepeatedStringField(value: &self.combatLeagueTemplateID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.requiresWin != false {
+      try visitor.visitSingularBoolField(value: self.requiresWin, fieldNumber: 1)
+    }
+    if !self.combatLeagueTemplateID.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.combatLeagueTemplateID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithPvpCombat, rhs: POGOProtos_Data_Quests_QuestCondition.WithPvpCombat) -> Bool {
+    if lhs.requiresWin != rhs.requiresWin {return false}
+    if lhs.combatLeagueTemplateID != rhs.combatLeagueTemplateID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithNpcCombat: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithNpcCombat"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "requires_win"),
+    2: .standard(proto: "combat_npc_trainer_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.requiresWin)
+      case 2: try decoder.decodeRepeatedStringField(value: &self.combatNpcTrainerID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.requiresWin != false {
+      try visitor.visitSingularBoolField(value: self.requiresWin, fieldNumber: 1)
+    }
+    if !self.combatNpcTrainerID.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.combatNpcTrainerID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithNpcCombat, rhs: POGOProtos_Data_Quests_QuestCondition.WithNpcCombat) -> Bool {
+    if lhs.requiresWin != rhs.requiresWin {return false}
+    if lhs.combatNpcTrainerID != rhs.combatNpcTrainerID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithLocation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithLocation"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "s2_cell_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedInt64Field(value: &self.s2CellID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.s2CellID.isEmpty {
+      try visitor.visitPackedInt64Field(value: self.s2CellID, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithLocation, rhs: POGOProtos_Data_Quests_QuestCondition.WithLocation) -> Bool {
+    if lhs.s2CellID != rhs.s2CellID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithDistance: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithDistance"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "distance_km"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularDoubleField(value: &self.distanceKm)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.distanceKm != 0 {
+      try visitor.visitSingularDoubleField(value: self.distanceKm, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithDistance, rhs: POGOProtos_Data_Quests_QuestCondition.WithDistance) -> Bool {
+    if lhs.distanceKm != rhs.distanceKm {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithPokemonType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {

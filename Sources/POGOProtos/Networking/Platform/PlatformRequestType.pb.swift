@@ -105,6 +105,9 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
 
   /// ???
   case tempTestResult // = 101
+
+  /// Implemented
+  case getGmapSettings // = 5036
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -141,6 +144,7 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
     case 30: self = .registerDownstreamServerActions
     case 31: self = .downstreamServerActions
     case 101: self = .tempTestResult
+    case 5036: self = .getGmapSettings
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -175,6 +179,7 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
     case .registerDownstreamServerActions: return 30
     case .downstreamServerActions: return 31
     case .tempTestResult: return 101
+    case .getGmapSettings: return 5036
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -214,6 +219,7 @@ extension POGOProtos_Networking_Platform_PlatformRequestType: CaseIterable {
     .registerDownstreamServerActions,
     .downstreamServerActions,
     .tempTestResult,
+    .getGmapSettings,
   ]
 }
 
@@ -251,5 +257,6 @@ extension POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf._Pro
     30: .same(proto: "REGISTER_DOWNSTREAM_SERVER_ACTIONS"),
     31: .same(proto: "DOWNSTREAM_SERVER_ACTIONS"),
     101: .same(proto: "TEMP_TEST_RESULT"),
+    5036: .same(proto: "GET_GMAP_SETTINGS"),
   ]
 }

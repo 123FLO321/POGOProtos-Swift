@@ -476,6 +476,9 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case getWebToken // = 1107
 
   /// Implemented
+  case completeSnapshotSession // = 1110
+
+  /// Implemented
   case registerPushNotification // = 5000
 
   /// ???
@@ -579,6 +582,9 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
 
   /// Implemented
   case generateGmapSignedURL // = 5035
+
+  /// Implemented
+  case getGmapSettings // = 5036
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -738,6 +744,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1105: self = .getSignedGmapURLDeprecated
     case 1106: self = .changeTeam
     case 1107: self = .getWebToken
+    case 1110: self = .completeSnapshotSession
     case 5000: self = .registerPushNotification
     case 5001: self = .unregisterPushNotification
     case 5002: self = .updateNotificationStatus
@@ -773,6 +780,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 5033: self = .requestGeofenceUpdates
     case 5034: self = .updatePlayerLocation
     case 5035: self = .generateGmapSignedURL
+    case 5036: self = .getGmapSettings
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -930,6 +938,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .getSignedGmapURLDeprecated: return 1105
     case .changeTeam: return 1106
     case .getWebToken: return 1107
+    case .completeSnapshotSession: return 1110
     case .registerPushNotification: return 5000
     case .unregisterPushNotification: return 5001
     case .updateNotificationStatus: return 5002
@@ -965,6 +974,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .requestGeofenceUpdates: return 5033
     case .updatePlayerLocation: return 5034
     case .generateGmapSignedURL: return 5035
+    case .getGmapSettings: return 5036
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1127,6 +1137,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .getSignedGmapURLDeprecated,
     .changeTeam,
     .getWebToken,
+    .completeSnapshotSession,
     .registerPushNotification,
     .unregisterPushNotification,
     .updateNotificationStatus,
@@ -1162,6 +1173,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .requestGeofenceUpdates,
     .updatePlayerLocation,
     .generateGmapSignedURL,
+    .getGmapSettings,
   ]
 }
 
@@ -1322,6 +1334,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1105: .same(proto: "GET_SIGNED_GMAP_URL_DEPRECATED"),
     1106: .same(proto: "CHANGE_TEAM"),
     1107: .same(proto: "GET_WEB_TOKEN"),
+    1110: .same(proto: "COMPLETE_SNAPSHOT_SESSION"),
     5000: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
     5001: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
     5002: .same(proto: "UPDATE_NOTIFICATION_STATUS"),
@@ -1357,5 +1370,6 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     5033: .same(proto: "REQUEST_GEOFENCE_UPDATES"),
     5034: .same(proto: "UPDATE_PLAYER_LOCATION"),
     5035: .same(proto: "GENERATE_GMAP_SIGNED_URL"),
+    5036: .same(proto: "GET_GMAP_SETTINGS"),
   ]
 }

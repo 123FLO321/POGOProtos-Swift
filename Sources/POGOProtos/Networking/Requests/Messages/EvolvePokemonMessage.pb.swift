@@ -28,6 +28,12 @@ public struct POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage {
 
   public var evolutionItemRequirement: POGOProtos_Inventory_Item_ItemId = .itemUnknown
 
+  public var targetPokemonID: POGOProtos_Enums_PokemonId = .missingno
+
+  public var targetPokemonForm: POGOProtos_Enums_Form = .unset
+
+  public var useSpecial: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -42,6 +48,9 @@ extension POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage: SwiftPro
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "pokemon_id"),
     2: .standard(proto: "evolution_item_requirement"),
+    3: .standard(proto: "target_pokemon_id"),
+    4: .standard(proto: "target_pokemon_form"),
+    5: .standard(proto: "use_special"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +58,9 @@ extension POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage: SwiftPro
       switch fieldNumber {
       case 1: try decoder.decodeSingularFixed64Field(value: &self.pokemonID)
       case 2: try decoder.decodeSingularEnumField(value: &self.evolutionItemRequirement)
+      case 3: try decoder.decodeSingularEnumField(value: &self.targetPokemonID)
+      case 4: try decoder.decodeSingularEnumField(value: &self.targetPokemonForm)
+      case 5: try decoder.decodeSingularBoolField(value: &self.useSpecial)
       default: break
       }
     }
@@ -61,12 +73,24 @@ extension POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage: SwiftPro
     if self.evolutionItemRequirement != .itemUnknown {
       try visitor.visitSingularEnumField(value: self.evolutionItemRequirement, fieldNumber: 2)
     }
+    if self.targetPokemonID != .missingno {
+      try visitor.visitSingularEnumField(value: self.targetPokemonID, fieldNumber: 3)
+    }
+    if self.targetPokemonForm != .unset {
+      try visitor.visitSingularEnumField(value: self.targetPokemonForm, fieldNumber: 4)
+    }
+    if self.useSpecial != false {
+      try visitor.visitSingularBoolField(value: self.useSpecial, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage, rhs: POGOProtos_Networking_Requests_Messages_EvolvePokemonMessage) -> Bool {
     if lhs.pokemonID != rhs.pokemonID {return false}
     if lhs.evolutionItemRequirement != rhs.evolutionItemRequirement {return false}
+    if lhs.targetPokemonID != rhs.targetPokemonID {return false}
+    if lhs.targetPokemonForm != rhs.targetPokemonForm {return false}
+    if lhs.useSpecial != rhs.useSpecial {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -30,7 +30,10 @@ public enum POGOProtos_Enums_PokemonAnim: SwiftProtobuf.Enum {
   case damaged // = 6
   case stunned // = 7
   case loop // = 8
-  case max // = 9
+  case sleep01 // = 9
+  case sleep02 // = 10
+  case sleepWait // = 11
+  case max // = 12
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -48,7 +51,10 @@ public enum POGOProtos_Enums_PokemonAnim: SwiftProtobuf.Enum {
     case 6: self = .damaged
     case 7: self = .stunned
     case 8: self = .loop
-    case 9: self = .max
+    case 9: self = .sleep01
+    case 10: self = .sleep02
+    case 11: self = .sleepWait
+    case 12: self = .max
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -64,7 +70,10 @@ public enum POGOProtos_Enums_PokemonAnim: SwiftProtobuf.Enum {
     case .damaged: return 6
     case .stunned: return 7
     case .loop: return 8
-    case .max: return 9
+    case .sleep01: return 9
+    case .sleep02: return 10
+    case .sleepWait: return 11
+    case .max: return 12
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -85,6 +94,9 @@ extension POGOProtos_Enums_PokemonAnim: CaseIterable {
     .damaged,
     .stunned,
     .loop,
+    .sleep01,
+    .sleep02,
+    .sleepWait,
     .max,
   ]
 }
@@ -104,6 +116,9 @@ extension POGOProtos_Enums_PokemonAnim: SwiftProtobuf._ProtoNameProviding {
     6: .same(proto: "DAMAGED"),
     7: .same(proto: "STUNNED"),
     8: .same(proto: "LOOP"),
-    9: .same(proto: "_MAX"),
+    9: .same(proto: "SLEEP_01"),
+    10: .same(proto: "SLEEP_02"),
+    11: .same(proto: "SLEEP_WAIT"),
+    12: .same(proto: "_MAX"),
   ]
 }

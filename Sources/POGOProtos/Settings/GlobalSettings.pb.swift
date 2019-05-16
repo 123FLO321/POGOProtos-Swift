@@ -332,6 +332,24 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `avatarSettings`. Subsequent reads from it will return its default value.
   public mutating func clearAvatarSettings() {_uniqueStorage()._avatarSettings = nil}
 
+  public var evolutionV2Settings: POGOProtos_Settings_EvolutionV2Settings {
+    get {return _storage._evolutionV2Settings ?? POGOProtos_Settings_EvolutionV2Settings()}
+    set {_uniqueStorage()._evolutionV2Settings = newValue}
+  }
+  /// Returns true if `evolutionV2Settings` has been explicitly set.
+  public var hasEvolutionV2Settings: Bool {return _storage._evolutionV2Settings != nil}
+  /// Clears the value of `evolutionV2Settings`. Subsequent reads from it will return its default value.
+  public mutating func clearEvolutionV2Settings() {_uniqueStorage()._evolutionV2Settings = nil}
+
+  public var koalaSettings: POGOProtos_Settings_KoalaSettings {
+    get {return _storage._koalaSettings ?? POGOProtos_Settings_KoalaSettings()}
+    set {_uniqueStorage()._koalaSettings = newValue}
+  }
+  /// Returns true if `koalaSettings` has been explicitly set.
+  public var hasKoalaSettings: Bool {return _storage._koalaSettings != nil}
+  /// Clears the value of `koalaSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearKoalaSettings() {_uniqueStorage()._koalaSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -382,6 +400,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     35: .standard(proto: "poi_settings"),
     36: .standard(proto: "pokemon_settings"),
     37: .standard(proto: "avatar_settings"),
+    38: .standard(proto: "evolution_v2_settings"),
+    40: .standard(proto: "koala_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -421,6 +441,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _poiSettings: POGOProtos_Settings_PoiGlobalSettings? = nil
     var _pokemonSettings: POGOProtos_Settings_PokemonGlobalSettings? = nil
     var _avatarSettings: POGOProtos_Settings_AvatarGlobalSettings? = nil
+    var _evolutionV2Settings: POGOProtos_Settings_EvolutionV2Settings? = nil
+    var _koalaSettings: POGOProtos_Settings_KoalaSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -463,6 +485,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _poiSettings = source._poiSettings
       _pokemonSettings = source._pokemonSettings
       _avatarSettings = source._avatarSettings
+      _evolutionV2Settings = source._evolutionV2Settings
+      _koalaSettings = source._koalaSettings
     }
   }
 
@@ -514,6 +538,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 35: try decoder.decodeSingularMessageField(value: &_storage._poiSettings)
         case 36: try decoder.decodeSingularMessageField(value: &_storage._pokemonSettings)
         case 37: try decoder.decodeSingularMessageField(value: &_storage._avatarSettings)
+        case 38: try decoder.decodeSingularMessageField(value: &_storage._evolutionV2Settings)
+        case 40: try decoder.decodeSingularMessageField(value: &_storage._koalaSettings)
         default: break
         }
       }
@@ -630,6 +656,12 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._avatarSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 37)
       }
+      if let v = _storage._evolutionV2Settings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 38)
+      }
+      if let v = _storage._koalaSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 40)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -675,6 +707,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._poiSettings != rhs_storage._poiSettings {return false}
         if _storage._pokemonSettings != rhs_storage._pokemonSettings {return false}
         if _storage._avatarSettings != rhs_storage._avatarSettings {return false}
+        if _storage._evolutionV2Settings != rhs_storage._evolutionV2Settings {return false}
+        if _storage._koalaSettings != rhs_storage._koalaSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

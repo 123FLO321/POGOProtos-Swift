@@ -40,6 +40,9 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemIncenseFloral // = 404
   case itemIncenseBelugaBox // = 405
   case itemTroyDisk // = 501
+  case itemTroyDiskGlacial // = 502
+  case itemTroyDiskMossy // = 503
+  case itemTroyDiskMagnetic // = 504
   case itemXAttack // = 602
   case itemXDefense // = 603
   case itemXMiracle // = 604
@@ -99,6 +102,9 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 404: self = .itemIncenseFloral
     case 405: self = .itemIncenseBelugaBox
     case 501: self = .itemTroyDisk
+    case 502: self = .itemTroyDiskGlacial
+    case 503: self = .itemTroyDiskMossy
+    case 504: self = .itemTroyDiskMagnetic
     case 602: self = .itemXAttack
     case 603: self = .itemXDefense
     case 604: self = .itemXMiracle
@@ -156,6 +162,9 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemIncenseFloral: return 404
     case .itemIncenseBelugaBox: return 405
     case .itemTroyDisk: return 501
+    case .itemTroyDiskGlacial: return 502
+    case .itemTroyDiskMossy: return 503
+    case .itemTroyDiskMagnetic: return 504
     case .itemXAttack: return 602
     case .itemXDefense: return 603
     case .itemXMiracle: return 604
@@ -218,6 +227,9 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemIncenseFloral,
     .itemIncenseBelugaBox,
     .itemTroyDisk,
+    .itemTroyDiskGlacial,
+    .itemTroyDiskMossy,
+    .itemTroyDiskMagnetic,
     .itemXAttack,
     .itemXDefense,
     .itemXMiracle,
@@ -278,6 +290,9 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     404: .same(proto: "ITEM_INCENSE_FLORAL"),
     405: .same(proto: "ITEM_INCENSE_BELUGA_BOX"),
     501: .same(proto: "ITEM_TROY_DISK"),
+    502: .same(proto: "ITEM_TROY_DISK_GLACIAL"),
+    503: .same(proto: "ITEM_TROY_DISK_MOSSY"),
+    504: .same(proto: "ITEM_TROY_DISK_MAGNETIC"),
     602: .same(proto: "ITEM_X_ATTACK"),
     603: .same(proto: "ITEM_X_DEFENSE"),
     604: .same(proto: "ITEM_X_MIRACLE"),

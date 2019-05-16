@@ -65,6 +65,14 @@ public struct POGOProtos_Data_Quests_ClientQuest {
 
     public var storyEndingDescription: String = String()
 
+    public var tagColor: String = String()
+
+    public var tagString: String = String()
+
+    public var sponsorString: String = String()
+
+    public var partnerID: String = String()
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -159,6 +167,10 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
     6: .same(proto: "subdisplay"),
     7: .standard(proto: "story_ending_quest"),
     8: .standard(proto: "story_ending_description"),
+    9: .standard(proto: "tag_color"),
+    10: .standard(proto: "tag_string"),
+    11: .standard(proto: "sponsor_string"),
+    12: .standard(proto: "partner_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -172,6 +184,10 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
       case 6: try decoder.decodeRepeatedMessageField(value: &self.subdisplay)
       case 7: try decoder.decodeSingularBoolField(value: &self.storyEndingQuest)
       case 8: try decoder.decodeSingularStringField(value: &self.storyEndingDescription)
+      case 9: try decoder.decodeSingularStringField(value: &self.tagColor)
+      case 10: try decoder.decodeSingularStringField(value: &self.tagString)
+      case 11: try decoder.decodeSingularStringField(value: &self.sponsorString)
+      case 12: try decoder.decodeSingularStringField(value: &self.partnerID)
       default: break
       }
     }
@@ -202,6 +218,18 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
     if !self.storyEndingDescription.isEmpty {
       try visitor.visitSingularStringField(value: self.storyEndingDescription, fieldNumber: 8)
     }
+    if !self.tagColor.isEmpty {
+      try visitor.visitSingularStringField(value: self.tagColor, fieldNumber: 9)
+    }
+    if !self.tagString.isEmpty {
+      try visitor.visitSingularStringField(value: self.tagString, fieldNumber: 10)
+    }
+    if !self.sponsorString.isEmpty {
+      try visitor.visitSingularStringField(value: self.sponsorString, fieldNumber: 11)
+    }
+    if !self.partnerID.isEmpty {
+      try visitor.visitSingularStringField(value: self.partnerID, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -214,6 +242,10 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
     if lhs.subdisplay != rhs.subdisplay {return false}
     if lhs.storyEndingQuest != rhs.storyEndingQuest {return false}
     if lhs.storyEndingDescription != rhs.storyEndingDescription {return false}
+    if lhs.tagColor != rhs.tagColor {return false}
+    if lhs.tagString != rhs.tagString {return false}
+    if lhs.sponsorString != rhs.sponsorString {return false}
+    if lhs.partnerID != rhs.partnerID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
