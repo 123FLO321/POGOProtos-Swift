@@ -34,6 +34,8 @@ public struct POGOProtos_Networking_Requests_Messages_DownloadRemoteConfigVersio
 
   public var appVersion: UInt32 = 0
 
+  public var store: POGOProtos_Enums_Store = .unset
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +53,7 @@ extension POGOProtos_Networking_Requests_Messages_DownloadRemoteConfigVersionMes
     3: .standard(proto: "device_model"),
     4: .same(proto: "locale"),
     5: .standard(proto: "app_version"),
+    6: .same(proto: "store"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -61,6 +64,7 @@ extension POGOProtos_Networking_Requests_Messages_DownloadRemoteConfigVersionMes
       case 3: try decoder.decodeSingularStringField(value: &self.deviceModel)
       case 4: try decoder.decodeSingularStringField(value: &self.locale)
       case 5: try decoder.decodeSingularUInt32Field(value: &self.appVersion)
+      case 6: try decoder.decodeSingularEnumField(value: &self.store)
       default: break
       }
     }
@@ -82,6 +86,9 @@ extension POGOProtos_Networking_Requests_Messages_DownloadRemoteConfigVersionMes
     if self.appVersion != 0 {
       try visitor.visitSingularUInt32Field(value: self.appVersion, fieldNumber: 5)
     }
+    if self.store != .unset {
+      try visitor.visitSingularEnumField(value: self.store, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -91,6 +98,7 @@ extension POGOProtos_Networking_Requests_Messages_DownloadRemoteConfigVersionMes
     if lhs.deviceModel != rhs.deviceModel {return false}
     if lhs.locale != rhs.locale {return false}
     if lhs.appVersion != rhs.appVersion {return false}
+    if lhs.store != rhs.store {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

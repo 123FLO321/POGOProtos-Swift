@@ -279,6 +279,8 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case blazeKick // = 317
   case razorShell // = 318
   case powerUpPunch // = 319
+  case charmFast // = 320
+  case gigaImpact // = 321
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -545,6 +547,8 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 317: self = .blazeKick
     case 318: self = .razorShell
     case 319: self = .powerUpPunch
+    case 320: self = .charmFast
+    case 321: self = .gigaImpact
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -809,6 +813,8 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .blazeKick: return 317
     case .razorShell: return 318
     case .powerUpPunch: return 319
+    case .charmFast: return 320
+    case .gigaImpact: return 321
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1078,6 +1084,8 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .blazeKick,
     .razorShell,
     .powerUpPunch,
+    .charmFast,
+    .gigaImpact,
   ]
 }
 
@@ -1345,5 +1353,7 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     317: .same(proto: "BLAZE_KICK"),
     318: .same(proto: "RAZOR_SHELL"),
     319: .same(proto: "POWER_UP_PUNCH"),
+    320: .same(proto: "CHARM_FAST"),
+    321: .same(proto: "GIGA_IMPACT"),
   ]
 }

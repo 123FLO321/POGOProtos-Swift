@@ -90,6 +90,11 @@ public struct POGOProtos_Data_Combat_CombatPlayer {
     set {_uniqueStorage()._minigameDefenseChancesLeft = newValue}
   }
 
+  public var combatNpcPersonalityID: String {
+    get {return _storage._combatNpcPersonalityID}
+    set {_uniqueStorage()._combatNpcPersonalityID = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -114,6 +119,7 @@ extension POGOProtos_Data_Combat_CombatPlayer: SwiftProtobuf.Message, SwiftProto
     8: .standard(proto: "minigame_action"),
     9: .standard(proto: "quick_swap_available_ms"),
     10: .standard(proto: "minigame_defense_chances_left"),
+    11: .standard(proto: "combat_npc_personality_id"),
   ]
 
   fileprivate class _StorageClass {
@@ -127,6 +133,7 @@ extension POGOProtos_Data_Combat_CombatPlayer: SwiftProtobuf.Message, SwiftProto
     var _minigameAction: POGOProtos_Data_Combat_CombatAction? = nil
     var _quickSwapAvailableMs: Int64 = 0
     var _minigameDefenseChancesLeft: Int32 = 0
+    var _combatNpcPersonalityID: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -143,6 +150,7 @@ extension POGOProtos_Data_Combat_CombatPlayer: SwiftProtobuf.Message, SwiftProto
       _minigameAction = source._minigameAction
       _quickSwapAvailableMs = source._quickSwapAvailableMs
       _minigameDefenseChancesLeft = source._minigameDefenseChancesLeft
+      _combatNpcPersonalityID = source._combatNpcPersonalityID
     }
   }
 
@@ -168,6 +176,7 @@ extension POGOProtos_Data_Combat_CombatPlayer: SwiftProtobuf.Message, SwiftProto
         case 8: try decoder.decodeSingularMessageField(value: &_storage._minigameAction)
         case 9: try decoder.decodeSingularInt64Field(value: &_storage._quickSwapAvailableMs)
         case 10: try decoder.decodeSingularInt32Field(value: &_storage._minigameDefenseChancesLeft)
+        case 11: try decoder.decodeSingularStringField(value: &_storage._combatNpcPersonalityID)
         default: break
         }
       }
@@ -206,6 +215,9 @@ extension POGOProtos_Data_Combat_CombatPlayer: SwiftProtobuf.Message, SwiftProto
       if _storage._minigameDefenseChancesLeft != 0 {
         try visitor.visitSingularInt32Field(value: _storage._minigameDefenseChancesLeft, fieldNumber: 10)
       }
+      if !_storage._combatNpcPersonalityID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._combatNpcPersonalityID, fieldNumber: 11)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -225,6 +237,7 @@ extension POGOProtos_Data_Combat_CombatPlayer: SwiftProtobuf.Message, SwiftProto
         if _storage._minigameAction != rhs_storage._minigameAction {return false}
         if _storage._quickSwapAvailableMs != rhs_storage._quickSwapAvailableMs {return false}
         if _storage._minigameDefenseChancesLeft != rhs_storage._minigameDefenseChancesLeft {return false}
+        if _storage._combatNpcPersonalityID != rhs_storage._combatNpcPersonalityID {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -130,7 +130,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeSentosa20Apr2019 // = 2050
   case badgeSentosa21Apr2019 // = 2051
   case badgeSentosa22Apr2019 // = 2052
-  case badgeTicketedEventMin // = 5000
+  case badgeDynamicEventMin // = 5000
   case badgeGofest2019AmericasDay00NorthGeneral // = 5001
   case badgeGofest2019AmericasDay00NorthEarlyaccess // = 5002
   case badgeGofest2019AmericasDay00SouthGeneral // = 5003
@@ -268,7 +268,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 2050: self = .badgeSentosa20Apr2019
     case 2051: self = .badgeSentosa21Apr2019
     case 2052: self = .badgeSentosa22Apr2019
-    case 5000: self = .badgeTicketedEventMin
+    case 5000: self = .badgeDynamicEventMin
     case 5001: self = .badgeGofest2019AmericasDay00NorthGeneral
     case 5002: self = .badgeGofest2019AmericasDay00NorthEarlyaccess
     case 5003: self = .badgeGofest2019AmericasDay00SouthGeneral
@@ -404,7 +404,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeSentosa20Apr2019: return 2050
     case .badgeSentosa21Apr2019: return 2051
     case .badgeSentosa22Apr2019: return 2052
-    case .badgeTicketedEventMin: return 5000
+    case .badgeDynamicEventMin: return 5000
     case .badgeGofest2019AmericasDay00NorthGeneral: return 5001
     case .badgeGofest2019AmericasDay00NorthEarlyaccess: return 5002
     case .badgeGofest2019AmericasDay00SouthGeneral: return 5003
@@ -545,7 +545,7 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeSentosa20Apr2019,
     .badgeSentosa21Apr2019,
     .badgeSentosa22Apr2019,
-    .badgeTicketedEventMin,
+    .badgeDynamicEventMin,
     .badgeGofest2019AmericasDay00NorthGeneral,
     .badgeGofest2019AmericasDay00NorthEarlyaccess,
     .badgeGofest2019AmericasDay00SouthGeneral,
@@ -684,7 +684,7 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     2050: .same(proto: "BADGE_SENTOSA_20_APR_2019"),
     2051: .same(proto: "BADGE_SENTOSA_21_APR_2019"),
     2052: .same(proto: "BADGE_SENTOSA_22_APR_2019"),
-    5000: .same(proto: "BADGE_TICKETED_EVENT_MIN"),
+    5000: .same(proto: "BADGE_DYNAMIC_EVENT_MIN"),
     5001: .same(proto: "BADGE_GOFEST_2019_AMERICAS_DAY_00_NORTH_GENERAL"),
     5002: .same(proto: "BADGE_GOFEST_2019_AMERICAS_DAY_00_NORTH_EARLYACCESS"),
     5003: .same(proto: "BADGE_GOFEST_2019_AMERICAS_DAY_00_SOUTH_GENERAL"),

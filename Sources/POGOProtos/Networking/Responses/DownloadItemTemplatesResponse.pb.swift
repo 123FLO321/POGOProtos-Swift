@@ -456,6 +456,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `adventureSyncV2Gmt`. Subsequent reads from it will return its default value.
     public mutating func clearAdventureSyncV2Gmt() {_uniqueStorage()._adventureSyncV2Gmt = nil}
 
+    public var loadingScreenSettings: POGOProtos_Settings_Master_LoadingScreen {
+      get {return _storage._loadingScreenSettings ?? POGOProtos_Settings_Master_LoadingScreen()}
+      set {_uniqueStorage()._loadingScreenSettings = newValue}
+    }
+    /// Returns true if `loadingScreenSettings` has been explicitly set.
+    public var hasLoadingScreenSettings: Bool {return _storage._loadingScreenSettings != nil}
+    /// Clears the value of `loadingScreenSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearLoadingScreenSettings() {_uniqueStorage()._loadingScreenSettings = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -586,6 +595,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     44: .standard(proto: "smeargle_moves_settings"),
     45: .standard(proto: "pokecoin_purchase_display_gmt"),
     46: .standard(proto: "adventure_sync_v2_gmt"),
+    47: .standard(proto: "loading_screen_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -632,6 +642,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _smeargleMovesSettings: POGOProtos_Settings_Master_SmeargleMovesSettings? = nil
     var _pokecoinPurchaseDisplayGmt: POGOProtos_Settings_Master_PokecoinPurchaseDisplayGmt? = nil
     var _adventureSyncV2Gmt: POGOProtos_Settings_Master_AdventureSyncV2Gmt? = nil
+    var _loadingScreenSettings: POGOProtos_Settings_Master_LoadingScreen? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -681,6 +692,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _smeargleMovesSettings = source._smeargleMovesSettings
       _pokecoinPurchaseDisplayGmt = source._pokecoinPurchaseDisplayGmt
       _adventureSyncV2Gmt = source._adventureSyncV2Gmt
+      _loadingScreenSettings = source._loadingScreenSettings
     }
   }
 
@@ -739,6 +751,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 44: try decoder.decodeSingularMessageField(value: &_storage._smeargleMovesSettings)
         case 45: try decoder.decodeSingularMessageField(value: &_storage._pokecoinPurchaseDisplayGmt)
         case 46: try decoder.decodeSingularMessageField(value: &_storage._adventureSyncV2Gmt)
+        case 47: try decoder.decodeSingularMessageField(value: &_storage._loadingScreenSettings)
         default: break
         }
       }
@@ -876,6 +889,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._adventureSyncV2Gmt {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 46)
       }
+      if let v = _storage._loadingScreenSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 47)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -928,6 +944,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._smeargleMovesSettings != rhs_storage._smeargleMovesSettings {return false}
         if _storage._pokecoinPurchaseDisplayGmt != rhs_storage._pokecoinPurchaseDisplayGmt {return false}
         if _storage._adventureSyncV2Gmt != rhs_storage._adventureSyncV2Gmt {return false}
+        if _storage._loadingScreenSettings != rhs_storage._loadingScreenSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}
