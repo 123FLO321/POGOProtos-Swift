@@ -6,23 +6,27 @@ cd $DIR/../../POGOProtos/src/
 git pull
 FILES=$(find . -type f \( -iname "*.proto" \))
 protoc --swift_out=$DIR/../Sources --swift_opt=Visibility=Public $FILES
-mv $DIR/../Sources/POGOProtos/Data/Player/PlayerBadge.pb.swift $DIR/../Sources/POGOProtos/Data/Player/PlayerPlayerBadge.pb.swift
-mv $DIR/../Sources/POGOProtos/Data/Raid/ExclusiveTicketInfo.pb.swift $DIR/../Sources/POGOProtos/Data/Raid/RaidExclusiveTicketInfo.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Requests/Messages/GetFitnessReportMessage.pb.swift $DIR/../Sources/POGOProtos/Networking/Requests/Messages/MessagesGetFitnessReportMessage.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Requests/Messages/SetInGameCurrencyExchangeRateMessage.pb.swift $DIR/../Sources/POGOProtos/Networking/Requests/Messages/MessagesSetInGameCurrencyExchangeRateMessage.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Requests/Messages/GetInboxMessage.pb.swift $DIR/../Sources/POGOProtos/Networking/Requests/Messages/MessagesGetInboxMessage.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Requests/Messages/UpdateFitnessMetricsMessage.pb.swift $DIR/../Sources/POGOProtos/Networking/Requests/Messages/MessagesUpdateFitnessMetricsMessage.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Responses/GetFitnessReportResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/ResponsesGetFitnessReportResponse.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Responses/GetAvailableSkusAndBalancesResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/ResponsesGetAvailableSkusAndBalancesResponse.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Responses/PurchaseSkuResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/ResponsesPurchaseSkuResponse.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Responses/RedeemGoogleReceiptResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/ResponsesRedeemGoogleReceiptResponse.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Responses/SetInGameCurrencyExchangeRateResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/ResponsesSetInGameCurrencyExchangeRateResponse.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Responses/UpdateFitnessMetricsResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/ResponsesUpdateFitnessMetricsResponse.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Responses/Social/GetInboxResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/Social/SocialGetInboxResponse.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Requests/Social/RegisterPushNotificationMessage.pb.swift $DIR/../Sources/POGOProtos/Networking/Requests/Social/SocialRegisterPushNotificationMessage.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Responses/Social/RegisterPushNotificationResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Responses/Social/SocialRegisterPushNotificationResponse.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Platform/Requests/GetGmapSettingsMessage.pb.swift $DIR/../Sources/POGOProtos/Networking/Platform/Requests/PlatformGetGmapSettingsMessage.pb.swift
-mv $DIR/../Sources/POGOProtos/Networking/Platform/Responses/GetGmapSettingsResponse.pb.swift $DIR/../Sources/POGOProtos/Networking/Platform/Responses/PlatformGetGmapSettingsResponse.pb.swift
+cd $DIR/../Sources/POGOProtos
+
+find . -name "*.swift" -print0 | while read -d $'\0' file
+do
+    filename=$(basename $file)
+    fulldir=$(dirname $file)
+    dirname=$(basename $fulldir)
+    dirname2=$(basename $(dirname $fulldir))
+    if [ "$dirname2" == "." ]
+    then
+        dest="$fulldir/$dirname-$filename"
+    else
+        dest="$fulldir/$dirname2-$dirname-$filename"
+    fi
+    mv $file $dest
+done
+
 cd $DIR
 swift build
-echo Success!
+if [ $? -eq 0 ]; then
+    echo Success!
+else
+    echo Failed!
+fi
