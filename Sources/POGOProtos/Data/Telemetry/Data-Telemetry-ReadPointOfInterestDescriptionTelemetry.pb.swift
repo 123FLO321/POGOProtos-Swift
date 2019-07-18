@@ -28,7 +28,7 @@ public struct POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry 
 
   public var fortID: String = String()
 
-  public var fortType: Int32 = 0
+  public var fortType: POGOProtos_Map_Fort_FortType = .gym
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -52,7 +52,7 @@ extension POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry: Swi
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.result)
       case 2: try decoder.decodeSingularStringField(value: &self.fortID)
-      case 3: try decoder.decodeSingularInt32Field(value: &self.fortType)
+      case 3: try decoder.decodeSingularEnumField(value: &self.fortType)
       default: break
       }
     }
@@ -65,8 +65,8 @@ extension POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry: Swi
     if !self.fortID.isEmpty {
       try visitor.visitSingularStringField(value: self.fortID, fieldNumber: 2)
     }
-    if self.fortType != 0 {
-      try visitor.visitSingularInt32Field(value: self.fortType, fieldNumber: 3)
+    if self.fortType != .gym {
+      try visitor.visitSingularEnumField(value: self.fortType, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

@@ -28,7 +28,7 @@ public struct POGOProtos_Data_Telemetry_SpinPokestopTelemetry {
 
   public var fortID: String = String()
 
-  public var fortType: Int32 = 0
+  public var fortType: POGOProtos_Map_Fort_FortType = .gym
 
   public var pokestopRewards: [POGOProtos_Data_Telemetry_PokestopReward] = []
 
@@ -58,7 +58,7 @@ extension POGOProtos_Data_Telemetry_SpinPokestopTelemetry: SwiftProtobuf.Message
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.result)
       case 2: try decoder.decodeSingularStringField(value: &self.fortID)
-      case 3: try decoder.decodeSingularInt32Field(value: &self.fortType)
+      case 3: try decoder.decodeSingularEnumField(value: &self.fortType)
       case 4: try decoder.decodeRepeatedMessageField(value: &self.pokestopRewards)
       case 5: try decoder.decodeSingularInt32Field(value: &self.totalRewards)
       default: break
@@ -73,8 +73,8 @@ extension POGOProtos_Data_Telemetry_SpinPokestopTelemetry: SwiftProtobuf.Message
     if !self.fortID.isEmpty {
       try visitor.visitSingularStringField(value: self.fortID, fieldNumber: 2)
     }
-    if self.fortType != 0 {
-      try visitor.visitSingularInt32Field(value: self.fortType, fieldNumber: 3)
+    if self.fortType != .gym {
+      try visitor.visitSingularEnumField(value: self.fortType, fieldNumber: 3)
     }
     if !self.pokestopRewards.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.pokestopRewards, fieldNumber: 4)

@@ -26,9 +26,25 @@ public struct POGOProtos_Data_Telemetry_RpcResponseTelemetry {
 
   public var windowDuration: Float = 0
 
-  public var responseTimings: [POGOProtos_Data_Telemetry_RpcResponseTime] = []
+  public var responseTimings: [POGOProtos_Data_Telemetry_RpcResponseTelemetry.RpcResponseTime] = []
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public struct RpcResponseTime {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var rpcID: POGOProtos_Networking_Requests_RequestType = .methodUnset
+
+    public var countCall: Int32 = 0
+
+    public var averageResponseTime: Float = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
 
   public init() {}
 }
@@ -67,6 +83,47 @@ extension POGOProtos_Data_Telemetry_RpcResponseTelemetry: SwiftProtobuf.Message,
   public static func ==(lhs: POGOProtos_Data_Telemetry_RpcResponseTelemetry, rhs: POGOProtos_Data_Telemetry_RpcResponseTelemetry) -> Bool {
     if lhs.windowDuration != rhs.windowDuration {return false}
     if lhs.responseTimings != rhs.responseTimings {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Telemetry_RpcResponseTelemetry.RpcResponseTime: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Telemetry_RpcResponseTelemetry.protoMessageName + ".RpcResponseTime"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "rpc_id"),
+    2: .standard(proto: "count_call"),
+    3: .standard(proto: "average_response_time"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.rpcID)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.countCall)
+      case 3: try decoder.decodeSingularFloatField(value: &self.averageResponseTime)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.rpcID != .methodUnset {
+      try visitor.visitSingularEnumField(value: self.rpcID, fieldNumber: 1)
+    }
+    if self.countCall != 0 {
+      try visitor.visitSingularInt32Field(value: self.countCall, fieldNumber: 2)
+    }
+    if self.averageResponseTime != 0 {
+      try visitor.visitSingularFloatField(value: self.averageResponseTime, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Telemetry_RpcResponseTelemetry.RpcResponseTime, rhs: POGOProtos_Data_Telemetry_RpcResponseTelemetry.RpcResponseTime) -> Bool {
+    if lhs.rpcID != rhs.rpcID {return false}
+    if lhs.countCall != rhs.countCall {return false}
+    if lhs.averageResponseTime != rhs.averageResponseTime {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
