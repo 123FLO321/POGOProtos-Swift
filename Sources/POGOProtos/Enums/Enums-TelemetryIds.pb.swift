@@ -28,6 +28,7 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
   case invasionEncounterStarted // = 4
   case invasionEncounterFinished // = 5
   case invasionPokemonPurified // = 6
+  case invasionAfterPoiExited // = 7
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -43,6 +44,7 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
     case 4: self = .invasionEncounterStarted
     case 5: self = .invasionEncounterFinished
     case 6: self = .invasionPokemonPurified
+    case 7: self = .invasionAfterPoiExited
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -56,6 +58,7 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
     case .invasionEncounterStarted: return 4
     case .invasionEncounterFinished: return 5
     case .invasionPokemonPurified: return 6
+    case .invasionAfterPoiExited: return 7
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -74,6 +77,7 @@ extension POGOProtos_Enums_InvasionTelemetryIds: CaseIterable {
     .invasionEncounterStarted,
     .invasionEncounterFinished,
     .invasionPokemonPurified,
+    .invasionAfterPoiExited,
   ]
 }
 
@@ -1386,6 +1390,7 @@ extension POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf._ProtoNameProvidi
     4: .same(proto: "INVASION_ENCOUNTER_STARTED"),
     5: .same(proto: "INVASION_ENCOUNTER_FINISHED"),
     6: .same(proto: "INVASION_POKEMON_PURIFIED"),
+    7: .same(proto: "INVASION_AFTER_POI_EXITED"),
   ]
 }
 

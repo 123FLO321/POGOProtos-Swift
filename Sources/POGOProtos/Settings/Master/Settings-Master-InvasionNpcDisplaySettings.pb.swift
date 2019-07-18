@@ -68,6 +68,11 @@ public struct POGOProtos_Settings_Master_InvasionNpcDisplaySettings {
     set {_uniqueStorage()._tutorialOnLossString = newValue}
   }
 
+  public var isMale: Bool {
+    get {return _storage._isMale}
+    set {_uniqueStorage()._isMale = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -90,6 +95,7 @@ extension POGOProtos_Settings_Master_InvasionNpcDisplaySettings: SwiftProtobuf.M
     6: .standard(proto: "backdrop_image_bundle"),
     7: .standard(proto: "model_name"),
     8: .standard(proto: "tutorial_on_loss_string"),
+    9: .standard(proto: "is_male"),
   ]
 
   fileprivate class _StorageClass {
@@ -101,6 +107,7 @@ extension POGOProtos_Settings_Master_InvasionNpcDisplaySettings: SwiftProtobuf.M
     var _backdropImageBundle: String = String()
     var _modelName: String = String()
     var _tutorialOnLossString: String = String()
+    var _isMale: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -115,6 +122,7 @@ extension POGOProtos_Settings_Master_InvasionNpcDisplaySettings: SwiftProtobuf.M
       _backdropImageBundle = source._backdropImageBundle
       _modelName = source._modelName
       _tutorialOnLossString = source._tutorialOnLossString
+      _isMale = source._isMale
     }
   }
 
@@ -138,6 +146,7 @@ extension POGOProtos_Settings_Master_InvasionNpcDisplaySettings: SwiftProtobuf.M
         case 6: try decoder.decodeSingularStringField(value: &_storage._backdropImageBundle)
         case 7: try decoder.decodeSingularStringField(value: &_storage._modelName)
         case 8: try decoder.decodeSingularStringField(value: &_storage._tutorialOnLossString)
+        case 9: try decoder.decodeSingularBoolField(value: &_storage._isMale)
         default: break
         }
       }
@@ -170,6 +179,9 @@ extension POGOProtos_Settings_Master_InvasionNpcDisplaySettings: SwiftProtobuf.M
       if !_storage._tutorialOnLossString.isEmpty {
         try visitor.visitSingularStringField(value: _storage._tutorialOnLossString, fieldNumber: 8)
       }
+      if _storage._isMale != false {
+        try visitor.visitSingularBoolField(value: _storage._isMale, fieldNumber: 9)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -187,6 +199,7 @@ extension POGOProtos_Settings_Master_InvasionNpcDisplaySettings: SwiftProtobuf.M
         if _storage._backdropImageBundle != rhs_storage._backdropImageBundle {return false}
         if _storage._modelName != rhs_storage._modelName {return false}
         if _storage._tutorialOnLossString != rhs_storage._tutorialOnLossString {return false}
+        if _storage._isMale != rhs_storage._isMale {return false}
         return true
       }
       if !storagesAreEqual {return false}

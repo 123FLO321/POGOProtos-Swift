@@ -218,6 +218,117 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case swampertNormal // = 211
   case swampertShadow // = 212
   case swampertPurified // = 213
+  case drowzeeNormal // = 214
+  case drowzeeShadow // = 215
+  case drowzeePurified // = 216
+  case hypnoNormal // = 217
+  case hypnoShadow // = 218
+  case hypnoPurified // = 219
+  case grimerShadow // = 220
+  case grimerPurified // = 221
+  case mukShadow // = 222
+  case mukPurified // = 223
+  case cuboneNormal // = 224
+  case cuboneShadow // = 225
+  case cubonePurified // = 226
+  case marowakShadow // = 227
+  case marowakPurified // = 228
+  case houndourNormal // = 229
+  case houndourShadow // = 230
+  case houndourPurified // = 231
+  case houndoomNormal // = 232
+  case houndoomShadow // = 233
+  case houndoomPurified // = 234
+  case poliwagNormal // = 235
+  case poliwagShadow // = 236
+  case poliwagPurified // = 237
+  case poliwhirlNormal // = 238
+  case poliwhirlShadow // = 239
+  case poliwhirlPurified // = 240
+  case poliwrathNormal // = 241
+  case poliwrathShadow // = 242
+  case poliwrathPurified // = 243
+  case politoedNormal // = 244
+  case politoedShadow // = 245
+  case politoedPurified // = 246
+  case scytherNormal // = 247
+  case scytherShadow // = 248
+  case scytherPurified // = 249
+  case scizorNormal // = 250
+  case scizorShadow // = 251
+  case scizorPurified // = 252
+  case magikarpNormal // = 253
+  case magikarpShadow // = 254
+  case magikarpPurified // = 255
+  case gyaradosNormal // = 256
+  case gyaradosShadow // = 257
+  case gyaradosPurified // = 258
+  case venonatNormal // = 259
+  case venonatShadow // = 260
+  case venonatPurified // = 261
+  case venomothNormal // = 262
+  case venomothShadow // = 263
+  case venomothPurified // = 264
+  case oddishNormal // = 265
+  case oddishShadow // = 266
+  case oddishPurified // = 267
+  case gloomNormal // = 268
+  case gloomShadow // = 269
+  case gloomPurified // = 270
+  case vileplumeNormal // = 271
+  case vileplumeShadow // = 272
+  case vileplumePurified // = 273
+  case bellossomNormal // = 274
+  case bellossomShadow // = 275
+  case bellossomPurified // = 276
+  case hitmonchanNormal // = 277
+  case hitmonchanShadow // = 278
+  case hitmonchanPurified // = 279
+  case growlitheNormal // = 280
+  case growlitheShadow // = 281
+  case growlithePurified // = 282
+  case arcanineNormal // = 283
+  case arcanineShadow // = 284
+  case arcaninePurified // = 285
+  case psyduckNormal // = 286
+  case psyduckShadow // = 287
+  case psyduckPurified // = 288
+  case golduckNormal // = 289
+  case golduckShadow // = 290
+  case golduckPurified // = 291
+  case raltsNormal // = 292
+  case raltsShadow // = 293
+  case raltsPurified // = 294
+  case kirliaNormal // = 295
+  case kirliaShadow // = 296
+  case kirliaPurified // = 297
+  case gardevoirNormal // = 298
+  case gardevoirShadow // = 299
+  case gardevoirPurified // = 300
+  case galladeNormal // = 301
+  case galladeShadow // = 302
+  case galladePurified // = 303
+  case abraNormal // = 304
+  case abraShadow // = 305
+  case abraPurified // = 306
+  case kadabraNormal // = 307
+  case kadabraShadow // = 308
+  case kadabraPurified // = 309
+  case alakazamNormal // = 310
+  case alakazamShadow // = 311
+  case alakazamPurified // = 312
+  case larvitarNormal // = 313
+  case larvitarShadow // = 314
+  case larvitarPurified // = 315
+  case pupitarNormal // = 316
+  case pupitarShadow // = 317
+  case pupitarPurified // = 318
+  case tyranitarNormal // = 319
+  case tyranitarShadow // = 320
+  case tyranitarPurified // = 321
+  case laprasNormal // = 322
+  case laprasShadow // = 323
+  case laprasPurified // = 324
   case pikachuNormal // = 598
   case pikachuNoevolve // = 599
   case wurmpleNormal // = 600
@@ -230,6 +341,235 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case squirtleNoevolve // = 607
   case blastoiseNoevolve // = 608
   case raticateNoevolve // = 609
+  case cacneaNormal // = 610
+  case cacneaShadow // = 611
+  case cacneaPurified // = 612
+  case cacturneNormal // = 613
+  case cacturneShadow // = 614
+  case cacturnePurified // = 615
+  case weedleNormal // = 616
+  case weedleShadow // = 617
+  case weedlePurified // = 618
+  case kakunaNormal // = 619
+  case kakunaShadow // = 620
+  case kakunaPurified // = 621
+  case beedrillNormal // = 622
+  case beedrillShadow // = 623
+  case beedrillPurified // = 624
+  case seedotNormal // = 625
+  case seedotShadow // = 626
+  case seedotPurified // = 627
+  case nuzleafNormal // = 628
+  case nuzleafShadow // = 629
+  case nuzleafPurified // = 630
+  case shiftryNormal // = 631
+  case shiftryShadow // = 632
+  case shiftryPurified // = 633
+  case magmarNormal // = 634
+  case magmarShadow // = 635
+  case magmarPurified // = 636
+  case magmortarNormal // = 637
+  case magmortarShadow // = 638
+  case magmortarPurified // = 639
+  case electabuzzNormal // = 640
+  case electabuzzShadow // = 641
+  case electabuzzPurified // = 642
+  case electivireNormal // = 643
+  case electivireShadow // = 644
+  case electivirePurified // = 645
+  case mareepNormal // = 646
+  case mareepShadow // = 647
+  case mareepPurified // = 648
+  case flaaffyNormal // = 649
+  case flaaffyShadow // = 650
+  case flaaffyPurified // = 651
+  case ampharosNormal // = 652
+  case ampharosShadow // = 653
+  case ampharosPurified // = 654
+  case magnemiteNormal // = 655
+  case magnemiteShadow // = 656
+  case magnemitePurified // = 657
+  case magnetonNormal // = 658
+  case magnetonShadow // = 659
+  case magnetonPurified // = 660
+  case magnezoneNormal // = 661
+  case magnezoneShadow // = 662
+  case magnezonePurified // = 663
+  case bellsproutNormal // = 664
+  case bellsproutShadow // = 665
+  case bellsproutPurified // = 666
+  case weepinbellNormal // = 667
+  case weepinbellShadow // = 668
+  case weepinbellPurified // = 669
+  case victreebelNormal // = 670
+  case victreebelShadow // = 671
+  case victreebelPurified // = 672
+  case sandshrewShadow // = 673
+  case sandshrewPurified // = 674
+  case sandslashShadow // = 675
+  case sandslashPurified // = 676
+  case porygonNormal // = 677
+  case porygonShadow // = 678
+  case porygonPurified // = 679
+  case porygon2Normal // = 680
+  case porygon2Shadow // = 681
+  case porygon2Purified // = 682
+  case porygonZNormal // = 683
+  case porygonZShadow // = 684
+  case porygonZPurified // = 685
+  case wobbuffetShadow // = 686
+  case wobbuffetPurified // = 687
+  case turtwigNormal // = 688
+  case turtwigShadow // = 689
+  case turtwigPurified // = 690
+  case grotleNormal // = 691
+  case grotleShadow // = 692
+  case grotlePurified // = 693
+  case torterraNormal // = 694
+  case torterraShadow // = 695
+  case torterraPurified // = 696
+  case ekansNormal // = 697
+  case ekansShadow // = 698
+  case ekansPurified // = 699
+  case arbokNormal // = 700
+  case arbokShadow // = 701
+  case arbokPurified // = 702
+  case koffingNormal // = 703
+  case koffingShadow // = 704
+  case koffingPurified // = 705
+  case weezingNormal // = 706
+  case weezingShadow // = 707
+  case weezingPurified // = 708
+  case meowthShadow // = 709
+  case meowthPurified // = 710
+  case persianShadow // = 711
+  case persianPurified // = 712
+  case hitmonleeNormal // = 713
+  case hitmonleeShadow // = 714
+  case hitmonleePurified // = 715
+  case articunoNormal // = 716
+  case articunoShadow // = 717
+  case articunoPurified // = 718
+  case misdreavusNormal // = 719
+  case misdreavusShadow // = 720
+  case misdreavusPurified // = 721
+  case mismagiusNormal // = 722
+  case mismagiusShadow // = 723
+  case mismagiusPurified // = 724
+  case vulpixShadow // = 725
+  case vulpixPurified // = 726
+  case ninetalesShadow // = 727
+  case ninetalesPurified // = 728
+  case exeggcuteNormal // = 729
+  case exeggcuteShadow // = 730
+  case exeggcutePurified // = 731
+  case exeggutorShadow // = 732
+  case exeggutorPurified // = 733
+  case carvanhaNormal // = 734
+  case carvanhaShadow // = 735
+  case carvanhaPurified // = 736
+  case sharpedoNormal // = 737
+  case sharpedoShadow // = 738
+  case sharpedoPurified // = 739
+  case omanyteNormal // = 740
+  case omanyteShadow // = 741
+  case omanytePurified // = 742
+  case omastarNormal // = 743
+  case omastarShadow // = 744
+  case omastarPurified // = 745
+  case trapinchNormal // = 746
+  case trapinchShadow // = 747
+  case trapinchPurified // = 748
+  case vibravaNormal // = 749
+  case vibravaShadow // = 750
+  case vibravaPurified // = 751
+  case flygonNormal // = 752
+  case flygonShadow // = 753
+  case flygonPurified // = 754
+  case bagonNormal // = 755
+  case bagonShadow // = 756
+  case bagonPurified // = 757
+  case shelgonNormal // = 758
+  case shelgonShadow // = 759
+  case shelgonPurified // = 760
+  case salamenceNormal // = 761
+  case salamenceShadow // = 762
+  case salamencePurified // = 763
+  case beldumNormal // = 764
+  case beldumShadow // = 765
+  case beldumPurified // = 766
+  case metangNormal // = 767
+  case metangShadow // = 768
+  case metangPurified // = 769
+  case metagrossNormal // = 770
+  case metagrossShadow // = 771
+  case metagrossPurified // = 772
+  case zapdosNormal // = 773
+  case zapdosShadow // = 774
+  case zapdosPurified // = 775
+  case nidoranNormal // = 776
+  case nidoranShadow // = 777
+  case nidoranPurified // = 778
+  case nidorinaNormal // = 779
+  case nidorinaShadow // = 780
+  case nidorinaPurified // = 781
+  case nidoqueenNormal // = 782
+  case nidoqueenShadow // = 783
+  case nidoqueenPurified // = 784
+  case nidorinoNormal // = 785
+  case nidorinoShadow // = 786
+  case nidorinoPurified // = 787
+  case nidokingNormal // = 788
+  case nidokingShadow // = 789
+  case nidokingPurified // = 790
+  case stunkyNormal // = 791
+  case stunkyShadow // = 792
+  case stunkyPurified // = 793
+  case skuntankNormal // = 794
+  case skuntankShadow // = 795
+  case skuntankPurified // = 796
+  case sneaselNormal // = 797
+  case sneaselShadow // = 798
+  case sneaselPurified // = 799
+  case weavileNormal // = 800
+  case weavileShadow // = 801
+  case weavilePurified // = 802
+  case gligarNormal // = 803
+  case gligarShadow // = 804
+  case gligarPurified // = 805
+  case gliscorNormal // = 806
+  case gliscorShadow // = 807
+  case gliscorPurified // = 808
+  case machopNormal // = 809
+  case machopShadow // = 810
+  case machopPurified // = 811
+  case machokeNormal // = 812
+  case machokeShadow // = 813
+  case machokePurified // = 814
+  case machampNormal // = 815
+  case machampShadow // = 816
+  case machampPurified // = 817
+  case chimcharNormal // = 818
+  case chimcharShadow // = 819
+  case chimcharPurified // = 820
+  case monfernoNormal // = 821
+  case monfernoShadow // = 822
+  case monfernoPurified // = 823
+  case infernapeNormal // = 824
+  case infernapeShadow // = 825
+  case infernapePurified // = 826
+  case shuckleNormal // = 827
+  case shuckleShadow // = 828
+  case shucklePurified // = 829
+  case absolNormal // = 830
+  case absolShadow // = 831
+  case absolPurified // = 832
+  case mawileNormal // = 833
+  case mawileShadow // = 834
+  case mawilePurified // = 835
+  case moltresNormal // = 836
+  case moltresShadow // = 837
+  case moltresPurified // = 838
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -435,6 +775,117 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 211: self = .swampertNormal
     case 212: self = .swampertShadow
     case 213: self = .swampertPurified
+    case 214: self = .drowzeeNormal
+    case 215: self = .drowzeeShadow
+    case 216: self = .drowzeePurified
+    case 217: self = .hypnoNormal
+    case 218: self = .hypnoShadow
+    case 219: self = .hypnoPurified
+    case 220: self = .grimerShadow
+    case 221: self = .grimerPurified
+    case 222: self = .mukShadow
+    case 223: self = .mukPurified
+    case 224: self = .cuboneNormal
+    case 225: self = .cuboneShadow
+    case 226: self = .cubonePurified
+    case 227: self = .marowakShadow
+    case 228: self = .marowakPurified
+    case 229: self = .houndourNormal
+    case 230: self = .houndourShadow
+    case 231: self = .houndourPurified
+    case 232: self = .houndoomNormal
+    case 233: self = .houndoomShadow
+    case 234: self = .houndoomPurified
+    case 235: self = .poliwagNormal
+    case 236: self = .poliwagShadow
+    case 237: self = .poliwagPurified
+    case 238: self = .poliwhirlNormal
+    case 239: self = .poliwhirlShadow
+    case 240: self = .poliwhirlPurified
+    case 241: self = .poliwrathNormal
+    case 242: self = .poliwrathShadow
+    case 243: self = .poliwrathPurified
+    case 244: self = .politoedNormal
+    case 245: self = .politoedShadow
+    case 246: self = .politoedPurified
+    case 247: self = .scytherNormal
+    case 248: self = .scytherShadow
+    case 249: self = .scytherPurified
+    case 250: self = .scizorNormal
+    case 251: self = .scizorShadow
+    case 252: self = .scizorPurified
+    case 253: self = .magikarpNormal
+    case 254: self = .magikarpShadow
+    case 255: self = .magikarpPurified
+    case 256: self = .gyaradosNormal
+    case 257: self = .gyaradosShadow
+    case 258: self = .gyaradosPurified
+    case 259: self = .venonatNormal
+    case 260: self = .venonatShadow
+    case 261: self = .venonatPurified
+    case 262: self = .venomothNormal
+    case 263: self = .venomothShadow
+    case 264: self = .venomothPurified
+    case 265: self = .oddishNormal
+    case 266: self = .oddishShadow
+    case 267: self = .oddishPurified
+    case 268: self = .gloomNormal
+    case 269: self = .gloomShadow
+    case 270: self = .gloomPurified
+    case 271: self = .vileplumeNormal
+    case 272: self = .vileplumeShadow
+    case 273: self = .vileplumePurified
+    case 274: self = .bellossomNormal
+    case 275: self = .bellossomShadow
+    case 276: self = .bellossomPurified
+    case 277: self = .hitmonchanNormal
+    case 278: self = .hitmonchanShadow
+    case 279: self = .hitmonchanPurified
+    case 280: self = .growlitheNormal
+    case 281: self = .growlitheShadow
+    case 282: self = .growlithePurified
+    case 283: self = .arcanineNormal
+    case 284: self = .arcanineShadow
+    case 285: self = .arcaninePurified
+    case 286: self = .psyduckNormal
+    case 287: self = .psyduckShadow
+    case 288: self = .psyduckPurified
+    case 289: self = .golduckNormal
+    case 290: self = .golduckShadow
+    case 291: self = .golduckPurified
+    case 292: self = .raltsNormal
+    case 293: self = .raltsShadow
+    case 294: self = .raltsPurified
+    case 295: self = .kirliaNormal
+    case 296: self = .kirliaShadow
+    case 297: self = .kirliaPurified
+    case 298: self = .gardevoirNormal
+    case 299: self = .gardevoirShadow
+    case 300: self = .gardevoirPurified
+    case 301: self = .galladeNormal
+    case 302: self = .galladeShadow
+    case 303: self = .galladePurified
+    case 304: self = .abraNormal
+    case 305: self = .abraShadow
+    case 306: self = .abraPurified
+    case 307: self = .kadabraNormal
+    case 308: self = .kadabraShadow
+    case 309: self = .kadabraPurified
+    case 310: self = .alakazamNormal
+    case 311: self = .alakazamShadow
+    case 312: self = .alakazamPurified
+    case 313: self = .larvitarNormal
+    case 314: self = .larvitarShadow
+    case 315: self = .larvitarPurified
+    case 316: self = .pupitarNormal
+    case 317: self = .pupitarShadow
+    case 318: self = .pupitarPurified
+    case 319: self = .tyranitarNormal
+    case 320: self = .tyranitarShadow
+    case 321: self = .tyranitarPurified
+    case 322: self = .laprasNormal
+    case 323: self = .laprasShadow
+    case 324: self = .laprasPurified
     case 598: self = .pikachuNormal
     case 599: self = .pikachuNoevolve
     case 600: self = .wurmpleNormal
@@ -447,6 +898,235 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 607: self = .squirtleNoevolve
     case 608: self = .blastoiseNoevolve
     case 609: self = .raticateNoevolve
+    case 610: self = .cacneaNormal
+    case 611: self = .cacneaShadow
+    case 612: self = .cacneaPurified
+    case 613: self = .cacturneNormal
+    case 614: self = .cacturneShadow
+    case 615: self = .cacturnePurified
+    case 616: self = .weedleNormal
+    case 617: self = .weedleShadow
+    case 618: self = .weedlePurified
+    case 619: self = .kakunaNormal
+    case 620: self = .kakunaShadow
+    case 621: self = .kakunaPurified
+    case 622: self = .beedrillNormal
+    case 623: self = .beedrillShadow
+    case 624: self = .beedrillPurified
+    case 625: self = .seedotNormal
+    case 626: self = .seedotShadow
+    case 627: self = .seedotPurified
+    case 628: self = .nuzleafNormal
+    case 629: self = .nuzleafShadow
+    case 630: self = .nuzleafPurified
+    case 631: self = .shiftryNormal
+    case 632: self = .shiftryShadow
+    case 633: self = .shiftryPurified
+    case 634: self = .magmarNormal
+    case 635: self = .magmarShadow
+    case 636: self = .magmarPurified
+    case 637: self = .magmortarNormal
+    case 638: self = .magmortarShadow
+    case 639: self = .magmortarPurified
+    case 640: self = .electabuzzNormal
+    case 641: self = .electabuzzShadow
+    case 642: self = .electabuzzPurified
+    case 643: self = .electivireNormal
+    case 644: self = .electivireShadow
+    case 645: self = .electivirePurified
+    case 646: self = .mareepNormal
+    case 647: self = .mareepShadow
+    case 648: self = .mareepPurified
+    case 649: self = .flaaffyNormal
+    case 650: self = .flaaffyShadow
+    case 651: self = .flaaffyPurified
+    case 652: self = .ampharosNormal
+    case 653: self = .ampharosShadow
+    case 654: self = .ampharosPurified
+    case 655: self = .magnemiteNormal
+    case 656: self = .magnemiteShadow
+    case 657: self = .magnemitePurified
+    case 658: self = .magnetonNormal
+    case 659: self = .magnetonShadow
+    case 660: self = .magnetonPurified
+    case 661: self = .magnezoneNormal
+    case 662: self = .magnezoneShadow
+    case 663: self = .magnezonePurified
+    case 664: self = .bellsproutNormal
+    case 665: self = .bellsproutShadow
+    case 666: self = .bellsproutPurified
+    case 667: self = .weepinbellNormal
+    case 668: self = .weepinbellShadow
+    case 669: self = .weepinbellPurified
+    case 670: self = .victreebelNormal
+    case 671: self = .victreebelShadow
+    case 672: self = .victreebelPurified
+    case 673: self = .sandshrewShadow
+    case 674: self = .sandshrewPurified
+    case 675: self = .sandslashShadow
+    case 676: self = .sandslashPurified
+    case 677: self = .porygonNormal
+    case 678: self = .porygonShadow
+    case 679: self = .porygonPurified
+    case 680: self = .porygon2Normal
+    case 681: self = .porygon2Shadow
+    case 682: self = .porygon2Purified
+    case 683: self = .porygonZNormal
+    case 684: self = .porygonZShadow
+    case 685: self = .porygonZPurified
+    case 686: self = .wobbuffetShadow
+    case 687: self = .wobbuffetPurified
+    case 688: self = .turtwigNormal
+    case 689: self = .turtwigShadow
+    case 690: self = .turtwigPurified
+    case 691: self = .grotleNormal
+    case 692: self = .grotleShadow
+    case 693: self = .grotlePurified
+    case 694: self = .torterraNormal
+    case 695: self = .torterraShadow
+    case 696: self = .torterraPurified
+    case 697: self = .ekansNormal
+    case 698: self = .ekansShadow
+    case 699: self = .ekansPurified
+    case 700: self = .arbokNormal
+    case 701: self = .arbokShadow
+    case 702: self = .arbokPurified
+    case 703: self = .koffingNormal
+    case 704: self = .koffingShadow
+    case 705: self = .koffingPurified
+    case 706: self = .weezingNormal
+    case 707: self = .weezingShadow
+    case 708: self = .weezingPurified
+    case 709: self = .meowthShadow
+    case 710: self = .meowthPurified
+    case 711: self = .persianShadow
+    case 712: self = .persianPurified
+    case 713: self = .hitmonleeNormal
+    case 714: self = .hitmonleeShadow
+    case 715: self = .hitmonleePurified
+    case 716: self = .articunoNormal
+    case 717: self = .articunoShadow
+    case 718: self = .articunoPurified
+    case 719: self = .misdreavusNormal
+    case 720: self = .misdreavusShadow
+    case 721: self = .misdreavusPurified
+    case 722: self = .mismagiusNormal
+    case 723: self = .mismagiusShadow
+    case 724: self = .mismagiusPurified
+    case 725: self = .vulpixShadow
+    case 726: self = .vulpixPurified
+    case 727: self = .ninetalesShadow
+    case 728: self = .ninetalesPurified
+    case 729: self = .exeggcuteNormal
+    case 730: self = .exeggcuteShadow
+    case 731: self = .exeggcutePurified
+    case 732: self = .exeggutorShadow
+    case 733: self = .exeggutorPurified
+    case 734: self = .carvanhaNormal
+    case 735: self = .carvanhaShadow
+    case 736: self = .carvanhaPurified
+    case 737: self = .sharpedoNormal
+    case 738: self = .sharpedoShadow
+    case 739: self = .sharpedoPurified
+    case 740: self = .omanyteNormal
+    case 741: self = .omanyteShadow
+    case 742: self = .omanytePurified
+    case 743: self = .omastarNormal
+    case 744: self = .omastarShadow
+    case 745: self = .omastarPurified
+    case 746: self = .trapinchNormal
+    case 747: self = .trapinchShadow
+    case 748: self = .trapinchPurified
+    case 749: self = .vibravaNormal
+    case 750: self = .vibravaShadow
+    case 751: self = .vibravaPurified
+    case 752: self = .flygonNormal
+    case 753: self = .flygonShadow
+    case 754: self = .flygonPurified
+    case 755: self = .bagonNormal
+    case 756: self = .bagonShadow
+    case 757: self = .bagonPurified
+    case 758: self = .shelgonNormal
+    case 759: self = .shelgonShadow
+    case 760: self = .shelgonPurified
+    case 761: self = .salamenceNormal
+    case 762: self = .salamenceShadow
+    case 763: self = .salamencePurified
+    case 764: self = .beldumNormal
+    case 765: self = .beldumShadow
+    case 766: self = .beldumPurified
+    case 767: self = .metangNormal
+    case 768: self = .metangShadow
+    case 769: self = .metangPurified
+    case 770: self = .metagrossNormal
+    case 771: self = .metagrossShadow
+    case 772: self = .metagrossPurified
+    case 773: self = .zapdosNormal
+    case 774: self = .zapdosShadow
+    case 775: self = .zapdosPurified
+    case 776: self = .nidoranNormal
+    case 777: self = .nidoranShadow
+    case 778: self = .nidoranPurified
+    case 779: self = .nidorinaNormal
+    case 780: self = .nidorinaShadow
+    case 781: self = .nidorinaPurified
+    case 782: self = .nidoqueenNormal
+    case 783: self = .nidoqueenShadow
+    case 784: self = .nidoqueenPurified
+    case 785: self = .nidorinoNormal
+    case 786: self = .nidorinoShadow
+    case 787: self = .nidorinoPurified
+    case 788: self = .nidokingNormal
+    case 789: self = .nidokingShadow
+    case 790: self = .nidokingPurified
+    case 791: self = .stunkyNormal
+    case 792: self = .stunkyShadow
+    case 793: self = .stunkyPurified
+    case 794: self = .skuntankNormal
+    case 795: self = .skuntankShadow
+    case 796: self = .skuntankPurified
+    case 797: self = .sneaselNormal
+    case 798: self = .sneaselShadow
+    case 799: self = .sneaselPurified
+    case 800: self = .weavileNormal
+    case 801: self = .weavileShadow
+    case 802: self = .weavilePurified
+    case 803: self = .gligarNormal
+    case 804: self = .gligarShadow
+    case 805: self = .gligarPurified
+    case 806: self = .gliscorNormal
+    case 807: self = .gliscorShadow
+    case 808: self = .gliscorPurified
+    case 809: self = .machopNormal
+    case 810: self = .machopShadow
+    case 811: self = .machopPurified
+    case 812: self = .machokeNormal
+    case 813: self = .machokeShadow
+    case 814: self = .machokePurified
+    case 815: self = .machampNormal
+    case 816: self = .machampShadow
+    case 817: self = .machampPurified
+    case 818: self = .chimcharNormal
+    case 819: self = .chimcharShadow
+    case 820: self = .chimcharPurified
+    case 821: self = .monfernoNormal
+    case 822: self = .monfernoShadow
+    case 823: self = .monfernoPurified
+    case 824: self = .infernapeNormal
+    case 825: self = .infernapeShadow
+    case 826: self = .infernapePurified
+    case 827: self = .shuckleNormal
+    case 828: self = .shuckleShadow
+    case 829: self = .shucklePurified
+    case 830: self = .absolNormal
+    case 831: self = .absolShadow
+    case 832: self = .absolPurified
+    case 833: self = .mawileNormal
+    case 834: self = .mawileShadow
+    case 835: self = .mawilePurified
+    case 836: self = .moltresNormal
+    case 837: self = .moltresShadow
+    case 838: self = .moltresPurified
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -650,6 +1330,117 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .swampertNormal: return 211
     case .swampertShadow: return 212
     case .swampertPurified: return 213
+    case .drowzeeNormal: return 214
+    case .drowzeeShadow: return 215
+    case .drowzeePurified: return 216
+    case .hypnoNormal: return 217
+    case .hypnoShadow: return 218
+    case .hypnoPurified: return 219
+    case .grimerShadow: return 220
+    case .grimerPurified: return 221
+    case .mukShadow: return 222
+    case .mukPurified: return 223
+    case .cuboneNormal: return 224
+    case .cuboneShadow: return 225
+    case .cubonePurified: return 226
+    case .marowakShadow: return 227
+    case .marowakPurified: return 228
+    case .houndourNormal: return 229
+    case .houndourShadow: return 230
+    case .houndourPurified: return 231
+    case .houndoomNormal: return 232
+    case .houndoomShadow: return 233
+    case .houndoomPurified: return 234
+    case .poliwagNormal: return 235
+    case .poliwagShadow: return 236
+    case .poliwagPurified: return 237
+    case .poliwhirlNormal: return 238
+    case .poliwhirlShadow: return 239
+    case .poliwhirlPurified: return 240
+    case .poliwrathNormal: return 241
+    case .poliwrathShadow: return 242
+    case .poliwrathPurified: return 243
+    case .politoedNormal: return 244
+    case .politoedShadow: return 245
+    case .politoedPurified: return 246
+    case .scytherNormal: return 247
+    case .scytherShadow: return 248
+    case .scytherPurified: return 249
+    case .scizorNormal: return 250
+    case .scizorShadow: return 251
+    case .scizorPurified: return 252
+    case .magikarpNormal: return 253
+    case .magikarpShadow: return 254
+    case .magikarpPurified: return 255
+    case .gyaradosNormal: return 256
+    case .gyaradosShadow: return 257
+    case .gyaradosPurified: return 258
+    case .venonatNormal: return 259
+    case .venonatShadow: return 260
+    case .venonatPurified: return 261
+    case .venomothNormal: return 262
+    case .venomothShadow: return 263
+    case .venomothPurified: return 264
+    case .oddishNormal: return 265
+    case .oddishShadow: return 266
+    case .oddishPurified: return 267
+    case .gloomNormal: return 268
+    case .gloomShadow: return 269
+    case .gloomPurified: return 270
+    case .vileplumeNormal: return 271
+    case .vileplumeShadow: return 272
+    case .vileplumePurified: return 273
+    case .bellossomNormal: return 274
+    case .bellossomShadow: return 275
+    case .bellossomPurified: return 276
+    case .hitmonchanNormal: return 277
+    case .hitmonchanShadow: return 278
+    case .hitmonchanPurified: return 279
+    case .growlitheNormal: return 280
+    case .growlitheShadow: return 281
+    case .growlithePurified: return 282
+    case .arcanineNormal: return 283
+    case .arcanineShadow: return 284
+    case .arcaninePurified: return 285
+    case .psyduckNormal: return 286
+    case .psyduckShadow: return 287
+    case .psyduckPurified: return 288
+    case .golduckNormal: return 289
+    case .golduckShadow: return 290
+    case .golduckPurified: return 291
+    case .raltsNormal: return 292
+    case .raltsShadow: return 293
+    case .raltsPurified: return 294
+    case .kirliaNormal: return 295
+    case .kirliaShadow: return 296
+    case .kirliaPurified: return 297
+    case .gardevoirNormal: return 298
+    case .gardevoirShadow: return 299
+    case .gardevoirPurified: return 300
+    case .galladeNormal: return 301
+    case .galladeShadow: return 302
+    case .galladePurified: return 303
+    case .abraNormal: return 304
+    case .abraShadow: return 305
+    case .abraPurified: return 306
+    case .kadabraNormal: return 307
+    case .kadabraShadow: return 308
+    case .kadabraPurified: return 309
+    case .alakazamNormal: return 310
+    case .alakazamShadow: return 311
+    case .alakazamPurified: return 312
+    case .larvitarNormal: return 313
+    case .larvitarShadow: return 314
+    case .larvitarPurified: return 315
+    case .pupitarNormal: return 316
+    case .pupitarShadow: return 317
+    case .pupitarPurified: return 318
+    case .tyranitarNormal: return 319
+    case .tyranitarShadow: return 320
+    case .tyranitarPurified: return 321
+    case .laprasNormal: return 322
+    case .laprasShadow: return 323
+    case .laprasPurified: return 324
     case .pikachuNormal: return 598
     case .pikachuNoevolve: return 599
     case .wurmpleNormal: return 600
@@ -662,6 +1453,235 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .squirtleNoevolve: return 607
     case .blastoiseNoevolve: return 608
     case .raticateNoevolve: return 609
+    case .cacneaNormal: return 610
+    case .cacneaShadow: return 611
+    case .cacneaPurified: return 612
+    case .cacturneNormal: return 613
+    case .cacturneShadow: return 614
+    case .cacturnePurified: return 615
+    case .weedleNormal: return 616
+    case .weedleShadow: return 617
+    case .weedlePurified: return 618
+    case .kakunaNormal: return 619
+    case .kakunaShadow: return 620
+    case .kakunaPurified: return 621
+    case .beedrillNormal: return 622
+    case .beedrillShadow: return 623
+    case .beedrillPurified: return 624
+    case .seedotNormal: return 625
+    case .seedotShadow: return 626
+    case .seedotPurified: return 627
+    case .nuzleafNormal: return 628
+    case .nuzleafShadow: return 629
+    case .nuzleafPurified: return 630
+    case .shiftryNormal: return 631
+    case .shiftryShadow: return 632
+    case .shiftryPurified: return 633
+    case .magmarNormal: return 634
+    case .magmarShadow: return 635
+    case .magmarPurified: return 636
+    case .magmortarNormal: return 637
+    case .magmortarShadow: return 638
+    case .magmortarPurified: return 639
+    case .electabuzzNormal: return 640
+    case .electabuzzShadow: return 641
+    case .electabuzzPurified: return 642
+    case .electivireNormal: return 643
+    case .electivireShadow: return 644
+    case .electivirePurified: return 645
+    case .mareepNormal: return 646
+    case .mareepShadow: return 647
+    case .mareepPurified: return 648
+    case .flaaffyNormal: return 649
+    case .flaaffyShadow: return 650
+    case .flaaffyPurified: return 651
+    case .ampharosNormal: return 652
+    case .ampharosShadow: return 653
+    case .ampharosPurified: return 654
+    case .magnemiteNormal: return 655
+    case .magnemiteShadow: return 656
+    case .magnemitePurified: return 657
+    case .magnetonNormal: return 658
+    case .magnetonShadow: return 659
+    case .magnetonPurified: return 660
+    case .magnezoneNormal: return 661
+    case .magnezoneShadow: return 662
+    case .magnezonePurified: return 663
+    case .bellsproutNormal: return 664
+    case .bellsproutShadow: return 665
+    case .bellsproutPurified: return 666
+    case .weepinbellNormal: return 667
+    case .weepinbellShadow: return 668
+    case .weepinbellPurified: return 669
+    case .victreebelNormal: return 670
+    case .victreebelShadow: return 671
+    case .victreebelPurified: return 672
+    case .sandshrewShadow: return 673
+    case .sandshrewPurified: return 674
+    case .sandslashShadow: return 675
+    case .sandslashPurified: return 676
+    case .porygonNormal: return 677
+    case .porygonShadow: return 678
+    case .porygonPurified: return 679
+    case .porygon2Normal: return 680
+    case .porygon2Shadow: return 681
+    case .porygon2Purified: return 682
+    case .porygonZNormal: return 683
+    case .porygonZShadow: return 684
+    case .porygonZPurified: return 685
+    case .wobbuffetShadow: return 686
+    case .wobbuffetPurified: return 687
+    case .turtwigNormal: return 688
+    case .turtwigShadow: return 689
+    case .turtwigPurified: return 690
+    case .grotleNormal: return 691
+    case .grotleShadow: return 692
+    case .grotlePurified: return 693
+    case .torterraNormal: return 694
+    case .torterraShadow: return 695
+    case .torterraPurified: return 696
+    case .ekansNormal: return 697
+    case .ekansShadow: return 698
+    case .ekansPurified: return 699
+    case .arbokNormal: return 700
+    case .arbokShadow: return 701
+    case .arbokPurified: return 702
+    case .koffingNormal: return 703
+    case .koffingShadow: return 704
+    case .koffingPurified: return 705
+    case .weezingNormal: return 706
+    case .weezingShadow: return 707
+    case .weezingPurified: return 708
+    case .meowthShadow: return 709
+    case .meowthPurified: return 710
+    case .persianShadow: return 711
+    case .persianPurified: return 712
+    case .hitmonleeNormal: return 713
+    case .hitmonleeShadow: return 714
+    case .hitmonleePurified: return 715
+    case .articunoNormal: return 716
+    case .articunoShadow: return 717
+    case .articunoPurified: return 718
+    case .misdreavusNormal: return 719
+    case .misdreavusShadow: return 720
+    case .misdreavusPurified: return 721
+    case .mismagiusNormal: return 722
+    case .mismagiusShadow: return 723
+    case .mismagiusPurified: return 724
+    case .vulpixShadow: return 725
+    case .vulpixPurified: return 726
+    case .ninetalesShadow: return 727
+    case .ninetalesPurified: return 728
+    case .exeggcuteNormal: return 729
+    case .exeggcuteShadow: return 730
+    case .exeggcutePurified: return 731
+    case .exeggutorShadow: return 732
+    case .exeggutorPurified: return 733
+    case .carvanhaNormal: return 734
+    case .carvanhaShadow: return 735
+    case .carvanhaPurified: return 736
+    case .sharpedoNormal: return 737
+    case .sharpedoShadow: return 738
+    case .sharpedoPurified: return 739
+    case .omanyteNormal: return 740
+    case .omanyteShadow: return 741
+    case .omanytePurified: return 742
+    case .omastarNormal: return 743
+    case .omastarShadow: return 744
+    case .omastarPurified: return 745
+    case .trapinchNormal: return 746
+    case .trapinchShadow: return 747
+    case .trapinchPurified: return 748
+    case .vibravaNormal: return 749
+    case .vibravaShadow: return 750
+    case .vibravaPurified: return 751
+    case .flygonNormal: return 752
+    case .flygonShadow: return 753
+    case .flygonPurified: return 754
+    case .bagonNormal: return 755
+    case .bagonShadow: return 756
+    case .bagonPurified: return 757
+    case .shelgonNormal: return 758
+    case .shelgonShadow: return 759
+    case .shelgonPurified: return 760
+    case .salamenceNormal: return 761
+    case .salamenceShadow: return 762
+    case .salamencePurified: return 763
+    case .beldumNormal: return 764
+    case .beldumShadow: return 765
+    case .beldumPurified: return 766
+    case .metangNormal: return 767
+    case .metangShadow: return 768
+    case .metangPurified: return 769
+    case .metagrossNormal: return 770
+    case .metagrossShadow: return 771
+    case .metagrossPurified: return 772
+    case .zapdosNormal: return 773
+    case .zapdosShadow: return 774
+    case .zapdosPurified: return 775
+    case .nidoranNormal: return 776
+    case .nidoranShadow: return 777
+    case .nidoranPurified: return 778
+    case .nidorinaNormal: return 779
+    case .nidorinaShadow: return 780
+    case .nidorinaPurified: return 781
+    case .nidoqueenNormal: return 782
+    case .nidoqueenShadow: return 783
+    case .nidoqueenPurified: return 784
+    case .nidorinoNormal: return 785
+    case .nidorinoShadow: return 786
+    case .nidorinoPurified: return 787
+    case .nidokingNormal: return 788
+    case .nidokingShadow: return 789
+    case .nidokingPurified: return 790
+    case .stunkyNormal: return 791
+    case .stunkyShadow: return 792
+    case .stunkyPurified: return 793
+    case .skuntankNormal: return 794
+    case .skuntankShadow: return 795
+    case .skuntankPurified: return 796
+    case .sneaselNormal: return 797
+    case .sneaselShadow: return 798
+    case .sneaselPurified: return 799
+    case .weavileNormal: return 800
+    case .weavileShadow: return 801
+    case .weavilePurified: return 802
+    case .gligarNormal: return 803
+    case .gligarShadow: return 804
+    case .gligarPurified: return 805
+    case .gliscorNormal: return 806
+    case .gliscorShadow: return 807
+    case .gliscorPurified: return 808
+    case .machopNormal: return 809
+    case .machopShadow: return 810
+    case .machopPurified: return 811
+    case .machokeNormal: return 812
+    case .machokeShadow: return 813
+    case .machokePurified: return 814
+    case .machampNormal: return 815
+    case .machampShadow: return 816
+    case .machampPurified: return 817
+    case .chimcharNormal: return 818
+    case .chimcharShadow: return 819
+    case .chimcharPurified: return 820
+    case .monfernoNormal: return 821
+    case .monfernoShadow: return 822
+    case .monfernoPurified: return 823
+    case .infernapeNormal: return 824
+    case .infernapeShadow: return 825
+    case .infernapePurified: return 826
+    case .shuckleNormal: return 827
+    case .shuckleShadow: return 828
+    case .shucklePurified: return 829
+    case .absolNormal: return 830
+    case .absolShadow: return 831
+    case .absolPurified: return 832
+    case .mawileNormal: return 833
+    case .mawileShadow: return 834
+    case .mawilePurified: return 835
+    case .moltresNormal: return 836
+    case .moltresShadow: return 837
+    case .moltresPurified: return 838
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -870,6 +1890,117 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .swampertNormal,
     .swampertShadow,
     .swampertPurified,
+    .drowzeeNormal,
+    .drowzeeShadow,
+    .drowzeePurified,
+    .hypnoNormal,
+    .hypnoShadow,
+    .hypnoPurified,
+    .grimerShadow,
+    .grimerPurified,
+    .mukShadow,
+    .mukPurified,
+    .cuboneNormal,
+    .cuboneShadow,
+    .cubonePurified,
+    .marowakShadow,
+    .marowakPurified,
+    .houndourNormal,
+    .houndourShadow,
+    .houndourPurified,
+    .houndoomNormal,
+    .houndoomShadow,
+    .houndoomPurified,
+    .poliwagNormal,
+    .poliwagShadow,
+    .poliwagPurified,
+    .poliwhirlNormal,
+    .poliwhirlShadow,
+    .poliwhirlPurified,
+    .poliwrathNormal,
+    .poliwrathShadow,
+    .poliwrathPurified,
+    .politoedNormal,
+    .politoedShadow,
+    .politoedPurified,
+    .scytherNormal,
+    .scytherShadow,
+    .scytherPurified,
+    .scizorNormal,
+    .scizorShadow,
+    .scizorPurified,
+    .magikarpNormal,
+    .magikarpShadow,
+    .magikarpPurified,
+    .gyaradosNormal,
+    .gyaradosShadow,
+    .gyaradosPurified,
+    .venonatNormal,
+    .venonatShadow,
+    .venonatPurified,
+    .venomothNormal,
+    .venomothShadow,
+    .venomothPurified,
+    .oddishNormal,
+    .oddishShadow,
+    .oddishPurified,
+    .gloomNormal,
+    .gloomShadow,
+    .gloomPurified,
+    .vileplumeNormal,
+    .vileplumeShadow,
+    .vileplumePurified,
+    .bellossomNormal,
+    .bellossomShadow,
+    .bellossomPurified,
+    .hitmonchanNormal,
+    .hitmonchanShadow,
+    .hitmonchanPurified,
+    .growlitheNormal,
+    .growlitheShadow,
+    .growlithePurified,
+    .arcanineNormal,
+    .arcanineShadow,
+    .arcaninePurified,
+    .psyduckNormal,
+    .psyduckShadow,
+    .psyduckPurified,
+    .golduckNormal,
+    .golduckShadow,
+    .golduckPurified,
+    .raltsNormal,
+    .raltsShadow,
+    .raltsPurified,
+    .kirliaNormal,
+    .kirliaShadow,
+    .kirliaPurified,
+    .gardevoirNormal,
+    .gardevoirShadow,
+    .gardevoirPurified,
+    .galladeNormal,
+    .galladeShadow,
+    .galladePurified,
+    .abraNormal,
+    .abraShadow,
+    .abraPurified,
+    .kadabraNormal,
+    .kadabraShadow,
+    .kadabraPurified,
+    .alakazamNormal,
+    .alakazamShadow,
+    .alakazamPurified,
+    .larvitarNormal,
+    .larvitarShadow,
+    .larvitarPurified,
+    .pupitarNormal,
+    .pupitarShadow,
+    .pupitarPurified,
+    .tyranitarNormal,
+    .tyranitarShadow,
+    .tyranitarPurified,
+    .laprasNormal,
+    .laprasShadow,
+    .laprasPurified,
     .pikachuNormal,
     .pikachuNoevolve,
     .wurmpleNormal,
@@ -882,6 +2013,235 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .squirtleNoevolve,
     .blastoiseNoevolve,
     .raticateNoevolve,
+    .cacneaNormal,
+    .cacneaShadow,
+    .cacneaPurified,
+    .cacturneNormal,
+    .cacturneShadow,
+    .cacturnePurified,
+    .weedleNormal,
+    .weedleShadow,
+    .weedlePurified,
+    .kakunaNormal,
+    .kakunaShadow,
+    .kakunaPurified,
+    .beedrillNormal,
+    .beedrillShadow,
+    .beedrillPurified,
+    .seedotNormal,
+    .seedotShadow,
+    .seedotPurified,
+    .nuzleafNormal,
+    .nuzleafShadow,
+    .nuzleafPurified,
+    .shiftryNormal,
+    .shiftryShadow,
+    .shiftryPurified,
+    .magmarNormal,
+    .magmarShadow,
+    .magmarPurified,
+    .magmortarNormal,
+    .magmortarShadow,
+    .magmortarPurified,
+    .electabuzzNormal,
+    .electabuzzShadow,
+    .electabuzzPurified,
+    .electivireNormal,
+    .electivireShadow,
+    .electivirePurified,
+    .mareepNormal,
+    .mareepShadow,
+    .mareepPurified,
+    .flaaffyNormal,
+    .flaaffyShadow,
+    .flaaffyPurified,
+    .ampharosNormal,
+    .ampharosShadow,
+    .ampharosPurified,
+    .magnemiteNormal,
+    .magnemiteShadow,
+    .magnemitePurified,
+    .magnetonNormal,
+    .magnetonShadow,
+    .magnetonPurified,
+    .magnezoneNormal,
+    .magnezoneShadow,
+    .magnezonePurified,
+    .bellsproutNormal,
+    .bellsproutShadow,
+    .bellsproutPurified,
+    .weepinbellNormal,
+    .weepinbellShadow,
+    .weepinbellPurified,
+    .victreebelNormal,
+    .victreebelShadow,
+    .victreebelPurified,
+    .sandshrewShadow,
+    .sandshrewPurified,
+    .sandslashShadow,
+    .sandslashPurified,
+    .porygonNormal,
+    .porygonShadow,
+    .porygonPurified,
+    .porygon2Normal,
+    .porygon2Shadow,
+    .porygon2Purified,
+    .porygonZNormal,
+    .porygonZShadow,
+    .porygonZPurified,
+    .wobbuffetShadow,
+    .wobbuffetPurified,
+    .turtwigNormal,
+    .turtwigShadow,
+    .turtwigPurified,
+    .grotleNormal,
+    .grotleShadow,
+    .grotlePurified,
+    .torterraNormal,
+    .torterraShadow,
+    .torterraPurified,
+    .ekansNormal,
+    .ekansShadow,
+    .ekansPurified,
+    .arbokNormal,
+    .arbokShadow,
+    .arbokPurified,
+    .koffingNormal,
+    .koffingShadow,
+    .koffingPurified,
+    .weezingNormal,
+    .weezingShadow,
+    .weezingPurified,
+    .meowthShadow,
+    .meowthPurified,
+    .persianShadow,
+    .persianPurified,
+    .hitmonleeNormal,
+    .hitmonleeShadow,
+    .hitmonleePurified,
+    .articunoNormal,
+    .articunoShadow,
+    .articunoPurified,
+    .misdreavusNormal,
+    .misdreavusShadow,
+    .misdreavusPurified,
+    .mismagiusNormal,
+    .mismagiusShadow,
+    .mismagiusPurified,
+    .vulpixShadow,
+    .vulpixPurified,
+    .ninetalesShadow,
+    .ninetalesPurified,
+    .exeggcuteNormal,
+    .exeggcuteShadow,
+    .exeggcutePurified,
+    .exeggutorShadow,
+    .exeggutorPurified,
+    .carvanhaNormal,
+    .carvanhaShadow,
+    .carvanhaPurified,
+    .sharpedoNormal,
+    .sharpedoShadow,
+    .sharpedoPurified,
+    .omanyteNormal,
+    .omanyteShadow,
+    .omanytePurified,
+    .omastarNormal,
+    .omastarShadow,
+    .omastarPurified,
+    .trapinchNormal,
+    .trapinchShadow,
+    .trapinchPurified,
+    .vibravaNormal,
+    .vibravaShadow,
+    .vibravaPurified,
+    .flygonNormal,
+    .flygonShadow,
+    .flygonPurified,
+    .bagonNormal,
+    .bagonShadow,
+    .bagonPurified,
+    .shelgonNormal,
+    .shelgonShadow,
+    .shelgonPurified,
+    .salamenceNormal,
+    .salamenceShadow,
+    .salamencePurified,
+    .beldumNormal,
+    .beldumShadow,
+    .beldumPurified,
+    .metangNormal,
+    .metangShadow,
+    .metangPurified,
+    .metagrossNormal,
+    .metagrossShadow,
+    .metagrossPurified,
+    .zapdosNormal,
+    .zapdosShadow,
+    .zapdosPurified,
+    .nidoranNormal,
+    .nidoranShadow,
+    .nidoranPurified,
+    .nidorinaNormal,
+    .nidorinaShadow,
+    .nidorinaPurified,
+    .nidoqueenNormal,
+    .nidoqueenShadow,
+    .nidoqueenPurified,
+    .nidorinoNormal,
+    .nidorinoShadow,
+    .nidorinoPurified,
+    .nidokingNormal,
+    .nidokingShadow,
+    .nidokingPurified,
+    .stunkyNormal,
+    .stunkyShadow,
+    .stunkyPurified,
+    .skuntankNormal,
+    .skuntankShadow,
+    .skuntankPurified,
+    .sneaselNormal,
+    .sneaselShadow,
+    .sneaselPurified,
+    .weavileNormal,
+    .weavileShadow,
+    .weavilePurified,
+    .gligarNormal,
+    .gligarShadow,
+    .gligarPurified,
+    .gliscorNormal,
+    .gliscorShadow,
+    .gliscorPurified,
+    .machopNormal,
+    .machopShadow,
+    .machopPurified,
+    .machokeNormal,
+    .machokeShadow,
+    .machokePurified,
+    .machampNormal,
+    .machampShadow,
+    .machampPurified,
+    .chimcharNormal,
+    .chimcharShadow,
+    .chimcharPurified,
+    .monfernoNormal,
+    .monfernoShadow,
+    .monfernoPurified,
+    .infernapeNormal,
+    .infernapeShadow,
+    .infernapePurified,
+    .shuckleNormal,
+    .shuckleShadow,
+    .shucklePurified,
+    .absolNormal,
+    .absolShadow,
+    .absolPurified,
+    .mawileNormal,
+    .mawileShadow,
+    .mawilePurified,
+    .moltresNormal,
+    .moltresShadow,
+    .moltresPurified,
   ]
 }
 
@@ -1088,6 +2448,117 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     211: .same(proto: "SWAMPERT_NORMAL"),
     212: .same(proto: "SWAMPERT_SHADOW"),
     213: .same(proto: "SWAMPERT_PURIFIED"),
+    214: .same(proto: "DROWZEE_NORMAL"),
+    215: .same(proto: "DROWZEE_SHADOW"),
+    216: .same(proto: "DROWZEE_PURIFIED"),
+    217: .same(proto: "HYPNO_NORMAL"),
+    218: .same(proto: "HYPNO_SHADOW"),
+    219: .same(proto: "HYPNO_PURIFIED"),
+    220: .same(proto: "GRIMER_SHADOW"),
+    221: .same(proto: "GRIMER_PURIFIED"),
+    222: .same(proto: "MUK_SHADOW"),
+    223: .same(proto: "MUK_PURIFIED"),
+    224: .same(proto: "CUBONE_NORMAL"),
+    225: .same(proto: "CUBONE_SHADOW"),
+    226: .same(proto: "CUBONE_PURIFIED"),
+    227: .same(proto: "MAROWAK_SHADOW"),
+    228: .same(proto: "MAROWAK_PURIFIED"),
+    229: .same(proto: "HOUNDOUR_NORMAL"),
+    230: .same(proto: "HOUNDOUR_SHADOW"),
+    231: .same(proto: "HOUNDOUR_PURIFIED"),
+    232: .same(proto: "HOUNDOOM_NORMAL"),
+    233: .same(proto: "HOUNDOOM_SHADOW"),
+    234: .same(proto: "HOUNDOOM_PURIFIED"),
+    235: .same(proto: "POLIWAG_NORMAL"),
+    236: .same(proto: "POLIWAG_SHADOW"),
+    237: .same(proto: "POLIWAG_PURIFIED"),
+    238: .same(proto: "POLIWHIRL_NORMAL"),
+    239: .same(proto: "POLIWHIRL_SHADOW"),
+    240: .same(proto: "POLIWHIRL_PURIFIED"),
+    241: .same(proto: "POLIWRATH_NORMAL"),
+    242: .same(proto: "POLIWRATH_SHADOW"),
+    243: .same(proto: "POLIWRATH_PURIFIED"),
+    244: .same(proto: "POLITOED_NORMAL"),
+    245: .same(proto: "POLITOED_SHADOW"),
+    246: .same(proto: "POLITOED_PURIFIED"),
+    247: .same(proto: "SCYTHER_NORMAL"),
+    248: .same(proto: "SCYTHER_SHADOW"),
+    249: .same(proto: "SCYTHER_PURIFIED"),
+    250: .same(proto: "SCIZOR_NORMAL"),
+    251: .same(proto: "SCIZOR_SHADOW"),
+    252: .same(proto: "SCIZOR_PURIFIED"),
+    253: .same(proto: "MAGIKARP_NORMAL"),
+    254: .same(proto: "MAGIKARP_SHADOW"),
+    255: .same(proto: "MAGIKARP_PURIFIED"),
+    256: .same(proto: "GYARADOS_NORMAL"),
+    257: .same(proto: "GYARADOS_SHADOW"),
+    258: .same(proto: "GYARADOS_PURIFIED"),
+    259: .same(proto: "VENONAT_NORMAL"),
+    260: .same(proto: "VENONAT_SHADOW"),
+    261: .same(proto: "VENONAT_PURIFIED"),
+    262: .same(proto: "VENOMOTH_NORMAL"),
+    263: .same(proto: "VENOMOTH_SHADOW"),
+    264: .same(proto: "VENOMOTH_PURIFIED"),
+    265: .same(proto: "ODDISH_NORMAL"),
+    266: .same(proto: "ODDISH_SHADOW"),
+    267: .same(proto: "ODDISH_PURIFIED"),
+    268: .same(proto: "GLOOM_NORMAL"),
+    269: .same(proto: "GLOOM_SHADOW"),
+    270: .same(proto: "GLOOM_PURIFIED"),
+    271: .same(proto: "VILEPLUME_NORMAL"),
+    272: .same(proto: "VILEPLUME_SHADOW"),
+    273: .same(proto: "VILEPLUME_PURIFIED"),
+    274: .same(proto: "BELLOSSOM_NORMAL"),
+    275: .same(proto: "BELLOSSOM_SHADOW"),
+    276: .same(proto: "BELLOSSOM_PURIFIED"),
+    277: .same(proto: "HITMONCHAN_NORMAL"),
+    278: .same(proto: "HITMONCHAN_SHADOW"),
+    279: .same(proto: "HITMONCHAN_PURIFIED"),
+    280: .same(proto: "GROWLITHE_NORMAL"),
+    281: .same(proto: "GROWLITHE_SHADOW"),
+    282: .same(proto: "GROWLITHE_PURIFIED"),
+    283: .same(proto: "ARCANINE_NORMAL"),
+    284: .same(proto: "ARCANINE_SHADOW"),
+    285: .same(proto: "ARCANINE_PURIFIED"),
+    286: .same(proto: "PSYDUCK_NORMAL"),
+    287: .same(proto: "PSYDUCK_SHADOW"),
+    288: .same(proto: "PSYDUCK_PURIFIED"),
+    289: .same(proto: "GOLDUCK_NORMAL"),
+    290: .same(proto: "GOLDUCK_SHADOW"),
+    291: .same(proto: "GOLDUCK_PURIFIED"),
+    292: .same(proto: "RALTS_NORMAL"),
+    293: .same(proto: "RALTS_SHADOW"),
+    294: .same(proto: "RALTS_PURIFIED"),
+    295: .same(proto: "KIRLIA_NORMAL"),
+    296: .same(proto: "KIRLIA_SHADOW"),
+    297: .same(proto: "KIRLIA_PURIFIED"),
+    298: .same(proto: "GARDEVOIR_NORMAL"),
+    299: .same(proto: "GARDEVOIR_SHADOW"),
+    300: .same(proto: "GARDEVOIR_PURIFIED"),
+    301: .same(proto: "GALLADE_NORMAL"),
+    302: .same(proto: "GALLADE_SHADOW"),
+    303: .same(proto: "GALLADE_PURIFIED"),
+    304: .same(proto: "ABRA_NORMAL"),
+    305: .same(proto: "ABRA_SHADOW"),
+    306: .same(proto: "ABRA_PURIFIED"),
+    307: .same(proto: "KADABRA_NORMAL"),
+    308: .same(proto: "KADABRA_SHADOW"),
+    309: .same(proto: "KADABRA_PURIFIED"),
+    310: .same(proto: "ALAKAZAM_NORMAL"),
+    311: .same(proto: "ALAKAZAM_SHADOW"),
+    312: .same(proto: "ALAKAZAM_PURIFIED"),
+    313: .same(proto: "LARVITAR_NORMAL"),
+    314: .same(proto: "LARVITAR_SHADOW"),
+    315: .same(proto: "LARVITAR_PURIFIED"),
+    316: .same(proto: "PUPITAR_NORMAL"),
+    317: .same(proto: "PUPITAR_SHADOW"),
+    318: .same(proto: "PUPITAR_PURIFIED"),
+    319: .same(proto: "TYRANITAR_NORMAL"),
+    320: .same(proto: "TYRANITAR_SHADOW"),
+    321: .same(proto: "TYRANITAR_PURIFIED"),
+    322: .same(proto: "LAPRAS_NORMAL"),
+    323: .same(proto: "LAPRAS_SHADOW"),
+    324: .same(proto: "LAPRAS_PURIFIED"),
     598: .same(proto: "PIKACHU_NORMAL"),
     599: .same(proto: "PIKACHU_NOEVOLVE"),
     600: .same(proto: "WURMPLE_NORMAL"),
@@ -1100,5 +2571,234 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     607: .same(proto: "SQUIRTLE_NOEVOLVE"),
     608: .same(proto: "BLASTOISE_NOEVOLVE"),
     609: .same(proto: "RATICATE_NOEVOLVE"),
+    610: .same(proto: "CACNEA_NORMAL"),
+    611: .same(proto: "CACNEA_SHADOW"),
+    612: .same(proto: "CACNEA_PURIFIED"),
+    613: .same(proto: "CACTURNE_NORMAL"),
+    614: .same(proto: "CACTURNE_SHADOW"),
+    615: .same(proto: "CACTURNE_PURIFIED"),
+    616: .same(proto: "WEEDLE_NORMAL"),
+    617: .same(proto: "WEEDLE_SHADOW"),
+    618: .same(proto: "WEEDLE_PURIFIED"),
+    619: .same(proto: "KAKUNA_NORMAL"),
+    620: .same(proto: "KAKUNA_SHADOW"),
+    621: .same(proto: "KAKUNA_PURIFIED"),
+    622: .same(proto: "BEEDRILL_NORMAL"),
+    623: .same(proto: "BEEDRILL_SHADOW"),
+    624: .same(proto: "BEEDRILL_PURIFIED"),
+    625: .same(proto: "SEEDOT_NORMAL"),
+    626: .same(proto: "SEEDOT_SHADOW"),
+    627: .same(proto: "SEEDOT_PURIFIED"),
+    628: .same(proto: "NUZLEAF_NORMAL"),
+    629: .same(proto: "NUZLEAF_SHADOW"),
+    630: .same(proto: "NUZLEAF_PURIFIED"),
+    631: .same(proto: "SHIFTRY_NORMAL"),
+    632: .same(proto: "SHIFTRY_SHADOW"),
+    633: .same(proto: "SHIFTRY_PURIFIED"),
+    634: .same(proto: "MAGMAR_NORMAL"),
+    635: .same(proto: "MAGMAR_SHADOW"),
+    636: .same(proto: "MAGMAR_PURIFIED"),
+    637: .same(proto: "MAGMORTAR_NORMAL"),
+    638: .same(proto: "MAGMORTAR_SHADOW"),
+    639: .same(proto: "MAGMORTAR_PURIFIED"),
+    640: .same(proto: "ELECTABUZZ_NORMAL"),
+    641: .same(proto: "ELECTABUZZ_SHADOW"),
+    642: .same(proto: "ELECTABUZZ_PURIFIED"),
+    643: .same(proto: "ELECTIVIRE_NORMAL"),
+    644: .same(proto: "ELECTIVIRE_SHADOW"),
+    645: .same(proto: "ELECTIVIRE_PURIFIED"),
+    646: .same(proto: "MAREEP_NORMAL"),
+    647: .same(proto: "MAREEP_SHADOW"),
+    648: .same(proto: "MAREEP_PURIFIED"),
+    649: .same(proto: "FLAAFFY_NORMAL"),
+    650: .same(proto: "FLAAFFY_SHADOW"),
+    651: .same(proto: "FLAAFFY_PURIFIED"),
+    652: .same(proto: "AMPHAROS_NORMAL"),
+    653: .same(proto: "AMPHAROS_SHADOW"),
+    654: .same(proto: "AMPHAROS_PURIFIED"),
+    655: .same(proto: "MAGNEMITE_NORMAL"),
+    656: .same(proto: "MAGNEMITE_SHADOW"),
+    657: .same(proto: "MAGNEMITE_PURIFIED"),
+    658: .same(proto: "MAGNETON_NORMAL"),
+    659: .same(proto: "MAGNETON_SHADOW"),
+    660: .same(proto: "MAGNETON_PURIFIED"),
+    661: .same(proto: "MAGNEZONE_NORMAL"),
+    662: .same(proto: "MAGNEZONE_SHADOW"),
+    663: .same(proto: "MAGNEZONE_PURIFIED"),
+    664: .same(proto: "BELLSPROUT_NORMAL"),
+    665: .same(proto: "BELLSPROUT_SHADOW"),
+    666: .same(proto: "BELLSPROUT_PURIFIED"),
+    667: .same(proto: "WEEPINBELL_NORMAL"),
+    668: .same(proto: "WEEPINBELL_SHADOW"),
+    669: .same(proto: "WEEPINBELL_PURIFIED"),
+    670: .same(proto: "VICTREEBEL_NORMAL"),
+    671: .same(proto: "VICTREEBEL_SHADOW"),
+    672: .same(proto: "VICTREEBEL_PURIFIED"),
+    673: .same(proto: "SANDSHREW_SHADOW"),
+    674: .same(proto: "SANDSHREW_PURIFIED"),
+    675: .same(proto: "SANDSLASH_SHADOW"),
+    676: .same(proto: "SANDSLASH_PURIFIED"),
+    677: .same(proto: "PORYGON_NORMAL"),
+    678: .same(proto: "PORYGON_SHADOW"),
+    679: .same(proto: "PORYGON_PURIFIED"),
+    680: .same(proto: "PORYGON2_NORMAL"),
+    681: .same(proto: "PORYGON2_SHADOW"),
+    682: .same(proto: "PORYGON2_PURIFIED"),
+    683: .same(proto: "PORYGON_Z_NORMAL"),
+    684: .same(proto: "PORYGON_Z_SHADOW"),
+    685: .same(proto: "PORYGON_Z_PURIFIED"),
+    686: .same(proto: "WOBBUFFET_SHADOW"),
+    687: .same(proto: "WOBBUFFET_PURIFIED"),
+    688: .same(proto: "TURTWIG_NORMAL"),
+    689: .same(proto: "TURTWIG_SHADOW"),
+    690: .same(proto: "TURTWIG_PURIFIED"),
+    691: .same(proto: "GROTLE_NORMAL"),
+    692: .same(proto: "GROTLE_SHADOW"),
+    693: .same(proto: "GROTLE_PURIFIED"),
+    694: .same(proto: "TORTERRA_NORMAL"),
+    695: .same(proto: "TORTERRA_SHADOW"),
+    696: .same(proto: "TORTERRA_PURIFIED"),
+    697: .same(proto: "EKANS_NORMAL"),
+    698: .same(proto: "EKANS_SHADOW"),
+    699: .same(proto: "EKANS_PURIFIED"),
+    700: .same(proto: "ARBOK_NORMAL"),
+    701: .same(proto: "ARBOK_SHADOW"),
+    702: .same(proto: "ARBOK_PURIFIED"),
+    703: .same(proto: "KOFFING_NORMAL"),
+    704: .same(proto: "KOFFING_SHADOW"),
+    705: .same(proto: "KOFFING_PURIFIED"),
+    706: .same(proto: "WEEZING_NORMAL"),
+    707: .same(proto: "WEEZING_SHADOW"),
+    708: .same(proto: "WEEZING_PURIFIED"),
+    709: .same(proto: "MEOWTH_SHADOW"),
+    710: .same(proto: "MEOWTH_PURIFIED"),
+    711: .same(proto: "PERSIAN_SHADOW"),
+    712: .same(proto: "PERSIAN_PURIFIED"),
+    713: .same(proto: "HITMONLEE_NORMAL"),
+    714: .same(proto: "HITMONLEE_SHADOW"),
+    715: .same(proto: "HITMONLEE_PURIFIED"),
+    716: .same(proto: "ARTICUNO_NORMAL"),
+    717: .same(proto: "ARTICUNO_SHADOW"),
+    718: .same(proto: "ARTICUNO_PURIFIED"),
+    719: .same(proto: "MISDREAVUS_NORMAL"),
+    720: .same(proto: "MISDREAVUS_SHADOW"),
+    721: .same(proto: "MISDREAVUS_PURIFIED"),
+    722: .same(proto: "MISMAGIUS_NORMAL"),
+    723: .same(proto: "MISMAGIUS_SHADOW"),
+    724: .same(proto: "MISMAGIUS_PURIFIED"),
+    725: .same(proto: "VULPIX_SHADOW"),
+    726: .same(proto: "VULPIX_PURIFIED"),
+    727: .same(proto: "NINETALES_SHADOW"),
+    728: .same(proto: "NINETALES_PURIFIED"),
+    729: .same(proto: "EXEGGCUTE_NORMAL"),
+    730: .same(proto: "EXEGGCUTE_SHADOW"),
+    731: .same(proto: "EXEGGCUTE_PURIFIED"),
+    732: .same(proto: "EXEGGUTOR_SHADOW"),
+    733: .same(proto: "EXEGGUTOR_PURIFIED"),
+    734: .same(proto: "CARVANHA_NORMAL"),
+    735: .same(proto: "CARVANHA_SHADOW"),
+    736: .same(proto: "CARVANHA_PURIFIED"),
+    737: .same(proto: "SHARPEDO_NORMAL"),
+    738: .same(proto: "SHARPEDO_SHADOW"),
+    739: .same(proto: "SHARPEDO_PURIFIED"),
+    740: .same(proto: "OMANYTE_NORMAL"),
+    741: .same(proto: "OMANYTE_SHADOW"),
+    742: .same(proto: "OMANYTE_PURIFIED"),
+    743: .same(proto: "OMASTAR_NORMAL"),
+    744: .same(proto: "OMASTAR_SHADOW"),
+    745: .same(proto: "OMASTAR_PURIFIED"),
+    746: .same(proto: "TRAPINCH_NORMAL"),
+    747: .same(proto: "TRAPINCH_SHADOW"),
+    748: .same(proto: "TRAPINCH_PURIFIED"),
+    749: .same(proto: "VIBRAVA_NORMAL"),
+    750: .same(proto: "VIBRAVA_SHADOW"),
+    751: .same(proto: "VIBRAVA_PURIFIED"),
+    752: .same(proto: "FLYGON_NORMAL"),
+    753: .same(proto: "FLYGON_SHADOW"),
+    754: .same(proto: "FLYGON_PURIFIED"),
+    755: .same(proto: "BAGON_NORMAL"),
+    756: .same(proto: "BAGON_SHADOW"),
+    757: .same(proto: "BAGON_PURIFIED"),
+    758: .same(proto: "SHELGON_NORMAL"),
+    759: .same(proto: "SHELGON_SHADOW"),
+    760: .same(proto: "SHELGON_PURIFIED"),
+    761: .same(proto: "SALAMENCE_NORMAL"),
+    762: .same(proto: "SALAMENCE_SHADOW"),
+    763: .same(proto: "SALAMENCE_PURIFIED"),
+    764: .same(proto: "BELDUM_NORMAL"),
+    765: .same(proto: "BELDUM_SHADOW"),
+    766: .same(proto: "BELDUM_PURIFIED"),
+    767: .same(proto: "METANG_NORMAL"),
+    768: .same(proto: "METANG_SHADOW"),
+    769: .same(proto: "METANG_PURIFIED"),
+    770: .same(proto: "METAGROSS_NORMAL"),
+    771: .same(proto: "METAGROSS_SHADOW"),
+    772: .same(proto: "METAGROSS_PURIFIED"),
+    773: .same(proto: "ZAPDOS_NORMAL"),
+    774: .same(proto: "ZAPDOS_SHADOW"),
+    775: .same(proto: "ZAPDOS_PURIFIED"),
+    776: .same(proto: "NIDORAN_NORMAL"),
+    777: .same(proto: "NIDORAN_SHADOW"),
+    778: .same(proto: "NIDORAN_PURIFIED"),
+    779: .same(proto: "NIDORINA_NORMAL"),
+    780: .same(proto: "NIDORINA_SHADOW"),
+    781: .same(proto: "NIDORINA_PURIFIED"),
+    782: .same(proto: "NIDOQUEEN_NORMAL"),
+    783: .same(proto: "NIDOQUEEN_SHADOW"),
+    784: .same(proto: "NIDOQUEEN_PURIFIED"),
+    785: .same(proto: "NIDORINO_NORMAL"),
+    786: .same(proto: "NIDORINO_SHADOW"),
+    787: .same(proto: "NIDORINO_PURIFIED"),
+    788: .same(proto: "NIDOKING_NORMAL"),
+    789: .same(proto: "NIDOKING_SHADOW"),
+    790: .same(proto: "NIDOKING_PURIFIED"),
+    791: .same(proto: "STUNKY_NORMAL"),
+    792: .same(proto: "STUNKY_SHADOW"),
+    793: .same(proto: "STUNKY_PURIFIED"),
+    794: .same(proto: "SKUNTANK_NORMAL"),
+    795: .same(proto: "SKUNTANK_SHADOW"),
+    796: .same(proto: "SKUNTANK_PURIFIED"),
+    797: .same(proto: "SNEASEL_NORMAL"),
+    798: .same(proto: "SNEASEL_SHADOW"),
+    799: .same(proto: "SNEASEL_PURIFIED"),
+    800: .same(proto: "WEAVILE_NORMAL"),
+    801: .same(proto: "WEAVILE_SHADOW"),
+    802: .same(proto: "WEAVILE_PURIFIED"),
+    803: .same(proto: "GLIGAR_NORMAL"),
+    804: .same(proto: "GLIGAR_SHADOW"),
+    805: .same(proto: "GLIGAR_PURIFIED"),
+    806: .same(proto: "GLISCOR_NORMAL"),
+    807: .same(proto: "GLISCOR_SHADOW"),
+    808: .same(proto: "GLISCOR_PURIFIED"),
+    809: .same(proto: "MACHOP_NORMAL"),
+    810: .same(proto: "MACHOP_SHADOW"),
+    811: .same(proto: "MACHOP_PURIFIED"),
+    812: .same(proto: "MACHOKE_NORMAL"),
+    813: .same(proto: "MACHOKE_SHADOW"),
+    814: .same(proto: "MACHOKE_PURIFIED"),
+    815: .same(proto: "MACHAMP_NORMAL"),
+    816: .same(proto: "MACHAMP_SHADOW"),
+    817: .same(proto: "MACHAMP_PURIFIED"),
+    818: .same(proto: "CHIMCHAR_NORMAL"),
+    819: .same(proto: "CHIMCHAR_SHADOW"),
+    820: .same(proto: "CHIMCHAR_PURIFIED"),
+    821: .same(proto: "MONFERNO_NORMAL"),
+    822: .same(proto: "MONFERNO_SHADOW"),
+    823: .same(proto: "MONFERNO_PURIFIED"),
+    824: .same(proto: "INFERNAPE_NORMAL"),
+    825: .same(proto: "INFERNAPE_SHADOW"),
+    826: .same(proto: "INFERNAPE_PURIFIED"),
+    827: .same(proto: "SHUCKLE_NORMAL"),
+    828: .same(proto: "SHUCKLE_SHADOW"),
+    829: .same(proto: "SHUCKLE_PURIFIED"),
+    830: .same(proto: "ABSOL_NORMAL"),
+    831: .same(proto: "ABSOL_SHADOW"),
+    832: .same(proto: "ABSOL_PURIFIED"),
+    833: .same(proto: "MAWILE_NORMAL"),
+    834: .same(proto: "MAWILE_SHADOW"),
+    835: .same(proto: "MAWILE_PURIFIED"),
+    836: .same(proto: "MOLTRES_NORMAL"),
+    837: .same(proto: "MOLTRES_SHADOW"),
+    838: .same(proto: "MOLTRES_PURIFIED"),
   ]
 }

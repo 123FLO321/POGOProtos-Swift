@@ -167,6 +167,22 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .combat(newValue)}
   }
 
+  public var purifyPokemon: POGOProtos_Data_Logs_PurifyPokemonLogEntry {
+    get {
+      if case .purifyPokemon(let v)? = _storage._action {return v}
+      return POGOProtos_Data_Logs_PurifyPokemonLogEntry()
+    }
+    set {_uniqueStorage()._action = .purifyPokemon(newValue)}
+  }
+
+  public var invasionVictory: POGOProtos_Data_Logs_InvasionVictoryLogEntry {
+    get {
+      if case .invasionVictory(let v)? = _storage._action {return v}
+      return POGOProtos_Data_Logs_InvasionVictoryLogEntry()
+    }
+    set {_uniqueStorage()._action = .invasionVictory(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Action: Equatable {
@@ -186,6 +202,8 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     case declineExRaidPass(POGOProtos_Data_Logs_DeclineExRaidPassLogEntry)
     case fitnessRewards(POGOProtos_Data_Logs_FitnessRewardsLogEntry)
     case combat(POGOProtos_Data_Logs_CombatLogEntry)
+    case purifyPokemon(POGOProtos_Data_Logs_PurifyPokemonLogEntry)
+    case invasionVictory(POGOProtos_Data_Logs_InvasionVictoryLogEntry)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action, rhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action) -> Bool {
@@ -206,6 +224,8 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
       case (.declineExRaidPass(let l), .declineExRaidPass(let r)): return l == r
       case (.fitnessRewards(let l), .fitnessRewards(let r)): return l == r
       case (.combat(let l), .combat(let r)): return l == r
+      case (.purifyPokemon(let l), .purifyPokemon(let r)): return l == r
+      case (.invasionVictory(let l), .invasionVictory(let r)): return l == r
       default: return false
       }
     }
@@ -242,6 +262,8 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
     16: .standard(proto: "decline_ex_raid_pass"),
     17: .standard(proto: "fitness_rewards"),
     18: .same(proto: "combat"),
+    19: .standard(proto: "purify_pokemon"),
+    20: .standard(proto: "invasion_victory"),
   ]
 
   fileprivate class _StorageClass {
@@ -402,6 +424,22 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._action = .combat(v)}
+        case 19:
+          var v: POGOProtos_Data_Logs_PurifyPokemonLogEntry?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .purifyPokemon(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .purifyPokemon(v)}
+        case 20:
+          var v: POGOProtos_Data_Logs_InvasionVictoryLogEntry?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .invasionVictory(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .invasionVictory(v)}
         default: break
         }
       }
@@ -449,6 +487,10 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
         try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
       case .combat(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
+      case .purifyPokemon(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
+      case .invasionVictory(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 20)
       case nil: break
       }
     }

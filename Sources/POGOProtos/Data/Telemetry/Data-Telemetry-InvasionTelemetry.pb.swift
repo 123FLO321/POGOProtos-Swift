@@ -40,6 +40,8 @@ public struct POGOProtos_Data_Telemetry_InvasionTelemetry {
 
   public var invasionID: String = String()
 
+  public var playerTappedNpc: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -60,6 +62,7 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
     6: .standard(proto: "encounter_pokemon"),
     7: .standard(proto: "encounter_success"),
     8: .standard(proto: "invasion_id"),
+    9: .standard(proto: "player_tapped_npc"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -73,6 +76,7 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
       case 6: try decoder.decodeSingularInt32Field(value: &self.encounterPokemon)
       case 7: try decoder.decodeSingularBoolField(value: &self.encounterSuccess)
       case 8: try decoder.decodeSingularStringField(value: &self.invasionID)
+      case 9: try decoder.decodeSingularBoolField(value: &self.playerTappedNpc)
       default: break
       }
     }
@@ -103,6 +107,9 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
     if !self.invasionID.isEmpty {
       try visitor.visitSingularStringField(value: self.invasionID, fieldNumber: 8)
     }
+    if self.playerTappedNpc != false {
+      try visitor.visitSingularBoolField(value: self.playerTappedNpc, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -115,6 +122,7 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
     if lhs.encounterPokemon != rhs.encounterPokemon {return false}
     if lhs.encounterSuccess != rhs.encounterSuccess {return false}
     if lhs.invasionID != rhs.invasionID {return false}
+    if lhs.playerTappedNpc != rhs.playerTappedNpc {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

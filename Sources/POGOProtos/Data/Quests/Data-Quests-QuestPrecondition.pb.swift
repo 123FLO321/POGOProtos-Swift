@@ -129,6 +129,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
     case questPreconditionMedal // = 3
     case questPreconditionIsMinor // = 4
     case questPreconditionExclusiveQuests // = 5
+    case questPreconditionNever // = 6
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -143,6 +144,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
       case 3: self = .questPreconditionMedal
       case 4: self = .questPreconditionIsMinor
       case 5: self = .questPreconditionExclusiveQuests
+      case 6: self = .questPreconditionNever
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -155,6 +157,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
       case .questPreconditionMedal: return 3
       case .questPreconditionIsMinor: return 4
       case .questPreconditionExclusiveQuests: return 5
+      case .questPreconditionNever: return 6
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -229,6 +232,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType: CaseIt
     .questPreconditionMedal,
     .questPreconditionIsMinor,
     .questPreconditionExclusiveQuests,
+    .questPreconditionNever,
   ]
 }
 
@@ -363,6 +367,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType: SwiftP
     3: .same(proto: "QUEST_PRECONDITION_MEDAL"),
     4: .same(proto: "QUEST_PRECONDITION_IS_MINOR"),
     5: .same(proto: "QUEST_PRECONDITION_EXCLUSIVE_QUESTS"),
+    6: .same(proto: "QUEST_PRECONDITION_NEVER"),
   ]
 }
 

@@ -474,6 +474,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `invasionNpcDisplaySettings`. Subsequent reads from it will return its default value.
     public mutating func clearInvasionNpcDisplaySettings() {_uniqueStorage()._invasionNpcDisplaySettings = nil}
 
+    public var combatType: POGOProtos_Settings_Master_CombatType {
+      get {return _storage._combatType ?? POGOProtos_Settings_Master_CombatType()}
+      set {_uniqueStorage()._combatType = newValue}
+    }
+    /// Returns true if `combatType` has been explicitly set.
+    public var hasCombatType: Bool {return _storage._combatType != nil}
+    /// Clears the value of `combatType`. Subsequent reads from it will return its default value.
+    public mutating func clearCombatType() {_uniqueStorage()._combatType = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -606,6 +615,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     46: .standard(proto: "adventure_sync_v2_gmt"),
     47: .standard(proto: "loading_screen_settings"),
     48: .standard(proto: "invasion_npc_display_settings"),
+    51: .standard(proto: "combat_type"),
   ]
 
   fileprivate class _StorageClass {
@@ -654,6 +664,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _adventureSyncV2Gmt: POGOProtos_Settings_Master_AdventureSyncV2Gmt? = nil
     var _loadingScreenSettings: POGOProtos_Settings_Master_LoadingScreen? = nil
     var _invasionNpcDisplaySettings: POGOProtos_Settings_Master_InvasionNpcDisplaySettings? = nil
+    var _combatType: POGOProtos_Settings_Master_CombatType? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -705,6 +716,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _adventureSyncV2Gmt = source._adventureSyncV2Gmt
       _loadingScreenSettings = source._loadingScreenSettings
       _invasionNpcDisplaySettings = source._invasionNpcDisplaySettings
+      _combatType = source._combatType
     }
   }
 
@@ -765,6 +777,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 46: try decoder.decodeSingularMessageField(value: &_storage._adventureSyncV2Gmt)
         case 47: try decoder.decodeSingularMessageField(value: &_storage._loadingScreenSettings)
         case 48: try decoder.decodeSingularMessageField(value: &_storage._invasionNpcDisplaySettings)
+        case 51: try decoder.decodeSingularMessageField(value: &_storage._combatType)
         default: break
         }
       }
@@ -908,6 +921,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._invasionNpcDisplaySettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
       }
+      if let v = _storage._combatType {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 51)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -962,6 +978,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._adventureSyncV2Gmt != rhs_storage._adventureSyncV2Gmt {return false}
         if _storage._loadingScreenSettings != rhs_storage._loadingScreenSettings {return false}
         if _storage._invasionNpcDisplaySettings != rhs_storage._invasionNpcDisplaySettings {return false}
+        if _storage._combatType != rhs_storage._combatType {return false}
         return true
       }
       if !storagesAreEqual {return false}

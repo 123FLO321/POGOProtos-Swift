@@ -29,8 +29,8 @@ public struct POGOProtos_Networking_Responses_StartIncidentResponse {
     set {_uniqueStorage()._status = newValue}
   }
 
-  public var incident: POGOProtos_Data_ClientIncident {
-    get {return _storage._incident ?? POGOProtos_Data_ClientIncident()}
+  public var incident: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident {
+    get {return _storage._incident ?? POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident()}
     set {_uniqueStorage()._incident = newValue}
   }
   /// Returns true if `incident` has been explicitly set.
@@ -83,6 +83,165 @@ public struct POGOProtos_Networking_Responses_StartIncidentResponse {
 
   }
 
+  public struct ClientIncident {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var incidentID: String {
+      get {return _storage._incidentID}
+      set {_uniqueStorage()._incidentID = newValue}
+    }
+
+    public var fortID: String {
+      get {return _storage._fortID}
+      set {_uniqueStorage()._fortID = newValue}
+    }
+
+    public var fortName: String {
+      get {return _storage._fortName}
+      set {_uniqueStorage()._fortName = newValue}
+    }
+
+    public var pokestopImageUri: String {
+      get {return _storage._pokestopImageUri}
+      set {_uniqueStorage()._pokestopImageUri = newValue}
+    }
+
+    public var currentStep: Int32 {
+      get {return _storage._currentStep}
+      set {_uniqueStorage()._currentStep = newValue}
+    }
+
+    public var step: [POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep] {
+      get {return _storage._step}
+      set {_uniqueStorage()._step = newValue}
+    }
+
+    public var completionDisplay: POGOProtos_Data_PokestopIncidentDisplay {
+      get {return _storage._completionDisplay ?? POGOProtos_Data_PokestopIncidentDisplay()}
+      set {_uniqueStorage()._completionDisplay = newValue}
+    }
+    /// Returns true if `completionDisplay` has been explicitly set.
+    public var hasCompletionDisplay: Bool {return _storage._completionDisplay != nil}
+    /// Clears the value of `completionDisplay`. Subsequent reads from it will return its default value.
+    public mutating func clearCompletionDisplay() {_uniqueStorage()._completionDisplay = nil}
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public struct ClientIncidentStep {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var clientIncidentStep: OneOf_ClientIncidentStep? {
+        get {return _storage._clientIncidentStep}
+        set {_uniqueStorage()._clientIncidentStep = newValue}
+      }
+
+      public var invasionBattle: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionBattleStep {
+        get {
+          if case .invasionBattle(let v)? = _storage._clientIncidentStep {return v}
+          return POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionBattleStep()
+        }
+        set {_uniqueStorage()._clientIncidentStep = .invasionBattle(newValue)}
+      }
+
+      public var invasionEncounter: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionEncounterStep {
+        get {
+          if case .invasionEncounter(let v)? = _storage._clientIncidentStep {return v}
+          return POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionEncounterStep()
+        }
+        set {_uniqueStorage()._clientIncidentStep = .invasionEncounter(newValue)}
+      }
+
+      public var pokestopDialogue: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep {
+        get {
+          if case .pokestopDialogue(let v)? = _storage._clientIncidentStep {return v}
+          return POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep()
+        }
+        set {_uniqueStorage()._clientIncidentStep = .pokestopDialogue(newValue)}
+      }
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public enum OneOf_ClientIncidentStep: Equatable {
+        case invasionBattle(POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionBattleStep)
+        case invasionEncounter(POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionEncounterStep)
+        case pokestopDialogue(POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep)
+
+      #if !swift(>=4.1)
+        public static func ==(lhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.OneOf_ClientIncidentStep, rhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.OneOf_ClientIncidentStep) -> Bool {
+          switch (lhs, rhs) {
+          case (.invasionBattle(let l), .invasionBattle(let r)): return l == r
+          case (.invasionEncounter(let l), .invasionEncounter(let r)): return l == r
+          case (.pokestopDialogue(let l), .pokestopDialogue(let r)): return l == r
+          default: return false
+          }
+        }
+      #endif
+      }
+
+      public struct ClientInvasionBattleStep {
+        // SwiftProtobuf.Message conformance is added in an extension below. See the
+        // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+        // methods supported on all messages.
+
+        public var character: POGOProtos_Data_EnumWrapper.InvasionCharacter = .characterUnset
+
+        public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+        public init() {}
+      }
+
+      public struct ClientInvasionEncounterStep {
+        // SwiftProtobuf.Message conformance is added in an extension below. See the
+        // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+        // methods supported on all messages.
+
+        public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+        public init() {}
+      }
+
+      public struct ClientPokestopNpcDialogueStep {
+        // SwiftProtobuf.Message conformance is added in an extension below. See the
+        // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+        // methods supported on all messages.
+
+        public var dialogueLine: [POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep.ClientDialogueLine] = []
+
+        public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+        public struct ClientDialogueLine {
+          // SwiftProtobuf.Message conformance is added in an extension below. See the
+          // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+          // methods supported on all messages.
+
+          public var text: String = String()
+
+          public var character: POGOProtos_Data_EnumWrapper.InvasionCharacter = .characterUnset
+
+          public var expression: POGOProtos_Data_EnumWrapper.InvasionCharacterExpression = .expressionUnset
+
+          public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+          public init() {}
+        }
+
+        public init() {}
+      }
+
+      public init() {}
+
+      fileprivate var _storage = _StorageClass.defaultInstance
+    }
+
+    public init() {}
+
+    fileprivate var _storage = _StorageClass.defaultInstance
+  }
+
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
@@ -118,7 +277,7 @@ extension POGOProtos_Networking_Responses_StartIncidentResponse: SwiftProtobuf.M
 
   fileprivate class _StorageClass {
     var _status: POGOProtos_Networking_Responses_StartIncidentResponse.Status = .unset
-    var _incident: POGOProtos_Data_ClientIncident? = nil
+    var _incident: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -188,4 +347,323 @@ extension POGOProtos_Networking_Responses_StartIncidentResponse.Status: SwiftPro
     5: .same(proto: "ERROR_PLAYER_BELOW_MIN_LEVEL"),
     6: .same(proto: "ERROR"),
   ]
+}
+
+extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_StartIncidentResponse.protoMessageName + ".ClientIncident"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "incident_id"),
+    2: .standard(proto: "fort_id"),
+    3: .standard(proto: "fort_name"),
+    4: .standard(proto: "pokestop_image_uri"),
+    5: .standard(proto: "current_step"),
+    6: .same(proto: "step"),
+    7: .standard(proto: "completion_display"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _incidentID: String = String()
+    var _fortID: String = String()
+    var _fortName: String = String()
+    var _pokestopImageUri: String = String()
+    var _currentStep: Int32 = 0
+    var _step: [POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep] = []
+    var _completionDisplay: POGOProtos_Data_PokestopIncidentDisplay? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _incidentID = source._incidentID
+      _fortID = source._fortID
+      _fortName = source._fortName
+      _pokestopImageUri = source._pokestopImageUri
+      _currentStep = source._currentStep
+      _step = source._step
+      _completionDisplay = source._completionDisplay
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularStringField(value: &_storage._incidentID)
+        case 2: try decoder.decodeSingularStringField(value: &_storage._fortID)
+        case 3: try decoder.decodeSingularStringField(value: &_storage._fortName)
+        case 4: try decoder.decodeSingularStringField(value: &_storage._pokestopImageUri)
+        case 5: try decoder.decodeSingularInt32Field(value: &_storage._currentStep)
+        case 6: try decoder.decodeRepeatedMessageField(value: &_storage._step)
+        case 7: try decoder.decodeSingularMessageField(value: &_storage._completionDisplay)
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._incidentID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._incidentID, fieldNumber: 1)
+      }
+      if !_storage._fortID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._fortID, fieldNumber: 2)
+      }
+      if !_storage._fortName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._fortName, fieldNumber: 3)
+      }
+      if !_storage._pokestopImageUri.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._pokestopImageUri, fieldNumber: 4)
+      }
+      if _storage._currentStep != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._currentStep, fieldNumber: 5)
+      }
+      if !_storage._step.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._step, fieldNumber: 6)
+      }
+      if let v = _storage._completionDisplay {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident, rhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._incidentID != rhs_storage._incidentID {return false}
+        if _storage._fortID != rhs_storage._fortID {return false}
+        if _storage._fortName != rhs_storage._fortName {return false}
+        if _storage._pokestopImageUri != rhs_storage._pokestopImageUri {return false}
+        if _storage._currentStep != rhs_storage._currentStep {return false}
+        if _storage._step != rhs_storage._step {return false}
+        if _storage._completionDisplay != rhs_storage._completionDisplay {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.protoMessageName + ".ClientIncidentStep"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "invasion_battle"),
+    2: .standard(proto: "invasion_encounter"),
+    3: .standard(proto: "pokestop_dialogue"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _clientIncidentStep: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.OneOf_ClientIncidentStep?
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _clientIncidentStep = source._clientIncidentStep
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1:
+          var v: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionBattleStep?
+          if let current = _storage._clientIncidentStep {
+            try decoder.handleConflictingOneOf()
+            if case .invasionBattle(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._clientIncidentStep = .invasionBattle(v)}
+        case 2:
+          var v: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionEncounterStep?
+          if let current = _storage._clientIncidentStep {
+            try decoder.handleConflictingOneOf()
+            if case .invasionEncounter(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._clientIncidentStep = .invasionEncounter(v)}
+        case 3:
+          var v: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep?
+          if let current = _storage._clientIncidentStep {
+            try decoder.handleConflictingOneOf()
+            if case .pokestopDialogue(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._clientIncidentStep = .pokestopDialogue(v)}
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      switch _storage._clientIncidentStep {
+      case .invasionBattle(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      case .invasionEncounter(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      case .pokestopDialogue(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      case nil: break
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep, rhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._clientIncidentStep != rhs_storage._clientIncidentStep {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionBattleStep: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.protoMessageName + ".ClientInvasionBattleStep"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "character"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.character)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.character != .characterUnset {
+      try visitor.visitSingularEnumField(value: self.character, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionBattleStep, rhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionBattleStep) -> Bool {
+    if lhs.character != rhs.character {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionEncounterStep: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.protoMessageName + ".ClientInvasionEncounterStep"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let _ = try decoder.nextFieldNumber() {
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionEncounterStep, rhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientInvasionEncounterStep) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.protoMessageName + ".ClientPokestopNpcDialogueStep"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "dialogue_line"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedMessageField(value: &self.dialogueLine)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.dialogueLine.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.dialogueLine, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep, rhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep) -> Bool {
+    if lhs.dialogueLine != rhs.dialogueLine {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep.ClientDialogueLine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep.protoMessageName + ".ClientDialogueLine"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "text"),
+    2: .same(proto: "character"),
+    3: .same(proto: "expression"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.text)
+      case 2: try decoder.decodeSingularEnumField(value: &self.character)
+      case 3: try decoder.decodeSingularEnumField(value: &self.expression)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.text.isEmpty {
+      try visitor.visitSingularStringField(value: self.text, fieldNumber: 1)
+    }
+    if self.character != .characterUnset {
+      try visitor.visitSingularEnumField(value: self.character, fieldNumber: 2)
+    }
+    if self.expression != .expressionUnset {
+      try visitor.visitSingularEnumField(value: self.expression, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep.ClientDialogueLine, rhs: POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep.ClientPokestopNpcDialogueStep.ClientDialogueLine) -> Bool {
+    if lhs.text != rhs.text {return false}
+    if lhs.character != rhs.character {return false}
+    if lhs.expression != rhs.expression {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }

@@ -39,6 +39,7 @@ public struct POGOProtos_Data_Analytics_ClientTelemetryBatch {
     case unset // = 0
     case ditto // = 1
     case game // = 2
+    case titan // = 3
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -50,6 +51,7 @@ public struct POGOProtos_Data_Analytics_ClientTelemetryBatch {
       case 0: self = .unset
       case 1: self = .ditto
       case 2: self = .game
+      case 3: self = .titan
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -59,6 +61,7 @@ public struct POGOProtos_Data_Analytics_ClientTelemetryBatch {
       case .unset: return 0
       case .ditto: return 1
       case .game: return 2
+      case .titan: return 3
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -76,6 +79,7 @@ extension POGOProtos_Data_Analytics_ClientTelemetryBatch.TelemetryScopeId: CaseI
     .unset,
     .ditto,
     .game,
+    .titan,
   ]
 }
 
@@ -137,5 +141,6 @@ extension POGOProtos_Data_Analytics_ClientTelemetryBatch.TelemetryScopeId: Swift
     0: .same(proto: "UNSET"),
     1: .same(proto: "DITTO"),
     2: .same(proto: "GAME"),
+    3: .same(proto: "TITAN"),
   ]
 }

@@ -276,6 +276,11 @@ public struct POGOProtos_Data_PokemonData {
   /// Clears the value of `npcCombatStats`. Subsequent reads from it will return its default value.
   public mutating func clearNpcCombatStats() {_uniqueStorage()._npcCombatStats = nil}
 
+  public var move2IsPurifiedExclusive: Bool {
+    get {return _storage._move2IsPurifiedExclusive}
+    set {_uniqueStorage()._move2IsPurifiedExclusive = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -338,6 +343,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     47: .standard(proto: "move_3"),
     48: .standard(proto: "pvp_combat_stats"),
     49: .standard(proto: "npc_combat_stats"),
+    50: .standard(proto: "move2_is_purified_exclusive"),
   ]
 
   fileprivate class _StorageClass {
@@ -389,6 +395,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _move3: POGOProtos_Enums_PokemonMove = .moveUnset
     var _pvpCombatStats: POGOProtos_Data_Combat_PokemonCombatStats? = nil
     var _npcCombatStats: POGOProtos_Data_Combat_PokemonCombatStats? = nil
+    var _move2IsPurifiedExclusive: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -443,6 +450,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _move3 = source._move3
       _pvpCombatStats = source._pvpCombatStats
       _npcCombatStats = source._npcCombatStats
+      _move2IsPurifiedExclusive = source._move2IsPurifiedExclusive
     }
   }
 
@@ -506,6 +514,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 47: try decoder.decodeSingularEnumField(value: &_storage._move3)
         case 48: try decoder.decodeSingularMessageField(value: &_storage._pvpCombatStats)
         case 49: try decoder.decodeSingularMessageField(value: &_storage._npcCombatStats)
+        case 50: try decoder.decodeSingularBoolField(value: &_storage._move2IsPurifiedExclusive)
         default: break
         }
       }
@@ -658,6 +667,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if let v = _storage._npcCombatStats {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 49)
       }
+      if _storage._move2IsPurifiedExclusive != false {
+        try visitor.visitSingularBoolField(value: _storage._move2IsPurifiedExclusive, fieldNumber: 50)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -715,6 +727,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._move3 != rhs_storage._move3 {return false}
         if _storage._pvpCombatStats != rhs_storage._pvpCombatStats {return false}
         if _storage._npcCombatStats != rhs_storage._npcCombatStats {return false}
+        if _storage._move2IsPurifiedExclusive != rhs_storage._move2IsPurifiedExclusive {return false}
         return true
       }
       if !storagesAreEqual {return false}

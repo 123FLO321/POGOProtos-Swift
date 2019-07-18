@@ -117,6 +117,26 @@ public struct POGOProtos_Settings_Master_CombatSettings {
   /// Clears the value of `defensiveInputChallengeSettings`. Subsequent reads from it will return its default value.
   public mutating func clearDefensiveInputChallengeSettings() {_uniqueStorage()._defensiveInputChallengeSettings = nil}
 
+  public var chargeScoreBase: Float {
+    get {return _storage._chargeScoreBase}
+    set {_uniqueStorage()._chargeScoreBase = newValue}
+  }
+
+  public var chargeScoreNice: Float {
+    get {return _storage._chargeScoreNice}
+    set {_uniqueStorage()._chargeScoreNice = newValue}
+  }
+
+  public var chargeScoreGreat: Float {
+    get {return _storage._chargeScoreGreat}
+    set {_uniqueStorage()._chargeScoreGreat = newValue}
+  }
+
+  public var chargeScoreExcellent: Float {
+    get {return _storage._chargeScoreExcellent}
+    set {_uniqueStorage()._chargeScoreExcellent = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct CombatOffensiveInputChallengeSettings {
@@ -180,6 +200,10 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
     15: .standard(proto: "quick_swap_cooldown_duration_seconds"),
     16: .standard(proto: "offensive_input_challenge_settings"),
     17: .standard(proto: "defensive_input_challenge_settings"),
+    18: .standard(proto: "charge_score_base"),
+    19: .standard(proto: "charge_score_nice"),
+    20: .standard(proto: "charge_score_great"),
+    21: .standard(proto: "charge_score_excellent"),
   ]
 
   fileprivate class _StorageClass {
@@ -200,6 +224,10 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
     var _quickSwapCooldownDurationSeconds: Float = 0
     var _offensiveInputChallengeSettings: POGOProtos_Settings_Master_CombatSettings.CombatOffensiveInputChallengeSettings? = nil
     var _defensiveInputChallengeSettings: POGOProtos_Settings_Master_CombatSettings.CombatDefensiveInputChallengeSettings? = nil
+    var _chargeScoreBase: Float = 0
+    var _chargeScoreNice: Float = 0
+    var _chargeScoreGreat: Float = 0
+    var _chargeScoreExcellent: Float = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -223,6 +251,10 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
       _quickSwapCooldownDurationSeconds = source._quickSwapCooldownDurationSeconds
       _offensiveInputChallengeSettings = source._offensiveInputChallengeSettings
       _defensiveInputChallengeSettings = source._defensiveInputChallengeSettings
+      _chargeScoreBase = source._chargeScoreBase
+      _chargeScoreNice = source._chargeScoreNice
+      _chargeScoreGreat = source._chargeScoreGreat
+      _chargeScoreExcellent = source._chargeScoreExcellent
     }
   }
 
@@ -255,6 +287,10 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
         case 15: try decoder.decodeSingularFloatField(value: &_storage._quickSwapCooldownDurationSeconds)
         case 16: try decoder.decodeSingularMessageField(value: &_storage._offensiveInputChallengeSettings)
         case 17: try decoder.decodeSingularMessageField(value: &_storage._defensiveInputChallengeSettings)
+        case 18: try decoder.decodeSingularFloatField(value: &_storage._chargeScoreBase)
+        case 19: try decoder.decodeSingularFloatField(value: &_storage._chargeScoreNice)
+        case 20: try decoder.decodeSingularFloatField(value: &_storage._chargeScoreGreat)
+        case 21: try decoder.decodeSingularFloatField(value: &_storage._chargeScoreExcellent)
         default: break
         }
       }
@@ -314,6 +350,18 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
       if let v = _storage._defensiveInputChallengeSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
       }
+      if _storage._chargeScoreBase != 0 {
+        try visitor.visitSingularFloatField(value: _storage._chargeScoreBase, fieldNumber: 18)
+      }
+      if _storage._chargeScoreNice != 0 {
+        try visitor.visitSingularFloatField(value: _storage._chargeScoreNice, fieldNumber: 19)
+      }
+      if _storage._chargeScoreGreat != 0 {
+        try visitor.visitSingularFloatField(value: _storage._chargeScoreGreat, fieldNumber: 20)
+      }
+      if _storage._chargeScoreExcellent != 0 {
+        try visitor.visitSingularFloatField(value: _storage._chargeScoreExcellent, fieldNumber: 21)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -340,6 +388,10 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
         if _storage._quickSwapCooldownDurationSeconds != rhs_storage._quickSwapCooldownDurationSeconds {return false}
         if _storage._offensiveInputChallengeSettings != rhs_storage._offensiveInputChallengeSettings {return false}
         if _storage._defensiveInputChallengeSettings != rhs_storage._defensiveInputChallengeSettings {return false}
+        if _storage._chargeScoreBase != rhs_storage._chargeScoreBase {return false}
+        if _storage._chargeScoreNice != rhs_storage._chargeScoreNice {return false}
+        if _storage._chargeScoreGreat != rhs_storage._chargeScoreGreat {return false}
+        if _storage._chargeScoreExcellent != rhs_storage._chargeScoreExcellent {return false}
         return true
       }
       if !storagesAreEqual {return false}
