@@ -389,6 +389,38 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .arPhotoSessionTelemetry(newValue)}
   }
 
+  public var invasionTelemetry: POGOProtos_Data_Telemetry_InvasionTelemetry {
+    get {
+      if case .invasionTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_InvasionTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .invasionTelemetry(newValue)}
+  }
+
+  public var combatMinigameTelemetry: POGOProtos_Data_Telemetry_CombatMinigameTelemetry {
+    get {
+      if case .combatMinigameTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_CombatMinigameTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .combatMinigameTelemetry(newValue)}
+  }
+
+  public var leavePointOfInterestTelemetry: POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry {
+    get {
+      if case .leavePointOfInterestTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .leavePointOfInterestTelemetry(newValue)}
+  }
+
+  public var viewPointOfInterestImageTelemetry: POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry {
+    get {
+      if case .viewPointOfInterestImageTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .viewPointOfInterestImageTelemetry(newValue)}
+  }
+
   public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
     get {
       if case .serverData(let v)? = _storage._telemetryData {return v}
@@ -445,6 +477,10 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     case onboardingTelemetry(POGOProtos_Data_Telemetry_OnboardingTelemetry)
     case loginActionTelemetry(POGOProtos_Data_Telemetry_LoginActionTelemetry)
     case arPhotoSessionTelemetry(POGOProtos_Data_Telemetry_ArPhotoSession)
+    case invasionTelemetry(POGOProtos_Data_Telemetry_InvasionTelemetry)
+    case combatMinigameTelemetry(POGOProtos_Data_Telemetry_CombatMinigameTelemetry)
+    case leavePointOfInterestTelemetry(POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry)
+    case viewPointOfInterestImageTelemetry(POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry)
     case serverData(POGOProtos_Data_Telemetry_PlatformServerData)
 
   #if !swift(>=4.1)
@@ -495,6 +531,10 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
       case (.onboardingTelemetry(let l), .onboardingTelemetry(let r)): return l == r
       case (.loginActionTelemetry(let l), .loginActionTelemetry(let r)): return l == r
       case (.arPhotoSessionTelemetry(let l), .arPhotoSessionTelemetry(let r)): return l == r
+      case (.invasionTelemetry(let l), .invasionTelemetry(let r)): return l == r
+      case (.combatMinigameTelemetry(let l), .combatMinigameTelemetry(let r)): return l == r
+      case (.leavePointOfInterestTelemetry(let l), .leavePointOfInterestTelemetry(let r)): return l == r
+      case (.viewPointOfInterestImageTelemetry(let l), .viewPointOfInterestImageTelemetry(let r)): return l == r
       case (.serverData(let l), .serverData(let r)): return l == r
       default: return false
       }
@@ -559,6 +599,10 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     43: .standard(proto: "onboarding_telemetry"),
     44: .standard(proto: "login_action_telemetry"),
     45: .standard(proto: "ar_photo_session_telemetry"),
+    46: .standard(proto: "invasion_telemetry"),
+    47: .standard(proto: "combat_minigame_telemetry"),
+    48: .standard(proto: "leave_point_of_interest_telemetry"),
+    49: .standard(proto: "view_point_of_interest_image_telemetry"),
     1001: .standard(proto: "server_data"),
   ]
 
@@ -946,6 +990,38 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .arPhotoSessionTelemetry(v)}
+        case 46:
+          var v: POGOProtos_Data_Telemetry_InvasionTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .invasionTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .invasionTelemetry(v)}
+        case 47:
+          var v: POGOProtos_Data_Telemetry_CombatMinigameTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .combatMinigameTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .combatMinigameTelemetry(v)}
+        case 48:
+          var v: POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .leavePointOfInterestTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .leavePointOfInterestTelemetry(v)}
+        case 49:
+          var v: POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .viewPointOfInterestImageTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .viewPointOfInterestImageTelemetry(v)}
         case 1001:
           var v: POGOProtos_Data_Telemetry_PlatformServerData?
           if let current = _storage._telemetryData {
@@ -1053,6 +1129,14 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         try visitor.visitSingularMessageField(value: v, fieldNumber: 44)
       case .arPhotoSessionTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 45)
+      case .invasionTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 46)
+      case .combatMinigameTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 47)
+      case .leavePointOfInterestTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
+      case .viewPointOfInterestImageTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 49)
       case .serverData(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
       case nil: break

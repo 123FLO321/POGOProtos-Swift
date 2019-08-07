@@ -356,6 +356,8 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
   case deviceServiceToggle // = 40
   case bootTelemetry // = 41
   case arPhotoSessionTelemetry // = 42
+  case leavePointOfInterest // = 43
+  case viewPointOfInterestImage // = 44
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -407,6 +409,8 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case 40: self = .deviceServiceToggle
     case 41: self = .bootTelemetry
     case 42: self = .arPhotoSessionTelemetry
+    case 43: self = .leavePointOfInterest
+    case 44: self = .viewPointOfInterestImage
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -456,6 +460,8 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case .deviceServiceToggle: return 40
     case .bootTelemetry: return 41
     case .arPhotoSessionTelemetry: return 42
+    case .leavePointOfInterest: return 43
+    case .viewPointOfInterestImage: return 44
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -510,6 +516,8 @@ extension POGOProtos_Enums_ClientTelemetryIds: CaseIterable {
     .deviceServiceToggle,
     .bootTelemetry,
     .arPhotoSessionTelemetry,
+    .leavePointOfInterest,
+    .viewPointOfInterestImage,
   ]
 }
 
@@ -1484,6 +1492,8 @@ extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding
     40: .same(proto: "DEVICE_SERVICE_TOGGLE"),
     41: .same(proto: "BOOT_TELEMETRY"),
     42: .same(proto: "AR_PHOTO_SESSION_TELEMETRY"),
+    43: .same(proto: "LEAVE_POINT_OF_INTEREST"),
+    44: .same(proto: "VIEW_POINT_OF_INTEREST_IMAGE"),
   ]
 }
 

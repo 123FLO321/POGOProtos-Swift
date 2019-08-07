@@ -48,7 +48,43 @@ public struct POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessag
     set {_uniqueStorage()._completeBattle = newValue}
   }
 
+  public var updateType: POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.UpdateType {
+    get {return _storage._updateType}
+    set {_uniqueStorage()._updateType = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum UpdateType: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case pokemonHealth // = 0
+    case winBattle // = 1
+    case loseBattle // = 2
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .pokemonHealth
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .pokemonHealth
+      case 1: self = .winBattle
+      case 2: self = .loseBattle
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .pokemonHealth: return 0
+      case .winBattle: return 1
+      case .loseBattle: return 2
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+
+  }
 
   public struct PokemonStaminaUpdate {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -69,6 +105,19 @@ public struct POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessag
   fileprivate var _storage = _StorageClass.defaultInstance
 }
 
+#if swift(>=4.2)
+
+extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.UpdateType: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.UpdateType] = [
+    .pokemonHealth,
+    .winBattle,
+    .loseBattle,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
@@ -80,6 +129,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
     2: .same(proto: "step"),
     3: .standard(proto: "health_update"),
     4: .standard(proto: "complete_battle"),
+    5: .standard(proto: "update_type"),
   ]
 
   fileprivate class _StorageClass {
@@ -87,6 +137,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
     var _step: Int32 = 0
     var _healthUpdate: [POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.PokemonStaminaUpdate] = []
     var _completeBattle: Bool = false
+    var _updateType: POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.UpdateType = .pokemonHealth
 
     static let defaultInstance = _StorageClass()
 
@@ -97,6 +148,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
       _step = source._step
       _healthUpdate = source._healthUpdate
       _completeBattle = source._completeBattle
+      _updateType = source._updateType
     }
   }
 
@@ -116,6 +168,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
         case 2: try decoder.decodeSingularInt32Field(value: &_storage._step)
         case 3: try decoder.decodeRepeatedMessageField(value: &_storage._healthUpdate)
         case 4: try decoder.decodeSingularBoolField(value: &_storage._completeBattle)
+        case 5: try decoder.decodeSingularEnumField(value: &_storage._updateType)
         default: break
         }
       }
@@ -136,6 +189,9 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
       if _storage._completeBattle != false {
         try visitor.visitSingularBoolField(value: _storage._completeBattle, fieldNumber: 4)
       }
+      if _storage._updateType != .pokemonHealth {
+        try visitor.visitSingularEnumField(value: _storage._updateType, fieldNumber: 5)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -149,6 +205,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
         if _storage._step != rhs_storage._step {return false}
         if _storage._healthUpdate != rhs_storage._healthUpdate {return false}
         if _storage._completeBattle != rhs_storage._completeBattle {return false}
+        if _storage._updateType != rhs_storage._updateType {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -156,6 +213,14 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.UpdateType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "POKEMON_HEALTH"),
+    1: .same(proto: "WIN_BATTLE"),
+    2: .same(proto: "LOSE_BATTLE"),
+  ]
 }
 
 extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.PokemonStaminaUpdate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {

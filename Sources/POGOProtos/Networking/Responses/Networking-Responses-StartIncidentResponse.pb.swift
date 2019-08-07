@@ -118,8 +118,8 @@ public struct POGOProtos_Networking_Responses_StartIncidentResponse {
       set {_uniqueStorage()._step = newValue}
     }
 
-    public var completionDisplay: POGOProtos_Data_PokestopIncidentDisplay {
-      get {return _storage._completionDisplay ?? POGOProtos_Data_PokestopIncidentDisplay()}
+    public var completionDisplay: POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay {
+      get {return _storage._completionDisplay ?? POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay()}
       set {_uniqueStorage()._completionDisplay = newValue}
     }
     /// Returns true if `completionDisplay` has been explicitly set.
@@ -368,7 +368,7 @@ extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident: 
     var _pokestopImageUri: String = String()
     var _currentStep: Int32 = 0
     var _step: [POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident.ClientIncidentStep] = []
-    var _completionDisplay: POGOProtos_Data_PokestopIncidentDisplay? = nil
+    var _completionDisplay: POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay? = nil
 
     static let defaultInstance = _StorageClass()
 

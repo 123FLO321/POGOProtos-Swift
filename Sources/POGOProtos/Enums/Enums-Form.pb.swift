@@ -155,7 +155,6 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case spinda18 // = 131
   case spinda19 // = 132
   case mewtwoA // = 133
-  case mewtwoAIntro // = 134
   case mewtwoNormal // = 135
   case rattataShadow // = 153
   case rattataPurified // = 154
@@ -330,17 +329,8 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case laprasShadow // = 323
   case laprasPurified // = 324
   case pikachuNormal // = 598
-  case pikachuNoevolve // = 599
   case wurmpleNormal // = 600
-  case wurmpleNoevolve // = 601
   case wobbuffetNormal // = 602
-  case wobbuffetNoevolve // = 603
-  case bulbasaurNoevolve // = 604
-  case charmanderNoevolve // = 605
-  case charizardNoevolve // = 606
-  case squirtleNoevolve // = 607
-  case blastoiseNoevolve // = 608
-  case raticateNoevolve // = 609
   case cacneaNormal // = 610
   case cacneaShadow // = 611
   case cacneaPurified // = 612
@@ -570,6 +560,65 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case moltresNormal // = 836
   case moltresShadow // = 837
   case moltresPurified // = 838
+  case kangaskhanNormal // = 839
+  case kangaskhanShadow // = 840
+  case kangaskhanPurified // = 841
+  case diglettShadow // = 842
+  case diglettPurified // = 843
+  case dugtrioShadow // = 844
+  case dugtrioPurified // = 845
+  case rhyhornNormal // = 846
+  case rhyhornShadow // = 847
+  case rhyhornPurified // = 848
+  case rhydonNormal // = 849
+  case rhydonShadow // = 850
+  case rhydonPurified // = 851
+  case rhyperiorNormal // = 852
+  case rhyperiorShadow // = 853
+  case rhyperiorPurified // = 854
+  case murkrowNormal // = 855
+  case murkrowShadow // = 856
+  case murkrowPurified // = 857
+  case honchkrowNormal // = 858
+  case honchkrowShadow // = 859
+  case honchkrowPurified // = 860
+  case gibleNormal // = 861
+  case gibleShadow // = 862
+  case giblePurified // = 863
+  case gabiteNormal // = 864
+  case gabiteShadow // = 865
+  case gabitePurified // = 866
+  case garchompNormal // = 867
+  case garchompShadow // = 868
+  case garchompPurified // = 869
+  case krabbyNormal // = 870
+  case krabbyShadow // = 871
+  case krabbyPurified // = 872
+  case kinglerNormal // = 873
+  case kinglerShadow // = 874
+  case kinglerPurified // = 875
+  case shellderNormal // = 876
+  case shellderShadow // = 877
+  case shellderPurified // = 878
+  case cloysterNormal // = 879
+  case cloysterShadow // = 880
+  case cloysterPurified // = 881
+  case geodudeShadow // = 882
+  case geodudePurified // = 883
+  case gravelerShadow // = 884
+  case gravelerPurified // = 885
+  case golemShadow // = 886
+  case golemPurified // = 887
+  case hippopotasNormal // = 888
+  case hippopotasShadow // = 889
+  case hippopotasPurified // = 890
+  case hippowdonNormal // = 891
+  case hippowdonShadow // = 892
+  case hippowdonPurified // = 893
+  case pikachuFall // = 894
+  case squirtleFall // = 895
+  case charmanderFall // = 896
+  case bulbasaurFall // = 897
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -712,7 +761,6 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 131: self = .spinda18
     case 132: self = .spinda19
     case 133: self = .mewtwoA
-    case 134: self = .mewtwoAIntro
     case 135: self = .mewtwoNormal
     case 153: self = .rattataShadow
     case 154: self = .rattataPurified
@@ -887,17 +935,8 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 323: self = .laprasShadow
     case 324: self = .laprasPurified
     case 598: self = .pikachuNormal
-    case 599: self = .pikachuNoevolve
     case 600: self = .wurmpleNormal
-    case 601: self = .wurmpleNoevolve
     case 602: self = .wobbuffetNormal
-    case 603: self = .wobbuffetNoevolve
-    case 604: self = .bulbasaurNoevolve
-    case 605: self = .charmanderNoevolve
-    case 606: self = .charizardNoevolve
-    case 607: self = .squirtleNoevolve
-    case 608: self = .blastoiseNoevolve
-    case 609: self = .raticateNoevolve
     case 610: self = .cacneaNormal
     case 611: self = .cacneaShadow
     case 612: self = .cacneaPurified
@@ -1127,6 +1166,65 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 836: self = .moltresNormal
     case 837: self = .moltresShadow
     case 838: self = .moltresPurified
+    case 839: self = .kangaskhanNormal
+    case 840: self = .kangaskhanShadow
+    case 841: self = .kangaskhanPurified
+    case 842: self = .diglettShadow
+    case 843: self = .diglettPurified
+    case 844: self = .dugtrioShadow
+    case 845: self = .dugtrioPurified
+    case 846: self = .rhyhornNormal
+    case 847: self = .rhyhornShadow
+    case 848: self = .rhyhornPurified
+    case 849: self = .rhydonNormal
+    case 850: self = .rhydonShadow
+    case 851: self = .rhydonPurified
+    case 852: self = .rhyperiorNormal
+    case 853: self = .rhyperiorShadow
+    case 854: self = .rhyperiorPurified
+    case 855: self = .murkrowNormal
+    case 856: self = .murkrowShadow
+    case 857: self = .murkrowPurified
+    case 858: self = .honchkrowNormal
+    case 859: self = .honchkrowShadow
+    case 860: self = .honchkrowPurified
+    case 861: self = .gibleNormal
+    case 862: self = .gibleShadow
+    case 863: self = .giblePurified
+    case 864: self = .gabiteNormal
+    case 865: self = .gabiteShadow
+    case 866: self = .gabitePurified
+    case 867: self = .garchompNormal
+    case 868: self = .garchompShadow
+    case 869: self = .garchompPurified
+    case 870: self = .krabbyNormal
+    case 871: self = .krabbyShadow
+    case 872: self = .krabbyPurified
+    case 873: self = .kinglerNormal
+    case 874: self = .kinglerShadow
+    case 875: self = .kinglerPurified
+    case 876: self = .shellderNormal
+    case 877: self = .shellderShadow
+    case 878: self = .shellderPurified
+    case 879: self = .cloysterNormal
+    case 880: self = .cloysterShadow
+    case 881: self = .cloysterPurified
+    case 882: self = .geodudeShadow
+    case 883: self = .geodudePurified
+    case 884: self = .gravelerShadow
+    case 885: self = .gravelerPurified
+    case 886: self = .golemShadow
+    case 887: self = .golemPurified
+    case 888: self = .hippopotasNormal
+    case 889: self = .hippopotasShadow
+    case 890: self = .hippopotasPurified
+    case 891: self = .hippowdonNormal
+    case 892: self = .hippowdonShadow
+    case 893: self = .hippowdonPurified
+    case 894: self = .pikachuFall
+    case 895: self = .squirtleFall
+    case 896: self = .charmanderFall
+    case 897: self = .bulbasaurFall
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -1267,7 +1365,6 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .spinda18: return 131
     case .spinda19: return 132
     case .mewtwoA: return 133
-    case .mewtwoAIntro: return 134
     case .mewtwoNormal: return 135
     case .rattataShadow: return 153
     case .rattataPurified: return 154
@@ -1442,17 +1539,8 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .laprasShadow: return 323
     case .laprasPurified: return 324
     case .pikachuNormal: return 598
-    case .pikachuNoevolve: return 599
     case .wurmpleNormal: return 600
-    case .wurmpleNoevolve: return 601
     case .wobbuffetNormal: return 602
-    case .wobbuffetNoevolve: return 603
-    case .bulbasaurNoevolve: return 604
-    case .charmanderNoevolve: return 605
-    case .charizardNoevolve: return 606
-    case .squirtleNoevolve: return 607
-    case .blastoiseNoevolve: return 608
-    case .raticateNoevolve: return 609
     case .cacneaNormal: return 610
     case .cacneaShadow: return 611
     case .cacneaPurified: return 612
@@ -1682,6 +1770,65 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .moltresNormal: return 836
     case .moltresShadow: return 837
     case .moltresPurified: return 838
+    case .kangaskhanNormal: return 839
+    case .kangaskhanShadow: return 840
+    case .kangaskhanPurified: return 841
+    case .diglettShadow: return 842
+    case .diglettPurified: return 843
+    case .dugtrioShadow: return 844
+    case .dugtrioPurified: return 845
+    case .rhyhornNormal: return 846
+    case .rhyhornShadow: return 847
+    case .rhyhornPurified: return 848
+    case .rhydonNormal: return 849
+    case .rhydonShadow: return 850
+    case .rhydonPurified: return 851
+    case .rhyperiorNormal: return 852
+    case .rhyperiorShadow: return 853
+    case .rhyperiorPurified: return 854
+    case .murkrowNormal: return 855
+    case .murkrowShadow: return 856
+    case .murkrowPurified: return 857
+    case .honchkrowNormal: return 858
+    case .honchkrowShadow: return 859
+    case .honchkrowPurified: return 860
+    case .gibleNormal: return 861
+    case .gibleShadow: return 862
+    case .giblePurified: return 863
+    case .gabiteNormal: return 864
+    case .gabiteShadow: return 865
+    case .gabitePurified: return 866
+    case .garchompNormal: return 867
+    case .garchompShadow: return 868
+    case .garchompPurified: return 869
+    case .krabbyNormal: return 870
+    case .krabbyShadow: return 871
+    case .krabbyPurified: return 872
+    case .kinglerNormal: return 873
+    case .kinglerShadow: return 874
+    case .kinglerPurified: return 875
+    case .shellderNormal: return 876
+    case .shellderShadow: return 877
+    case .shellderPurified: return 878
+    case .cloysterNormal: return 879
+    case .cloysterShadow: return 880
+    case .cloysterPurified: return 881
+    case .geodudeShadow: return 882
+    case .geodudePurified: return 883
+    case .gravelerShadow: return 884
+    case .gravelerPurified: return 885
+    case .golemShadow: return 886
+    case .golemPurified: return 887
+    case .hippopotasNormal: return 888
+    case .hippopotasShadow: return 889
+    case .hippopotasPurified: return 890
+    case .hippowdonNormal: return 891
+    case .hippowdonShadow: return 892
+    case .hippowdonPurified: return 893
+    case .pikachuFall: return 894
+    case .squirtleFall: return 895
+    case .charmanderFall: return 896
+    case .bulbasaurFall: return 897
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1827,7 +1974,6 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .spinda18,
     .spinda19,
     .mewtwoA,
-    .mewtwoAIntro,
     .mewtwoNormal,
     .rattataShadow,
     .rattataPurified,
@@ -2002,17 +2148,8 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .laprasShadow,
     .laprasPurified,
     .pikachuNormal,
-    .pikachuNoevolve,
     .wurmpleNormal,
-    .wurmpleNoevolve,
     .wobbuffetNormal,
-    .wobbuffetNoevolve,
-    .bulbasaurNoevolve,
-    .charmanderNoevolve,
-    .charizardNoevolve,
-    .squirtleNoevolve,
-    .blastoiseNoevolve,
-    .raticateNoevolve,
     .cacneaNormal,
     .cacneaShadow,
     .cacneaPurified,
@@ -2242,6 +2379,65 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .moltresNormal,
     .moltresShadow,
     .moltresPurified,
+    .kangaskhanNormal,
+    .kangaskhanShadow,
+    .kangaskhanPurified,
+    .diglettShadow,
+    .diglettPurified,
+    .dugtrioShadow,
+    .dugtrioPurified,
+    .rhyhornNormal,
+    .rhyhornShadow,
+    .rhyhornPurified,
+    .rhydonNormal,
+    .rhydonShadow,
+    .rhydonPurified,
+    .rhyperiorNormal,
+    .rhyperiorShadow,
+    .rhyperiorPurified,
+    .murkrowNormal,
+    .murkrowShadow,
+    .murkrowPurified,
+    .honchkrowNormal,
+    .honchkrowShadow,
+    .honchkrowPurified,
+    .gibleNormal,
+    .gibleShadow,
+    .giblePurified,
+    .gabiteNormal,
+    .gabiteShadow,
+    .gabitePurified,
+    .garchompNormal,
+    .garchompShadow,
+    .garchompPurified,
+    .krabbyNormal,
+    .krabbyShadow,
+    .krabbyPurified,
+    .kinglerNormal,
+    .kinglerShadow,
+    .kinglerPurified,
+    .shellderNormal,
+    .shellderShadow,
+    .shellderPurified,
+    .cloysterNormal,
+    .cloysterShadow,
+    .cloysterPurified,
+    .geodudeShadow,
+    .geodudePurified,
+    .gravelerShadow,
+    .gravelerPurified,
+    .golemShadow,
+    .golemPurified,
+    .hippopotasNormal,
+    .hippopotasShadow,
+    .hippopotasPurified,
+    .hippowdonNormal,
+    .hippowdonShadow,
+    .hippowdonPurified,
+    .pikachuFall,
+    .squirtleFall,
+    .charmanderFall,
+    .bulbasaurFall,
   ]
 }
 
@@ -2385,7 +2581,6 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     131: .same(proto: "SPINDA_18"),
     132: .same(proto: "SPINDA_19"),
     133: .same(proto: "MEWTWO_A"),
-    134: .same(proto: "MEWTWO_A_INTRO"),
     135: .same(proto: "MEWTWO_NORMAL"),
     153: .same(proto: "RATTATA_SHADOW"),
     154: .same(proto: "RATTATA_PURIFIED"),
@@ -2560,17 +2755,8 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     323: .same(proto: "LAPRAS_SHADOW"),
     324: .same(proto: "LAPRAS_PURIFIED"),
     598: .same(proto: "PIKACHU_NORMAL"),
-    599: .same(proto: "PIKACHU_NOEVOLVE"),
     600: .same(proto: "WURMPLE_NORMAL"),
-    601: .same(proto: "WURMPLE_NOEVOLVE"),
     602: .same(proto: "WOBBUFFET_NORMAL"),
-    603: .same(proto: "WOBBUFFET_NOEVOLVE"),
-    604: .same(proto: "BULBASAUR_NOEVOLVE"),
-    605: .same(proto: "CHARMANDER_NOEVOLVE"),
-    606: .same(proto: "CHARIZARD_NOEVOLVE"),
-    607: .same(proto: "SQUIRTLE_NOEVOLVE"),
-    608: .same(proto: "BLASTOISE_NOEVOLVE"),
-    609: .same(proto: "RATICATE_NOEVOLVE"),
     610: .same(proto: "CACNEA_NORMAL"),
     611: .same(proto: "CACNEA_SHADOW"),
     612: .same(proto: "CACNEA_PURIFIED"),
@@ -2800,5 +2986,64 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     836: .same(proto: "MOLTRES_NORMAL"),
     837: .same(proto: "MOLTRES_SHADOW"),
     838: .same(proto: "MOLTRES_PURIFIED"),
+    839: .same(proto: "KANGASKHAN_NORMAL"),
+    840: .same(proto: "KANGASKHAN_SHADOW"),
+    841: .same(proto: "KANGASKHAN_PURIFIED"),
+    842: .same(proto: "DIGLETT_SHADOW"),
+    843: .same(proto: "DIGLETT_PURIFIED"),
+    844: .same(proto: "DUGTRIO_SHADOW"),
+    845: .same(proto: "DUGTRIO_PURIFIED"),
+    846: .same(proto: "RHYHORN_NORMAL"),
+    847: .same(proto: "RHYHORN_SHADOW"),
+    848: .same(proto: "RHYHORN_PURIFIED"),
+    849: .same(proto: "RHYDON_NORMAL"),
+    850: .same(proto: "RHYDON_SHADOW"),
+    851: .same(proto: "RHYDON_PURIFIED"),
+    852: .same(proto: "RHYPERIOR_NORMAL"),
+    853: .same(proto: "RHYPERIOR_SHADOW"),
+    854: .same(proto: "RHYPERIOR_PURIFIED"),
+    855: .same(proto: "MURKROW_NORMAL"),
+    856: .same(proto: "MURKROW_SHADOW"),
+    857: .same(proto: "MURKROW_PURIFIED"),
+    858: .same(proto: "HONCHKROW_NORMAL"),
+    859: .same(proto: "HONCHKROW_SHADOW"),
+    860: .same(proto: "HONCHKROW_PURIFIED"),
+    861: .same(proto: "GIBLE_NORMAL"),
+    862: .same(proto: "GIBLE_SHADOW"),
+    863: .same(proto: "GIBLE_PURIFIED"),
+    864: .same(proto: "GABITE_NORMAL"),
+    865: .same(proto: "GABITE_SHADOW"),
+    866: .same(proto: "GABITE_PURIFIED"),
+    867: .same(proto: "GARCHOMP_NORMAL"),
+    868: .same(proto: "GARCHOMP_SHADOW"),
+    869: .same(proto: "GARCHOMP_PURIFIED"),
+    870: .same(proto: "KRABBY_NORMAL"),
+    871: .same(proto: "KRABBY_SHADOW"),
+    872: .same(proto: "KRABBY_PURIFIED"),
+    873: .same(proto: "KINGLER_NORMAL"),
+    874: .same(proto: "KINGLER_SHADOW"),
+    875: .same(proto: "KINGLER_PURIFIED"),
+    876: .same(proto: "SHELLDER_NORMAL"),
+    877: .same(proto: "SHELLDER_SHADOW"),
+    878: .same(proto: "SHELLDER_PURIFIED"),
+    879: .same(proto: "CLOYSTER_NORMAL"),
+    880: .same(proto: "CLOYSTER_SHADOW"),
+    881: .same(proto: "CLOYSTER_PURIFIED"),
+    882: .same(proto: "GEODUDE_SHADOW"),
+    883: .same(proto: "GEODUDE_PURIFIED"),
+    884: .same(proto: "GRAVELER_SHADOW"),
+    885: .same(proto: "GRAVELER_PURIFIED"),
+    886: .same(proto: "GOLEM_SHADOW"),
+    887: .same(proto: "GOLEM_PURIFIED"),
+    888: .same(proto: "HIPPOPOTAS_NORMAL"),
+    889: .same(proto: "HIPPOPOTAS_SHADOW"),
+    890: .same(proto: "HIPPOPOTAS_PURIFIED"),
+    891: .same(proto: "HIPPOWDON_NORMAL"),
+    892: .same(proto: "HIPPOWDON_SHADOW"),
+    893: .same(proto: "HIPPOWDON_PURIFIED"),
+    894: .same(proto: "PIKACHU_FALL"),
+    895: .same(proto: "SQUIRTLE_FALL"),
+    896: .same(proto: "CHARMANDER_FALL"),
+    897: .same(proto: "BULBASAUR_FALL"),
   ]
 }

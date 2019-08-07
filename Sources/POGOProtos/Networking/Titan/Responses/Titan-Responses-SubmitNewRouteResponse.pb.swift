@@ -40,6 +40,7 @@ public struct POGOProtos_Networking_Titan_Responses_SubmitNewRouteResponse {
     case missingImage // = 7
     case invalidPoi // = 8
     case invalidRouteLength // = 9
+    case duplicatePois // = 10
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -58,6 +59,7 @@ public struct POGOProtos_Networking_Titan_Responses_SubmitNewRouteResponse {
       case 7: self = .missingImage
       case 8: self = .invalidPoi
       case 9: self = .invalidRouteLength
+      case 10: self = .duplicatePois
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -74,6 +76,7 @@ public struct POGOProtos_Networking_Titan_Responses_SubmitNewRouteResponse {
       case .missingImage: return 7
       case .invalidPoi: return 8
       case .invalidRouteLength: return 9
+      case .duplicatePois: return 10
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -98,6 +101,7 @@ extension POGOProtos_Networking_Titan_Responses_SubmitNewRouteResponse.Status: C
     .missingImage,
     .invalidPoi,
     .invalidRouteLength,
+    .duplicatePois,
   ]
 }
 
@@ -148,5 +152,6 @@ extension POGOProtos_Networking_Titan_Responses_SubmitNewRouteResponse.Status: S
     7: .same(proto: "MISSING_IMAGE"),
     8: .same(proto: "INVALID_POI"),
     9: .same(proto: "INVALID_ROUTE_LENGTH"),
+    10: .same(proto: "DUPLICATE_POIS"),
   ]
 }

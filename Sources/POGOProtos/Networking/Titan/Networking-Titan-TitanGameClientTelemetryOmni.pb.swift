@@ -91,10 +91,6 @@ public struct POGOProtos_Networking_Titan_TitanGameClientTelemetryOmni {
 
     public var deviceOs: String = String()
 
-    public var playerLocationLat: Double = 0
-
-    public var playerLocationLng: Double = 0
-
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -384,8 +380,6 @@ extension POGOProtos_Networking_Titan_TitanGameClientTelemetryOmni.PoiPlayerMeta
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "device_model"),
     2: .standard(proto: "device_os"),
-    3: .standard(proto: "player_location_lat"),
-    4: .standard(proto: "player_location_lng"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -393,8 +387,6 @@ extension POGOProtos_Networking_Titan_TitanGameClientTelemetryOmni.PoiPlayerMeta
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.deviceModel)
       case 2: try decoder.decodeSingularStringField(value: &self.deviceOs)
-      case 3: try decoder.decodeSingularDoubleField(value: &self.playerLocationLat)
-      case 4: try decoder.decodeSingularDoubleField(value: &self.playerLocationLng)
       default: break
       }
     }
@@ -407,20 +399,12 @@ extension POGOProtos_Networking_Titan_TitanGameClientTelemetryOmni.PoiPlayerMeta
     if !self.deviceOs.isEmpty {
       try visitor.visitSingularStringField(value: self.deviceOs, fieldNumber: 2)
     }
-    if self.playerLocationLat != 0 {
-      try visitor.visitSingularDoubleField(value: self.playerLocationLat, fieldNumber: 3)
-    }
-    if self.playerLocationLng != 0 {
-      try visitor.visitSingularDoubleField(value: self.playerLocationLng, fieldNumber: 4)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Titan_TitanGameClientTelemetryOmni.PoiPlayerMetadataTelemetry, rhs: POGOProtos_Networking_Titan_TitanGameClientTelemetryOmni.PoiPlayerMetadataTelemetry) -> Bool {
     if lhs.deviceModel != rhs.deviceModel {return false}
     if lhs.deviceOs != rhs.deviceOs {return false}
-    if lhs.playerLocationLat != rhs.playerLocationLat {return false}
-    if lhs.playerLocationLng != rhs.playerLocationLng {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

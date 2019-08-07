@@ -24,7 +24,7 @@ public struct POGOProtos_Settings_Master_CombatType {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var type: POGOProtos_Enums_PokemonId = .missingno
+  public var type: POGOProtos_Enums_PokemonType = .none
 
   public var niceLevelThreshold: Float = 0
 
@@ -63,7 +63,7 @@ extension POGOProtos_Settings_Master_CombatType: SwiftProtobuf.Message, SwiftPro
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.type != .missingno {
+    if self.type != .none {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
     if self.niceLevelThreshold != 0 {

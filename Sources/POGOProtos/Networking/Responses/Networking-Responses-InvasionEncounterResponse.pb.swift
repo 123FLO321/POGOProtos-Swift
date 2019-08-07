@@ -161,7 +161,7 @@ extension POGOProtos_Networking_Responses_InvasionEncounterResponse: SwiftProtob
         case 3: try decoder.decodeSingularMessageField(value: &_storage._captureProbability)
         case 4: try decoder.decodeSingularEnumField(value: &_storage._activeItem)
         case 5: try decoder.decodeSingularInt32Field(value: &_storage._throwsRemaining)
-        case 6: try decoder.decodeSingularUInt64Field(value: &_storage._encounterID)
+        case 6: try decoder.decodeSingularFixed64Field(value: &_storage._encounterID)
         case 7: try decoder.decodeSingularStringField(value: &_storage._spawnPointGuid)
         case 8: try decoder.decodeSingularMessageField(value: &_storage._ballsDisplay)
         default: break
@@ -188,7 +188,7 @@ extension POGOProtos_Networking_Responses_InvasionEncounterResponse: SwiftProtob
         try visitor.visitSingularInt32Field(value: _storage._throwsRemaining, fieldNumber: 5)
       }
       if _storage._encounterID != 0 {
-        try visitor.visitSingularUInt64Field(value: _storage._encounterID, fieldNumber: 6)
+        try visitor.visitSingularFixed64Field(value: _storage._encounterID, fieldNumber: 6)
       }
       if !_storage._spawnPointGuid.isEmpty {
         try visitor.visitSingularStringField(value: _storage._spawnPointGuid, fieldNumber: 7)

@@ -32,6 +32,7 @@ public enum POGOProtos_Enums_ShareExRaidPassResult: SwiftProtobuf.Enum {
   case errorExRaidInvalid // = 8
   case errorExRaidPassNotFound // = 9
   case errorUnknown // = 10
+  case errorFriendNotEligible // = 11
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -51,6 +52,7 @@ public enum POGOProtos_Enums_ShareExRaidPassResult: SwiftProtobuf.Enum {
     case 8: self = .errorExRaidInvalid
     case 9: self = .errorExRaidPassNotFound
     case 10: self = .errorUnknown
+    case 11: self = .errorFriendNotEligible
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -68,6 +70,7 @@ public enum POGOProtos_Enums_ShareExRaidPassResult: SwiftProtobuf.Enum {
     case .errorExRaidInvalid: return 8
     case .errorExRaidPassNotFound: return 9
     case .errorUnknown: return 10
+    case .errorFriendNotEligible: return 11
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -90,6 +93,7 @@ extension POGOProtos_Enums_ShareExRaidPassResult: CaseIterable {
     .errorExRaidInvalid,
     .errorExRaidPassNotFound,
     .errorUnknown,
+    .errorFriendNotEligible,
   ]
 }
 
@@ -110,5 +114,6 @@ extension POGOProtos_Enums_ShareExRaidPassResult: SwiftProtobuf._ProtoNameProvid
     8: .same(proto: "ERROR_EX_RAID_INVALID"),
     9: .same(proto: "ERROR_EX_RAID_PASS_NOT_FOUND"),
     10: .same(proto: "ERROR_UNKNOWN"),
+    11: .same(proto: "ERROR_FRIEND_NOT_ELIGIBLE"),
   ]
 }
