@@ -25,13 +25,11 @@ public struct POGOProtos_Networking_Platform_Requests_RedeemGoogleReceiptMessage
   // methods supported on all messages.
 
   /// see https://developer.android.com/google/play/billing/billing_reference.html table 4
-  public var receipt: String = String()
+  public var purchaseData: String = String()
 
-  public var receiptSignature: String = String()
+  public var purchaseID: String = String()
 
   public var purchaseCurrency: String = String()
-
-  public var pricePaidE6: Int32 = 0
 
   public var pricePaidE6Long: Int64 = 0
 
@@ -47,50 +45,44 @@ fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Requests"
 extension POGOProtos_Networking_Platform_Requests_RedeemGoogleReceiptMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RedeemGoogleReceiptMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "receipt"),
-    2: .standard(proto: "receipt_signature"),
+    1: .standard(proto: "purchase_data"),
+    2: .standard(proto: "purchase_id"),
     3: .standard(proto: "purchase_currency"),
-    4: .standard(proto: "price_paid_e6"),
-    5: .standard(proto: "price_paid_e6_long"),
+    4: .standard(proto: "price_paid_e6_long"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.receipt)
-      case 2: try decoder.decodeSingularStringField(value: &self.receiptSignature)
+      case 1: try decoder.decodeSingularStringField(value: &self.purchaseData)
+      case 2: try decoder.decodeSingularStringField(value: &self.purchaseID)
       case 3: try decoder.decodeSingularStringField(value: &self.purchaseCurrency)
-      case 4: try decoder.decodeSingularInt32Field(value: &self.pricePaidE6)
-      case 5: try decoder.decodeSingularInt64Field(value: &self.pricePaidE6Long)
+      case 4: try decoder.decodeSingularInt64Field(value: &self.pricePaidE6Long)
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.receipt.isEmpty {
-      try visitor.visitSingularStringField(value: self.receipt, fieldNumber: 1)
+    if !self.purchaseData.isEmpty {
+      try visitor.visitSingularStringField(value: self.purchaseData, fieldNumber: 1)
     }
-    if !self.receiptSignature.isEmpty {
-      try visitor.visitSingularStringField(value: self.receiptSignature, fieldNumber: 2)
+    if !self.purchaseID.isEmpty {
+      try visitor.visitSingularStringField(value: self.purchaseID, fieldNumber: 2)
     }
     if !self.purchaseCurrency.isEmpty {
       try visitor.visitSingularStringField(value: self.purchaseCurrency, fieldNumber: 3)
     }
-    if self.pricePaidE6 != 0 {
-      try visitor.visitSingularInt32Field(value: self.pricePaidE6, fieldNumber: 4)
-    }
     if self.pricePaidE6Long != 0 {
-      try visitor.visitSingularInt64Field(value: self.pricePaidE6Long, fieldNumber: 5)
+      try visitor.visitSingularInt64Field(value: self.pricePaidE6Long, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Platform_Requests_RedeemGoogleReceiptMessage, rhs: POGOProtos_Networking_Platform_Requests_RedeemGoogleReceiptMessage) -> Bool {
-    if lhs.receipt != rhs.receipt {return false}
-    if lhs.receiptSignature != rhs.receiptSignature {return false}
+    if lhs.purchaseData != rhs.purchaseData {return false}
+    if lhs.purchaseID != rhs.purchaseID {return false}
     if lhs.purchaseCurrency != rhs.purchaseCurrency {return false}
-    if lhs.pricePaidE6 != rhs.pricePaidE6 {return false}
     if lhs.pricePaidE6Long != rhs.pricePaidE6Long {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

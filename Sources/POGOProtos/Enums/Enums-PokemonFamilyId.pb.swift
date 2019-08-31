@@ -272,6 +272,88 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
   case familyDarkrai // = 491
   case familyShaymin // = 492
   case familyArceus // = 493
+  case familyVictini // = 494
+  case familySnivy // = 495
+  case familyTepig // = 498
+  case familyOshawott // = 501
+  case familyPatrat // = 504
+  case familyLillipup // = 506
+  case familyPurrloin // = 509
+  case familyPansage // = 511
+  case familyPansear // = 513
+  case familyPanpour // = 515
+  case familyMunna // = 517
+  case familyPidove // = 519
+  case familyBlitzle // = 522
+  case familyRoggenrola // = 524
+  case familyWoobat // = 527
+  case familyDrilbur // = 529
+  case familyAudino // = 531
+  case familyTimburr // = 532
+  case familyTympole // = 535
+  case familyThroh // = 538
+  case familySawk // = 539
+  case familySewaddle // = 540
+  case familyVenipede // = 543
+  case familyCottonee // = 546
+  case familyPetilil // = 548
+  case familyBasculin // = 550
+  case familySandile // = 551
+  case familyDarumaka // = 554
+  case familyMaractus // = 556
+  case familyDwebble // = 557
+  case familyScraggy // = 559
+  case familySigilyph // = 561
+  case familyYamask // = 562
+  case familyTirtouga // = 564
+  case familyArchen // = 566
+  case familyTrubbish // = 568
+  case familyZorua // = 570
+  case familyMinccino // = 572
+  case familyGothita // = 574
+  case familySolosis // = 577
+  case familyDucklett // = 580
+  case familyVanillite // = 582
+  case familyDeerling // = 585
+  case familyEmolga // = 587
+  case familyKarrablast // = 588
+  case familyFoongus // = 590
+  case familyFrillish // = 592
+  case familyAlomomola // = 594
+  case familyJoltik // = 595
+  case familyFerroseed // = 597
+  case familyKlink // = 599
+  case familyTynamo // = 602
+  case familyElgyem // = 605
+  case familyLitwick // = 607
+  case familyAxew // = 610
+  case familyCubchoo // = 613
+  case familyCryogonal // = 615
+  case familyShelmet // = 616
+  case familyStunfisk // = 618
+  case familyMienfoo // = 619
+  case familyDruddigon // = 621
+  case familyGolett // = 622
+  case familyPawniard // = 624
+  case familyBouffalant // = 626
+  case familyRufflet // = 627
+  case familyVullaby // = 629
+  case familyHeatmor // = 631
+  case familyDurant // = 632
+  case familyDeino // = 633
+  case familyLarvesta // = 636
+  case familyCobalion // = 638
+  case familyTerrakion // = 639
+  case familyVirizion // = 640
+  case familyTornadus // = 641
+  case familyThundurus // = 642
+  case familyReshiram // = 643
+  case familyZekrom // = 644
+  case familyLandorus // = 645
+  case familyKyurem // = 646
+  case familyKeldeo // = 647
+  case familyMeloetta // = 648
+  case familyGenesect // = 649
   case familyMeltan // = 808
   case UNRECOGNIZED(Int)
 
@@ -532,6 +614,88 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
     case 491: self = .familyDarkrai
     case 492: self = .familyShaymin
     case 493: self = .familyArceus
+    case 494: self = .familyVictini
+    case 495: self = .familySnivy
+    case 498: self = .familyTepig
+    case 501: self = .familyOshawott
+    case 504: self = .familyPatrat
+    case 506: self = .familyLillipup
+    case 509: self = .familyPurrloin
+    case 511: self = .familyPansage
+    case 513: self = .familyPansear
+    case 515: self = .familyPanpour
+    case 517: self = .familyMunna
+    case 519: self = .familyPidove
+    case 522: self = .familyBlitzle
+    case 524: self = .familyRoggenrola
+    case 527: self = .familyWoobat
+    case 529: self = .familyDrilbur
+    case 531: self = .familyAudino
+    case 532: self = .familyTimburr
+    case 535: self = .familyTympole
+    case 538: self = .familyThroh
+    case 539: self = .familySawk
+    case 540: self = .familySewaddle
+    case 543: self = .familyVenipede
+    case 546: self = .familyCottonee
+    case 548: self = .familyPetilil
+    case 550: self = .familyBasculin
+    case 551: self = .familySandile
+    case 554: self = .familyDarumaka
+    case 556: self = .familyMaractus
+    case 557: self = .familyDwebble
+    case 559: self = .familyScraggy
+    case 561: self = .familySigilyph
+    case 562: self = .familyYamask
+    case 564: self = .familyTirtouga
+    case 566: self = .familyArchen
+    case 568: self = .familyTrubbish
+    case 570: self = .familyZorua
+    case 572: self = .familyMinccino
+    case 574: self = .familyGothita
+    case 577: self = .familySolosis
+    case 580: self = .familyDucklett
+    case 582: self = .familyVanillite
+    case 585: self = .familyDeerling
+    case 587: self = .familyEmolga
+    case 588: self = .familyKarrablast
+    case 590: self = .familyFoongus
+    case 592: self = .familyFrillish
+    case 594: self = .familyAlomomola
+    case 595: self = .familyJoltik
+    case 597: self = .familyFerroseed
+    case 599: self = .familyKlink
+    case 602: self = .familyTynamo
+    case 605: self = .familyElgyem
+    case 607: self = .familyLitwick
+    case 610: self = .familyAxew
+    case 613: self = .familyCubchoo
+    case 615: self = .familyCryogonal
+    case 616: self = .familyShelmet
+    case 618: self = .familyStunfisk
+    case 619: self = .familyMienfoo
+    case 621: self = .familyDruddigon
+    case 622: self = .familyGolett
+    case 624: self = .familyPawniard
+    case 626: self = .familyBouffalant
+    case 627: self = .familyRufflet
+    case 629: self = .familyVullaby
+    case 631: self = .familyHeatmor
+    case 632: self = .familyDurant
+    case 633: self = .familyDeino
+    case 636: self = .familyLarvesta
+    case 638: self = .familyCobalion
+    case 639: self = .familyTerrakion
+    case 640: self = .familyVirizion
+    case 641: self = .familyTornadus
+    case 642: self = .familyThundurus
+    case 643: self = .familyReshiram
+    case 644: self = .familyZekrom
+    case 645: self = .familyLandorus
+    case 646: self = .familyKyurem
+    case 647: self = .familyKeldeo
+    case 648: self = .familyMeloetta
+    case 649: self = .familyGenesect
     case 808: self = .familyMeltan
     default: self = .UNRECOGNIZED(rawValue)
     }
@@ -790,6 +954,88 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
     case .familyDarkrai: return 491
     case .familyShaymin: return 492
     case .familyArceus: return 493
+    case .familyVictini: return 494
+    case .familySnivy: return 495
+    case .familyTepig: return 498
+    case .familyOshawott: return 501
+    case .familyPatrat: return 504
+    case .familyLillipup: return 506
+    case .familyPurrloin: return 509
+    case .familyPansage: return 511
+    case .familyPansear: return 513
+    case .familyPanpour: return 515
+    case .familyMunna: return 517
+    case .familyPidove: return 519
+    case .familyBlitzle: return 522
+    case .familyRoggenrola: return 524
+    case .familyWoobat: return 527
+    case .familyDrilbur: return 529
+    case .familyAudino: return 531
+    case .familyTimburr: return 532
+    case .familyTympole: return 535
+    case .familyThroh: return 538
+    case .familySawk: return 539
+    case .familySewaddle: return 540
+    case .familyVenipede: return 543
+    case .familyCottonee: return 546
+    case .familyPetilil: return 548
+    case .familyBasculin: return 550
+    case .familySandile: return 551
+    case .familyDarumaka: return 554
+    case .familyMaractus: return 556
+    case .familyDwebble: return 557
+    case .familyScraggy: return 559
+    case .familySigilyph: return 561
+    case .familyYamask: return 562
+    case .familyTirtouga: return 564
+    case .familyArchen: return 566
+    case .familyTrubbish: return 568
+    case .familyZorua: return 570
+    case .familyMinccino: return 572
+    case .familyGothita: return 574
+    case .familySolosis: return 577
+    case .familyDucklett: return 580
+    case .familyVanillite: return 582
+    case .familyDeerling: return 585
+    case .familyEmolga: return 587
+    case .familyKarrablast: return 588
+    case .familyFoongus: return 590
+    case .familyFrillish: return 592
+    case .familyAlomomola: return 594
+    case .familyJoltik: return 595
+    case .familyFerroseed: return 597
+    case .familyKlink: return 599
+    case .familyTynamo: return 602
+    case .familyElgyem: return 605
+    case .familyLitwick: return 607
+    case .familyAxew: return 610
+    case .familyCubchoo: return 613
+    case .familyCryogonal: return 615
+    case .familyShelmet: return 616
+    case .familyStunfisk: return 618
+    case .familyMienfoo: return 619
+    case .familyDruddigon: return 621
+    case .familyGolett: return 622
+    case .familyPawniard: return 624
+    case .familyBouffalant: return 626
+    case .familyRufflet: return 627
+    case .familyVullaby: return 629
+    case .familyHeatmor: return 631
+    case .familyDurant: return 632
+    case .familyDeino: return 633
+    case .familyLarvesta: return 636
+    case .familyCobalion: return 638
+    case .familyTerrakion: return 639
+    case .familyVirizion: return 640
+    case .familyTornadus: return 641
+    case .familyThundurus: return 642
+    case .familyReshiram: return 643
+    case .familyZekrom: return 644
+    case .familyLandorus: return 645
+    case .familyKyurem: return 646
+    case .familyKeldeo: return 647
+    case .familyMeloetta: return 648
+    case .familyGenesect: return 649
     case .familyMeltan: return 808
     case .UNRECOGNIZED(let i): return i
     }
@@ -1053,6 +1299,88 @@ extension POGOProtos_Enums_PokemonFamilyId: CaseIterable {
     .familyDarkrai,
     .familyShaymin,
     .familyArceus,
+    .familyVictini,
+    .familySnivy,
+    .familyTepig,
+    .familyOshawott,
+    .familyPatrat,
+    .familyLillipup,
+    .familyPurrloin,
+    .familyPansage,
+    .familyPansear,
+    .familyPanpour,
+    .familyMunna,
+    .familyPidove,
+    .familyBlitzle,
+    .familyRoggenrola,
+    .familyWoobat,
+    .familyDrilbur,
+    .familyAudino,
+    .familyTimburr,
+    .familyTympole,
+    .familyThroh,
+    .familySawk,
+    .familySewaddle,
+    .familyVenipede,
+    .familyCottonee,
+    .familyPetilil,
+    .familyBasculin,
+    .familySandile,
+    .familyDarumaka,
+    .familyMaractus,
+    .familyDwebble,
+    .familyScraggy,
+    .familySigilyph,
+    .familyYamask,
+    .familyTirtouga,
+    .familyArchen,
+    .familyTrubbish,
+    .familyZorua,
+    .familyMinccino,
+    .familyGothita,
+    .familySolosis,
+    .familyDucklett,
+    .familyVanillite,
+    .familyDeerling,
+    .familyEmolga,
+    .familyKarrablast,
+    .familyFoongus,
+    .familyFrillish,
+    .familyAlomomola,
+    .familyJoltik,
+    .familyFerroseed,
+    .familyKlink,
+    .familyTynamo,
+    .familyElgyem,
+    .familyLitwick,
+    .familyAxew,
+    .familyCubchoo,
+    .familyCryogonal,
+    .familyShelmet,
+    .familyStunfisk,
+    .familyMienfoo,
+    .familyDruddigon,
+    .familyGolett,
+    .familyPawniard,
+    .familyBouffalant,
+    .familyRufflet,
+    .familyVullaby,
+    .familyHeatmor,
+    .familyDurant,
+    .familyDeino,
+    .familyLarvesta,
+    .familyCobalion,
+    .familyTerrakion,
+    .familyVirizion,
+    .familyTornadus,
+    .familyThundurus,
+    .familyReshiram,
+    .familyZekrom,
+    .familyLandorus,
+    .familyKyurem,
+    .familyKeldeo,
+    .familyMeloetta,
+    .familyGenesect,
     .familyMeltan,
   ]
 }
@@ -1314,6 +1642,88 @@ extension POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf._ProtoNameProviding {
     491: .same(proto: "FAMILY_DARKRAI"),
     492: .same(proto: "FAMILY_SHAYMIN"),
     493: .same(proto: "FAMILY_ARCEUS"),
+    494: .same(proto: "FAMILY_VICTINI"),
+    495: .same(proto: "FAMILY_SNIVY"),
+    498: .same(proto: "FAMILY_TEPIG"),
+    501: .same(proto: "FAMILY_OSHAWOTT"),
+    504: .same(proto: "FAMILY_PATRAT"),
+    506: .same(proto: "FAMILY_LILLIPUP"),
+    509: .same(proto: "FAMILY_PURRLOIN"),
+    511: .same(proto: "FAMILY_PANSAGE"),
+    513: .same(proto: "FAMILY_PANSEAR"),
+    515: .same(proto: "FAMILY_PANPOUR"),
+    517: .same(proto: "FAMILY_MUNNA"),
+    519: .same(proto: "FAMILY_PIDOVE"),
+    522: .same(proto: "FAMILY_BLITZLE"),
+    524: .same(proto: "FAMILY_ROGGENROLA"),
+    527: .same(proto: "FAMILY_WOOBAT"),
+    529: .same(proto: "FAMILY_DRILBUR"),
+    531: .same(proto: "FAMILY_AUDINO"),
+    532: .same(proto: "FAMILY_TIMBURR"),
+    535: .same(proto: "FAMILY_TYMPOLE"),
+    538: .same(proto: "FAMILY_THROH"),
+    539: .same(proto: "FAMILY_SAWK"),
+    540: .same(proto: "FAMILY_SEWADDLE"),
+    543: .same(proto: "FAMILY_VENIPEDE"),
+    546: .same(proto: "FAMILY_COTTONEE"),
+    548: .same(proto: "FAMILY_PETILIL"),
+    550: .same(proto: "FAMILY_BASCULIN"),
+    551: .same(proto: "FAMILY_SANDILE"),
+    554: .same(proto: "FAMILY_DARUMAKA"),
+    556: .same(proto: "FAMILY_MARACTUS"),
+    557: .same(proto: "FAMILY_DWEBBLE"),
+    559: .same(proto: "FAMILY_SCRAGGY"),
+    561: .same(proto: "FAMILY_SIGILYPH"),
+    562: .same(proto: "FAMILY_YAMASK"),
+    564: .same(proto: "FAMILY_TIRTOUGA"),
+    566: .same(proto: "FAMILY_ARCHEN"),
+    568: .same(proto: "FAMILY_TRUBBISH"),
+    570: .same(proto: "FAMILY_ZORUA"),
+    572: .same(proto: "FAMILY_MINCCINO"),
+    574: .same(proto: "FAMILY_GOTHITA"),
+    577: .same(proto: "FAMILY_SOLOSIS"),
+    580: .same(proto: "FAMILY_DUCKLETT"),
+    582: .same(proto: "FAMILY_VANILLITE"),
+    585: .same(proto: "FAMILY_DEERLING"),
+    587: .same(proto: "FAMILY_EMOLGA"),
+    588: .same(proto: "FAMILY_KARRABLAST"),
+    590: .same(proto: "FAMILY_FOONGUS"),
+    592: .same(proto: "FAMILY_FRILLISH"),
+    594: .same(proto: "FAMILY_ALOMOMOLA"),
+    595: .same(proto: "FAMILY_JOLTIK"),
+    597: .same(proto: "FAMILY_FERROSEED"),
+    599: .same(proto: "FAMILY_KLINK"),
+    602: .same(proto: "FAMILY_TYNAMO"),
+    605: .same(proto: "FAMILY_ELGYEM"),
+    607: .same(proto: "FAMILY_LITWICK"),
+    610: .same(proto: "FAMILY_AXEW"),
+    613: .same(proto: "FAMILY_CUBCHOO"),
+    615: .same(proto: "FAMILY_CRYOGONAL"),
+    616: .same(proto: "FAMILY_SHELMET"),
+    618: .same(proto: "FAMILY_STUNFISK"),
+    619: .same(proto: "FAMILY_MIENFOO"),
+    621: .same(proto: "FAMILY_DRUDDIGON"),
+    622: .same(proto: "FAMILY_GOLETT"),
+    624: .same(proto: "FAMILY_PAWNIARD"),
+    626: .same(proto: "FAMILY_BOUFFALANT"),
+    627: .same(proto: "FAMILY_RUFFLET"),
+    629: .same(proto: "FAMILY_VULLABY"),
+    631: .same(proto: "FAMILY_HEATMOR"),
+    632: .same(proto: "FAMILY_DURANT"),
+    633: .same(proto: "FAMILY_DEINO"),
+    636: .same(proto: "FAMILY_LARVESTA"),
+    638: .same(proto: "FAMILY_COBALION"),
+    639: .same(proto: "FAMILY_TERRAKION"),
+    640: .same(proto: "FAMILY_VIRIZION"),
+    641: .same(proto: "FAMILY_TORNADUS"),
+    642: .same(proto: "FAMILY_THUNDURUS"),
+    643: .same(proto: "FAMILY_RESHIRAM"),
+    644: .same(proto: "FAMILY_ZEKROM"),
+    645: .same(proto: "FAMILY_LANDORUS"),
+    646: .same(proto: "FAMILY_KYUREM"),
+    647: .same(proto: "FAMILY_KELDEO"),
+    648: .same(proto: "FAMILY_MELOETTA"),
+    649: .same(proto: "FAMILY_GENESECT"),
     808: .same(proto: "FAMILY_MELTAN"),
   ]
 }

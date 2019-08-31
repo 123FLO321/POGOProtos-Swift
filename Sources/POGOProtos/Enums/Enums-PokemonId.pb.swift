@@ -515,6 +515,162 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
   case darkrai // = 491
   case shaymin // = 492
   case arceus // = 493
+  case victini // = 494
+  case snivy // = 495
+  case servine // = 496
+  case serperior // = 497
+  case tepig // = 498
+  case pignite // = 499
+  case emboar // = 500
+  case oshawott // = 501
+  case dewott // = 502
+  case samurott // = 503
+  case patrat // = 504
+  case watchog // = 505
+  case lillipup // = 506
+  case herdier // = 507
+  case stoutland // = 508
+  case purrloin // = 509
+  case liepard // = 510
+  case pansage // = 511
+  case simisage // = 512
+  case pansear // = 513
+  case simisear // = 514
+  case panpour // = 515
+  case simipour // = 516
+  case munna // = 517
+  case musharna // = 518
+  case pidove // = 519
+  case tranquill // = 520
+  case unfezant // = 521
+  case blitzle // = 522
+  case zebstrika // = 523
+  case roggenrola // = 524
+  case boldore // = 525
+  case gigalith // = 526
+  case woobat // = 527
+  case swoobat // = 528
+  case drilbur // = 529
+  case excadrill // = 530
+  case audino // = 531
+  case timburr // = 532
+  case gurdurr // = 533
+  case conkeldurr // = 534
+  case tympole // = 535
+  case palpitoad // = 536
+  case seismitoad // = 537
+  case throh // = 538
+  case sawk // = 539
+  case sewaddle // = 540
+  case swadloon // = 541
+  case leavanny // = 542
+  case venipede // = 543
+  case whirlipede // = 544
+  case scolipede // = 545
+  case cottonee // = 546
+  case whimsicott // = 547
+  case petilil // = 548
+  case lilligant // = 549
+  case basculin // = 550
+  case sandile // = 551
+  case krokorok // = 552
+  case krookodile // = 553
+  case darumaka // = 554
+  case darmanitan // = 555
+  case maractus // = 556
+  case dwebble // = 557
+  case crustle // = 558
+  case scraggy // = 559
+  case scrafty // = 560
+  case sigilyph // = 561
+  case yamask // = 562
+  case cofagrigus // = 563
+  case tirtouga // = 564
+  case carracosta // = 565
+  case archen // = 566
+  case archeops // = 567
+  case trubbish // = 568
+  case garbodor // = 569
+  case zorua // = 570
+  case zoroark // = 571
+  case minccino // = 572
+  case cinccino // = 573
+  case gothita // = 574
+  case gothorita // = 575
+  case gothitelle // = 576
+  case solosis // = 577
+  case duosion // = 578
+  case reuniclus // = 579
+  case ducklett // = 580
+  case swanna // = 581
+  case vanillite // = 582
+  case vanillish // = 583
+  case vanilluxe // = 584
+  case deerling // = 585
+  case sawsbuck // = 586
+  case emolga // = 587
+  case karrablast // = 588
+  case escavalier // = 589
+  case foongus // = 590
+  case amoonguss // = 591
+  case frillish // = 592
+  case jellicent // = 593
+  case alomomola // = 594
+  case joltik // = 595
+  case galvantula // = 596
+  case ferroseed // = 597
+  case ferrothorn // = 598
+  case klink // = 599
+  case klang // = 600
+  case klinklang // = 601
+  case tynamo // = 602
+  case eelektrik // = 603
+  case eelektross // = 604
+  case elgyem // = 605
+  case beheeyem // = 606
+  case litwick // = 607
+  case lampent // = 608
+  case chandelure // = 609
+  case axew // = 610
+  case fraxure // = 611
+  case haxorus // = 612
+  case cubchoo // = 613
+  case beartic // = 614
+  case cryogonal // = 615
+  case shelmet // = 616
+  case accelgor // = 617
+  case stunfisk // = 618
+  case mienfoo // = 619
+  case mienshao // = 620
+  case druddigon // = 621
+  case golett // = 622
+  case golurk // = 623
+  case pawniard // = 624
+  case bisharp // = 625
+  case bouffalant // = 626
+  case rufflet // = 627
+  case braviary // = 628
+  case vullaby // = 629
+  case mandibuzz // = 630
+  case heatmor // = 631
+  case durant // = 632
+  case deino // = 633
+  case zweilous // = 634
+  case hydreigon // = 635
+  case larvesta // = 636
+  case volcarona // = 637
+  case cobalion // = 638
+  case terrakion // = 639
+  case virizion // = 640
+  case tornadus // = 641
+  case thundurus // = 642
+  case reshiram // = 643
+  case zekrom // = 644
+  case landorus // = 645
+  case kyurem // = 646
+  case keldeo // = 647
+  case meloetta // = 648
+  case genesect // = 649
   case meltan // = 808
   case melmetal // = 809
   case UNRECOGNIZED(Int)
@@ -1019,6 +1175,162 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case 491: self = .darkrai
     case 492: self = .shaymin
     case 493: self = .arceus
+    case 494: self = .victini
+    case 495: self = .snivy
+    case 496: self = .servine
+    case 497: self = .serperior
+    case 498: self = .tepig
+    case 499: self = .pignite
+    case 500: self = .emboar
+    case 501: self = .oshawott
+    case 502: self = .dewott
+    case 503: self = .samurott
+    case 504: self = .patrat
+    case 505: self = .watchog
+    case 506: self = .lillipup
+    case 507: self = .herdier
+    case 508: self = .stoutland
+    case 509: self = .purrloin
+    case 510: self = .liepard
+    case 511: self = .pansage
+    case 512: self = .simisage
+    case 513: self = .pansear
+    case 514: self = .simisear
+    case 515: self = .panpour
+    case 516: self = .simipour
+    case 517: self = .munna
+    case 518: self = .musharna
+    case 519: self = .pidove
+    case 520: self = .tranquill
+    case 521: self = .unfezant
+    case 522: self = .blitzle
+    case 523: self = .zebstrika
+    case 524: self = .roggenrola
+    case 525: self = .boldore
+    case 526: self = .gigalith
+    case 527: self = .woobat
+    case 528: self = .swoobat
+    case 529: self = .drilbur
+    case 530: self = .excadrill
+    case 531: self = .audino
+    case 532: self = .timburr
+    case 533: self = .gurdurr
+    case 534: self = .conkeldurr
+    case 535: self = .tympole
+    case 536: self = .palpitoad
+    case 537: self = .seismitoad
+    case 538: self = .throh
+    case 539: self = .sawk
+    case 540: self = .sewaddle
+    case 541: self = .swadloon
+    case 542: self = .leavanny
+    case 543: self = .venipede
+    case 544: self = .whirlipede
+    case 545: self = .scolipede
+    case 546: self = .cottonee
+    case 547: self = .whimsicott
+    case 548: self = .petilil
+    case 549: self = .lilligant
+    case 550: self = .basculin
+    case 551: self = .sandile
+    case 552: self = .krokorok
+    case 553: self = .krookodile
+    case 554: self = .darumaka
+    case 555: self = .darmanitan
+    case 556: self = .maractus
+    case 557: self = .dwebble
+    case 558: self = .crustle
+    case 559: self = .scraggy
+    case 560: self = .scrafty
+    case 561: self = .sigilyph
+    case 562: self = .yamask
+    case 563: self = .cofagrigus
+    case 564: self = .tirtouga
+    case 565: self = .carracosta
+    case 566: self = .archen
+    case 567: self = .archeops
+    case 568: self = .trubbish
+    case 569: self = .garbodor
+    case 570: self = .zorua
+    case 571: self = .zoroark
+    case 572: self = .minccino
+    case 573: self = .cinccino
+    case 574: self = .gothita
+    case 575: self = .gothorita
+    case 576: self = .gothitelle
+    case 577: self = .solosis
+    case 578: self = .duosion
+    case 579: self = .reuniclus
+    case 580: self = .ducklett
+    case 581: self = .swanna
+    case 582: self = .vanillite
+    case 583: self = .vanillish
+    case 584: self = .vanilluxe
+    case 585: self = .deerling
+    case 586: self = .sawsbuck
+    case 587: self = .emolga
+    case 588: self = .karrablast
+    case 589: self = .escavalier
+    case 590: self = .foongus
+    case 591: self = .amoonguss
+    case 592: self = .frillish
+    case 593: self = .jellicent
+    case 594: self = .alomomola
+    case 595: self = .joltik
+    case 596: self = .galvantula
+    case 597: self = .ferroseed
+    case 598: self = .ferrothorn
+    case 599: self = .klink
+    case 600: self = .klang
+    case 601: self = .klinklang
+    case 602: self = .tynamo
+    case 603: self = .eelektrik
+    case 604: self = .eelektross
+    case 605: self = .elgyem
+    case 606: self = .beheeyem
+    case 607: self = .litwick
+    case 608: self = .lampent
+    case 609: self = .chandelure
+    case 610: self = .axew
+    case 611: self = .fraxure
+    case 612: self = .haxorus
+    case 613: self = .cubchoo
+    case 614: self = .beartic
+    case 615: self = .cryogonal
+    case 616: self = .shelmet
+    case 617: self = .accelgor
+    case 618: self = .stunfisk
+    case 619: self = .mienfoo
+    case 620: self = .mienshao
+    case 621: self = .druddigon
+    case 622: self = .golett
+    case 623: self = .golurk
+    case 624: self = .pawniard
+    case 625: self = .bisharp
+    case 626: self = .bouffalant
+    case 627: self = .rufflet
+    case 628: self = .braviary
+    case 629: self = .vullaby
+    case 630: self = .mandibuzz
+    case 631: self = .heatmor
+    case 632: self = .durant
+    case 633: self = .deino
+    case 634: self = .zweilous
+    case 635: self = .hydreigon
+    case 636: self = .larvesta
+    case 637: self = .volcarona
+    case 638: self = .cobalion
+    case 639: self = .terrakion
+    case 640: self = .virizion
+    case 641: self = .tornadus
+    case 642: self = .thundurus
+    case 643: self = .reshiram
+    case 644: self = .zekrom
+    case 645: self = .landorus
+    case 646: self = .kyurem
+    case 647: self = .keldeo
+    case 648: self = .meloetta
+    case 649: self = .genesect
     case 808: self = .meltan
     case 809: self = .melmetal
     default: self = .UNRECOGNIZED(rawValue)
@@ -1521,6 +1833,162 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case .darkrai: return 491
     case .shaymin: return 492
     case .arceus: return 493
+    case .victini: return 494
+    case .snivy: return 495
+    case .servine: return 496
+    case .serperior: return 497
+    case .tepig: return 498
+    case .pignite: return 499
+    case .emboar: return 500
+    case .oshawott: return 501
+    case .dewott: return 502
+    case .samurott: return 503
+    case .patrat: return 504
+    case .watchog: return 505
+    case .lillipup: return 506
+    case .herdier: return 507
+    case .stoutland: return 508
+    case .purrloin: return 509
+    case .liepard: return 510
+    case .pansage: return 511
+    case .simisage: return 512
+    case .pansear: return 513
+    case .simisear: return 514
+    case .panpour: return 515
+    case .simipour: return 516
+    case .munna: return 517
+    case .musharna: return 518
+    case .pidove: return 519
+    case .tranquill: return 520
+    case .unfezant: return 521
+    case .blitzle: return 522
+    case .zebstrika: return 523
+    case .roggenrola: return 524
+    case .boldore: return 525
+    case .gigalith: return 526
+    case .woobat: return 527
+    case .swoobat: return 528
+    case .drilbur: return 529
+    case .excadrill: return 530
+    case .audino: return 531
+    case .timburr: return 532
+    case .gurdurr: return 533
+    case .conkeldurr: return 534
+    case .tympole: return 535
+    case .palpitoad: return 536
+    case .seismitoad: return 537
+    case .throh: return 538
+    case .sawk: return 539
+    case .sewaddle: return 540
+    case .swadloon: return 541
+    case .leavanny: return 542
+    case .venipede: return 543
+    case .whirlipede: return 544
+    case .scolipede: return 545
+    case .cottonee: return 546
+    case .whimsicott: return 547
+    case .petilil: return 548
+    case .lilligant: return 549
+    case .basculin: return 550
+    case .sandile: return 551
+    case .krokorok: return 552
+    case .krookodile: return 553
+    case .darumaka: return 554
+    case .darmanitan: return 555
+    case .maractus: return 556
+    case .dwebble: return 557
+    case .crustle: return 558
+    case .scraggy: return 559
+    case .scrafty: return 560
+    case .sigilyph: return 561
+    case .yamask: return 562
+    case .cofagrigus: return 563
+    case .tirtouga: return 564
+    case .carracosta: return 565
+    case .archen: return 566
+    case .archeops: return 567
+    case .trubbish: return 568
+    case .garbodor: return 569
+    case .zorua: return 570
+    case .zoroark: return 571
+    case .minccino: return 572
+    case .cinccino: return 573
+    case .gothita: return 574
+    case .gothorita: return 575
+    case .gothitelle: return 576
+    case .solosis: return 577
+    case .duosion: return 578
+    case .reuniclus: return 579
+    case .ducklett: return 580
+    case .swanna: return 581
+    case .vanillite: return 582
+    case .vanillish: return 583
+    case .vanilluxe: return 584
+    case .deerling: return 585
+    case .sawsbuck: return 586
+    case .emolga: return 587
+    case .karrablast: return 588
+    case .escavalier: return 589
+    case .foongus: return 590
+    case .amoonguss: return 591
+    case .frillish: return 592
+    case .jellicent: return 593
+    case .alomomola: return 594
+    case .joltik: return 595
+    case .galvantula: return 596
+    case .ferroseed: return 597
+    case .ferrothorn: return 598
+    case .klink: return 599
+    case .klang: return 600
+    case .klinklang: return 601
+    case .tynamo: return 602
+    case .eelektrik: return 603
+    case .eelektross: return 604
+    case .elgyem: return 605
+    case .beheeyem: return 606
+    case .litwick: return 607
+    case .lampent: return 608
+    case .chandelure: return 609
+    case .axew: return 610
+    case .fraxure: return 611
+    case .haxorus: return 612
+    case .cubchoo: return 613
+    case .beartic: return 614
+    case .cryogonal: return 615
+    case .shelmet: return 616
+    case .accelgor: return 617
+    case .stunfisk: return 618
+    case .mienfoo: return 619
+    case .mienshao: return 620
+    case .druddigon: return 621
+    case .golett: return 622
+    case .golurk: return 623
+    case .pawniard: return 624
+    case .bisharp: return 625
+    case .bouffalant: return 626
+    case .rufflet: return 627
+    case .braviary: return 628
+    case .vullaby: return 629
+    case .mandibuzz: return 630
+    case .heatmor: return 631
+    case .durant: return 632
+    case .deino: return 633
+    case .zweilous: return 634
+    case .hydreigon: return 635
+    case .larvesta: return 636
+    case .volcarona: return 637
+    case .cobalion: return 638
+    case .terrakion: return 639
+    case .virizion: return 640
+    case .tornadus: return 641
+    case .thundurus: return 642
+    case .reshiram: return 643
+    case .zekrom: return 644
+    case .landorus: return 645
+    case .kyurem: return 646
+    case .keldeo: return 647
+    case .meloetta: return 648
+    case .genesect: return 649
     case .meltan: return 808
     case .melmetal: return 809
     case .UNRECOGNIZED(let i): return i
@@ -2028,6 +2496,162 @@ extension POGOProtos_Enums_PokemonId: CaseIterable {
     .darkrai,
     .shaymin,
     .arceus,
+    .victini,
+    .snivy,
+    .servine,
+    .serperior,
+    .tepig,
+    .pignite,
+    .emboar,
+    .oshawott,
+    .dewott,
+    .samurott,
+    .patrat,
+    .watchog,
+    .lillipup,
+    .herdier,
+    .stoutland,
+    .purrloin,
+    .liepard,
+    .pansage,
+    .simisage,
+    .pansear,
+    .simisear,
+    .panpour,
+    .simipour,
+    .munna,
+    .musharna,
+    .pidove,
+    .tranquill,
+    .unfezant,
+    .blitzle,
+    .zebstrika,
+    .roggenrola,
+    .boldore,
+    .gigalith,
+    .woobat,
+    .swoobat,
+    .drilbur,
+    .excadrill,
+    .audino,
+    .timburr,
+    .gurdurr,
+    .conkeldurr,
+    .tympole,
+    .palpitoad,
+    .seismitoad,
+    .throh,
+    .sawk,
+    .sewaddle,
+    .swadloon,
+    .leavanny,
+    .venipede,
+    .whirlipede,
+    .scolipede,
+    .cottonee,
+    .whimsicott,
+    .petilil,
+    .lilligant,
+    .basculin,
+    .sandile,
+    .krokorok,
+    .krookodile,
+    .darumaka,
+    .darmanitan,
+    .maractus,
+    .dwebble,
+    .crustle,
+    .scraggy,
+    .scrafty,
+    .sigilyph,
+    .yamask,
+    .cofagrigus,
+    .tirtouga,
+    .carracosta,
+    .archen,
+    .archeops,
+    .trubbish,
+    .garbodor,
+    .zorua,
+    .zoroark,
+    .minccino,
+    .cinccino,
+    .gothita,
+    .gothorita,
+    .gothitelle,
+    .solosis,
+    .duosion,
+    .reuniclus,
+    .ducklett,
+    .swanna,
+    .vanillite,
+    .vanillish,
+    .vanilluxe,
+    .deerling,
+    .sawsbuck,
+    .emolga,
+    .karrablast,
+    .escavalier,
+    .foongus,
+    .amoonguss,
+    .frillish,
+    .jellicent,
+    .alomomola,
+    .joltik,
+    .galvantula,
+    .ferroseed,
+    .ferrothorn,
+    .klink,
+    .klang,
+    .klinklang,
+    .tynamo,
+    .eelektrik,
+    .eelektross,
+    .elgyem,
+    .beheeyem,
+    .litwick,
+    .lampent,
+    .chandelure,
+    .axew,
+    .fraxure,
+    .haxorus,
+    .cubchoo,
+    .beartic,
+    .cryogonal,
+    .shelmet,
+    .accelgor,
+    .stunfisk,
+    .mienfoo,
+    .mienshao,
+    .druddigon,
+    .golett,
+    .golurk,
+    .pawniard,
+    .bisharp,
+    .bouffalant,
+    .rufflet,
+    .braviary,
+    .vullaby,
+    .mandibuzz,
+    .heatmor,
+    .durant,
+    .deino,
+    .zweilous,
+    .hydreigon,
+    .larvesta,
+    .volcarona,
+    .cobalion,
+    .terrakion,
+    .virizion,
+    .tornadus,
+    .thundurus,
+    .reshiram,
+    .zekrom,
+    .landorus,
+    .kyurem,
+    .keldeo,
+    .meloetta,
+    .genesect,
     .meltan,
     .melmetal,
   ]
@@ -2533,6 +3157,162 @@ extension POGOProtos_Enums_PokemonId: SwiftProtobuf._ProtoNameProviding {
     491: .same(proto: "DARKRAI"),
     492: .same(proto: "SHAYMIN"),
     493: .same(proto: "ARCEUS"),
+    494: .same(proto: "VICTINI"),
+    495: .same(proto: "SNIVY"),
+    496: .same(proto: "SERVINE"),
+    497: .same(proto: "SERPERIOR"),
+    498: .same(proto: "TEPIG"),
+    499: .same(proto: "PIGNITE"),
+    500: .same(proto: "EMBOAR"),
+    501: .same(proto: "OSHAWOTT"),
+    502: .same(proto: "DEWOTT"),
+    503: .same(proto: "SAMUROTT"),
+    504: .same(proto: "PATRAT"),
+    505: .same(proto: "WATCHOG"),
+    506: .same(proto: "LILLIPUP"),
+    507: .same(proto: "HERDIER"),
+    508: .same(proto: "STOUTLAND"),
+    509: .same(proto: "PURRLOIN"),
+    510: .same(proto: "LIEPARD"),
+    511: .same(proto: "PANSAGE"),
+    512: .same(proto: "SIMISAGE"),
+    513: .same(proto: "PANSEAR"),
+    514: .same(proto: "SIMISEAR"),
+    515: .same(proto: "PANPOUR"),
+    516: .same(proto: "SIMIPOUR"),
+    517: .same(proto: "MUNNA"),
+    518: .same(proto: "MUSHARNA"),
+    519: .same(proto: "PIDOVE"),
+    520: .same(proto: "TRANQUILL"),
+    521: .same(proto: "UNFEZANT"),
+    522: .same(proto: "BLITZLE"),
+    523: .same(proto: "ZEBSTRIKA"),
+    524: .same(proto: "ROGGENROLA"),
+    525: .same(proto: "BOLDORE"),
+    526: .same(proto: "GIGALITH"),
+    527: .same(proto: "WOOBAT"),
+    528: .same(proto: "SWOOBAT"),
+    529: .same(proto: "DRILBUR"),
+    530: .same(proto: "EXCADRILL"),
+    531: .same(proto: "AUDINO"),
+    532: .same(proto: "TIMBURR"),
+    533: .same(proto: "GURDURR"),
+    534: .same(proto: "CONKELDURR"),
+    535: .same(proto: "TYMPOLE"),
+    536: .same(proto: "PALPITOAD"),
+    537: .same(proto: "SEISMITOAD"),
+    538: .same(proto: "THROH"),
+    539: .same(proto: "SAWK"),
+    540: .same(proto: "SEWADDLE"),
+    541: .same(proto: "SWADLOON"),
+    542: .same(proto: "LEAVANNY"),
+    543: .same(proto: "VENIPEDE"),
+    544: .same(proto: "WHIRLIPEDE"),
+    545: .same(proto: "SCOLIPEDE"),
+    546: .same(proto: "COTTONEE"),
+    547: .same(proto: "WHIMSICOTT"),
+    548: .same(proto: "PETILIL"),
+    549: .same(proto: "LILLIGANT"),
+    550: .same(proto: "BASCULIN"),
+    551: .same(proto: "SANDILE"),
+    552: .same(proto: "KROKOROK"),
+    553: .same(proto: "KROOKODILE"),
+    554: .same(proto: "DARUMAKA"),
+    555: .same(proto: "DARMANITAN"),
+    556: .same(proto: "MARACTUS"),
+    557: .same(proto: "DWEBBLE"),
+    558: .same(proto: "CRUSTLE"),
+    559: .same(proto: "SCRAGGY"),
+    560: .same(proto: "SCRAFTY"),
+    561: .same(proto: "SIGILYPH"),
+    562: .same(proto: "YAMASK"),
+    563: .same(proto: "COFAGRIGUS"),
+    564: .same(proto: "TIRTOUGA"),
+    565: .same(proto: "CARRACOSTA"),
+    566: .same(proto: "ARCHEN"),
+    567: .same(proto: "ARCHEOPS"),
+    568: .same(proto: "TRUBBISH"),
+    569: .same(proto: "GARBODOR"),
+    570: .same(proto: "ZORUA"),
+    571: .same(proto: "ZOROARK"),
+    572: .same(proto: "MINCCINO"),
+    573: .same(proto: "CINCCINO"),
+    574: .same(proto: "GOTHITA"),
+    575: .same(proto: "GOTHORITA"),
+    576: .same(proto: "GOTHITELLE"),
+    577: .same(proto: "SOLOSIS"),
+    578: .same(proto: "DUOSION"),
+    579: .same(proto: "REUNICLUS"),
+    580: .same(proto: "DUCKLETT"),
+    581: .same(proto: "SWANNA"),
+    582: .same(proto: "VANILLITE"),
+    583: .same(proto: "VANILLISH"),
+    584: .same(proto: "VANILLUXE"),
+    585: .same(proto: "DEERLING"),
+    586: .same(proto: "SAWSBUCK"),
+    587: .same(proto: "EMOLGA"),
+    588: .same(proto: "KARRABLAST"),
+    589: .same(proto: "ESCAVALIER"),
+    590: .same(proto: "FOONGUS"),
+    591: .same(proto: "AMOONGUSS"),
+    592: .same(proto: "FRILLISH"),
+    593: .same(proto: "JELLICENT"),
+    594: .same(proto: "ALOMOMOLA"),
+    595: .same(proto: "JOLTIK"),
+    596: .same(proto: "GALVANTULA"),
+    597: .same(proto: "FERROSEED"),
+    598: .same(proto: "FERROTHORN"),
+    599: .same(proto: "KLINK"),
+    600: .same(proto: "KLANG"),
+    601: .same(proto: "KLINKLANG"),
+    602: .same(proto: "TYNAMO"),
+    603: .same(proto: "EELEKTRIK"),
+    604: .same(proto: "EELEKTROSS"),
+    605: .same(proto: "ELGYEM"),
+    606: .same(proto: "BEHEEYEM"),
+    607: .same(proto: "LITWICK"),
+    608: .same(proto: "LAMPENT"),
+    609: .same(proto: "CHANDELURE"),
+    610: .same(proto: "AXEW"),
+    611: .same(proto: "FRAXURE"),
+    612: .same(proto: "HAXORUS"),
+    613: .same(proto: "CUBCHOO"),
+    614: .same(proto: "BEARTIC"),
+    615: .same(proto: "CRYOGONAL"),
+    616: .same(proto: "SHELMET"),
+    617: .same(proto: "ACCELGOR"),
+    618: .same(proto: "STUNFISK"),
+    619: .same(proto: "MIENFOO"),
+    620: .same(proto: "MIENSHAO"),
+    621: .same(proto: "DRUDDIGON"),
+    622: .same(proto: "GOLETT"),
+    623: .same(proto: "GOLURK"),
+    624: .same(proto: "PAWNIARD"),
+    625: .same(proto: "BISHARP"),
+    626: .same(proto: "BOUFFALANT"),
+    627: .same(proto: "RUFFLET"),
+    628: .same(proto: "BRAVIARY"),
+    629: .same(proto: "VULLABY"),
+    630: .same(proto: "MANDIBUZZ"),
+    631: .same(proto: "HEATMOR"),
+    632: .same(proto: "DURANT"),
+    633: .same(proto: "DEINO"),
+    634: .same(proto: "ZWEILOUS"),
+    635: .same(proto: "HYDREIGON"),
+    636: .same(proto: "LARVESTA"),
+    637: .same(proto: "VOLCARONA"),
+    638: .same(proto: "COBALION"),
+    639: .same(proto: "TERRAKION"),
+    640: .same(proto: "VIRIZION"),
+    641: .same(proto: "TORNADUS"),
+    642: .same(proto: "THUNDURUS"),
+    643: .same(proto: "RESHIRAM"),
+    644: .same(proto: "ZEKROM"),
+    645: .same(proto: "LANDORUS"),
+    646: .same(proto: "KYUREM"),
+    647: .same(proto: "KELDEO"),
+    648: .same(proto: "MELOETTA"),
+    649: .same(proto: "GENESECT"),
     808: .same(proto: "MELTAN"),
     809: .same(proto: "MELMETAL"),
   ]

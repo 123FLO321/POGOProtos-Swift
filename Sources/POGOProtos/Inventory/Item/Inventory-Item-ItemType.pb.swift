@@ -41,6 +41,8 @@ public enum POGOProtos_Inventory_Item_ItemType: SwiftProtobuf.Enum {
   case stardustBoost // = 17
   case friendGiftBox // = 18
   case teamChange // = 19
+  case routeMaker // = 20
+  case vsSeekerUpgrade // = 21
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -69,6 +71,8 @@ public enum POGOProtos_Inventory_Item_ItemType: SwiftProtobuf.Enum {
     case 17: self = .stardustBoost
     case 18: self = .friendGiftBox
     case 19: self = .teamChange
+    case 20: self = .routeMaker
+    case 21: self = .vsSeekerUpgrade
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -95,6 +99,8 @@ public enum POGOProtos_Inventory_Item_ItemType: SwiftProtobuf.Enum {
     case .stardustBoost: return 17
     case .friendGiftBox: return 18
     case .teamChange: return 19
+    case .routeMaker: return 20
+    case .vsSeekerUpgrade: return 21
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -126,6 +132,8 @@ extension POGOProtos_Inventory_Item_ItemType: CaseIterable {
     .stardustBoost,
     .friendGiftBox,
     .teamChange,
+    .routeMaker,
+    .vsSeekerUpgrade,
   ]
 }
 
@@ -155,5 +163,7 @@ extension POGOProtos_Inventory_Item_ItemType: SwiftProtobuf._ProtoNameProviding 
     17: .same(proto: "ITEM_TYPE_STARDUST_BOOST"),
     18: .same(proto: "ITEM_TYPE_FRIEND_GIFT_BOX"),
     19: .same(proto: "ITEM_TYPE_TEAM_CHANGE"),
+    20: .same(proto: "ITEM_TYPE_ROUTE_MAKER"),
+    21: .same(proto: "ITEM_TYPE_VS_SEEKER_UPGRADE"),
   ]
 }

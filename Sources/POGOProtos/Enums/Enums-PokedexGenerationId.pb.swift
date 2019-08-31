@@ -25,6 +25,7 @@ public enum POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf.Enum {
   case gen2 // = 1
   case gen3 // = 2
   case gen4 // = 3
+  case gen5 // = 4
   case pokedexGenIDMeltan // = 1001
   case UNRECOGNIZED(Int)
 
@@ -38,6 +39,7 @@ public enum POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf.Enum {
     case 1: self = .gen2
     case 2: self = .gen3
     case 3: self = .gen4
+    case 4: self = .gen5
     case 1001: self = .pokedexGenIDMeltan
     default: self = .UNRECOGNIZED(rawValue)
     }
@@ -49,6 +51,7 @@ public enum POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf.Enum {
     case .gen2: return 1
     case .gen3: return 2
     case .gen4: return 3
+    case .gen5: return 4
     case .pokedexGenIDMeltan: return 1001
     case .UNRECOGNIZED(let i): return i
     }
@@ -65,6 +68,7 @@ extension POGOProtos_Enums_PokedexGenerationId: CaseIterable {
     .gen2,
     .gen3,
     .gen4,
+    .gen5,
     .pokedexGenIDMeltan,
   ]
 }
@@ -79,6 +83,7 @@ extension POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf._ProtoNameProvidin
     1: .same(proto: "GEN2"),
     2: .same(proto: "GEN3"),
     3: .same(proto: "GEN4"),
+    4: .same(proto: "GEN5"),
     1001: .same(proto: "POKEDEX_GEN_ID_MELTAN"),
   ]
 }

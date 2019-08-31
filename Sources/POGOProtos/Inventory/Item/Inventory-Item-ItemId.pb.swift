@@ -66,6 +66,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemDragonScale // = 1104
   case itemUpGrade // = 1105
   case itemGen4EvolutionStone // = 1106
+  case itemGen5EvolutionStone // = 1107
   case itemMoveRerollFastAttack // = 1201
   case itemMoveRerollSpecialAttack // = 1202
   case itemRareCandy // = 1301
@@ -75,6 +76,8 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemStarPiece // = 1404
   case itemFriendGiftBox // = 1405
   case itemTeamChange // = 1406
+  case itemRouteMaker // = 1407
+  case itemVsSeekerUpgrade // = 1408
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -128,6 +131,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 1104: self = .itemDragonScale
     case 1105: self = .itemUpGrade
     case 1106: self = .itemGen4EvolutionStone
+    case 1107: self = .itemGen5EvolutionStone
     case 1201: self = .itemMoveRerollFastAttack
     case 1202: self = .itemMoveRerollSpecialAttack
     case 1301: self = .itemRareCandy
@@ -137,6 +141,8 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 1404: self = .itemStarPiece
     case 1405: self = .itemFriendGiftBox
     case 1406: self = .itemTeamChange
+    case 1407: self = .itemRouteMaker
+    case 1408: self = .itemVsSeekerUpgrade
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -188,6 +194,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemDragonScale: return 1104
     case .itemUpGrade: return 1105
     case .itemGen4EvolutionStone: return 1106
+    case .itemGen5EvolutionStone: return 1107
     case .itemMoveRerollFastAttack: return 1201
     case .itemMoveRerollSpecialAttack: return 1202
     case .itemRareCandy: return 1301
@@ -197,6 +204,8 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemStarPiece: return 1404
     case .itemFriendGiftBox: return 1405
     case .itemTeamChange: return 1406
+    case .itemRouteMaker: return 1407
+    case .itemVsSeekerUpgrade: return 1408
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -253,6 +262,7 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemDragonScale,
     .itemUpGrade,
     .itemGen4EvolutionStone,
+    .itemGen5EvolutionStone,
     .itemMoveRerollFastAttack,
     .itemMoveRerollSpecialAttack,
     .itemRareCandy,
@@ -262,6 +272,8 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemStarPiece,
     .itemFriendGiftBox,
     .itemTeamChange,
+    .itemRouteMaker,
+    .itemVsSeekerUpgrade,
   ]
 }
 
@@ -316,6 +328,7 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     1104: .same(proto: "ITEM_DRAGON_SCALE"),
     1105: .same(proto: "ITEM_UP_GRADE"),
     1106: .same(proto: "ITEM_GEN4_EVOLUTION_STONE"),
+    1107: .same(proto: "ITEM_GEN5_EVOLUTION_STONE"),
     1201: .same(proto: "ITEM_MOVE_REROLL_FAST_ATTACK"),
     1202: .same(proto: "ITEM_MOVE_REROLL_SPECIAL_ATTACK"),
     1301: .same(proto: "ITEM_RARE_CANDY"),
@@ -325,5 +338,7 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     1404: .same(proto: "ITEM_STAR_PIECE"),
     1405: .same(proto: "ITEM_FRIEND_GIFT_BOX"),
     1406: .same(proto: "ITEM_TEAM_CHANGE"),
+    1407: .same(proto: "ITEM_ROUTE_MAKER"),
+    1408: .same(proto: "ITEM_VS_SEEKER_UPGRADE"),
   ]
 }

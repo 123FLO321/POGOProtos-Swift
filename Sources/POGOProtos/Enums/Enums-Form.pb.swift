@@ -156,6 +156,23 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case spinda19 // = 132
   case mewtwoA // = 133
   case mewtwoNormal // = 135
+  case basculinRedStriped // = 136
+  case basculinBlueStriped // = 137
+  case darmanitanStandard // = 138
+  case darmanitanZen // = 139
+  case tornadusIncarnate // = 140
+  case tornadusTherian // = 141
+  case thundurusIncarnate // = 142
+  case thundurusTherian // = 143
+  case landorusIncarnate // = 144
+  case landorusTherian // = 145
+  case kyuremNormal // = 146
+  case kyuremBlack // = 147
+  case kyuremWhite // = 148
+  case keldeoOrdinary // = 149
+  case keldeoResolute // = 150
+  case meloettaAria // = 151
+  case meloettaPirouette // = 152
   case rattataShadow // = 153
   case rattataPurified // = 154
   case raticateShadow // = 155
@@ -328,6 +345,19 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case laprasNormal // = 322
   case laprasShadow // = 323
   case laprasPurified // = 324
+  case deerlingSpring // = 585
+  case deerlingSummer // = 586
+  case deerlingAutumn // = 587
+  case deerlingWinter // = 588
+  case sawsbuckSpring // = 589
+  case sawsbuckSummer // = 590
+  case sawsbuckAutumn // = 591
+  case sawsbuckWinter // = 592
+  case genesectNormal // = 593
+  case genesectShock // = 594
+  case genesectBurn // = 595
+  case genesectChill // = 596
+  case genesectDouse // = 597
   case pikachuNormal // = 598
   case wurmpleNormal // = 600
   case wobbuffetNormal // = 602
@@ -615,10 +645,13 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case hippowdonNormal // = 891
   case hippowdonShadow // = 892
   case hippowdonPurified // = 893
-  case pikachuFall // = 894
-  case squirtleFall // = 895
-  case charmanderFall // = 896
-  case bulbasaurFall // = 897
+  case pikachuFall2019 // = 894
+  case squirtleFall2019 // = 895
+  case charmanderFall2019 // = 896
+  case bulbasaurFall2019 // = 897
+  case pinsirNormal // = 898
+  case pinsirShadow // = 899
+  case pinsirPurified // = 900
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -762,6 +795,23 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 132: self = .spinda19
     case 133: self = .mewtwoA
     case 135: self = .mewtwoNormal
+    case 136: self = .basculinRedStriped
+    case 137: self = .basculinBlueStriped
+    case 138: self = .darmanitanStandard
+    case 139: self = .darmanitanZen
+    case 140: self = .tornadusIncarnate
+    case 141: self = .tornadusTherian
+    case 142: self = .thundurusIncarnate
+    case 143: self = .thundurusTherian
+    case 144: self = .landorusIncarnate
+    case 145: self = .landorusTherian
+    case 146: self = .kyuremNormal
+    case 147: self = .kyuremBlack
+    case 148: self = .kyuremWhite
+    case 149: self = .keldeoOrdinary
+    case 150: self = .keldeoResolute
+    case 151: self = .meloettaAria
+    case 152: self = .meloettaPirouette
     case 153: self = .rattataShadow
     case 154: self = .rattataPurified
     case 155: self = .raticateShadow
@@ -934,6 +984,19 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 322: self = .laprasNormal
     case 323: self = .laprasShadow
     case 324: self = .laprasPurified
+    case 585: self = .deerlingSpring
+    case 586: self = .deerlingSummer
+    case 587: self = .deerlingAutumn
+    case 588: self = .deerlingWinter
+    case 589: self = .sawsbuckSpring
+    case 590: self = .sawsbuckSummer
+    case 591: self = .sawsbuckAutumn
+    case 592: self = .sawsbuckWinter
+    case 593: self = .genesectNormal
+    case 594: self = .genesectShock
+    case 595: self = .genesectBurn
+    case 596: self = .genesectChill
+    case 597: self = .genesectDouse
     case 598: self = .pikachuNormal
     case 600: self = .wurmpleNormal
     case 602: self = .wobbuffetNormal
@@ -1221,10 +1284,13 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 891: self = .hippowdonNormal
     case 892: self = .hippowdonShadow
     case 893: self = .hippowdonPurified
-    case 894: self = .pikachuFall
-    case 895: self = .squirtleFall
-    case 896: self = .charmanderFall
-    case 897: self = .bulbasaurFall
+    case 894: self = .pikachuFall2019
+    case 895: self = .squirtleFall2019
+    case 896: self = .charmanderFall2019
+    case 897: self = .bulbasaurFall2019
+    case 898: self = .pinsirNormal
+    case 899: self = .pinsirShadow
+    case 900: self = .pinsirPurified
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -1366,6 +1432,23 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .spinda19: return 132
     case .mewtwoA: return 133
     case .mewtwoNormal: return 135
+    case .basculinRedStriped: return 136
+    case .basculinBlueStriped: return 137
+    case .darmanitanStandard: return 138
+    case .darmanitanZen: return 139
+    case .tornadusIncarnate: return 140
+    case .tornadusTherian: return 141
+    case .thundurusIncarnate: return 142
+    case .thundurusTherian: return 143
+    case .landorusIncarnate: return 144
+    case .landorusTherian: return 145
+    case .kyuremNormal: return 146
+    case .kyuremBlack: return 147
+    case .kyuremWhite: return 148
+    case .keldeoOrdinary: return 149
+    case .keldeoResolute: return 150
+    case .meloettaAria: return 151
+    case .meloettaPirouette: return 152
     case .rattataShadow: return 153
     case .rattataPurified: return 154
     case .raticateShadow: return 155
@@ -1538,6 +1621,19 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .laprasNormal: return 322
     case .laprasShadow: return 323
     case .laprasPurified: return 324
+    case .deerlingSpring: return 585
+    case .deerlingSummer: return 586
+    case .deerlingAutumn: return 587
+    case .deerlingWinter: return 588
+    case .sawsbuckSpring: return 589
+    case .sawsbuckSummer: return 590
+    case .sawsbuckAutumn: return 591
+    case .sawsbuckWinter: return 592
+    case .genesectNormal: return 593
+    case .genesectShock: return 594
+    case .genesectBurn: return 595
+    case .genesectChill: return 596
+    case .genesectDouse: return 597
     case .pikachuNormal: return 598
     case .wurmpleNormal: return 600
     case .wobbuffetNormal: return 602
@@ -1825,10 +1921,13 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .hippowdonNormal: return 891
     case .hippowdonShadow: return 892
     case .hippowdonPurified: return 893
-    case .pikachuFall: return 894
-    case .squirtleFall: return 895
-    case .charmanderFall: return 896
-    case .bulbasaurFall: return 897
+    case .pikachuFall2019: return 894
+    case .squirtleFall2019: return 895
+    case .charmanderFall2019: return 896
+    case .bulbasaurFall2019: return 897
+    case .pinsirNormal: return 898
+    case .pinsirShadow: return 899
+    case .pinsirPurified: return 900
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1975,6 +2074,23 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .spinda19,
     .mewtwoA,
     .mewtwoNormal,
+    .basculinRedStriped,
+    .basculinBlueStriped,
+    .darmanitanStandard,
+    .darmanitanZen,
+    .tornadusIncarnate,
+    .tornadusTherian,
+    .thundurusIncarnate,
+    .thundurusTherian,
+    .landorusIncarnate,
+    .landorusTherian,
+    .kyuremNormal,
+    .kyuremBlack,
+    .kyuremWhite,
+    .keldeoOrdinary,
+    .keldeoResolute,
+    .meloettaAria,
+    .meloettaPirouette,
     .rattataShadow,
     .rattataPurified,
     .raticateShadow,
@@ -2147,6 +2263,19 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .laprasNormal,
     .laprasShadow,
     .laprasPurified,
+    .deerlingSpring,
+    .deerlingSummer,
+    .deerlingAutumn,
+    .deerlingWinter,
+    .sawsbuckSpring,
+    .sawsbuckSummer,
+    .sawsbuckAutumn,
+    .sawsbuckWinter,
+    .genesectNormal,
+    .genesectShock,
+    .genesectBurn,
+    .genesectChill,
+    .genesectDouse,
     .pikachuNormal,
     .wurmpleNormal,
     .wobbuffetNormal,
@@ -2434,10 +2563,13 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .hippowdonNormal,
     .hippowdonShadow,
     .hippowdonPurified,
-    .pikachuFall,
-    .squirtleFall,
-    .charmanderFall,
-    .bulbasaurFall,
+    .pikachuFall2019,
+    .squirtleFall2019,
+    .charmanderFall2019,
+    .bulbasaurFall2019,
+    .pinsirNormal,
+    .pinsirShadow,
+    .pinsirPurified,
   ]
 }
 
@@ -2582,6 +2714,23 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     132: .same(proto: "SPINDA_19"),
     133: .same(proto: "MEWTWO_A"),
     135: .same(proto: "MEWTWO_NORMAL"),
+    136: .same(proto: "BASCULIN_RED_STRIPED"),
+    137: .same(proto: "BASCULIN_BLUE_STRIPED"),
+    138: .same(proto: "DARMANITAN_STANDARD"),
+    139: .same(proto: "DARMANITAN_ZEN"),
+    140: .same(proto: "TORNADUS_INCARNATE"),
+    141: .same(proto: "TORNADUS_THERIAN"),
+    142: .same(proto: "THUNDURUS_INCARNATE"),
+    143: .same(proto: "THUNDURUS_THERIAN"),
+    144: .same(proto: "LANDORUS_INCARNATE"),
+    145: .same(proto: "LANDORUS_THERIAN"),
+    146: .same(proto: "KYUREM_NORMAL"),
+    147: .same(proto: "KYUREM_BLACK"),
+    148: .same(proto: "KYUREM_WHITE"),
+    149: .same(proto: "KELDEO_ORDINARY"),
+    150: .same(proto: "KELDEO_RESOLUTE"),
+    151: .same(proto: "MELOETTA_ARIA"),
+    152: .same(proto: "MELOETTA_PIROUETTE"),
     153: .same(proto: "RATTATA_SHADOW"),
     154: .same(proto: "RATTATA_PURIFIED"),
     155: .same(proto: "RATICATE_SHADOW"),
@@ -2754,6 +2903,19 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     322: .same(proto: "LAPRAS_NORMAL"),
     323: .same(proto: "LAPRAS_SHADOW"),
     324: .same(proto: "LAPRAS_PURIFIED"),
+    585: .same(proto: "DEERLING_SPRING"),
+    586: .same(proto: "DEERLING_SUMMER"),
+    587: .same(proto: "DEERLING_AUTUMN"),
+    588: .same(proto: "DEERLING_WINTER"),
+    589: .same(proto: "SAWSBUCK_SPRING"),
+    590: .same(proto: "SAWSBUCK_SUMMER"),
+    591: .same(proto: "SAWSBUCK_AUTUMN"),
+    592: .same(proto: "SAWSBUCK_WINTER"),
+    593: .same(proto: "GENESECT_NORMAL"),
+    594: .same(proto: "GENESECT_SHOCK"),
+    595: .same(proto: "GENESECT_BURN"),
+    596: .same(proto: "GENESECT_CHILL"),
+    597: .same(proto: "GENESECT_DOUSE"),
     598: .same(proto: "PIKACHU_NORMAL"),
     600: .same(proto: "WURMPLE_NORMAL"),
     602: .same(proto: "WOBBUFFET_NORMAL"),
@@ -3041,9 +3203,12 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     891: .same(proto: "HIPPOWDON_NORMAL"),
     892: .same(proto: "HIPPOWDON_SHADOW"),
     893: .same(proto: "HIPPOWDON_PURIFIED"),
-    894: .same(proto: "PIKACHU_FALL"),
-    895: .same(proto: "SQUIRTLE_FALL"),
-    896: .same(proto: "CHARMANDER_FALL"),
-    897: .same(proto: "BULBASAUR_FALL"),
+    894: .same(proto: "PIKACHU_FALL_2019"),
+    895: .same(proto: "SQUIRTLE_FALL_2019"),
+    896: .same(proto: "CHARMANDER_FALL_2019"),
+    897: .same(proto: "BULBASAUR_FALL_2019"),
+    898: .same(proto: "PINSIR_NORMAL"),
+    899: .same(proto: "PINSIR_SHADOW"),
+    900: .same(proto: "PINSIR_PURIFIED"),
   ]
 }

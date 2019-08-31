@@ -186,6 +186,11 @@ public struct POGOProtos_Map_Fort_FortData {
     set {_uniqueStorage()._partnerID = newValue}
   }
 
+  public var hasBeacon_p: Bool {
+    get {return _storage._hasBeacon_p}
+    set {_uniqueStorage()._hasBeacon_p = newValue}
+  }
+
   public var challengeQuestCompleted: Bool {
     get {return _storage._challengeQuestCompleted}
     set {_uniqueStorage()._challengeQuestCompleted = newValue}
@@ -346,6 +351,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     26: .standard(proto: "in_event"),
     27: .standard(proto: "banner_url"),
     28: .standard(proto: "partner_id"),
+    29: .standard(proto: "has_beacon"),
     30: .standard(proto: "challenge_quest_completed"),
     31: .standard(proto: "is_ex_raid_eligible"),
     32: .standard(proto: "pokestop_display"),
@@ -380,6 +386,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _inEvent: Bool = false
     var _bannerURL: String = String()
     var _partnerID: String = String()
+    var _hasBeacon_p: Bool = false
     var _challengeQuestCompleted: Bool = false
     var _isExRaidEligible: Bool = false
     var _pokestopDisplay: POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay? = nil
@@ -417,6 +424,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       _inEvent = source._inEvent
       _bannerURL = source._bannerURL
       _partnerID = source._partnerID
+      _hasBeacon_p = source._hasBeacon_p
       _challengeQuestCompleted = source._challengeQuestCompleted
       _isExRaidEligible = source._isExRaidEligible
       _pokestopDisplay = source._pokestopDisplay
@@ -463,6 +471,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
         case 26: try decoder.decodeSingularBoolField(value: &_storage._inEvent)
         case 27: try decoder.decodeSingularStringField(value: &_storage._bannerURL)
         case 28: try decoder.decodeSingularStringField(value: &_storage._partnerID)
+        case 29: try decoder.decodeSingularBoolField(value: &_storage._hasBeacon_p)
         case 30: try decoder.decodeSingularBoolField(value: &_storage._challengeQuestCompleted)
         case 31: try decoder.decodeSingularBoolField(value: &_storage._isExRaidEligible)
         case 32: try decoder.decodeSingularMessageField(value: &_storage._pokestopDisplay)
@@ -558,6 +567,9 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       if !_storage._partnerID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._partnerID, fieldNumber: 28)
       }
+      if _storage._hasBeacon_p != false {
+        try visitor.visitSingularBoolField(value: _storage._hasBeacon_p, fieldNumber: 29)
+      }
       if _storage._challengeQuestCompleted != false {
         try visitor.visitSingularBoolField(value: _storage._challengeQuestCompleted, fieldNumber: 30)
       }
@@ -604,6 +616,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
         if _storage._inEvent != rhs_storage._inEvent {return false}
         if _storage._bannerURL != rhs_storage._bannerURL {return false}
         if _storage._partnerID != rhs_storage._partnerID {return false}
+        if _storage._hasBeacon_p != rhs_storage._hasBeacon_p {return false}
         if _storage._challengeQuestCompleted != rhs_storage._challengeQuestCompleted {return false}
         if _storage._isExRaidEligible != rhs_storage._isExRaidEligible {return false}
         if _storage._pokestopDisplay != rhs_storage._pokestopDisplay {return false}

@@ -26,13 +26,15 @@ public struct POGOProtos_Networking_Requests_Messages_FortSearchMessage {
 
   public var fortID: String = String()
 
-  public var playerLatitude: Double = 0
+  public var playerLatDegrees: Double = 0
 
-  public var playerLongitude: Double = 0
+  public var playerLngDegrees: Double = 0
 
-  public var fortLatitude: Double = 0
+  public var fortLatDegrees: Double = 0
 
-  public var fortLongitude: Double = 0
+  public var fortLngDegrees: Double = 0
+
+  public var beaconScan: [POGOProtos_Data_BeaconScan] = []
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -47,20 +49,22 @@ extension POGOProtos_Networking_Requests_Messages_FortSearchMessage: SwiftProtob
   public static let protoMessageName: String = _protobuf_package + ".FortSearchMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "fort_id"),
-    2: .standard(proto: "player_latitude"),
-    3: .standard(proto: "player_longitude"),
-    4: .standard(proto: "fort_latitude"),
-    5: .standard(proto: "fort_longitude"),
+    2: .standard(proto: "player_lat_degrees"),
+    3: .standard(proto: "player_lng_degrees"),
+    4: .standard(proto: "fort_lat_degrees"),
+    5: .standard(proto: "fort_lng_degrees"),
+    6: .standard(proto: "beacon_scan"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.fortID)
-      case 2: try decoder.decodeSingularDoubleField(value: &self.playerLatitude)
-      case 3: try decoder.decodeSingularDoubleField(value: &self.playerLongitude)
-      case 4: try decoder.decodeSingularDoubleField(value: &self.fortLatitude)
-      case 5: try decoder.decodeSingularDoubleField(value: &self.fortLongitude)
+      case 2: try decoder.decodeSingularDoubleField(value: &self.playerLatDegrees)
+      case 3: try decoder.decodeSingularDoubleField(value: &self.playerLngDegrees)
+      case 4: try decoder.decodeSingularDoubleField(value: &self.fortLatDegrees)
+      case 5: try decoder.decodeSingularDoubleField(value: &self.fortLngDegrees)
+      case 6: try decoder.decodeRepeatedMessageField(value: &self.beaconScan)
       default: break
       }
     }
@@ -70,27 +74,31 @@ extension POGOProtos_Networking_Requests_Messages_FortSearchMessage: SwiftProtob
     if !self.fortID.isEmpty {
       try visitor.visitSingularStringField(value: self.fortID, fieldNumber: 1)
     }
-    if self.playerLatitude != 0 {
-      try visitor.visitSingularDoubleField(value: self.playerLatitude, fieldNumber: 2)
+    if self.playerLatDegrees != 0 {
+      try visitor.visitSingularDoubleField(value: self.playerLatDegrees, fieldNumber: 2)
     }
-    if self.playerLongitude != 0 {
-      try visitor.visitSingularDoubleField(value: self.playerLongitude, fieldNumber: 3)
+    if self.playerLngDegrees != 0 {
+      try visitor.visitSingularDoubleField(value: self.playerLngDegrees, fieldNumber: 3)
     }
-    if self.fortLatitude != 0 {
-      try visitor.visitSingularDoubleField(value: self.fortLatitude, fieldNumber: 4)
+    if self.fortLatDegrees != 0 {
+      try visitor.visitSingularDoubleField(value: self.fortLatDegrees, fieldNumber: 4)
     }
-    if self.fortLongitude != 0 {
-      try visitor.visitSingularDoubleField(value: self.fortLongitude, fieldNumber: 5)
+    if self.fortLngDegrees != 0 {
+      try visitor.visitSingularDoubleField(value: self.fortLngDegrees, fieldNumber: 5)
+    }
+    if !self.beaconScan.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.beaconScan, fieldNumber: 6)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Requests_Messages_FortSearchMessage, rhs: POGOProtos_Networking_Requests_Messages_FortSearchMessage) -> Bool {
     if lhs.fortID != rhs.fortID {return false}
-    if lhs.playerLatitude != rhs.playerLatitude {return false}
-    if lhs.playerLongitude != rhs.playerLongitude {return false}
-    if lhs.fortLatitude != rhs.fortLatitude {return false}
-    if lhs.fortLongitude != rhs.fortLongitude {return false}
+    if lhs.playerLatDegrees != rhs.playerLatDegrees {return false}
+    if lhs.playerLngDegrees != rhs.playerLngDegrees {return false}
+    if lhs.fortLatDegrees != rhs.fortLatDegrees {return false}
+    if lhs.fortLngDegrees != rhs.fortLngDegrees {return false}
+    if lhs.beaconScan != rhs.beaconScan {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

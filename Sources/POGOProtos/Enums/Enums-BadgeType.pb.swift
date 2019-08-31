@@ -77,6 +77,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeUltraLeague // = 53
   case badgeMasterLeague // = 54
   case badgePhotobomb // = 55
+  case badgePokedexEntriesGen5 // = 56
   case badgePokemonPurified // = 57
   case badgeRocketGruntsDefeated // = 58
   case badgeEventMin // = 2000
@@ -235,6 +236,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 53: self = .badgeUltraLeague
     case 54: self = .badgeMasterLeague
     case 55: self = .badgePhotobomb
+    case 56: self = .badgePokedexEntriesGen5
     case 57: self = .badgePokemonPurified
     case 58: self = .badgeRocketGruntsDefeated
     case 2000: self = .badgeEventMin
@@ -391,6 +393,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeUltraLeague: return 53
     case .badgeMasterLeague: return 54
     case .badgePhotobomb: return 55
+    case .badgePokedexEntriesGen5: return 56
     case .badgePokemonPurified: return 57
     case .badgeRocketGruntsDefeated: return 58
     case .badgeEventMin: return 2000
@@ -552,6 +555,7 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeUltraLeague,
     .badgeMasterLeague,
     .badgePhotobomb,
+    .badgePokedexEntriesGen5,
     .badgePokemonPurified,
     .badgeRocketGruntsDefeated,
     .badgeEventMin,
@@ -711,6 +715,7 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     53: .same(proto: "BADGE_ULTRA_LEAGUE"),
     54: .same(proto: "BADGE_MASTER_LEAGUE"),
     55: .same(proto: "BADGE_PHOTOBOMB"),
+    56: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN5"),
     57: .same(proto: "BADGE_POKEMON_PURIFIED"),
     58: .same(proto: "BADGE_ROCKET_GRUNTS_DEFEATED"),
     2000: .same(proto: "BADGE_EVENT_MIN"),

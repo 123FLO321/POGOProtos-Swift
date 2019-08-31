@@ -46,6 +46,8 @@ public struct POGOProtos_Settings_Master_Pokemon_EvolutionBranch {
 
   public var priority: Int32 = 0
 
+  public var noCandyCostViaTrade: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -69,6 +71,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     10: .standard(proto: "only_daytime"),
     11: .standard(proto: "only_nighttime"),
     12: .same(proto: "priority"),
+    13: .standard(proto: "no_candy_cost_via_trade"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -85,6 +88,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
       case 10: try decoder.decodeSingularBoolField(value: &self.onlyDaytime)
       case 11: try decoder.decodeSingularBoolField(value: &self.onlyNighttime)
       case 12: try decoder.decodeSingularInt32Field(value: &self.priority)
+      case 13: try decoder.decodeSingularBoolField(value: &self.noCandyCostViaTrade)
       default: break
       }
     }
@@ -124,6 +128,9 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     if self.priority != 0 {
       try visitor.visitSingularInt32Field(value: self.priority, fieldNumber: 12)
     }
+    if self.noCandyCostViaTrade != false {
+      try visitor.visitSingularBoolField(value: self.noCandyCostViaTrade, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -139,6 +146,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     if lhs.onlyDaytime != rhs.onlyDaytime {return false}
     if lhs.onlyNighttime != rhs.onlyNighttime {return false}
     if lhs.priority != rhs.priority {return false}
+    if lhs.noCandyCostViaTrade != rhs.noCandyCostViaTrade {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
