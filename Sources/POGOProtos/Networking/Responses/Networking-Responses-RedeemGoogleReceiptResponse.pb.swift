@@ -26,7 +26,7 @@ public struct POGOProtos_Networking_Responses_RedeemGoogleReceiptResponse {
 
   public var result: POGOProtos_Networking_Responses_RedeemGoogleReceiptResponse.Status = .unset
 
-  public var purchaseID: String = String()
+  public var transactionToken: String = String()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -85,14 +85,14 @@ extension POGOProtos_Networking_Responses_RedeemGoogleReceiptResponse: SwiftProt
   public static let protoMessageName: String = _protobuf_package + ".RedeemGoogleReceiptResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
-    2: .standard(proto: "purchase_id"),
+    2: .standard(proto: "transaction_token"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
-      case 2: try decoder.decodeSingularStringField(value: &self.purchaseID)
+      case 2: try decoder.decodeSingularStringField(value: &self.transactionToken)
       default: break
       }
     }
@@ -102,15 +102,15 @@ extension POGOProtos_Networking_Responses_RedeemGoogleReceiptResponse: SwiftProt
     if self.result != .unset {
       try visitor.visitSingularEnumField(value: self.result, fieldNumber: 1)
     }
-    if !self.purchaseID.isEmpty {
-      try visitor.visitSingularStringField(value: self.purchaseID, fieldNumber: 2)
+    if !self.transactionToken.isEmpty {
+      try visitor.visitSingularStringField(value: self.transactionToken, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Responses_RedeemGoogleReceiptResponse, rhs: POGOProtos_Networking_Responses_RedeemGoogleReceiptResponse) -> Bool {
     if lhs.result != rhs.result {return false}
-    if lhs.purchaseID != rhs.purchaseID {return false}
+    if lhs.transactionToken != rhs.transactionToken {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

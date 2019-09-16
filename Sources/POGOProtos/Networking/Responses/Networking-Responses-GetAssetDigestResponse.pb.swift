@@ -26,7 +26,7 @@ public struct POGOProtos_Networking_Responses_GetAssetDigestResponse {
 
   public var digest: [POGOProtos_Networking_Responses_GetAssetDigestResponse.AssetDigestEntry] = []
 
-  public var timestampMs: UInt64 = 0
+  public var timestamp: UInt64 = 0
 
   public var result: POGOProtos_Networking_Responses_GetAssetDigestResponse.Result = .unset
 
@@ -115,7 +115,7 @@ extension POGOProtos_Networking_Responses_GetAssetDigestResponse: SwiftProtobuf.
   public static let protoMessageName: String = _protobuf_package + ".GetAssetDigestResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "digest"),
-    2: .standard(proto: "timestamp_ms"),
+    2: .same(proto: "timestamp"),
     3: .same(proto: "result"),
     4: .standard(proto: "page_offset"),
   ]
@@ -124,7 +124,7 @@ extension POGOProtos_Networking_Responses_GetAssetDigestResponse: SwiftProtobuf.
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.digest)
-      case 2: try decoder.decodeSingularUInt64Field(value: &self.timestampMs)
+      case 2: try decoder.decodeSingularFixed64Field(value: &self.timestamp)
       case 3: try decoder.decodeSingularEnumField(value: &self.result)
       case 4: try decoder.decodeSingularInt32Field(value: &self.pageOffset)
       default: break
@@ -136,8 +136,8 @@ extension POGOProtos_Networking_Responses_GetAssetDigestResponse: SwiftProtobuf.
     if !self.digest.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.digest, fieldNumber: 1)
     }
-    if self.timestampMs != 0 {
-      try visitor.visitSingularUInt64Field(value: self.timestampMs, fieldNumber: 2)
+    if self.timestamp != 0 {
+      try visitor.visitSingularFixed64Field(value: self.timestamp, fieldNumber: 2)
     }
     if self.result != .unset {
       try visitor.visitSingularEnumField(value: self.result, fieldNumber: 3)
@@ -150,7 +150,7 @@ extension POGOProtos_Networking_Responses_GetAssetDigestResponse: SwiftProtobuf.
 
   public static func ==(lhs: POGOProtos_Networking_Responses_GetAssetDigestResponse, rhs: POGOProtos_Networking_Responses_GetAssetDigestResponse) -> Bool {
     if lhs.digest != rhs.digest {return false}
-    if lhs.timestampMs != rhs.timestampMs {return false}
+    if lhs.timestamp != rhs.timestamp {return false}
     if lhs.result != rhs.result {return false}
     if lhs.pageOffset != rhs.pageOffset {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

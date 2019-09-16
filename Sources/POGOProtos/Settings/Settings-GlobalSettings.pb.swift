@@ -368,24 +368,6 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `kangarooSettings`. Subsequent reads from it will return its default value.
   public mutating func clearKangarooSettings() {_uniqueStorage()._kangarooSettings = nil}
 
-  public var routeSettings: POGOProtos_Settings_RouteGlobalSettings {
-    get {return _storage._routeSettings ?? POGOProtos_Settings_RouteGlobalSettings()}
-    set {_uniqueStorage()._routeSettings = newValue}
-  }
-  /// Returns true if `routeSettings` has been explicitly set.
-  public var hasRouteSettings: Bool {return _storage._routeSettings != nil}
-  /// Clears the value of `routeSettings`. Subsequent reads from it will return its default value.
-  public mutating func clearRouteSettings() {_uniqueStorage()._routeSettings = nil}
-
-  public var buddySettings: POGOProtos_Settings_BuddyGlobalSettings {
-    get {return _storage._buddySettings ?? POGOProtos_Settings_BuddyGlobalSettings()}
-    set {_uniqueStorage()._buddySettings = newValue}
-  }
-  /// Returns true if `buddySettings` has been explicitly set.
-  public var hasBuddySettings: Bool {return _storage._buddySettings != nil}
-  /// Clears the value of `buddySettings`. Subsequent reads from it will return its default value.
-  public mutating func clearBuddySettings() {_uniqueStorage()._buddySettings = nil}
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -440,8 +422,6 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     39: .standard(proto: "incident_settings"),
     40: .standard(proto: "koala_settings"),
     41: .standard(proto: "kangaroo_settings"),
-    42: .standard(proto: "route_settings"),
-    43: .standard(proto: "buddy_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -485,8 +465,6 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _incidentSettings: POGOProtos_Settings_IncidentGlobalSettings? = nil
     var _koalaSettings: POGOProtos_Settings_KoalaSettings? = nil
     var _kangarooSettings: POGOProtos_Settings_KangarooSettings? = nil
-    var _routeSettings: POGOProtos_Settings_RouteGlobalSettings? = nil
-    var _buddySettings: POGOProtos_Settings_BuddyGlobalSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -533,8 +511,6 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _incidentSettings = source._incidentSettings
       _koalaSettings = source._koalaSettings
       _kangarooSettings = source._kangarooSettings
-      _routeSettings = source._routeSettings
-      _buddySettings = source._buddySettings
     }
   }
 
@@ -590,8 +566,6 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 39: try decoder.decodeSingularMessageField(value: &_storage._incidentSettings)
         case 40: try decoder.decodeSingularMessageField(value: &_storage._koalaSettings)
         case 41: try decoder.decodeSingularMessageField(value: &_storage._kangarooSettings)
-        case 42: try decoder.decodeSingularMessageField(value: &_storage._routeSettings)
-        case 43: try decoder.decodeSingularMessageField(value: &_storage._buddySettings)
         default: break
         }
       }
@@ -720,12 +694,6 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._kangarooSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
       }
-      if let v = _storage._routeSettings {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 42)
-      }
-      if let v = _storage._buddySettings {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 43)
-      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -775,8 +743,6 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._incidentSettings != rhs_storage._incidentSettings {return false}
         if _storage._koalaSettings != rhs_storage._koalaSettings {return false}
         if _storage._kangarooSettings != rhs_storage._kangarooSettings {return false}
-        if _storage._routeSettings != rhs_storage._routeSettings {return false}
-        if _storage._buddySettings != rhs_storage._buddySettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

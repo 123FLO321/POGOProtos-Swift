@@ -108,7 +108,7 @@ extension POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry.RpcSocketResponse
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt64Field(value: &self.requestID)
+      case 1: try decoder.decodeSingularFixed64Field(value: &self.requestID)
       case 2: try decoder.decodeSingularStringField(value: &self.probeID)
       case 3: try decoder.decodeSingularFloatField(value: &self.responseTime)
       case 4: try decoder.decodeSingularBoolField(value: &self.sideChannel)
@@ -121,7 +121,7 @@ extension POGOProtos_Data_Telemetry_RpcSocketResponseTelemetry.RpcSocketResponse
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.requestID != 0 {
-      try visitor.visitSingularUInt64Field(value: self.requestID, fieldNumber: 1)
+      try visitor.visitSingularFixed64Field(value: self.requestID, fieldNumber: 1)
     }
     if !self.probeID.isEmpty {
       try visitor.visitSingularStringField(value: self.probeID, fieldNumber: 2)

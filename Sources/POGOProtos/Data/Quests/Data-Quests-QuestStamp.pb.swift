@@ -92,7 +92,7 @@ extension POGOProtos_Data_Quests_QuestStamp: SwiftProtobuf.Message, SwiftProtobu
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.context)
-      case 2: try decoder.decodeSingularUInt64Field(value: &self.timestampMs)
+      case 2: try decoder.decodeSingularFixed64Field(value: &self.timestampMs)
       default: break
       }
     }
@@ -103,7 +103,7 @@ extension POGOProtos_Data_Quests_QuestStamp: SwiftProtobuf.Message, SwiftProtobu
       try visitor.visitSingularEnumField(value: self.context, fieldNumber: 1)
     }
     if self.timestampMs != 0 {
-      try visitor.visitSingularUInt64Field(value: self.timestampMs, fieldNumber: 2)
+      try visitor.visitSingularFixed64Field(value: self.timestampMs, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

@@ -183,22 +183,6 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .invasionVictory(newValue)}
   }
 
-  public var vsSeekerSet: POGOProtos_Data_Logs_VsSeekerSetLogEntry {
-    get {
-      if case .vsSeekerSet(let v)? = _storage._action {return v}
-      return POGOProtos_Data_Logs_VsSeekerSetLogEntry()
-    }
-    set {_uniqueStorage()._action = .vsSeekerSet(newValue)}
-  }
-
-  public var vsSeekerCompleteSeason: POGOProtos_Data_Logs_VsSeekerCompleteSeasonLogEntry {
-    get {
-      if case .vsSeekerCompleteSeason(let v)? = _storage._action {return v}
-      return POGOProtos_Data_Logs_VsSeekerCompleteSeasonLogEntry()
-    }
-    set {_uniqueStorage()._action = .vsSeekerCompleteSeason(newValue)}
-  }
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Action: Equatable {
@@ -220,8 +204,6 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     case combat(POGOProtos_Data_Logs_CombatLogEntry)
     case purifyPokemon(POGOProtos_Data_Logs_PurifyPokemonLogEntry)
     case invasionVictory(POGOProtos_Data_Logs_InvasionVictoryLogEntry)
-    case vsSeekerSet(POGOProtos_Data_Logs_VsSeekerSetLogEntry)
-    case vsSeekerCompleteSeason(POGOProtos_Data_Logs_VsSeekerCompleteSeasonLogEntry)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action, rhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action) -> Bool {
@@ -244,8 +226,6 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
       case (.combat(let l), .combat(let r)): return l == r
       case (.purifyPokemon(let l), .purifyPokemon(let r)): return l == r
       case (.invasionVictory(let l), .invasionVictory(let r)): return l == r
-      case (.vsSeekerSet(let l), .vsSeekerSet(let r)): return l == r
-      case (.vsSeekerCompleteSeason(let l), .vsSeekerCompleteSeason(let r)): return l == r
       default: return false
       }
     }
@@ -284,8 +264,6 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
     18: .same(proto: "combat"),
     19: .standard(proto: "purify_pokemon"),
     20: .standard(proto: "invasion_victory"),
-    21: .standard(proto: "vs_seeker_set"),
-    22: .standard(proto: "vs_seeker_complete_season"),
   ]
 
   fileprivate class _StorageClass {
@@ -462,22 +440,6 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._action = .invasionVictory(v)}
-        case 21:
-          var v: POGOProtos_Data_Logs_VsSeekerSetLogEntry?
-          if let current = _storage._action {
-            try decoder.handleConflictingOneOf()
-            if case .vsSeekerSet(let m) = current {v = m}
-          }
-          try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._action = .vsSeekerSet(v)}
-        case 22:
-          var v: POGOProtos_Data_Logs_VsSeekerCompleteSeasonLogEntry?
-          if let current = _storage._action {
-            try decoder.handleConflictingOneOf()
-            if case .vsSeekerCompleteSeason(let m) = current {v = m}
-          }
-          try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._action = .vsSeekerCompleteSeason(v)}
         default: break
         }
       }
@@ -529,10 +491,6 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
         try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
       case .invasionVictory(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 20)
-      case .vsSeekerSet(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
-      case .vsSeekerCompleteSeason(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
       case nil: break
       }
     }

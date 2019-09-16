@@ -51,8 +51,6 @@ public struct POGOProtos_Map_MapCell {
   /// Pokemon farther away than 2 steps, but still in the area.
   public var nearbyPokemons: [POGOProtos_Map_Pokemon_NearbyPokemon] = []
 
-  public var eventMapObjects: [POGOProtos_Map_EventMapObject] = []
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -76,7 +74,6 @@ extension POGOProtos_Map_MapCell: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     5: .standard(proto: "wild_pokemons"),
     10: .standard(proto: "catchable_pokemons"),
     11: .standard(proto: "nearby_pokemons"),
-    12: .standard(proto: "event_map_objects"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -93,7 +90,6 @@ extension POGOProtos_Map_MapCell: SwiftProtobuf.Message, SwiftProtobuf._MessageI
       case 9: try decoder.decodeRepeatedMessageField(value: &self.decimatedSpawnPoints)
       case 10: try decoder.decodeRepeatedMessageField(value: &self.catchablePokemons)
       case 11: try decoder.decodeRepeatedMessageField(value: &self.nearbyPokemons)
-      case 12: try decoder.decodeRepeatedMessageField(value: &self.eventMapObjects)
       default: break
       }
     }
@@ -133,9 +129,6 @@ extension POGOProtos_Map_MapCell: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if !self.nearbyPokemons.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.nearbyPokemons, fieldNumber: 11)
     }
-    if !self.eventMapObjects.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.eventMapObjects, fieldNumber: 12)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -151,7 +144,6 @@ extension POGOProtos_Map_MapCell: SwiftProtobuf.Message, SwiftProtobuf._MessageI
     if lhs.wildPokemons != rhs.wildPokemons {return false}
     if lhs.catchablePokemons != rhs.catchablePokemons {return false}
     if lhs.nearbyPokemons != rhs.nearbyPokemons {return false}
-    if lhs.eventMapObjects != rhs.eventMapObjects {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

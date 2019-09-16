@@ -24,9 +24,9 @@ public struct POGOProtos_Networking_Requests_Messages_QuestEncounterMessage {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var encounterID: UInt64 = 0
+  public var pokemonID: UInt64 = 0
 
-  public var spawnPointID: String = String()
+  public var questID: String = String()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -40,33 +40,33 @@ fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
 extension POGOProtos_Networking_Requests_Messages_QuestEncounterMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".QuestEncounterMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "encounter_id"),
-    2: .standard(proto: "spawn_point_id"),
+    1: .standard(proto: "pokemon_id"),
+    2: .standard(proto: "quest_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularFixed64Field(value: &self.encounterID)
-      case 2: try decoder.decodeSingularStringField(value: &self.spawnPointID)
+      case 1: try decoder.decodeSingularFixed64Field(value: &self.pokemonID)
+      case 2: try decoder.decodeSingularStringField(value: &self.questID)
       default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.encounterID != 0 {
-      try visitor.visitSingularFixed64Field(value: self.encounterID, fieldNumber: 1)
+    if self.pokemonID != 0 {
+      try visitor.visitSingularFixed64Field(value: self.pokemonID, fieldNumber: 1)
     }
-    if !self.spawnPointID.isEmpty {
-      try visitor.visitSingularStringField(value: self.spawnPointID, fieldNumber: 2)
+    if !self.questID.isEmpty {
+      try visitor.visitSingularStringField(value: self.questID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Requests_Messages_QuestEncounterMessage, rhs: POGOProtos_Networking_Requests_Messages_QuestEncounterMessage) -> Bool {
-    if lhs.encounterID != rhs.encounterID {return false}
-    if lhs.spawnPointID != rhs.spawnPointID {return false}
+    if lhs.pokemonID != rhs.pokemonID {return false}
+    if lhs.questID != rhs.questID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -24,35 +24,15 @@ public struct POGOProtos_Data_BuddyPokemon {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var id: UInt64 {
-    get {return _storage._id}
-    set {_uniqueStorage()._id = newValue}
-  }
+  public var buddyPokemonID: UInt64 = 0
 
-  public var startKmWalked: Double {
-    get {return _storage._startKmWalked}
-    set {_uniqueStorage()._startKmWalked = newValue}
-  }
+  public var startKmWalked: Double = 0
 
-  public var lastKmAwarded: Double {
-    get {return _storage._lastKmAwarded}
-    set {_uniqueStorage()._lastKmAwarded = newValue}
-  }
-
-  public var dailyBuddySwaps: POGOProtos_Data_Quests_Quest.DailyCounter {
-    get {return _storage._dailyBuddySwaps ?? POGOProtos_Data_Quests_Quest.DailyCounter()}
-    set {_uniqueStorage()._dailyBuddySwaps = newValue}
-  }
-  /// Returns true if `dailyBuddySwaps` has been explicitly set.
-  public var hasDailyBuddySwaps: Bool {return _storage._dailyBuddySwaps != nil}
-  /// Clears the value of `dailyBuddySwaps`. Subsequent reads from it will return its default value.
-  public mutating func clearDailyBuddySwaps() {_uniqueStorage()._dailyBuddySwaps = nil}
+  public var lastKmAwarded: Double = 0
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
-
-  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -62,83 +42,39 @@ fileprivate let _protobuf_package = "POGOProtos.Data"
 extension POGOProtos_Data_BuddyPokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".BuddyPokemon"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "id"),
+    1: .standard(proto: "buddy_pokemon_id"),
     2: .standard(proto: "start_km_walked"),
     3: .standard(proto: "last_km_awarded"),
-    4: .standard(proto: "daily_buddy_swaps"),
   ]
 
-  fileprivate class _StorageClass {
-    var _id: UInt64 = 0
-    var _startKmWalked: Double = 0
-    var _lastKmAwarded: Double = 0
-    var _dailyBuddySwaps: POGOProtos_Data_Quests_Quest.DailyCounter? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _id = source._id
-      _startKmWalked = source._startKmWalked
-      _lastKmAwarded = source._lastKmAwarded
-      _dailyBuddySwaps = source._dailyBuddySwaps
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularFixed64Field(value: &_storage._id)
-        case 2: try decoder.decodeSingularDoubleField(value: &_storage._startKmWalked)
-        case 3: try decoder.decodeSingularDoubleField(value: &_storage._lastKmAwarded)
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._dailyBuddySwaps)
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularFixed64Field(value: &self.buddyPokemonID)
+      case 2: try decoder.decodeSingularDoubleField(value: &self.startKmWalked)
+      case 3: try decoder.decodeSingularDoubleField(value: &self.lastKmAwarded)
+      default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._id != 0 {
-        try visitor.visitSingularFixed64Field(value: _storage._id, fieldNumber: 1)
-      }
-      if _storage._startKmWalked != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._startKmWalked, fieldNumber: 2)
-      }
-      if _storage._lastKmAwarded != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._lastKmAwarded, fieldNumber: 3)
-      }
-      if let v = _storage._dailyBuddySwaps {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
+    if self.buddyPokemonID != 0 {
+      try visitor.visitSingularFixed64Field(value: self.buddyPokemonID, fieldNumber: 1)
+    }
+    if self.startKmWalked != 0 {
+      try visitor.visitSingularDoubleField(value: self.startKmWalked, fieldNumber: 2)
+    }
+    if self.lastKmAwarded != 0 {
+      try visitor.visitSingularDoubleField(value: self.lastKmAwarded, fieldNumber: 3)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_BuddyPokemon, rhs: POGOProtos_Data_BuddyPokemon) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._id != rhs_storage._id {return false}
-        if _storage._startKmWalked != rhs_storage._startKmWalked {return false}
-        if _storage._lastKmAwarded != rhs_storage._lastKmAwarded {return false}
-        if _storage._dailyBuddySwaps != rhs_storage._dailyBuddySwaps {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs.buddyPokemonID != rhs.buddyPokemonID {return false}
+    if lhs.startKmWalked != rhs.startKmWalked {return false}
+    if lhs.lastKmAwarded != rhs.lastKmAwarded {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

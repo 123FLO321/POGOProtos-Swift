@@ -28,10 +28,6 @@ public struct POGOProtos_Settings_Master_Item_FortModifierAttributes {
 
   public var troyDiskNumPokemonSpawned: Int32 = 0
 
-  public var spawnTable: [POGOProtos_Settings_Master_Item_IncenseAttributes.SpawnTablePokemon] = []
-
-  public var spawnTableProbability: Float = 0
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -46,8 +42,6 @@ extension POGOProtos_Settings_Master_Item_FortModifierAttributes: SwiftProtobuf.
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "modifier_lifetime_seconds"),
     2: .standard(proto: "troy_disk_num_pokemon_spawned"),
-    3: .standard(proto: "spawn_table"),
-    4: .standard(proto: "spawn_table_probability"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -55,8 +49,6 @@ extension POGOProtos_Settings_Master_Item_FortModifierAttributes: SwiftProtobuf.
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.modifierLifetimeSeconds)
       case 2: try decoder.decodeSingularInt32Field(value: &self.troyDiskNumPokemonSpawned)
-      case 3: try decoder.decodeRepeatedMessageField(value: &self.spawnTable)
-      case 4: try decoder.decodeSingularFloatField(value: &self.spawnTableProbability)
       default: break
       }
     }
@@ -69,20 +61,12 @@ extension POGOProtos_Settings_Master_Item_FortModifierAttributes: SwiftProtobuf.
     if self.troyDiskNumPokemonSpawned != 0 {
       try visitor.visitSingularInt32Field(value: self.troyDiskNumPokemonSpawned, fieldNumber: 2)
     }
-    if !self.spawnTable.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.spawnTable, fieldNumber: 3)
-    }
-    if self.spawnTableProbability != 0 {
-      try visitor.visitSingularFloatField(value: self.spawnTableProbability, fieldNumber: 4)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_Master_Item_FortModifierAttributes, rhs: POGOProtos_Settings_Master_Item_FortModifierAttributes) -> Bool {
     if lhs.modifierLifetimeSeconds != rhs.modifierLifetimeSeconds {return false}
     if lhs.troyDiskNumPokemonSpawned != rhs.troyDiskNumPokemonSpawned {return false}
-    if lhs.spawnTable != rhs.spawnTable {return false}
-    if lhs.spawnTableProbability != rhs.spawnTableProbability {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

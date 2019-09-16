@@ -29,9 +29,9 @@ public struct POGOProtos_Data_Logs_BuddyPokemonLogEntry {
     set {_uniqueStorage()._result = newValue}
   }
 
-  public var pokemonID: POGOProtos_Enums_PokemonId {
-    get {return _storage._pokemonID}
-    set {_uniqueStorage()._pokemonID = newValue}
+  public var pokemonType: POGOProtos_Enums_PokemonId {
+    get {return _storage._pokemonType}
+    set {_uniqueStorage()._pokemonType = newValue}
   }
 
   public var amount: Int32 {
@@ -48,9 +48,9 @@ public struct POGOProtos_Data_Logs_BuddyPokemonLogEntry {
   /// Clears the value of `pokemonDisplay`. Subsequent reads from it will return its default value.
   public mutating func clearPokemonDisplay() {_uniqueStorage()._pokemonDisplay = nil}
 
-  public var pokemon: UInt64 {
-    get {return _storage._pokemon}
-    set {_uniqueStorage()._pokemon = newValue}
+  public var pokemonID: UInt64 {
+    get {return _storage._pokemonID}
+    set {_uniqueStorage()._pokemonID = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -108,18 +108,18 @@ extension POGOProtos_Data_Logs_BuddyPokemonLogEntry: SwiftProtobuf.Message, Swif
   public static let protoMessageName: String = _protobuf_package + ".BuddyPokemonLogEntry"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
-    2: .standard(proto: "pokemon_id"),
+    2: .standard(proto: "pokemon_type"),
     3: .same(proto: "amount"),
     4: .standard(proto: "pokemon_display"),
-    5: .same(proto: "pokemon"),
+    5: .standard(proto: "pokemon_id"),
   ]
 
   fileprivate class _StorageClass {
     var _result: POGOProtos_Data_Logs_BuddyPokemonLogEntry.Result = .unset
-    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _pokemonType: POGOProtos_Enums_PokemonId = .missingno
     var _amount: Int32 = 0
     var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
-    var _pokemon: UInt64 = 0
+    var _pokemonID: UInt64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -127,10 +127,10 @@ extension POGOProtos_Data_Logs_BuddyPokemonLogEntry: SwiftProtobuf.Message, Swif
 
     init(copying source: _StorageClass) {
       _result = source._result
-      _pokemonID = source._pokemonID
+      _pokemonType = source._pokemonType
       _amount = source._amount
       _pokemonDisplay = source._pokemonDisplay
-      _pokemon = source._pokemon
+      _pokemonID = source._pokemonID
     }
   }
 
@@ -147,10 +147,10 @@ extension POGOProtos_Data_Logs_BuddyPokemonLogEntry: SwiftProtobuf.Message, Swif
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._result)
-        case 2: try decoder.decodeSingularEnumField(value: &_storage._pokemonID)
+        case 2: try decoder.decodeSingularEnumField(value: &_storage._pokemonType)
         case 3: try decoder.decodeSingularInt32Field(value: &_storage._amount)
         case 4: try decoder.decodeSingularMessageField(value: &_storage._pokemonDisplay)
-        case 5: try decoder.decodeSingularFixed64Field(value: &_storage._pokemon)
+        case 5: try decoder.decodeSingularFixed64Field(value: &_storage._pokemonID)
         default: break
         }
       }
@@ -162,8 +162,8 @@ extension POGOProtos_Data_Logs_BuddyPokemonLogEntry: SwiftProtobuf.Message, Swif
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
       }
-      if _storage._pokemonID != .missingno {
-        try visitor.visitSingularEnumField(value: _storage._pokemonID, fieldNumber: 2)
+      if _storage._pokemonType != .missingno {
+        try visitor.visitSingularEnumField(value: _storage._pokemonType, fieldNumber: 2)
       }
       if _storage._amount != 0 {
         try visitor.visitSingularInt32Field(value: _storage._amount, fieldNumber: 3)
@@ -171,8 +171,8 @@ extension POGOProtos_Data_Logs_BuddyPokemonLogEntry: SwiftProtobuf.Message, Swif
       if let v = _storage._pokemonDisplay {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
       }
-      if _storage._pokemon != 0 {
-        try visitor.visitSingularFixed64Field(value: _storage._pokemon, fieldNumber: 5)
+      if _storage._pokemonID != 0 {
+        try visitor.visitSingularFixed64Field(value: _storage._pokemonID, fieldNumber: 5)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -184,10 +184,10 @@ extension POGOProtos_Data_Logs_BuddyPokemonLogEntry: SwiftProtobuf.Message, Swif
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._result != rhs_storage._result {return false}
-        if _storage._pokemonID != rhs_storage._pokemonID {return false}
+        if _storage._pokemonType != rhs_storage._pokemonType {return false}
         if _storage._amount != rhs_storage._amount {return false}
         if _storage._pokemonDisplay != rhs_storage._pokemonDisplay {return false}
-        if _storage._pokemon != rhs_storage._pokemon {return false}
+        if _storage._pokemonID != rhs_storage._pokemonID {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -29,9 +29,9 @@ public struct POGOProtos_Data_Logs_CatchPokemonLogEntry {
     set {_uniqueStorage()._result = newValue}
   }
 
-  public var pokemonID: POGOProtos_Enums_PokemonId {
-    get {return _storage._pokemonID}
-    set {_uniqueStorage()._pokemonID = newValue}
+  public var pokedexNumber: Int32 {
+    get {return _storage._pokedexNumber}
+    set {_uniqueStorage()._pokedexNumber = newValue}
   }
 
   public var combatPoints: Int32 {
@@ -39,9 +39,9 @@ public struct POGOProtos_Data_Logs_CatchPokemonLogEntry {
     set {_uniqueStorage()._combatPoints = newValue}
   }
 
-  public var pokemonDataID: UInt64 {
-    get {return _storage._pokemonDataID}
-    set {_uniqueStorage()._pokemonDataID = newValue}
+  public var pokemonID: UInt64 {
+    get {return _storage._pokemonID}
+    set {_uniqueStorage()._pokemonID = newValue}
   }
 
   public var pokemonDisplay: POGOProtos_Data_PokemonDisplay {
@@ -116,17 +116,17 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
   public static let protoMessageName: String = _protobuf_package + ".CatchPokemonLogEntry"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
-    2: .standard(proto: "pokemon_id"),
+    2: .standard(proto: "pokedex_number"),
     3: .standard(proto: "combat_points"),
-    4: .standard(proto: "pokemon_data_id"),
+    4: .standard(proto: "pokemon_id"),
     5: .standard(proto: "pokemon_display"),
   ]
 
   fileprivate class _StorageClass {
     var _result: POGOProtos_Data_Logs_CatchPokemonLogEntry.Result = .unset
-    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _pokedexNumber: Int32 = 0
     var _combatPoints: Int32 = 0
-    var _pokemonDataID: UInt64 = 0
+    var _pokemonID: UInt64 = 0
     var _pokemonDisplay: POGOProtos_Data_PokemonDisplay? = nil
 
     static let defaultInstance = _StorageClass()
@@ -135,9 +135,9 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
 
     init(copying source: _StorageClass) {
       _result = source._result
-      _pokemonID = source._pokemonID
+      _pokedexNumber = source._pokedexNumber
       _combatPoints = source._combatPoints
-      _pokemonDataID = source._pokemonDataID
+      _pokemonID = source._pokemonID
       _pokemonDisplay = source._pokemonDisplay
     }
   }
@@ -155,9 +155,9 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._result)
-        case 2: try decoder.decodeSingularEnumField(value: &_storage._pokemonID)
+        case 2: try decoder.decodeSingularInt32Field(value: &_storage._pokedexNumber)
         case 3: try decoder.decodeSingularInt32Field(value: &_storage._combatPoints)
-        case 4: try decoder.decodeSingularFixed64Field(value: &_storage._pokemonDataID)
+        case 4: try decoder.decodeSingularFixed64Field(value: &_storage._pokemonID)
         case 5: try decoder.decodeSingularMessageField(value: &_storage._pokemonDisplay)
         default: break
         }
@@ -170,14 +170,14 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
       if _storage._result != .unset {
         try visitor.visitSingularEnumField(value: _storage._result, fieldNumber: 1)
       }
-      if _storage._pokemonID != .missingno {
-        try visitor.visitSingularEnumField(value: _storage._pokemonID, fieldNumber: 2)
+      if _storage._pokedexNumber != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._pokedexNumber, fieldNumber: 2)
       }
       if _storage._combatPoints != 0 {
         try visitor.visitSingularInt32Field(value: _storage._combatPoints, fieldNumber: 3)
       }
-      if _storage._pokemonDataID != 0 {
-        try visitor.visitSingularFixed64Field(value: _storage._pokemonDataID, fieldNumber: 4)
+      if _storage._pokemonID != 0 {
+        try visitor.visitSingularFixed64Field(value: _storage._pokemonID, fieldNumber: 4)
       }
       if let v = _storage._pokemonDisplay {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
@@ -192,9 +192,9 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._result != rhs_storage._result {return false}
-        if _storage._pokemonID != rhs_storage._pokemonID {return false}
+        if _storage._pokedexNumber != rhs_storage._pokedexNumber {return false}
         if _storage._combatPoints != rhs_storage._combatPoints {return false}
-        if _storage._pokemonDataID != rhs_storage._pokemonDataID {return false}
+        if _storage._pokemonID != rhs_storage._pokemonID {return false}
         if _storage._pokemonDisplay != rhs_storage._pokemonDisplay {return false}
         return true
       }

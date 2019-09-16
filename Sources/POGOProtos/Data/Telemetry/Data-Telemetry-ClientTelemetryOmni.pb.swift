@@ -421,14 +421,6 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .viewPointOfInterestImageTelemetry(newValue)}
   }
 
-  public var combatHubEntranceTelemetry: POGOProtos_Data_Telemetry_CombatHubEntranceTelemetry {
-    get {
-      if case .combatHubEntranceTelemetry(let v)? = _storage._telemetryData {return v}
-      return POGOProtos_Data_Telemetry_CombatHubEntranceTelemetry()
-    }
-    set {_uniqueStorage()._telemetryData = .combatHubEntranceTelemetry(newValue)}
-  }
-
   public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
     get {
       if case .serverData(let v)? = _storage._telemetryData {return v}
@@ -489,7 +481,6 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     case combatMinigameTelemetry(POGOProtos_Data_Telemetry_CombatMinigameTelemetry)
     case leavePointOfInterestTelemetry(POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry)
     case viewPointOfInterestImageTelemetry(POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry)
-    case combatHubEntranceTelemetry(POGOProtos_Data_Telemetry_CombatHubEntranceTelemetry)
     case serverData(POGOProtos_Data_Telemetry_PlatformServerData)
 
   #if !swift(>=4.1)
@@ -544,7 +535,6 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
       case (.combatMinigameTelemetry(let l), .combatMinigameTelemetry(let r)): return l == r
       case (.leavePointOfInterestTelemetry(let l), .leavePointOfInterestTelemetry(let r)): return l == r
       case (.viewPointOfInterestImageTelemetry(let l), .viewPointOfInterestImageTelemetry(let r)): return l == r
-      case (.combatHubEntranceTelemetry(let l), .combatHubEntranceTelemetry(let r)): return l == r
       case (.serverData(let l), .serverData(let r)): return l == r
       default: return false
       }
@@ -613,7 +603,6 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     47: .standard(proto: "combat_minigame_telemetry"),
     48: .standard(proto: "leave_point_of_interest_telemetry"),
     49: .standard(proto: "view_point_of_interest_image_telemetry"),
-    50: .standard(proto: "combat_hub_entrance_telemetry"),
     1001: .standard(proto: "server_data"),
   ]
 
@@ -1033,14 +1022,6 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .viewPointOfInterestImageTelemetry(v)}
-        case 50:
-          var v: POGOProtos_Data_Telemetry_CombatHubEntranceTelemetry?
-          if let current = _storage._telemetryData {
-            try decoder.handleConflictingOneOf()
-            if case .combatHubEntranceTelemetry(let m) = current {v = m}
-          }
-          try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._telemetryData = .combatHubEntranceTelemetry(v)}
         case 1001:
           var v: POGOProtos_Data_Telemetry_PlatformServerData?
           if let current = _storage._telemetryData {
@@ -1156,8 +1137,6 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
       case .viewPointOfInterestImageTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 49)
-      case .combatHubEntranceTelemetry(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 50)
       case .serverData(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
       case nil: break

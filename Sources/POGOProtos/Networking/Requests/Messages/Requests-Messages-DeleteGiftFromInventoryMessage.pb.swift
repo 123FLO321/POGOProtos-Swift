@@ -44,7 +44,7 @@ extension POGOProtos_Networking_Requests_Messages_DeleteGiftFromInventoryMessage
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeRepeatedUInt64Field(value: &self.giftboxID)
+      case 1: try decoder.decodeRepeatedFixed64Field(value: &self.giftboxID)
       default: break
       }
     }
@@ -52,7 +52,7 @@ extension POGOProtos_Networking_Requests_Messages_DeleteGiftFromInventoryMessage
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.giftboxID.isEmpty {
-      try visitor.visitPackedUInt64Field(value: self.giftboxID, fieldNumber: 1)
+      try visitor.visitPackedFixed64Field(value: self.giftboxID, fieldNumber: 1)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

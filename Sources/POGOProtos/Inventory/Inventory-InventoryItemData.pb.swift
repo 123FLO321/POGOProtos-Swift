@@ -157,22 +157,6 @@ public struct POGOProtos_Inventory_InventoryItemData {
     set {_uniqueStorage()._type = .belugaIncense(newValue)}
   }
 
-  public var vsSeekerUpgrades: POGOProtos_Settings_Master_Item_VsSeekerAttributes.VsSeekerUpgrade {
-    get {
-      if case .vsSeekerUpgrades(let v)? = _storage._type {return v}
-      return POGOProtos_Settings_Master_Item_VsSeekerAttributes.VsSeekerUpgrade()
-    }
-    set {_uniqueStorage()._type = .vsSeekerUpgrades(newValue)}
-  }
-
-  public var routeMaker: POGOProtos_Data_RouteMaker {
-    get {
-      if case .routeMaker(let v)? = _storage._type {return v}
-      return POGOProtos_Data_RouteMaker()
-    }
-    set {_uniqueStorage()._type = .routeMaker(newValue)}
-  }
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Type: Equatable {
@@ -192,8 +176,6 @@ public struct POGOProtos_Inventory_InventoryItemData {
     case quests(POGOProtos_Data_Quests_Quests)
     case giftBoxes(POGOProtos_Data_Gift_GiftBoxes)
     case belugaIncense(POGOProtos_Data_Beluga_BelugaIncenseBox)
-    case vsSeekerUpgrades(POGOProtos_Settings_Master_Item_VsSeekerAttributes.VsSeekerUpgrade)
-    case routeMaker(POGOProtos_Data_RouteMaker)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.OneOf_Type, rhs: POGOProtos_Inventory_InventoryItemData.OneOf_Type) -> Bool {
@@ -214,8 +196,6 @@ public struct POGOProtos_Inventory_InventoryItemData {
       case (.quests(let l), .quests(let r)): return l == r
       case (.giftBoxes(let l), .giftBoxes(let r)): return l == r
       case (.belugaIncense(let l), .belugaIncense(let r)): return l == r
-      case (.vsSeekerUpgrades(let l), .vsSeekerUpgrades(let r)): return l == r
-      case (.routeMaker(let l), .routeMaker(let r)): return l == r
       default: return false
       }
     }
@@ -250,8 +230,6 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
     14: .same(proto: "quests"),
     15: .standard(proto: "gift_boxes"),
     16: .standard(proto: "beluga_incense"),
-    17: .standard(proto: "vs_seeker_upgrades"),
-    18: .standard(proto: "route_maker"),
   ]
 
   fileprivate class _StorageClass {
@@ -406,22 +384,6 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._type = .belugaIncense(v)}
-        case 17:
-          var v: POGOProtos_Settings_Master_Item_VsSeekerAttributes.VsSeekerUpgrade?
-          if let current = _storage._type {
-            try decoder.handleConflictingOneOf()
-            if case .vsSeekerUpgrades(let m) = current {v = m}
-          }
-          try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._type = .vsSeekerUpgrades(v)}
-        case 18:
-          var v: POGOProtos_Data_RouteMaker?
-          if let current = _storage._type {
-            try decoder.handleConflictingOneOf()
-            if case .routeMaker(let m) = current {v = m}
-          }
-          try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._type = .routeMaker(v)}
         default: break
         }
       }
@@ -463,10 +425,6 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
         try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
       case .belugaIncense(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
-      case .vsSeekerUpgrades(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
-      case .routeMaker(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
       case nil: break
       }
     }

@@ -92,7 +92,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionOpenCombatSessionMessa
         switch fieldNumber {
         case 1: try decoder.decodeSingularMessageField(value: &_storage._incidentLookup)
         case 2: try decoder.decodeSingularInt32Field(value: &_storage._step)
-        case 3: try decoder.decodeRepeatedUInt64Field(value: &_storage._attackingPokemonID)
+        case 3: try decoder.decodeRepeatedFixed64Field(value: &_storage._attackingPokemonID)
         default: break
         }
       }
@@ -108,7 +108,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionOpenCombatSessionMessa
         try visitor.visitSingularInt32Field(value: _storage._step, fieldNumber: 2)
       }
       if !_storage._attackingPokemonID.isEmpty {
-        try visitor.visitPackedUInt64Field(value: _storage._attackingPokemonID, fieldNumber: 3)
+        try visitor.visitPackedFixed64Field(value: _storage._attackingPokemonID, fieldNumber: 3)
       }
     }
     try unknownFields.traverse(visitor: &visitor)

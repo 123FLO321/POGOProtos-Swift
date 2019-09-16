@@ -34,8 +34,6 @@ public struct POGOProtos_Networking_Requests_Messages_FortSearchMessage {
 
   public var fortLngDegrees: Double = 0
 
-  public var beaconScan: [POGOProtos_Data_BeaconScan] = []
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -53,7 +51,6 @@ extension POGOProtos_Networking_Requests_Messages_FortSearchMessage: SwiftProtob
     3: .standard(proto: "player_lng_degrees"),
     4: .standard(proto: "fort_lat_degrees"),
     5: .standard(proto: "fort_lng_degrees"),
-    6: .standard(proto: "beacon_scan"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -64,7 +61,6 @@ extension POGOProtos_Networking_Requests_Messages_FortSearchMessage: SwiftProtob
       case 3: try decoder.decodeSingularDoubleField(value: &self.playerLngDegrees)
       case 4: try decoder.decodeSingularDoubleField(value: &self.fortLatDegrees)
       case 5: try decoder.decodeSingularDoubleField(value: &self.fortLngDegrees)
-      case 6: try decoder.decodeRepeatedMessageField(value: &self.beaconScan)
       default: break
       }
     }
@@ -86,9 +82,6 @@ extension POGOProtos_Networking_Requests_Messages_FortSearchMessage: SwiftProtob
     if self.fortLngDegrees != 0 {
       try visitor.visitSingularDoubleField(value: self.fortLngDegrees, fieldNumber: 5)
     }
-    if !self.beaconScan.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.beaconScan, fieldNumber: 6)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -98,7 +91,6 @@ extension POGOProtos_Networking_Requests_Messages_FortSearchMessage: SwiftProtob
     if lhs.playerLngDegrees != rhs.playerLngDegrees {return false}
     if lhs.fortLatDegrees != rhs.fortLatDegrees {return false}
     if lhs.fortLngDegrees != rhs.fortLngDegrees {return false}
-    if lhs.beaconScan != rhs.beaconScan {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

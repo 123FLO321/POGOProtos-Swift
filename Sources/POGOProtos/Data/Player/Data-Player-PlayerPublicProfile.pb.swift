@@ -83,16 +83,6 @@ public struct POGOProtos_Data_Player_PlayerPublicProfile {
     set {_uniqueStorage()._hasSharedExPass_p = newValue}
   }
 
-  public var combatRank: Int32 {
-    get {return _storage._combatRank}
-    set {_uniqueStorage()._combatRank = newValue}
-  }
-
-  public var combatRating: Float {
-    get {return _storage._combatRating}
-    set {_uniqueStorage()._combatRating = newValue}
-  }
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -118,8 +108,6 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
     9: .same(proto: "badges"),
     10: .same(proto: "experience"),
     11: .standard(proto: "has_shared_ex_pass"),
-    12: .standard(proto: "combat_rank"),
-    13: .standard(proto: "combat_rating"),
   ]
 
   fileprivate class _StorageClass {
@@ -134,8 +122,6 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
     var _badges: [POGOProtos_Data_Player_PlayerBadge] = []
     var _experience: Int64 = 0
     var _hasSharedExPass_p: Bool = false
-    var _combatRank: Int32 = 0
-    var _combatRating: Float = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -153,8 +139,6 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
       _badges = source._badges
       _experience = source._experience
       _hasSharedExPass_p = source._hasSharedExPass_p
-      _combatRank = source._combatRank
-      _combatRating = source._combatRating
     }
   }
 
@@ -181,8 +165,6 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
         case 9: try decoder.decodeRepeatedMessageField(value: &_storage._badges)
         case 10: try decoder.decodeSingularInt64Field(value: &_storage._experience)
         case 11: try decoder.decodeSingularBoolField(value: &_storage._hasSharedExPass_p)
-        case 12: try decoder.decodeSingularInt32Field(value: &_storage._combatRank)
-        case 13: try decoder.decodeSingularFloatField(value: &_storage._combatRating)
         default: break
         }
       }
@@ -224,12 +206,6 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
       if _storage._hasSharedExPass_p != false {
         try visitor.visitSingularBoolField(value: _storage._hasSharedExPass_p, fieldNumber: 11)
       }
-      if _storage._combatRank != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._combatRank, fieldNumber: 12)
-      }
-      if _storage._combatRating != 0 {
-        try visitor.visitSingularFloatField(value: _storage._combatRating, fieldNumber: 13)
-      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -250,8 +226,6 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
         if _storage._badges != rhs_storage._badges {return false}
         if _storage._experience != rhs_storage._experience {return false}
         if _storage._hasSharedExPass_p != rhs_storage._hasSharedExPass_p {return false}
-        if _storage._combatRank != rhs_storage._combatRank {return false}
-        if _storage._combatRating != rhs_storage._combatRating {return false}
         return true
       }
       if !storagesAreEqual {return false}
