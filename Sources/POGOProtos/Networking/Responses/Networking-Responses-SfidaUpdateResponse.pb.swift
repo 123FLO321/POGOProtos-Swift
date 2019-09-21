@@ -44,8 +44,6 @@ public struct POGOProtos_Networking_Responses_SfidaUpdateResponse {
 
   public var pokedexNumber: Int32 = 0
 
-  public var nearby: [POGOProtos_Data_Sfida_SfidaNearbyPokemon] = []
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Status: SwiftProtobuf.Enum {
@@ -108,7 +106,6 @@ extension POGOProtos_Networking_Responses_SfidaUpdateResponse: SwiftProtobuf.Mes
     8: .standard(proto: "pokestop_id"),
     9: .standard(proto: "encounter_type"),
     10: .standard(proto: "pokedex_number"),
-    11: .same(proto: "nearby"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -124,7 +121,6 @@ extension POGOProtos_Networking_Responses_SfidaUpdateResponse: SwiftProtobuf.Mes
       case 8: try decoder.decodeSingularStringField(value: &self.pokestopID)
       case 9: try decoder.decodeSingularEnumField(value: &self.encounterType)
       case 10: try decoder.decodeSingularInt32Field(value: &self.pokedexNumber)
-      case 11: try decoder.decodeRepeatedMessageField(value: &self.nearby)
       default: break
       }
     }
@@ -161,9 +157,6 @@ extension POGOProtos_Networking_Responses_SfidaUpdateResponse: SwiftProtobuf.Mes
     if self.pokedexNumber != 0 {
       try visitor.visitSingularInt32Field(value: self.pokedexNumber, fieldNumber: 10)
     }
-    if !self.nearby.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.nearby, fieldNumber: 11)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -178,7 +171,6 @@ extension POGOProtos_Networking_Responses_SfidaUpdateResponse: SwiftProtobuf.Mes
     if lhs.pokestopID != rhs.pokestopID {return false}
     if lhs.encounterType != rhs.encounterType {return false}
     if lhs.pokedexNumber != rhs.pokedexNumber {return false}
-    if lhs.nearby != rhs.nearby {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

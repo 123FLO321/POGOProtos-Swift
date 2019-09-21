@@ -157,6 +157,14 @@ public struct POGOProtos_Inventory_InventoryItemData {
     set {_uniqueStorage()._type = .belugaIncense(newValue)}
   }
 
+  public var limitedPurchaseSkuRecord: POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord {
+    get {
+      if case .limitedPurchaseSkuRecord(let v)? = _storage._type {return v}
+      return POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord()
+    }
+    set {_uniqueStorage()._type = .limitedPurchaseSkuRecord(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Type: Equatable {
@@ -176,6 +184,7 @@ public struct POGOProtos_Inventory_InventoryItemData {
     case quests(POGOProtos_Data_Quests_Quests)
     case giftBoxes(POGOProtos_Data_Gift_GiftBoxes)
     case belugaIncense(POGOProtos_Data_Beluga_BelugaIncenseBox)
+    case limitedPurchaseSkuRecord(POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.OneOf_Type, rhs: POGOProtos_Inventory_InventoryItemData.OneOf_Type) -> Bool {
@@ -196,10 +205,37 @@ public struct POGOProtos_Inventory_InventoryItemData {
       case (.quests(let l), .quests(let r)): return l == r
       case (.giftBoxes(let l), .giftBoxes(let r)): return l == r
       case (.belugaIncense(let l), .belugaIncense(let r)): return l == r
+      case (.limitedPurchaseSkuRecord(let l), .limitedPurchaseSkuRecord(let r)): return l == r
       default: return false
       }
     }
   #endif
+  }
+
+  public struct LimitedPurchaseSkuRecord {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var purchases: Dictionary<String,POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purchase> = [:]
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public struct Purchase {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var version: Int32 = 0
+
+      public var numPurchases: Int32 = 0
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
+    public init() {}
   }
 
   public init() {}
@@ -230,6 +266,7 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
     14: .same(proto: "quests"),
     15: .standard(proto: "gift_boxes"),
     16: .standard(proto: "beluga_incense"),
+    19: .standard(proto: "limited_purchase_sku_record"),
   ]
 
   fileprivate class _StorageClass {
@@ -384,6 +421,14 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._type = .belugaIncense(v)}
+        case 19:
+          var v: POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .limitedPurchaseSkuRecord(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .limitedPurchaseSkuRecord(v)}
         default: break
         }
       }
@@ -425,6 +470,8 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
         try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
       case .belugaIncense(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
+      case .limitedPurchaseSkuRecord(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
       case nil: break
       }
     }
@@ -441,6 +488,70 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Inventory_InventoryItemData.protoMessageName + ".LimitedPurchaseSkuRecord"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "purchases"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purchase>.self, value: &self.purchases)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.purchases.isEmpty {
+      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMessageMap<SwiftProtobuf.ProtobufString,POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purchase>.self, value: self.purchases, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord, rhs: POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord) -> Bool {
+    if lhs.purchases != rhs.purchases {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purchase: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.protoMessageName + ".Purchase"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "version"),
+    2: .standard(proto: "num_purchases"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.version)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.numPurchases)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.version != 0 {
+      try visitor.visitSingularInt32Field(value: self.version, fieldNumber: 1)
+    }
+    if self.numPurchases != 0 {
+      try visitor.visitSingularInt32Field(value: self.numPurchases, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purchase, rhs: POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purchase) -> Bool {
+    if lhs.version != rhs.version {return false}
+    if lhs.numPurchases != rhs.numPurchases {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

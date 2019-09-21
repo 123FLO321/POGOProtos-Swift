@@ -105,6 +105,11 @@ public struct POGOProtos_Networking_Responses_GymGetInfoResponse {
     set {_uniqueStorage()._callToActionLink = newValue}
   }
 
+  public var serverMs: Int64 {
+    get {return _storage._serverMs}
+    set {_uniqueStorage()._serverMs = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -180,6 +185,7 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
     11: .standard(proto: "promo_image"),
     12: .standard(proto: "promo_description"),
     13: .standard(proto: "call_to_action_link"),
+    14: .standard(proto: "server_ms"),
   ]
 
   fileprivate class _StorageClass {
@@ -196,6 +202,7 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
     var _promoImage: [String] = []
     var _promoDescription: [String] = []
     var _callToActionLink: String = String()
+    var _serverMs: Int64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -215,6 +222,7 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
       _promoImage = source._promoImage
       _promoDescription = source._promoDescription
       _callToActionLink = source._callToActionLink
+      _serverMs = source._serverMs
     }
   }
 
@@ -243,6 +251,7 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
         case 11: try decoder.decodeRepeatedStringField(value: &_storage._promoImage)
         case 12: try decoder.decodeRepeatedStringField(value: &_storage._promoDescription)
         case 13: try decoder.decodeSingularStringField(value: &_storage._callToActionLink)
+        case 14: try decoder.decodeSingularInt64Field(value: &_storage._serverMs)
         default: break
         }
       }
@@ -290,6 +299,9 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
       if !_storage._callToActionLink.isEmpty {
         try visitor.visitSingularStringField(value: _storage._callToActionLink, fieldNumber: 13)
       }
+      if _storage._serverMs != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._serverMs, fieldNumber: 14)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -312,6 +324,7 @@ extension POGOProtos_Networking_Responses_GymGetInfoResponse: SwiftProtobuf.Mess
         if _storage._promoImage != rhs_storage._promoImage {return false}
         if _storage._promoDescription != rhs_storage._promoDescription {return false}
         if _storage._callToActionLink != rhs_storage._callToActionLink {return false}
+        if _storage._serverMs != rhs_storage._serverMs {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -172,6 +172,14 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeGofest2019ApacDay05General // = 5036
   case badgeGofest2019ApacDay06General // = 5037
   case badgeGofest2019ApacDay07General // = 5038
+  case badgeSafarizone2019MontrealDay00General // = 5039
+  case badgeSafarizone2019MontrealDay00Earlyaccess // = 5040
+  case badgeSafarizone2019MontrealDay01General // = 5041
+  case badgeSafarizone2019MontrealDay01Earlyaccess // = 5042
+  case badgeSafarizone2019MontrealDay02General // = 5043
+  case badgeSafarizone2019MontrealDay02Earlyaccess // = 5044
+  case badgeSafarizone2019MontrealDay03General // = 5045
+  case badgeSafarizone2019MontrealDay03Earlyaccess // = 5046
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -331,6 +339,14 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 5036: self = .badgeGofest2019ApacDay05General
     case 5037: self = .badgeGofest2019ApacDay06General
     case 5038: self = .badgeGofest2019ApacDay07General
+    case 5039: self = .badgeSafarizone2019MontrealDay00General
+    case 5040: self = .badgeSafarizone2019MontrealDay00Earlyaccess
+    case 5041: self = .badgeSafarizone2019MontrealDay01General
+    case 5042: self = .badgeSafarizone2019MontrealDay01Earlyaccess
+    case 5043: self = .badgeSafarizone2019MontrealDay02General
+    case 5044: self = .badgeSafarizone2019MontrealDay02Earlyaccess
+    case 5045: self = .badgeSafarizone2019MontrealDay03General
+    case 5046: self = .badgeSafarizone2019MontrealDay03Earlyaccess
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -488,6 +504,14 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeGofest2019ApacDay05General: return 5036
     case .badgeGofest2019ApacDay06General: return 5037
     case .badgeGofest2019ApacDay07General: return 5038
+    case .badgeSafarizone2019MontrealDay00General: return 5039
+    case .badgeSafarizone2019MontrealDay00Earlyaccess: return 5040
+    case .badgeSafarizone2019MontrealDay01General: return 5041
+    case .badgeSafarizone2019MontrealDay01Earlyaccess: return 5042
+    case .badgeSafarizone2019MontrealDay02General: return 5043
+    case .badgeSafarizone2019MontrealDay02Earlyaccess: return 5044
+    case .badgeSafarizone2019MontrealDay03General: return 5045
+    case .badgeSafarizone2019MontrealDay03Earlyaccess: return 5046
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -650,6 +674,14 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeGofest2019ApacDay05General,
     .badgeGofest2019ApacDay06General,
     .badgeGofest2019ApacDay07General,
+    .badgeSafarizone2019MontrealDay00General,
+    .badgeSafarizone2019MontrealDay00Earlyaccess,
+    .badgeSafarizone2019MontrealDay01General,
+    .badgeSafarizone2019MontrealDay01Earlyaccess,
+    .badgeSafarizone2019MontrealDay02General,
+    .badgeSafarizone2019MontrealDay02Earlyaccess,
+    .badgeSafarizone2019MontrealDay03General,
+    .badgeSafarizone2019MontrealDay03Earlyaccess,
   ]
 }
 
@@ -810,5 +842,13 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     5036: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_05_GENERAL"),
     5037: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_06_GENERAL"),
     5038: .same(proto: "BADGE_GOFEST_2019_APAC_DAY_07_GENERAL"),
+    5039: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_00_GENERAL"),
+    5040: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_00_EARLYACCESS"),
+    5041: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_01_GENERAL"),
+    5042: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_01_EARLYACCESS"),
+    5043: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_02_GENERAL"),
+    5044: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_02_EARLYACCESS"),
+    5045: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_03_GENERAL"),
+    5046: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_03_EARLYACCESS"),
   ]
 }

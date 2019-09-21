@@ -59,7 +59,7 @@ extension POGOProtos_Data_Badge_GymBadgeStats: SwiftProtobuf.Message, SwiftProto
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularFixed64Field(value: &self.totalTimeDefendedMs)
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.totalTimeDefendedMs)
       case 2: try decoder.decodeSingularUInt32Field(value: &self.numBattlesWon)
       case 3: try decoder.decodeSingularUInt32Field(value: &self.numBerriesFed)
       case 4: try decoder.decodeSingularUInt32Field(value: &self.numDeploys)
@@ -72,7 +72,7 @@ extension POGOProtos_Data_Badge_GymBadgeStats: SwiftProtobuf.Message, SwiftProto
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.totalTimeDefendedMs != 0 {
-      try visitor.visitSingularFixed64Field(value: self.totalTimeDefendedMs, fieldNumber: 1)
+      try visitor.visitSingularUInt64Field(value: self.totalTimeDefendedMs, fieldNumber: 1)
     }
     if self.numBattlesWon != 0 {
       try visitor.visitSingularUInt32Field(value: self.numBattlesWon, fieldNumber: 2)

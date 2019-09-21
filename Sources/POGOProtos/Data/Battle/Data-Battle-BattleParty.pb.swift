@@ -55,7 +55,7 @@ extension POGOProtos_Data_Battle_BattleParty: SwiftProtobuf.Message, SwiftProtob
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.name)
       case 2: try decoder.decodeSingularInt32Field(value: &self.teamNumber)
-      case 3: try decoder.decodeRepeatedFixed64Field(value: &self.ids)
+      case 3: try decoder.decodeRepeatedUInt64Field(value: &self.ids)
       case 4: try decoder.decodeSingularStringField(value: &self.combatLeagueID)
       default: break
       }
@@ -70,7 +70,7 @@ extension POGOProtos_Data_Battle_BattleParty: SwiftProtobuf.Message, SwiftProtob
       try visitor.visitSingularInt32Field(value: self.teamNumber, fieldNumber: 2)
     }
     if !self.ids.isEmpty {
-      try visitor.visitPackedFixed64Field(value: self.ids, fieldNumber: 3)
+      try visitor.visitPackedUInt64Field(value: self.ids, fieldNumber: 3)
     }
     if !self.combatLeagueID.isEmpty {
       try visitor.visitSingularStringField(value: self.combatLeagueID, fieldNumber: 4)

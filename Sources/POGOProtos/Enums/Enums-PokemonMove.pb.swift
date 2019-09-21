@@ -285,6 +285,8 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case `return` // = 323
   case synchronoise // = 324
   case lockOnFast // = 325
+  case thunderFangFast // = 326
+  case iceFangFast // = 327
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -557,6 +559,8 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 323: self = .return
     case 324: self = .synchronoise
     case 325: self = .lockOnFast
+    case 326: self = .thunderFangFast
+    case 327: self = .iceFangFast
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -827,6 +831,8 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .return: return 323
     case .synchronoise: return 324
     case .lockOnFast: return 325
+    case .thunderFangFast: return 326
+    case .iceFangFast: return 327
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1102,6 +1108,8 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .return,
     .synchronoise,
     .lockOnFast,
+    .thunderFangFast,
+    .iceFangFast,
   ]
 }
 
@@ -1375,5 +1383,7 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     323: .same(proto: "RETURN"),
     324: .same(proto: "SYNCHRONOISE"),
     325: .same(proto: "LOCK_ON_FAST"),
+    326: .same(proto: "THUNDER_FANG_FAST"),
+    327: .same(proto: "ICE_FANG_FAST"),
   ]
 }

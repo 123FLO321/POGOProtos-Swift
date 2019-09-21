@@ -24,134 +24,145 @@ public struct POGOProtos_Inventory_InventoryKey {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var type: POGOProtos_Inventory_InventoryKey.OneOf_Type? = nil
+  public var type: OneOf_Type? {
+    get {return _storage._type}
+    set {_uniqueStorage()._type = newValue}
+  }
 
   public var pokemonID: UInt64 {
     get {
-      if case .pokemonID(let v)? = type {return v}
+      if case .pokemonID(let v)? = _storage._type {return v}
       return 0
     }
-    set {type = .pokemonID(newValue)}
+    set {_uniqueStorage()._type = .pokemonID(newValue)}
   }
 
   public var item: POGOProtos_Inventory_Item_ItemId {
     get {
-      if case .item(let v)? = type {return v}
+      if case .item(let v)? = _storage._type {return v}
       return .itemUnknown
     }
-    set {type = .item(newValue)}
+    set {_uniqueStorage()._type = .item(newValue)}
   }
 
   public var pokedexEntryID: Int32 {
     get {
-      if case .pokedexEntryID(let v)? = type {return v}
+      if case .pokedexEntryID(let v)? = _storage._type {return v}
       return 0
     }
-    set {type = .pokedexEntryID(newValue)}
+    set {_uniqueStorage()._type = .pokedexEntryID(newValue)}
   }
 
   public var playerStats: Bool {
     get {
-      if case .playerStats(let v)? = type {return v}
+      if case .playerStats(let v)? = _storage._type {return v}
       return false
     }
-    set {type = .playerStats(newValue)}
+    set {_uniqueStorage()._type = .playerStats(newValue)}
   }
 
   public var playerCurrency: Bool {
     get {
-      if case .playerCurrency(let v)? = type {return v}
+      if case .playerCurrency(let v)? = _storage._type {return v}
       return false
     }
-    set {type = .playerCurrency(newValue)}
+    set {_uniqueStorage()._type = .playerCurrency(newValue)}
   }
 
   public var playerCamera: Bool {
     get {
-      if case .playerCamera(let v)? = type {return v}
+      if case .playerCamera(let v)? = _storage._type {return v}
       return false
     }
-    set {type = .playerCamera(newValue)}
+    set {_uniqueStorage()._type = .playerCamera(newValue)}
   }
 
   public var inventoryUpgrades: Bool {
     get {
-      if case .inventoryUpgrades(let v)? = type {return v}
+      if case .inventoryUpgrades(let v)? = _storage._type {return v}
       return false
     }
-    set {type = .inventoryUpgrades(newValue)}
+    set {_uniqueStorage()._type = .inventoryUpgrades(newValue)}
   }
 
   public var appliedItems: Bool {
     get {
-      if case .appliedItems(let v)? = type {return v}
+      if case .appliedItems(let v)? = _storage._type {return v}
       return false
     }
-    set {type = .appliedItems(newValue)}
+    set {_uniqueStorage()._type = .appliedItems(newValue)}
   }
 
   public var eggIncubators: Bool {
     get {
-      if case .eggIncubators(let v)? = type {return v}
+      if case .eggIncubators(let v)? = _storage._type {return v}
       return false
     }
-    set {type = .eggIncubators(newValue)}
+    set {_uniqueStorage()._type = .eggIncubators(newValue)}
   }
 
   public var pokemonFamilyID: POGOProtos_Enums_PokemonFamilyId {
     get {
-      if case .pokemonFamilyID(let v)? = type {return v}
+      if case .pokemonFamilyID(let v)? = _storage._type {return v}
       return .familyUnset
     }
-    set {type = .pokemonFamilyID(newValue)}
+    set {_uniqueStorage()._type = .pokemonFamilyID(newValue)}
   }
 
   public var questType: POGOProtos_Enums_QuestType {
     get {
-      if case .questType(let v)? = type {return v}
+      if case .questType(let v)? = _storage._type {return v}
       return .questUnknownType
     }
-    set {type = .questType(newValue)}
+    set {_uniqueStorage()._type = .questType(newValue)}
   }
 
   public var avatarTemplateID: String {
     get {
-      if case .avatarTemplateID(let v)? = type {return v}
+      if case .avatarTemplateID(let v)? = _storage._type {return v}
       return String()
     }
-    set {type = .avatarTemplateID(newValue)}
+    set {_uniqueStorage()._type = .avatarTemplateID(newValue)}
   }
 
   public var raidTickets: Bool {
     get {
-      if case .raidTickets(let v)? = type {return v}
+      if case .raidTickets(let v)? = _storage._type {return v}
       return false
     }
-    set {type = .raidTickets(newValue)}
+    set {_uniqueStorage()._type = .raidTickets(newValue)}
   }
 
   public var quests: Bool {
     get {
-      if case .quests(let v)? = type {return v}
+      if case .quests(let v)? = _storage._type {return v}
       return false
     }
-    set {type = .quests(newValue)}
+    set {_uniqueStorage()._type = .quests(newValue)}
   }
 
   public var giftBoxes: Bool {
     get {
-      if case .giftBoxes(let v)? = type {return v}
+      if case .giftBoxes(let v)? = _storage._type {return v}
       return false
     }
-    set {type = .giftBoxes(newValue)}
+    set {_uniqueStorage()._type = .giftBoxes(newValue)}
   }
 
   public var belugaIncenseBox: Bool {
     get {
-      if case .belugaIncenseBox(let v)? = type {return v}
+      if case .belugaIncenseBox(let v)? = _storage._type {return v}
       return false
     }
-    set {type = .belugaIncenseBox(newValue)}
+    set {_uniqueStorage()._type = .belugaIncenseBox(newValue)}
+  }
+
+  public var limitedPurchaseSkuRecord: Bool {
+    get {
+      if case .limitedPurchaseSkuRecord(let v)? = _storage._type {return v}
+      return false
+    }
+    set {_uniqueStorage()._type = .limitedPurchaseSkuRecord(newValue)}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -173,6 +184,7 @@ public struct POGOProtos_Inventory_InventoryKey {
     case quests(Bool)
     case giftBoxes(Bool)
     case belugaIncenseBox(Bool)
+    case limitedPurchaseSkuRecord(Bool)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Inventory_InventoryKey.OneOf_Type, rhs: POGOProtos_Inventory_InventoryKey.OneOf_Type) -> Bool {
@@ -193,6 +205,7 @@ public struct POGOProtos_Inventory_InventoryKey {
       case (.quests(let l), .quests(let r)): return l == r
       case (.giftBoxes(let l), .giftBoxes(let r)): return l == r
       case (.belugaIncenseBox(let l), .belugaIncenseBox(let r)): return l == r
+      case (.limitedPurchaseSkuRecord(let l), .limitedPurchaseSkuRecord(let r)): return l == r
       default: return false
       }
     }
@@ -200,6 +213,8 @@ public struct POGOProtos_Inventory_InventoryKey {
   }
 
   public init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -225,137 +240,177 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
     14: .same(proto: "quests"),
     15: .standard(proto: "gift_boxes"),
     16: .standard(proto: "beluga_incense_box"),
+    19: .standard(proto: "limited_purchase_sku_record"),
   ]
 
+  fileprivate class _StorageClass {
+    var _type: POGOProtos_Inventory_InventoryKey.OneOf_Type?
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _type = source._type
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: UInt64?
-        try decoder.decodeSingularFixed64Field(value: &v)
-        if let v = v {self.type = .pokemonID(v)}
-      case 2:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: POGOProtos_Inventory_Item_ItemId?
-        try decoder.decodeSingularEnumField(value: &v)
-        if let v = v {self.type = .item(v)}
-      case 3:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Int32?
-        try decoder.decodeSingularInt32Field(value: &v)
-        if let v = v {self.type = .pokedexEntryID(v)}
-      case 4:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Bool?
-        try decoder.decodeSingularBoolField(value: &v)
-        if let v = v {self.type = .playerStats(v)}
-      case 5:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Bool?
-        try decoder.decodeSingularBoolField(value: &v)
-        if let v = v {self.type = .playerCurrency(v)}
-      case 6:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Bool?
-        try decoder.decodeSingularBoolField(value: &v)
-        if let v = v {self.type = .playerCamera(v)}
-      case 7:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Bool?
-        try decoder.decodeSingularBoolField(value: &v)
-        if let v = v {self.type = .inventoryUpgrades(v)}
-      case 8:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Bool?
-        try decoder.decodeSingularBoolField(value: &v)
-        if let v = v {self.type = .appliedItems(v)}
-      case 9:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Bool?
-        try decoder.decodeSingularBoolField(value: &v)
-        if let v = v {self.type = .eggIncubators(v)}
-      case 10:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: POGOProtos_Enums_PokemonFamilyId?
-        try decoder.decodeSingularEnumField(value: &v)
-        if let v = v {self.type = .pokemonFamilyID(v)}
-      case 11:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: POGOProtos_Enums_QuestType?
-        try decoder.decodeSingularEnumField(value: &v)
-        if let v = v {self.type = .questType(v)}
-      case 12:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: String?
-        try decoder.decodeSingularStringField(value: &v)
-        if let v = v {self.type = .avatarTemplateID(v)}
-      case 13:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Bool?
-        try decoder.decodeSingularBoolField(value: &v)
-        if let v = v {self.type = .raidTickets(v)}
-      case 14:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Bool?
-        try decoder.decodeSingularBoolField(value: &v)
-        if let v = v {self.type = .quests(v)}
-      case 15:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Bool?
-        try decoder.decodeSingularBoolField(value: &v)
-        if let v = v {self.type = .giftBoxes(v)}
-      case 16:
-        if self.type != nil {try decoder.handleConflictingOneOf()}
-        var v: Bool?
-        try decoder.decodeSingularBoolField(value: &v)
-        if let v = v {self.type = .belugaIncenseBox(v)}
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: UInt64?
+          try decoder.decodeSingularFixed64Field(value: &v)
+          if let v = v {_storage._type = .pokemonID(v)}
+        case 2:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: POGOProtos_Inventory_Item_ItemId?
+          try decoder.decodeSingularEnumField(value: &v)
+          if let v = v {_storage._type = .item(v)}
+        case 3:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Int32?
+          try decoder.decodeSingularInt32Field(value: &v)
+          if let v = v {_storage._type = .pokedexEntryID(v)}
+        case 4:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .playerStats(v)}
+        case 5:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .playerCurrency(v)}
+        case 6:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .playerCamera(v)}
+        case 7:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .inventoryUpgrades(v)}
+        case 8:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .appliedItems(v)}
+        case 9:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .eggIncubators(v)}
+        case 10:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: POGOProtos_Enums_PokemonFamilyId?
+          try decoder.decodeSingularEnumField(value: &v)
+          if let v = v {_storage._type = .pokemonFamilyID(v)}
+        case 11:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: POGOProtos_Enums_QuestType?
+          try decoder.decodeSingularEnumField(value: &v)
+          if let v = v {_storage._type = .questType(v)}
+        case 12:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: String?
+          try decoder.decodeSingularStringField(value: &v)
+          if let v = v {_storage._type = .avatarTemplateID(v)}
+        case 13:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .raidTickets(v)}
+        case 14:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .quests(v)}
+        case 15:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .giftBoxes(v)}
+        case 16:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .belugaIncenseBox(v)}
+        case 19:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .limitedPurchaseSkuRecord(v)}
+        default: break
+        }
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    switch self.type {
-    case .pokemonID(let v)?:
-      try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
-    case .item(let v)?:
-      try visitor.visitSingularEnumField(value: v, fieldNumber: 2)
-    case .pokedexEntryID(let v)?:
-      try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
-    case .playerStats(let v)?:
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
-    case .playerCurrency(let v)?:
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
-    case .playerCamera(let v)?:
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
-    case .inventoryUpgrades(let v)?:
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
-    case .appliedItems(let v)?:
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 8)
-    case .eggIncubators(let v)?:
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
-    case .pokemonFamilyID(let v)?:
-      try visitor.visitSingularEnumField(value: v, fieldNumber: 10)
-    case .questType(let v)?:
-      try visitor.visitSingularEnumField(value: v, fieldNumber: 11)
-    case .avatarTemplateID(let v)?:
-      try visitor.visitSingularStringField(value: v, fieldNumber: 12)
-    case .raidTickets(let v)?:
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 13)
-    case .quests(let v)?:
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 14)
-    case .giftBoxes(let v)?:
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 15)
-    case .belugaIncenseBox(let v)?:
-      try visitor.visitSingularBoolField(value: v, fieldNumber: 16)
-    case nil: break
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      switch _storage._type {
+      case .pokemonID(let v)?:
+        try visitor.visitSingularFixed64Field(value: v, fieldNumber: 1)
+      case .item(let v)?:
+        try visitor.visitSingularEnumField(value: v, fieldNumber: 2)
+      case .pokedexEntryID(let v)?:
+        try visitor.visitSingularInt32Field(value: v, fieldNumber: 3)
+      case .playerStats(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 4)
+      case .playerCurrency(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 5)
+      case .playerCamera(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
+      case .inventoryUpgrades(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 7)
+      case .appliedItems(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 8)
+      case .eggIncubators(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 9)
+      case .pokemonFamilyID(let v)?:
+        try visitor.visitSingularEnumField(value: v, fieldNumber: 10)
+      case .questType(let v)?:
+        try visitor.visitSingularEnumField(value: v, fieldNumber: 11)
+      case .avatarTemplateID(let v)?:
+        try visitor.visitSingularStringField(value: v, fieldNumber: 12)
+      case .raidTickets(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 13)
+      case .quests(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 14)
+      case .giftBoxes(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 15)
+      case .belugaIncenseBox(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 16)
+      case .limitedPurchaseSkuRecord(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 19)
+      case nil: break
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Inventory_InventoryKey, rhs: POGOProtos_Inventory_InventoryKey) -> Bool {
-    if lhs.type != rhs.type {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._type != rhs_storage._type {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

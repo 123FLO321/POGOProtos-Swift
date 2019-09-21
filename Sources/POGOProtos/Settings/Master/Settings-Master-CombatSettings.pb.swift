@@ -137,6 +137,36 @@ public struct POGOProtos_Settings_Master_CombatSettings {
     set {_uniqueStorage()._chargeScoreExcellent = newValue}
   }
 
+  public var swapAnimationDurationTurns: Int32 {
+    get {return _storage._swapAnimationDurationTurns}
+    set {_uniqueStorage()._swapAnimationDurationTurns = newValue}
+  }
+
+  public var superEffectiveFlyoutDurationTurns: Int32 {
+    get {return _storage._superEffectiveFlyoutDurationTurns}
+    set {_uniqueStorage()._superEffectiveFlyoutDurationTurns = newValue}
+  }
+
+  public var notVeryEffectiveFlyoutDurationTurns: Int32 {
+    get {return _storage._notVeryEffectiveFlyoutDurationTurns}
+    set {_uniqueStorage()._notVeryEffectiveFlyoutDurationTurns = newValue}
+  }
+
+  public var blockedFlyoutDurationTurns: Int32 {
+    get {return _storage._blockedFlyoutDurationTurns}
+    set {_uniqueStorage()._blockedFlyoutDurationTurns = newValue}
+  }
+
+  public var normalEffectiveFlyoutDurationTurns: Int32 {
+    get {return _storage._normalEffectiveFlyoutDurationTurns}
+    set {_uniqueStorage()._normalEffectiveFlyoutDurationTurns = newValue}
+  }
+
+  public var faintAnimationDurationTurns: Int32 {
+    get {return _storage._faintAnimationDurationTurns}
+    set {_uniqueStorage()._faintAnimationDurationTurns = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct CombatOffensiveInputChallengeSettings {
@@ -204,6 +234,12 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
     19: .standard(proto: "charge_score_nice"),
     20: .standard(proto: "charge_score_great"),
     21: .standard(proto: "charge_score_excellent"),
+    22: .standard(proto: "swap_animation_duration_turns"),
+    23: .standard(proto: "super_effective_flyout_duration_turns"),
+    24: .standard(proto: "not_very_effective_flyout_duration_turns"),
+    25: .standard(proto: "blocked_flyout_duration_turns"),
+    26: .standard(proto: "normal_effective_flyout_duration_turns"),
+    27: .standard(proto: "faint_animation_duration_turns"),
   ]
 
   fileprivate class _StorageClass {
@@ -228,6 +264,12 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
     var _chargeScoreNice: Float = 0
     var _chargeScoreGreat: Float = 0
     var _chargeScoreExcellent: Float = 0
+    var _swapAnimationDurationTurns: Int32 = 0
+    var _superEffectiveFlyoutDurationTurns: Int32 = 0
+    var _notVeryEffectiveFlyoutDurationTurns: Int32 = 0
+    var _blockedFlyoutDurationTurns: Int32 = 0
+    var _normalEffectiveFlyoutDurationTurns: Int32 = 0
+    var _faintAnimationDurationTurns: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -255,6 +297,12 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
       _chargeScoreNice = source._chargeScoreNice
       _chargeScoreGreat = source._chargeScoreGreat
       _chargeScoreExcellent = source._chargeScoreExcellent
+      _swapAnimationDurationTurns = source._swapAnimationDurationTurns
+      _superEffectiveFlyoutDurationTurns = source._superEffectiveFlyoutDurationTurns
+      _notVeryEffectiveFlyoutDurationTurns = source._notVeryEffectiveFlyoutDurationTurns
+      _blockedFlyoutDurationTurns = source._blockedFlyoutDurationTurns
+      _normalEffectiveFlyoutDurationTurns = source._normalEffectiveFlyoutDurationTurns
+      _faintAnimationDurationTurns = source._faintAnimationDurationTurns
     }
   }
 
@@ -291,6 +339,12 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
         case 19: try decoder.decodeSingularFloatField(value: &_storage._chargeScoreNice)
         case 20: try decoder.decodeSingularFloatField(value: &_storage._chargeScoreGreat)
         case 21: try decoder.decodeSingularFloatField(value: &_storage._chargeScoreExcellent)
+        case 22: try decoder.decodeSingularInt32Field(value: &_storage._swapAnimationDurationTurns)
+        case 23: try decoder.decodeSingularInt32Field(value: &_storage._superEffectiveFlyoutDurationTurns)
+        case 24: try decoder.decodeSingularInt32Field(value: &_storage._notVeryEffectiveFlyoutDurationTurns)
+        case 25: try decoder.decodeSingularInt32Field(value: &_storage._blockedFlyoutDurationTurns)
+        case 26: try decoder.decodeSingularInt32Field(value: &_storage._normalEffectiveFlyoutDurationTurns)
+        case 27: try decoder.decodeSingularInt32Field(value: &_storage._faintAnimationDurationTurns)
         default: break
         }
       }
@@ -362,6 +416,24 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
       if _storage._chargeScoreExcellent != 0 {
         try visitor.visitSingularFloatField(value: _storage._chargeScoreExcellent, fieldNumber: 21)
       }
+      if _storage._swapAnimationDurationTurns != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._swapAnimationDurationTurns, fieldNumber: 22)
+      }
+      if _storage._superEffectiveFlyoutDurationTurns != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._superEffectiveFlyoutDurationTurns, fieldNumber: 23)
+      }
+      if _storage._notVeryEffectiveFlyoutDurationTurns != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._notVeryEffectiveFlyoutDurationTurns, fieldNumber: 24)
+      }
+      if _storage._blockedFlyoutDurationTurns != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._blockedFlyoutDurationTurns, fieldNumber: 25)
+      }
+      if _storage._normalEffectiveFlyoutDurationTurns != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._normalEffectiveFlyoutDurationTurns, fieldNumber: 26)
+      }
+      if _storage._faintAnimationDurationTurns != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._faintAnimationDurationTurns, fieldNumber: 27)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -392,6 +464,12 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
         if _storage._chargeScoreNice != rhs_storage._chargeScoreNice {return false}
         if _storage._chargeScoreGreat != rhs_storage._chargeScoreGreat {return false}
         if _storage._chargeScoreExcellent != rhs_storage._chargeScoreExcellent {return false}
+        if _storage._swapAnimationDurationTurns != rhs_storage._swapAnimationDurationTurns {return false}
+        if _storage._superEffectiveFlyoutDurationTurns != rhs_storage._superEffectiveFlyoutDurationTurns {return false}
+        if _storage._notVeryEffectiveFlyoutDurationTurns != rhs_storage._notVeryEffectiveFlyoutDurationTurns {return false}
+        if _storage._blockedFlyoutDurationTurns != rhs_storage._blockedFlyoutDurationTurns {return false}
+        if _storage._normalEffectiveFlyoutDurationTurns != rhs_storage._normalEffectiveFlyoutDurationTurns {return false}
+        if _storage._faintAnimationDurationTurns != rhs_storage._faintAnimationDurationTurns {return false}
         return true
       }
       if !storagesAreEqual {return false}

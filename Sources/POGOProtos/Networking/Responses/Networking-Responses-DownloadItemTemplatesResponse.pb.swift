@@ -28,7 +28,7 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
 
   public var itemTemplates: [POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate] = []
 
-  public var timestamp: UInt64 = 0
+  public var timestampMs: UInt64 = 0
 
   public var pageOffset: Int32 = 0
 
@@ -483,6 +483,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `combatType`. Subsequent reads from it will return its default value.
     public mutating func clearCombatType() {_uniqueStorage()._combatType = nil}
 
+    public var limitedPurchaseSkuSettings: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings {
+      get {return _storage._limitedPurchaseSkuSettings ?? POGOProtos_Settings_Master_LimitedPurchaseSkuSettings()}
+      set {_uniqueStorage()._limitedPurchaseSkuSettings = newValue}
+    }
+    /// Returns true if `limitedPurchaseSkuSettings` has been explicitly set.
+    public var hasLimitedPurchaseSkuSettings: Bool {return _storage._limitedPurchaseSkuSettings != nil}
+    /// Clears the value of `limitedPurchaseSkuSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearLimitedPurchaseSkuSettings() {_uniqueStorage()._limitedPurchaseSkuSettings = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -516,7 +525,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "item_templates"),
-    3: .same(proto: "timestamp"),
+    3: .standard(proto: "timestamp_ms"),
     4: .standard(proto: "page_offset"),
   ]
 
@@ -525,7 +534,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
       case 2: try decoder.decodeRepeatedMessageField(value: &self.itemTemplates)
-      case 3: try decoder.decodeSingularFixed64Field(value: &self.timestamp)
+      case 3: try decoder.decodeSingularUInt64Field(value: &self.timestampMs)
       case 4: try decoder.decodeSingularInt32Field(value: &self.pageOffset)
       default: break
       }
@@ -539,8 +548,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
     if !self.itemTemplates.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.itemTemplates, fieldNumber: 2)
     }
-    if self.timestamp != 0 {
-      try visitor.visitSingularFixed64Field(value: self.timestamp, fieldNumber: 3)
+    if self.timestampMs != 0 {
+      try visitor.visitSingularUInt64Field(value: self.timestampMs, fieldNumber: 3)
     }
     if self.pageOffset != 0 {
       try visitor.visitSingularInt32Field(value: self.pageOffset, fieldNumber: 4)
@@ -551,7 +560,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
   public static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs.itemTemplates != rhs.itemTemplates {return false}
-    if lhs.timestamp != rhs.timestamp {return false}
+    if lhs.timestampMs != rhs.timestampMs {return false}
     if lhs.pageOffset != rhs.pageOffset {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -616,6 +625,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     47: .standard(proto: "loading_screen_settings"),
     48: .standard(proto: "invasion_npc_display_settings"),
     51: .standard(proto: "combat_type"),
+    60: .standard(proto: "limited_purchase_sku_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -665,6 +675,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _loadingScreenSettings: POGOProtos_Settings_Master_LoadingScreen? = nil
     var _invasionNpcDisplaySettings: POGOProtos_Settings_Master_InvasionNpcDisplaySettings? = nil
     var _combatType: POGOProtos_Settings_Master_CombatType? = nil
+    var _limitedPurchaseSkuSettings: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -717,6 +728,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _loadingScreenSettings = source._loadingScreenSettings
       _invasionNpcDisplaySettings = source._invasionNpcDisplaySettings
       _combatType = source._combatType
+      _limitedPurchaseSkuSettings = source._limitedPurchaseSkuSettings
     }
   }
 
@@ -778,6 +790,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 47: try decoder.decodeSingularMessageField(value: &_storage._loadingScreenSettings)
         case 48: try decoder.decodeSingularMessageField(value: &_storage._invasionNpcDisplaySettings)
         case 51: try decoder.decodeSingularMessageField(value: &_storage._combatType)
+        case 60: try decoder.decodeSingularMessageField(value: &_storage._limitedPurchaseSkuSettings)
         default: break
         }
       }
@@ -924,6 +937,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._combatType {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 51)
       }
+      if let v = _storage._limitedPurchaseSkuSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 60)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -979,6 +995,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._loadingScreenSettings != rhs_storage._loadingScreenSettings {return false}
         if _storage._invasionNpcDisplaySettings != rhs_storage._invasionNpcDisplaySettings {return false}
         if _storage._combatType != rhs_storage._combatType {return false}
+        if _storage._limitedPurchaseSkuSettings != rhs_storage._limitedPurchaseSkuSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

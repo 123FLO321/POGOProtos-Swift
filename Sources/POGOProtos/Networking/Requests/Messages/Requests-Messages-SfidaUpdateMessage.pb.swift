@@ -24,30 +24,13 @@ public struct POGOProtos_Networking_Requests_Messages_SfidaUpdateMessage {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var playerLat: Double {
-    get {return _storage._playerLat}
-    set {_uniqueStorage()._playerLat = newValue}
-  }
+  public var playerLat: Double = 0
 
-  public var playerLng: Double {
-    get {return _storage._playerLng}
-    set {_uniqueStorage()._playerLng = newValue}
-  }
-
-  public var metricsUpdate: POGOProtos_Data_Sfida_SfidaMetricsUpdate {
-    get {return _storage._metricsUpdate ?? POGOProtos_Data_Sfida_SfidaMetricsUpdate()}
-    set {_uniqueStorage()._metricsUpdate = newValue}
-  }
-  /// Returns true if `metricsUpdate` has been explicitly set.
-  public var hasMetricsUpdate: Bool {return _storage._metricsUpdate != nil}
-  /// Clears the value of `metricsUpdate`. Subsequent reads from it will return its default value.
-  public mutating func clearMetricsUpdate() {_uniqueStorage()._metricsUpdate = nil}
+  public var playerLng: Double = 0
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
-
-  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -59,73 +42,31 @@ extension POGOProtos_Networking_Requests_Messages_SfidaUpdateMessage: SwiftProto
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "player_lat"),
     2: .standard(proto: "player_lng"),
-    3: .standard(proto: "metrics_update"),
   ]
 
-  fileprivate class _StorageClass {
-    var _playerLat: Double = 0
-    var _playerLng: Double = 0
-    var _metricsUpdate: POGOProtos_Data_Sfida_SfidaMetricsUpdate? = nil
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _playerLat = source._playerLat
-      _playerLng = source._playerLng
-      _metricsUpdate = source._metricsUpdate
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularDoubleField(value: &_storage._playerLat)
-        case 2: try decoder.decodeSingularDoubleField(value: &_storage._playerLng)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._metricsUpdate)
-        default: break
-        }
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularDoubleField(value: &self.playerLat)
+      case 2: try decoder.decodeSingularDoubleField(value: &self.playerLng)
+      default: break
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._playerLat != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._playerLat, fieldNumber: 1)
-      }
-      if _storage._playerLng != 0 {
-        try visitor.visitSingularDoubleField(value: _storage._playerLng, fieldNumber: 2)
-      }
-      if let v = _storage._metricsUpdate {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-      }
+    if self.playerLat != 0 {
+      try visitor.visitSingularDoubleField(value: self.playerLat, fieldNumber: 1)
+    }
+    if self.playerLng != 0 {
+      try visitor.visitSingularDoubleField(value: self.playerLng, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Requests_Messages_SfidaUpdateMessage, rhs: POGOProtos_Networking_Requests_Messages_SfidaUpdateMessage) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._playerLat != rhs_storage._playerLat {return false}
-        if _storage._playerLng != rhs_storage._playerLng {return false}
-        if _storage._metricsUpdate != rhs_storage._metricsUpdate {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
+    if lhs.playerLat != rhs.playerLat {return false}
+    if lhs.playerLng != rhs.playerLng {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -194,13 +194,13 @@ extension POGOProtos_Data_Badge_AwardedGymBadge: SwiftProtobuf.Message, SwiftPro
         case 2: try decoder.decodeSingularEnumField(value: &_storage._gymBadgeType)
         case 3: try decoder.decodeSingularUInt32Field(value: &_storage._score)
         case 4: try decoder.decodeSingularMessageField(value: &_storage._gymBadgeStats)
-        case 5: try decoder.decodeSingularFixed64Field(value: &_storage._lastUpdateTimestampMs)
+        case 5: try decoder.decodeSingularUInt64Field(value: &_storage._lastUpdateTimestampMs)
         case 6: try decoder.decodeSingularStringField(value: &_storage._name)
         case 7: try decoder.decodeSingularStringField(value: &_storage._imageURL)
         case 8: try decoder.decodeSingularStringField(value: &_storage._description_p)
         case 9: try decoder.decodeSingularDoubleField(value: &_storage._latitude)
         case 10: try decoder.decodeSingularDoubleField(value: &_storage._longitude)
-        case 11: try decoder.decodeSingularFixed64Field(value: &_storage._lastCheckTimestampMs)
+        case 11: try decoder.decodeSingularUInt64Field(value: &_storage._lastCheckTimestampMs)
         case 12: try decoder.decodeSingularUInt32Field(value: &_storage._earnedPoints)
         case 13: try decoder.decodeSingularFloatField(value: &_storage._progress)
         case 14: try decoder.decodeSingularBoolField(value: &_storage._levelUp)
@@ -226,7 +226,7 @@ extension POGOProtos_Data_Badge_AwardedGymBadge: SwiftProtobuf.Message, SwiftPro
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
       }
       if _storage._lastUpdateTimestampMs != 0 {
-        try visitor.visitSingularFixed64Field(value: _storage._lastUpdateTimestampMs, fieldNumber: 5)
+        try visitor.visitSingularUInt64Field(value: _storage._lastUpdateTimestampMs, fieldNumber: 5)
       }
       if !_storage._name.isEmpty {
         try visitor.visitSingularStringField(value: _storage._name, fieldNumber: 6)
@@ -244,7 +244,7 @@ extension POGOProtos_Data_Badge_AwardedGymBadge: SwiftProtobuf.Message, SwiftPro
         try visitor.visitSingularDoubleField(value: _storage._longitude, fieldNumber: 10)
       }
       if _storage._lastCheckTimestampMs != 0 {
-        try visitor.visitSingularFixed64Field(value: _storage._lastCheckTimestampMs, fieldNumber: 11)
+        try visitor.visitSingularUInt64Field(value: _storage._lastCheckTimestampMs, fieldNumber: 11)
       }
       if _storage._earnedPoints != 0 {
         try visitor.visitSingularUInt32Field(value: _storage._earnedPoints, fieldNumber: 12)

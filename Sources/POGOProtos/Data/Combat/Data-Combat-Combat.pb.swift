@@ -97,6 +97,11 @@ public struct POGOProtos_Data_Combat_Combat {
     set {_uniqueStorage()._quickSwapCooldownDurationMs = newValue}
   }
 
+  public var stateChangeDelayUntilTurn: Int64 {
+    get {return _storage._stateChangeDelayUntilTurn}
+    set {_uniqueStorage()._stateChangeDelayUntilTurn = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum CombatState: SwiftProtobuf.Enum {
@@ -192,6 +197,7 @@ extension POGOProtos_Data_Combat_Combat: SwiftProtobuf.Message, SwiftProtobuf._M
     11: .standard(proto: "minigame_submit_score_end_ms"),
     12: .standard(proto: "change_pokemon_end_ms"),
     13: .standard(proto: "quick_swap_cooldown_duration_ms"),
+    14: .standard(proto: "state_change_delay_until_turn"),
   ]
 
   fileprivate class _StorageClass {
@@ -208,6 +214,7 @@ extension POGOProtos_Data_Combat_Combat: SwiftProtobuf.Message, SwiftProtobuf._M
     var _minigameSubmitScoreEndMs: Int64 = 0
     var _changePokemonEndMs: Int64 = 0
     var _quickSwapCooldownDurationMs: Int64 = 0
+    var _stateChangeDelayUntilTurn: Int64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -227,6 +234,7 @@ extension POGOProtos_Data_Combat_Combat: SwiftProtobuf.Message, SwiftProtobuf._M
       _minigameSubmitScoreEndMs = source._minigameSubmitScoreEndMs
       _changePokemonEndMs = source._changePokemonEndMs
       _quickSwapCooldownDurationMs = source._quickSwapCooldownDurationMs
+      _stateChangeDelayUntilTurn = source._stateChangeDelayUntilTurn
     }
   }
 
@@ -255,6 +263,7 @@ extension POGOProtos_Data_Combat_Combat: SwiftProtobuf.Message, SwiftProtobuf._M
         case 11: try decoder.decodeSingularInt64Field(value: &_storage._minigameSubmitScoreEndMs)
         case 12: try decoder.decodeSingularInt64Field(value: &_storage._changePokemonEndMs)
         case 13: try decoder.decodeSingularInt64Field(value: &_storage._quickSwapCooldownDurationMs)
+        case 14: try decoder.decodeSingularInt64Field(value: &_storage._stateChangeDelayUntilTurn)
         default: break
         }
       }
@@ -302,6 +311,9 @@ extension POGOProtos_Data_Combat_Combat: SwiftProtobuf.Message, SwiftProtobuf._M
       if _storage._quickSwapCooldownDurationMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._quickSwapCooldownDurationMs, fieldNumber: 13)
       }
+      if _storage._stateChangeDelayUntilTurn != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._stateChangeDelayUntilTurn, fieldNumber: 14)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -324,6 +336,7 @@ extension POGOProtos_Data_Combat_Combat: SwiftProtobuf.Message, SwiftProtobuf._M
         if _storage._minigameSubmitScoreEndMs != rhs_storage._minigameSubmitScoreEndMs {return false}
         if _storage._changePokemonEndMs != rhs_storage._changePokemonEndMs {return false}
         if _storage._quickSwapCooldownDurationMs != rhs_storage._quickSwapCooldownDurationMs {return false}
+        if _storage._stateChangeDelayUntilTurn != rhs_storage._stateChangeDelayUntilTurn {return false}
         return true
       }
       if !storagesAreEqual {return false}

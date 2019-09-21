@@ -652,6 +652,7 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case pinsirNormal // = 898
   case pinsirShadow // = 899
   case pinsirPurified // = 900
+  case pikachuVs2019 // = 901
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -1291,6 +1292,7 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 898: self = .pinsirNormal
     case 899: self = .pinsirShadow
     case 900: self = .pinsirPurified
+    case 901: self = .pikachuVs2019
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -1928,6 +1930,7 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .pinsirNormal: return 898
     case .pinsirShadow: return 899
     case .pinsirPurified: return 900
+    case .pikachuVs2019: return 901
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -2570,6 +2573,7 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .pinsirNormal,
     .pinsirShadow,
     .pinsirPurified,
+    .pikachuVs2019,
   ]
 }
 
@@ -3210,5 +3214,6 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     898: .same(proto: "PINSIR_NORMAL"),
     899: .same(proto: "PINSIR_SHADOW"),
     900: .same(proto: "PINSIR_PURIFIED"),
+    901: .same(proto: "PIKACHU_VS_2019"),
   ]
 }
