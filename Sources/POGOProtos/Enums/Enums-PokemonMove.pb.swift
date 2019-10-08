@@ -285,6 +285,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case `return` // = 323
   case synchronoise // = 324
   case lockOnFast // = 325
+  case thunderFangFast // = 326
+  case iceFangFast // = 327
+  case hornDrill // = 328
+  case fissure // = 329
+  case sacredSword // = 330
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -557,6 +562,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 323: self = .return
     case 324: self = .synchronoise
     case 325: self = .lockOnFast
+    case 326: self = .thunderFangFast
+    case 327: self = .iceFangFast
+    case 328: self = .hornDrill
+    case 329: self = .fissure
+    case 330: self = .sacredSword
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -827,7 +837,12 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .return: return 323
     case .synchronoise: return 324
     case .lockOnFast: return 325
-    case .UNRECOGNIZED(let i): return i
+    case .thunderFangFast: return 326
+    case .iceFangFast: return 327
+    case .hornDrill: return 328
+    case .fissure: return 329
+    case .sacredSword: return 330
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1102,6 +1117,11 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .return,
     .synchronoise,
     .lockOnFast,
+    .thunderFangFast,
+    .iceFangFast,
+    .hornDrill,
+    .fissure,
+    .sacredSword,
   ]
 }
 
@@ -1375,5 +1395,10 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     323: .same(proto: "RETURN"),
     324: .same(proto: "SYNCHRONOISE"),
     325: .same(proto: "LOCK_ON_FAST"),
+    326: .same(proto: "THUNDER_FANG_FAST"),
+    327: .same(proto: "ICE_FANG_FAST"),
+    328: .same(proto: "HORN_DRILL"),
+    329: .same(proto: "FISSURE"),
+    330: .same(proto: "SACRED_SWORD"),
   ]
 }

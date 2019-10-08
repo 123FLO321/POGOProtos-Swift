@@ -104,7 +104,7 @@ public struct POGOProtos_Networking_Responses_UpdateCombatResponse {
       case .errorInvalidMinigameState: return 13
       case .errorInvalidQuickSwapPokemon: return 14
       case .errorQuickSwapNotAvailable: return 15
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

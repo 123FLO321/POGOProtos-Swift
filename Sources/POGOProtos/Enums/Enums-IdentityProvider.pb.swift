@@ -59,7 +59,7 @@ public enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
     case .internal: return 5
     case .sfida: return 6
     case .superAwesome: return 7
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

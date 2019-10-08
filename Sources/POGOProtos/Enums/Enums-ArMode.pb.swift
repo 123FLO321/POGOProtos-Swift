@@ -44,7 +44,7 @@ public enum POGOProtos_Enums_ArMode: SwiftProtobuf.Enum {
     case .none: return 0
     case .arstandard: return 1
     case .arplus: return 2
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

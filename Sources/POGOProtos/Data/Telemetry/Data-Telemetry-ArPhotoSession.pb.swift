@@ -59,7 +59,7 @@ public struct POGOProtos_Data_Telemetry_ArPhotoSession {
       case .unset: return 0
       case .plus: return 1
       case .classic: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -99,7 +99,7 @@ public struct POGOProtos_Data_Telemetry_ArPhotoSession {
       case .arplusPokemonPlaced: return 3
       case .photoTaken: return 4
       case .photoShared: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

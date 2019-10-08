@@ -59,7 +59,7 @@ public struct POGOProtos_Networking_Responses_GetMapObjectsResponse {
       case .none: return 0
       case .day: return 1
       case .night: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

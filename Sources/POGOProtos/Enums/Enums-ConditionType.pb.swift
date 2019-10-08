@@ -50,7 +50,7 @@ public enum POGOProtos_Enums_ConditionType: SwiftProtobuf.Enum {
     case .withPlayerLevel: return 2
     case .withPokemonType: return 3
     case .withPokemonCategory: return 4
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

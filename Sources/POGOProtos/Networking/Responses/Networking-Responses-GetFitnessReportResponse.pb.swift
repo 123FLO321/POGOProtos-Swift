@@ -68,7 +68,7 @@ public struct POGOProtos_Networking_Responses_GetFitnessReportResponse {
       case .errorRecordsNotFound: return 3
       case .errorInvalidWindow: return 4
       case .errorUnknown: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

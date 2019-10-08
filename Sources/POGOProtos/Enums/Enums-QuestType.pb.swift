@@ -125,7 +125,7 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case .questTakeSnapshot: return 28
     case .questBattleTeamRocket: return 29
     case .questPurifyPokemon: return 30
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

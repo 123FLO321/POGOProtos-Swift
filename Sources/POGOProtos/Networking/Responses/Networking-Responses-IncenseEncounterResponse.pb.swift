@@ -87,7 +87,7 @@ public struct POGOProtos_Networking_Responses_IncenseEncounterResponse {
       case .incenseEncounterSuccess: return 1
       case .incenseEncounterNotAvailable: return 2
       case .pokemonInventoryFull: return 3
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

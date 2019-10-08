@@ -40,6 +40,7 @@ public struct POGOProtos_Data_Analytics_ClientTelemetryBatch {
     case ditto // = 1
     case game // = 2
     case titan // = 3
+    case common // = 4
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -52,6 +53,7 @@ public struct POGOProtos_Data_Analytics_ClientTelemetryBatch {
       case 1: self = .ditto
       case 2: self = .game
       case 3: self = .titan
+      case 4: self = .common
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -62,7 +64,8 @@ public struct POGOProtos_Data_Analytics_ClientTelemetryBatch {
       case .ditto: return 1
       case .game: return 2
       case .titan: return 3
-      case .UNRECOGNIZED(let i): return i
+      case .common: return 4
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -80,6 +83,7 @@ extension POGOProtos_Data_Analytics_ClientTelemetryBatch.TelemetryScopeId: CaseI
     .ditto,
     .game,
     .titan,
+    .common,
   ]
 }
 
@@ -142,5 +146,6 @@ extension POGOProtos_Data_Analytics_ClientTelemetryBatch.TelemetryScopeId: Swift
     1: .same(proto: "DITTO"),
     2: .same(proto: "GAME"),
     3: .same(proto: "TITAN"),
+    4: .same(proto: "COMMON"),
   ]
 }

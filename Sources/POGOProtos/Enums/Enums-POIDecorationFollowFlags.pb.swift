@@ -47,7 +47,7 @@ public enum POGOProtos_Enums_POIDecorationFollowFlags: SwiftProtobuf.Enum {
     case .followX: return 1
     case .followY: return 2
     case .followZ: return 4
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

@@ -38,29 +38,6 @@ public struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
   /// Clears the value of `updatedBuddy`. Subsequent reads from it will return its default value.
   public mutating func clearUpdatedBuddy() {_uniqueStorage()._updatedBuddy = nil}
 
-  public var currentPointsEarned: Int32 {
-    get {return _storage._currentPointsEarned}
-    set {_uniqueStorage()._currentPointsEarned = newValue}
-  }
-
-  public var todayStats: POGOProtos_Data_BuddyStats {
-    get {return _storage._todayStats ?? POGOProtos_Data_BuddyStats()}
-    set {_uniqueStorage()._todayStats = newValue}
-  }
-  /// Returns true if `todayStats` has been explicitly set.
-  public var hasTodayStats: Bool {return _storage._todayStats != nil}
-  /// Clears the value of `todayStats`. Subsequent reads from it will return its default value.
-  public mutating func clearTodayStats() {_uniqueStorage()._todayStats = nil}
-
-  public var totalStats: POGOProtos_Data_BuddyStats {
-    get {return _storage._totalStats ?? POGOProtos_Data_BuddyStats()}
-    set {_uniqueStorage()._totalStats = newValue}
-  }
-  /// Returns true if `totalStats` has been explicitly set.
-  public var hasTotalStats: Bool {return _storage._totalStats != nil}
-  /// Clears the value of `totalStats`. Subsequent reads from it will return its default value.
-  public mutating func clearTotalStats() {_uniqueStorage()._totalStats = nil}
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -71,7 +48,6 @@ public struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
     case errorPokemonNotOwned // = 3
     case errorPokemonIsEgg // = 4
     case errorInvalidPokemon // = 5
-    case errorBuddySwapLimitExceeded // = 6
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -86,7 +62,6 @@ public struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
       case 3: self = .errorPokemonNotOwned
       case 4: self = .errorPokemonIsEgg
       case 5: self = .errorInvalidPokemon
-      case 6: self = .errorBuddySwapLimitExceeded
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -99,8 +74,7 @@ public struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
       case .errorPokemonNotOwned: return 3
       case .errorPokemonIsEgg: return 4
       case .errorInvalidPokemon: return 5
-      case .errorBuddySwapLimitExceeded: return 6
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -122,7 +96,6 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result: CaseIt
     .errorPokemonNotOwned,
     .errorPokemonIsEgg,
     .errorInvalidPokemon,
-    .errorBuddySwapLimitExceeded,
   ]
 }
 
@@ -137,17 +110,11 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "updated_buddy"),
-    3: .standard(proto: "current_points_earned"),
-    4: .standard(proto: "today_stats"),
-    5: .standard(proto: "total_stats"),
   ]
 
   fileprivate class _StorageClass {
     var _result: POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result = .unest
     var _updatedBuddy: POGOProtos_Data_BuddyPokemon? = nil
-    var _currentPointsEarned: Int32 = 0
-    var _todayStats: POGOProtos_Data_BuddyStats? = nil
-    var _totalStats: POGOProtos_Data_BuddyStats? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -156,9 +123,6 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
     init(copying source: _StorageClass) {
       _result = source._result
       _updatedBuddy = source._updatedBuddy
-      _currentPointsEarned = source._currentPointsEarned
-      _todayStats = source._todayStats
-      _totalStats = source._totalStats
     }
   }
 
@@ -176,9 +140,6 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._result)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._updatedBuddy)
-        case 3: try decoder.decodeSingularInt32Field(value: &_storage._currentPointsEarned)
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._todayStats)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._totalStats)
         default: break
         }
       }
@@ -193,15 +154,6 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
       if let v = _storage._updatedBuddy {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
-      if _storage._currentPointsEarned != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._currentPointsEarned, fieldNumber: 3)
-      }
-      if let v = _storage._todayStats {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-      }
-      if let v = _storage._totalStats {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -213,9 +165,6 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
         let rhs_storage = _args.1
         if _storage._result != rhs_storage._result {return false}
         if _storage._updatedBuddy != rhs_storage._updatedBuddy {return false}
-        if _storage._currentPointsEarned != rhs_storage._currentPointsEarned {return false}
-        if _storage._todayStats != rhs_storage._todayStats {return false}
-        if _storage._totalStats != rhs_storage._totalStats {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -233,6 +182,5 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result: SwiftP
     3: .same(proto: "ERROR_POKEMON_NOT_OWNED"),
     4: .same(proto: "ERROR_POKEMON_IS_EGG"),
     5: .same(proto: "ERROR_INVALID_POKEMON"),
-    6: .same(proto: "ERROR_BUDDY_SWAP_LIMIT_EXCEEDED"),
   ]
 }

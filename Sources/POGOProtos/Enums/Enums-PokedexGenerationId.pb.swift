@@ -53,7 +53,7 @@ public enum POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf.Enum {
     case .gen4: return 3
     case .gen5: return 4
     case .pokedexGenIDMeltan: return 1001
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

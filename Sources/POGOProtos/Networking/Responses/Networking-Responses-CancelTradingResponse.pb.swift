@@ -77,7 +77,7 @@ public struct POGOProtos_Networking_Responses_CancelTradingResponse {
       case .errorInvalidPlayerID: return 4
       case .errorInvalidState: return 5
       case .errorStateHandler: return 6
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

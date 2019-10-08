@@ -57,7 +57,7 @@ public struct POGOProtos_Settings_FestivalSettings {
       case .none: return 0
       case .halloween: return 1
       case .holiday: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

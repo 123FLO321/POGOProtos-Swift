@@ -59,7 +59,7 @@ public enum POGOProtos_Enums_WeatherCondition: SwiftProtobuf.Enum {
     case .windy: return 5
     case .snow: return 6
     case .fog: return 7
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

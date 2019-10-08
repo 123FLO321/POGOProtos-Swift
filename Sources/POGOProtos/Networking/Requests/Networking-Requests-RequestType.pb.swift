@@ -308,9 +308,6 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case belugaTransactionComplete // = 820
 
   /// Implemented
-  case poiScan // = 821
-
-  /// Implemented
   case getNewQuests // = 900
 
   /// Implemented
@@ -498,36 +495,6 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
 
   /// Implemented
   case purifyPokemon // = 1205
-
-  /// Implemented
-  case vsSeekerStartMatchmaking // = 1300
-
-  /// Implemented
-  case cancelMatchmaking // = 1301
-
-  /// Implemented
-  case getMatchmakingStatus // = 1302
-
-  /// Implemented
-  case completeVsSeekerAndRestartCharging // = 1303
-
-  /// Implemented
-  case getVsSeekerStatus // = 1304
-
-  /// Implemented
-  case completeCombatCompetitiveSeasonAction // = 1305
-
-  /// Implemented
-  case getBuddyMap // = 1350
-
-  /// Implemented
-  case getBuddyStats // = 1351
-
-  /// Implemented
-  case feedBuddy // = 1352
-
-  /// Implemented
-  case updateRouteDraft // = 1400
 
   /// Implemented
   case registerPushNotification // = 5000
@@ -739,7 +706,6 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 818: self = .getPlayerDisplayInfo
     case 819: self = .belugaTransactionStart
     case 820: self = .belugaTransactionComplete
-    case 821: self = .poiScan
     case 900: self = .getNewQuests
     case 901: self = .getQuestDetails
     case 902: self = .completeQuest
@@ -803,16 +769,6 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1203: self = .invasionBattleUpdate
     case 1204: self = .invasionEncounter
     case 1205: self = .purifyPokemon
-    case 1300: self = .vsSeekerStartMatchmaking
-    case 1301: self = .cancelMatchmaking
-    case 1302: self = .getMatchmakingStatus
-    case 1303: self = .completeVsSeekerAndRestartCharging
-    case 1304: self = .getVsSeekerStatus
-    case 1305: self = .completeCombatCompetitiveSeasonAction
-    case 1350: self = .getBuddyMap
-    case 1351: self = .getBuddyStats
-    case 1352: self = .feedBuddy
-    case 1400: self = .updateRouteDraft
     case 5000: self = .registerPushNotification
     case 5001: self = .unregisterPushNotification
     case 5002: self = .updateNotificationStatus
@@ -950,7 +906,6 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .getPlayerDisplayInfo: return 818
     case .belugaTransactionStart: return 819
     case .belugaTransactionComplete: return 820
-    case .poiScan: return 821
     case .getNewQuests: return 900
     case .getQuestDetails: return 901
     case .completeQuest: return 902
@@ -1014,16 +969,6 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .invasionBattleUpdate: return 1203
     case .invasionEncounter: return 1204
     case .purifyPokemon: return 1205
-    case .vsSeekerStartMatchmaking: return 1300
-    case .cancelMatchmaking: return 1301
-    case .getMatchmakingStatus: return 1302
-    case .completeVsSeekerAndRestartCharging: return 1303
-    case .getVsSeekerStatus: return 1304
-    case .completeCombatCompetitiveSeasonAction: return 1305
-    case .getBuddyMap: return 1350
-    case .getBuddyStats: return 1351
-    case .feedBuddy: return 1352
-    case .updateRouteDraft: return 1400
     case .registerPushNotification: return 5000
     case .unregisterPushNotification: return 5001
     case .updateNotificationStatus: return 5002
@@ -1060,7 +1005,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .updatePlayerLocation: return 5034
     case .generateGmapSignedURL: return 5035
     case .getGmapSettings: return 5036
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1166,7 +1111,6 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .getPlayerDisplayInfo,
     .belugaTransactionStart,
     .belugaTransactionComplete,
-    .poiScan,
     .getNewQuests,
     .getQuestDetails,
     .completeQuest,
@@ -1230,16 +1174,6 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .invasionBattleUpdate,
     .invasionEncounter,
     .purifyPokemon,
-    .vsSeekerStartMatchmaking,
-    .cancelMatchmaking,
-    .getMatchmakingStatus,
-    .completeVsSeekerAndRestartCharging,
-    .getVsSeekerStatus,
-    .completeCombatCompetitiveSeasonAction,
-    .getBuddyMap,
-    .getBuddyStats,
-    .feedBuddy,
-    .updateRouteDraft,
     .registerPushNotification,
     .unregisterPushNotification,
     .updateNotificationStatus,
@@ -1380,7 +1314,6 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     818: .same(proto: "GET_PLAYER_DISPLAY_INFO"),
     819: .same(proto: "BELUGA_TRANSACTION_START"),
     820: .same(proto: "BELUGA_TRANSACTION_COMPLETE"),
-    821: .same(proto: "POI_SCAN"),
     900: .same(proto: "GET_NEW_QUESTS"),
     901: .same(proto: "GET_QUEST_DETAILS"),
     902: .same(proto: "COMPLETE_QUEST"),
@@ -1444,16 +1377,6 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1203: .same(proto: "INVASION_BATTLE_UPDATE"),
     1204: .same(proto: "INVASION_ENCOUNTER"),
     1205: .same(proto: "PURIFY_POKEMON"),
-    1300: .same(proto: "VS_SEEKER_START_MATCHMAKING"),
-    1301: .same(proto: "CANCEL_MATCHMAKING"),
-    1302: .same(proto: "GET_MATCHMAKING_STATUS"),
-    1303: .same(proto: "COMPLETE_VS_SEEKER_AND_RESTART_CHARGING"),
-    1304: .same(proto: "GET_VS_SEEKER_STATUS"),
-    1305: .same(proto: "COMPLETE_COMBAT_COMPETITIVE_SEASON_ACTION"),
-    1350: .same(proto: "GET_BUDDY_MAP"),
-    1351: .same(proto: "GET_BUDDY_STATS"),
-    1352: .same(proto: "FEED_BUDDY"),
-    1400: .same(proto: "UPDATE_ROUTE_DRAFT"),
     5000: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
     5001: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
     5002: .same(proto: "UPDATE_NOTIFICATION_STATUS"),

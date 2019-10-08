@@ -56,7 +56,7 @@ public enum POGOProtos_Enums_PluginState: SwiftProtobuf.Enum {
     case .resumed: return 4
     case .paused: return 5
     case .stopped: return 6
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

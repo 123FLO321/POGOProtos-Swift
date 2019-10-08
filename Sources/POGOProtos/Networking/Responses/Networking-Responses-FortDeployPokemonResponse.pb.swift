@@ -119,7 +119,7 @@ public struct POGOProtos_Networking_Responses_FortDeployPokemonResponse {
       case .errorPoiInaccessible: return 12
       case .errorLegendaryPokemon: return 13
       case .errorInvalidPokemon: return 14
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

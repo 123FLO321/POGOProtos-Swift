@@ -53,7 +53,7 @@ public enum POGOProtos_Enums_RaidLevel: SwiftProtobuf.Enum {
     case .raidLevel3: return 3
     case .raidLevel4: return 4
     case .raidLevel5: return 5
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

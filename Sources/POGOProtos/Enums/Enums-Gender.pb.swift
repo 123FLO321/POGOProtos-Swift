@@ -47,7 +47,7 @@ public enum POGOProtos_Enums_Gender: SwiftProtobuf.Enum {
     case .male: return 1
     case .female: return 2
     case .less: return 3
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

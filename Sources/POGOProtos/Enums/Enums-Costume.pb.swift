@@ -68,7 +68,7 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case .winter2018: return 8
     case .feb2019: return 9
     case .may2019Noevolve: return 10
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

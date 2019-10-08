@@ -86,7 +86,7 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
       case .errorPoiInaccessible: return 7
       case .errorGymLockout: return 8
       case .errorNoTicket: return 9
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

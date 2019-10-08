@@ -65,7 +65,7 @@ public enum POGOProtos_Enums_POIDecorationProperties: SwiftProtobuf.Enum {
     case .setLowestMotivation: return 7
     case .setNpcClickedAction: return 8
     case .beginExit: return 9
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

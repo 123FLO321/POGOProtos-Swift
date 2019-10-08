@@ -161,7 +161,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case .bgmodeOffSessionDistanceKm: return 1030
     case .poiName: return 1031
     case .friendID: return 1032
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

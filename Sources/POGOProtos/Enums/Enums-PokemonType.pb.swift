@@ -92,7 +92,7 @@ public enum POGOProtos_Enums_PokemonType: SwiftProtobuf.Enum {
     case .dragon: return 16
     case .dark: return 17
     case .fairy: return 18
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

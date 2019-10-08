@@ -49,11 +49,9 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case arPhotoFirstTimeDialog // = 25
   case arClassicPhotoTutorial // = 26
   case arPlusPhotoTutorial // = 27
-  case activeStatusFirstTimeDialog // = 28
   case invasionIntroductionDialog // = 29
   case invasionEncounterDialog // = 30
   case invasionShadowPokemonDialog // = 31
-  case routesCreation // = 32
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -90,11 +88,9 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case 25: self = .arPhotoFirstTimeDialog
     case 26: self = .arClassicPhotoTutorial
     case 27: self = .arPlusPhotoTutorial
-    case 28: self = .activeStatusFirstTimeDialog
     case 29: self = .invasionIntroductionDialog
     case 30: self = .invasionEncounterDialog
     case 31: self = .invasionShadowPokemonDialog
-    case 32: self = .routesCreation
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -129,12 +125,10 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .arPhotoFirstTimeDialog: return 25
     case .arClassicPhotoTutorial: return 26
     case .arPlusPhotoTutorial: return 27
-    case .activeStatusFirstTimeDialog: return 28
     case .invasionIntroductionDialog: return 29
     case .invasionEncounterDialog: return 30
     case .invasionShadowPokemonDialog: return 31
-    case .routesCreation: return 32
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -173,11 +167,9 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
     .arPhotoFirstTimeDialog,
     .arClassicPhotoTutorial,
     .arPlusPhotoTutorial,
-    .activeStatusFirstTimeDialog,
     .invasionIntroductionDialog,
     .invasionEncounterDialog,
     .invasionShadowPokemonDialog,
-    .routesCreation,
   ]
 }
 
@@ -215,10 +207,8 @@ extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
     25: .same(proto: "AR_PHOTO_FIRST_TIME_DIALOG"),
     26: .same(proto: "AR_CLASSIC_PHOTO_TUTORIAL"),
     27: .same(proto: "AR_PLUS_PHOTO_TUTORIAL"),
-    28: .same(proto: "ACTIVE_STATUS_FIRST_TIME_DIALOG"),
     29: .same(proto: "INVASION_INTRODUCTION_DIALOG"),
     30: .same(proto: "INVASION_ENCOUNTER_DIALOG"),
     31: .same(proto: "INVASION_SHADOW_POKEMON_DIALOG"),
-    32: .same(proto: "ROUTES_CREATION"),
   ]
 }

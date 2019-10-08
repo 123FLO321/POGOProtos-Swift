@@ -225,7 +225,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case .unset: return 0
       case .storyQuest: return 1
       case .challengeQuest: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -256,7 +256,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case .undefined: return 0
       case .active: return 1
       case .completed: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

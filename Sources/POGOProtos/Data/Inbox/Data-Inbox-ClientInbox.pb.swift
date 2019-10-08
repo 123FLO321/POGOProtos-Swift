@@ -109,7 +109,7 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
       case .luckyFriend: return 18
       case .friendInviteReceived: return 19
       case .friendInviteAccepted: return 20
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -164,7 +164,7 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
         case .unread: return 1
         case .new: return 2
         case .immediate: return 3
-        case .UNRECOGNIZED(let i): return i
+        case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
         }
       }
 

@@ -173,7 +173,7 @@ public enum POGOProtos_Enums_ActivityType: SwiftProtobuf.Enum {
     case .activityRaidLevel3AdditionalXp: return 44
     case .activityRaidLevel4AdditionalXp: return 45
     case .activityRaidLevel5AdditionalXp: return 46
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

@@ -71,7 +71,7 @@ public struct POGOProtos_Networking_Responses_SetLobbyPokemonResponse {
       case .errorLobbyNotFound: return 2
       case .errorRaidUnavailable: return 3
       case .errorInvalidPokemon: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

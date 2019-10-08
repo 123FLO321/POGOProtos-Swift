@@ -80,7 +80,7 @@ public struct POGOProtos_Networking_Social_Responses_SendFriendInviteResponse {
       case .errorCannotSendInvitesToYourself: return 9
       case .errorInviteAlreadyReceived: return 10
       case .errorReceiverHasMaxFriends: return 11
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

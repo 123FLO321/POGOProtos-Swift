@@ -652,6 +652,49 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case pinsirNormal // = 898
   case pinsirShadow // = 899
   case pinsirPurified // = 900
+  case pikachuVs2019 // = 901
+  case onixNormal // = 902
+  case onixShadow // = 903
+  case onixPurified // = 904
+  case steelixNormal // = 905
+  case steelixShadow // = 906
+  case steelixPurified // = 907
+  case shuppetNormal // = 908
+  case shuppetShadow // = 909
+  case shuppetPurified // = 910
+  case banetteNormal // = 911
+  case banetteShadow // = 912
+  case banettePurified // = 913
+  case duskullNormal // = 914
+  case duskullShadow // = 915
+  case duskullPurified // = 916
+  case dusclopsNormal // = 917
+  case dusclopsShadow // = 918
+  case dusclopsPurified // = 919
+  case dusknoirNormal // = 920
+  case dusknoirShadow // = 921
+  case dusknoirPurified // = 922
+  case sableyeNormal // = 923
+  case sableyeShadow // = 924
+  case sableyePurified // = 925
+  case snoruntNormal // = 926
+  case snoruntShadow // = 927
+  case snoruntPurified // = 928
+  case glalieNormal // = 929
+  case glalieShadow // = 930
+  case glaliePurified // = 931
+  case snoverNormal // = 932
+  case snoverShadow // = 933
+  case snoverPurified // = 934
+  case abomasnowNormal // = 935
+  case abomasnowShadow // = 936
+  case abomasnowPurified // = 937
+  case delibirdNormal // = 938
+  case delibirdShadow // = 939
+  case delibirdPurified // = 940
+  case stantlerNormal // = 941
+  case stantlerShadow // = 942
+  case stantlerPurified // = 943
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -1291,6 +1334,49 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 898: self = .pinsirNormal
     case 899: self = .pinsirShadow
     case 900: self = .pinsirPurified
+    case 901: self = .pikachuVs2019
+    case 902: self = .onixNormal
+    case 903: self = .onixShadow
+    case 904: self = .onixPurified
+    case 905: self = .steelixNormal
+    case 906: self = .steelixShadow
+    case 907: self = .steelixPurified
+    case 908: self = .shuppetNormal
+    case 909: self = .shuppetShadow
+    case 910: self = .shuppetPurified
+    case 911: self = .banetteNormal
+    case 912: self = .banetteShadow
+    case 913: self = .banettePurified
+    case 914: self = .duskullNormal
+    case 915: self = .duskullShadow
+    case 916: self = .duskullPurified
+    case 917: self = .dusclopsNormal
+    case 918: self = .dusclopsShadow
+    case 919: self = .dusclopsPurified
+    case 920: self = .dusknoirNormal
+    case 921: self = .dusknoirShadow
+    case 922: self = .dusknoirPurified
+    case 923: self = .sableyeNormal
+    case 924: self = .sableyeShadow
+    case 925: self = .sableyePurified
+    case 926: self = .snoruntNormal
+    case 927: self = .snoruntShadow
+    case 928: self = .snoruntPurified
+    case 929: self = .glalieNormal
+    case 930: self = .glalieShadow
+    case 931: self = .glaliePurified
+    case 932: self = .snoverNormal
+    case 933: self = .snoverShadow
+    case 934: self = .snoverPurified
+    case 935: self = .abomasnowNormal
+    case 936: self = .abomasnowShadow
+    case 937: self = .abomasnowPurified
+    case 938: self = .delibirdNormal
+    case 939: self = .delibirdShadow
+    case 940: self = .delibirdPurified
+    case 941: self = .stantlerNormal
+    case 942: self = .stantlerShadow
+    case 943: self = .stantlerPurified
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -1928,7 +2014,50 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .pinsirNormal: return 898
     case .pinsirShadow: return 899
     case .pinsirPurified: return 900
-    case .UNRECOGNIZED(let i): return i
+    case .pikachuVs2019: return 901
+    case .onixNormal: return 902
+    case .onixShadow: return 903
+    case .onixPurified: return 904
+    case .steelixNormal: return 905
+    case .steelixShadow: return 906
+    case .steelixPurified: return 907
+    case .shuppetNormal: return 908
+    case .shuppetShadow: return 909
+    case .shuppetPurified: return 910
+    case .banetteNormal: return 911
+    case .banetteShadow: return 912
+    case .banettePurified: return 913
+    case .duskullNormal: return 914
+    case .duskullShadow: return 915
+    case .duskullPurified: return 916
+    case .dusclopsNormal: return 917
+    case .dusclopsShadow: return 918
+    case .dusclopsPurified: return 919
+    case .dusknoirNormal: return 920
+    case .dusknoirShadow: return 921
+    case .dusknoirPurified: return 922
+    case .sableyeNormal: return 923
+    case .sableyeShadow: return 924
+    case .sableyePurified: return 925
+    case .snoruntNormal: return 926
+    case .snoruntShadow: return 927
+    case .snoruntPurified: return 928
+    case .glalieNormal: return 929
+    case .glalieShadow: return 930
+    case .glaliePurified: return 931
+    case .snoverNormal: return 932
+    case .snoverShadow: return 933
+    case .snoverPurified: return 934
+    case .abomasnowNormal: return 935
+    case .abomasnowShadow: return 936
+    case .abomasnowPurified: return 937
+    case .delibirdNormal: return 938
+    case .delibirdShadow: return 939
+    case .delibirdPurified: return 940
+    case .stantlerNormal: return 941
+    case .stantlerShadow: return 942
+    case .stantlerPurified: return 943
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -2570,6 +2699,49 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .pinsirNormal,
     .pinsirShadow,
     .pinsirPurified,
+    .pikachuVs2019,
+    .onixNormal,
+    .onixShadow,
+    .onixPurified,
+    .steelixNormal,
+    .steelixShadow,
+    .steelixPurified,
+    .shuppetNormal,
+    .shuppetShadow,
+    .shuppetPurified,
+    .banetteNormal,
+    .banetteShadow,
+    .banettePurified,
+    .duskullNormal,
+    .duskullShadow,
+    .duskullPurified,
+    .dusclopsNormal,
+    .dusclopsShadow,
+    .dusclopsPurified,
+    .dusknoirNormal,
+    .dusknoirShadow,
+    .dusknoirPurified,
+    .sableyeNormal,
+    .sableyeShadow,
+    .sableyePurified,
+    .snoruntNormal,
+    .snoruntShadow,
+    .snoruntPurified,
+    .glalieNormal,
+    .glalieShadow,
+    .glaliePurified,
+    .snoverNormal,
+    .snoverShadow,
+    .snoverPurified,
+    .abomasnowNormal,
+    .abomasnowShadow,
+    .abomasnowPurified,
+    .delibirdNormal,
+    .delibirdShadow,
+    .delibirdPurified,
+    .stantlerNormal,
+    .stantlerShadow,
+    .stantlerPurified,
   ]
 }
 
@@ -3210,5 +3382,48 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     898: .same(proto: "PINSIR_NORMAL"),
     899: .same(proto: "PINSIR_SHADOW"),
     900: .same(proto: "PINSIR_PURIFIED"),
+    901: .same(proto: "PIKACHU_VS_2019"),
+    902: .same(proto: "ONIX_NORMAL"),
+    903: .same(proto: "ONIX_SHADOW"),
+    904: .same(proto: "ONIX_PURIFIED"),
+    905: .same(proto: "STEELIX_NORMAL"),
+    906: .same(proto: "STEELIX_SHADOW"),
+    907: .same(proto: "STEELIX_PURIFIED"),
+    908: .same(proto: "SHUPPET_NORMAL"),
+    909: .same(proto: "SHUPPET_SHADOW"),
+    910: .same(proto: "SHUPPET_PURIFIED"),
+    911: .same(proto: "BANETTE_NORMAL"),
+    912: .same(proto: "BANETTE_SHADOW"),
+    913: .same(proto: "BANETTE_PURIFIED"),
+    914: .same(proto: "DUSKULL_NORMAL"),
+    915: .same(proto: "DUSKULL_SHADOW"),
+    916: .same(proto: "DUSKULL_PURIFIED"),
+    917: .same(proto: "DUSCLOPS_NORMAL"),
+    918: .same(proto: "DUSCLOPS_SHADOW"),
+    919: .same(proto: "DUSCLOPS_PURIFIED"),
+    920: .same(proto: "DUSKNOIR_NORMAL"),
+    921: .same(proto: "DUSKNOIR_SHADOW"),
+    922: .same(proto: "DUSKNOIR_PURIFIED"),
+    923: .same(proto: "SABLEYE_NORMAL"),
+    924: .same(proto: "SABLEYE_SHADOW"),
+    925: .same(proto: "SABLEYE_PURIFIED"),
+    926: .same(proto: "SNORUNT_NORMAL"),
+    927: .same(proto: "SNORUNT_SHADOW"),
+    928: .same(proto: "SNORUNT_PURIFIED"),
+    929: .same(proto: "GLALIE_NORMAL"),
+    930: .same(proto: "GLALIE_SHADOW"),
+    931: .same(proto: "GLALIE_PURIFIED"),
+    932: .same(proto: "SNOVER_NORMAL"),
+    933: .same(proto: "SNOVER_SHADOW"),
+    934: .same(proto: "SNOVER_PURIFIED"),
+    935: .same(proto: "ABOMASNOW_NORMAL"),
+    936: .same(proto: "ABOMASNOW_SHADOW"),
+    937: .same(proto: "ABOMASNOW_PURIFIED"),
+    938: .same(proto: "DELIBIRD_NORMAL"),
+    939: .same(proto: "DELIBIRD_SHADOW"),
+    940: .same(proto: "DELIBIRD_PURIFIED"),
+    941: .same(proto: "STANTLER_NORMAL"),
+    942: .same(proto: "STANTLER_SHADOW"),
+    943: .same(proto: "STANTLER_PURIFIED"),
   ]
 }

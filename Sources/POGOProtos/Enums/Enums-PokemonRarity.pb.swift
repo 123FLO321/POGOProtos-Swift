@@ -44,7 +44,7 @@ public enum POGOProtos_Enums_PokemonRarity: SwiftProtobuf.Enum {
     case .normal: return 0
     case .legendary: return 1
     case .mythic: return 2
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

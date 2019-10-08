@@ -47,7 +47,7 @@ public enum POGOProtos_Enums_SocialNotificationVariableName: SwiftProtobuf.Enum 
     case .socialCodename: return 1
     case .socialTeam: return 2
     case .socialPlayerSummary: return 3
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

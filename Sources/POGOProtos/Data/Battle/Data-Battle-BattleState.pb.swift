@@ -50,7 +50,7 @@ public enum POGOProtos_Data_Battle_BattleState: SwiftProtobuf.Enum {
     case .victory: return 2
     case .defeated: return 3
     case .timedOut: return 4
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

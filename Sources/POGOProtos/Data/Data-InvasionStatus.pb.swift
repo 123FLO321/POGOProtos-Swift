@@ -37,6 +37,7 @@ public struct POGOProtos_Data_InvasionStatus {
     case errorWrongStep // = 6
     case errorPlayerBelowMinLevel // = 7
     case errorIncidentExpired // = 8
+    case errorMissingIncidentTicket // = 9
     case errorEncounterPokemonInventoryFull // = 10
     case errorInvalidHealthUpdates // = 20
     case errorAttackingPokemonInvalid // = 30
@@ -57,6 +58,7 @@ public struct POGOProtos_Data_InvasionStatus {
       case 6: self = .errorWrongStep
       case 7: self = .errorPlayerBelowMinLevel
       case 8: self = .errorIncidentExpired
+      case 9: self = .errorMissingIncidentTicket
       case 10: self = .errorEncounterPokemonInventoryFull
       case 20: self = .errorInvalidHealthUpdates
       case 30: self = .errorAttackingPokemonInvalid
@@ -75,10 +77,11 @@ public struct POGOProtos_Data_InvasionStatus {
       case .errorWrongStep: return 6
       case .errorPlayerBelowMinLevel: return 7
       case .errorIncidentExpired: return 8
+      case .errorMissingIncidentTicket: return 9
       case .errorEncounterPokemonInventoryFull: return 10
       case .errorInvalidHealthUpdates: return 20
       case .errorAttackingPokemonInvalid: return 30
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -101,6 +104,7 @@ extension POGOProtos_Data_InvasionStatus.Status: CaseIterable {
     .errorWrongStep,
     .errorPlayerBelowMinLevel,
     .errorIncidentExpired,
+    .errorMissingIncidentTicket,
     .errorEncounterPokemonInventoryFull,
     .errorInvalidHealthUpdates,
     .errorAttackingPokemonInvalid,
@@ -143,6 +147,7 @@ extension POGOProtos_Data_InvasionStatus.Status: SwiftProtobuf._ProtoNameProvidi
     6: .same(proto: "ERROR_WRONG_STEP"),
     7: .same(proto: "ERROR_PLAYER_BELOW_MIN_LEVEL"),
     8: .same(proto: "ERROR_INCIDENT_EXPIRED"),
+    9: .same(proto: "ERROR_MISSING_INCIDENT_TICKET"),
     10: .same(proto: "ERROR_ENCOUNTER_POKEMON_INVENTORY_FULL"),
     20: .same(proto: "ERROR_INVALID_HEALTH_UPDATES"),
     30: .same(proto: "ERROR_ATTACKING_POKEMON_INVALID"),

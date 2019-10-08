@@ -83,7 +83,7 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
       case .unsetPromoType: return 0
       case .sale: return 1
       case .featured: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -120,7 +120,7 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
       case .medalReward: return 2
       case .iapClothing: return 3
       case .levelReward: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -187,7 +187,7 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
       case .necklace: return 12
       case .skin: return 13
       case .pose: return 14
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

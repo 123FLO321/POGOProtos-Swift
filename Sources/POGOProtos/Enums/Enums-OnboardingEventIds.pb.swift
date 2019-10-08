@@ -119,7 +119,7 @@ public enum POGOProtos_Enums_OnboardingEventIds: SwiftProtobuf.Enum {
     case .arStandardRejected: return 25
     case .arPlusEnabled: return 26
     case .arPlusRejected: return 27
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -185,7 +185,7 @@ public enum POGOProtos_Enums_OnboardingPathIds: SwiftProtobuf.Enum {
     switch self {
     case .v1: return 0
     case .v2: return 1
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

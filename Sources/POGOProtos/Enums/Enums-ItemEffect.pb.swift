@@ -86,7 +86,7 @@ public enum POGOProtos_Enums_ItemEffect: SwiftProtobuf.Enum {
     case .capChanceSingleThrow: return 1014
     case .candyAward: return 1015
     case .fullMotivation: return 1016
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

@@ -53,7 +53,7 @@ public enum POGOProtos_Enums_CentralState: SwiftProtobuf.Enum {
     case .unauthorized: return 3
     case .poweredOff: return 4
     case .poweredOn: return 5
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

@@ -63,7 +63,7 @@ public struct POGOProtos_Networking_Platform_Responses_GetGmapSettingsResponse {
       case .errorUnknown: return 2
       case .errorMissingConfig: return 3
       case .errorNoUniqueID: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

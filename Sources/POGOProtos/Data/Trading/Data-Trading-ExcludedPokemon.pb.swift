@@ -88,7 +88,7 @@ public struct POGOProtos_Data_Trading_ExcludedPokemon {
       case .playerCannotAfford: return 11
       case .playerReachedDailyLimit: return 12
       case .favorite: return 13
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

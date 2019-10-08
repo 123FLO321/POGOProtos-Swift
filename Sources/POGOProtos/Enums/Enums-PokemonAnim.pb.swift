@@ -33,7 +33,6 @@ public enum POGOProtos_Enums_PokemonAnim: SwiftProtobuf.Enum {
   case sleep01 // = 9
   case sleep02 // = 10
   case sleepWait // = 11
-  case max // = 12
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -54,7 +53,6 @@ public enum POGOProtos_Enums_PokemonAnim: SwiftProtobuf.Enum {
     case 9: self = .sleep01
     case 10: self = .sleep02
     case 11: self = .sleepWait
-    case 12: self = .max
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -73,8 +71,7 @@ public enum POGOProtos_Enums_PokemonAnim: SwiftProtobuf.Enum {
     case .sleep01: return 9
     case .sleep02: return 10
     case .sleepWait: return 11
-    case .max: return 12
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -97,7 +94,6 @@ extension POGOProtos_Enums_PokemonAnim: CaseIterable {
     .sleep01,
     .sleep02,
     .sleepWait,
-    .max,
   ]
 }
 
@@ -119,6 +115,5 @@ extension POGOProtos_Enums_PokemonAnim: SwiftProtobuf._ProtoNameProviding {
     9: .same(proto: "SLEEP_01"),
     10: .same(proto: "SLEEP_02"),
     11: .same(proto: "SLEEP_WAIT"),
-    12: .same(proto: "_MAX"),
   ]
 }

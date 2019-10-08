@@ -71,7 +71,7 @@ public struct POGOProtos_Data_Quests_QuestDialog {
       case .pushy: return 4
       case .impatient: return 5
       case .admiration: return 6
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -99,7 +99,7 @@ public struct POGOProtos_Data_Quests_QuestDialog {
       switch self {
       case .unset: return 0
       case .professorWillow: return 1
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

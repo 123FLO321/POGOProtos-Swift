@@ -119,7 +119,7 @@ public struct POGOProtos_Data_Combat_CombatChallenge {
       case .declined: return 5
       case .ready: return 6
       case .timeout: return 7
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

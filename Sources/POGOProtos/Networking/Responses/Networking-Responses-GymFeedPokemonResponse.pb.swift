@@ -132,7 +132,7 @@ public struct POGOProtos_Networking_Responses_GymFeedPokemonResponse {
       case .errorGymBusy: return 11
       case .errorRaidActive: return 12
       case .errorGymClosed: return 13
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

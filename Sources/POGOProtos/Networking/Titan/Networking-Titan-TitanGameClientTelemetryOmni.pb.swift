@@ -134,7 +134,7 @@ public struct POGOProtos_Networking_Titan_TitanGameClientTelemetryOmni {
         case .unset: return 0
         case .poiPhotoUploadError: return 1
         case .poiPhotoUploadTimeout: return 2
-        case .UNRECOGNIZED(let i): return i
+        case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
         }
       }
 
@@ -187,7 +187,7 @@ public struct POGOProtos_Networking_Titan_TitanGameClientTelemetryOmni {
         case .retake: return 2
         case .confirm: return 3
         case .exit: return 4
-        case .UNRECOGNIZED(let i): return i
+        case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
         }
       }
 
@@ -254,7 +254,7 @@ public struct POGOProtos_Networking_Titan_TitanGameClientTelemetryOmni {
         case .poiSupportinginfoEnter: return 12
         case .poiSubmitButtonHit: return 13
         case .poiExitButtonHit: return 14
-        case .UNRECOGNIZED(let i): return i
+        case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
         }
       }
 

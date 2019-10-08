@@ -50,7 +50,7 @@ public enum POGOProtos_Enums_CameraInterpolation: SwiftProtobuf.Enum {
     case .camInterpSmooth: return 2
     case .camInterpSmoothRotLinearMove: return 3
     case .camInterpDepends: return 4
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

@@ -220,7 +220,7 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
     case .updatePlayerLocation: return 5034
     case .generateGmapSignedURL: return 5035
     case .getGmapSettings: return 5036
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

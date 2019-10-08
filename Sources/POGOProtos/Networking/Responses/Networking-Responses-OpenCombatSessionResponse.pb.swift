@@ -54,7 +54,6 @@ public struct POGOProtos_Networking_Responses_OpenCombatSessionResponse {
     case errorPokemonLineupIneligibleForLeague // = 9
     case errorCombatLeagueUnspecified // = 10
     case errorAccessDenied // = 11
-    case errorPlayerHasNoBattlePasses // = 12
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -75,7 +74,6 @@ public struct POGOProtos_Networking_Responses_OpenCombatSessionResponse {
       case 9: self = .errorPokemonLineupIneligibleForLeague
       case 10: self = .errorCombatLeagueUnspecified
       case 11: self = .errorAccessDenied
-      case 12: self = .errorPlayerHasNoBattlePasses
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -94,8 +92,7 @@ public struct POGOProtos_Networking_Responses_OpenCombatSessionResponse {
       case .errorPokemonLineupIneligibleForLeague: return 9
       case .errorCombatLeagueUnspecified: return 10
       case .errorAccessDenied: return 11
-      case .errorPlayerHasNoBattlePasses: return 12
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -123,7 +120,6 @@ extension POGOProtos_Networking_Responses_OpenCombatSessionResponse.Result: Case
     .errorPokemonLineupIneligibleForLeague,
     .errorCombatLeagueUnspecified,
     .errorAccessDenied,
-    .errorPlayerHasNoBattlePasses,
   ]
 }
 
@@ -216,6 +212,5 @@ extension POGOProtos_Networking_Responses_OpenCombatSessionResponse.Result: Swif
     9: .same(proto: "ERROR_POKEMON_LINEUP_INELIGIBLE_FOR_LEAGUE"),
     10: .same(proto: "ERROR_COMBAT_LEAGUE_UNSPECIFIED"),
     11: .same(proto: "ERROR_ACCESS_DENIED"),
-    12: .same(proto: "ERROR_PLAYER_HAS_NO_BATTLE_PASSES"),
   ]
 }

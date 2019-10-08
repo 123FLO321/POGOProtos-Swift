@@ -41,7 +41,7 @@ public enum POGOProtos_Enums_AvatarCompletion: SwiftProtobuf.Enum {
     switch self {
     case .successAvatarCompletion: return 0
     case .quit: return 1
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

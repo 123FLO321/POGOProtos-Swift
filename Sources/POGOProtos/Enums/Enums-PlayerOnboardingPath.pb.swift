@@ -44,7 +44,7 @@ public enum POGOProtos_Enums_PlayerOnboardingPath: SwiftProtobuf.Enum {
     case .unsetPlayerOnboardingPath: return 0
     case .v1PlayerOnboardingPath: return 1
     case .v2PlayerOnboardingPath: return 2
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

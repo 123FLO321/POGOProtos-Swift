@@ -53,7 +53,7 @@ public enum POGOProtos_Enums_Platform: SwiftProtobuf.Enum {
     case .osx: return 3
     case .windows: return 4
     case .appleWatch: return 5
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

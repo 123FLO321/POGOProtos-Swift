@@ -76,7 +76,7 @@ public struct POGOProtos_Networking_Responses_UseItemEncounterResponse {
       case .activeItemExists: return 2
       case .noItemInInventory: return 3
       case .invalidItemCategory: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

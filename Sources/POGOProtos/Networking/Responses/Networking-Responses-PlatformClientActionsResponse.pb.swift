@@ -53,7 +53,7 @@ public struct POGOProtos_Networking_Responses_RegisterPushNotificationResponse {
       case .unset: return 0
       case .success: return 1
       case .noChange: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -150,7 +150,7 @@ public struct POGOProtos_Networking_Responses_RedeemPasscodeResponse {
       case .overInventoryLimit: return 3
       case .alreadyRedeemed: return 4
       case .overPlayerRedemptionLimit: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -234,7 +234,7 @@ public struct POGOProtos_Networking_Responses_AddNewPoiResponse {
       case .internalError: return 3
       case .tooManyRecentSubmissions: return 4
       case .invalidInput: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -321,7 +321,7 @@ public struct POGOProtos_Networking_Responses_ProxySocialActionResponse {
       case .accessDenied: return 8
       case .timeoutError: return 9
       case .rateLimited: return 10
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -413,7 +413,7 @@ public struct POGOProtos_Networking_Responses_ProxySocialSideChannelActionRespon
       case .accessDenied: return 8
       case .timeoutError: return 9
       case .rateLimited: return 10
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -497,7 +497,7 @@ public struct POGOProtos_Networking_Responses_PushNotificationRegistryResponse {
       case .unset: return 0
       case .success: return 1
       case .noChange: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -557,7 +557,7 @@ public struct POGOProtos_Networking_Responses_AddLoginActionResponse {
       case .unset: return 0
       case .authFailure: return 1
       case .loginTaken: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -614,7 +614,7 @@ public struct POGOProtos_Networking_Responses_RemoveLoginActionResponse {
       switch self {
       case .unset: return 0
       case .loginNotRemovable: return 1
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -684,7 +684,7 @@ public struct POGOProtos_Networking_Responses_SubmitNewPoiResponse {
       case .invalidInput: return 5
       case .minor: return 6
       case .notAvailable: return 7
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -760,7 +760,7 @@ public struct POGOProtos_Networking_Responses_UploadPoiPhotoByUrlResponse {
       case .imageTooBig: return 5
       case .imageNotServable: return 6
       case .portalNotFound: return 7
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -849,7 +849,7 @@ public struct POGOProtos_Networking_Responses_ReplaceLoginActionResponse {
       case .loginTaken: return 2
       case .loginAlreadyHave: return 3
       case .loginNotReplaceable: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -39,6 +39,11 @@ public struct POGOProtos_Networking_Envelopes_ResponseEnvelope {
     set {_uniqueStorage()._apiURL = newValue}
   }
 
+  public var socialReturns: [POGOProtos_Networking_Envelopes_ResponseEnvelope.SocialResponse] {
+    get {return _storage._socialReturns}
+    set {_uniqueStorage()._socialReturns = newValue}
+  }
+
   public var platformReturns: [POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse] {
     get {return _storage._platformReturns}
     set {_uniqueStorage()._platformReturns = newValue}
@@ -124,7 +129,7 @@ public struct POGOProtos_Networking_Envelopes_ResponseEnvelope {
       case .redirect: return 53
       case .sessionInvalidated: return 100
       case .invalidAuthToken: return 102
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -142,6 +147,32 @@ public struct POGOProtos_Networking_Envelopes_ResponseEnvelope {
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
+  }
+
+  public struct SocialResponse {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var type: POGOProtos_Networking_Social_SocialRequest {
+      get {return _storage._type ?? POGOProtos_Networking_Social_SocialRequest()}
+      set {_uniqueStorage()._type = newValue}
+    }
+    /// Returns true if `type` has been explicitly set.
+    public var hasType: Bool {return _storage._type != nil}
+    /// Clears the value of `type`. Subsequent reads from it will return its default value.
+    public mutating func clearType() {_uniqueStorage()._type = nil}
+
+    public var response: Data {
+      get {return _storage._response}
+      set {_uniqueStorage()._response = newValue}
+    }
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+
+    fileprivate var _storage = _StorageClass.defaultInstance
   }
 
   public init() {}
@@ -178,6 +209,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
     1: .standard(proto: "status_code"),
     2: .standard(proto: "request_id"),
     3: .standard(proto: "api_url"),
+    5: .standard(proto: "social_returns"),
     6: .standard(proto: "platform_returns"),
     7: .standard(proto: "auth_ticket"),
     100: .same(proto: "returns"),
@@ -188,6 +220,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
     var _statusCode: POGOProtos_Networking_Envelopes_ResponseEnvelope.StatusCode = .unknown
     var _requestID: UInt64 = 0
     var _apiURL: String = String()
+    var _socialReturns: [POGOProtos_Networking_Envelopes_ResponseEnvelope.SocialResponse] = []
     var _platformReturns: [POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse] = []
     var _authTicket: POGOProtos_Networking_Envelopes_AuthTicket? = nil
     var _returns: [Data] = []
@@ -201,6 +234,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
       _statusCode = source._statusCode
       _requestID = source._requestID
       _apiURL = source._apiURL
+      _socialReturns = source._socialReturns
       _platformReturns = source._platformReturns
       _authTicket = source._authTicket
       _returns = source._returns
@@ -223,6 +257,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
         case 1: try decoder.decodeSingularEnumField(value: &_storage._statusCode)
         case 2: try decoder.decodeSingularUInt64Field(value: &_storage._requestID)
         case 3: try decoder.decodeSingularStringField(value: &_storage._apiURL)
+        case 5: try decoder.decodeRepeatedMessageField(value: &_storage._socialReturns)
         case 6: try decoder.decodeRepeatedMessageField(value: &_storage._platformReturns)
         case 7: try decoder.decodeSingularMessageField(value: &_storage._authTicket)
         case 100: try decoder.decodeRepeatedBytesField(value: &_storage._returns)
@@ -243,6 +278,9 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
       }
       if !_storage._apiURL.isEmpty {
         try visitor.visitSingularStringField(value: _storage._apiURL, fieldNumber: 3)
+      }
+      if !_storage._socialReturns.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._socialReturns, fieldNumber: 5)
       }
       if !_storage._platformReturns.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._platformReturns, fieldNumber: 6)
@@ -268,6 +306,7 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope: SwiftProtobuf.Messag
         if _storage._statusCode != rhs_storage._statusCode {return false}
         if _storage._requestID != rhs_storage._requestID {return false}
         if _storage._apiURL != rhs_storage._apiURL {return false}
+        if _storage._socialReturns != rhs_storage._socialReturns {return false}
         if _storage._platformReturns != rhs_storage._platformReturns {return false}
         if _storage._authTicket != rhs_storage._authTicket {return false}
         if _storage._returns != rhs_storage._returns {return false}
@@ -325,6 +364,75 @@ extension POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse: Swi
   public static func ==(lhs: POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse, rhs: POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse) -> Bool {
     if lhs.type != rhs.type {return false}
     if lhs.response != rhs.response {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Envelopes_ResponseEnvelope.SocialResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_ResponseEnvelope.protoMessageName + ".SocialResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "type"),
+    2: .same(proto: "response"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _type: POGOProtos_Networking_Social_SocialRequest? = nil
+    var _response: Data = SwiftProtobuf.Internal.emptyData
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _type = source._type
+      _response = source._response
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._type)
+        case 2: try decoder.decodeSingularBytesField(value: &_storage._response)
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._type {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if !_storage._response.isEmpty {
+        try visitor.visitSingularBytesField(value: _storage._response, fieldNumber: 2)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Envelopes_ResponseEnvelope.SocialResponse, rhs: POGOProtos_Networking_Envelopes_ResponseEnvelope.SocialResponse) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._type != rhs_storage._type {return false}
+        if _storage._response != rhs_storage._response {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

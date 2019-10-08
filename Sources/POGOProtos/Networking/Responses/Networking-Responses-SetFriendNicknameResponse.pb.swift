@@ -68,7 +68,7 @@ public struct POGOProtos_Networking_Responses_SetFriendNicknameResponse {
       case .errorSocialUpdate: return 5
       case .errorFilteredNickname: return 6
       case .errorExceededChangeLimit: return 7
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -102,7 +102,7 @@ public struct POGOProtos_Networking_Responses_BelugaTransactionCompleteResponse 
       case .errorPokemonIsBuddy: return 6
       case .errorInvalidTransactionID: return 7
       case .errorMissingTransactionID: return 8
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

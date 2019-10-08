@@ -70,7 +70,7 @@ public struct POGOProtos_Data_Sfida_SfidaMetricsUpdate {
       case .unset: return 0
       case .initialization: return 1
       case .accumulation: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

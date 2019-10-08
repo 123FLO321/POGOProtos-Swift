@@ -69,7 +69,7 @@ public struct POGOProtos_Networking_Responses_UseItemRareCandyResponse {
       case .wrongItemType: return 4
       case .itemNotInInventory: return 5
       case .notEnoughItems: return 6
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

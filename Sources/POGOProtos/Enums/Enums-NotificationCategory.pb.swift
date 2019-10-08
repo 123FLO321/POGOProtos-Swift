@@ -41,8 +41,6 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case luckyFriend // = 17
   case bgmodeNamedBuddyCandy // = 18
   case appBadgeOnly // = 19
-  case combatVsSeekerCharged // = 20
-  case combatCompetitiveSeasonEnd // = 21
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -71,8 +69,6 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 17: self = .luckyFriend
     case 18: self = .bgmodeNamedBuddyCandy
     case 19: self = .appBadgeOnly
-    case 20: self = .combatVsSeekerCharged
-    case 21: self = .combatCompetitiveSeasonEnd
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -99,9 +95,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .luckyFriend: return 17
     case .bgmodeNamedBuddyCandy: return 18
     case .appBadgeOnly: return 19
-    case .combatVsSeekerCharged: return 20
-    case .combatCompetitiveSeasonEnd: return 21
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -132,8 +126,6 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .luckyFriend,
     .bgmodeNamedBuddyCandy,
     .appBadgeOnly,
-    .combatVsSeekerCharged,
-    .combatCompetitiveSeasonEnd,
   ]
 }
 
@@ -163,7 +155,5 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     17: .same(proto: "LUCKY_FRIEND"),
     18: .same(proto: "BGMODE_NAMED_BUDDY_CANDY"),
     19: .same(proto: "APP_BADGE_ONLY"),
-    20: .same(proto: "COMBAT_VS_SEEKER_CHARGED"),
-    21: .same(proto: "COMBAT_COMPETITIVE_SEASON_END"),
   ]
 }

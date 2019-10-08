@@ -73,7 +73,7 @@ public struct POGOProtos_Data_Fitness_FitnessSample {
       case .caloriesKcals: return 4
       case .wheelchairPushCount: return 5
       case .exerciseTimeMi: return 6
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -110,7 +110,7 @@ public struct POGOProtos_Data_Fitness_FitnessSample {
       case .googleFit: return 2
       case .appleWatch: return 3
       case .gps: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

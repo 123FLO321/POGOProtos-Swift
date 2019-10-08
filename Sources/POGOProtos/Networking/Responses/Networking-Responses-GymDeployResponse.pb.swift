@@ -130,7 +130,7 @@ public struct POGOProtos_Networking_Responses_GymDeployResponse {
       case .errorLegendaryPokemon: return 17
       case .errorInvalidPokemon: return 18
       case .errorRaidActive: return 19
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
