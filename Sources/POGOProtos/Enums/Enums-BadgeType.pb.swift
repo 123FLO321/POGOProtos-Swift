@@ -80,6 +80,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgePokedexEntriesGen5 // = 56
   case badgePokemonPurified // = 57
   case badgeRocketGruntsDefeated // = 58
+  case badgeRocketGiovanniDefeated // = 59
   case badgeEventMin // = 2000
   case badgeChicagoFestJuly2017 // = 2001
   case badgePikachuOutbreakYokohama2017 // = 2002
@@ -248,6 +249,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 56: self = .badgePokedexEntriesGen5
     case 57: self = .badgePokemonPurified
     case 58: self = .badgeRocketGruntsDefeated
+    case 59: self = .badgeRocketGiovanniDefeated
     case 2000: self = .badgeEventMin
     case 2001: self = .badgeChicagoFestJuly2017
     case 2002: self = .badgePikachuOutbreakYokohama2017
@@ -414,6 +416,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgePokedexEntriesGen5: return 56
     case .badgePokemonPurified: return 57
     case .badgeRocketGruntsDefeated: return 58
+    case .badgeRocketGiovanniDefeated: return 59
     case .badgeEventMin: return 2000
     case .badgeChicagoFestJuly2017: return 2001
     case .badgePikachuOutbreakYokohama2017: return 2002
@@ -585,6 +588,7 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgePokedexEntriesGen5,
     .badgePokemonPurified,
     .badgeRocketGruntsDefeated,
+    .badgeRocketGiovanniDefeated,
     .badgeEventMin,
     .badgeChicagoFestJuly2017,
     .badgePikachuOutbreakYokohama2017,
@@ -754,6 +758,7 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     56: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN5"),
     57: .same(proto: "BADGE_POKEMON_PURIFIED"),
     58: .same(proto: "BADGE_ROCKET_GRUNTS_DEFEATED"),
+    59: .same(proto: "BADGE_ROCKET_GIOVANNI_DEFEATED"),
     2000: .same(proto: "BADGE_EVENT_MIN"),
     2001: .same(proto: "BADGE_CHICAGO_FEST_JULY_2017"),
     2002: .same(proto: "BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017"),

@@ -492,6 +492,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `limitedPurchaseSkuSettings`. Subsequent reads from it will return its default value.
     public mutating func clearLimitedPurchaseSkuSettings() {_uniqueStorage()._limitedPurchaseSkuSettings = nil}
 
+    public var pokestopInvasionAvailabilitySettings: POGOProtos_Settings_Master_InvasionAvailabilitySettings {
+      get {return _storage._pokestopInvasionAvailabilitySettings ?? POGOProtos_Settings_Master_InvasionAvailabilitySettings()}
+      set {_uniqueStorage()._pokestopInvasionAvailabilitySettings = newValue}
+    }
+    /// Returns true if `pokestopInvasionAvailabilitySettings` has been explicitly set.
+    public var hasPokestopInvasionAvailabilitySettings: Bool {return _storage._pokestopInvasionAvailabilitySettings != nil}
+    /// Clears the value of `pokestopInvasionAvailabilitySettings`. Subsequent reads from it will return its default value.
+    public mutating func clearPokestopInvasionAvailabilitySettings() {_uniqueStorage()._pokestopInvasionAvailabilitySettings = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -626,6 +635,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     48: .standard(proto: "invasion_npc_display_settings"),
     51: .standard(proto: "combat_type"),
     60: .standard(proto: "limited_purchase_sku_settings"),
+    62: .standard(proto: "pokestop_invasion_availability_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -676,6 +686,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _invasionNpcDisplaySettings: POGOProtos_Settings_Master_InvasionNpcDisplaySettings? = nil
     var _combatType: POGOProtos_Settings_Master_CombatType? = nil
     var _limitedPurchaseSkuSettings: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings? = nil
+    var _pokestopInvasionAvailabilitySettings: POGOProtos_Settings_Master_InvasionAvailabilitySettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -729,6 +740,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _invasionNpcDisplaySettings = source._invasionNpcDisplaySettings
       _combatType = source._combatType
       _limitedPurchaseSkuSettings = source._limitedPurchaseSkuSettings
+      _pokestopInvasionAvailabilitySettings = source._pokestopInvasionAvailabilitySettings
     }
   }
 
@@ -791,6 +803,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 48: try decoder.decodeSingularMessageField(value: &_storage._invasionNpcDisplaySettings)
         case 51: try decoder.decodeSingularMessageField(value: &_storage._combatType)
         case 60: try decoder.decodeSingularMessageField(value: &_storage._limitedPurchaseSkuSettings)
+        case 62: try decoder.decodeSingularMessageField(value: &_storage._pokestopInvasionAvailabilitySettings)
         default: break
         }
       }
@@ -940,6 +953,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._limitedPurchaseSkuSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 60)
       }
+      if let v = _storage._pokestopInvasionAvailabilitySettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 62)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -996,6 +1012,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._invasionNpcDisplaySettings != rhs_storage._invasionNpcDisplaySettings {return false}
         if _storage._combatType != rhs_storage._combatType {return false}
         if _storage._limitedPurchaseSkuSettings != rhs_storage._limitedPurchaseSkuSettings {return false}
+        if _storage._pokestopInvasionAvailabilitySettings != rhs_storage._pokestopInvasionAvailabilitySettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

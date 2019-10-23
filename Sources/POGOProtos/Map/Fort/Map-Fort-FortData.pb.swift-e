@@ -205,6 +205,11 @@ public struct POGOProtos_Map_Fort_FortData {
   /// Clears the value of `pokestopDisplay`. Subsequent reads from it will return its default value.
   public mutating func clearPokestopDisplay() {_uniqueStorage()._pokestopDisplay = nil}
 
+  public var pokestopDisplays: [POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay] {
+    get {return _storage._pokestopDisplays}
+    set {_uniqueStorage()._pokestopDisplays = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct PokestopIncidentDisplay {
@@ -235,6 +240,21 @@ public struct POGOProtos_Map_Fort_FortData {
     public var incidentCompleted: Bool {
       get {return _storage._incidentCompleted}
       set {_uniqueStorage()._incidentCompleted = newValue}
+    }
+
+    public var incidentDisplayType: POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay.IncidentDisplayType {
+      get {return _storage._incidentDisplayType}
+      set {_uniqueStorage()._incidentDisplayType = newValue}
+    }
+
+    public var incidentDisplayOrderPriority: Int32 {
+      get {return _storage._incidentDisplayOrderPriority}
+      set {_uniqueStorage()._incidentDisplayOrderPriority = newValue}
+    }
+
+    public var continueDisplayingIncident: Bool {
+      get {return _storage._continueDisplayingIncident}
+      set {_uniqueStorage()._continueDisplayingIncident = newValue}
     }
 
     public var mapDisplay: OneOf_MapDisplay? {
@@ -273,6 +293,40 @@ public struct POGOProtos_Map_Fort_FortData {
         }
       }
     #endif
+    }
+
+    public enum IncidentDisplayType: SwiftProtobuf.Enum {
+      public typealias RawValue = Int
+      case none // = 0
+      case invasionGrunt // = 1
+      case invasionLeader // = 2
+      case invasionGiovanni // = 3
+      case UNRECOGNIZED(Int)
+
+      public init() {
+        self = .none
+      }
+
+      public init?(rawValue: Int) {
+        switch rawValue {
+        case 0: self = .none
+        case 1: self = .invasionGrunt
+        case 2: self = .invasionLeader
+        case 3: self = .invasionGiovanni
+        default: self = .UNRECOGNIZED(rawValue)
+        }
+      }
+
+      public var rawValue: Int {
+        switch self {
+        case .none: return 0
+        case .invasionGrunt: return 1
+        case .invasionLeader: return 2
+        case .invasionGiovanni: return 3
+        case .UNRECOGNIZED(let i): return i
+        }
+      }
+
     }
 
     public struct CharacterDisplay {
@@ -349,6 +403,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     30: .standard(proto: "challenge_quest_completed"),
     31: .standard(proto: "is_ex_raid_eligible"),
     32: .standard(proto: "pokestop_display"),
+    33: .standard(proto: "pokestop_displays"),
   ]
 
   fileprivate class _StorageClass {
@@ -383,6 +438,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _challengeQuestCompleted: Bool = false
     var _isExRaidEligible: Bool = false
     var _pokestopDisplay: POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay? = nil
+    var _pokestopDisplays: [POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -420,6 +476,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       _challengeQuestCompleted = source._challengeQuestCompleted
       _isExRaidEligible = source._isExRaidEligible
       _pokestopDisplay = source._pokestopDisplay
+      _pokestopDisplays = source._pokestopDisplays
     }
   }
 
@@ -466,6 +523,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
         case 30: try decoder.decodeSingularBoolField(value: &_storage._challengeQuestCompleted)
         case 31: try decoder.decodeSingularBoolField(value: &_storage._isExRaidEligible)
         case 32: try decoder.decodeSingularMessageField(value: &_storage._pokestopDisplay)
+        case 33: try decoder.decodeRepeatedMessageField(value: &_storage._pokestopDisplays)
         default: break
         }
       }
@@ -567,6 +625,9 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       if let v = _storage._pokestopDisplay {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 32)
       }
+      if !_storage._pokestopDisplays.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._pokestopDisplays, fieldNumber: 33)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -607,6 +668,7 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
         if _storage._challengeQuestCompleted != rhs_storage._challengeQuestCompleted {return false}
         if _storage._isExRaidEligible != rhs_storage._isExRaidEligible {return false}
         if _storage._pokestopDisplay != rhs_storage._pokestopDisplay {return false}
+        if _storage._pokestopDisplays != rhs_storage._pokestopDisplays {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -624,6 +686,9 @@ extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay: SwiftProtobuf.Me
     3: .standard(proto: "incident_expiration_ms"),
     4: .standard(proto: "hide_incident"),
     5: .standard(proto: "incident_completed"),
+    6: .standard(proto: "incident_display_type"),
+    7: .standard(proto: "incident_display_order_priority"),
+    8: .standard(proto: "continue_displaying_incident"),
     10: .standard(proto: "character_display"),
     11: .standard(proto: "invasion_finished"),
   ]
@@ -634,6 +699,9 @@ extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay: SwiftProtobuf.Me
     var _incidentExpirationMs: Int64 = 0
     var _hideIncident: Bool = false
     var _incidentCompleted: Bool = false
+    var _incidentDisplayType: POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay.IncidentDisplayType = .none
+    var _incidentDisplayOrderPriority: Int32 = 0
+    var _continueDisplayingIncident: Bool = false
     var _mapDisplay: POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay.OneOf_MapDisplay?
 
     static let defaultInstance = _StorageClass()
@@ -646,6 +714,9 @@ extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay: SwiftProtobuf.Me
       _incidentExpirationMs = source._incidentExpirationMs
       _hideIncident = source._hideIncident
       _incidentCompleted = source._incidentCompleted
+      _incidentDisplayType = source._incidentDisplayType
+      _incidentDisplayOrderPriority = source._incidentDisplayOrderPriority
+      _continueDisplayingIncident = source._continueDisplayingIncident
       _mapDisplay = source._mapDisplay
     }
   }
@@ -667,6 +738,9 @@ extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay: SwiftProtobuf.Me
         case 3: try decoder.decodeSingularInt64Field(value: &_storage._incidentExpirationMs)
         case 4: try decoder.decodeSingularBoolField(value: &_storage._hideIncident)
         case 5: try decoder.decodeSingularBoolField(value: &_storage._incidentCompleted)
+        case 6: try decoder.decodeSingularEnumField(value: &_storage._incidentDisplayType)
+        case 7: try decoder.decodeSingularInt32Field(value: &_storage._incidentDisplayOrderPriority)
+        case 8: try decoder.decodeSingularBoolField(value: &_storage._continueDisplayingIncident)
         case 10:
           var v: POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay.CharacterDisplay?
           if let current = _storage._mapDisplay {
@@ -706,6 +780,15 @@ extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay: SwiftProtobuf.Me
       if _storage._incidentCompleted != false {
         try visitor.visitSingularBoolField(value: _storage._incidentCompleted, fieldNumber: 5)
       }
+      if _storage._incidentDisplayType != .none {
+        try visitor.visitSingularEnumField(value: _storage._incidentDisplayType, fieldNumber: 6)
+      }
+      if _storage._incidentDisplayOrderPriority != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._incidentDisplayOrderPriority, fieldNumber: 7)
+      }
+      if _storage._continueDisplayingIncident != false {
+        try visitor.visitSingularBoolField(value: _storage._continueDisplayingIncident, fieldNumber: 8)
+      }
       switch _storage._mapDisplay {
       case .characterDisplay(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
@@ -727,6 +810,9 @@ extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay: SwiftProtobuf.Me
         if _storage._incidentExpirationMs != rhs_storage._incidentExpirationMs {return false}
         if _storage._hideIncident != rhs_storage._hideIncident {return false}
         if _storage._incidentCompleted != rhs_storage._incidentCompleted {return false}
+        if _storage._incidentDisplayType != rhs_storage._incidentDisplayType {return false}
+        if _storage._incidentDisplayOrderPriority != rhs_storage._incidentDisplayOrderPriority {return false}
+        if _storage._continueDisplayingIncident != rhs_storage._continueDisplayingIncident {return false}
         if _storage._mapDisplay != rhs_storage._mapDisplay {return false}
         return true
       }
@@ -735,6 +821,15 @@ extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay: SwiftProtobuf.Me
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay.IncidentDisplayType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "NONE"),
+    1: .same(proto: "INVASION_GRUNT"),
+    2: .same(proto: "INVASION_LEADER"),
+    3: .same(proto: "INVASION_GIOVANNI"),
+  ]
 }
 
 extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay.CharacterDisplay: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {

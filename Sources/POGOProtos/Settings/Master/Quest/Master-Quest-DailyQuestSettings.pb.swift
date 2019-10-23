@@ -32,6 +32,8 @@ public struct POGOProtos_Settings_Master_Quest_DailyQuestSettings {
 
   public var streakBonusMultiplier: Float = 0
 
+  public var disable: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,6 +50,7 @@ extension POGOProtos_Settings_Master_Quest_DailyQuestSettings: SwiftProtobuf.Mes
     2: .standard(proto: "streak_length"),
     3: .standard(proto: "bonus_multiplier"),
     4: .standard(proto: "streak_bonus_multiplier"),
+    5: .same(proto: "disable"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +60,7 @@ extension POGOProtos_Settings_Master_Quest_DailyQuestSettings: SwiftProtobuf.Mes
       case 2: try decoder.decodeSingularInt32Field(value: &self.streakLength)
       case 3: try decoder.decodeSingularFloatField(value: &self.bonusMultiplier)
       case 4: try decoder.decodeSingularFloatField(value: &self.streakBonusMultiplier)
+      case 5: try decoder.decodeSingularBoolField(value: &self.disable)
       default: break
       }
     }
@@ -75,6 +79,9 @@ extension POGOProtos_Settings_Master_Quest_DailyQuestSettings: SwiftProtobuf.Mes
     if self.streakBonusMultiplier != 0 {
       try visitor.visitSingularFloatField(value: self.streakBonusMultiplier, fieldNumber: 4)
     }
+    if self.disable != false {
+      try visitor.visitSingularBoolField(value: self.disable, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +90,7 @@ extension POGOProtos_Settings_Master_Quest_DailyQuestSettings: SwiftProtobuf.Mes
     if lhs.streakLength != rhs.streakLength {return false}
     if lhs.bonusMultiplier != rhs.bonusMultiplier {return false}
     if lhs.streakBonusMultiplier != rhs.streakBonusMultiplier {return false}
+    if lhs.disable != rhs.disable {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

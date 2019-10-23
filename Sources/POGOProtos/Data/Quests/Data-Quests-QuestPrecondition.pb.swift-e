@@ -66,6 +66,22 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
     set {_uniqueStorage()._condition = .quests(newValue)}
   }
 
+  public var monthYearBucket: POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket {
+    get {
+      if case .monthYearBucket(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket()
+    }
+    set {_uniqueStorage()._condition = .monthYearBucket(newValue)}
+  }
+
+  public var group: POGOProtos_Data_Quests_QuestPrecondition.Group {
+    get {
+      if case .group(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestPrecondition.Group()
+    }
+    set {_uniqueStorage()._condition = .group(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Condition: Equatable {
@@ -73,6 +89,8 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
     case level(POGOProtos_Data_Quests_QuestPrecondition.Level)
     case medal(POGOProtos_Data_Quests_QuestPrecondition.Medal)
     case quests(POGOProtos_Data_Quests_QuestPrecondition.Quests)
+    case monthYearBucket(POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket)
+    case group(POGOProtos_Data_Quests_QuestPrecondition.Group)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.OneOf_Condition, rhs: POGOProtos_Data_Quests_QuestPrecondition.OneOf_Condition) -> Bool {
@@ -81,6 +99,8 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
       case (.level(let l), .level(let r)): return l == r
       case (.medal(let l), .medal(let r)): return l == r
       case (.quests(let l), .quests(let r)): return l == r
+      case (.monthYearBucket(let l), .monthYearBucket(let r)): return l == r
+      case (.group(let l), .group(let r)): return l == r
       default: return false
       }
     }
@@ -131,6 +151,8 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
     case questPreconditionExclusiveQuests // = 5
     case questPreconditionNever // = 6
     case questPreconditionReceivedAnyListedQuest // = 7
+    case questPreconditionMonthYearBucket // = 8
+    case questPreconditionExclusiveInProgressGroup // = 9
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -147,6 +169,8 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
       case 5: self = .questPreconditionExclusiveQuests
       case 6: self = .questPreconditionNever
       case 7: self = .questPreconditionReceivedAnyListedQuest
+      case 8: self = .questPreconditionMonthYearBucket
+      case 9: self = .questPreconditionExclusiveInProgressGroup
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -161,10 +185,66 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
       case .questPreconditionExclusiveQuests: return 5
       case .questPreconditionNever: return 6
       case .questPreconditionReceivedAnyListedQuest: return 7
+      case .questPreconditionMonthYearBucket: return 8
+      case .questPreconditionExclusiveInProgressGroup: return 9
       case .UNRECOGNIZED(let i): return i
       }
     }
 
+  }
+
+  public struct Group {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var name: POGOProtos_Data_Quests_QuestPrecondition.Group.Name = .unset
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public enum Name: SwiftProtobuf.Enum {
+      public typealias RawValue = Int
+      case unset // = 0
+      case giovanni // = 1
+      case UNRECOGNIZED(Int)
+
+      public init() {
+        self = .unset
+      }
+
+      public init?(rawValue: Int) {
+        switch rawValue {
+        case 0: self = .unset
+        case 1: self = .giovanni
+        default: self = .UNRECOGNIZED(rawValue)
+        }
+      }
+
+      public var rawValue: Int {
+        switch self {
+        case .unset: return 0
+        case .giovanni: return 1
+        case .UNRECOGNIZED(let i): return i
+        }
+      }
+
+    }
+
+    public init() {}
+  }
+
+  public struct MonthYearBucket {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var year: Int32 = 0
+
+    public var month: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
   }
 
   public struct Quests {
@@ -237,6 +317,8 @@ extension POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType: CaseIt
     .questPreconditionExclusiveQuests,
     .questPreconditionNever,
     .questPreconditionReceivedAnyListedQuest,
+    .questPreconditionMonthYearBucket,
+    .questPreconditionExclusiveInProgressGroup,
   ]
 }
 
@@ -254,6 +336,8 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
     3: .same(proto: "level"),
     4: .same(proto: "medal"),
     5: .same(proto: "quests"),
+    6: .standard(proto: "month_year_bucket"),
+    7: .same(proto: "group"),
   ]
 
   fileprivate class _StorageClass {
@@ -312,6 +396,22 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._condition = .quests(v)}
+        case 6:
+          var v: POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .monthYearBucket(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .monthYearBucket(v)}
+        case 7:
+          var v: POGOProtos_Data_Quests_QuestPrecondition.Group?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .group(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .group(v)}
         default: break
         }
       }
@@ -332,6 +432,10 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
       case .quests(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+      case .monthYearBucket(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+      case .group(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
       case nil: break
       }
     }
@@ -373,7 +477,80 @@ extension POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType: SwiftP
     5: .same(proto: "QUEST_PRECONDITION_EXCLUSIVE_QUESTS"),
     6: .same(proto: "QUEST_PRECONDITION_NEVER"),
     7: .same(proto: "QUEST_PRECONDITION_RECEIVED_ANY_LISTED_QUEST"),
+    8: .same(proto: "QUEST_PRECONDITION_MONTH_YEAR_BUCKET"),
+    9: .same(proto: "QUEST_PRECONDITION_EXCLUSIVE_IN_PROGRESS_GROUP"),
   ]
+}
+
+extension POGOProtos_Data_Quests_QuestPrecondition.Group: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestPrecondition.protoMessageName + ".Group"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.name)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.name != .unset {
+      try visitor.visitSingularEnumField(value: self.name, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.Group, rhs: POGOProtos_Data_Quests_QuestPrecondition.Group) -> Bool {
+    if lhs.name != rhs.name {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestPrecondition.Group.Name: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNSET"),
+    1: .same(proto: "GIOVANNI"),
+  ]
+}
+
+extension POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestPrecondition.protoMessageName + ".MonthYearBucket"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "year"),
+    2: .same(proto: "month"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.year)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.month)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.year != 0 {
+      try visitor.visitSingularInt32Field(value: self.year, fieldNumber: 1)
+    }
+    if self.month != 0 {
+      try visitor.visitSingularInt32Field(value: self.month, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket, rhs: POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket) -> Bool {
+    if lhs.year != rhs.year {return false}
+    if lhs.month != rhs.month {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
 extension POGOProtos_Data_Quests_QuestPrecondition.Quests: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {

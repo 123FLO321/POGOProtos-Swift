@@ -695,6 +695,11 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case stantlerNormal // = 941
   case stantlerShadow // = 942
   case stantlerPurified // = 943
+  case weezingGalarian // = 944
+  case zigzagoonNormal // = 945
+  case zigzagoonGalarian // = 946
+  case linooneNormal // = 947
+  case linooneGalarian // = 948
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -1377,6 +1382,11 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 941: self = .stantlerNormal
     case 942: self = .stantlerShadow
     case 943: self = .stantlerPurified
+    case 944: self = .weezingGalarian
+    case 945: self = .zigzagoonNormal
+    case 946: self = .zigzagoonGalarian
+    case 947: self = .linooneNormal
+    case 948: self = .linooneGalarian
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -2057,6 +2067,11 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .stantlerNormal: return 941
     case .stantlerShadow: return 942
     case .stantlerPurified: return 943
+    case .weezingGalarian: return 944
+    case .zigzagoonNormal: return 945
+    case .zigzagoonGalarian: return 946
+    case .linooneNormal: return 947
+    case .linooneGalarian: return 948
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -2742,6 +2757,11 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .stantlerNormal,
     .stantlerShadow,
     .stantlerPurified,
+    .weezingGalarian,
+    .zigzagoonNormal,
+    .zigzagoonGalarian,
+    .linooneNormal,
+    .linooneGalarian,
   ]
 }
 
@@ -3425,5 +3445,10 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     941: .same(proto: "STANTLER_NORMAL"),
     942: .same(proto: "STANTLER_SHADOW"),
     943: .same(proto: "STANTLER_PURIFIED"),
+    944: .same(proto: "WEEZING_GALARIAN"),
+    945: .same(proto: "ZIGZAGOON_NORMAL"),
+    946: .same(proto: "ZIGZAGOON_GALARIAN"),
+    947: .same(proto: "LINOONE_NORMAL"),
+    948: .same(proto: "LINOONE_GALARIAN"),
   ]
 }

@@ -26,6 +26,8 @@ public struct POGOProtos_Settings_IncidentGlobalSettings {
 
   public var minPlayerLevel: Int32 = 0
 
+  public var minPlayerLevelForV2: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -39,12 +41,14 @@ extension POGOProtos_Settings_IncidentGlobalSettings: SwiftProtobuf.Message, Swi
   public static let protoMessageName: String = _protobuf_package + ".IncidentGlobalSettings"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "min_player_level"),
+    2: .standard(proto: "min_player_level_for_v2"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.minPlayerLevel)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.minPlayerLevelForV2)
       default: break
       }
     }
@@ -54,11 +58,15 @@ extension POGOProtos_Settings_IncidentGlobalSettings: SwiftProtobuf.Message, Swi
     if self.minPlayerLevel != 0 {
       try visitor.visitSingularInt32Field(value: self.minPlayerLevel, fieldNumber: 1)
     }
+    if self.minPlayerLevelForV2 != 0 {
+      try visitor.visitSingularInt32Field(value: self.minPlayerLevelForV2, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_IncidentGlobalSettings, rhs: POGOProtos_Settings_IncidentGlobalSettings) -> Bool {
     if lhs.minPlayerLevel != rhs.minPlayerLevel {return false}
+    if lhs.minPlayerLevelForV2 != rhs.minPlayerLevelForV2 {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -218,10 +218,16 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case reassignPlayer // = 169
 
   /// Implemented
+  case redeemPoiPasscode // = 170
+
+  /// Implemented
   case getAssetDigest // = 300
 
   /// Implemented
   case getDownloadUrls // = 301
+
+  /// Implemented
+  case getAssetVersion // = 302
 
   /// Implemented
   case claimCodename // = 403
@@ -676,8 +682,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 167: self = .awardPokecoin
     case 168: self = .useItemStardustBoost
     case 169: self = .reassignPlayer
+    case 170: self = .redeemPoiPasscode
     case 300: self = .getAssetDigest
     case 301: self = .getDownloadUrls
+    case 302: self = .getAssetVersion
     case 403: self = .claimCodename
     case 404: self = .setAvatar
     case 405: self = .setPlayerTeam
@@ -876,8 +884,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .awardPokecoin: return 167
     case .useItemStardustBoost: return 168
     case .reassignPlayer: return 169
+    case .redeemPoiPasscode: return 170
     case .getAssetDigest: return 300
     case .getDownloadUrls: return 301
+    case .getAssetVersion: return 302
     case .claimCodename: return 403
     case .setAvatar: return 404
     case .setPlayerTeam: return 405
@@ -1081,8 +1091,10 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .awardPokecoin,
     .useItemStardustBoost,
     .reassignPlayer,
+    .redeemPoiPasscode,
     .getAssetDigest,
     .getDownloadUrls,
+    .getAssetVersion,
     .claimCodename,
     .setAvatar,
     .setPlayerTeam,
@@ -1284,8 +1296,10 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     167: .same(proto: "AWARD_POKECOIN"),
     168: .same(proto: "USE_ITEM_STARDUST_BOOST"),
     169: .same(proto: "REASSIGN_PLAYER"),
+    170: .same(proto: "REDEEM_POI_PASSCODE"),
     300: .same(proto: "GET_ASSET_DIGEST"),
     301: .same(proto: "GET_DOWNLOAD_URLS"),
+    302: .same(proto: "GET_ASSET_VERSION"),
     403: .same(proto: "CLAIM_CODENAME"),
     404: .same(proto: "SET_AVATAR"),
     405: .same(proto: "SET_PLAYER_TEAM"),

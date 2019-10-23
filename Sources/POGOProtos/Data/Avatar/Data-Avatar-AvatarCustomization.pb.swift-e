@@ -96,6 +96,7 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
     case medalReward // = 2
     case iapClothing // = 3
     case levelReward // = 4
+    case combatRankReward // = 5
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -109,6 +110,7 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
       case 2: self = .medalReward
       case 3: self = .iapClothing
       case 4: self = .levelReward
+      case 5: self = .combatRankReward
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -120,6 +122,7 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
       case .medalReward: return 2
       case .iapClothing: return 3
       case .levelReward: return 4
+      case .combatRankReward: return 5
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -215,6 +218,7 @@ extension POGOProtos_Data_Avatar_AvatarCustomization.AvatarCustomizationUnlockTy
     .medalReward,
     .iapClothing,
     .levelReward,
+    .combatRankReward,
   ]
 }
 
@@ -379,6 +383,7 @@ extension POGOProtos_Data_Avatar_AvatarCustomization.AvatarCustomizationUnlockTy
     2: .same(proto: "MEDAL_REWARD"),
     3: .same(proto: "IAP_CLOTHING"),
     4: .same(proto: "LEVEL_REWARD"),
+    5: .same(proto: "COMBAT_RANK_REWARD"),
   ]
 }
 

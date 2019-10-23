@@ -39,6 +39,7 @@ public struct POGOProtos_Data_InvasionStatus {
     case errorIncidentExpired // = 8
     case errorMissingIncidentTicket // = 9
     case errorEncounterPokemonInventoryFull // = 10
+    case errorPlayerBelowV2MinLevel // = 11
     case errorInvalidHealthUpdates // = 20
     case errorAttackingPokemonInvalid // = 30
     case UNRECOGNIZED(Int)
@@ -60,6 +61,7 @@ public struct POGOProtos_Data_InvasionStatus {
       case 8: self = .errorIncidentExpired
       case 9: self = .errorMissingIncidentTicket
       case 10: self = .errorEncounterPokemonInventoryFull
+      case 11: self = .errorPlayerBelowV2MinLevel
       case 20: self = .errorInvalidHealthUpdates
       case 30: self = .errorAttackingPokemonInvalid
       default: self = .UNRECOGNIZED(rawValue)
@@ -79,6 +81,7 @@ public struct POGOProtos_Data_InvasionStatus {
       case .errorIncidentExpired: return 8
       case .errorMissingIncidentTicket: return 9
       case .errorEncounterPokemonInventoryFull: return 10
+      case .errorPlayerBelowV2MinLevel: return 11
       case .errorInvalidHealthUpdates: return 20
       case .errorAttackingPokemonInvalid: return 30
       case .UNRECOGNIZED(let i): return i
@@ -106,6 +109,7 @@ extension POGOProtos_Data_InvasionStatus.Status: CaseIterable {
     .errorIncidentExpired,
     .errorMissingIncidentTicket,
     .errorEncounterPokemonInventoryFull,
+    .errorPlayerBelowV2MinLevel,
     .errorInvalidHealthUpdates,
     .errorAttackingPokemonInvalid,
   ]
@@ -149,6 +153,7 @@ extension POGOProtos_Data_InvasionStatus.Status: SwiftProtobuf._ProtoNameProvidi
     8: .same(proto: "ERROR_INCIDENT_EXPIRED"),
     9: .same(proto: "ERROR_MISSING_INCIDENT_TICKET"),
     10: .same(proto: "ERROR_ENCOUNTER_POKEMON_INVENTORY_FULL"),
+    11: .same(proto: "ERROR_PLAYER_BELOW_V2_MIN_LEVEL"),
     20: .same(proto: "ERROR_INVALID_HEALTH_UPDATES"),
     30: .same(proto: "ERROR_ATTACKING_POKEMON_INVALID"),
   ]

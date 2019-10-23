@@ -170,6 +170,11 @@ public struct POGOProtos_Data_PlayerData {
     set {_uniqueStorage()._timeZoneOffsetMs = newValue}
   }
 
+  public var helpshiftUserID: String {
+    get {return _storage._helpshiftUserID}
+    set {_uniqueStorage()._helpshiftUserID = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -206,6 +211,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     23: .standard(proto: "team_change_info"),
     24: .standard(proto: "consumed_eevee_easter_eggs"),
     26: .standard(proto: "time_zone_offset_ms"),
+    28: .standard(proto: "helpshift_user_id"),
   ]
 
   fileprivate class _StorageClass {
@@ -231,6 +237,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _teamChangeInfo: POGOProtos_Data_Player_TeamChangeInfo? = nil
     var _consumedEeveeEasterEggs: [POGOProtos_Enums_PokemonId] = []
     var _timeZoneOffsetMs: Int64 = 0
+    var _helpshiftUserID: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -259,6 +266,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _teamChangeInfo = source._teamChangeInfo
       _consumedEeveeEasterEggs = source._consumedEeveeEasterEggs
       _timeZoneOffsetMs = source._timeZoneOffsetMs
+      _helpshiftUserID = source._helpshiftUserID
     }
   }
 
@@ -296,6 +304,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 23: try decoder.decodeSingularMessageField(value: &_storage._teamChangeInfo)
         case 24: try decoder.decodeRepeatedEnumField(value: &_storage._consumedEeveeEasterEggs)
         case 26: try decoder.decodeSingularInt64Field(value: &_storage._timeZoneOffsetMs)
+        case 28: try decoder.decodeSingularStringField(value: &_storage._helpshiftUserID)
         default: break
         }
       }
@@ -370,6 +379,9 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if _storage._timeZoneOffsetMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._timeZoneOffsetMs, fieldNumber: 26)
       }
+      if !_storage._helpshiftUserID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._helpshiftUserID, fieldNumber: 28)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -401,6 +413,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._teamChangeInfo != rhs_storage._teamChangeInfo {return false}
         if _storage._consumedEeveeEasterEggs != rhs_storage._consumedEeveeEasterEggs {return false}
         if _storage._timeZoneOffsetMs != rhs_storage._timeZoneOffsetMs {return false}
+        if _storage._helpshiftUserID != rhs_storage._helpshiftUserID {return false}
         return true
       }
       if !storagesAreEqual {return false}

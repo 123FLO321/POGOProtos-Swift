@@ -377,6 +377,15 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `inputSettings`. Subsequent reads from it will return its default value.
   public mutating func clearInputSettings() {_uniqueStorage()._inputSettings = nil}
 
+  public var gmtSettings: POGOProtos_Settings_GmtSettings {
+    get {return _storage._gmtSettings ?? POGOProtos_Settings_GmtSettings()}
+    set {_uniqueStorage()._gmtSettings = newValue}
+  }
+  /// Returns true if `gmtSettings` has been explicitly set.
+  public var hasGmtSettings: Bool {return _storage._gmtSettings != nil}
+  /// Clears the value of `gmtSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearGmtSettings() {_uniqueStorage()._gmtSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -432,6 +441,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     40: .standard(proto: "koala_settings"),
     41: .standard(proto: "kangaroo_settings"),
     44: .standard(proto: "input_settings"),
+    45: .standard(proto: "gmt_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -476,6 +486,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _koalaSettings: POGOProtos_Settings_KoalaSettings? = nil
     var _kangarooSettings: POGOProtos_Settings_KangarooSettings? = nil
     var _inputSettings: POGOProtos_Settings_InputSettings? = nil
+    var _gmtSettings: POGOProtos_Settings_GmtSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -523,6 +534,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _koalaSettings = source._koalaSettings
       _kangarooSettings = source._kangarooSettings
       _inputSettings = source._inputSettings
+      _gmtSettings = source._gmtSettings
     }
   }
 
@@ -579,6 +591,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 40: try decoder.decodeSingularMessageField(value: &_storage._koalaSettings)
         case 41: try decoder.decodeSingularMessageField(value: &_storage._kangarooSettings)
         case 44: try decoder.decodeSingularMessageField(value: &_storage._inputSettings)
+        case 45: try decoder.decodeSingularMessageField(value: &_storage._gmtSettings)
         default: break
         }
       }
@@ -710,6 +723,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._inputSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 44)
       }
+      if let v = _storage._gmtSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 45)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -760,6 +776,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._koalaSettings != rhs_storage._koalaSettings {return false}
         if _storage._kangarooSettings != rhs_storage._kangarooSettings {return false}
         if _storage._inputSettings != rhs_storage._inputSettings {return false}
+        if _storage._gmtSettings != rhs_storage._gmtSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

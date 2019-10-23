@@ -76,6 +76,9 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemStarPiece // = 1404
   case itemFriendGiftBox // = 1405
   case itemTeamChange // = 1406
+  case itemLeaderMapFragment // = 1501
+  case itemLeaderMap // = 1502
+  case itemGiovanniMap // = 1503
   case itemGlobalEventTicket // = 1600
   case UNRECOGNIZED(Int)
 
@@ -140,6 +143,9 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 1404: self = .itemStarPiece
     case 1405: self = .itemFriendGiftBox
     case 1406: self = .itemTeamChange
+    case 1501: self = .itemLeaderMapFragment
+    case 1502: self = .itemLeaderMap
+    case 1503: self = .itemGiovanniMap
     case 1600: self = .itemGlobalEventTicket
     default: self = .UNRECOGNIZED(rawValue)
     }
@@ -202,6 +208,9 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemStarPiece: return 1404
     case .itemFriendGiftBox: return 1405
     case .itemTeamChange: return 1406
+    case .itemLeaderMapFragment: return 1501
+    case .itemLeaderMap: return 1502
+    case .itemGiovanniMap: return 1503
     case .itemGlobalEventTicket: return 1600
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
@@ -269,6 +278,9 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemStarPiece,
     .itemFriendGiftBox,
     .itemTeamChange,
+    .itemLeaderMapFragment,
+    .itemLeaderMap,
+    .itemGiovanniMap,
     .itemGlobalEventTicket,
   ]
 }
@@ -334,6 +346,9 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     1404: .same(proto: "ITEM_STAR_PIECE"),
     1405: .same(proto: "ITEM_FRIEND_GIFT_BOX"),
     1406: .same(proto: "ITEM_TEAM_CHANGE"),
+    1501: .same(proto: "ITEM_LEADER_MAP_FRAGMENT"),
+    1502: .same(proto: "ITEM_LEADER_MAP"),
+    1503: .same(proto: "ITEM_GIOVANNI_MAP"),
     1600: .same(proto: "ITEM_GLOBAL_EVENT_TICKET"),
   ]
 }

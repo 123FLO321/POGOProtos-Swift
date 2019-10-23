@@ -29,6 +29,11 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
   case invasionEncounterFinished // = 5
   case invasionPokemonPurified // = 6
   case invasionAfterPoiExited // = 7
+  case invasionRadarViewOpened // = 8
+  case invasionRadarViewClosed // = 9
+  case invasionRadarViewEmpty // = 10
+  case invasionDecoyFound // = 11
+  case invasionGiovanniFound // = 12
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -45,6 +50,11 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
     case 5: self = .invasionEncounterFinished
     case 6: self = .invasionPokemonPurified
     case 7: self = .invasionAfterPoiExited
+    case 8: self = .invasionRadarViewOpened
+    case 9: self = .invasionRadarViewClosed
+    case 10: self = .invasionRadarViewEmpty
+    case 11: self = .invasionDecoyFound
+    case 12: self = .invasionGiovanniFound
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -59,6 +69,11 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
     case .invasionEncounterFinished: return 5
     case .invasionPokemonPurified: return 6
     case .invasionAfterPoiExited: return 7
+    case .invasionRadarViewOpened: return 8
+    case .invasionRadarViewClosed: return 9
+    case .invasionRadarViewEmpty: return 10
+    case .invasionDecoyFound: return 11
+    case .invasionGiovanniFound: return 12
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -78,6 +93,11 @@ extension POGOProtos_Enums_InvasionTelemetryIds: CaseIterable {
     .invasionEncounterFinished,
     .invasionPokemonPurified,
     .invasionAfterPoiExited,
+    .invasionRadarViewOpened,
+    .invasionRadarViewClosed,
+    .invasionRadarViewEmpty,
+    .invasionDecoyFound,
+    .invasionGiovanniFound,
   ]
 }
 
@@ -700,6 +720,7 @@ public enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
   case undefinedItemEvent // = 0
   case useItem // = 1
   case recycleItem // = 2
+  case updateItemEquipped // = 3
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -711,6 +732,7 @@ public enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
     case 0: self = .undefinedItemEvent
     case 1: self = .useItem
     case 2: self = .recycleItem
+    case 3: self = .updateItemEquipped
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -720,6 +742,7 @@ public enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
     case .undefinedItemEvent: return 0
     case .useItem: return 1
     case .recycleItem: return 2
+    case .updateItemEquipped: return 3
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -734,6 +757,7 @@ extension POGOProtos_Enums_ItemUseTelemetryIds: CaseIterable {
     .undefinedItemEvent,
     .useItem,
     .recycleItem,
+    .updateItemEquipped,
   ]
 }
 
@@ -1459,6 +1483,11 @@ extension POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf._ProtoNameProvidi
     5: .same(proto: "INVASION_ENCOUNTER_FINISHED"),
     6: .same(proto: "INVASION_POKEMON_PURIFIED"),
     7: .same(proto: "INVASION_AFTER_POI_EXITED"),
+    8: .same(proto: "INVASION_RADAR_VIEW_OPENED"),
+    9: .same(proto: "INVASION_RADAR_VIEW_CLOSED"),
+    10: .same(proto: "INVASION_RADAR_VIEW_EMPTY"),
+    11: .same(proto: "INVASION_DECOY_FOUND"),
+    12: .same(proto: "INVASION_GIOVANNI_FOUND"),
   ]
 }
 
@@ -1596,6 +1625,7 @@ extension POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf._ProtoNameProvidin
     0: .same(proto: "UNDEFINED_ITEM_EVENT"),
     1: .same(proto: "USE_ITEM"),
     2: .same(proto: "RECYCLE_ITEM"),
+    3: .same(proto: "UPDATE_ITEM_EQUIPPED"),
   ]
 }
 

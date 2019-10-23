@@ -30,6 +30,8 @@ public struct POGOProtos_Settings_ClientPerformanceSettings {
 
   public var multiPokemonBattlePartySelect: Bool = false
 
+  public var useWholeMatchForFilterKey: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -45,6 +47,7 @@ extension POGOProtos_Settings_ClientPerformanceSettings: SwiftProtobuf.Message, 
     1: .standard(proto: "enable_local_disk_caching"),
     2: .standard(proto: "max_number_local_battle_parties"),
     3: .standard(proto: "multi_pokemon_battle_party_select"),
+    4: .standard(proto: "use_whole_match_for_filter_key"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -53,6 +56,7 @@ extension POGOProtos_Settings_ClientPerformanceSettings: SwiftProtobuf.Message, 
       case 1: try decoder.decodeSingularBoolField(value: &self.enableLocalDiskCaching)
       case 2: try decoder.decodeSingularInt32Field(value: &self.maxNumberLocalBattleParties)
       case 3: try decoder.decodeSingularBoolField(value: &self.multiPokemonBattlePartySelect)
+      case 4: try decoder.decodeSingularBoolField(value: &self.useWholeMatchForFilterKey)
       default: break
       }
     }
@@ -68,6 +72,9 @@ extension POGOProtos_Settings_ClientPerformanceSettings: SwiftProtobuf.Message, 
     if self.multiPokemonBattlePartySelect != false {
       try visitor.visitSingularBoolField(value: self.multiPokemonBattlePartySelect, fieldNumber: 3)
     }
+    if self.useWholeMatchForFilterKey != false {
+      try visitor.visitSingularBoolField(value: self.useWholeMatchForFilterKey, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -75,6 +82,7 @@ extension POGOProtos_Settings_ClientPerformanceSettings: SwiftProtobuf.Message, 
     if lhs.enableLocalDiskCaching != rhs.enableLocalDiskCaching {return false}
     if lhs.maxNumberLocalBattleParties != rhs.maxNumberLocalBattleParties {return false}
     if lhs.multiPokemonBattlePartySelect != rhs.multiPokemonBattlePartySelect {return false}
+    if lhs.useWholeMatchForFilterKey != rhs.useWholeMatchForFilterKey {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

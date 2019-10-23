@@ -24,7 +24,12 @@ public enum POGOProtos_Enums_IncidentLeaderStringTypes: SwiftProtobuf.Enum {
   case onboardingIntroduction // = 0
   case onboardingEncounter // = 1
   case onboardingShadow // = 2
-  case inspire // = 3
+  case onboardingMapFragment // = 3
+  case onboardingMap1 // = 4
+  case onboardingMap2 // = 5
+  case inspire // = 6
+  case mapTimeWarning // = 7
+  case mapEmptyWarning // = 8
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -36,7 +41,12 @@ public enum POGOProtos_Enums_IncidentLeaderStringTypes: SwiftProtobuf.Enum {
     case 0: self = .onboardingIntroduction
     case 1: self = .onboardingEncounter
     case 2: self = .onboardingShadow
-    case 3: self = .inspire
+    case 3: self = .onboardingMapFragment
+    case 4: self = .onboardingMap1
+    case 5: self = .onboardingMap2
+    case 6: self = .inspire
+    case 7: self = .mapTimeWarning
+    case 8: self = .mapEmptyWarning
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -46,7 +56,12 @@ public enum POGOProtos_Enums_IncidentLeaderStringTypes: SwiftProtobuf.Enum {
     case .onboardingIntroduction: return 0
     case .onboardingEncounter: return 1
     case .onboardingShadow: return 2
-    case .inspire: return 3
+    case .onboardingMapFragment: return 3
+    case .onboardingMap1: return 4
+    case .onboardingMap2: return 5
+    case .inspire: return 6
+    case .mapTimeWarning: return 7
+    case .mapEmptyWarning: return 8
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -61,7 +76,12 @@ extension POGOProtos_Enums_IncidentLeaderStringTypes: CaseIterable {
     .onboardingIntroduction,
     .onboardingEncounter,
     .onboardingShadow,
+    .onboardingMapFragment,
+    .onboardingMap1,
+    .onboardingMap2,
     .inspire,
+    .mapTimeWarning,
+    .mapEmptyWarning,
   ]
 }
 
@@ -74,6 +94,11 @@ extension POGOProtos_Enums_IncidentLeaderStringTypes: SwiftProtobuf._ProtoNamePr
     0: .same(proto: "ONBOARDING_INTRODUCTION"),
     1: .same(proto: "ONBOARDING_ENCOUNTER"),
     2: .same(proto: "ONBOARDING_SHADOW"),
-    3: .same(proto: "INSPIRE"),
+    3: .same(proto: "ONBOARDING_MAP_FRAGMENT"),
+    4: .same(proto: "ONBOARDING_MAP_1"),
+    5: .same(proto: "ONBOARDING_MAP_2"),
+    6: .same(proto: "INSPIRE"),
+    7: .same(proto: "MAP_TIME_WARNING"),
+    8: .same(proto: "MAP_EMPTY_WARNING"),
   ]
 }

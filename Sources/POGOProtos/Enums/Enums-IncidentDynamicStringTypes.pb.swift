@@ -29,10 +29,12 @@ public enum POGOProtos_Enums_IncidentDynamicStringTypes: SwiftProtobuf.Enum {
   case postBattle // = 5
   case itemsStolen // = 6
   case tutorial // = 7
-  case gruntQuote // = 8
+  case combatQuote // = 8
   case candelaInspire // = 9
   case blancheInspire // = 10
   case sparkInspire // = 11
+  case gruntDecoy // = 12
+  case combatDecoyQuote // = 13
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -49,10 +51,12 @@ public enum POGOProtos_Enums_IncidentDynamicStringTypes: SwiftProtobuf.Enum {
     case 5: self = .postBattle
     case 6: self = .itemsStolen
     case 7: self = .tutorial
-    case 8: self = .gruntQuote
+    case 8: self = .combatQuote
     case 9: self = .candelaInspire
     case 10: self = .blancheInspire
     case 11: self = .sparkInspire
+    case 12: self = .gruntDecoy
+    case 13: self = .combatDecoyQuote
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -67,10 +71,12 @@ public enum POGOProtos_Enums_IncidentDynamicStringTypes: SwiftProtobuf.Enum {
     case .postBattle: return 5
     case .itemsStolen: return 6
     case .tutorial: return 7
-    case .gruntQuote: return 8
+    case .combatQuote: return 8
     case .candelaInspire: return 9
     case .blancheInspire: return 10
     case .sparkInspire: return 11
+    case .gruntDecoy: return 12
+    case .combatDecoyQuote: return 13
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -90,10 +96,12 @@ extension POGOProtos_Enums_IncidentDynamicStringTypes: CaseIterable {
     .postBattle,
     .itemsStolen,
     .tutorial,
-    .gruntQuote,
+    .combatQuote,
     .candelaInspire,
     .blancheInspire,
     .sparkInspire,
+    .gruntDecoy,
+    .combatDecoyQuote,
   ]
 }
 
@@ -111,9 +119,11 @@ extension POGOProtos_Enums_IncidentDynamicStringTypes: SwiftProtobuf._ProtoNameP
     5: .same(proto: "POST_BATTLE"),
     6: .same(proto: "ITEMS_STOLEN"),
     7: .same(proto: "TUTORIAL"),
-    8: .same(proto: "GRUNT_QUOTE"),
+    8: .same(proto: "COMBAT_QUOTE"),
     9: .same(proto: "CANDELA_INSPIRE"),
     10: .same(proto: "BLANCHE_INSPIRE"),
     11: .same(proto: "SPARK_INSPIRE"),
+    12: .same(proto: "GRUNT_DECOY"),
+    13: .same(proto: "COMBAT_DECOY_QUOTE"),
   ]
 }

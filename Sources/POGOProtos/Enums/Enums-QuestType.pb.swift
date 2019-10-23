@@ -51,6 +51,8 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
   case questTakeSnapshot // = 28
   case questBattleTeamRocket // = 29
   case questPurifyPokemon // = 30
+  case questFindTeamRocket // = 31
+  case questFirstGruntOfTheDay // = 32
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -89,6 +91,8 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case 28: self = .questTakeSnapshot
     case 29: self = .questBattleTeamRocket
     case 30: self = .questPurifyPokemon
+    case 31: self = .questFindTeamRocket
+    case 32: self = .questFirstGruntOfTheDay
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -125,6 +129,8 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case .questTakeSnapshot: return 28
     case .questBattleTeamRocket: return 29
     case .questPurifyPokemon: return 30
+    case .questFindTeamRocket: return 31
+    case .questFirstGruntOfTheDay: return 32
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -166,6 +172,8 @@ extension POGOProtos_Enums_QuestType: CaseIterable {
     .questTakeSnapshot,
     .questBattleTeamRocket,
     .questPurifyPokemon,
+    .questFindTeamRocket,
+    .questFirstGruntOfTheDay,
   ]
 }
 
@@ -205,5 +213,7 @@ extension POGOProtos_Enums_QuestType: SwiftProtobuf._ProtoNameProviding {
     28: .same(proto: "QUEST_TAKE_SNAPSHOT"),
     29: .same(proto: "QUEST_BATTLE_TEAM_ROCKET"),
     30: .same(proto: "QUEST_PURIFY_POKEMON"),
+    31: .same(proto: "QUEST_FIND_TEAM_ROCKET"),
+    32: .same(proto: "QUEST_FIRST_GRUNT_OF_THE_DAY"),
   ]
 }

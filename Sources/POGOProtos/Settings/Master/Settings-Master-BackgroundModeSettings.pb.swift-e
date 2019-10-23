@@ -30,6 +30,8 @@ public struct POGOProtos_Settings_Master_BackgroundModeSettings {
 
   public var weeklyFitnessGoalLevel3DistanceKm: Double = 0
 
+  public var weeklyFitnessGoalLevel4DistanceKm: Double = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -45,6 +47,7 @@ extension POGOProtos_Settings_Master_BackgroundModeSettings: SwiftProtobuf.Messa
     1: .standard(proto: "weekly_fitness_goal_level1_distance_km"),
     2: .standard(proto: "weekly_fitness_goal_level2_distance_km"),
     3: .standard(proto: "weekly_fitness_goal_level3_distance_km"),
+    4: .standard(proto: "weekly_fitness_goal_level4_distance_km"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -53,6 +56,7 @@ extension POGOProtos_Settings_Master_BackgroundModeSettings: SwiftProtobuf.Messa
       case 1: try decoder.decodeSingularDoubleField(value: &self.weeklyFitnessGoalLevel1DistanceKm)
       case 2: try decoder.decodeSingularDoubleField(value: &self.weeklyFitnessGoalLevel2DistanceKm)
       case 3: try decoder.decodeSingularDoubleField(value: &self.weeklyFitnessGoalLevel3DistanceKm)
+      case 4: try decoder.decodeSingularDoubleField(value: &self.weeklyFitnessGoalLevel4DistanceKm)
       default: break
       }
     }
@@ -68,6 +72,9 @@ extension POGOProtos_Settings_Master_BackgroundModeSettings: SwiftProtobuf.Messa
     if self.weeklyFitnessGoalLevel3DistanceKm != 0 {
       try visitor.visitSingularDoubleField(value: self.weeklyFitnessGoalLevel3DistanceKm, fieldNumber: 3)
     }
+    if self.weeklyFitnessGoalLevel4DistanceKm != 0 {
+      try visitor.visitSingularDoubleField(value: self.weeklyFitnessGoalLevel4DistanceKm, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -75,6 +82,7 @@ extension POGOProtos_Settings_Master_BackgroundModeSettings: SwiftProtobuf.Messa
     if lhs.weeklyFitnessGoalLevel1DistanceKm != rhs.weeklyFitnessGoalLevel1DistanceKm {return false}
     if lhs.weeklyFitnessGoalLevel2DistanceKm != rhs.weeklyFitnessGoalLevel2DistanceKm {return false}
     if lhs.weeklyFitnessGoalLevel3DistanceKm != rhs.weeklyFitnessGoalLevel3DistanceKm {return false}
+    if lhs.weeklyFitnessGoalLevel4DistanceKm != rhs.weeklyFitnessGoalLevel4DistanceKm {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

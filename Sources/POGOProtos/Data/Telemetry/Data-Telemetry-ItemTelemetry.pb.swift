@@ -28,6 +28,12 @@ public struct POGOProtos_Data_Telemetry_ItemTelemetry {
 
   public var itemID: Int32 = 0
 
+  public var equipped: Bool = false
+
+  public var fromInventory: Bool = false
+
+  public var itemIDString: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -42,6 +48,9 @@ extension POGOProtos_Data_Telemetry_ItemTelemetry: SwiftProtobuf.Message, SwiftP
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "item_use_click_id"),
     2: .standard(proto: "item_id"),
+    3: .same(proto: "equipped"),
+    4: .standard(proto: "from_inventory"),
+    5: .standard(proto: "item_id_string"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +58,9 @@ extension POGOProtos_Data_Telemetry_ItemTelemetry: SwiftProtobuf.Message, SwiftP
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.itemUseClickID)
       case 2: try decoder.decodeSingularInt32Field(value: &self.itemID)
+      case 3: try decoder.decodeSingularBoolField(value: &self.equipped)
+      case 4: try decoder.decodeSingularBoolField(value: &self.fromInventory)
+      case 5: try decoder.decodeSingularStringField(value: &self.itemIDString)
       default: break
       }
     }
@@ -61,12 +73,24 @@ extension POGOProtos_Data_Telemetry_ItemTelemetry: SwiftProtobuf.Message, SwiftP
     if self.itemID != 0 {
       try visitor.visitSingularInt32Field(value: self.itemID, fieldNumber: 2)
     }
+    if self.equipped != false {
+      try visitor.visitSingularBoolField(value: self.equipped, fieldNumber: 3)
+    }
+    if self.fromInventory != false {
+      try visitor.visitSingularBoolField(value: self.fromInventory, fieldNumber: 4)
+    }
+    if !self.itemIDString.isEmpty {
+      try visitor.visitSingularStringField(value: self.itemIDString, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Telemetry_ItemTelemetry, rhs: POGOProtos_Data_Telemetry_ItemTelemetry) -> Bool {
     if lhs.itemUseClickID != rhs.itemUseClickID {return false}
     if lhs.itemID != rhs.itemID {return false}
+    if lhs.equipped != rhs.equipped {return false}
+    if lhs.fromInventory != rhs.fromInventory {return false}
+    if lhs.itemIDString != rhs.itemIDString {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -52,6 +52,9 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case invasionIntroductionDialog // = 29
   case invasionEncounterDialog // = 30
   case invasionShadowPokemonDialog // = 31
+  case invasionMapFragmentDialog // = 33
+  case invasionMapReceivedDialog // = 34
+  case invasionMap2ReceivedDialog // = 35
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -91,6 +94,9 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case 29: self = .invasionIntroductionDialog
     case 30: self = .invasionEncounterDialog
     case 31: self = .invasionShadowPokemonDialog
+    case 33: self = .invasionMapFragmentDialog
+    case 34: self = .invasionMapReceivedDialog
+    case 35: self = .invasionMap2ReceivedDialog
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -128,6 +134,9 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .invasionIntroductionDialog: return 29
     case .invasionEncounterDialog: return 30
     case .invasionShadowPokemonDialog: return 31
+    case .invasionMapFragmentDialog: return 33
+    case .invasionMapReceivedDialog: return 34
+    case .invasionMap2ReceivedDialog: return 35
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -170,6 +179,9 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
     .invasionIntroductionDialog,
     .invasionEncounterDialog,
     .invasionShadowPokemonDialog,
+    .invasionMapFragmentDialog,
+    .invasionMapReceivedDialog,
+    .invasionMap2ReceivedDialog,
   ]
 }
 
@@ -210,5 +222,8 @@ extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
     29: .same(proto: "INVASION_INTRODUCTION_DIALOG"),
     30: .same(proto: "INVASION_ENCOUNTER_DIALOG"),
     31: .same(proto: "INVASION_SHADOW_POKEMON_DIALOG"),
+    33: .same(proto: "INVASION_MAP_FRAGMENT_DIALOG"),
+    34: .same(proto: "INVASION_MAP_RECEIVED_DIALOG"),
+    35: .same(proto: "INVASION_MAP_2_RECEIVED_DIALOG"),
   ]
 }

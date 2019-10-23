@@ -31,6 +31,10 @@ public struct POGOProtos_Data_EnumWrapper {
     case unset // = 0
     case teamLeader // = 1
     case grunt // = 2
+    case arlo // = 3
+    case cliff // = 4
+    case sierra // = 5
+    case giovanni // = 6
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -42,6 +46,10 @@ public struct POGOProtos_Data_EnumWrapper {
       case 0: self = .unset
       case 1: self = .teamLeader
       case 2: self = .grunt
+      case 3: self = .arlo
+      case 4: self = .cliff
+      case 5: self = .sierra
+      case 6: self = .giovanni
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -51,6 +59,10 @@ public struct POGOProtos_Data_EnumWrapper {
       case .unset: return 0
       case .teamLeader: return 1
       case .grunt: return 2
+      case .arlo: return 3
+      case .cliff: return 4
+      case .sierra: return 5
+      case .giovanni: return 6
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
@@ -100,6 +112,16 @@ public struct POGOProtos_Data_EnumWrapper {
     case characterWaterGruntFemale // = 38
     case characterWaterGruntMale // = 39
     case characterPlayerTeamLeader // = 40
+    case characterExecutiveCliff // = 41
+    case characterExecutiveArlo // = 42
+    case characterExecutiveSierra // = 43
+    case characterGiovanni // = 44
+    case characterDecoyGruntMale // = 45
+    case characterDecoyGruntFemale // = 46
+    case characterGhostGruntFemale // = 47
+    case characterGhostGruntMale // = 48
+    case characterElectricGruntFemale // = 49
+    case characterElectricGruntMale // = 50
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -149,6 +171,16 @@ public struct POGOProtos_Data_EnumWrapper {
       case 38: self = .characterWaterGruntFemale
       case 39: self = .characterWaterGruntMale
       case 40: self = .characterPlayerTeamLeader
+      case 41: self = .characterExecutiveCliff
+      case 42: self = .characterExecutiveArlo
+      case 43: self = .characterExecutiveSierra
+      case 44: self = .characterGiovanni
+      case 45: self = .characterDecoyGruntMale
+      case 46: self = .characterDecoyGruntFemale
+      case 47: self = .characterGhostGruntFemale
+      case 48: self = .characterGhostGruntMale
+      case 49: self = .characterElectricGruntFemale
+      case 50: self = .characterElectricGruntMale
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -196,6 +228,16 @@ public struct POGOProtos_Data_EnumWrapper {
       case .characterWaterGruntFemale: return 38
       case .characterWaterGruntMale: return 39
       case .characterPlayerTeamLeader: return 40
+      case .characterExecutiveCliff: return 41
+      case .characterExecutiveArlo: return 42
+      case .characterExecutiveSierra: return 43
+      case .characterGiovanni: return 44
+      case .characterDecoyGruntMale: return 45
+      case .characterDecoyGruntFemale: return 46
+      case .characterGhostGruntFemale: return 47
+      case .characterGhostGruntMale: return 48
+      case .characterElectricGruntFemale: return 49
+      case .characterElectricGruntMale: return 50
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
@@ -281,6 +323,10 @@ extension POGOProtos_Data_EnumWrapper.CharacterCategory: CaseIterable {
     .unset,
     .teamLeader,
     .grunt,
+    .arlo,
+    .cliff,
+    .sierra,
+    .giovanni,
   ]
 }
 
@@ -328,6 +374,16 @@ extension POGOProtos_Data_EnumWrapper.InvasionCharacter: CaseIterable {
     .characterWaterGruntFemale,
     .characterWaterGruntMale,
     .characterPlayerTeamLeader,
+    .characterExecutiveCliff,
+    .characterExecutiveArlo,
+    .characterExecutiveSierra,
+    .characterGiovanni,
+    .characterDecoyGruntMale,
+    .characterDecoyGruntFemale,
+    .characterGhostGruntFemale,
+    .characterGhostGruntMale,
+    .characterElectricGruntFemale,
+    .characterElectricGruntMale,
   ]
 }
 
@@ -381,6 +437,10 @@ extension POGOProtos_Data_EnumWrapper.CharacterCategory: SwiftProtobuf._ProtoNam
     0: .same(proto: "UNSET"),
     1: .same(proto: "TEAM_LEADER"),
     2: .same(proto: "GRUNT"),
+    3: .same(proto: "ARLO"),
+    4: .same(proto: "CLIFF"),
+    5: .same(proto: "SIERRA"),
+    6: .same(proto: "GIOVANNI"),
   ]
 }
 
@@ -427,6 +487,16 @@ extension POGOProtos_Data_EnumWrapper.InvasionCharacter: SwiftProtobuf._ProtoNam
     38: .same(proto: "CHARACTER_WATER_GRUNT_FEMALE"),
     39: .same(proto: "CHARACTER_WATER_GRUNT_MALE"),
     40: .same(proto: "CHARACTER_PLAYER_TEAM_LEADER"),
+    41: .same(proto: "CHARACTER_EXECUTIVE_CLIFF"),
+    42: .same(proto: "CHARACTER_EXECUTIVE_ARLO"),
+    43: .same(proto: "CHARACTER_EXECUTIVE_SIERRA"),
+    44: .same(proto: "CHARACTER_GIOVANNI"),
+    45: .same(proto: "CHARACTER_DECOY_GRUNT_MALE"),
+    46: .same(proto: "CHARACTER_DECOY_GRUNT_FEMALE"),
+    47: .same(proto: "CHARACTER_GHOST_GRUNT_FEMALE"),
+    48: .same(proto: "CHARACTER_GHOST_GRUNT_MALE"),
+    49: .same(proto: "CHARACTER_ELECTRIC_GRUNT_FEMALE"),
+    50: .same(proto: "CHARACTER_ELECTRIC_GRUNT_MALE"),
   ]
 }
 

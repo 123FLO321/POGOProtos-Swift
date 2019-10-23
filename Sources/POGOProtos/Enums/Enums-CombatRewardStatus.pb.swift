@@ -25,6 +25,7 @@ public enum POGOProtos_Enums_CombatRewardStatus: SwiftProtobuf.Enum {
   case rewardsGranted // = 1
   case maxRewardsReceived // = 2
   case playerBagFull // = 3
+  case noRewards // = 4
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -37,6 +38,7 @@ public enum POGOProtos_Enums_CombatRewardStatus: SwiftProtobuf.Enum {
     case 1: self = .rewardsGranted
     case 2: self = .maxRewardsReceived
     case 3: self = .playerBagFull
+    case 4: self = .noRewards
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -47,6 +49,7 @@ public enum POGOProtos_Enums_CombatRewardStatus: SwiftProtobuf.Enum {
     case .rewardsGranted: return 1
     case .maxRewardsReceived: return 2
     case .playerBagFull: return 3
+    case .noRewards: return 4
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -62,6 +65,7 @@ extension POGOProtos_Enums_CombatRewardStatus: CaseIterable {
     .rewardsGranted,
     .maxRewardsReceived,
     .playerBagFull,
+    .noRewards,
   ]
 }
 
@@ -75,5 +79,6 @@ extension POGOProtos_Enums_CombatRewardStatus: SwiftProtobuf._ProtoNameProviding
     1: .same(proto: "REWARDS_GRANTED"),
     2: .same(proto: "MAX_REWARDS_RECEIVED"),
     3: .same(proto: "PLAYER_BAG_FULL"),
+    4: .same(proto: "NO_REWARDS"),
   ]
 }

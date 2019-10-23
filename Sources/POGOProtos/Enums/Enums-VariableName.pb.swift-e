@@ -63,6 +63,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
   case bgmodeOffSessionDistanceKm // = 1030
   case poiName // = 1031
   case friendID // = 1032
+  case buddyShownHeartType // = 1033
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -113,6 +114,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case 1030: self = .bgmodeOffSessionDistanceKm
     case 1031: self = .poiName
     case 1032: self = .friendID
+    case 1033: self = .buddyShownHeartType
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -161,6 +163,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case .bgmodeOffSessionDistanceKm: return 1030
     case .poiName: return 1031
     case .friendID: return 1032
+    case .buddyShownHeartType: return 1033
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -214,6 +217,7 @@ extension POGOProtos_Enums_VariableName: CaseIterable {
     .bgmodeOffSessionDistanceKm,
     .poiName,
     .friendID,
+    .buddyShownHeartType,
   ]
 }
 
@@ -265,5 +269,6 @@ extension POGOProtos_Enums_VariableName: SwiftProtobuf._ProtoNameProviding {
     1030: .same(proto: "BGMODE_OFF_SESSION_DISTANCE_KM"),
     1031: .same(proto: "POI_NAME"),
     1032: .same(proto: "FRIEND_ID"),
+    1033: .same(proto: "BUDDY_SHOWN_HEART_TYPE"),
   ]
 }
