@@ -29,6 +29,9 @@ public enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
   case `internal` // = 5
   case sfida // = 6
   case superAwesome // = 7
+  case developer // = 8
+  case sharedSecret // = 9
+  case poseidon // = 10
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -45,6 +48,9 @@ public enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
     case 5: self = .internal
     case 6: self = .sfida
     case 7: self = .superAwesome
+    case 8: self = .developer
+    case 9: self = .sharedSecret
+    case 10: self = .poseidon
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -59,6 +65,9 @@ public enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
     case .internal: return 5
     case .sfida: return 6
     case .superAwesome: return 7
+    case .developer: return 8
+    case .sharedSecret: return 9
+    case .poseidon: return 10
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -78,6 +87,9 @@ extension POGOProtos_Enums_IdentityProvider: CaseIterable {
     .internal,
     .sfida,
     .superAwesome,
+    .developer,
+    .sharedSecret,
+    .poseidon,
   ]
 }
 
@@ -95,5 +107,8 @@ extension POGOProtos_Enums_IdentityProvider: SwiftProtobuf._ProtoNameProviding {
     5: .same(proto: "INTERNAL"),
     6: .same(proto: "SFIDA"),
     7: .same(proto: "SUPER_AWESOME"),
+    8: .same(proto: "DEVELOPER"),
+    9: .same(proto: "SHARED_SECRET"),
+    10: .same(proto: "POSEIDON"),
   ]
 }

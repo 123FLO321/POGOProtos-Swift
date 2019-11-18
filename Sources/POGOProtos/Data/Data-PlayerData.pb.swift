@@ -165,6 +165,15 @@ public struct POGOProtos_Data_PlayerData {
     set {_uniqueStorage()._consumedEeveeEasterEggs = newValue}
   }
 
+  public var combatLog: POGOProtos_Data_Combat_CombatLog {
+    get {return _storage._combatLog ?? POGOProtos_Data_Combat_CombatLog()}
+    set {_uniqueStorage()._combatLog = newValue}
+  }
+  /// Returns true if `combatLog` has been explicitly set.
+  public var hasCombatLog: Bool {return _storage._combatLog != nil}
+  /// Clears the value of `combatLog`. Subsequent reads from it will return its default value.
+  public mutating func clearCombatLog() {_uniqueStorage()._combatLog = nil}
+
   public var timeZoneOffsetMs: Int64 {
     get {return _storage._timeZoneOffsetMs}
     set {_uniqueStorage()._timeZoneOffsetMs = newValue}
@@ -210,6 +219,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     22: .standard(proto: "player_support_id"),
     23: .standard(proto: "team_change_info"),
     24: .standard(proto: "consumed_eevee_easter_eggs"),
+    25: .standard(proto: "combat_log"),
     26: .standard(proto: "time_zone_offset_ms"),
     28: .standard(proto: "helpshift_user_id"),
   ]
@@ -236,6 +246,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _playerSupportID: String = String()
     var _teamChangeInfo: POGOProtos_Data_Player_TeamChangeInfo? = nil
     var _consumedEeveeEasterEggs: [POGOProtos_Enums_PokemonId] = []
+    var _combatLog: POGOProtos_Data_Combat_CombatLog? = nil
     var _timeZoneOffsetMs: Int64 = 0
     var _helpshiftUserID: String = String()
 
@@ -265,6 +276,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _playerSupportID = source._playerSupportID
       _teamChangeInfo = source._teamChangeInfo
       _consumedEeveeEasterEggs = source._consumedEeveeEasterEggs
+      _combatLog = source._combatLog
       _timeZoneOffsetMs = source._timeZoneOffsetMs
       _helpshiftUserID = source._helpshiftUserID
     }
@@ -303,6 +315,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 22: try decoder.decodeSingularStringField(value: &_storage._playerSupportID)
         case 23: try decoder.decodeSingularMessageField(value: &_storage._teamChangeInfo)
         case 24: try decoder.decodeRepeatedEnumField(value: &_storage._consumedEeveeEasterEggs)
+        case 25: try decoder.decodeSingularMessageField(value: &_storage._combatLog)
         case 26: try decoder.decodeSingularInt64Field(value: &_storage._timeZoneOffsetMs)
         case 28: try decoder.decodeSingularStringField(value: &_storage._helpshiftUserID)
         default: break
@@ -376,6 +389,9 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if !_storage._consumedEeveeEasterEggs.isEmpty {
         try visitor.visitPackedEnumField(value: _storage._consumedEeveeEasterEggs, fieldNumber: 24)
       }
+      if let v = _storage._combatLog {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 25)
+      }
       if _storage._timeZoneOffsetMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._timeZoneOffsetMs, fieldNumber: 26)
       }
@@ -412,6 +428,7 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._playerSupportID != rhs_storage._playerSupportID {return false}
         if _storage._teamChangeInfo != rhs_storage._teamChangeInfo {return false}
         if _storage._consumedEeveeEasterEggs != rhs_storage._consumedEeveeEasterEggs {return false}
+        if _storage._combatLog != rhs_storage._combatLog {return false}
         if _storage._timeZoneOffsetMs != rhs_storage._timeZoneOffsetMs {return false}
         if _storage._helpshiftUserID != rhs_storage._helpshiftUserID {return false}
         return true

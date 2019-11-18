@@ -53,6 +53,8 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
     case luckyFriend // = 18
     case friendInviteReceived // = 19
     case friendInviteAccepted // = 20
+    case combatVsSeekerCharged // = 21
+    case combatCompetitiveSeasonEnd // = 22
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -82,6 +84,8 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
       case 18: self = .luckyFriend
       case 19: self = .friendInviteReceived
       case 20: self = .friendInviteAccepted
+      case 21: self = .combatVsSeekerCharged
+      case 22: self = .combatCompetitiveSeasonEnd
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -109,6 +113,8 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
       case .luckyFriend: return 18
       case .friendInviteReceived: return 19
       case .friendInviteAccepted: return 20
+      case .combatVsSeekerCharged: return 21
+      case .combatCompetitiveSeasonEnd: return 22
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -222,6 +228,8 @@ extension POGOProtos_Data_Inbox_ClientInbox.NotificationCategory: CaseIterable {
     .luckyFriend,
     .friendInviteReceived,
     .friendInviteAccepted,
+    .combatVsSeekerCharged,
+    .combatCompetitiveSeasonEnd,
   ]
 }
 
@@ -289,6 +297,8 @@ extension POGOProtos_Data_Inbox_ClientInbox.NotificationCategory: SwiftProtobuf.
     18: .same(proto: "LUCKY_FRIEND"),
     19: .same(proto: "FRIEND_INVITE_RECEIVED"),
     20: .same(proto: "FRIEND_INVITE_ACCEPTED"),
+    21: .same(proto: "COMBAT_VS_SEEKER_CHARGED"),
+    22: .same(proto: "COMBAT_COMPETITIVE_SEASON_END"),
   ]
 }
 

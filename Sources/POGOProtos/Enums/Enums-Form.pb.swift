@@ -700,6 +700,10 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case zigzagoonGalarian // = 946
   case linooneNormal // = 947
   case linooneGalarian // = 948
+  case pikachuCopy2019 // = 949
+  case venusaurCopy2019 // = 950
+  case charizardCopy2019 // = 951
+  case blastoiseCopy2019 // = 952
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -1387,6 +1391,10 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 946: self = .zigzagoonGalarian
     case 947: self = .linooneNormal
     case 948: self = .linooneGalarian
+    case 949: self = .pikachuCopy2019
+    case 950: self = .venusaurCopy2019
+    case 951: self = .charizardCopy2019
+    case 952: self = .blastoiseCopy2019
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -2072,6 +2080,10 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .zigzagoonGalarian: return 946
     case .linooneNormal: return 947
     case .linooneGalarian: return 948
+    case .pikachuCopy2019: return 949
+    case .venusaurCopy2019: return 950
+    case .charizardCopy2019: return 951
+    case .blastoiseCopy2019: return 952
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -2762,6 +2774,10 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .zigzagoonGalarian,
     .linooneNormal,
     .linooneGalarian,
+    .pikachuCopy2019,
+    .venusaurCopy2019,
+    .charizardCopy2019,
+    .blastoiseCopy2019,
   ]
 }
 
@@ -3450,5 +3466,9 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     946: .same(proto: "ZIGZAGOON_GALARIAN"),
     947: .same(proto: "LINOONE_NORMAL"),
     948: .same(proto: "LINOONE_GALARIAN"),
+    949: .same(proto: "PIKACHU_COPY_2019"),
+    950: .same(proto: "VENUSAUR_COPY_2019"),
+    951: .same(proto: "CHARIZARD_COPY_2019"),
+    952: .same(proto: "BLASTOISE_COPY_2019"),
   ]
 }

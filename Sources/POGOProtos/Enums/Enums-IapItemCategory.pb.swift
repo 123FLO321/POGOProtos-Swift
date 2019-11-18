@@ -30,6 +30,7 @@ public enum POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf.Enum {
   case iapCategoryAvatarStoreLink // = 6
   case iapCategoryTeamChange // = 7
   case iapCategoryGlobalEventTicket // = 10
+  case iapCategoryVsSeeker // = 11
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -47,6 +48,7 @@ public enum POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf.Enum {
     case 6: self = .iapCategoryAvatarStoreLink
     case 7: self = .iapCategoryTeamChange
     case 10: self = .iapCategoryGlobalEventTicket
+    case 11: self = .iapCategoryVsSeeker
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -62,6 +64,7 @@ public enum POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf.Enum {
     case .iapCategoryAvatarStoreLink: return 6
     case .iapCategoryTeamChange: return 7
     case .iapCategoryGlobalEventTicket: return 10
+    case .iapCategoryVsSeeker: return 11
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -82,6 +85,7 @@ extension POGOProtos_Enums_HoloIapItemCategory: CaseIterable {
     .iapCategoryAvatarStoreLink,
     .iapCategoryTeamChange,
     .iapCategoryGlobalEventTicket,
+    .iapCategoryVsSeeker,
   ]
 }
 
@@ -100,5 +104,6 @@ extension POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf._ProtoNameProvidin
     6: .same(proto: "IAP_CATEGORY_AVATAR_STORE_LINK"),
     7: .same(proto: "IAP_CATEGORY_TEAM_CHANGE"),
     10: .same(proto: "IAP_CATEGORY_GLOBAL_EVENT_TICKET"),
+    11: .same(proto: "IAP_CATEGORY_VS_SEEKER"),
   ]
 }

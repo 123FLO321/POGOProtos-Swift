@@ -27,6 +27,7 @@ public enum POGOProtos_Enums_CombatType: SwiftProtobuf.Enum {
   case friends // = 3
   case nearbyCombat // = 4
   case soloInvasion // = 5
+  case vsSeeker // = 6
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -41,6 +42,7 @@ public enum POGOProtos_Enums_CombatType: SwiftProtobuf.Enum {
     case 3: self = .friends
     case 4: self = .nearbyCombat
     case 5: self = .soloInvasion
+    case 6: self = .vsSeeker
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -53,6 +55,7 @@ public enum POGOProtos_Enums_CombatType: SwiftProtobuf.Enum {
     case .friends: return 3
     case .nearbyCombat: return 4
     case .soloInvasion: return 5
+    case .vsSeeker: return 6
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -70,6 +73,7 @@ extension POGOProtos_Enums_CombatType: CaseIterable {
     .friends,
     .nearbyCombat,
     .soloInvasion,
+    .vsSeeker,
   ]
 }
 
@@ -85,5 +89,6 @@ extension POGOProtos_Enums_CombatType: SwiftProtobuf._ProtoNameProviding {
     3: .same(proto: "FRIENDS"),
     4: .same(proto: "NEARBY_COMBAT"),
     5: .same(proto: "SOLO_INVASION"),
+    6: .same(proto: "VS_SEEKER"),
   ]
 }

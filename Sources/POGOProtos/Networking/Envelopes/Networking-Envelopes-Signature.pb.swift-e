@@ -161,6 +161,7 @@ public struct POGOProtos_Networking_Envelopes_Signature {
     set {_uniqueStorage()._unknown25 = newValue}
   }
 
+  ///Uses values Random (1000 - 60000) but this is not right as worked in < 0.97.x apis.
   public var unknown27: Int32 {
     get {return _storage._unknown27}
     set {_uniqueStorage()._unknown27 = newValue}

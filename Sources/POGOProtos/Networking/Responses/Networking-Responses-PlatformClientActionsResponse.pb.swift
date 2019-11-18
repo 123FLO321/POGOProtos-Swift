@@ -458,6 +458,8 @@ public struct POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse {
 
   public var timeWindowForSubmissionsLimitMs: Int64 = 0
 
+  public var maxPoiDistanceInMeters: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -887,6 +889,356 @@ public struct POGOProtos_Networking_Responses_ListLoginActionResponse {
   public init() {}
 }
 
+public struct POGOProtos_Networking_Responses_GetWebTokenActionResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var status: POGOProtos_Networking_Responses_GetWebTokenActionResponse.Status = .unset
+
+  public var accessToken: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unset // = 0
+    case success // = 1
+    case errorUnknown // = 2
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unset
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unset
+      case 1: self = .success
+      case 2: self = .errorUnknown
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unset: return 0
+      case .success: return 1
+      case .errorUnknown: return 2
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
+      }
+    }
+
+  }
+
+  public init() {}
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Networking_Responses_GetWebTokenActionResponse.Status: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Networking_Responses_GetWebTokenActionResponse.Status] = [
+    .unset,
+    .success,
+    .errorUnknown,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
+public struct POGOProtos_Networking_Responses_SubmitPoiImageResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var status: POGOProtos_Networking_Responses_SubmitPoiImageResponse.Status = .unspecified
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unspecified // = 0
+    case success // = 1
+    case internalError // = 2
+    case tooManyRecentSubmissions // = 3
+    case minor // = 4
+    case notAvailable // = 5
+    case missingImage // = 6
+    case invalidInput // = 7
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unspecified
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unspecified
+      case 1: self = .success
+      case 2: self = .internalError
+      case 3: self = .tooManyRecentSubmissions
+      case 4: self = .minor
+      case 5: self = .notAvailable
+      case 6: self = .missingImage
+      case 7: self = .invalidInput
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unspecified: return 0
+      case .success: return 1
+      case .internalError: return 2
+      case .tooManyRecentSubmissions: return 3
+      case .minor: return 4
+      case .notAvailable: return 5
+      case .missingImage: return 6
+      case .invalidInput: return 7
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
+      }
+    }
+
+  }
+
+  public init() {}
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Networking_Responses_SubmitPoiImageResponse.Status: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Networking_Responses_SubmitPoiImageResponse.Status] = [
+    .unspecified,
+    .success,
+    .internalError,
+    .tooManyRecentSubmissions,
+    .minor,
+    .notAvailable,
+    .missingImage,
+    .invalidInput,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
+public struct POGOProtos_Networking_Responses_SubmitPoiLocationUpdateResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var status: POGOProtos_Networking_Responses_SubmitPoiLocationUpdateResponse.Status = .unspecified
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unspecified // = 0
+    case success // = 1
+    case internalError // = 2
+    case tooManyRecentSubmissions // = 3
+    case minor // = 4
+    case notAvailable // = 5
+    case invalidInput // = 6
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unspecified
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unspecified
+      case 1: self = .success
+      case 2: self = .internalError
+      case 3: self = .tooManyRecentSubmissions
+      case 4: self = .minor
+      case 5: self = .notAvailable
+      case 6: self = .invalidInput
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unspecified: return 0
+      case .success: return 1
+      case .internalError: return 2
+      case .tooManyRecentSubmissions: return 3
+      case .minor: return 4
+      case .notAvailable: return 5
+      case .invalidInput: return 6
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
+      }
+    }
+
+  }
+
+  public init() {}
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Networking_Responses_SubmitPoiLocationUpdateResponse.Status: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Networking_Responses_SubmitPoiLocationUpdateResponse.Status] = [
+    .unspecified,
+    .success,
+    .internalError,
+    .tooManyRecentSubmissions,
+    .minor,
+    .notAvailable,
+    .invalidInput,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
+public struct POGOProtos_Networking_Responses_SubmitPoiTakedownRequestResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var status: POGOProtos_Networking_Responses_SubmitPoiTakedownRequestResponse.Status = .unspecified
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unspecified // = 0
+    case success // = 1
+    case internalError // = 2
+    case tooManyRecentSubmissions // = 3
+    case minor // = 4
+    case notAvailable // = 5
+    case invalidInput // = 6
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unspecified
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unspecified
+      case 1: self = .success
+      case 2: self = .internalError
+      case 3: self = .tooManyRecentSubmissions
+      case 4: self = .minor
+      case 5: self = .notAvailable
+      case 6: self = .invalidInput
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unspecified: return 0
+      case .success: return 1
+      case .internalError: return 2
+      case .tooManyRecentSubmissions: return 3
+      case .minor: return 4
+      case .notAvailable: return 5
+      case .invalidInput: return 6
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
+      }
+    }
+
+  }
+
+  public init() {}
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Networking_Responses_SubmitPoiTakedownRequestResponse.Status: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Networking_Responses_SubmitPoiTakedownRequestResponse.Status] = [
+    .unspecified,
+    .success,
+    .internalError,
+    .tooManyRecentSubmissions,
+    .minor,
+    .notAvailable,
+    .invalidInput,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
+public struct POGOProtos_Networking_Responses_SubmitPoiTextMetadataUpdateResponse {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var status: POGOProtos_Networking_Responses_SubmitPoiTextMetadataUpdateResponse.Status = .unspecified
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum Status: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unspecified // = 0
+    case success // = 1
+    case internalError // = 2
+    case tooManyRecentSubmissions // = 3
+    case minor // = 4
+    case notAvailable // = 5
+    case invalidInput // = 6
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unspecified
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unspecified
+      case 1: self = .success
+      case 2: self = .internalError
+      case 3: self = .tooManyRecentSubmissions
+      case 4: self = .minor
+      case 5: self = .notAvailable
+      case 6: self = .invalidInput
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unspecified: return 0
+      case .success: return 1
+      case .internalError: return 2
+      case .tooManyRecentSubmissions: return 3
+      case .minor: return 4
+      case .notAvailable: return 5
+      case .invalidInput: return 6
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
+      }
+    }
+
+  }
+
+  public init() {}
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Networking_Responses_SubmitPoiTextMetadataUpdateResponse.Status: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Networking_Responses_SubmitPoiTextMetadataUpdateResponse.Status] = [
+    .unspecified,
+    .success,
+    .internalError,
+    .tooManyRecentSubmissions,
+    .minor,
+    .notAvailable,
+    .invalidInput,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
@@ -1249,6 +1601,7 @@ extension POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse: Swift
     3: .standard(proto: "has_valid_email"),
     4: .standard(proto: "is_feature_enabled"),
     5: .standard(proto: "time_window_for_submissions_limit_ms"),
+    6: .standard(proto: "max_poi_distance_in_meters"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1259,6 +1612,7 @@ extension POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse: Swift
       case 3: try decoder.decodeSingularBoolField(value: &self.hasValidEmail_p)
       case 4: try decoder.decodeSingularBoolField(value: &self.isFeatureEnabled)
       case 5: try decoder.decodeSingularInt64Field(value: &self.timeWindowForSubmissionsLimitMs)
+      case 6: try decoder.decodeSingularInt32Field(value: &self.maxPoiDistanceInMeters)
       default: break
       }
     }
@@ -1280,6 +1634,9 @@ extension POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse: Swift
     if self.timeWindowForSubmissionsLimitMs != 0 {
       try visitor.visitSingularInt64Field(value: self.timeWindowForSubmissionsLimitMs, fieldNumber: 5)
     }
+    if self.maxPoiDistanceInMeters != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxPoiDistanceInMeters, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -1289,6 +1646,7 @@ extension POGOProtos_Networking_Responses_GetAvailableSubmissionsResponse: Swift
     if lhs.hasValidEmail_p != rhs.hasValidEmail_p {return false}
     if lhs.isFeatureEnabled != rhs.isFeatureEnabled {return false}
     if lhs.timeWindowForSubmissionsLimitMs != rhs.timeWindowForSubmissionsLimitMs {return false}
+    if lhs.maxPoiDistanceInMeters != rhs.maxPoiDistanceInMeters {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1643,4 +2001,212 @@ extension POGOProtos_Networking_Responses_ListLoginActionResponse: SwiftProtobuf
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Networking_Responses_GetWebTokenActionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".GetWebTokenActionResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "status"),
+    2: .standard(proto: "access_token"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.status)
+      case 2: try decoder.decodeSingularStringField(value: &self.accessToken)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.status != .unset {
+      try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
+    }
+    if !self.accessToken.isEmpty {
+      try visitor.visitSingularStringField(value: self.accessToken, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetWebTokenActionResponse, rhs: POGOProtos_Networking_Responses_GetWebTokenActionResponse) -> Bool {
+    if lhs.status != rhs.status {return false}
+    if lhs.accessToken != rhs.accessToken {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_GetWebTokenActionResponse.Status: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNSET"),
+    1: .same(proto: "SUCCESS"),
+    2: .same(proto: "ERROR_UNKNOWN"),
+  ]
+}
+
+extension POGOProtos_Networking_Responses_SubmitPoiImageResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SubmitPoiImageResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "status"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.status)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.status != .unspecified {
+      try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_SubmitPoiImageResponse, rhs: POGOProtos_Networking_Responses_SubmitPoiImageResponse) -> Bool {
+    if lhs.status != rhs.status {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_SubmitPoiImageResponse.Status: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "STATUS_UNSPECIFIED"),
+    1: .same(proto: "SUCCESS"),
+    2: .same(proto: "INTERNAL_ERROR"),
+    3: .same(proto: "TOO_MANY_RECENT_SUBMISSIONS"),
+    4: .same(proto: "MINOR"),
+    5: .same(proto: "NOT_AVAILABLE"),
+    6: .same(proto: "MISSING_IMAGE"),
+    7: .same(proto: "INVALID_INPUT"),
+  ]
+}
+
+extension POGOProtos_Networking_Responses_SubmitPoiLocationUpdateResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SubmitPoiLocationUpdateResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "status"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.status)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.status != .unspecified {
+      try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_SubmitPoiLocationUpdateResponse, rhs: POGOProtos_Networking_Responses_SubmitPoiLocationUpdateResponse) -> Bool {
+    if lhs.status != rhs.status {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_SubmitPoiLocationUpdateResponse.Status: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "STATUS_UNSPECIFIED"),
+    1: .same(proto: "SUCCESS"),
+    2: .same(proto: "INTERNAL_ERROR"),
+    3: .same(proto: "TOO_MANY_RECENT_SUBMISSIONS"),
+    4: .same(proto: "MINOR"),
+    5: .same(proto: "NOT_AVAILABLE"),
+    6: .same(proto: "INVALID_INPUT"),
+  ]
+}
+
+extension POGOProtos_Networking_Responses_SubmitPoiTakedownRequestResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SubmitPoiTakedownRequestResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "status"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.status)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.status != .unspecified {
+      try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_SubmitPoiTakedownRequestResponse, rhs: POGOProtos_Networking_Responses_SubmitPoiTakedownRequestResponse) -> Bool {
+    if lhs.status != rhs.status {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_SubmitPoiTakedownRequestResponse.Status: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "STATUS_UNSPECIFIED"),
+    1: .same(proto: "SUCCESS"),
+    2: .same(proto: "INTERNAL_ERROR"),
+    3: .same(proto: "TOO_MANY_RECENT_SUBMISSIONS"),
+    4: .same(proto: "MINOR"),
+    5: .same(proto: "NOT_AVAILABLE"),
+    6: .same(proto: "INVALID_INPUT"),
+  ]
+}
+
+extension POGOProtos_Networking_Responses_SubmitPoiTextMetadataUpdateResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SubmitPoiTextMetadataUpdateResponse"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "status"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.status)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.status != .unspecified {
+      try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_SubmitPoiTextMetadataUpdateResponse, rhs: POGOProtos_Networking_Responses_SubmitPoiTextMetadataUpdateResponse) -> Bool {
+    if lhs.status != rhs.status {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_SubmitPoiTextMetadataUpdateResponse.Status: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "STATUS_UNSPECIFIED"),
+    1: .same(proto: "SUCCESS"),
+    2: .same(proto: "INTERNAL_ERROR"),
+    3: .same(proto: "TOO_MANY_RECENT_SUBMISSIONS"),
+    4: .same(proto: "MINOR"),
+    5: .same(proto: "NOT_AVAILABLE"),
+    6: .same(proto: "INVALID_INPUT"),
+  ]
 }

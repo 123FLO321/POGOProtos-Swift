@@ -378,6 +378,9 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
   case arPhotoSessionTelemetry // = 42
   case leavePointOfInterest // = 43
   case viewPointOfInterestImage // = 44
+  case combatHubEntranceTelemetry // = 45
+  case deviceSpecificationsTelemetry // = 46
+  case screenResolutionTelemetry // = 47
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -431,6 +434,9 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case 42: self = .arPhotoSessionTelemetry
     case 43: self = .leavePointOfInterest
     case 44: self = .viewPointOfInterestImage
+    case 45: self = .combatHubEntranceTelemetry
+    case 46: self = .deviceSpecificationsTelemetry
+    case 47: self = .screenResolutionTelemetry
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -482,6 +488,9 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case .arPhotoSessionTelemetry: return 42
     case .leavePointOfInterest: return 43
     case .viewPointOfInterestImage: return 44
+    case .combatHubEntranceTelemetry: return 45
+    case .deviceSpecificationsTelemetry: return 46
+    case .screenResolutionTelemetry: return 47
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -538,6 +547,9 @@ extension POGOProtos_Enums_ClientTelemetryIds: CaseIterable {
     .arPhotoSessionTelemetry,
     .leavePointOfInterest,
     .viewPointOfInterestImage,
+    .combatHubEntranceTelemetry,
+    .deviceSpecificationsTelemetry,
+    .screenResolutionTelemetry,
   ]
 }
 
@@ -1471,6 +1483,46 @@ extension POGOProtos_Enums_WebTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
+public enum POGOProtos_Enums_CombatHubEntranceTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case undefinedEvent // = 0
+  case clickedCombatHubButton // = 1
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .undefinedEvent
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .undefinedEvent
+    case 1: self = .clickedCombatHubButton
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public var rawValue: Int {
+    switch self {
+    case .undefinedEvent: return 0
+    case .clickedCombatHubButton: return 1
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
+    }
+  }
+
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Enums_CombatHubEntranceTelemetryIds: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Enums_CombatHubEntranceTelemetryIds] = [
+    .undefinedEvent,
+    .clickedCombatHubButton,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf._ProtoNameProviding {
@@ -1583,6 +1635,9 @@ extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding
     42: .same(proto: "AR_PHOTO_SESSION_TELEMETRY"),
     43: .same(proto: "LEAVE_POINT_OF_INTEREST"),
     44: .same(proto: "VIEW_POINT_OF_INTEREST_IMAGE"),
+    45: .same(proto: "COMBAT_HUB_ENTRANCE_TELEMETRY"),
+    46: .same(proto: "DEVICE_SPECIFICATIONS_TELEMETRY"),
+    47: .same(proto: "SCREEN_RESOLUTION_TELEMETRY"),
   ]
 }
 
@@ -1773,5 +1828,12 @@ extension POGOProtos_Enums_WebTelemetryIds: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_WEB_EVENT"),
     1: .same(proto: "POINT_OF_INTEREST_DESCRIPTION_WEB_CLICK"),
+  ]
+}
+
+extension POGOProtos_Enums_CombatHubEntranceTelemetryIds: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNDEFINED_EVENT"),
+    1: .same(proto: "CLICKED_COMBAT_HUB_BUTTON"),
   ]
 }

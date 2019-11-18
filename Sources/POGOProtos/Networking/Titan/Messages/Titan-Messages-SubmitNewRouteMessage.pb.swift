@@ -24,15 +24,40 @@ public struct POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var routeSubmissionID: String = String()
+  public var routeSubmissionID: String {
+    get {return _storage._routeSubmissionID}
+    set {_uniqueStorage()._routeSubmissionID = newValue}
+  }
 
-  public var title: String = String()
+  public var title: String {
+    get {return _storage._title}
+    set {_uniqueStorage()._title = newValue}
+  }
 
-  public var description_p: String = String()
+  public var description_p: String {
+    get {return _storage._description_p}
+    set {_uniqueStorage()._description_p = newValue}
+  }
 
-  public var pois: [POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage.RoutePoi] = []
+  ///repeated RoutePoi pois = 4;
+  public var visitOrder: POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage.RouteVisitOrder {
+    get {return _storage._visitOrder}
+    set {_uniqueStorage()._visitOrder = newValue}
+  }
 
-  public var visitOrder: POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage.RouteVisitOrder = .unspecified
+  public var checkpoints: [POGOProtos_Data_Route_RouteCheckpoint] {
+    get {return _storage._checkpoints}
+    set {_uniqueStorage()._checkpoints = newValue}
+  }
+
+  public var mainImage: POGOProtos_Data_Route_RouteCheckpoint.RouteImage {
+    get {return _storage._mainImage ?? POGOProtos_Data_Route_RouteCheckpoint.RouteImage()}
+    set {_uniqueStorage()._mainImage = newValue}
+  }
+  /// Returns true if `mainImage` has been explicitly set.
+  public var hasMainImage: Bool {return _storage._mainImage != nil}
+  /// Clears the value of `mainImage`. Subsequent reads from it will return its default value.
+  public mutating func clearMainImage() {_uniqueStorage()._mainImage = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -41,6 +66,7 @@ public struct POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage {
     case unspecified // = 0
     case inOrder // = 1
     case unordered // = 2
+    case reversible // = 3
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -52,6 +78,7 @@ public struct POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage {
       case 0: self = .unspecified
       case 1: self = .inOrder
       case 2: self = .unordered
+      case 3: self = .reversible
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -61,25 +88,16 @@ public struct POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage {
       case .unspecified: return 0
       case .inOrder: return 1
       case .unordered: return 2
+      case .reversible: return 3
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
   }
 
-  public struct RoutePoi {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var poiID: String = String()
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-  }
-
   public init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 #if swift(>=4.2)
@@ -90,6 +108,7 @@ extension POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage.RouteVisitO
     .unspecified,
     .inOrder,
     .unordered,
+    .reversible,
   ]
 }
 
@@ -105,48 +124,96 @@ extension POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage: SwiftProto
     1: .standard(proto: "route_submission_id"),
     2: .same(proto: "title"),
     3: .same(proto: "description"),
-    4: .same(proto: "pois"),
     5: .standard(proto: "visit_order"),
+    6: .same(proto: "checkpoints"),
+    7: .standard(proto: "main_image"),
   ]
 
+  fileprivate class _StorageClass {
+    var _routeSubmissionID: String = String()
+    var _title: String = String()
+    var _description_p: String = String()
+    var _visitOrder: POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage.RouteVisitOrder = .unspecified
+    var _checkpoints: [POGOProtos_Data_Route_RouteCheckpoint] = []
+    var _mainImage: POGOProtos_Data_Route_RouteCheckpoint.RouteImage? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _routeSubmissionID = source._routeSubmissionID
+      _title = source._title
+      _description_p = source._description_p
+      _visitOrder = source._visitOrder
+      _checkpoints = source._checkpoints
+      _mainImage = source._mainImage
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.routeSubmissionID)
-      case 2: try decoder.decodeSingularStringField(value: &self.title)
-      case 3: try decoder.decodeSingularStringField(value: &self.description_p)
-      case 4: try decoder.decodeRepeatedMessageField(value: &self.pois)
-      case 5: try decoder.decodeSingularEnumField(value: &self.visitOrder)
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularStringField(value: &_storage._routeSubmissionID)
+        case 2: try decoder.decodeSingularStringField(value: &_storage._title)
+        case 3: try decoder.decodeSingularStringField(value: &_storage._description_p)
+        case 5: try decoder.decodeSingularEnumField(value: &_storage._visitOrder)
+        case 6: try decoder.decodeRepeatedMessageField(value: &_storage._checkpoints)
+        case 7: try decoder.decodeSingularMessageField(value: &_storage._mainImage)
+        default: break
+        }
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.routeSubmissionID.isEmpty {
-      try visitor.visitSingularStringField(value: self.routeSubmissionID, fieldNumber: 1)
-    }
-    if !self.title.isEmpty {
-      try visitor.visitSingularStringField(value: self.title, fieldNumber: 2)
-    }
-    if !self.description_p.isEmpty {
-      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 3)
-    }
-    if !self.pois.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.pois, fieldNumber: 4)
-    }
-    if self.visitOrder != .unspecified {
-      try visitor.visitSingularEnumField(value: self.visitOrder, fieldNumber: 5)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._routeSubmissionID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._routeSubmissionID, fieldNumber: 1)
+      }
+      if !_storage._title.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._title, fieldNumber: 2)
+      }
+      if !_storage._description_p.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._description_p, fieldNumber: 3)
+      }
+      if _storage._visitOrder != .unspecified {
+        try visitor.visitSingularEnumField(value: _storage._visitOrder, fieldNumber: 5)
+      }
+      if !_storage._checkpoints.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._checkpoints, fieldNumber: 6)
+      }
+      if let v = _storage._mainImage {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage, rhs: POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage) -> Bool {
-    if lhs.routeSubmissionID != rhs.routeSubmissionID {return false}
-    if lhs.title != rhs.title {return false}
-    if lhs.description_p != rhs.description_p {return false}
-    if lhs.pois != rhs.pois {return false}
-    if lhs.visitOrder != rhs.visitOrder {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._routeSubmissionID != rhs_storage._routeSubmissionID {return false}
+        if _storage._title != rhs_storage._title {return false}
+        if _storage._description_p != rhs_storage._description_p {return false}
+        if _storage._visitOrder != rhs_storage._visitOrder {return false}
+        if _storage._checkpoints != rhs_storage._checkpoints {return false}
+        if _storage._mainImage != rhs_storage._mainImage {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -157,34 +224,6 @@ extension POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage.RouteVisitO
     0: .same(proto: "ROUTE_VISIT_ORDER_UNSPECIFIED"),
     1: .same(proto: "IN_ORDER"),
     2: .same(proto: "UNORDERED"),
+    3: .same(proto: "REVERSIBLE"),
   ]
-}
-
-extension POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage.RoutePoi: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage.protoMessageName + ".RoutePoi"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "poi_id"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.poiID)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.poiID.isEmpty {
-      try visitor.visitSingularStringField(value: self.poiID, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage.RoutePoi, rhs: POGOProtos_Networking_Titan_Messages_SubmitNewRouteMessage.RoutePoi) -> Bool {
-    if lhs.poiID != rhs.poiID {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
 }

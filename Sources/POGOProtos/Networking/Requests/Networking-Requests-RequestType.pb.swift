@@ -503,6 +503,33 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case purifyPokemon // = 1205
 
   /// Implemented
+  case vsSeekerStartMatchmaking // = 1300
+
+  /// Implemented
+  case cancelMatchmaking // = 1301
+
+  /// Implemented
+  case getMatchmakingStatus // = 1302
+
+  /// Implemented
+  case completeVsSeekerAndRestartCharging // = 1303
+
+  /// Implemented
+  case getVsSeekerStatus // = 1304
+
+  /// Implemented
+  case completeCombatCompetitiveSeasonAction // = 1305
+
+  /// Implemented
+  case claimVsSeekerRewards // = 1306
+
+  /// Implemented
+  case vsSeekerRewardEncounter // = 1307
+
+  /// Implemented
+  case activateVsSeeker // = 1308
+
+  /// Implemented
   case registerPushNotification // = 5000
 
   /// ???
@@ -568,7 +595,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   /// Implemented
   case redeemGoogleReceipt // = 5021
 
-  /// ???
+  /// Implemented
   case redeemAppleReceipt // = 5022
 
   /// ???
@@ -609,6 +636,33 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
 
   /// Implemented
   case getGmapSettings // = 5036
+
+  /// ???
+  case redeemSamsungReceipt // = 5037
+
+  /// ??? maybe same POGOProtos.Networking.Titan.Messages.SubmitNewRouteMessage
+  case addNewRoute // = 5038
+
+  /// ???
+  case getOutstandingWarnings // = 5039
+
+  /// ???
+  case acknowledgeWarnings // = 5040
+
+  /// Implemented
+  case submitPoiImage // = 5041
+
+  /// Implemented
+  case submitPoiTextMetadataUpdate // = 5042
+
+  /// Implemented
+  case submitPoiLocationUpdate // = 5043
+
+  /// Implemented
+  case submitPoiTakedownRequest // = 5044
+
+  /// Implemented
+  case getWebTokenAction // = 5045
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -777,6 +831,15 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1203: self = .invasionBattleUpdate
     case 1204: self = .invasionEncounter
     case 1205: self = .purifyPokemon
+    case 1300: self = .vsSeekerStartMatchmaking
+    case 1301: self = .cancelMatchmaking
+    case 1302: self = .getMatchmakingStatus
+    case 1303: self = .completeVsSeekerAndRestartCharging
+    case 1304: self = .getVsSeekerStatus
+    case 1305: self = .completeCombatCompetitiveSeasonAction
+    case 1306: self = .claimVsSeekerRewards
+    case 1307: self = .vsSeekerRewardEncounter
+    case 1308: self = .activateVsSeeker
     case 5000: self = .registerPushNotification
     case 5001: self = .unregisterPushNotification
     case 5002: self = .updateNotificationStatus
@@ -813,6 +876,15 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 5034: self = .updatePlayerLocation
     case 5035: self = .generateGmapSignedURL
     case 5036: self = .getGmapSettings
+    case 5037: self = .redeemSamsungReceipt
+    case 5038: self = .addNewRoute
+    case 5039: self = .getOutstandingWarnings
+    case 5040: self = .acknowledgeWarnings
+    case 5041: self = .submitPoiImage
+    case 5042: self = .submitPoiTextMetadataUpdate
+    case 5043: self = .submitPoiLocationUpdate
+    case 5044: self = .submitPoiTakedownRequest
+    case 5045: self = .getWebTokenAction
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -979,6 +1051,15 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .invasionBattleUpdate: return 1203
     case .invasionEncounter: return 1204
     case .purifyPokemon: return 1205
+    case .vsSeekerStartMatchmaking: return 1300
+    case .cancelMatchmaking: return 1301
+    case .getMatchmakingStatus: return 1302
+    case .completeVsSeekerAndRestartCharging: return 1303
+    case .getVsSeekerStatus: return 1304
+    case .completeCombatCompetitiveSeasonAction: return 1305
+    case .claimVsSeekerRewards: return 1306
+    case .vsSeekerRewardEncounter: return 1307
+    case .activateVsSeeker: return 1308
     case .registerPushNotification: return 5000
     case .unregisterPushNotification: return 5001
     case .updateNotificationStatus: return 5002
@@ -1015,6 +1096,15 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .updatePlayerLocation: return 5034
     case .generateGmapSignedURL: return 5035
     case .getGmapSettings: return 5036
+    case .redeemSamsungReceipt: return 5037
+    case .addNewRoute: return 5038
+    case .getOutstandingWarnings: return 5039
+    case .acknowledgeWarnings: return 5040
+    case .submitPoiImage: return 5041
+    case .submitPoiTextMetadataUpdate: return 5042
+    case .submitPoiLocationUpdate: return 5043
+    case .submitPoiTakedownRequest: return 5044
+    case .getWebTokenAction: return 5045
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -1186,6 +1276,15 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .invasionBattleUpdate,
     .invasionEncounter,
     .purifyPokemon,
+    .vsSeekerStartMatchmaking,
+    .cancelMatchmaking,
+    .getMatchmakingStatus,
+    .completeVsSeekerAndRestartCharging,
+    .getVsSeekerStatus,
+    .completeCombatCompetitiveSeasonAction,
+    .claimVsSeekerRewards,
+    .vsSeekerRewardEncounter,
+    .activateVsSeeker,
     .registerPushNotification,
     .unregisterPushNotification,
     .updateNotificationStatus,
@@ -1222,6 +1321,15 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .updatePlayerLocation,
     .generateGmapSignedURL,
     .getGmapSettings,
+    .redeemSamsungReceipt,
+    .addNewRoute,
+    .getOutstandingWarnings,
+    .acknowledgeWarnings,
+    .submitPoiImage,
+    .submitPoiTextMetadataUpdate,
+    .submitPoiLocationUpdate,
+    .submitPoiTakedownRequest,
+    .getWebTokenAction,
   ]
 }
 
@@ -1391,6 +1499,15 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1203: .same(proto: "INVASION_BATTLE_UPDATE"),
     1204: .same(proto: "INVASION_ENCOUNTER"),
     1205: .same(proto: "PURIFY_POKEMON"),
+    1300: .same(proto: "VS_SEEKER_START_MATCHMAKING"),
+    1301: .same(proto: "CANCEL_MATCHMAKING"),
+    1302: .same(proto: "GET_MATCHMAKING_STATUS"),
+    1303: .same(proto: "COMPLETE_VS_SEEKER_AND_RESTART_CHARGING"),
+    1304: .same(proto: "GET_VS_SEEKER_STATUS"),
+    1305: .same(proto: "COMPLETE_COMBAT_COMPETITIVE_SEASON_ACTION"),
+    1306: .same(proto: "CLAIM_VS_SEEKER_REWARDS"),
+    1307: .same(proto: "VS_SEEKER_REWARD_ENCOUNTER"),
+    1308: .same(proto: "ACTIVATE_VS_SEEKER"),
     5000: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
     5001: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
     5002: .same(proto: "UPDATE_NOTIFICATION_STATUS"),
@@ -1427,5 +1544,14 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     5034: .same(proto: "UPDATE_PLAYER_LOCATION"),
     5035: .same(proto: "GENERATE_GMAP_SIGNED_URL"),
     5036: .same(proto: "GET_GMAP_SETTINGS"),
+    5037: .same(proto: "REDEEM_SAMSUNG_RECEIPT"),
+    5038: .same(proto: "ADD_NEW_ROUTE"),
+    5039: .same(proto: "GET_OUTSTANDING_WARNINGS"),
+    5040: .same(proto: "ACKNOWLEDGE_WARNINGS"),
+    5041: .same(proto: "SUBMIT_POI_IMAGE"),
+    5042: .same(proto: "SUBMIT_POI_TEXT_METADATA_UPDATE"),
+    5043: .same(proto: "SUBMIT_POI_LOCATION_UPDATE"),
+    5044: .same(proto: "SUBMIT_POI_TAKEDOWN_REQUEST"),
+    5045: .same(proto: "GET_WEB_TOKEN_ACTION"),
   ]
 }

@@ -39,11 +39,8 @@ public struct POGOProtos_Networking_Envelopes_RequestEnvelope {
     set {_uniqueStorage()._requests = newValue}
   }
 
-  public var socialRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.SocialRequest] {
-    get {return _storage._socialRequests}
-    set {_uniqueStorage()._socialRequests = newValue}
-  }
-
+  ///Untested maybe needs a good index order
+  ///repeated SocialRequest social_requests = 5;
   public var platformRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest] {
     get {return _storage._platformRequests}
     set {_uniqueStorage()._platformRequests = newValue}
@@ -164,32 +161,6 @@ public struct POGOProtos_Networking_Envelopes_RequestEnvelope {
     public init() {}
   }
 
-  public struct SocialRequest {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var type: POGOProtos_Networking_Social_SocialRequest {
-      get {return _storage._type ?? POGOProtos_Networking_Social_SocialRequest()}
-      set {_uniqueStorage()._type = newValue}
-    }
-    /// Returns true if `type` has been explicitly set.
-    public var hasType: Bool {return _storage._type != nil}
-    /// Clears the value of `type`. Subsequent reads from it will return its default value.
-    public mutating func clearType() {_uniqueStorage()._type = nil}
-
-    public var requestMessage: Data {
-      get {return _storage._requestMessage}
-      set {_uniqueStorage()._requestMessage = newValue}
-    }
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-
-    fileprivate var _storage = _StorageClass.defaultInstance
-  }
-
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
@@ -205,7 +176,6 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
     1: .standard(proto: "status_code"),
     3: .standard(proto: "request_id"),
     4: .same(proto: "requests"),
-    5: .standard(proto: "social_requests"),
     6: .standard(proto: "platform_requests"),
     7: .same(proto: "latitude"),
     8: .same(proto: "longitude"),
@@ -219,7 +189,6 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
     var _statusCode: Int32 = 0
     var _requestID: UInt64 = 0
     var _requests: [POGOProtos_Networking_Requests_Request] = []
-    var _socialRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.SocialRequest] = []
     var _platformRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest] = []
     var _latitude: Double = 0
     var _longitude: Double = 0
@@ -236,7 +205,6 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
       _statusCode = source._statusCode
       _requestID = source._requestID
       _requests = source._requests
-      _socialRequests = source._socialRequests
       _platformRequests = source._platformRequests
       _latitude = source._latitude
       _longitude = source._longitude
@@ -262,7 +230,6 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
         case 1: try decoder.decodeSingularInt32Field(value: &_storage._statusCode)
         case 3: try decoder.decodeSingularUInt64Field(value: &_storage._requestID)
         case 4: try decoder.decodeRepeatedMessageField(value: &_storage._requests)
-        case 5: try decoder.decodeRepeatedMessageField(value: &_storage._socialRequests)
         case 6: try decoder.decodeRepeatedMessageField(value: &_storage._platformRequests)
         case 7: try decoder.decodeSingularDoubleField(value: &_storage._latitude)
         case 8: try decoder.decodeSingularDoubleField(value: &_storage._longitude)
@@ -286,9 +253,6 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
       }
       if !_storage._requests.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._requests, fieldNumber: 4)
-      }
-      if !_storage._socialRequests.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._socialRequests, fieldNumber: 5)
       }
       if !_storage._platformRequests.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._platformRequests, fieldNumber: 6)
@@ -323,7 +287,6 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope: SwiftProtobuf.Message
         if _storage._statusCode != rhs_storage._statusCode {return false}
         if _storage._requestID != rhs_storage._requestID {return false}
         if _storage._requests != rhs_storage._requests {return false}
-        if _storage._socialRequests != rhs_storage._socialRequests {return false}
         if _storage._platformRequests != rhs_storage._platformRequests {return false}
         if _storage._latitude != rhs_storage._latitude {return false}
         if _storage._longitude != rhs_storage._longitude {return false}
@@ -511,75 +474,6 @@ extension POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest: Swift
   public static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest) -> Bool {
     if lhs.type != rhs.type {return false}
     if lhs.requestMessage != rhs.requestMessage {return false}
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension POGOProtos_Networking_Envelopes_RequestEnvelope.SocialRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Networking_Envelopes_RequestEnvelope.protoMessageName + ".SocialRequest"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "type"),
-    2: .standard(proto: "request_message"),
-  ]
-
-  fileprivate class _StorageClass {
-    var _type: POGOProtos_Networking_Social_SocialRequest? = nil
-    var _requestMessage: Data = SwiftProtobuf.Internal.emptyData
-
-    static let defaultInstance = _StorageClass()
-
-    private init() {}
-
-    init(copying source: _StorageClass) {
-      _type = source._type
-      _requestMessage = source._requestMessage
-    }
-  }
-
-  fileprivate mutating func _uniqueStorage() -> _StorageClass {
-    if !isKnownUniquelyReferenced(&_storage) {
-      _storage = _StorageClass(copying: _storage)
-    }
-    return _storage
-  }
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    _ = _uniqueStorage()
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      while let fieldNumber = try decoder.nextFieldNumber() {
-        switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._type)
-        case 2: try decoder.decodeSingularBytesField(value: &_storage._requestMessage)
-        default: break
-        }
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._type {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
-      if !_storage._requestMessage.isEmpty {
-        try visitor.visitSingularBytesField(value: _storage._requestMessage, fieldNumber: 2)
-      }
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Networking_Envelopes_RequestEnvelope.SocialRequest, rhs: POGOProtos_Networking_Envelopes_RequestEnvelope.SocialRequest) -> Bool {
-    if lhs._storage !== rhs._storage {
-      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
-        let _storage = _args.0
-        let rhs_storage = _args.1
-        if _storage._type != rhs_storage._type {return false}
-        if _storage._requestMessage != rhs_storage._requestMessage {return false}
-        return true
-      }
-      if !storagesAreEqual {return false}
-    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

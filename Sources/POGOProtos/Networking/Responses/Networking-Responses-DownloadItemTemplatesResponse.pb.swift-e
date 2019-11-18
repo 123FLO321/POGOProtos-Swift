@@ -474,6 +474,24 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `invasionNpcDisplaySettings`. Subsequent reads from it will return its default value.
     public mutating func clearInvasionNpcDisplaySettings() {_uniqueStorage()._invasionNpcDisplaySettings = nil}
 
+    public var combatCompetitiveSeasonSettings: POGOProtos_Settings_Master_CombatCompetitiveSeasonSettings {
+      get {return _storage._combatCompetitiveSeasonSettings ?? POGOProtos_Settings_Master_CombatCompetitiveSeasonSettings()}
+      set {_uniqueStorage()._combatCompetitiveSeasonSettings = newValue}
+    }
+    /// Returns true if `combatCompetitiveSeasonSettings` has been explicitly set.
+    public var hasCombatCompetitiveSeasonSettings: Bool {return _storage._combatCompetitiveSeasonSettings != nil}
+    /// Clears the value of `combatCompetitiveSeasonSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearCombatCompetitiveSeasonSettings() {_uniqueStorage()._combatCompetitiveSeasonSettings = nil}
+
+    public var combatRankingProtoSettings: POGOProtos_Settings_Master_CombatRankingSettings {
+      get {return _storage._combatRankingProtoSettings ?? POGOProtos_Settings_Master_CombatRankingSettings()}
+      set {_uniqueStorage()._combatRankingProtoSettings = newValue}
+    }
+    /// Returns true if `combatRankingProtoSettings` has been explicitly set.
+    public var hasCombatRankingProtoSettings: Bool {return _storage._combatRankingProtoSettings != nil}
+    /// Clears the value of `combatRankingProtoSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearCombatRankingProtoSettings() {_uniqueStorage()._combatRankingProtoSettings = nil}
+
     public var combatType: POGOProtos_Settings_Master_CombatType {
       get {return _storage._combatType ?? POGOProtos_Settings_Master_CombatType()}
       set {_uniqueStorage()._combatType = newValue}
@@ -482,6 +500,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     public var hasCombatType: Bool {return _storage._combatType != nil}
     /// Clears the value of `combatType`. Subsequent reads from it will return its default value.
     public mutating func clearCombatType() {_uniqueStorage()._combatType = nil}
+
+    public var vsSeekerClientSettings: POGOProtos_Settings_Master_VsSeekerClientSettings {
+      get {return _storage._vsSeekerClientSettings ?? POGOProtos_Settings_Master_VsSeekerClientSettings()}
+      set {_uniqueStorage()._vsSeekerClientSettings = newValue}
+    }
+    /// Returns true if `vsSeekerClientSettings` has been explicitly set.
+    public var hasVsSeekerClientSettings: Bool {return _storage._vsSeekerClientSettings != nil}
+    /// Clears the value of `vsSeekerClientSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearVsSeekerClientSettings() {_uniqueStorage()._vsSeekerClientSettings = nil}
 
     public var limitedPurchaseSkuSettings: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings {
       get {return _storage._limitedPurchaseSkuSettings ?? POGOProtos_Settings_Master_LimitedPurchaseSkuSettings()}
@@ -500,6 +527,42 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     public var hasPokestopInvasionAvailabilitySettings: Bool {return _storage._pokestopInvasionAvailabilitySettings != nil}
     /// Clears the value of `pokestopInvasionAvailabilitySettings`. Subsequent reads from it will return its default value.
     public mutating func clearPokestopInvasionAvailabilitySettings() {_uniqueStorage()._pokestopInvasionAvailabilitySettings = nil}
+
+    public var vsSeekerLootProto: POGOProtos_Data_VsSeeker_VsSeekerLoot {
+      get {return _storage._vsSeekerLootProto ?? POGOProtos_Data_VsSeeker_VsSeekerLoot()}
+      set {_uniqueStorage()._vsSeekerLootProto = newValue}
+    }
+    /// Returns true if `vsSeekerLootProto` has been explicitly set.
+    public var hasVsSeekerLootProto: Bool {return _storage._vsSeekerLootProto != nil}
+    /// Clears the value of `vsSeekerLootProto`. Subsequent reads from it will return its default value.
+    public mutating func clearVsSeekerLootProto() {_uniqueStorage()._vsSeekerLootProto = nil}
+
+    public var vsSeekerPokemonRewards: POGOProtos_Data_VsSeeker_VsSeekerPokemonRewards {
+      get {return _storage._vsSeekerPokemonRewards ?? POGOProtos_Data_VsSeeker_VsSeekerPokemonRewards()}
+      set {_uniqueStorage()._vsSeekerPokemonRewards = newValue}
+    }
+    /// Returns true if `vsSeekerPokemonRewards` has been explicitly set.
+    public var hasVsSeekerPokemonRewards: Bool {return _storage._vsSeekerPokemonRewards != nil}
+    /// Clears the value of `vsSeekerPokemonRewards`. Subsequent reads from it will return its default value.
+    public mutating func clearVsSeekerPokemonRewards() {_uniqueStorage()._vsSeekerPokemonRewards = nil}
+
+    public var battleHubOrderSettings: POGOProtos_Settings_Master_BattleHubOrderSettings {
+      get {return _storage._battleHubOrderSettings ?? POGOProtos_Settings_Master_BattleHubOrderSettings()}
+      set {_uniqueStorage()._battleHubOrderSettings = newValue}
+    }
+    /// Returns true if `battleHubOrderSettings` has been explicitly set.
+    public var hasBattleHubOrderSettings: Bool {return _storage._battleHubOrderSettings != nil}
+    /// Clears the value of `battleHubOrderSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBattleHubOrderSettings() {_uniqueStorage()._battleHubOrderSettings = nil}
+
+    public var battleHubBadgeSettings: POGOProtos_Settings_Master_BattleHubBadgeSettings {
+      get {return _storage._battleHubBadgeSettings ?? POGOProtos_Settings_Master_BattleHubBadgeSettings()}
+      set {_uniqueStorage()._battleHubBadgeSettings = newValue}
+    }
+    /// Returns true if `battleHubBadgeSettings` has been explicitly set.
+    public var hasBattleHubBadgeSettings: Bool {return _storage._battleHubBadgeSettings != nil}
+    /// Clears the value of `battleHubBadgeSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBattleHubBadgeSettings() {_uniqueStorage()._battleHubBadgeSettings = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -633,9 +696,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     46: .standard(proto: "adventure_sync_v2_gmt"),
     47: .standard(proto: "loading_screen_settings"),
     48: .standard(proto: "invasion_npc_display_settings"),
+    49: .standard(proto: "combat_competitive_season_settings"),
+    50: .standard(proto: "combat_ranking_proto_settings"),
     51: .standard(proto: "combat_type"),
+    58: .standard(proto: "vs_seeker_client_settings"),
     60: .standard(proto: "limited_purchase_sku_settings"),
     62: .standard(proto: "pokestop_invasion_availability_settings"),
+    64: .standard(proto: "vs_seeker_loot_proto"),
+    65: .standard(proto: "vs_seeker_pokemon_rewards"),
+    66: .standard(proto: "battle_hub_order_settings"),
+    67: .standard(proto: "battle_hub_badge_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -684,9 +754,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _adventureSyncV2Gmt: POGOProtos_Settings_Master_AdventureSyncV2Gmt? = nil
     var _loadingScreenSettings: POGOProtos_Settings_Master_LoadingScreen? = nil
     var _invasionNpcDisplaySettings: POGOProtos_Settings_Master_InvasionNpcDisplaySettings? = nil
+    var _combatCompetitiveSeasonSettings: POGOProtos_Settings_Master_CombatCompetitiveSeasonSettings? = nil
+    var _combatRankingProtoSettings: POGOProtos_Settings_Master_CombatRankingSettings? = nil
     var _combatType: POGOProtos_Settings_Master_CombatType? = nil
+    var _vsSeekerClientSettings: POGOProtos_Settings_Master_VsSeekerClientSettings? = nil
     var _limitedPurchaseSkuSettings: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings? = nil
     var _pokestopInvasionAvailabilitySettings: POGOProtos_Settings_Master_InvasionAvailabilitySettings? = nil
+    var _vsSeekerLootProto: POGOProtos_Data_VsSeeker_VsSeekerLoot? = nil
+    var _vsSeekerPokemonRewards: POGOProtos_Data_VsSeeker_VsSeekerPokemonRewards? = nil
+    var _battleHubOrderSettings: POGOProtos_Settings_Master_BattleHubOrderSettings? = nil
+    var _battleHubBadgeSettings: POGOProtos_Settings_Master_BattleHubBadgeSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -738,9 +815,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _adventureSyncV2Gmt = source._adventureSyncV2Gmt
       _loadingScreenSettings = source._loadingScreenSettings
       _invasionNpcDisplaySettings = source._invasionNpcDisplaySettings
+      _combatCompetitiveSeasonSettings = source._combatCompetitiveSeasonSettings
+      _combatRankingProtoSettings = source._combatRankingProtoSettings
       _combatType = source._combatType
+      _vsSeekerClientSettings = source._vsSeekerClientSettings
       _limitedPurchaseSkuSettings = source._limitedPurchaseSkuSettings
       _pokestopInvasionAvailabilitySettings = source._pokestopInvasionAvailabilitySettings
+      _vsSeekerLootProto = source._vsSeekerLootProto
+      _vsSeekerPokemonRewards = source._vsSeekerPokemonRewards
+      _battleHubOrderSettings = source._battleHubOrderSettings
+      _battleHubBadgeSettings = source._battleHubBadgeSettings
     }
   }
 
@@ -801,9 +885,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 46: try decoder.decodeSingularMessageField(value: &_storage._adventureSyncV2Gmt)
         case 47: try decoder.decodeSingularMessageField(value: &_storage._loadingScreenSettings)
         case 48: try decoder.decodeSingularMessageField(value: &_storage._invasionNpcDisplaySettings)
+        case 49: try decoder.decodeSingularMessageField(value: &_storage._combatCompetitiveSeasonSettings)
+        case 50: try decoder.decodeSingularMessageField(value: &_storage._combatRankingProtoSettings)
         case 51: try decoder.decodeSingularMessageField(value: &_storage._combatType)
+        case 58: try decoder.decodeSingularMessageField(value: &_storage._vsSeekerClientSettings)
         case 60: try decoder.decodeSingularMessageField(value: &_storage._limitedPurchaseSkuSettings)
         case 62: try decoder.decodeSingularMessageField(value: &_storage._pokestopInvasionAvailabilitySettings)
+        case 64: try decoder.decodeSingularMessageField(value: &_storage._vsSeekerLootProto)
+        case 65: try decoder.decodeSingularMessageField(value: &_storage._vsSeekerPokemonRewards)
+        case 66: try decoder.decodeSingularMessageField(value: &_storage._battleHubOrderSettings)
+        case 67: try decoder.decodeSingularMessageField(value: &_storage._battleHubBadgeSettings)
         default: break
         }
       }
@@ -947,14 +1038,35 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._invasionNpcDisplaySettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
       }
+      if let v = _storage._combatCompetitiveSeasonSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 49)
+      }
+      if let v = _storage._combatRankingProtoSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 50)
+      }
       if let v = _storage._combatType {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 51)
+      }
+      if let v = _storage._vsSeekerClientSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 58)
       }
       if let v = _storage._limitedPurchaseSkuSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 60)
       }
       if let v = _storage._pokestopInvasionAvailabilitySettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 62)
+      }
+      if let v = _storage._vsSeekerLootProto {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 64)
+      }
+      if let v = _storage._vsSeekerPokemonRewards {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 65)
+      }
+      if let v = _storage._battleHubOrderSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 66)
+      }
+      if let v = _storage._battleHubBadgeSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 67)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1010,9 +1122,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._adventureSyncV2Gmt != rhs_storage._adventureSyncV2Gmt {return false}
         if _storage._loadingScreenSettings != rhs_storage._loadingScreenSettings {return false}
         if _storage._invasionNpcDisplaySettings != rhs_storage._invasionNpcDisplaySettings {return false}
+        if _storage._combatCompetitiveSeasonSettings != rhs_storage._combatCompetitiveSeasonSettings {return false}
+        if _storage._combatRankingProtoSettings != rhs_storage._combatRankingProtoSettings {return false}
         if _storage._combatType != rhs_storage._combatType {return false}
+        if _storage._vsSeekerClientSettings != rhs_storage._vsSeekerClientSettings {return false}
         if _storage._limitedPurchaseSkuSettings != rhs_storage._limitedPurchaseSkuSettings {return false}
         if _storage._pokestopInvasionAvailabilitySettings != rhs_storage._pokestopInvasionAvailabilitySettings {return false}
+        if _storage._vsSeekerLootProto != rhs_storage._vsSeekerLootProto {return false}
+        if _storage._vsSeekerPokemonRewards != rhs_storage._vsSeekerPokemonRewards {return false}
+        if _storage._battleHubOrderSettings != rhs_storage._battleHubOrderSettings {return false}
+        if _storage._battleHubBadgeSettings != rhs_storage._battleHubBadgeSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

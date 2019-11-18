@@ -374,6 +374,146 @@ public struct POGOProtos_Networking_Requests_Messages_ListLoginActionMessage {
   public init() {}
 }
 
+public struct POGOProtos_Networking_Requests_Messages_GetWebTokenActionMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var clientID: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct POGOProtos_Networking_Requests_Messages_SubmitPoiImageMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var poiID: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public struct POGOProtos_Networking_Requests_Messages_SubmitPoiLocationUpdateMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var poiID: String {
+    get {return _storage._poiID}
+    set {_uniqueStorage()._poiID = newValue}
+  }
+
+  public var location: POGOProtos_Data_Route_RouteCheckpoint.LocationE6 {
+    get {return _storage._location ?? POGOProtos_Data_Route_RouteCheckpoint.LocationE6()}
+    set {_uniqueStorage()._location = newValue}
+  }
+  /// Returns true if `location` has been explicitly set.
+  public var hasLocation: Bool {return _storage._location != nil}
+  /// Clears the value of `location`. Subsequent reads from it will return its default value.
+  public mutating func clearLocation() {_uniqueStorage()._location = nil}
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
+}
+
+public struct POGOProtos_Networking_Requests_Messages_SubmitPoiTakedownRequestMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var poiID: String = String()
+
+  public var invalidReason: POGOProtos_Networking_Requests_Messages_SubmitPoiTakedownRequestMessage.PoiInvalidReason = .invalidReasonUnspecified
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum PoiInvalidReason: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case invalidReasonUnspecified // = 0
+    case noPedestrianAccess // = 1
+    case obstructsEmergencyServices // = 2
+    case privateResidentialProperty // = 3
+    case school // = 4
+    case permanentlyRemoved // = 5
+    case duplicate // = 6
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .invalidReasonUnspecified
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .invalidReasonUnspecified
+      case 1: self = .noPedestrianAccess
+      case 2: self = .obstructsEmergencyServices
+      case 3: self = .privateResidentialProperty
+      case 4: self = .school
+      case 5: self = .permanentlyRemoved
+      case 6: self = .duplicate
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .invalidReasonUnspecified: return 0
+      case .noPedestrianAccess: return 1
+      case .obstructsEmergencyServices: return 2
+      case .privateResidentialProperty: return 3
+      case .school: return 4
+      case .permanentlyRemoved: return 5
+      case .duplicate: return 6
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+
+  }
+
+  public init() {}
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Networking_Requests_Messages_SubmitPoiTakedownRequestMessage.PoiInvalidReason: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Networking_Requests_Messages_SubmitPoiTakedownRequestMessage.PoiInvalidReason] = [
+    .invalidReasonUnspecified,
+    .noPedestrianAccess,
+    .obstructsEmergencyServices,
+    .privateResidentialProperty,
+    .school,
+    .permanentlyRemoved,
+    .duplicate,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
+public struct POGOProtos_Networking_Requests_Messages_SubmitPoiTextMetadataUpdateMessage {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var poiID: String = String()
+
+  public var title: String = String()
+
+  public var description_p: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 fileprivate let _protobuf_package = "POGOProtos.Networking.Requests.Messages"
@@ -1209,6 +1349,221 @@ extension POGOProtos_Networking_Requests_Messages_ListLoginActionMessage: SwiftP
   }
 
   public static func ==(lhs: POGOProtos_Networking_Requests_Messages_ListLoginActionMessage, rhs: POGOProtos_Networking_Requests_Messages_ListLoginActionMessage) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Requests_Messages_GetWebTokenActionMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".GetWebTokenActionMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "client_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.clientID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.clientID.isEmpty {
+      try visitor.visitSingularStringField(value: self.clientID, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_GetWebTokenActionMessage, rhs: POGOProtos_Networking_Requests_Messages_GetWebTokenActionMessage) -> Bool {
+    if lhs.clientID != rhs.clientID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Requests_Messages_SubmitPoiImageMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SubmitPoiImageMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "poi_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.poiID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.poiID.isEmpty {
+      try visitor.visitSingularStringField(value: self.poiID, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_SubmitPoiImageMessage, rhs: POGOProtos_Networking_Requests_Messages_SubmitPoiImageMessage) -> Bool {
+    if lhs.poiID != rhs.poiID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Requests_Messages_SubmitPoiLocationUpdateMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SubmitPoiLocationUpdateMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "poi_id"),
+    2: .same(proto: "location"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _poiID: String = String()
+    var _location: POGOProtos_Data_Route_RouteCheckpoint.LocationE6? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _poiID = source._poiID
+      _location = source._location
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularStringField(value: &_storage._poiID)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._location)
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._poiID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._poiID, fieldNumber: 1)
+      }
+      if let v = _storage._location {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_SubmitPoiLocationUpdateMessage, rhs: POGOProtos_Networking_Requests_Messages_SubmitPoiLocationUpdateMessage) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._poiID != rhs_storage._poiID {return false}
+        if _storage._location != rhs_storage._location {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Requests_Messages_SubmitPoiTakedownRequestMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SubmitPoiTakedownRequestMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "poi_id"),
+    2: .standard(proto: "invalid_reason"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.poiID)
+      case 2: try decoder.decodeSingularEnumField(value: &self.invalidReason)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.poiID.isEmpty {
+      try visitor.visitSingularStringField(value: self.poiID, fieldNumber: 1)
+    }
+    if self.invalidReason != .invalidReasonUnspecified {
+      try visitor.visitSingularEnumField(value: self.invalidReason, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_SubmitPoiTakedownRequestMessage, rhs: POGOProtos_Networking_Requests_Messages_SubmitPoiTakedownRequestMessage) -> Bool {
+    if lhs.poiID != rhs.poiID {return false}
+    if lhs.invalidReason != rhs.invalidReason {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Requests_Messages_SubmitPoiTakedownRequestMessage.PoiInvalidReason: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "INVALID_REASON_UNSPECIFIED"),
+    1: .same(proto: "NO_PEDESTRIAN_ACCESS"),
+    2: .same(proto: "OBSTRUCTS_EMERGENCY_SERVICES"),
+    3: .same(proto: "PRIVATE_RESIDENTIAL_PROPERTY"),
+    4: .same(proto: "SCHOOL"),
+    5: .same(proto: "PERMANENTLY_REMOVED"),
+    6: .same(proto: "DUPLICATE"),
+  ]
+}
+
+extension POGOProtos_Networking_Requests_Messages_SubmitPoiTextMetadataUpdateMessage: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SubmitPoiTextMetadataUpdateMessage"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "poi_id"),
+    2: .same(proto: "title"),
+    3: .same(proto: "description"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.poiID)
+      case 2: try decoder.decodeSingularStringField(value: &self.title)
+      case 3: try decoder.decodeSingularStringField(value: &self.description_p)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.poiID.isEmpty {
+      try visitor.visitSingularStringField(value: self.poiID, fieldNumber: 1)
+    }
+    if !self.title.isEmpty {
+      try visitor.visitSingularStringField(value: self.title, fieldNumber: 2)
+    }
+    if !self.description_p.isEmpty {
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Requests_Messages_SubmitPoiTextMetadataUpdateMessage, rhs: POGOProtos_Networking_Requests_Messages_SubmitPoiTextMetadataUpdateMessage) -> Bool {
+    if lhs.poiID != rhs.poiID {return false}
+    if lhs.title != rhs.title {return false}
+    if lhs.description_p != rhs.description_p {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

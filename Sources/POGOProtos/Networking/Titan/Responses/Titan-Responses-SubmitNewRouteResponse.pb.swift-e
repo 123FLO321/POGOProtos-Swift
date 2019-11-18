@@ -38,9 +38,10 @@ public struct POGOProtos_Networking_Titan_Responses_SubmitNewRouteResponse {
     case notAvailable // = 5
     case invalidInput // = 6
     case missingImage // = 7
-    case invalidPoi // = 8
+    case invalidCheckpoint // = 8
     case invalidRouteLength // = 9
-    case duplicatePois // = 10
+    case duplicateCheckpoints // = 10
+    case alreadySubmitted // = 11
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -57,9 +58,10 @@ public struct POGOProtos_Networking_Titan_Responses_SubmitNewRouteResponse {
       case 5: self = .notAvailable
       case 6: self = .invalidInput
       case 7: self = .missingImage
-      case 8: self = .invalidPoi
+      case 8: self = .invalidCheckpoint
       case 9: self = .invalidRouteLength
-      case 10: self = .duplicatePois
+      case 10: self = .duplicateCheckpoints
+      case 11: self = .alreadySubmitted
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -74,9 +76,10 @@ public struct POGOProtos_Networking_Titan_Responses_SubmitNewRouteResponse {
       case .notAvailable: return 5
       case .invalidInput: return 6
       case .missingImage: return 7
-      case .invalidPoi: return 8
+      case .invalidCheckpoint: return 8
       case .invalidRouteLength: return 9
-      case .duplicatePois: return 10
+      case .duplicateCheckpoints: return 10
+      case .alreadySubmitted: return 11
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -99,9 +102,10 @@ extension POGOProtos_Networking_Titan_Responses_SubmitNewRouteResponse.Status: C
     .notAvailable,
     .invalidInput,
     .missingImage,
-    .invalidPoi,
+    .invalidCheckpoint,
     .invalidRouteLength,
-    .duplicatePois,
+    .duplicateCheckpoints,
+    .alreadySubmitted,
   ]
 }
 
@@ -150,8 +154,9 @@ extension POGOProtos_Networking_Titan_Responses_SubmitNewRouteResponse.Status: S
     5: .same(proto: "NOT_AVAILABLE"),
     6: .same(proto: "INVALID_INPUT"),
     7: .same(proto: "MISSING_IMAGE"),
-    8: .same(proto: "INVALID_POI"),
+    8: .same(proto: "INVALID_CHECKPOINT"),
     9: .same(proto: "INVALID_ROUTE_LENGTH"),
-    10: .same(proto: "DUPLICATE_POIS"),
+    10: .same(proto: "DUPLICATE_CHECKPOINTS"),
+    11: .same(proto: "ALREADY_SUBMITTED"),
   ]
 }

@@ -40,6 +40,7 @@ public enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
   case stardustBoost // = 16
   case friendGiftBox // = 17
   case teamChange // = 18
+  case vsSeeker // = 20
   case incidentTicket // = 21
   case globalEventTicket // = 22
   case UNRECOGNIZED(Int)
@@ -69,6 +70,7 @@ public enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
     case 16: self = .stardustBoost
     case 17: self = .friendGiftBox
     case 18: self = .teamChange
+    case 20: self = .vsSeeker
     case 21: self = .incidentTicket
     case 22: self = .globalEventTicket
     default: self = .UNRECOGNIZED(rawValue)
@@ -96,6 +98,7 @@ public enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
     case .stardustBoost: return 16
     case .friendGiftBox: return 17
     case .teamChange: return 18
+    case .vsSeeker: return 20
     case .incidentTicket: return 21
     case .globalEventTicket: return 22
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
@@ -128,6 +131,7 @@ extension POGOProtos_Enums_ItemCategory: CaseIterable {
     .stardustBoost,
     .friendGiftBox,
     .teamChange,
+    .vsSeeker,
     .incidentTicket,
     .globalEventTicket,
   ]
@@ -158,6 +162,7 @@ extension POGOProtos_Enums_ItemCategory: SwiftProtobuf._ProtoNameProviding {
     16: .same(proto: "ITEM_CATEGORY_STARDUST_BOOST"),
     17: .same(proto: "ITEM_CATEGORY_FRIEND_GIFT_BOX"),
     18: .same(proto: "ITEM_CATEGORY_TEAM_CHANGE"),
+    20: .same(proto: "ITEM_CATEGORY_VS_SEEKER"),
     21: .same(proto: "ITEM_CATEGORY_INCIDENT_TICKET"),
     22: .same(proto: "ITEM_CATEGORY_GLOBAL_EVENT_TICKET"),
   ]

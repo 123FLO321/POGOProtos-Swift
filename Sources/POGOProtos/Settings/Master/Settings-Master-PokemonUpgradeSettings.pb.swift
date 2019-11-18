@@ -40,6 +40,10 @@ public struct POGOProtos_Settings_Master_PokemonUpgradeSettings {
 
   public var purifiedCandyMultiplier: Float = 0
 
+  public var maxNormalUpgradeLevel: Int32 = 0
+
+  public var defaultCpBoostAdditionalLevel: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -60,6 +64,8 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
     6: .standard(proto: "shadow_candy_multiplier"),
     7: .standard(proto: "purified_stardust_multiplier"),
     8: .standard(proto: "purified_candy_multiplier"),
+    9: .standard(proto: "max_normal_upgrade_level"),
+    10: .standard(proto: "default_cp_boost_additional_level"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -73,6 +79,8 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
       case 6: try decoder.decodeSingularFloatField(value: &self.shadowCandyMultiplier)
       case 7: try decoder.decodeSingularFloatField(value: &self.purifiedStardustMultiplier)
       case 8: try decoder.decodeSingularFloatField(value: &self.purifiedCandyMultiplier)
+      case 9: try decoder.decodeSingularInt32Field(value: &self.maxNormalUpgradeLevel)
+      case 10: try decoder.decodeSingularInt32Field(value: &self.defaultCpBoostAdditionalLevel)
       default: break
       }
     }
@@ -103,6 +111,12 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
     if self.purifiedCandyMultiplier != 0 {
       try visitor.visitSingularFloatField(value: self.purifiedCandyMultiplier, fieldNumber: 8)
     }
+    if self.maxNormalUpgradeLevel != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxNormalUpgradeLevel, fieldNumber: 9)
+    }
+    if self.defaultCpBoostAdditionalLevel != 0 {
+      try visitor.visitSingularInt32Field(value: self.defaultCpBoostAdditionalLevel, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -115,6 +129,8 @@ extension POGOProtos_Settings_Master_PokemonUpgradeSettings: SwiftProtobuf.Messa
     if lhs.shadowCandyMultiplier != rhs.shadowCandyMultiplier {return false}
     if lhs.purifiedStardustMultiplier != rhs.purifiedStardustMultiplier {return false}
     if lhs.purifiedCandyMultiplier != rhs.purifiedCandyMultiplier {return false}
+    if lhs.maxNormalUpgradeLevel != rhs.maxNormalUpgradeLevel {return false}
+    if lhs.defaultCpBoostAdditionalLevel != rhs.defaultCpBoostAdditionalLevel {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
