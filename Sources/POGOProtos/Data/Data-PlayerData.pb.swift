@@ -81,8 +81,8 @@ public struct POGOProtos_Data_PlayerData {
   /// Clears the value of `equippedBadge`. Subsequent reads from it will return its default value.
   public mutating func clearEquippedBadge() {_uniqueStorage()._equippedBadge = nil}
 
-  public var contactSettings: POGOProtos_Data_Player_ContactSettings {
-    get {return _storage._contactSettings ?? POGOProtos_Data_Player_ContactSettings()}
+  public var contactSettings: POGOProtos_Settings_ContactSettings {
+    get {return _storage._contactSettings ?? POGOProtos_Settings_ContactSettings()}
     set {_uniqueStorage()._contactSettings = newValue}
   }
   /// Returns true if `contactSettings` has been explicitly set.
@@ -128,8 +128,8 @@ public struct POGOProtos_Data_PlayerData {
     set {_uniqueStorage()._nameIsBlacklisted = newValue}
   }
 
-  public var socialPlayerSettings: POGOProtos_Data_Player_SocialPlayerSettings {
-    get {return _storage._socialPlayerSettings ?? POGOProtos_Data_Player_SocialPlayerSettings()}
+  public var socialPlayerSettings: POGOProtos_Settings_SocialPlayerSettings {
+    get {return _storage._socialPlayerSettings ?? POGOProtos_Settings_SocialPlayerSettings()}
     set {_uniqueStorage()._socialPlayerSettings = newValue}
   }
   /// Returns true if `socialPlayerSettings` has been explicitly set.
@@ -234,14 +234,14 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _maxItemStorage: Int32 = 0
     var _dailyBonus: POGOProtos_Data_Player_DailyBonus? = nil
     var _equippedBadge: POGOProtos_Data_Player_EquippedBadge? = nil
-    var _contactSettings: POGOProtos_Data_Player_ContactSettings? = nil
+    var _contactSettings: POGOProtos_Settings_ContactSettings? = nil
     var _currencyBalance: [POGOProtos_Data_Store_CurrencyQuantity] = []
     var _remainingCodenameClaims: Int32 = 0
     var _buddyPokemon: POGOProtos_Data_BuddyPokemon? = nil
     var _battleLockoutEndMs: Int64 = 0
     var _secondaryPlayerAvatar: POGOProtos_Data_Player_PlayerAvatar? = nil
     var _nameIsBlacklisted: Bool = false
-    var _socialPlayerSettings: POGOProtos_Data_Player_SocialPlayerSettings? = nil
+    var _socialPlayerSettings: POGOProtos_Settings_SocialPlayerSettings? = nil
     var _combatPlayerPreferences: POGOProtos_Data_Combat_CombatPlayerPreferences? = nil
     var _playerSupportID: String = String()
     var _teamChangeInfo: POGOProtos_Data_Player_TeamChangeInfo? = nil

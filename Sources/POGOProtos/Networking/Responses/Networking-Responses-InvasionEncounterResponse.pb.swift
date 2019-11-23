@@ -24,7 +24,7 @@ public struct POGOProtos_Networking_Responses_InvasionEncounterResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var status: POGOProtos_Data_InvasionStatus.Status {
+  public var status: POGOProtos_Map_Fort_InvasionStatus.Status {
     get {return _storage._status}
     set {_uniqueStorage()._status = newValue}
   }
@@ -119,7 +119,7 @@ extension POGOProtos_Networking_Responses_InvasionEncounterResponse: SwiftProtob
   ]
 
   fileprivate class _StorageClass {
-    var _status: POGOProtos_Data_InvasionStatus.Status = .unset
+    var _status: POGOProtos_Map_Fort_InvasionStatus.Status = .unset
     var _encounterPokemon: POGOProtos_Data_PokemonData? = nil
     var _captureProbability: POGOProtos_Data_Capture_CaptureProbability? = nil
     var _activeItem: POGOProtos_Inventory_Item_ItemId = .itemUnknown

@@ -122,6 +122,15 @@ public struct POGOProtos_Networking_Responses_FortDetailsResponse {
     set {_uniqueStorage()._callToActionLink = newValue}
   }
 
+  public var sponsoredDetails: POGOProtos_Map_Fort_SponsoredDetails {
+    get {return _storage._sponsoredDetails ?? POGOProtos_Map_Fort_SponsoredDetails()}
+    set {_uniqueStorage()._sponsoredDetails = newValue}
+  }
+  /// Returns true if `sponsoredDetails` has been explicitly set.
+  public var hasSponsoredDetails: Bool {return _storage._sponsoredDetails != nil}
+  /// Clears the value of `sponsoredDetails`. Subsequent reads from it will return its default value.
+  public mutating func clearSponsoredDetails() {_uniqueStorage()._sponsoredDetails = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -154,6 +163,7 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
     16: .standard(proto: "event_info"),
     17: .standard(proto: "promo_description"),
     18: .standard(proto: "call_to_action_link"),
+    19: .standard(proto: "sponsored_details"),
   ]
 
   fileprivate class _StorageClass {
@@ -175,6 +185,7 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
     var _eventInfo: POGOProtos_Data_Raid_EventInfo? = nil
     var _promoDescription: [String] = []
     var _callToActionLink: String = String()
+    var _sponsoredDetails: POGOProtos_Map_Fort_SponsoredDetails? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -199,6 +210,7 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
       _eventInfo = source._eventInfo
       _promoDescription = source._promoDescription
       _callToActionLink = source._callToActionLink
+      _sponsoredDetails = source._sponsoredDetails
     }
   }
 
@@ -232,6 +244,7 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
         case 16: try decoder.decodeSingularMessageField(value: &_storage._eventInfo)
         case 17: try decoder.decodeRepeatedStringField(value: &_storage._promoDescription)
         case 18: try decoder.decodeSingularStringField(value: &_storage._callToActionLink)
+        case 19: try decoder.decodeSingularMessageField(value: &_storage._sponsoredDetails)
         default: break
         }
       }
@@ -294,6 +307,9 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
       if !_storage._callToActionLink.isEmpty {
         try visitor.visitSingularStringField(value: _storage._callToActionLink, fieldNumber: 18)
       }
+      if let v = _storage._sponsoredDetails {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -321,6 +337,7 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
         if _storage._eventInfo != rhs_storage._eventInfo {return false}
         if _storage._promoDescription != rhs_storage._promoDescription {return false}
         if _storage._callToActionLink != rhs_storage._callToActionLink {return false}
+        if _storage._sponsoredDetails != rhs_storage._sponsoredDetails {return false}
         return true
       }
       if !storagesAreEqual {return false}

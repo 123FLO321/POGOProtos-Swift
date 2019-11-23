@@ -53,6 +53,9 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case getServerTime // = 11
 
   /// Implemented
+  case getLocalTime // = 12
+
+  /// Implemented
   case fortSearch // = 101
 
   /// Implemented
@@ -681,6 +684,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 9: self = .getPlayerDay
     case 10: self = .acknowledgePunishment
     case 11: self = .getServerTime
+    case 12: self = .getLocalTime
     case 101: self = .fortSearch
     case 102: self = .encounter
     case 103: self = .catchPokemon
@@ -901,6 +905,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .getPlayerDay: return 9
     case .acknowledgePunishment: return 10
     case .getServerTime: return 11
+    case .getLocalTime: return 12
     case .fortSearch: return 101
     case .encounter: return 102
     case .catchPokemon: return 103
@@ -1126,6 +1131,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .getPlayerDay,
     .acknowledgePunishment,
     .getServerTime,
+    .getLocalTime,
     .fortSearch,
     .encounter,
     .catchPokemon,
@@ -1349,6 +1355,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     9: .same(proto: "GET_PLAYER_DAY"),
     10: .same(proto: "ACKNOWLEDGE_PUNISHMENT"),
     11: .same(proto: "GET_SERVER_TIME"),
+    12: .same(proto: "GET_LOCAL_TIME"),
     101: .same(proto: "FORT_SEARCH"),
     102: .same(proto: "ENCOUNTER"),
     103: .same(proto: "CATCH_POKEMON"),

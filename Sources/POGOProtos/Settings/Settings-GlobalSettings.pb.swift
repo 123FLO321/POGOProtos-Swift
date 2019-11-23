@@ -386,6 +386,11 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `gmtSettings`. Subsequent reads from it will return its default value.
   public mutating func clearGmtSettings() {_uniqueStorage()._gmtSettings = nil}
 
+  public var useLocalTimeAction: Bool {
+    get {return _storage._useLocalTimeAction}
+    set {_uniqueStorage()._useLocalTimeAction = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -442,6 +447,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     41: .standard(proto: "kangaroo_settings"),
     44: .standard(proto: "input_settings"),
     45: .standard(proto: "gmt_settings"),
+    47: .standard(proto: "use_local_time_action"),
   ]
 
   fileprivate class _StorageClass {
@@ -487,6 +493,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _kangarooSettings: POGOProtos_Settings_KangarooSettings? = nil
     var _inputSettings: POGOProtos_Settings_InputSettings? = nil
     var _gmtSettings: POGOProtos_Settings_GmtSettings? = nil
+    var _useLocalTimeAction: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -535,6 +542,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _kangarooSettings = source._kangarooSettings
       _inputSettings = source._inputSettings
       _gmtSettings = source._gmtSettings
+      _useLocalTimeAction = source._useLocalTimeAction
     }
   }
 
@@ -592,6 +600,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 41: try decoder.decodeSingularMessageField(value: &_storage._kangarooSettings)
         case 44: try decoder.decodeSingularMessageField(value: &_storage._inputSettings)
         case 45: try decoder.decodeSingularMessageField(value: &_storage._gmtSettings)
+        case 47: try decoder.decodeSingularBoolField(value: &_storage._useLocalTimeAction)
         default: break
         }
       }
@@ -726,6 +735,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._gmtSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 45)
       }
+      if _storage._useLocalTimeAction != false {
+        try visitor.visitSingularBoolField(value: _storage._useLocalTimeAction, fieldNumber: 47)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -777,6 +789,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._kangarooSettings != rhs_storage._kangarooSettings {return false}
         if _storage._inputSettings != rhs_storage._inputSettings {return false}
         if _storage._gmtSettings != rhs_storage._gmtSettings {return false}
+        if _storage._useLocalTimeAction != rhs_storage._useLocalTimeAction {return false}
         return true
       }
       if !storagesAreEqual {return false}

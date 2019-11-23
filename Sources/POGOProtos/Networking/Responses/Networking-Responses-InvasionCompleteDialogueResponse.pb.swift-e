@@ -24,7 +24,7 @@ public struct POGOProtos_Networking_Responses_InvasionCompleteDialogueResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var status: POGOProtos_Data_InvasionStatus.Status = .unset
+  public var status: POGOProtos_Map_Fort_InvasionStatus.Status = .unset
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 

@@ -24,8 +24,8 @@ public struct POGOProtos_Networking_Requests_Messages_InvasionCompleteDialogueMe
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var incidentLookup: POGOProtos_Data_IncidentLookup {
-    get {return _storage._incidentLookup ?? POGOProtos_Data_IncidentLookup()}
+  public var incidentLookup: POGOProtos_Map_Fort_IncidentLookup {
+    get {return _storage._incidentLookup ?? POGOProtos_Map_Fort_IncidentLookup()}
     set {_uniqueStorage()._incidentLookup = newValue}
   }
   /// Returns true if `incidentLookup` has been explicitly set.
@@ -57,7 +57,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionCompleteDialogueMessag
   ]
 
   fileprivate class _StorageClass {
-    var _incidentLookup: POGOProtos_Data_IncidentLookup? = nil
+    var _incidentLookup: POGOProtos_Map_Fort_IncidentLookup? = nil
     var _step: Int32 = 0
 
     static let defaultInstance = _StorageClass()
