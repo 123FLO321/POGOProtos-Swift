@@ -24,7 +24,7 @@ public struct POGOProtos_Networking_Responses_InvasionBattleUpdateResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var status: POGOProtos_Data_InvasionStatus.Status {
+  public var status: POGOProtos_Map_Fort_InvasionStatus.Status {
     get {return _storage._status}
     set {_uniqueStorage()._status = newValue}
   }
@@ -37,6 +37,11 @@ public struct POGOProtos_Networking_Responses_InvasionBattleUpdateResponse {
   public var hasRewards: Bool {return _storage._rewards != nil}
   /// Clears the value of `rewards`. Subsequent reads from it will return its default value.
   public mutating func clearRewards() {_uniqueStorage()._rewards = nil}
+
+  public var mapFragmentUpgraded: Bool {
+    get {return _storage._mapFragmentUpgraded}
+    set {_uniqueStorage()._mapFragmentUpgraded = newValue}
+  }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -54,11 +59,13 @@ extension POGOProtos_Networking_Responses_InvasionBattleUpdateResponse: SwiftPro
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .same(proto: "rewards"),
+    3: .standard(proto: "map_fragment_upgraded"),
   ]
 
   fileprivate class _StorageClass {
-    var _status: POGOProtos_Data_InvasionStatus.Status = .unset
+    var _status: POGOProtos_Map_Fort_InvasionStatus.Status = .unset
     var _rewards: POGOProtos_Inventory_Loot? = nil
+    var _mapFragmentUpgraded: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -67,6 +74,7 @@ extension POGOProtos_Networking_Responses_InvasionBattleUpdateResponse: SwiftPro
     init(copying source: _StorageClass) {
       _status = source._status
       _rewards = source._rewards
+      _mapFragmentUpgraded = source._mapFragmentUpgraded
     }
   }
 
@@ -84,6 +92,7 @@ extension POGOProtos_Networking_Responses_InvasionBattleUpdateResponse: SwiftPro
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._status)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._rewards)
+        case 3: try decoder.decodeSingularBoolField(value: &_storage._mapFragmentUpgraded)
         default: break
         }
       }
@@ -98,6 +107,9 @@ extension POGOProtos_Networking_Responses_InvasionBattleUpdateResponse: SwiftPro
       if let v = _storage._rewards {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
+      if _storage._mapFragmentUpgraded != false {
+        try visitor.visitSingularBoolField(value: _storage._mapFragmentUpgraded, fieldNumber: 3)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -109,6 +121,7 @@ extension POGOProtos_Networking_Responses_InvasionBattleUpdateResponse: SwiftPro
         let rhs_storage = _args.1
         if _storage._status != rhs_storage._status {return false}
         if _storage._rewards != rhs_storage._rewards {return false}
+        if _storage._mapFragmentUpgraded != rhs_storage._mapFragmentUpgraded {return false}
         return true
       }
       if !storagesAreEqual {return false}

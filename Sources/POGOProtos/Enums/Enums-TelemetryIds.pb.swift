@@ -29,6 +29,11 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
   case invasionEncounterFinished // = 5
   case invasionPokemonPurified // = 6
   case invasionAfterPoiExited // = 7
+  case invasionRadarViewOpened // = 8
+  case invasionRadarViewClosed // = 9
+  case invasionRadarViewEmpty // = 10
+  case invasionDecoyFound // = 11
+  case invasionGiovanniFound // = 12
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -45,6 +50,11 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
     case 5: self = .invasionEncounterFinished
     case 6: self = .invasionPokemonPurified
     case 7: self = .invasionAfterPoiExited
+    case 8: self = .invasionRadarViewOpened
+    case 9: self = .invasionRadarViewClosed
+    case 10: self = .invasionRadarViewEmpty
+    case 11: self = .invasionDecoyFound
+    case 12: self = .invasionGiovanniFound
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -59,6 +69,11 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
     case .invasionEncounterFinished: return 5
     case .invasionPokemonPurified: return 6
     case .invasionAfterPoiExited: return 7
+    case .invasionRadarViewOpened: return 8
+    case .invasionRadarViewClosed: return 9
+    case .invasionRadarViewEmpty: return 10
+    case .invasionDecoyFound: return 11
+    case .invasionGiovanniFound: return 12
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -78,6 +93,11 @@ extension POGOProtos_Enums_InvasionTelemetryIds: CaseIterable {
     .invasionEncounterFinished,
     .invasionPokemonPurified,
     .invasionAfterPoiExited,
+    .invasionRadarViewOpened,
+    .invasionRadarViewClosed,
+    .invasionRadarViewEmpty,
+    .invasionDecoyFound,
+    .invasionGiovanniFound,
   ]
 }
 
@@ -358,6 +378,9 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
   case arPhotoSessionTelemetry // = 42
   case leavePointOfInterest // = 43
   case viewPointOfInterestImage // = 44
+  case combatHubEntranceTelemetry // = 45
+  case deviceSpecificationsTelemetry // = 46
+  case screenResolutionTelemetry // = 47
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -411,6 +434,9 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case 42: self = .arPhotoSessionTelemetry
     case 43: self = .leavePointOfInterest
     case 44: self = .viewPointOfInterestImage
+    case 45: self = .combatHubEntranceTelemetry
+    case 46: self = .deviceSpecificationsTelemetry
+    case 47: self = .screenResolutionTelemetry
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -462,6 +488,9 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case .arPhotoSessionTelemetry: return 42
     case .leavePointOfInterest: return 43
     case .viewPointOfInterestImage: return 44
+    case .combatHubEntranceTelemetry: return 45
+    case .deviceSpecificationsTelemetry: return 46
+    case .screenResolutionTelemetry: return 47
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -518,6 +547,9 @@ extension POGOProtos_Enums_ClientTelemetryIds: CaseIterable {
     .arPhotoSessionTelemetry,
     .leavePointOfInterest,
     .viewPointOfInterestImage,
+    .combatHubEntranceTelemetry,
+    .deviceSpecificationsTelemetry,
+    .screenResolutionTelemetry,
   ]
 }
 
@@ -700,6 +732,7 @@ public enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
   case undefinedItemEvent // = 0
   case useItem // = 1
   case recycleItem // = 2
+  case updateItemEquipped // = 3
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -711,6 +744,7 @@ public enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
     case 0: self = .undefinedItemEvent
     case 1: self = .useItem
     case 2: self = .recycleItem
+    case 3: self = .updateItemEquipped
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -720,6 +754,7 @@ public enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
     case .undefinedItemEvent: return 0
     case .useItem: return 1
     case .recycleItem: return 2
+    case .updateItemEquipped: return 3
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -734,6 +769,7 @@ extension POGOProtos_Enums_ItemUseTelemetryIds: CaseIterable {
     .undefinedItemEvent,
     .useItem,
     .recycleItem,
+    .updateItemEquipped,
   ]
 }
 
@@ -1241,6 +1277,21 @@ public enum POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf.Enum {
   case clickCustomizeAvatar // = 1
   case quickShopMore // = 2
   case quickShopExchange // = 3
+  case clickShop // = 4
+  case quitShop // = 5
+  case clickSku // = 6
+  case quitSku // = 7
+  case clickSkuExchange // = 8
+  case clickShopAvatar // = 9
+  case quitShopAvatar // = 10
+  case clickAvatarType // = 11
+  case quitAvatarType // = 12
+  case clickAvatarItem // = 13
+  case quitAvatarItem // = 14
+  case confirmAvatarItem // = 15
+  case clickAvatarItemColor // = 16
+  case quitAvatarItemColor // = 17
+  case confirmAvatarItemColor // = 18
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -1253,6 +1304,21 @@ public enum POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf.Enum {
     case 1: self = .clickCustomizeAvatar
     case 2: self = .quickShopMore
     case 3: self = .quickShopExchange
+    case 4: self = .clickShop
+    case 5: self = .quitShop
+    case 6: self = .clickSku
+    case 7: self = .quitSku
+    case 8: self = .clickSkuExchange
+    case 9: self = .clickShopAvatar
+    case 10: self = .quitShopAvatar
+    case 11: self = .clickAvatarType
+    case 12: self = .quitAvatarType
+    case 13: self = .clickAvatarItem
+    case 14: self = .quitAvatarItem
+    case 15: self = .confirmAvatarItem
+    case 16: self = .clickAvatarItemColor
+    case 17: self = .quitAvatarItemColor
+    case 18: self = .confirmAvatarItemColor
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -1263,6 +1329,21 @@ public enum POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf.Enum {
     case .clickCustomizeAvatar: return 1
     case .quickShopMore: return 2
     case .quickShopExchange: return 3
+    case .clickShop: return 4
+    case .quitShop: return 5
+    case .clickSku: return 6
+    case .quitSku: return 7
+    case .clickSkuExchange: return 8
+    case .clickShopAvatar: return 9
+    case .quitShopAvatar: return 10
+    case .clickAvatarType: return 11
+    case .quitAvatarType: return 12
+    case .clickAvatarItem: return 13
+    case .quitAvatarItem: return 14
+    case .confirmAvatarItem: return 15
+    case .clickAvatarItemColor: return 16
+    case .quitAvatarItemColor: return 17
+    case .confirmAvatarItemColor: return 18
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1278,6 +1359,21 @@ extension POGOProtos_Enums_ShoppingPageTelemetryIds: CaseIterable {
     .clickCustomizeAvatar,
     .quickShopMore,
     .quickShopExchange,
+    .clickShop,
+    .quitShop,
+    .clickSku,
+    .quitSku,
+    .clickSkuExchange,
+    .clickShopAvatar,
+    .quitShopAvatar,
+    .clickAvatarType,
+    .quitAvatarType,
+    .clickAvatarItem,
+    .quitAvatarItem,
+    .confirmAvatarItem,
+    .clickAvatarItemColor,
+    .quitAvatarItemColor,
+    .confirmAvatarItemColor,
   ]
 }
 
@@ -1387,6 +1483,46 @@ extension POGOProtos_Enums_WebTelemetryIds: CaseIterable {
 
 #endif  // swift(>=4.2)
 
+public enum POGOProtos_Enums_CombatHubEntranceTelemetryIds: SwiftProtobuf.Enum {
+  public typealias RawValue = Int
+  case undefinedEvent // = 0
+  case clickedCombatHubButton // = 1
+  case UNRECOGNIZED(Int)
+
+  public init() {
+    self = .undefinedEvent
+  }
+
+  public init?(rawValue: Int) {
+    switch rawValue {
+    case 0: self = .undefinedEvent
+    case 1: self = .clickedCombatHubButton
+    default: self = .UNRECOGNIZED(rawValue)
+    }
+  }
+
+  public var rawValue: Int {
+    switch self {
+    case .undefinedEvent: return 0
+    case .clickedCombatHubButton: return 1
+    case .UNRECOGNIZED(let i): return i
+    }
+  }
+
+}
+
+#if swift(>=4.2)
+
+extension POGOProtos_Enums_CombatHubEntranceTelemetryIds: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Enums_CombatHubEntranceTelemetryIds] = [
+    .undefinedEvent,
+    .clickedCombatHubButton,
+  ]
+}
+
+#endif  // swift(>=4.2)
+
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
 extension POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf._ProtoNameProviding {
@@ -1399,6 +1535,11 @@ extension POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf._ProtoNameProvidi
     5: .same(proto: "INVASION_ENCOUNTER_FINISHED"),
     6: .same(proto: "INVASION_POKEMON_PURIFIED"),
     7: .same(proto: "INVASION_AFTER_POI_EXITED"),
+    8: .same(proto: "INVASION_RADAR_VIEW_OPENED"),
+    9: .same(proto: "INVASION_RADAR_VIEW_CLOSED"),
+    10: .same(proto: "INVASION_RADAR_VIEW_EMPTY"),
+    11: .same(proto: "INVASION_DECOY_FOUND"),
+    12: .same(proto: "INVASION_GIOVANNI_FOUND"),
   ]
 }
 
@@ -1494,6 +1635,9 @@ extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding
     42: .same(proto: "AR_PHOTO_SESSION_TELEMETRY"),
     43: .same(proto: "LEAVE_POINT_OF_INTEREST"),
     44: .same(proto: "VIEW_POINT_OF_INTEREST_IMAGE"),
+    45: .same(proto: "COMBAT_HUB_ENTRANCE_TELEMETRY"),
+    46: .same(proto: "DEVICE_SPECIFICATIONS_TELEMETRY"),
+    47: .same(proto: "SCREEN_RESOLUTION_TELEMETRY"),
   ]
 }
 
@@ -1536,6 +1680,7 @@ extension POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf._ProtoNameProvidin
     0: .same(proto: "UNDEFINED_ITEM_EVENT"),
     1: .same(proto: "USE_ITEM"),
     2: .same(proto: "RECYCLE_ITEM"),
+    3: .same(proto: "UPDATE_ITEM_EQUIPPED"),
   ]
 }
 
@@ -1648,6 +1793,21 @@ extension POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf._ProtoNamePro
     1: .same(proto: "CLICK_CUSTOMIZE_AVATAR"),
     2: .same(proto: "QUICK_SHOP_MORE"),
     3: .same(proto: "QUICK_SHOP_EXCHANGE"),
+    4: .same(proto: "CLICK_SHOP"),
+    5: .same(proto: "QUIT_SHOP"),
+    6: .same(proto: "CLICK_SKU"),
+    7: .same(proto: "QUIT_SKU"),
+    8: .same(proto: "CLICK_SKU_EXCHANGE"),
+    9: .same(proto: "CLICK_SHOP_AVATAR"),
+    10: .same(proto: "QUIT_SHOP_AVATAR"),
+    11: .same(proto: "CLICK_AVATAR_TYPE"),
+    12: .same(proto: "QUIT_AVATAR_TYPE"),
+    13: .same(proto: "CLICK_AVATAR_ITEM"),
+    14: .same(proto: "QUIT_AVATAR_ITEM"),
+    15: .same(proto: "CONFIRM_AVATAR_ITEM"),
+    16: .same(proto: "CLICK_AVATAR_ITEM_COLOR"),
+    17: .same(proto: "QUIT_AVATAR_ITEM_COLOR"),
+    18: .same(proto: "CONFIRM_AVATAR_ITEM_COLOR"),
   ]
 }
 
@@ -1668,5 +1828,12 @@ extension POGOProtos_Enums_WebTelemetryIds: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNDEFINED_WEB_EVENT"),
     1: .same(proto: "POINT_OF_INTEREST_DESCRIPTION_WEB_CLICK"),
+  ]
+}
+
+extension POGOProtos_Enums_CombatHubEntranceTelemetryIds: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNDEFINED_EVENT"),
+    1: .same(proto: "CLICKED_COMBAT_HUB_BUTTON"),
   ]
 }

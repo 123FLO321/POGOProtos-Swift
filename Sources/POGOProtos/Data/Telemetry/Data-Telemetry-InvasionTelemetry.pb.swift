@@ -42,6 +42,14 @@ public struct POGOProtos_Data_Telemetry_InvasionTelemetry {
 
   public var playerTappedNpc: Bool = false
 
+  public var radar: String = String()
+
+  public var curfew: Bool = false
+
+  public var duration: Float = 0
+
+  public var distance: Float = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -63,6 +71,10 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
     7: .standard(proto: "encounter_success"),
     8: .standard(proto: "invasion_id"),
     9: .standard(proto: "player_tapped_npc"),
+    10: .same(proto: "radar"),
+    11: .same(proto: "curfew"),
+    12: .same(proto: "duration"),
+    13: .same(proto: "distance"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -77,6 +89,10 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
       case 7: try decoder.decodeSingularBoolField(value: &self.encounterSuccess)
       case 8: try decoder.decodeSingularStringField(value: &self.invasionID)
       case 9: try decoder.decodeSingularBoolField(value: &self.playerTappedNpc)
+      case 10: try decoder.decodeSingularStringField(value: &self.radar)
+      case 11: try decoder.decodeSingularBoolField(value: &self.curfew)
+      case 12: try decoder.decodeSingularFloatField(value: &self.duration)
+      case 13: try decoder.decodeSingularFloatField(value: &self.distance)
       default: break
       }
     }
@@ -110,6 +126,18 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
     if self.playerTappedNpc != false {
       try visitor.visitSingularBoolField(value: self.playerTappedNpc, fieldNumber: 9)
     }
+    if !self.radar.isEmpty {
+      try visitor.visitSingularStringField(value: self.radar, fieldNumber: 10)
+    }
+    if self.curfew != false {
+      try visitor.visitSingularBoolField(value: self.curfew, fieldNumber: 11)
+    }
+    if self.duration != 0 {
+      try visitor.visitSingularFloatField(value: self.duration, fieldNumber: 12)
+    }
+    if self.distance != 0 {
+      try visitor.visitSingularFloatField(value: self.distance, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -123,6 +151,10 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
     if lhs.encounterSuccess != rhs.encounterSuccess {return false}
     if lhs.invasionID != rhs.invasionID {return false}
     if lhs.playerTappedNpc != rhs.playerTappedNpc {return false}
+    if lhs.radar != rhs.radar {return false}
+    if lhs.curfew != rhs.curfew {return false}
+    if lhs.duration != rhs.duration {return false}
+    if lhs.distance != rhs.distance {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

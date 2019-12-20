@@ -42,6 +42,14 @@ public struct POGOProtos_Settings_Master_IapItemDisplay {
 
   public var description_p: String = String()
 
+  public var skuEnableTime: String = String()
+
+  public var skuDisableTime: String = String()
+
+  public var skuEnableTimeUtcMs: Int64 = 0
+
+  public var skuDisableTimeUtcMs: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -62,6 +70,10 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
     8: .standard(proto: "sprite_id"),
     9: .same(proto: "title"),
     10: .same(proto: "description"),
+    11: .standard(proto: "sku_enable_time"),
+    12: .standard(proto: "sku_disable_time"),
+    13: .standard(proto: "sku_enable_time_utc_ms"),
+    14: .standard(proto: "sku_disable_time_utc_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -75,6 +87,10 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
       case 8: try decoder.decodeSingularStringField(value: &self.spriteID)
       case 9: try decoder.decodeSingularStringField(value: &self.title)
       case 10: try decoder.decodeSingularStringField(value: &self.description_p)
+      case 11: try decoder.decodeSingularStringField(value: &self.skuEnableTime)
+      case 12: try decoder.decodeSingularStringField(value: &self.skuDisableTime)
+      case 13: try decoder.decodeSingularInt64Field(value: &self.skuEnableTimeUtcMs)
+      case 14: try decoder.decodeSingularInt64Field(value: &self.skuDisableTimeUtcMs)
       default: break
       }
     }
@@ -105,6 +121,18 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 10)
     }
+    if !self.skuEnableTime.isEmpty {
+      try visitor.visitSingularStringField(value: self.skuEnableTime, fieldNumber: 11)
+    }
+    if !self.skuDisableTime.isEmpty {
+      try visitor.visitSingularStringField(value: self.skuDisableTime, fieldNumber: 12)
+    }
+    if self.skuEnableTimeUtcMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.skuEnableTimeUtcMs, fieldNumber: 13)
+    }
+    if self.skuDisableTimeUtcMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.skuDisableTimeUtcMs, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -117,6 +145,10 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
     if lhs.spriteID != rhs.spriteID {return false}
     if lhs.title != rhs.title {return false}
     if lhs.description_p != rhs.description_p {return false}
+    if lhs.skuEnableTime != rhs.skuEnableTime {return false}
+    if lhs.skuDisableTime != rhs.skuDisableTime {return false}
+    if lhs.skuEnableTimeUtcMs != rhs.skuEnableTimeUtcMs {return false}
+    if lhs.skuDisableTimeUtcMs != rhs.skuDisableTimeUtcMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

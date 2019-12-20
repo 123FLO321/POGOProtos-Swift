@@ -34,6 +34,14 @@ public struct POGOProtos_Settings_Master_Item_FoodAttributes {
 
   public var remoteBerryMultiplier: Float = 0
 
+  public var numBuddyAffectionPoints: Int32 = 0
+
+  public var mapDurationMs: Int64 = 0
+
+  public var activeDurationMs: Int64 = 0
+
+  public var numBuddyHungerPoints: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +59,10 @@ extension POGOProtos_Settings_Master_Item_FoodAttributes: SwiftProtobuf.Message,
     3: .standard(proto: "growth_percent"),
     4: .standard(proto: "berry_multiplier"),
     5: .standard(proto: "remote_berry_multiplier"),
+    6: .standard(proto: "num_buddy_affection_points"),
+    7: .standard(proto: "map_duration_ms"),
+    8: .standard(proto: "active_duration_ms"),
+    9: .standard(proto: "num_buddy_hunger_points"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -61,6 +73,10 @@ extension POGOProtos_Settings_Master_Item_FoodAttributes: SwiftProtobuf.Message,
       case 3: try decoder.decodeSingularFloatField(value: &self.growthPercent)
       case 4: try decoder.decodeSingularFloatField(value: &self.berryMultiplier)
       case 5: try decoder.decodeSingularFloatField(value: &self.remoteBerryMultiplier)
+      case 6: try decoder.decodeSingularInt32Field(value: &self.numBuddyAffectionPoints)
+      case 7: try decoder.decodeSingularInt64Field(value: &self.mapDurationMs)
+      case 8: try decoder.decodeSingularInt64Field(value: &self.activeDurationMs)
+      case 9: try decoder.decodeSingularInt32Field(value: &self.numBuddyHungerPoints)
       default: break
       }
     }
@@ -82,6 +98,18 @@ extension POGOProtos_Settings_Master_Item_FoodAttributes: SwiftProtobuf.Message,
     if self.remoteBerryMultiplier != 0 {
       try visitor.visitSingularFloatField(value: self.remoteBerryMultiplier, fieldNumber: 5)
     }
+    if self.numBuddyAffectionPoints != 0 {
+      try visitor.visitSingularInt32Field(value: self.numBuddyAffectionPoints, fieldNumber: 6)
+    }
+    if self.mapDurationMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.mapDurationMs, fieldNumber: 7)
+    }
+    if self.activeDurationMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.activeDurationMs, fieldNumber: 8)
+    }
+    if self.numBuddyHungerPoints != 0 {
+      try visitor.visitSingularInt32Field(value: self.numBuddyHungerPoints, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -91,6 +119,10 @@ extension POGOProtos_Settings_Master_Item_FoodAttributes: SwiftProtobuf.Message,
     if lhs.growthPercent != rhs.growthPercent {return false}
     if lhs.berryMultiplier != rhs.berryMultiplier {return false}
     if lhs.remoteBerryMultiplier != rhs.remoteBerryMultiplier {return false}
+    if lhs.numBuddyAffectionPoints != rhs.numBuddyAffectionPoints {return false}
+    if lhs.mapDurationMs != rhs.mapDurationMs {return false}
+    if lhs.activeDurationMs != rhs.activeDurationMs {return false}
+    if lhs.numBuddyHungerPoints != rhs.numBuddyHungerPoints {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

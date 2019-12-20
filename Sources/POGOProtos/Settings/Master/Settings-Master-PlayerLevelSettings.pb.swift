@@ -38,6 +38,8 @@ public struct POGOProtos_Settings_Master_PlayerLevelSettings {
 
   public var maxQuestEncounterPlayerLevel: Int32 = 0
 
+  public var maxVsSeekerEncounterPlayerLevel: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -57,6 +59,7 @@ extension POGOProtos_Settings_Master_PlayerLevelSettings: SwiftProtobuf.Message,
     5: .standard(proto: "max_encounter_player_level"),
     6: .standard(proto: "max_raid_encounter_player_level"),
     7: .standard(proto: "max_quest_encounter_player_level"),
+    8: .standard(proto: "max_vs_seeker_encounter_player_level"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -69,6 +72,7 @@ extension POGOProtos_Settings_Master_PlayerLevelSettings: SwiftProtobuf.Message,
       case 5: try decoder.decodeSingularInt32Field(value: &self.maxEncounterPlayerLevel)
       case 6: try decoder.decodeSingularInt32Field(value: &self.maxRaidEncounterPlayerLevel)
       case 7: try decoder.decodeSingularInt32Field(value: &self.maxQuestEncounterPlayerLevel)
+      case 8: try decoder.decodeSingularInt32Field(value: &self.maxVsSeekerEncounterPlayerLevel)
       default: break
       }
     }
@@ -96,6 +100,9 @@ extension POGOProtos_Settings_Master_PlayerLevelSettings: SwiftProtobuf.Message,
     if self.maxQuestEncounterPlayerLevel != 0 {
       try visitor.visitSingularInt32Field(value: self.maxQuestEncounterPlayerLevel, fieldNumber: 7)
     }
+    if self.maxVsSeekerEncounterPlayerLevel != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxVsSeekerEncounterPlayerLevel, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -107,6 +114,7 @@ extension POGOProtos_Settings_Master_PlayerLevelSettings: SwiftProtobuf.Message,
     if lhs.maxEncounterPlayerLevel != rhs.maxEncounterPlayerLevel {return false}
     if lhs.maxRaidEncounterPlayerLevel != rhs.maxRaidEncounterPlayerLevel {return false}
     if lhs.maxQuestEncounterPlayerLevel != rhs.maxQuestEncounterPlayerLevel {return false}
+    if lhs.maxVsSeekerEncounterPlayerLevel != rhs.maxVsSeekerEncounterPlayerLevel {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

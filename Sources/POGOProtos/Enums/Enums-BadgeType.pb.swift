@@ -80,6 +80,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgePokedexEntriesGen5 // = 56
   case badgePokemonPurified // = 57
   case badgeRocketGruntsDefeated // = 58
+  case badgeRocketGiovanniDefeated // = 59
   case badgeEventMin // = 2000
   case badgeChicagoFestJuly2017 // = 2001
   case badgePikachuOutbreakYokohama2017 // = 2002
@@ -180,6 +181,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeSafarizone2019MontrealDay02Earlyaccess // = 5044
   case badgeSafarizone2019MontrealDay03General // = 5045
   case badgeSafarizone2019MontrealDay03Earlyaccess // = 5046
+  case badgeGlobalTicketedEvent // = 5100
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -247,6 +249,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 56: self = .badgePokedexEntriesGen5
     case 57: self = .badgePokemonPurified
     case 58: self = .badgeRocketGruntsDefeated
+    case 59: self = .badgeRocketGiovanniDefeated
     case 2000: self = .badgeEventMin
     case 2001: self = .badgeChicagoFestJuly2017
     case 2002: self = .badgePikachuOutbreakYokohama2017
@@ -347,6 +350,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 5044: self = .badgeSafarizone2019MontrealDay02Earlyaccess
     case 5045: self = .badgeSafarizone2019MontrealDay03General
     case 5046: self = .badgeSafarizone2019MontrealDay03Earlyaccess
+    case 5100: self = .badgeGlobalTicketedEvent
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -412,6 +416,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgePokedexEntriesGen5: return 56
     case .badgePokemonPurified: return 57
     case .badgeRocketGruntsDefeated: return 58
+    case .badgeRocketGiovanniDefeated: return 59
     case .badgeEventMin: return 2000
     case .badgeChicagoFestJuly2017: return 2001
     case .badgePikachuOutbreakYokohama2017: return 2002
@@ -512,6 +517,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeSafarizone2019MontrealDay02Earlyaccess: return 5044
     case .badgeSafarizone2019MontrealDay03General: return 5045
     case .badgeSafarizone2019MontrealDay03Earlyaccess: return 5046
+    case .badgeGlobalTicketedEvent: return 5100
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -582,6 +588,7 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgePokedexEntriesGen5,
     .badgePokemonPurified,
     .badgeRocketGruntsDefeated,
+    .badgeRocketGiovanniDefeated,
     .badgeEventMin,
     .badgeChicagoFestJuly2017,
     .badgePikachuOutbreakYokohama2017,
@@ -682,6 +689,7 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeSafarizone2019MontrealDay02Earlyaccess,
     .badgeSafarizone2019MontrealDay03General,
     .badgeSafarizone2019MontrealDay03Earlyaccess,
+    .badgeGlobalTicketedEvent,
   ]
 }
 
@@ -750,6 +758,7 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     56: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN5"),
     57: .same(proto: "BADGE_POKEMON_PURIFIED"),
     58: .same(proto: "BADGE_ROCKET_GRUNTS_DEFEATED"),
+    59: .same(proto: "BADGE_ROCKET_GIOVANNI_DEFEATED"),
     2000: .same(proto: "BADGE_EVENT_MIN"),
     2001: .same(proto: "BADGE_CHICAGO_FEST_JULY_2017"),
     2002: .same(proto: "BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017"),
@@ -850,5 +859,6 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     5044: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_02_EARLYACCESS"),
     5045: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_03_GENERAL"),
     5046: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_03_EARLYACCESS"),
+    5100: .same(proto: "BADGE_GLOBAL_TICKETED_EVENT"),
   ]
 }

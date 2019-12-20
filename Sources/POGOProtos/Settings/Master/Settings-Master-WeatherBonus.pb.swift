@@ -36,6 +36,10 @@ public struct POGOProtos_Settings_Master_WeatherBonus {
 
   public var raidEncounterGuaranteedIndividualValues: Int32 = 0
 
+  public var buddyEmotionFavoriteWeatherIncrement: Int32 = 0
+
+  public var buddyEmotionDislikeWeatherDecrement: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -54,6 +58,8 @@ extension POGOProtos_Settings_Master_WeatherBonus: SwiftProtobuf.Message, SwiftP
     4: .standard(proto: "attack_bonus_multiplier"),
     5: .standard(proto: "raid_encounter_cp_base_level_bonus"),
     6: .standard(proto: "raid_encounter_guaranteed_individual_values"),
+    7: .standard(proto: "buddy_emotion_favorite_weather_increment"),
+    8: .standard(proto: "buddy_emotion_dislike_weather_decrement"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -65,6 +71,8 @@ extension POGOProtos_Settings_Master_WeatherBonus: SwiftProtobuf.Message, SwiftP
       case 4: try decoder.decodeSingularDoubleField(value: &self.attackBonusMultiplier)
       case 5: try decoder.decodeSingularInt32Field(value: &self.raidEncounterCpBaseLevelBonus)
       case 6: try decoder.decodeSingularInt32Field(value: &self.raidEncounterGuaranteedIndividualValues)
+      case 7: try decoder.decodeSingularInt32Field(value: &self.buddyEmotionFavoriteWeatherIncrement)
+      case 8: try decoder.decodeSingularInt32Field(value: &self.buddyEmotionDislikeWeatherDecrement)
       default: break
       }
     }
@@ -89,6 +97,12 @@ extension POGOProtos_Settings_Master_WeatherBonus: SwiftProtobuf.Message, SwiftP
     if self.raidEncounterGuaranteedIndividualValues != 0 {
       try visitor.visitSingularInt32Field(value: self.raidEncounterGuaranteedIndividualValues, fieldNumber: 6)
     }
+    if self.buddyEmotionFavoriteWeatherIncrement != 0 {
+      try visitor.visitSingularInt32Field(value: self.buddyEmotionFavoriteWeatherIncrement, fieldNumber: 7)
+    }
+    if self.buddyEmotionDislikeWeatherDecrement != 0 {
+      try visitor.visitSingularInt32Field(value: self.buddyEmotionDislikeWeatherDecrement, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -99,6 +113,8 @@ extension POGOProtos_Settings_Master_WeatherBonus: SwiftProtobuf.Message, SwiftP
     if lhs.attackBonusMultiplier != rhs.attackBonusMultiplier {return false}
     if lhs.raidEncounterCpBaseLevelBonus != rhs.raidEncounterCpBaseLevelBonus {return false}
     if lhs.raidEncounterGuaranteedIndividualValues != rhs.raidEncounterGuaranteedIndividualValues {return false}
+    if lhs.buddyEmotionFavoriteWeatherIncrement != rhs.buddyEmotionFavoriteWeatherIncrement {return false}
+    if lhs.buddyEmotionDislikeWeatherDecrement != rhs.buddyEmotionDislikeWeatherDecrement {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

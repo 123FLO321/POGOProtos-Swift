@@ -269,6 +269,16 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
   /// Clears the value of `shadow`. Subsequent reads from it will return its default value.
   public mutating func clearShadow() {_uniqueStorage()._shadow = nil}
 
+  public var buddyGroupNumber: Int32 {
+    get {return _storage._buddyGroupNumber}
+    set {_uniqueStorage()._buddyGroupNumber = newValue}
+  }
+
+  public var additionalCpBoostLevel: Int32 {
+    get {return _storage._additionalCpBoostLevel}
+    set {_uniqueStorage()._additionalCpBoostLevel = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct PokemonThirdMoveAttributes {
@@ -360,6 +370,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     44: .standard(proto: "combat_player_pokemon_position_offset"),
     45: .standard(proto: "photobomb_animation_overrides"),
     46: .same(proto: "shadow"),
+    47: .standard(proto: "buddy_group_number"),
+    48: .standard(proto: "additional_cp_boost_level"),
   ]
 
   fileprivate class _StorageClass {
@@ -408,6 +420,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     var _combatPlayerPokemonPositionOffset: [Float] = []
     var _photobombAnimationOverrides: [POGOProtos_Settings_Master_Pokemon_AnimationOverride] = []
     var _shadow: POGOProtos_Settings_Master_PokemonSettings.ShadowAttributes? = nil
+    var _buddyGroupNumber: Int32 = 0
+    var _additionalCpBoostLevel: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -459,6 +473,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       _combatPlayerPokemonPositionOffset = source._combatPlayerPokemonPositionOffset
       _photobombAnimationOverrides = source._photobombAnimationOverrides
       _shadow = source._shadow
+      _buddyGroupNumber = source._buddyGroupNumber
+      _additionalCpBoostLevel = source._additionalCpBoostLevel
     }
   }
 
@@ -519,6 +535,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         case 44: try decoder.decodeRepeatedFloatField(value: &_storage._combatPlayerPokemonPositionOffset)
         case 45: try decoder.decodeRepeatedMessageField(value: &_storage._photobombAnimationOverrides)
         case 46: try decoder.decodeSingularMessageField(value: &_storage._shadow)
+        case 47: try decoder.decodeSingularInt32Field(value: &_storage._buddyGroupNumber)
+        case 48: try decoder.decodeSingularInt32Field(value: &_storage._additionalCpBoostLevel)
         default: break
         }
       }
@@ -662,6 +680,12 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       if let v = _storage._shadow {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 46)
       }
+      if _storage._buddyGroupNumber != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._buddyGroupNumber, fieldNumber: 47)
+      }
+      if _storage._additionalCpBoostLevel != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._additionalCpBoostLevel, fieldNumber: 48)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -716,6 +740,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         if _storage._combatPlayerPokemonPositionOffset != rhs_storage._combatPlayerPokemonPositionOffset {return false}
         if _storage._photobombAnimationOverrides != rhs_storage._photobombAnimationOverrides {return false}
         if _storage._shadow != rhs_storage._shadow {return false}
+        if _storage._buddyGroupNumber != rhs_storage._buddyGroupNumber {return false}
+        if _storage._additionalCpBoostLevel != rhs_storage._additionalCpBoostLevel {return false}
         return true
       }
       if !storagesAreEqual {return false}

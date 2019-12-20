@@ -34,6 +34,8 @@ public struct POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry {
 
   public var partnerID: String = String()
 
+  public var timeSpent: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +53,7 @@ extension POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry: SwiftProtobuf
     3: .standard(proto: "fort_type"),
     4: .standard(proto: "client_timestamp"),
     5: .standard(proto: "partner_id"),
+    6: .standard(proto: "time_spent"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -61,6 +64,7 @@ extension POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry: SwiftProtobuf
       case 3: try decoder.decodeSingularEnumField(value: &self.fortType)
       case 4: try decoder.decodeSingularInt64Field(value: &self.clientTimestamp)
       case 5: try decoder.decodeSingularStringField(value: &self.partnerID)
+      case 6: try decoder.decodeSingularInt64Field(value: &self.timeSpent)
       default: break
       }
     }
@@ -82,6 +86,9 @@ extension POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry: SwiftProtobuf
     if !self.partnerID.isEmpty {
       try visitor.visitSingularStringField(value: self.partnerID, fieldNumber: 5)
     }
+    if self.timeSpent != 0 {
+      try visitor.visitSingularInt64Field(value: self.timeSpent, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -91,6 +98,7 @@ extension POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry: SwiftProtobuf
     if lhs.fortType != rhs.fortType {return false}
     if lhs.clientTimestamp != rhs.clientTimestamp {return false}
     if lhs.partnerID != rhs.partnerID {return false}
+    if lhs.timeSpent != rhs.timeSpent {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

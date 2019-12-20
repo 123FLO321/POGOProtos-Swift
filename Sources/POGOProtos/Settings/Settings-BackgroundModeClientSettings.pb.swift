@@ -36,6 +36,8 @@ public struct POGOProtos_Settings_BackgroundModeClientSettings {
 
   public var minEnclosingGeofenceRadiusM: Double = 0
 
+  public var backgroundTokenRefreshIntervalS: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -54,6 +56,7 @@ extension POGOProtos_Settings_BackgroundModeClientSettings: SwiftProtobuf.Messag
     4: .standard(proto: "background_wake_up_interval_minutes"),
     5: .standard(proto: "max_upload_size_in_bytes"),
     6: .standard(proto: "min_enclosing_geofence_radius_m"),
+    7: .standard(proto: "background_token_refresh_interval_s"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -65,6 +68,7 @@ extension POGOProtos_Settings_BackgroundModeClientSettings: SwiftProtobuf.Messag
       case 4: try decoder.decodeSingularInt32Field(value: &self.backgroundWakeUpIntervalMinutes)
       case 5: try decoder.decodeSingularInt32Field(value: &self.maxUploadSizeInBytes)
       case 6: try decoder.decodeSingularDoubleField(value: &self.minEnclosingGeofenceRadiusM)
+      case 7: try decoder.decodeSingularInt64Field(value: &self.backgroundTokenRefreshIntervalS)
       default: break
       }
     }
@@ -89,6 +93,9 @@ extension POGOProtos_Settings_BackgroundModeClientSettings: SwiftProtobuf.Messag
     if self.minEnclosingGeofenceRadiusM != 0 {
       try visitor.visitSingularDoubleField(value: self.minEnclosingGeofenceRadiusM, fieldNumber: 6)
     }
+    if self.backgroundTokenRefreshIntervalS != 0 {
+      try visitor.visitSingularInt64Field(value: self.backgroundTokenRefreshIntervalS, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -99,6 +106,7 @@ extension POGOProtos_Settings_BackgroundModeClientSettings: SwiftProtobuf.Messag
     if lhs.backgroundWakeUpIntervalMinutes != rhs.backgroundWakeUpIntervalMinutes {return false}
     if lhs.maxUploadSizeInBytes != rhs.maxUploadSizeInBytes {return false}
     if lhs.minEnclosingGeofenceRadiusM != rhs.minEnclosingGeofenceRadiusM {return false}
+    if lhs.backgroundTokenRefreshIntervalS != rhs.backgroundTokenRefreshIntervalS {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

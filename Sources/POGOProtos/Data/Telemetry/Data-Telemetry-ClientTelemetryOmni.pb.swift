@@ -421,6 +421,78 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .viewPointOfInterestImageTelemetry(newValue)}
   }
 
+  public var combatHubEntranceTelemetry: POGOProtos_Data_Telemetry_CombatHubEntranceTelemetry {
+    get {
+      if case .combatHubEntranceTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_CombatHubEntranceTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .combatHubEntranceTelemetry(newValue)}
+  }
+
+  public var leaveInteractionRangeTelemetry: POGOProtos_Data_Telemetry_LeaveInteractionRangeTelemetry {
+    get {
+      if case .leaveInteractionRangeTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_LeaveInteractionRangeTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .leaveInteractionRangeTelemetry(newValue)}
+  }
+
+  public var shoppingPageClickTelemetry: POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry {
+    get {
+      if case .shoppingPageClickTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .shoppingPageClickTelemetry(newValue)}
+  }
+
+  public var shoppingPageScrollTelemetry: POGOProtos_Data_Telemetry_ShoppingPageScrollTelemetry {
+    get {
+      if case .shoppingPageScrollTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ShoppingPageScrollTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .shoppingPageScrollTelemetry(newValue)}
+  }
+
+  public var deviceSpecificationsTelemetry: POGOProtos_Data_Telemetry_DeviceSpecificationsTelemetry {
+    get {
+      if case .deviceSpecificationsTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_DeviceSpecificationsTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .deviceSpecificationsTelemetry(newValue)}
+  }
+
+  public var screenResolutionTelemetry: POGOProtos_Data_Telemetry_ScreenResolutionTelemetry {
+    get {
+      if case .screenResolutionTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ScreenResolutionTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .screenResolutionTelemetry(newValue)}
+  }
+
+  public var buddyMultiplayerConnectionFailedTelemetry: POGOProtos_Data_Buddy_BuddyMultiplayerConnectionFailed {
+    get {
+      if case .buddyMultiplayerConnectionFailedTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Buddy_BuddyMultiplayerConnectionFailed()
+    }
+    set {_uniqueStorage()._telemetryData = .buddyMultiplayerConnectionFailedTelemetry(newValue)}
+  }
+
+  public var buddyMultiplayerConnectionSucceededTelemetry: POGOProtos_Data_Buddy_BuddyMultiplayerConnectionSucceeded {
+    get {
+      if case .buddyMultiplayerConnectionSucceededTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Buddy_BuddyMultiplayerConnectionSucceeded()
+    }
+    set {_uniqueStorage()._telemetryData = .buddyMultiplayerConnectionSucceededTelemetry(newValue)}
+  }
+
+  public var buddyMultiplayerTimeToGetSessionTelemetry: POGOProtos_Data_Buddy_BuddyMultiplayerTimeToGetSession {
+    get {
+      if case .buddyMultiplayerTimeToGetSessionTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Buddy_BuddyMultiplayerTimeToGetSession()
+    }
+    set {_uniqueStorage()._telemetryData = .buddyMultiplayerTimeToGetSessionTelemetry(newValue)}
+  }
+
   public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
     get {
       if case .serverData(let v)? = _storage._telemetryData {return v}
@@ -481,6 +553,15 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     case combatMinigameTelemetry(POGOProtos_Data_Telemetry_CombatMinigameTelemetry)
     case leavePointOfInterestTelemetry(POGOProtos_Data_Telemetry_LeavePointOfInterestTelemetry)
     case viewPointOfInterestImageTelemetry(POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry)
+    case combatHubEntranceTelemetry(POGOProtos_Data_Telemetry_CombatHubEntranceTelemetry)
+    case leaveInteractionRangeTelemetry(POGOProtos_Data_Telemetry_LeaveInteractionRangeTelemetry)
+    case shoppingPageClickTelemetry(POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry)
+    case shoppingPageScrollTelemetry(POGOProtos_Data_Telemetry_ShoppingPageScrollTelemetry)
+    case deviceSpecificationsTelemetry(POGOProtos_Data_Telemetry_DeviceSpecificationsTelemetry)
+    case screenResolutionTelemetry(POGOProtos_Data_Telemetry_ScreenResolutionTelemetry)
+    case buddyMultiplayerConnectionFailedTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerConnectionFailed)
+    case buddyMultiplayerConnectionSucceededTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerConnectionSucceeded)
+    case buddyMultiplayerTimeToGetSessionTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerTimeToGetSession)
     case serverData(POGOProtos_Data_Telemetry_PlatformServerData)
 
   #if !swift(>=4.1)
@@ -535,6 +616,15 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
       case (.combatMinigameTelemetry(let l), .combatMinigameTelemetry(let r)): return l == r
       case (.leavePointOfInterestTelemetry(let l), .leavePointOfInterestTelemetry(let r)): return l == r
       case (.viewPointOfInterestImageTelemetry(let l), .viewPointOfInterestImageTelemetry(let r)): return l == r
+      case (.combatHubEntranceTelemetry(let l), .combatHubEntranceTelemetry(let r)): return l == r
+      case (.leaveInteractionRangeTelemetry(let l), .leaveInteractionRangeTelemetry(let r)): return l == r
+      case (.shoppingPageClickTelemetry(let l), .shoppingPageClickTelemetry(let r)): return l == r
+      case (.shoppingPageScrollTelemetry(let l), .shoppingPageScrollTelemetry(let r)): return l == r
+      case (.deviceSpecificationsTelemetry(let l), .deviceSpecificationsTelemetry(let r)): return l == r
+      case (.screenResolutionTelemetry(let l), .screenResolutionTelemetry(let r)): return l == r
+      case (.buddyMultiplayerConnectionFailedTelemetry(let l), .buddyMultiplayerConnectionFailedTelemetry(let r)): return l == r
+      case (.buddyMultiplayerConnectionSucceededTelemetry(let l), .buddyMultiplayerConnectionSucceededTelemetry(let r)): return l == r
+      case (.buddyMultiplayerTimeToGetSessionTelemetry(let l), .buddyMultiplayerTimeToGetSessionTelemetry(let r)): return l == r
       case (.serverData(let l), .serverData(let r)): return l == r
       default: return false
       }
@@ -603,6 +693,15 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     47: .standard(proto: "combat_minigame_telemetry"),
     48: .standard(proto: "leave_point_of_interest_telemetry"),
     49: .standard(proto: "view_point_of_interest_image_telemetry"),
+    50: .standard(proto: "combat_hub_entrance_telemetry"),
+    51: .standard(proto: "leave_interaction_range_telemetry"),
+    52: .standard(proto: "shopping_page_click_telemetry"),
+    53: .standard(proto: "shopping_page_scroll_telemetry"),
+    54: .standard(proto: "device_specifications_telemetry"),
+    55: .standard(proto: "screen_resolution_telemetry"),
+    57: .standard(proto: "buddy_multiplayer_connection_failed_telemetry"),
+    58: .standard(proto: "buddy_multiplayer_connection_succeeded_telemetry"),
+    59: .standard(proto: "buddy_multiplayer_time_to_get_session_telemetry"),
     1001: .standard(proto: "server_data"),
   ]
 
@@ -1022,6 +1121,78 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .viewPointOfInterestImageTelemetry(v)}
+        case 50:
+          var v: POGOProtos_Data_Telemetry_CombatHubEntranceTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .combatHubEntranceTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .combatHubEntranceTelemetry(v)}
+        case 51:
+          var v: POGOProtos_Data_Telemetry_LeaveInteractionRangeTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .leaveInteractionRangeTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .leaveInteractionRangeTelemetry(v)}
+        case 52:
+          var v: POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .shoppingPageClickTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .shoppingPageClickTelemetry(v)}
+        case 53:
+          var v: POGOProtos_Data_Telemetry_ShoppingPageScrollTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .shoppingPageScrollTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .shoppingPageScrollTelemetry(v)}
+        case 54:
+          var v: POGOProtos_Data_Telemetry_DeviceSpecificationsTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .deviceSpecificationsTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .deviceSpecificationsTelemetry(v)}
+        case 55:
+          var v: POGOProtos_Data_Telemetry_ScreenResolutionTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .screenResolutionTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .screenResolutionTelemetry(v)}
+        case 57:
+          var v: POGOProtos_Data_Buddy_BuddyMultiplayerConnectionFailed?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .buddyMultiplayerConnectionFailedTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .buddyMultiplayerConnectionFailedTelemetry(v)}
+        case 58:
+          var v: POGOProtos_Data_Buddy_BuddyMultiplayerConnectionSucceeded?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .buddyMultiplayerConnectionSucceededTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .buddyMultiplayerConnectionSucceededTelemetry(v)}
+        case 59:
+          var v: POGOProtos_Data_Buddy_BuddyMultiplayerTimeToGetSession?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .buddyMultiplayerTimeToGetSessionTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .buddyMultiplayerTimeToGetSessionTelemetry(v)}
         case 1001:
           var v: POGOProtos_Data_Telemetry_PlatformServerData?
           if let current = _storage._telemetryData {
@@ -1137,6 +1308,24 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
       case .viewPointOfInterestImageTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 49)
+      case .combatHubEntranceTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 50)
+      case .leaveInteractionRangeTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 51)
+      case .shoppingPageClickTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 52)
+      case .shoppingPageScrollTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 53)
+      case .deviceSpecificationsTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 54)
+      case .screenResolutionTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 55)
+      case .buddyMultiplayerConnectionFailedTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 57)
+      case .buddyMultiplayerConnectionSucceededTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 58)
+      case .buddyMultiplayerTimeToGetSessionTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 59)
       case .serverData(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
       case nil: break

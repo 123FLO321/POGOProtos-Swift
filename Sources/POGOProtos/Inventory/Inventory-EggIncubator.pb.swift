@@ -32,7 +32,6 @@ public struct POGOProtos_Inventory_EggIncubator {
 
   public var usesRemaining: Int32 = 0
 
-  /// TODO: Check if is PokemonType
   public var pokemonID: UInt64 = 0
 
   public var startKmWalked: Double = 0
@@ -67,7 +66,7 @@ extension POGOProtos_Inventory_EggIncubator: SwiftProtobuf.Message, SwiftProtobu
       case 2: try decoder.decodeSingularEnumField(value: &self.itemID)
       case 3: try decoder.decodeSingularEnumField(value: &self.incubatorType)
       case 4: try decoder.decodeSingularInt32Field(value: &self.usesRemaining)
-      case 5: try decoder.decodeSingularUInt64Field(value: &self.pokemonID)
+      case 5: try decoder.decodeSingularFixed64Field(value: &self.pokemonID)
       case 6: try decoder.decodeSingularDoubleField(value: &self.startKmWalked)
       case 7: try decoder.decodeSingularDoubleField(value: &self.targetKmWalked)
       default: break
@@ -89,7 +88,7 @@ extension POGOProtos_Inventory_EggIncubator: SwiftProtobuf.Message, SwiftProtobu
       try visitor.visitSingularInt32Field(value: self.usesRemaining, fieldNumber: 4)
     }
     if self.pokemonID != 0 {
-      try visitor.visitSingularUInt64Field(value: self.pokemonID, fieldNumber: 5)
+      try visitor.visitSingularFixed64Field(value: self.pokemonID, fieldNumber: 5)
     }
     if self.startKmWalked != 0 {
       try visitor.visitSingularDoubleField(value: self.startKmWalked, fieldNumber: 6)

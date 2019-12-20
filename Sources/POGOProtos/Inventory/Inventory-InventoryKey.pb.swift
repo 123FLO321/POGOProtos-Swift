@@ -157,6 +157,14 @@ public struct POGOProtos_Inventory_InventoryKey {
     set {_uniqueStorage()._type = .belugaIncenseBox(newValue)}
   }
 
+  public var vsSeekerUpgrades: Bool {
+    get {
+      if case .vsSeekerUpgrades(let v)? = _storage._type {return v}
+      return false
+    }
+    set {_uniqueStorage()._type = .vsSeekerUpgrades(newValue)}
+  }
+
   public var limitedPurchaseSkuRecord: Bool {
     get {
       if case .limitedPurchaseSkuRecord(let v)? = _storage._type {return v}
@@ -184,6 +192,7 @@ public struct POGOProtos_Inventory_InventoryKey {
     case quests(Bool)
     case giftBoxes(Bool)
     case belugaIncenseBox(Bool)
+    case vsSeekerUpgrades(Bool)
     case limitedPurchaseSkuRecord(Bool)
 
   #if !swift(>=4.1)
@@ -205,6 +214,7 @@ public struct POGOProtos_Inventory_InventoryKey {
       case (.quests(let l), .quests(let r)): return l == r
       case (.giftBoxes(let l), .giftBoxes(let r)): return l == r
       case (.belugaIncenseBox(let l), .belugaIncenseBox(let r)): return l == r
+      case (.vsSeekerUpgrades(let l), .vsSeekerUpgrades(let r)): return l == r
       case (.limitedPurchaseSkuRecord(let l), .limitedPurchaseSkuRecord(let r)): return l == r
       default: return false
       }
@@ -240,6 +250,7 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
     14: .same(proto: "quests"),
     15: .standard(proto: "gift_boxes"),
     16: .standard(proto: "beluga_incense_box"),
+    17: .standard(proto: "vs_seeker_upgrades"),
     19: .standard(proto: "limited_purchase_sku_record"),
   ]
 
@@ -347,6 +358,11 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
           var v: Bool?
           try decoder.decodeSingularBoolField(value: &v)
           if let v = v {_storage._type = .belugaIncenseBox(v)}
+        case 17:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .vsSeekerUpgrades(v)}
         case 19:
           if _storage._type != nil {try decoder.handleConflictingOneOf()}
           var v: Bool?
@@ -393,6 +409,8 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
         try visitor.visitSingularBoolField(value: v, fieldNumber: 15)
       case .belugaIncenseBox(let v)?:
         try visitor.visitSingularBoolField(value: v, fieldNumber: 16)
+      case .vsSeekerUpgrades(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 17)
       case .limitedPurchaseSkuRecord(let v)?:
         try visitor.visitSingularBoolField(value: v, fieldNumber: 19)
       case nil: break

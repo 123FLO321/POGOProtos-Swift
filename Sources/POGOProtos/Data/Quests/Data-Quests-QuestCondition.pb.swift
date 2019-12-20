@@ -218,6 +218,22 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     set {_uniqueStorage()._condition = .withPokemonAlignment(newValue)}
   }
 
+  public var withBuddy: POGOProtos_Data_Quests_QuestCondition.WithBuddy {
+    get {
+      if case .withBuddy(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithBuddy()
+    }
+    set {_uniqueStorage()._condition = .withBuddy(newValue)}
+  }
+
+  public var withDailyBuddyAffection: POGOProtos_Data_Quests_QuestCondition.WithDailyBuddyAffection {
+    get {
+      if case .withDailyBuddyAffection(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithDailyBuddyAffection()
+    }
+    set {_uniqueStorage()._condition = .withDailyBuddyAffection(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Condition: Equatable {
@@ -244,6 +260,8 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     case withDistance(POGOProtos_Data_Quests_QuestCondition.WithDistance)
     case withInvasionCharacter(POGOProtos_Data_Quests_QuestCondition.WithInvasionCharacter)
     case withPokemonAlignment(POGOProtos_Data_Quests_QuestCondition.WithPokemonAlignment)
+    case withBuddy(POGOProtos_Data_Quests_QuestCondition.WithBuddy)
+    case withDailyBuddyAffection(POGOProtos_Data_Quests_QuestCondition.WithDailyBuddyAffection)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition, rhs: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition) -> Bool {
@@ -271,6 +289,8 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case (.withDistance(let l), .withDistance(let r)): return l == r
       case (.withInvasionCharacter(let l), .withInvasionCharacter(let r)): return l == r
       case (.withPokemonAlignment(let l), .withPokemonAlignment(let r)): return l == r
+      case (.withBuddy(let l), .withBuddy(let r)): return l == r
+      case (.withDailyBuddyAffection(let l), .withDailyBuddyAffection(let r)): return l == r
       default: return false
       }
     }
@@ -307,6 +327,9 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     case withDistance // = 25
     case withPokemonAlignment // = 26
     case withInvasionCharacter // = 27
+    case withBuddy // = 28
+    case withBuddyInterestingPoi // = 29
+    case withDailyBuddyAffection // = 30
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -343,6 +366,9 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case 25: self = .withDistance
       case 26: self = .withPokemonAlignment
       case 27: self = .withInvasionCharacter
+      case 28: self = .withBuddy
+      case 29: self = .withBuddyInterestingPoi
+      case 30: self = .withDailyBuddyAffection
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -377,10 +403,39 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case .withDistance: return 25
       case .withPokemonAlignment: return 26
       case .withInvasionCharacter: return 27
+      case .withBuddy: return 28
+      case .withBuddyInterestingPoi: return 29
+      case .withDailyBuddyAffection: return 30
       case .UNRECOGNIZED(let i): return i
       }
     }
 
+  }
+
+  public struct WithDailyBuddyAffection {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var minBuddyAffectionEarnedToday: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithBuddy {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var minBuddyLevel: POGOProtos_Enums_BuddyLevel = .unset
+
+    public var mustBeOnMap: Bool = false
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
   }
 
   public struct WithPokemonAlignment {
@@ -761,6 +816,9 @@ extension POGOProtos_Data_Quests_QuestCondition.ConditionType: CaseIterable {
     .withDistance,
     .withPokemonAlignment,
     .withInvasionCharacter,
+    .withBuddy,
+    .withBuddyInterestingPoi,
+    .withDailyBuddyAffection,
   ]
 }
 
@@ -797,6 +855,8 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
     22: .standard(proto: "with_distance"),
     23: .standard(proto: "with_invasion_character"),
     24: .standard(proto: "with_pokemon_alignment"),
+    25: .standard(proto: "with_buddy"),
+    26: .standard(proto: "with_daily_buddy_affection"),
   ]
 
   fileprivate class _StorageClass {
@@ -1010,6 +1070,22 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._condition = .withPokemonAlignment(v)}
+        case 25:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithBuddy?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withBuddy(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withBuddy(v)}
+        case 26:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithDailyBuddyAffection?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withDailyBuddyAffection(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withDailyBuddyAffection(v)}
         default: break
         }
       }
@@ -1068,6 +1144,10 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
         try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
       case .withPokemonAlignment(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 24)
+      case .withBuddy(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 25)
+      case .withDailyBuddyAffection(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 26)
       case nil: break
       }
     }
@@ -1120,7 +1200,74 @@ extension POGOProtos_Data_Quests_QuestCondition.ConditionType: SwiftProtobuf._Pr
     25: .same(proto: "WITH_DISTANCE"),
     26: .same(proto: "WITH_POKEMON_ALIGNMENT"),
     27: .same(proto: "WITH_INVASION_CHARACTER"),
+    28: .same(proto: "WITH_BUDDY"),
+    29: .same(proto: "WITH_BUDDY_INTERESTING_POI"),
+    30: .same(proto: "WITH_DAILY_BUDDY_AFFECTION"),
   ]
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithDailyBuddyAffection: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithDailyBuddyAffection"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "min_buddy_affection_earned_today"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.minBuddyAffectionEarnedToday)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.minBuddyAffectionEarnedToday != 0 {
+      try visitor.visitSingularInt32Field(value: self.minBuddyAffectionEarnedToday, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithDailyBuddyAffection, rhs: POGOProtos_Data_Quests_QuestCondition.WithDailyBuddyAffection) -> Bool {
+    if lhs.minBuddyAffectionEarnedToday != rhs.minBuddyAffectionEarnedToday {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithBuddy: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithBuddy"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "min_buddy_level"),
+    2: .standard(proto: "must_be_on_map"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.minBuddyLevel)
+      case 2: try decoder.decodeSingularBoolField(value: &self.mustBeOnMap)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.minBuddyLevel != .unset {
+      try visitor.visitSingularEnumField(value: self.minBuddyLevel, fieldNumber: 1)
+    }
+    if self.mustBeOnMap != false {
+      try visitor.visitSingularBoolField(value: self.mustBeOnMap, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithBuddy, rhs: POGOProtos_Data_Quests_QuestCondition.WithBuddy) -> Bool {
+    if lhs.minBuddyLevel != rhs.minBuddyLevel {return false}
+    if lhs.mustBeOnMap != rhs.mustBeOnMap {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithPokemonAlignment: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {

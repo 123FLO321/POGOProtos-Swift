@@ -24,7 +24,6 @@ public struct POGOProtos_Networking_Requests_Messages_SetFavoritePokemonMessage 
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  /// Do not change https://github.com/AeonLucid/POGOProtos/pull/126
   public var pokemonID: Int64 = 0
 
   public var isFavorite: Bool = false

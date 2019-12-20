@@ -39,6 +39,8 @@ public struct POGOProtos_Networking_Envelopes_ResponseEnvelope {
     set {_uniqueStorage()._apiURL = newValue}
   }
 
+  ///Untested maybe needs a good index order
+  ///repeated SocialResponse social_returns = 5;
   public var platformReturns: [POGOProtos_Networking_Envelopes_ResponseEnvelope.PlatformResponse] {
     get {return _storage._platformReturns}
     set {_uniqueStorage()._platformReturns = newValue}

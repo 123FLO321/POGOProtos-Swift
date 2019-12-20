@@ -91,7 +91,7 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
   /// Implemented
   case redeemGoogleReceipt // = 5021
 
-  /// ???
+  /// Implemented
   case redeemAppleReceipt // = 5022
 
   /// ???
@@ -132,6 +132,33 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
 
   /// Implemented
   case getGmapSettings // = 5036
+
+  /// ???
+  case redeemSamsungReceipt // = 5037
+
+  /// ??? maybe same POGOProtos.Networking.Titan.Messages.SubmitNewRouteMessage
+  case addNewRoute // = 5038
+
+  /// ???
+  case getOutstandingWarnings // = 5039
+
+  /// ???
+  case acknowledgeWarnings // = 5040
+
+  /// Implemented
+  case submitPoiImage // = 5041
+
+  /// Implemented
+  case submitPoiTextMetadataUpdate // = 5042
+
+  /// Implemented
+  case submitPoiLocationUpdate // = 5043
+
+  /// Implemented
+  case submitPoiTakedownRequest // = 5044
+
+  /// Implemented
+  case getWebTokenAction // = 5045
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -177,6 +204,15 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
     case 5034: self = .updatePlayerLocation
     case 5035: self = .generateGmapSignedURL
     case 5036: self = .getGmapSettings
+    case 5037: self = .redeemSamsungReceipt
+    case 5038: self = .addNewRoute
+    case 5039: self = .getOutstandingWarnings
+    case 5040: self = .acknowledgeWarnings
+    case 5041: self = .submitPoiImage
+    case 5042: self = .submitPoiTextMetadataUpdate
+    case 5043: self = .submitPoiLocationUpdate
+    case 5044: self = .submitPoiTakedownRequest
+    case 5045: self = .getWebTokenAction
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -220,6 +256,15 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
     case .updatePlayerLocation: return 5034
     case .generateGmapSignedURL: return 5035
     case .getGmapSettings: return 5036
+    case .redeemSamsungReceipt: return 5037
+    case .addNewRoute: return 5038
+    case .getOutstandingWarnings: return 5039
+    case .acknowledgeWarnings: return 5040
+    case .submitPoiImage: return 5041
+    case .submitPoiTextMetadataUpdate: return 5042
+    case .submitPoiLocationUpdate: return 5043
+    case .submitPoiTakedownRequest: return 5044
+    case .getWebTokenAction: return 5045
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -268,6 +313,15 @@ extension POGOProtos_Networking_Platform_PlatformRequestType: CaseIterable {
     .updatePlayerLocation,
     .generateGmapSignedURL,
     .getGmapSettings,
+    .redeemSamsungReceipt,
+    .addNewRoute,
+    .getOutstandingWarnings,
+    .acknowledgeWarnings,
+    .submitPoiImage,
+    .submitPoiTextMetadataUpdate,
+    .submitPoiLocationUpdate,
+    .submitPoiTakedownRequest,
+    .getWebTokenAction,
   ]
 }
 
@@ -314,5 +368,14 @@ extension POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf._Pro
     5034: .same(proto: "UPDATE_PLAYER_LOCATION"),
     5035: .same(proto: "GENERATE_GMAP_SIGNED_URL"),
     5036: .same(proto: "GET_GMAP_SETTINGS"),
+    5037: .same(proto: "REDEEM_SAMSUNG_RECEIPT"),
+    5038: .same(proto: "ADD_NEW_ROUTE"),
+    5039: .same(proto: "GET_OUTSTANDING_WARNINGS"),
+    5040: .same(proto: "ACKNOWLEDGE_WARNINGS"),
+    5041: .same(proto: "SUBMIT_POI_IMAGE"),
+    5042: .same(proto: "SUBMIT_POI_TEXT_METADATA_UPDATE"),
+    5043: .same(proto: "SUBMIT_POI_LOCATION_UPDATE"),
+    5044: .same(proto: "SUBMIT_POI_TAKEDOWN_REQUEST"),
+    5045: .same(proto: "GET_WEB_TOKEN_ACTION"),
   ]
 }

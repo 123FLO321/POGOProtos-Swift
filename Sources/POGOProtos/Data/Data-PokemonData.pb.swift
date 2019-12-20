@@ -281,6 +281,21 @@ public struct POGOProtos_Data_PokemonData {
     set {_uniqueStorage()._move2IsPurifiedExclusive = newValue}
   }
 
+  public var limitedPokemonIdentifier: String {
+    get {return _storage._limitedPokemonIdentifier}
+    set {_uniqueStorage()._limitedPokemonIdentifier = newValue}
+  }
+
+  public var preBoostedCp: Int32 {
+    get {return _storage._preBoostedCp}
+    set {_uniqueStorage()._preBoostedCp = newValue}
+  }
+
+  public var preBoostedAdditionalCpMultiplier: Float {
+    get {return _storage._preBoostedAdditionalCpMultiplier}
+    set {_uniqueStorage()._preBoostedAdditionalCpMultiplier = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -344,6 +359,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     48: .standard(proto: "pvp_combat_stats"),
     49: .standard(proto: "npc_combat_stats"),
     50: .standard(proto: "move2_is_purified_exclusive"),
+    51: .standard(proto: "limited_pokemon_identifier"),
+    52: .standard(proto: "pre_boosted_cp"),
+    53: .standard(proto: "pre_boosted_additional_cp_multiplier"),
   ]
 
   fileprivate class _StorageClass {
@@ -396,6 +414,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _pvpCombatStats: POGOProtos_Data_Combat_PokemonCombatStats? = nil
     var _npcCombatStats: POGOProtos_Data_Combat_PokemonCombatStats? = nil
     var _move2IsPurifiedExclusive: Bool = false
+    var _limitedPokemonIdentifier: String = String()
+    var _preBoostedCp: Int32 = 0
+    var _preBoostedAdditionalCpMultiplier: Float = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -451,6 +472,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _pvpCombatStats = source._pvpCombatStats
       _npcCombatStats = source._npcCombatStats
       _move2IsPurifiedExclusive = source._move2IsPurifiedExclusive
+      _limitedPokemonIdentifier = source._limitedPokemonIdentifier
+      _preBoostedCp = source._preBoostedCp
+      _preBoostedAdditionalCpMultiplier = source._preBoostedAdditionalCpMultiplier
     }
   }
 
@@ -515,6 +539,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 48: try decoder.decodeSingularMessageField(value: &_storage._pvpCombatStats)
         case 49: try decoder.decodeSingularMessageField(value: &_storage._npcCombatStats)
         case 50: try decoder.decodeSingularBoolField(value: &_storage._move2IsPurifiedExclusive)
+        case 51: try decoder.decodeSingularStringField(value: &_storage._limitedPokemonIdentifier)
+        case 52: try decoder.decodeSingularInt32Field(value: &_storage._preBoostedCp)
+        case 53: try decoder.decodeSingularFloatField(value: &_storage._preBoostedAdditionalCpMultiplier)
         default: break
         }
       }
@@ -670,6 +697,15 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if _storage._move2IsPurifiedExclusive != false {
         try visitor.visitSingularBoolField(value: _storage._move2IsPurifiedExclusive, fieldNumber: 50)
       }
+      if !_storage._limitedPokemonIdentifier.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._limitedPokemonIdentifier, fieldNumber: 51)
+      }
+      if _storage._preBoostedCp != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._preBoostedCp, fieldNumber: 52)
+      }
+      if _storage._preBoostedAdditionalCpMultiplier != 0 {
+        try visitor.visitSingularFloatField(value: _storage._preBoostedAdditionalCpMultiplier, fieldNumber: 53)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -728,6 +764,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._pvpCombatStats != rhs_storage._pvpCombatStats {return false}
         if _storage._npcCombatStats != rhs_storage._npcCombatStats {return false}
         if _storage._move2IsPurifiedExclusive != rhs_storage._move2IsPurifiedExclusive {return false}
+        if _storage._limitedPokemonIdentifier != rhs_storage._limitedPokemonIdentifier {return false}
+        if _storage._preBoostedCp != rhs_storage._preBoostedCp {return false}
+        if _storage._preBoostedAdditionalCpMultiplier != rhs_storage._preBoostedAdditionalCpMultiplier {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -81,8 +81,8 @@ public struct POGOProtos_Data_PlayerData {
   /// Clears the value of `equippedBadge`. Subsequent reads from it will return its default value.
   public mutating func clearEquippedBadge() {_uniqueStorage()._equippedBadge = nil}
 
-  public var contactSettings: POGOProtos_Data_Player_ContactSettings {
-    get {return _storage._contactSettings ?? POGOProtos_Data_Player_ContactSettings()}
+  public var contactSettings: POGOProtos_Settings_ContactSettings {
+    get {return _storage._contactSettings ?? POGOProtos_Settings_ContactSettings()}
     set {_uniqueStorage()._contactSettings = newValue}
   }
   /// Returns true if `contactSettings` has been explicitly set.
@@ -128,8 +128,8 @@ public struct POGOProtos_Data_PlayerData {
     set {_uniqueStorage()._nameIsBlacklisted = newValue}
   }
 
-  public var socialPlayerSettings: POGOProtos_Data_Player_SocialPlayerSettings {
-    get {return _storage._socialPlayerSettings ?? POGOProtos_Data_Player_SocialPlayerSettings()}
+  public var socialPlayerSettings: POGOProtos_Settings_SocialPlayerSettings {
+    get {return _storage._socialPlayerSettings ?? POGOProtos_Settings_SocialPlayerSettings()}
     set {_uniqueStorage()._socialPlayerSettings = newValue}
   }
   /// Returns true if `socialPlayerSettings` has been explicitly set.
@@ -165,9 +165,32 @@ public struct POGOProtos_Data_PlayerData {
     set {_uniqueStorage()._consumedEeveeEasterEggs = newValue}
   }
 
+  public var combatLog: POGOProtos_Data_Combat_CombatLog {
+    get {return _storage._combatLog ?? POGOProtos_Data_Combat_CombatLog()}
+    set {_uniqueStorage()._combatLog = newValue}
+  }
+  /// Returns true if `combatLog` has been explicitly set.
+  public var hasCombatLog: Bool {return _storage._combatLog != nil}
+  /// Clears the value of `combatLog`. Subsequent reads from it will return its default value.
+  public mutating func clearCombatLog() {_uniqueStorage()._combatLog = nil}
+
   public var timeZoneOffsetMs: Int64 {
     get {return _storage._timeZoneOffsetMs}
     set {_uniqueStorage()._timeZoneOffsetMs = newValue}
+  }
+
+  public var buddyObservedData: POGOProtos_Data_Buddy_BuddyObservedData {
+    get {return _storage._buddyObservedData ?? POGOProtos_Data_Buddy_BuddyObservedData()}
+    set {_uniqueStorage()._buddyObservedData = newValue}
+  }
+  /// Returns true if `buddyObservedData` has been explicitly set.
+  public var hasBuddyObservedData: Bool {return _storage._buddyObservedData != nil}
+  /// Clears the value of `buddyObservedData`. Subsequent reads from it will return its default value.
+  public mutating func clearBuddyObservedData() {_uniqueStorage()._buddyObservedData = nil}
+
+  public var helpshiftUserID: String {
+    get {return _storage._helpshiftUserID}
+    set {_uniqueStorage()._helpshiftUserID = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -205,7 +228,10 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     22: .standard(proto: "player_support_id"),
     23: .standard(proto: "team_change_info"),
     24: .standard(proto: "consumed_eevee_easter_eggs"),
+    25: .standard(proto: "combat_log"),
     26: .standard(proto: "time_zone_offset_ms"),
+    27: .standard(proto: "buddy_observed_data"),
+    28: .standard(proto: "helpshift_user_id"),
   ]
 
   fileprivate class _StorageClass {
@@ -218,19 +244,22 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
     var _maxItemStorage: Int32 = 0
     var _dailyBonus: POGOProtos_Data_Player_DailyBonus? = nil
     var _equippedBadge: POGOProtos_Data_Player_EquippedBadge? = nil
-    var _contactSettings: POGOProtos_Data_Player_ContactSettings? = nil
+    var _contactSettings: POGOProtos_Settings_ContactSettings? = nil
     var _currencyBalance: [POGOProtos_Data_Store_CurrencyQuantity] = []
     var _remainingCodenameClaims: Int32 = 0
     var _buddyPokemon: POGOProtos_Data_BuddyPokemon? = nil
     var _battleLockoutEndMs: Int64 = 0
     var _secondaryPlayerAvatar: POGOProtos_Data_Player_PlayerAvatar? = nil
     var _nameIsBlacklisted: Bool = false
-    var _socialPlayerSettings: POGOProtos_Data_Player_SocialPlayerSettings? = nil
+    var _socialPlayerSettings: POGOProtos_Settings_SocialPlayerSettings? = nil
     var _combatPlayerPreferences: POGOProtos_Data_Combat_CombatPlayerPreferences? = nil
     var _playerSupportID: String = String()
     var _teamChangeInfo: POGOProtos_Data_Player_TeamChangeInfo? = nil
     var _consumedEeveeEasterEggs: [POGOProtos_Enums_PokemonId] = []
+    var _combatLog: POGOProtos_Data_Combat_CombatLog? = nil
     var _timeZoneOffsetMs: Int64 = 0
+    var _buddyObservedData: POGOProtos_Data_Buddy_BuddyObservedData? = nil
+    var _helpshiftUserID: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -258,7 +287,10 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       _playerSupportID = source._playerSupportID
       _teamChangeInfo = source._teamChangeInfo
       _consumedEeveeEasterEggs = source._consumedEeveeEasterEggs
+      _combatLog = source._combatLog
       _timeZoneOffsetMs = source._timeZoneOffsetMs
+      _buddyObservedData = source._buddyObservedData
+      _helpshiftUserID = source._helpshiftUserID
     }
   }
 
@@ -295,7 +327,10 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         case 22: try decoder.decodeSingularStringField(value: &_storage._playerSupportID)
         case 23: try decoder.decodeSingularMessageField(value: &_storage._teamChangeInfo)
         case 24: try decoder.decodeRepeatedEnumField(value: &_storage._consumedEeveeEasterEggs)
+        case 25: try decoder.decodeSingularMessageField(value: &_storage._combatLog)
         case 26: try decoder.decodeSingularInt64Field(value: &_storage._timeZoneOffsetMs)
+        case 27: try decoder.decodeSingularMessageField(value: &_storage._buddyObservedData)
+        case 28: try decoder.decodeSingularStringField(value: &_storage._helpshiftUserID)
         default: break
         }
       }
@@ -367,8 +402,17 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
       if !_storage._consumedEeveeEasterEggs.isEmpty {
         try visitor.visitPackedEnumField(value: _storage._consumedEeveeEasterEggs, fieldNumber: 24)
       }
+      if let v = _storage._combatLog {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 25)
+      }
       if _storage._timeZoneOffsetMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._timeZoneOffsetMs, fieldNumber: 26)
+      }
+      if let v = _storage._buddyObservedData {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 27)
+      }
+      if !_storage._helpshiftUserID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._helpshiftUserID, fieldNumber: 28)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -400,7 +444,10 @@ extension POGOProtos_Data_PlayerData: SwiftProtobuf.Message, SwiftProtobuf._Mess
         if _storage._playerSupportID != rhs_storage._playerSupportID {return false}
         if _storage._teamChangeInfo != rhs_storage._teamChangeInfo {return false}
         if _storage._consumedEeveeEasterEggs != rhs_storage._consumedEeveeEasterEggs {return false}
+        if _storage._combatLog != rhs_storage._combatLog {return false}
         if _storage._timeZoneOffsetMs != rhs_storage._timeZoneOffsetMs {return false}
+        if _storage._buddyObservedData != rhs_storage._buddyObservedData {return false}
+        if _storage._helpshiftUserID != rhs_storage._helpshiftUserID {return false}
         return true
       }
       if !storagesAreEqual {return false}

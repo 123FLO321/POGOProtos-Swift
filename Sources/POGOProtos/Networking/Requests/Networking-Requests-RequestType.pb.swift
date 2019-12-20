@@ -53,6 +53,9 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case getServerTime // = 11
 
   /// Implemented
+  case getLocalTime // = 12
+
+  /// Implemented
   case fortSearch // = 101
 
   /// Implemented
@@ -218,10 +221,16 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case reassignPlayer // = 169
 
   /// Implemented
+  case redeemPoiPasscode // = 170
+
+  /// Implemented
   case getAssetDigest // = 300
 
   /// Implemented
   case getDownloadUrls // = 301
+
+  /// Implemented
+  case getAssetVersion // = 302
 
   /// Implemented
   case claimCodename // = 403
@@ -497,6 +506,60 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case purifyPokemon // = 1205
 
   /// Implemented
+  case vsSeekerStartMatchmaking // = 1300
+
+  /// Implemented
+  case cancelMatchmaking // = 1301
+
+  /// Implemented
+  case getMatchmakingStatus // = 1302
+
+  /// Implemented
+  case completeVsSeekerAndRestartCharging // = 1303
+
+  /// Implemented
+  case getVsSeekerStatus // = 1304
+
+  /// Implemented
+  case completeCombatCompetitiveSeasonAction // = 1305
+
+  /// Implemented
+  case claimVsSeekerRewards // = 1306
+
+  /// Implemented
+  case vsSeekerRewardEncounter // = 1307
+
+  /// Implemented
+  case activateVsSeeker // = 1308
+
+  /// Implemented
+  case getBuddyMap // = 1350
+
+  /// Implemented
+  case getBuddyStats // = 1351
+
+  /// Implemented
+  case feedBuddy // = 1352
+
+  /// Implemented
+  case openBuddyGift // = 1353
+
+  /// Implemented
+  case petBuddy // = 1354
+
+  /// Implemented
+  case getBuddyHistory // = 1355
+
+  /// Implemented
+  case createBuddyMutliplayerSession // = 1456
+
+  /// Implemented
+  case joinBuddyMultiplayerSession // = 1457
+
+  /// Implemented
+  case leaveBuddyMultiplayerSession // = 1458
+
+  /// Implemented
   case registerPushNotification // = 5000
 
   /// ???
@@ -562,7 +625,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   /// Implemented
   case redeemGoogleReceipt // = 5021
 
-  /// ???
+  /// Implemented
   case redeemAppleReceipt // = 5022
 
   /// ???
@@ -603,6 +666,33 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
 
   /// Implemented
   case getGmapSettings // = 5036
+
+  /// ???
+  case redeemSamsungReceipt // = 5037
+
+  /// ??? maybe same POGOProtos.Networking.Titan.Messages.SubmitNewRouteMessage
+  case addNewRoute // = 5038
+
+  /// ???
+  case getOutstandingWarnings // = 5039
+
+  /// ???
+  case acknowledgeWarnings // = 5040
+
+  /// Implemented
+  case submitPoiImage // = 5041
+
+  /// Implemented
+  case submitPoiTextMetadataUpdate // = 5042
+
+  /// Implemented
+  case submitPoiLocationUpdate // = 5043
+
+  /// Implemented
+  case submitPoiTakedownRequest // = 5044
+
+  /// Implemented
+  case getWebTokenAction // = 5045
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -621,6 +711,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 9: self = .getPlayerDay
     case 10: self = .acknowledgePunishment
     case 11: self = .getServerTime
+    case 12: self = .getLocalTime
     case 101: self = .fortSearch
     case 102: self = .encounter
     case 103: self = .catchPokemon
@@ -676,8 +767,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 167: self = .awardPokecoin
     case 168: self = .useItemStardustBoost
     case 169: self = .reassignPlayer
+    case 170: self = .redeemPoiPasscode
     case 300: self = .getAssetDigest
     case 301: self = .getDownloadUrls
+    case 302: self = .getAssetVersion
     case 403: self = .claimCodename
     case 404: self = .setAvatar
     case 405: self = .setPlayerTeam
@@ -769,6 +862,24 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1203: self = .invasionBattleUpdate
     case 1204: self = .invasionEncounter
     case 1205: self = .purifyPokemon
+    case 1300: self = .vsSeekerStartMatchmaking
+    case 1301: self = .cancelMatchmaking
+    case 1302: self = .getMatchmakingStatus
+    case 1303: self = .completeVsSeekerAndRestartCharging
+    case 1304: self = .getVsSeekerStatus
+    case 1305: self = .completeCombatCompetitiveSeasonAction
+    case 1306: self = .claimVsSeekerRewards
+    case 1307: self = .vsSeekerRewardEncounter
+    case 1308: self = .activateVsSeeker
+    case 1350: self = .getBuddyMap
+    case 1351: self = .getBuddyStats
+    case 1352: self = .feedBuddy
+    case 1353: self = .openBuddyGift
+    case 1354: self = .petBuddy
+    case 1355: self = .getBuddyHistory
+    case 1456: self = .createBuddyMutliplayerSession
+    case 1457: self = .joinBuddyMultiplayerSession
+    case 1458: self = .leaveBuddyMultiplayerSession
     case 5000: self = .registerPushNotification
     case 5001: self = .unregisterPushNotification
     case 5002: self = .updateNotificationStatus
@@ -805,6 +916,15 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 5034: self = .updatePlayerLocation
     case 5035: self = .generateGmapSignedURL
     case 5036: self = .getGmapSettings
+    case 5037: self = .redeemSamsungReceipt
+    case 5038: self = .addNewRoute
+    case 5039: self = .getOutstandingWarnings
+    case 5040: self = .acknowledgeWarnings
+    case 5041: self = .submitPoiImage
+    case 5042: self = .submitPoiTextMetadataUpdate
+    case 5043: self = .submitPoiLocationUpdate
+    case 5044: self = .submitPoiTakedownRequest
+    case 5045: self = .getWebTokenAction
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -821,6 +941,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .getPlayerDay: return 9
     case .acknowledgePunishment: return 10
     case .getServerTime: return 11
+    case .getLocalTime: return 12
     case .fortSearch: return 101
     case .encounter: return 102
     case .catchPokemon: return 103
@@ -876,8 +997,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .awardPokecoin: return 167
     case .useItemStardustBoost: return 168
     case .reassignPlayer: return 169
+    case .redeemPoiPasscode: return 170
     case .getAssetDigest: return 300
     case .getDownloadUrls: return 301
+    case .getAssetVersion: return 302
     case .claimCodename: return 403
     case .setAvatar: return 404
     case .setPlayerTeam: return 405
@@ -969,6 +1092,24 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .invasionBattleUpdate: return 1203
     case .invasionEncounter: return 1204
     case .purifyPokemon: return 1205
+    case .vsSeekerStartMatchmaking: return 1300
+    case .cancelMatchmaking: return 1301
+    case .getMatchmakingStatus: return 1302
+    case .completeVsSeekerAndRestartCharging: return 1303
+    case .getVsSeekerStatus: return 1304
+    case .completeCombatCompetitiveSeasonAction: return 1305
+    case .claimVsSeekerRewards: return 1306
+    case .vsSeekerRewardEncounter: return 1307
+    case .activateVsSeeker: return 1308
+    case .getBuddyMap: return 1350
+    case .getBuddyStats: return 1351
+    case .feedBuddy: return 1352
+    case .openBuddyGift: return 1353
+    case .petBuddy: return 1354
+    case .getBuddyHistory: return 1355
+    case .createBuddyMutliplayerSession: return 1456
+    case .joinBuddyMultiplayerSession: return 1457
+    case .leaveBuddyMultiplayerSession: return 1458
     case .registerPushNotification: return 5000
     case .unregisterPushNotification: return 5001
     case .updateNotificationStatus: return 5002
@@ -1005,6 +1146,15 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .updatePlayerLocation: return 5034
     case .generateGmapSignedURL: return 5035
     case .getGmapSettings: return 5036
+    case .redeemSamsungReceipt: return 5037
+    case .addNewRoute: return 5038
+    case .getOutstandingWarnings: return 5039
+    case .acknowledgeWarnings: return 5040
+    case .submitPoiImage: return 5041
+    case .submitPoiTextMetadataUpdate: return 5042
+    case .submitPoiLocationUpdate: return 5043
+    case .submitPoiTakedownRequest: return 5044
+    case .getWebTokenAction: return 5045
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1026,6 +1176,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .getPlayerDay,
     .acknowledgePunishment,
     .getServerTime,
+    .getLocalTime,
     .fortSearch,
     .encounter,
     .catchPokemon,
@@ -1081,8 +1232,10 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .awardPokecoin,
     .useItemStardustBoost,
     .reassignPlayer,
+    .redeemPoiPasscode,
     .getAssetDigest,
     .getDownloadUrls,
+    .getAssetVersion,
     .claimCodename,
     .setAvatar,
     .setPlayerTeam,
@@ -1174,6 +1327,24 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .invasionBattleUpdate,
     .invasionEncounter,
     .purifyPokemon,
+    .vsSeekerStartMatchmaking,
+    .cancelMatchmaking,
+    .getMatchmakingStatus,
+    .completeVsSeekerAndRestartCharging,
+    .getVsSeekerStatus,
+    .completeCombatCompetitiveSeasonAction,
+    .claimVsSeekerRewards,
+    .vsSeekerRewardEncounter,
+    .activateVsSeeker,
+    .getBuddyMap,
+    .getBuddyStats,
+    .feedBuddy,
+    .openBuddyGift,
+    .petBuddy,
+    .getBuddyHistory,
+    .createBuddyMutliplayerSession,
+    .joinBuddyMultiplayerSession,
+    .leaveBuddyMultiplayerSession,
     .registerPushNotification,
     .unregisterPushNotification,
     .updateNotificationStatus,
@@ -1210,6 +1381,15 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .updatePlayerLocation,
     .generateGmapSignedURL,
     .getGmapSettings,
+    .redeemSamsungReceipt,
+    .addNewRoute,
+    .getOutstandingWarnings,
+    .acknowledgeWarnings,
+    .submitPoiImage,
+    .submitPoiTextMetadataUpdate,
+    .submitPoiLocationUpdate,
+    .submitPoiTakedownRequest,
+    .getWebTokenAction,
   ]
 }
 
@@ -1229,6 +1409,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     9: .same(proto: "GET_PLAYER_DAY"),
     10: .same(proto: "ACKNOWLEDGE_PUNISHMENT"),
     11: .same(proto: "GET_SERVER_TIME"),
+    12: .same(proto: "GET_LOCAL_TIME"),
     101: .same(proto: "FORT_SEARCH"),
     102: .same(proto: "ENCOUNTER"),
     103: .same(proto: "CATCH_POKEMON"),
@@ -1284,8 +1465,10 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     167: .same(proto: "AWARD_POKECOIN"),
     168: .same(proto: "USE_ITEM_STARDUST_BOOST"),
     169: .same(proto: "REASSIGN_PLAYER"),
+    170: .same(proto: "REDEEM_POI_PASSCODE"),
     300: .same(proto: "GET_ASSET_DIGEST"),
     301: .same(proto: "GET_DOWNLOAD_URLS"),
+    302: .same(proto: "GET_ASSET_VERSION"),
     403: .same(proto: "CLAIM_CODENAME"),
     404: .same(proto: "SET_AVATAR"),
     405: .same(proto: "SET_PLAYER_TEAM"),
@@ -1377,6 +1560,24 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1203: .same(proto: "INVASION_BATTLE_UPDATE"),
     1204: .same(proto: "INVASION_ENCOUNTER"),
     1205: .same(proto: "PURIFY_POKEMON"),
+    1300: .same(proto: "VS_SEEKER_START_MATCHMAKING"),
+    1301: .same(proto: "CANCEL_MATCHMAKING"),
+    1302: .same(proto: "GET_MATCHMAKING_STATUS"),
+    1303: .same(proto: "COMPLETE_VS_SEEKER_AND_RESTART_CHARGING"),
+    1304: .same(proto: "GET_VS_SEEKER_STATUS"),
+    1305: .same(proto: "COMPLETE_COMBAT_COMPETITIVE_SEASON_ACTION"),
+    1306: .same(proto: "CLAIM_VS_SEEKER_REWARDS"),
+    1307: .same(proto: "VS_SEEKER_REWARD_ENCOUNTER"),
+    1308: .same(proto: "ACTIVATE_VS_SEEKER"),
+    1350: .same(proto: "GET_BUDDY_MAP"),
+    1351: .same(proto: "GET_BUDDY_STATS"),
+    1352: .same(proto: "FEED_BUDDY"),
+    1353: .same(proto: "OPEN_BUDDY_GIFT"),
+    1354: .same(proto: "PET_BUDDY"),
+    1355: .same(proto: "GET_BUDDY_HISTORY"),
+    1456: .same(proto: "CREATE_BUDDY_MUTLIPLAYER_SESSION"),
+    1457: .same(proto: "JOIN_BUDDY_MULTIPLAYER_SESSION"),
+    1458: .same(proto: "LEAVE_BUDDY_MULTIPLAYER_SESSION"),
     5000: .same(proto: "REGISTER_PUSH_NOTIFICATION"),
     5001: .same(proto: "UNREGISTER_PUSH_NOTIFICATION"),
     5002: .same(proto: "UPDATE_NOTIFICATION_STATUS"),
@@ -1413,5 +1614,14 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     5034: .same(proto: "UPDATE_PLAYER_LOCATION"),
     5035: .same(proto: "GENERATE_GMAP_SIGNED_URL"),
     5036: .same(proto: "GET_GMAP_SETTINGS"),
+    5037: .same(proto: "REDEEM_SAMSUNG_RECEIPT"),
+    5038: .same(proto: "ADD_NEW_ROUTE"),
+    5039: .same(proto: "GET_OUTSTANDING_WARNINGS"),
+    5040: .same(proto: "ACKNOWLEDGE_WARNINGS"),
+    5041: .same(proto: "SUBMIT_POI_IMAGE"),
+    5042: .same(proto: "SUBMIT_POI_TEXT_METADATA_UPDATE"),
+    5043: .same(proto: "SUBMIT_POI_LOCATION_UPDATE"),
+    5044: .same(proto: "SUBMIT_POI_TAKEDOWN_REQUEST"),
+    5045: .same(proto: "GET_WEB_TOKEN_ACTION"),
   ]
 }

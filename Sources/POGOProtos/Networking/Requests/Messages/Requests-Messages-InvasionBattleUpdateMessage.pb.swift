@@ -24,8 +24,8 @@ public struct POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessag
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var incidentLookup: POGOProtos_Data_IncidentLookup {
-    get {return _storage._incidentLookup ?? POGOProtos_Data_IncidentLookup()}
+  public var incidentLookup: POGOProtos_Map_Fort_IncidentLookup {
+    get {return _storage._incidentLookup ?? POGOProtos_Map_Fort_IncidentLookup()}
     set {_uniqueStorage()._incidentLookup = newValue}
   }
   /// Returns true if `incidentLookup` has been explicitly set.
@@ -133,7 +133,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
   ]
 
   fileprivate class _StorageClass {
-    var _incidentLookup: POGOProtos_Data_IncidentLookup? = nil
+    var _incidentLookup: POGOProtos_Map_Fort_IncidentLookup? = nil
     var _step: Int32 = 0
     var _healthUpdate: [POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.PokemonStaminaUpdate] = []
     var _completeBattle: Bool = false
@@ -233,7 +233,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.Po
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt64Field(value: &self.pokemonID)
+      case 1: try decoder.decodeSingularFixed64Field(value: &self.pokemonID)
       case 2: try decoder.decodeSingularInt32Field(value: &self.updatedStamina)
       default: break
       }
@@ -242,7 +242,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.Po
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.pokemonID != 0 {
-      try visitor.visitSingularUInt64Field(value: self.pokemonID, fieldNumber: 1)
+      try visitor.visitSingularFixed64Field(value: self.pokemonID, fieldNumber: 1)
     }
     if self.updatedStamina != 0 {
       try visitor.visitSingularInt32Field(value: self.updatedStamina, fieldNumber: 2)

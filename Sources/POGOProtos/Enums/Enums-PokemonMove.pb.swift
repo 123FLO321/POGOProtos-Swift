@@ -287,6 +287,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case lockOnFast // = 325
   case thunderFangFast // = 326
   case iceFangFast // = 327
+  case hornDrill // = 328
+  case fissure // = 329
+  case sacredSword // = 330
+  case flyingPress // = 331
+  case auraSphere // = 332
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -561,6 +566,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 325: self = .lockOnFast
     case 326: self = .thunderFangFast
     case 327: self = .iceFangFast
+    case 328: self = .hornDrill
+    case 329: self = .fissure
+    case 330: self = .sacredSword
+    case 331: self = .flyingPress
+    case 332: self = .auraSphere
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -833,6 +843,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .lockOnFast: return 325
     case .thunderFangFast: return 326
     case .iceFangFast: return 327
+    case .hornDrill: return 328
+    case .fissure: return 329
+    case .sacredSword: return 330
+    case .flyingPress: return 331
+    case .auraSphere: return 332
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1110,6 +1125,11 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .lockOnFast,
     .thunderFangFast,
     .iceFangFast,
+    .hornDrill,
+    .fissure,
+    .sacredSword,
+    .flyingPress,
+    .auraSphere,
   ]
 }
 
@@ -1385,5 +1405,10 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     325: .same(proto: "LOCK_ON_FAST"),
     326: .same(proto: "THUNDER_FANG_FAST"),
     327: .same(proto: "ICE_FANG_FAST"),
+    328: .same(proto: "HORN_DRILL"),
+    329: .same(proto: "FISSURE"),
+    330: .same(proto: "SACRED_SWORD"),
+    331: .same(proto: "FLYING_PRESS"),
+    332: .same(proto: "AURA_SPHERE"),
   ]
 }

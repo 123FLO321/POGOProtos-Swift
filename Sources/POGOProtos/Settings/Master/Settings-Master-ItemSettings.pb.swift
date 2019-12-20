@@ -157,6 +157,15 @@ public struct POGOProtos_Settings_Master_ItemSettings {
   /// Clears the value of `incidentTicket`. Subsequent reads from it will return its default value.
   public mutating func clearIncidentTicket() {_uniqueStorage()._incidentTicket = nil}
 
+  public var globalEventTicket: POGOProtos_Settings_Master_Item_GlobalEventTicketAttributes {
+    get {return _storage._globalEventTicket ?? POGOProtos_Settings_Master_Item_GlobalEventTicketAttributes()}
+    set {_uniqueStorage()._globalEventTicket = newValue}
+  }
+  /// Returns true if `globalEventTicket` has been explicitly set.
+  public var hasGlobalEventTicket: Bool {return _storage._globalEventTicket != nil}
+  /// Clears the value of `globalEventTicket`. Subsequent reads from it will return its default value.
+  public mutating func clearGlobalEventTicket() {_uniqueStorage()._globalEventTicket = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -188,6 +197,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
     15: .standard(proto: "fort_modifier"),
     16: .standard(proto: "stardust_boost"),
     17: .standard(proto: "incident_ticket"),
+    18: .standard(proto: "global_event_ticket"),
   ]
 
   fileprivate class _StorageClass {
@@ -208,6 +218,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
     var _fortModifier: POGOProtos_Settings_Master_Item_FortModifierAttributes? = nil
     var _stardustBoost: POGOProtos_Settings_Master_Item_StardustBoostAttributes? = nil
     var _incidentTicket: POGOProtos_Settings_Master_Item_IncidentTicketAttributes? = nil
+    var _globalEventTicket: POGOProtos_Settings_Master_Item_GlobalEventTicketAttributes? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -231,6 +242,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
       _fortModifier = source._fortModifier
       _stardustBoost = source._stardustBoost
       _incidentTicket = source._incidentTicket
+      _globalEventTicket = source._globalEventTicket
     }
   }
 
@@ -263,6 +275,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
         case 15: try decoder.decodeSingularMessageField(value: &_storage._fortModifier)
         case 16: try decoder.decodeSingularMessageField(value: &_storage._stardustBoost)
         case 17: try decoder.decodeSingularMessageField(value: &_storage._incidentTicket)
+        case 18: try decoder.decodeSingularMessageField(value: &_storage._globalEventTicket)
         default: break
         }
       }
@@ -322,6 +335,9 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
       if let v = _storage._incidentTicket {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 17)
       }
+      if let v = _storage._globalEventTicket {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -348,6 +364,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
         if _storage._fortModifier != rhs_storage._fortModifier {return false}
         if _storage._stardustBoost != rhs_storage._stardustBoost {return false}
         if _storage._incidentTicket != rhs_storage._incidentTicket {return false}
+        if _storage._globalEventTicket != rhs_storage._globalEventTicket {return false}
         return true
       }
       if !storagesAreEqual {return false}

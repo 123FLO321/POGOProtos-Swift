@@ -219,6 +219,76 @@ public struct POGOProtos_Settings_Master_Item_UserAttributes {
     set {_uniqueStorage()._sentFriendRequest = newValue}
   }
 
+  public var isEggIncubatingV2: String {
+    get {return _storage._isEggIncubatingV2}
+    set {_uniqueStorage()._isEggIncubatingV2 = newValue}
+  }
+
+  public var hasEggsV2_p: String {
+    get {return _storage._hasEggsV2_p}
+    set {_uniqueStorage()._hasEggsV2_p = newValue}
+  }
+
+  public var usingStarPieceV2: String {
+    get {return _storage._usingStarPieceV2}
+    set {_uniqueStorage()._usingStarPieceV2 = newValue}
+  }
+
+  public var usingLuckyEggV2: String {
+    get {return _storage._usingLuckyEggV2}
+    set {_uniqueStorage()._usingLuckyEggV2 = newValue}
+  }
+
+  public var usingIncenseOrdinaryV2: String {
+    get {return _storage._usingIncenseOrdinaryV2}
+    set {_uniqueStorage()._usingIncenseOrdinaryV2 = newValue}
+  }
+
+  public var usingIncenseSpicyV2: String {
+    get {return _storage._usingIncenseSpicyV2}
+    set {_uniqueStorage()._usingIncenseSpicyV2 = newValue}
+  }
+
+  public var usingIncenseCoolV2: String {
+    get {return _storage._usingIncenseCoolV2}
+    set {_uniqueStorage()._usingIncenseCoolV2 = newValue}
+  }
+
+  public var usingIncenseFloralV2: String {
+    get {return _storage._usingIncenseFloralV2}
+    set {_uniqueStorage()._usingIncenseFloralV2 = newValue}
+  }
+
+  public var usingLureOrdinaryV2: String {
+    get {return _storage._usingLureOrdinaryV2}
+    set {_uniqueStorage()._usingLureOrdinaryV2 = newValue}
+  }
+
+  public var usingLureMossyV2: String {
+    get {return _storage._usingLureMossyV2}
+    set {_uniqueStorage()._usingLureMossyV2 = newValue}
+  }
+
+  public var usingLureGlacialV2: String {
+    get {return _storage._usingLureGlacialV2}
+    set {_uniqueStorage()._usingLureGlacialV2 = newValue}
+  }
+
+  public var usingLureMagneticV2: String {
+    get {return _storage._usingLureMagneticV2}
+    set {_uniqueStorage()._usingLureMagneticV2 = newValue}
+  }
+
+  public var adventureSyncOptInV2: String {
+    get {return _storage._adventureSyncOptInV2}
+    set {_uniqueStorage()._adventureSyncOptInV2 = newValue}
+  }
+
+  public var geoFenceOptInV2: String {
+    get {return _storage._geoFenceOptInV2}
+    set {_uniqueStorage()._geoFenceOptInV2 = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -272,6 +342,20 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
     37: .standard(proto: "field_research_stamp_progress"),
     38: .standard(proto: "level_up"),
     39: .standard(proto: "sent_friend_request"),
+    40: .standard(proto: "is_egg_incubating_v2"),
+    41: .standard(proto: "has_eggs_v2"),
+    42: .standard(proto: "using_star_piece_v2"),
+    43: .standard(proto: "using_lucky_egg_v2"),
+    44: .standard(proto: "using_incense_ordinary_v2"),
+    45: .standard(proto: "using_incense_spicy_v2"),
+    46: .standard(proto: "using_incense_cool_v2"),
+    47: .standard(proto: "using_incense_floral_v2"),
+    48: .standard(proto: "using_lure_ordinary_v2"),
+    49: .standard(proto: "using_lure_mossy_v2"),
+    50: .standard(proto: "using_lure_glacial_v2"),
+    51: .standard(proto: "using_lure_magnetic_v2"),
+    52: .standard(proto: "adventure_sync_opt_in_v2"),
+    53: .standard(proto: "geo_fence_opt_in_v2"),
   ]
 
   fileprivate class _StorageClass {
@@ -314,6 +398,20 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
     var _fieldResearchStampProgress: Int32 = 0
     var _levelUp: Int32 = 0
     var _sentFriendRequest: Bool = false
+    var _isEggIncubatingV2: String = String()
+    var _hasEggsV2_p: String = String()
+    var _usingStarPieceV2: String = String()
+    var _usingLuckyEggV2: String = String()
+    var _usingIncenseOrdinaryV2: String = String()
+    var _usingIncenseSpicyV2: String = String()
+    var _usingIncenseCoolV2: String = String()
+    var _usingIncenseFloralV2: String = String()
+    var _usingLureOrdinaryV2: String = String()
+    var _usingLureMossyV2: String = String()
+    var _usingLureGlacialV2: String = String()
+    var _usingLureMagneticV2: String = String()
+    var _adventureSyncOptInV2: String = String()
+    var _geoFenceOptInV2: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -359,6 +457,20 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
       _fieldResearchStampProgress = source._fieldResearchStampProgress
       _levelUp = source._levelUp
       _sentFriendRequest = source._sentFriendRequest
+      _isEggIncubatingV2 = source._isEggIncubatingV2
+      _hasEggsV2_p = source._hasEggsV2_p
+      _usingStarPieceV2 = source._usingStarPieceV2
+      _usingLuckyEggV2 = source._usingLuckyEggV2
+      _usingIncenseOrdinaryV2 = source._usingIncenseOrdinaryV2
+      _usingIncenseSpicyV2 = source._usingIncenseSpicyV2
+      _usingIncenseCoolV2 = source._usingIncenseCoolV2
+      _usingIncenseFloralV2 = source._usingIncenseFloralV2
+      _usingLureOrdinaryV2 = source._usingLureOrdinaryV2
+      _usingLureMossyV2 = source._usingLureMossyV2
+      _usingLureGlacialV2 = source._usingLureGlacialV2
+      _usingLureMagneticV2 = source._usingLureMagneticV2
+      _adventureSyncOptInV2 = source._adventureSyncOptInV2
+      _geoFenceOptInV2 = source._geoFenceOptInV2
     }
   }
 
@@ -413,6 +525,20 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
         case 37: try decoder.decodeSingularInt32Field(value: &_storage._fieldResearchStampProgress)
         case 38: try decoder.decodeSingularInt32Field(value: &_storage._levelUp)
         case 39: try decoder.decodeSingularBoolField(value: &_storage._sentFriendRequest)
+        case 40: try decoder.decodeSingularStringField(value: &_storage._isEggIncubatingV2)
+        case 41: try decoder.decodeSingularStringField(value: &_storage._hasEggsV2_p)
+        case 42: try decoder.decodeSingularStringField(value: &_storage._usingStarPieceV2)
+        case 43: try decoder.decodeSingularStringField(value: &_storage._usingLuckyEggV2)
+        case 44: try decoder.decodeSingularStringField(value: &_storage._usingIncenseOrdinaryV2)
+        case 45: try decoder.decodeSingularStringField(value: &_storage._usingIncenseSpicyV2)
+        case 46: try decoder.decodeSingularStringField(value: &_storage._usingIncenseCoolV2)
+        case 47: try decoder.decodeSingularStringField(value: &_storage._usingIncenseFloralV2)
+        case 48: try decoder.decodeSingularStringField(value: &_storage._usingLureOrdinaryV2)
+        case 49: try decoder.decodeSingularStringField(value: &_storage._usingLureMossyV2)
+        case 50: try decoder.decodeSingularStringField(value: &_storage._usingLureGlacialV2)
+        case 51: try decoder.decodeSingularStringField(value: &_storage._usingLureMagneticV2)
+        case 52: try decoder.decodeSingularStringField(value: &_storage._adventureSyncOptInV2)
+        case 53: try decoder.decodeSingularStringField(value: &_storage._geoFenceOptInV2)
         default: break
         }
       }
@@ -538,6 +664,48 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
       if _storage._sentFriendRequest != false {
         try visitor.visitSingularBoolField(value: _storage._sentFriendRequest, fieldNumber: 39)
       }
+      if !_storage._isEggIncubatingV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._isEggIncubatingV2, fieldNumber: 40)
+      }
+      if !_storage._hasEggsV2_p.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._hasEggsV2_p, fieldNumber: 41)
+      }
+      if !_storage._usingStarPieceV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._usingStarPieceV2, fieldNumber: 42)
+      }
+      if !_storage._usingLuckyEggV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._usingLuckyEggV2, fieldNumber: 43)
+      }
+      if !_storage._usingIncenseOrdinaryV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._usingIncenseOrdinaryV2, fieldNumber: 44)
+      }
+      if !_storage._usingIncenseSpicyV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._usingIncenseSpicyV2, fieldNumber: 45)
+      }
+      if !_storage._usingIncenseCoolV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._usingIncenseCoolV2, fieldNumber: 46)
+      }
+      if !_storage._usingIncenseFloralV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._usingIncenseFloralV2, fieldNumber: 47)
+      }
+      if !_storage._usingLureOrdinaryV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._usingLureOrdinaryV2, fieldNumber: 48)
+      }
+      if !_storage._usingLureMossyV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._usingLureMossyV2, fieldNumber: 49)
+      }
+      if !_storage._usingLureGlacialV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._usingLureGlacialV2, fieldNumber: 50)
+      }
+      if !_storage._usingLureMagneticV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._usingLureMagneticV2, fieldNumber: 51)
+      }
+      if !_storage._adventureSyncOptInV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._adventureSyncOptInV2, fieldNumber: 52)
+      }
+      if !_storage._geoFenceOptInV2.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._geoFenceOptInV2, fieldNumber: 53)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -586,6 +754,20 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
         if _storage._fieldResearchStampProgress != rhs_storage._fieldResearchStampProgress {return false}
         if _storage._levelUp != rhs_storage._levelUp {return false}
         if _storage._sentFriendRequest != rhs_storage._sentFriendRequest {return false}
+        if _storage._isEggIncubatingV2 != rhs_storage._isEggIncubatingV2 {return false}
+        if _storage._hasEggsV2_p != rhs_storage._hasEggsV2_p {return false}
+        if _storage._usingStarPieceV2 != rhs_storage._usingStarPieceV2 {return false}
+        if _storage._usingLuckyEggV2 != rhs_storage._usingLuckyEggV2 {return false}
+        if _storage._usingIncenseOrdinaryV2 != rhs_storage._usingIncenseOrdinaryV2 {return false}
+        if _storage._usingIncenseSpicyV2 != rhs_storage._usingIncenseSpicyV2 {return false}
+        if _storage._usingIncenseCoolV2 != rhs_storage._usingIncenseCoolV2 {return false}
+        if _storage._usingIncenseFloralV2 != rhs_storage._usingIncenseFloralV2 {return false}
+        if _storage._usingLureOrdinaryV2 != rhs_storage._usingLureOrdinaryV2 {return false}
+        if _storage._usingLureMossyV2 != rhs_storage._usingLureMossyV2 {return false}
+        if _storage._usingLureGlacialV2 != rhs_storage._usingLureGlacialV2 {return false}
+        if _storage._usingLureMagneticV2 != rhs_storage._usingLureMagneticV2 {return false}
+        if _storage._adventureSyncOptInV2 != rhs_storage._adventureSyncOptInV2 {return false}
+        if _storage._geoFenceOptInV2 != rhs_storage._geoFenceOptInV2 {return false}
         return true
       }
       if !storagesAreEqual {return false}

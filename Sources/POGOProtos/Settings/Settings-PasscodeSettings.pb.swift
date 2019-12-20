@@ -26,6 +26,8 @@ public struct POGOProtos_Settings_PasscodeSettings {
 
   public var showPasscodeInStore: Bool = false
 
+  public var usePasscodeV2: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -39,12 +41,14 @@ extension POGOProtos_Settings_PasscodeSettings: SwiftProtobuf.Message, SwiftProt
   public static let protoMessageName: String = _protobuf_package + ".PasscodeSettings"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "show_passcode_in_store"),
+    2: .standard(proto: "use_passcode_v2"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.showPasscodeInStore)
+      case 2: try decoder.decodeSingularBoolField(value: &self.usePasscodeV2)
       default: break
       }
     }
@@ -54,11 +58,15 @@ extension POGOProtos_Settings_PasscodeSettings: SwiftProtobuf.Message, SwiftProt
     if self.showPasscodeInStore != false {
       try visitor.visitSingularBoolField(value: self.showPasscodeInStore, fieldNumber: 1)
     }
+    if self.usePasscodeV2 != false {
+      try visitor.visitSingularBoolField(value: self.usePasscodeV2, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_PasscodeSettings, rhs: POGOProtos_Settings_PasscodeSettings) -> Bool {
     if lhs.showPasscodeInStore != rhs.showPasscodeInStore {return false}
+    if lhs.usePasscodeV2 != rhs.usePasscodeV2 {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

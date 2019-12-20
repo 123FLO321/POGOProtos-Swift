@@ -28,6 +28,8 @@ public struct POGOProtos_Settings_Master_WeatherAffinity {
 
   public var pokemonType: [POGOProtos_Enums_PokemonType] = []
 
+  public var weaknessPokemonType: [POGOProtos_Enums_PokemonType] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -42,6 +44,7 @@ extension POGOProtos_Settings_Master_WeatherAffinity: SwiftProtobuf.Message, Swi
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "weather_condition"),
     2: .standard(proto: "pokemon_type"),
+    3: .standard(proto: "weakness_pokemon_type"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +52,7 @@ extension POGOProtos_Settings_Master_WeatherAffinity: SwiftProtobuf.Message, Swi
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.weatherCondition)
       case 2: try decoder.decodeRepeatedEnumField(value: &self.pokemonType)
+      case 3: try decoder.decodeRepeatedEnumField(value: &self.weaknessPokemonType)
       default: break
       }
     }
@@ -61,12 +65,16 @@ extension POGOProtos_Settings_Master_WeatherAffinity: SwiftProtobuf.Message, Swi
     if !self.pokemonType.isEmpty {
       try visitor.visitPackedEnumField(value: self.pokemonType, fieldNumber: 2)
     }
+    if !self.weaknessPokemonType.isEmpty {
+      try visitor.visitPackedEnumField(value: self.weaknessPokemonType, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_Master_WeatherAffinity, rhs: POGOProtos_Settings_Master_WeatherAffinity) -> Bool {
     if lhs.weatherCondition != rhs.weatherCondition {return false}
     if lhs.pokemonType != rhs.pokemonType {return false}
+    if lhs.weaknessPokemonType != rhs.weaknessPokemonType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -41,6 +41,20 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case luckyFriend // = 17
   case bgmodeNamedBuddyCandy // = 18
   case appBadgeOnly // = 19
+  case combatVsSeekerCharged // = 20
+  case combatCompetitiveSeasonEnd // = 21
+  case buddyHungry // = 22
+  case buddyFoundGift // = 24
+  case buddyAffectionLevelMilestone // = 25
+  case buddyAffectionWalking // = 26
+  case buddyAffectionCare // = 27
+  case buddyAffectionBattle // = 28
+  case buddyAffectionPhoto // = 29
+  case buddyAffectionPoi // = 30
+  case bgmodeBuddyFoundGift // = 31
+  case buddyAttractivePoi // = 32
+  case bgmodeBuddyAttractivePoi // = 33
+  case buddyAffectionAttractivePoi // = 36
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -69,6 +83,20 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 17: self = .luckyFriend
     case 18: self = .bgmodeNamedBuddyCandy
     case 19: self = .appBadgeOnly
+    case 20: self = .combatVsSeekerCharged
+    case 21: self = .combatCompetitiveSeasonEnd
+    case 22: self = .buddyHungry
+    case 24: self = .buddyFoundGift
+    case 25: self = .buddyAffectionLevelMilestone
+    case 26: self = .buddyAffectionWalking
+    case 27: self = .buddyAffectionCare
+    case 28: self = .buddyAffectionBattle
+    case 29: self = .buddyAffectionPhoto
+    case 30: self = .buddyAffectionPoi
+    case 31: self = .bgmodeBuddyFoundGift
+    case 32: self = .buddyAttractivePoi
+    case 33: self = .bgmodeBuddyAttractivePoi
+    case 36: self = .buddyAffectionAttractivePoi
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -95,6 +123,20 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .luckyFriend: return 17
     case .bgmodeNamedBuddyCandy: return 18
     case .appBadgeOnly: return 19
+    case .combatVsSeekerCharged: return 20
+    case .combatCompetitiveSeasonEnd: return 21
+    case .buddyHungry: return 22
+    case .buddyFoundGift: return 24
+    case .buddyAffectionLevelMilestone: return 25
+    case .buddyAffectionWalking: return 26
+    case .buddyAffectionCare: return 27
+    case .buddyAffectionBattle: return 28
+    case .buddyAffectionPhoto: return 29
+    case .buddyAffectionPoi: return 30
+    case .bgmodeBuddyFoundGift: return 31
+    case .buddyAttractivePoi: return 32
+    case .bgmodeBuddyAttractivePoi: return 33
+    case .buddyAffectionAttractivePoi: return 36
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -126,6 +168,20 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .luckyFriend,
     .bgmodeNamedBuddyCandy,
     .appBadgeOnly,
+    .combatVsSeekerCharged,
+    .combatCompetitiveSeasonEnd,
+    .buddyHungry,
+    .buddyFoundGift,
+    .buddyAffectionLevelMilestone,
+    .buddyAffectionWalking,
+    .buddyAffectionCare,
+    .buddyAffectionBattle,
+    .buddyAffectionPhoto,
+    .buddyAffectionPoi,
+    .bgmodeBuddyFoundGift,
+    .buddyAttractivePoi,
+    .bgmodeBuddyAttractivePoi,
+    .buddyAffectionAttractivePoi,
   ]
 }
 
@@ -155,5 +211,19 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     17: .same(proto: "LUCKY_FRIEND"),
     18: .same(proto: "BGMODE_NAMED_BUDDY_CANDY"),
     19: .same(proto: "APP_BADGE_ONLY"),
+    20: .same(proto: "COMBAT_VS_SEEKER_CHARGED"),
+    21: .same(proto: "COMBAT_COMPETITIVE_SEASON_END"),
+    22: .same(proto: "BUDDY_HUNGRY"),
+    24: .same(proto: "BUDDY_FOUND_GIFT"),
+    25: .same(proto: "BUDDY_AFFECTION_LEVEL_MILESTONE"),
+    26: .same(proto: "BUDDY_AFFECTION_WALKING"),
+    27: .same(proto: "BUDDY_AFFECTION_CARE"),
+    28: .same(proto: "BUDDY_AFFECTION_BATTLE"),
+    29: .same(proto: "BUDDY_AFFECTION_PHOTO"),
+    30: .same(proto: "BUDDY_AFFECTION_POI"),
+    31: .same(proto: "BGMODE_BUDDY_FOUND_GIFT"),
+    32: .same(proto: "BUDDY_ATTRACTIVE_POI"),
+    33: .same(proto: "BGMODE_BUDDY_ATTRACTIVE_POI"),
+    36: .same(proto: "BUDDY_AFFECTION_ATTRACTIVE_POI"),
   ]
 }

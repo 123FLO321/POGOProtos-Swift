@@ -26,6 +26,8 @@ public struct POGOProtos_Settings_PoiGlobalSettings {
 
   public var isEnabled: Bool = false
 
+  public var playerSubmissionTypeEnabled: [String] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -39,12 +41,14 @@ extension POGOProtos_Settings_PoiGlobalSettings: SwiftProtobuf.Message, SwiftPro
   public static let protoMessageName: String = _protobuf_package + ".PoiGlobalSettings"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "is_enabled"),
+    2: .standard(proto: "player_submission_type_enabled"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.isEnabled)
+      case 2: try decoder.decodeRepeatedStringField(value: &self.playerSubmissionTypeEnabled)
       default: break
       }
     }
@@ -54,11 +58,15 @@ extension POGOProtos_Settings_PoiGlobalSettings: SwiftProtobuf.Message, SwiftPro
     if self.isEnabled != false {
       try visitor.visitSingularBoolField(value: self.isEnabled, fieldNumber: 1)
     }
+    if !self.playerSubmissionTypeEnabled.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.playerSubmissionTypeEnabled, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_PoiGlobalSettings, rhs: POGOProtos_Settings_PoiGlobalSettings) -> Bool {
     if lhs.isEnabled != rhs.isEnabled {return false}
+    if lhs.playerSubmissionTypeEnabled != rhs.playerSubmissionTypeEnabled {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

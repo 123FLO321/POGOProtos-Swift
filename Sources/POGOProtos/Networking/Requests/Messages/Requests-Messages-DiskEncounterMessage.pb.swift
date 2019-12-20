@@ -59,7 +59,7 @@ extension POGOProtos_Networking_Requests_Messages_DiskEncounterMessage: SwiftPro
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularUInt64Field(value: &self.encounterID)
+      case 1: try decoder.decodeSingularFixed64Field(value: &self.encounterID)
       case 2: try decoder.decodeSingularStringField(value: &self.fortID)
       case 3: try decoder.decodeSingularDoubleField(value: &self.playerLatitude)
       case 4: try decoder.decodeSingularDoubleField(value: &self.playerLongitude)
@@ -72,7 +72,7 @@ extension POGOProtos_Networking_Requests_Messages_DiskEncounterMessage: SwiftPro
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.encounterID != 0 {
-      try visitor.visitSingularUInt64Field(value: self.encounterID, fieldNumber: 1)
+      try visitor.visitSingularFixed64Field(value: self.encounterID, fieldNumber: 1)
     }
     if !self.fortID.isEmpty {
       try visitor.visitSingularStringField(value: self.fortID, fieldNumber: 2)

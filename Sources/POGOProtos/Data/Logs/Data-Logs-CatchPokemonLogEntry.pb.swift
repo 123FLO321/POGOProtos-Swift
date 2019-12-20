@@ -157,7 +157,7 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
         case 1: try decoder.decodeSingularEnumField(value: &_storage._result)
         case 2: try decoder.decodeSingularInt32Field(value: &_storage._pokedexNumber)
         case 3: try decoder.decodeSingularInt32Field(value: &_storage._combatPoints)
-        case 4: try decoder.decodeSingularUInt64Field(value: &_storage._pokemonID)
+        case 4: try decoder.decodeSingularFixed64Field(value: &_storage._pokemonID)
         case 5: try decoder.decodeSingularMessageField(value: &_storage._pokemonDisplay)
         default: break
         }
@@ -177,7 +177,7 @@ extension POGOProtos_Data_Logs_CatchPokemonLogEntry: SwiftProtobuf.Message, Swif
         try visitor.visitSingularInt32Field(value: _storage._combatPoints, fieldNumber: 3)
       }
       if _storage._pokemonID != 0 {
-        try visitor.visitSingularUInt64Field(value: _storage._pokemonID, fieldNumber: 4)
+        try visitor.visitSingularFixed64Field(value: _storage._pokemonID, fieldNumber: 4)
       }
       if let v = _storage._pokemonDisplay {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)

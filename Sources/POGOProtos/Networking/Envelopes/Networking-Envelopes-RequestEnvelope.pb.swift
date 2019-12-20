@@ -39,6 +39,8 @@ public struct POGOProtos_Networking_Envelopes_RequestEnvelope {
     set {_uniqueStorage()._requests = newValue}
   }
 
+  ///Untested maybe needs a good index order
+  ///repeated SocialRequest social_requests = 5;
   public var platformRequests: [POGOProtos_Networking_Envelopes_RequestEnvelope.PlatformRequest] {
     get {return _storage._platformRequests}
     set {_uniqueStorage()._platformRequests = newValue}

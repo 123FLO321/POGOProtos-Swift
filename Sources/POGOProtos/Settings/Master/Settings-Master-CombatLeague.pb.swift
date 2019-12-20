@@ -42,6 +42,8 @@ public struct POGOProtos_Settings_Master_CombatLeague {
 
   public var minigameDefenseChanceLimit: Int32 = 0
 
+  public var battlePartyCombatLeagueTemplateID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -63,6 +65,7 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
     7: .standard(proto: "banned_pokemon"),
     8: .standard(proto: "badge_type"),
     9: .standard(proto: "minigame_defense_chance_limit"),
+    10: .standard(proto: "battle_party_combat_league_template_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -77,6 +80,7 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
       case 7: try decoder.decodeRepeatedEnumField(value: &self.bannedPokemon)
       case 8: try decoder.decodeSingularEnumField(value: &self.badgeType)
       case 9: try decoder.decodeSingularInt32Field(value: &self.minigameDefenseChanceLimit)
+      case 10: try decoder.decodeSingularStringField(value: &self.battlePartyCombatLeagueTemplateID)
       default: break
       }
     }
@@ -110,6 +114,9 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
     if self.minigameDefenseChanceLimit != 0 {
       try visitor.visitSingularInt32Field(value: self.minigameDefenseChanceLimit, fieldNumber: 9)
     }
+    if !self.battlePartyCombatLeagueTemplateID.isEmpty {
+      try visitor.visitSingularStringField(value: self.battlePartyCombatLeagueTemplateID, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -123,6 +130,7 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
     if lhs.bannedPokemon != rhs.bannedPokemon {return false}
     if lhs.badgeType != rhs.badgeType {return false}
     if lhs.minigameDefenseChanceLimit != rhs.minigameDefenseChanceLimit {return false}
+    if lhs.battlePartyCombatLeagueTemplateID != rhs.battlePartyCombatLeagueTemplateID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

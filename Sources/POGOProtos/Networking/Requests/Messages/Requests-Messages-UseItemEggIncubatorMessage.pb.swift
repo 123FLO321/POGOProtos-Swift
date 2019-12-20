@@ -48,7 +48,7 @@ extension POGOProtos_Networking_Requests_Messages_UseItemEggIncubatorMessage: Sw
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.itemID)
-      case 2: try decoder.decodeSingularUInt64Field(value: &self.pokemonID)
+      case 2: try decoder.decodeSingularFixed64Field(value: &self.pokemonID)
       default: break
       }
     }
@@ -59,7 +59,7 @@ extension POGOProtos_Networking_Requests_Messages_UseItemEggIncubatorMessage: Sw
       try visitor.visitSingularStringField(value: self.itemID, fieldNumber: 1)
     }
     if self.pokemonID != 0 {
-      try visitor.visitSingularUInt64Field(value: self.pokemonID, fieldNumber: 2)
+      try visitor.visitSingularFixed64Field(value: self.pokemonID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

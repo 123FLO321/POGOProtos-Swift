@@ -167,6 +167,16 @@ public struct POGOProtos_Settings_Master_CombatSettings {
     set {_uniqueStorage()._faintAnimationDurationTurns = newValue}
   }
 
+  public var npcSwapDelayTurns: Int32 {
+    get {return _storage._npcSwapDelayTurns}
+    set {_uniqueStorage()._npcSwapDelayTurns = newValue}
+  }
+
+  public var npcChargedAttackDelayTurns: Int32 {
+    get {return _storage._npcChargedAttackDelayTurns}
+    set {_uniqueStorage()._npcChargedAttackDelayTurns = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct CombatOffensiveInputChallengeSettings {
@@ -240,6 +250,8 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
     25: .standard(proto: "blocked_flyout_duration_turns"),
     26: .standard(proto: "normal_effective_flyout_duration_turns"),
     27: .standard(proto: "faint_animation_duration_turns"),
+    28: .standard(proto: "npc_swap_delay_turns"),
+    29: .standard(proto: "npc_charged_attack_delay_turns"),
   ]
 
   fileprivate class _StorageClass {
@@ -270,6 +282,8 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
     var _blockedFlyoutDurationTurns: Int32 = 0
     var _normalEffectiveFlyoutDurationTurns: Int32 = 0
     var _faintAnimationDurationTurns: Int32 = 0
+    var _npcSwapDelayTurns: Int32 = 0
+    var _npcChargedAttackDelayTurns: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -303,6 +317,8 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
       _blockedFlyoutDurationTurns = source._blockedFlyoutDurationTurns
       _normalEffectiveFlyoutDurationTurns = source._normalEffectiveFlyoutDurationTurns
       _faintAnimationDurationTurns = source._faintAnimationDurationTurns
+      _npcSwapDelayTurns = source._npcSwapDelayTurns
+      _npcChargedAttackDelayTurns = source._npcChargedAttackDelayTurns
     }
   }
 
@@ -345,6 +361,8 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
         case 25: try decoder.decodeSingularInt32Field(value: &_storage._blockedFlyoutDurationTurns)
         case 26: try decoder.decodeSingularInt32Field(value: &_storage._normalEffectiveFlyoutDurationTurns)
         case 27: try decoder.decodeSingularInt32Field(value: &_storage._faintAnimationDurationTurns)
+        case 28: try decoder.decodeSingularInt32Field(value: &_storage._npcSwapDelayTurns)
+        case 29: try decoder.decodeSingularInt32Field(value: &_storage._npcChargedAttackDelayTurns)
         default: break
         }
       }
@@ -434,6 +452,12 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
       if _storage._faintAnimationDurationTurns != 0 {
         try visitor.visitSingularInt32Field(value: _storage._faintAnimationDurationTurns, fieldNumber: 27)
       }
+      if _storage._npcSwapDelayTurns != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._npcSwapDelayTurns, fieldNumber: 28)
+      }
+      if _storage._npcChargedAttackDelayTurns != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._npcChargedAttackDelayTurns, fieldNumber: 29)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -470,6 +494,8 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
         if _storage._blockedFlyoutDurationTurns != rhs_storage._blockedFlyoutDurationTurns {return false}
         if _storage._normalEffectiveFlyoutDurationTurns != rhs_storage._normalEffectiveFlyoutDurationTurns {return false}
         if _storage._faintAnimationDurationTurns != rhs_storage._faintAnimationDurationTurns {return false}
+        if _storage._npcSwapDelayTurns != rhs_storage._npcSwapDelayTurns {return false}
+        if _storage._npcChargedAttackDelayTurns != rhs_storage._npcChargedAttackDelayTurns {return false}
         return true
       }
       if !storagesAreEqual {return false}

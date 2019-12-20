@@ -24,8 +24,8 @@ public struct POGOProtos_Networking_Requests_Messages_SaveSocialPlayerSettingsMe
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var settings: POGOProtos_Data_Player_SocialPlayerSettings {
-    get {return _storage._settings ?? POGOProtos_Data_Player_SocialPlayerSettings()}
+  public var settings: POGOProtos_Settings_SocialPlayerSettings {
+    get {return _storage._settings ?? POGOProtos_Settings_SocialPlayerSettings()}
     set {_uniqueStorage()._settings = newValue}
   }
   /// Returns true if `settings` has been explicitly set.
@@ -51,7 +51,7 @@ extension POGOProtos_Networking_Requests_Messages_SaveSocialPlayerSettingsMessag
   ]
 
   fileprivate class _StorageClass {
-    var _settings: POGOProtos_Data_Player_SocialPlayerSettings? = nil
+    var _settings: POGOProtos_Settings_SocialPlayerSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
