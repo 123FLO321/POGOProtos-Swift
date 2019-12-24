@@ -26,6 +26,8 @@ public struct POGOProtos_Settings_PokemonGlobalSettings {
 
   public var enableCamoShader: Bool = false
 
+  public var displayPokemonBadgeOnModel: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -39,12 +41,14 @@ extension POGOProtos_Settings_PokemonGlobalSettings: SwiftProtobuf.Message, Swif
   public static let protoMessageName: String = _protobuf_package + ".PokemonGlobalSettings"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "enable_camo_shader"),
+    2: .standard(proto: "display_pokemon_badge_on_model"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.enableCamoShader)
+      case 2: try decoder.decodeSingularBoolField(value: &self.displayPokemonBadgeOnModel)
       default: break
       }
     }
@@ -54,11 +58,15 @@ extension POGOProtos_Settings_PokemonGlobalSettings: SwiftProtobuf.Message, Swif
     if self.enableCamoShader != false {
       try visitor.visitSingularBoolField(value: self.enableCamoShader, fieldNumber: 1)
     }
+    if self.displayPokemonBadgeOnModel != false {
+      try visitor.visitSingularBoolField(value: self.displayPokemonBadgeOnModel, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_PokemonGlobalSettings, rhs: POGOProtos_Settings_PokemonGlobalSettings) -> Bool {
     if lhs.enableCamoShader != rhs.enableCamoShader {return false}
+    if lhs.displayPokemonBadgeOnModel != rhs.displayPokemonBadgeOnModel {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -53,6 +53,12 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
   case questPurifyPokemon // = 30
   case questFindTeamRocket // = 31
   case questFirstGruntOfTheDay // = 32
+  case questBuddyFeed // = 33
+  case questBuddyEarnAffectionPoints // = 34
+  case questBuddyPet // = 35
+  case questBuddyLevel // = 36
+  case questBuddyWalk // = 37
+  case questBuddyYatta // = 38
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -93,6 +99,12 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case 30: self = .questPurifyPokemon
     case 31: self = .questFindTeamRocket
     case 32: self = .questFirstGruntOfTheDay
+    case 33: self = .questBuddyFeed
+    case 34: self = .questBuddyEarnAffectionPoints
+    case 35: self = .questBuddyPet
+    case 36: self = .questBuddyLevel
+    case 37: self = .questBuddyWalk
+    case 38: self = .questBuddyYatta
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -131,6 +143,12 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case .questPurifyPokemon: return 30
     case .questFindTeamRocket: return 31
     case .questFirstGruntOfTheDay: return 32
+    case .questBuddyFeed: return 33
+    case .questBuddyEarnAffectionPoints: return 34
+    case .questBuddyPet: return 35
+    case .questBuddyLevel: return 36
+    case .questBuddyWalk: return 37
+    case .questBuddyYatta: return 38
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -174,6 +192,12 @@ extension POGOProtos_Enums_QuestType: CaseIterable {
     .questPurifyPokemon,
     .questFindTeamRocket,
     .questFirstGruntOfTheDay,
+    .questBuddyFeed,
+    .questBuddyEarnAffectionPoints,
+    .questBuddyPet,
+    .questBuddyLevel,
+    .questBuddyWalk,
+    .questBuddyYatta,
   ]
 }
 
@@ -215,5 +239,11 @@ extension POGOProtos_Enums_QuestType: SwiftProtobuf._ProtoNameProviding {
     30: .same(proto: "QUEST_PURIFY_POKEMON"),
     31: .same(proto: "QUEST_FIND_TEAM_ROCKET"),
     32: .same(proto: "QUEST_FIRST_GRUNT_OF_THE_DAY"),
+    33: .same(proto: "QUEST_BUDDY_FEED"),
+    34: .same(proto: "QUEST_BUDDY_EARN_AFFECTION_POINTS"),
+    35: .same(proto: "QUEST_BUDDY_PET"),
+    36: .same(proto: "QUEST_BUDDY_LEVEL"),
+    37: .same(proto: "QUEST_BUDDY_WALK"),
+    38: .same(proto: "QUEST_BUDDY_YATTA"),
   ]
 }

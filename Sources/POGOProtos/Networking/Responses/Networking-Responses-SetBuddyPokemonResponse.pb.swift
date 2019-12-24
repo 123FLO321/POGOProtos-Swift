@@ -38,6 +38,20 @@ public struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
   /// Clears the value of `updatedBuddy`. Subsequent reads from it will return its default value.
   public mutating func clearUpdatedBuddy() {_uniqueStorage()._updatedBuddy = nil}
 
+  public var observedData: POGOProtos_Data_Buddy_BuddyObservedData {
+    get {return _storage._observedData ?? POGOProtos_Data_Buddy_BuddyObservedData()}
+    set {_uniqueStorage()._observedData = newValue}
+  }
+  /// Returns true if `observedData` has been explicitly set.
+  public var hasObservedData: Bool {return _storage._observedData != nil}
+  /// Clears the value of `observedData`. Subsequent reads from it will return its default value.
+  public mutating func clearObservedData() {_uniqueStorage()._observedData = nil}
+
+  public var kmRemaining: Double {
+    get {return _storage._kmRemaining}
+    set {_uniqueStorage()._kmRemaining = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -48,6 +62,7 @@ public struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
     case errorPokemonNotOwned // = 3
     case errorPokemonIsEgg // = 4
     case errorInvalidPokemon // = 5
+    case errorBuddySwapLimitExceeded // = 6
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -62,6 +77,7 @@ public struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
       case 3: self = .errorPokemonNotOwned
       case 4: self = .errorPokemonIsEgg
       case 5: self = .errorInvalidPokemon
+      case 6: self = .errorBuddySwapLimitExceeded
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -74,6 +90,7 @@ public struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
       case .errorPokemonNotOwned: return 3
       case .errorPokemonIsEgg: return 4
       case .errorInvalidPokemon: return 5
+      case .errorBuddySwapLimitExceeded: return 6
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
@@ -96,6 +113,7 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result: CaseIt
     .errorPokemonNotOwned,
     .errorPokemonIsEgg,
     .errorInvalidPokemon,
+    .errorBuddySwapLimitExceeded,
   ]
 }
 
@@ -110,11 +128,15 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "updated_buddy"),
+    3: .standard(proto: "observed_data"),
+    4: .standard(proto: "km_remaining"),
   ]
 
   fileprivate class _StorageClass {
     var _result: POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result = .unest
     var _updatedBuddy: POGOProtos_Data_BuddyPokemon? = nil
+    var _observedData: POGOProtos_Data_Buddy_BuddyObservedData? = nil
+    var _kmRemaining: Double = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -123,6 +145,8 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
     init(copying source: _StorageClass) {
       _result = source._result
       _updatedBuddy = source._updatedBuddy
+      _observedData = source._observedData
+      _kmRemaining = source._kmRemaining
     }
   }
 
@@ -140,6 +164,8 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._result)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._updatedBuddy)
+        case 3: try decoder.decodeSingularMessageField(value: &_storage._observedData)
+        case 4: try decoder.decodeSingularDoubleField(value: &_storage._kmRemaining)
         default: break
         }
       }
@@ -154,6 +180,12 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
       if let v = _storage._updatedBuddy {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
+      if let v = _storage._observedData {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      }
+      if _storage._kmRemaining != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._kmRemaining, fieldNumber: 4)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -165,6 +197,8 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse: SwiftProtobuf
         let rhs_storage = _args.1
         if _storage._result != rhs_storage._result {return false}
         if _storage._updatedBuddy != rhs_storage._updatedBuddy {return false}
+        if _storage._observedData != rhs_storage._observedData {return false}
+        if _storage._kmRemaining != rhs_storage._kmRemaining {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -182,5 +216,6 @@ extension POGOProtos_Networking_Responses_SetBuddyPokemonResponse.Result: SwiftP
     3: .same(proto: "ERROR_POKEMON_NOT_OWNED"),
     4: .same(proto: "ERROR_POKEMON_IS_EGG"),
     5: .same(proto: "ERROR_INVALID_POKEMON"),
+    6: .same(proto: "ERROR_BUDDY_SWAP_LIMIT_EXCEEDED"),
   ]
 }

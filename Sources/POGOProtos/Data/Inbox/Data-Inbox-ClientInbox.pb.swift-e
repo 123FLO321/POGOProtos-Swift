@@ -51,10 +51,20 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
     case appBadgeOnly // = 16
     case combatChallengeOpened // = 17
     case luckyFriend // = 18
-    case friendInviteReceived // = 19
-    case friendInviteAccepted // = 20
-    case combatVsSeekerCharged // = 21
-    case combatCompetitiveSeasonEnd // = 22
+    case buddyHungry // = 19
+    case buddyFoundGift // = 20
+    case buddyAffectionLevelMilestone // = 21
+    case buddyAffectionWalking // = 22
+    case buddyAffectionCare // = 23
+    case buddyAffectionBattle // = 24
+    case buddyAffectionPhoto // = 25
+    case buddyAffectionPoi // = 26
+    case buddyAttractivePoi // = 27
+    case friendInviteReceived // = 28
+    case friendInviteAccepted // = 29
+    case combatVsSeekerCharged // = 30
+    case combatCompetitiveSeasonEnd // = 31
+    case buddyAffectionAttractivePoi // = 32
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -82,10 +92,20 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
       case 16: self = .appBadgeOnly
       case 17: self = .combatChallengeOpened
       case 18: self = .luckyFriend
-      case 19: self = .friendInviteReceived
-      case 20: self = .friendInviteAccepted
-      case 21: self = .combatVsSeekerCharged
-      case 22: self = .combatCompetitiveSeasonEnd
+      case 19: self = .buddyHungry
+      case 20: self = .buddyFoundGift
+      case 21: self = .buddyAffectionLevelMilestone
+      case 22: self = .buddyAffectionWalking
+      case 23: self = .buddyAffectionCare
+      case 24: self = .buddyAffectionBattle
+      case 25: self = .buddyAffectionPhoto
+      case 26: self = .buddyAffectionPoi
+      case 27: self = .buddyAttractivePoi
+      case 28: self = .friendInviteReceived
+      case 29: self = .friendInviteAccepted
+      case 30: self = .combatVsSeekerCharged
+      case 31: self = .combatCompetitiveSeasonEnd
+      case 32: self = .buddyAffectionAttractivePoi
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -111,10 +131,20 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
       case .appBadgeOnly: return 16
       case .combatChallengeOpened: return 17
       case .luckyFriend: return 18
-      case .friendInviteReceived: return 19
-      case .friendInviteAccepted: return 20
-      case .combatVsSeekerCharged: return 21
-      case .combatCompetitiveSeasonEnd: return 22
+      case .buddyHungry: return 19
+      case .buddyFoundGift: return 20
+      case .buddyAffectionLevelMilestone: return 21
+      case .buddyAffectionWalking: return 22
+      case .buddyAffectionCare: return 23
+      case .buddyAffectionBattle: return 24
+      case .buddyAffectionPhoto: return 25
+      case .buddyAffectionPoi: return 26
+      case .buddyAttractivePoi: return 27
+      case .friendInviteReceived: return 28
+      case .friendInviteAccepted: return 29
+      case .combatVsSeekerCharged: return 30
+      case .combatCompetitiveSeasonEnd: return 31
+      case .buddyAffectionAttractivePoi: return 32
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -226,10 +256,20 @@ extension POGOProtos_Data_Inbox_ClientInbox.NotificationCategory: CaseIterable {
     .appBadgeOnly,
     .combatChallengeOpened,
     .luckyFriend,
+    .buddyHungry,
+    .buddyFoundGift,
+    .buddyAffectionLevelMilestone,
+    .buddyAffectionWalking,
+    .buddyAffectionCare,
+    .buddyAffectionBattle,
+    .buddyAffectionPhoto,
+    .buddyAffectionPoi,
+    .buddyAttractivePoi,
     .friendInviteReceived,
     .friendInviteAccepted,
     .combatVsSeekerCharged,
     .combatCompetitiveSeasonEnd,
+    .buddyAffectionAttractivePoi,
   ]
 }
 
@@ -295,10 +335,20 @@ extension POGOProtos_Data_Inbox_ClientInbox.NotificationCategory: SwiftProtobuf.
     16: .same(proto: "APP_BADGE_ONLY"),
     17: .same(proto: "COMBAT_CHALLENGE_OPENED"),
     18: .same(proto: "LUCKY_FRIEND"),
-    19: .same(proto: "FRIEND_INVITE_RECEIVED"),
-    20: .same(proto: "FRIEND_INVITE_ACCEPTED"),
-    21: .same(proto: "COMBAT_VS_SEEKER_CHARGED"),
-    22: .same(proto: "COMBAT_COMPETITIVE_SEASON_END"),
+    19: .same(proto: "BUDDY_HUNGRY"),
+    20: .same(proto: "BUDDY_FOUND_GIFT"),
+    21: .same(proto: "BUDDY_AFFECTION_LEVEL_MILESTONE"),
+    22: .same(proto: "BUDDY_AFFECTION_WALKING"),
+    23: .same(proto: "BUDDY_AFFECTION_CARE"),
+    24: .same(proto: "BUDDY_AFFECTION_BATTLE"),
+    25: .same(proto: "BUDDY_AFFECTION_PHOTO"),
+    26: .same(proto: "BUDDY_AFFECTION_POI"),
+    27: .same(proto: "BUDDY_ATTRACTIVE_POI"),
+    28: .same(proto: "FRIEND_INVITE_RECEIVED"),
+    29: .same(proto: "FRIEND_INVITE_ACCEPTED"),
+    30: .same(proto: "COMBAT_VS_SEEKER_CHARGED"),
+    31: .same(proto: "COMBAT_COMPETITIVE_SEASON_END"),
+    32: .same(proto: "BUDDY_AFFECTION_ATTRACTIVE_POI"),
   ]
 }
 

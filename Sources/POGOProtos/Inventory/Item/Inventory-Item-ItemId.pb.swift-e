@@ -54,6 +54,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemGoldenRazzBerry // = 706
   case itemGoldenNanabBerry // = 707
   case itemGoldenPinapBerry // = 708
+  case itemPoffin // = 709
   case itemSpecialCamera // = 801
   case itemIncubatorBasicUnlimited // = 901
   case itemIncubatorBasic // = 902
@@ -76,7 +77,6 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemStarPiece // = 1404
   case itemFriendGiftBox // = 1405
   case itemTeamChange // = 1406
-  case itemVsSeekerBattleNow // = 1408
   case itemLeaderMapFragment // = 1501
   case itemLeaderMap // = 1502
   case itemGiovanniMap // = 1503
@@ -122,6 +122,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 706: self = .itemGoldenRazzBerry
     case 707: self = .itemGoldenNanabBerry
     case 708: self = .itemGoldenPinapBerry
+    case 709: self = .itemPoffin
     case 801: self = .itemSpecialCamera
     case 901: self = .itemIncubatorBasicUnlimited
     case 902: self = .itemIncubatorBasic
@@ -144,7 +145,6 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 1404: self = .itemStarPiece
     case 1405: self = .itemFriendGiftBox
     case 1406: self = .itemTeamChange
-    case 1408: self = .itemVsSeekerBattleNow
     case 1501: self = .itemLeaderMapFragment
     case 1502: self = .itemLeaderMap
     case 1503: self = .itemGiovanniMap
@@ -188,6 +188,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemGoldenRazzBerry: return 706
     case .itemGoldenNanabBerry: return 707
     case .itemGoldenPinapBerry: return 708
+    case .itemPoffin: return 709
     case .itemSpecialCamera: return 801
     case .itemIncubatorBasicUnlimited: return 901
     case .itemIncubatorBasic: return 902
@@ -210,7 +211,6 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemStarPiece: return 1404
     case .itemFriendGiftBox: return 1405
     case .itemTeamChange: return 1406
-    case .itemVsSeekerBattleNow: return 1408
     case .itemLeaderMapFragment: return 1501
     case .itemLeaderMap: return 1502
     case .itemGiovanniMap: return 1503
@@ -259,6 +259,7 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemGoldenRazzBerry,
     .itemGoldenNanabBerry,
     .itemGoldenPinapBerry,
+    .itemPoffin,
     .itemSpecialCamera,
     .itemIncubatorBasicUnlimited,
     .itemIncubatorBasic,
@@ -281,7 +282,6 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemStarPiece,
     .itemFriendGiftBox,
     .itemTeamChange,
-    .itemVsSeekerBattleNow,
     .itemLeaderMapFragment,
     .itemLeaderMap,
     .itemGiovanniMap,
@@ -328,6 +328,7 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     706: .same(proto: "ITEM_GOLDEN_RAZZ_BERRY"),
     707: .same(proto: "ITEM_GOLDEN_NANAB_BERRY"),
     708: .same(proto: "ITEM_GOLDEN_PINAP_BERRY"),
+    709: .same(proto: "ITEM_POFFIN"),
     801: .same(proto: "ITEM_SPECIAL_CAMERA"),
     901: .same(proto: "ITEM_INCUBATOR_BASIC_UNLIMITED"),
     902: .same(proto: "ITEM_INCUBATOR_BASIC"),
@@ -350,7 +351,6 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     1404: .same(proto: "ITEM_STAR_PIECE"),
     1405: .same(proto: "ITEM_FRIEND_GIFT_BOX"),
     1406: .same(proto: "ITEM_TEAM_CHANGE"),
-    1408: .same(proto: "ITEM_VS_SEEKER_BATTLE_NOW"),
     1501: .same(proto: "ITEM_LEADER_MAP_FRAGMENT"),
     1502: .same(proto: "ITEM_LEADER_MAP"),
     1503: .same(proto: "ITEM_GIOVANNI_MAP"),

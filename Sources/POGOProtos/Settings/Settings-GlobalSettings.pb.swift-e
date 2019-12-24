@@ -368,6 +368,15 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `kangarooSettings`. Subsequent reads from it will return its default value.
   public mutating func clearKangarooSettings() {_uniqueStorage()._kangarooSettings = nil}
 
+  public var buddySettings: POGOProtos_Settings_BuddyGlobalSettings {
+    get {return _storage._buddySettings ?? POGOProtos_Settings_BuddyGlobalSettings()}
+    set {_uniqueStorage()._buddySettings = newValue}
+  }
+  /// Returns true if `buddySettings` has been explicitly set.
+  public var hasBuddySettings: Bool {return _storage._buddySettings != nil}
+  /// Clears the value of `buddySettings`. Subsequent reads from it will return its default value.
+  public mutating func clearBuddySettings() {_uniqueStorage()._buddySettings = nil}
+
   public var inputSettings: POGOProtos_Settings_InputSettings {
     get {return _storage._inputSettings ?? POGOProtos_Settings_InputSettings()}
     set {_uniqueStorage()._inputSettings = newValue}
@@ -390,6 +399,15 @@ public struct POGOProtos_Settings_GlobalSettings {
     get {return _storage._useLocalTimeAction}
     set {_uniqueStorage()._useLocalTimeAction = newValue}
   }
+
+  public var ardkConfigSettings: POGOProtos_Settings_ArdkConfigSettings {
+    get {return _storage._ardkConfigSettings ?? POGOProtos_Settings_ArdkConfigSettings()}
+    set {_uniqueStorage()._ardkConfigSettings = newValue}
+  }
+  /// Returns true if `ardkConfigSettings` has been explicitly set.
+  public var hasArdkConfigSettings: Bool {return _storage._ardkConfigSettings != nil}
+  /// Clears the value of `ardkConfigSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearArdkConfigSettings() {_uniqueStorage()._ardkConfigSettings = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -445,9 +463,11 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     39: .standard(proto: "incident_settings"),
     40: .standard(proto: "koala_settings"),
     41: .standard(proto: "kangaroo_settings"),
+    43: .standard(proto: "buddy_settings"),
     44: .standard(proto: "input_settings"),
     45: .standard(proto: "gmt_settings"),
     47: .standard(proto: "use_local_time_action"),
+    48: .standard(proto: "ardk_config_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -491,9 +511,11 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _incidentSettings: POGOProtos_Settings_IncidentGlobalSettings? = nil
     var _koalaSettings: POGOProtos_Settings_KoalaSettings? = nil
     var _kangarooSettings: POGOProtos_Settings_KangarooSettings? = nil
+    var _buddySettings: POGOProtos_Settings_BuddyGlobalSettings? = nil
     var _inputSettings: POGOProtos_Settings_InputSettings? = nil
     var _gmtSettings: POGOProtos_Settings_GmtSettings? = nil
     var _useLocalTimeAction: Bool = false
+    var _ardkConfigSettings: POGOProtos_Settings_ArdkConfigSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -540,9 +562,11 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _incidentSettings = source._incidentSettings
       _koalaSettings = source._koalaSettings
       _kangarooSettings = source._kangarooSettings
+      _buddySettings = source._buddySettings
       _inputSettings = source._inputSettings
       _gmtSettings = source._gmtSettings
       _useLocalTimeAction = source._useLocalTimeAction
+      _ardkConfigSettings = source._ardkConfigSettings
     }
   }
 
@@ -598,9 +622,11 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 39: try decoder.decodeSingularMessageField(value: &_storage._incidentSettings)
         case 40: try decoder.decodeSingularMessageField(value: &_storage._koalaSettings)
         case 41: try decoder.decodeSingularMessageField(value: &_storage._kangarooSettings)
+        case 43: try decoder.decodeSingularMessageField(value: &_storage._buddySettings)
         case 44: try decoder.decodeSingularMessageField(value: &_storage._inputSettings)
         case 45: try decoder.decodeSingularMessageField(value: &_storage._gmtSettings)
         case 47: try decoder.decodeSingularBoolField(value: &_storage._useLocalTimeAction)
+        case 48: try decoder.decodeSingularMessageField(value: &_storage._ardkConfigSettings)
         default: break
         }
       }
@@ -729,6 +755,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._kangarooSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 41)
       }
+      if let v = _storage._buddySettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 43)
+      }
       if let v = _storage._inputSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 44)
       }
@@ -737,6 +766,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       }
       if _storage._useLocalTimeAction != false {
         try visitor.visitSingularBoolField(value: _storage._useLocalTimeAction, fieldNumber: 47)
+      }
+      if let v = _storage._ardkConfigSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -787,9 +819,11 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._incidentSettings != rhs_storage._incidentSettings {return false}
         if _storage._koalaSettings != rhs_storage._koalaSettings {return false}
         if _storage._kangarooSettings != rhs_storage._kangarooSettings {return false}
+        if _storage._buddySettings != rhs_storage._buddySettings {return false}
         if _storage._inputSettings != rhs_storage._inputSettings {return false}
         if _storage._gmtSettings != rhs_storage._gmtSettings {return false}
         if _storage._useLocalTimeAction != rhs_storage._useLocalTimeAction {return false}
+        if _storage._ardkConfigSettings != rhs_storage._ardkConfigSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

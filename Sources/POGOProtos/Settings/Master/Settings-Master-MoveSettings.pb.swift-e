@@ -54,6 +54,8 @@ public struct POGOProtos_Settings_Master_MoveSettings {
 
   public var energyDelta: Int32 = 0
 
+  public var isLocked: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -81,6 +83,7 @@ extension POGOProtos_Settings_Master_MoveSettings: SwiftProtobuf.Message, SwiftP
     13: .standard(proto: "damage_window_start_ms"),
     14: .standard(proto: "damage_window_end_ms"),
     15: .standard(proto: "energy_delta"),
+    16: .standard(proto: "is_locked"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -101,6 +104,7 @@ extension POGOProtos_Settings_Master_MoveSettings: SwiftProtobuf.Message, SwiftP
       case 13: try decoder.decodeSingularInt32Field(value: &self.damageWindowStartMs)
       case 14: try decoder.decodeSingularInt32Field(value: &self.damageWindowEndMs)
       case 15: try decoder.decodeSingularInt32Field(value: &self.energyDelta)
+      case 16: try decoder.decodeSingularBoolField(value: &self.isLocked)
       default: break
       }
     }
@@ -152,6 +156,9 @@ extension POGOProtos_Settings_Master_MoveSettings: SwiftProtobuf.Message, SwiftP
     if self.energyDelta != 0 {
       try visitor.visitSingularInt32Field(value: self.energyDelta, fieldNumber: 15)
     }
+    if self.isLocked != false {
+      try visitor.visitSingularBoolField(value: self.isLocked, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -171,6 +178,7 @@ extension POGOProtos_Settings_Master_MoveSettings: SwiftProtobuf.Message, SwiftP
     if lhs.damageWindowStartMs != rhs.damageWindowStartMs {return false}
     if lhs.damageWindowEndMs != rhs.damageWindowEndMs {return false}
     if lhs.energyDelta != rhs.energyDelta {return false}
+    if lhs.isLocked != rhs.isLocked {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

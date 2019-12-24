@@ -501,6 +501,42 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `combatType`. Subsequent reads from it will return its default value.
     public mutating func clearCombatType() {_uniqueStorage()._combatType = nil}
 
+    public var buddyLevelSettings: POGOProtos_Settings_Master_BuddyLevelSettings {
+      get {return _storage._buddyLevelSettings ?? POGOProtos_Settings_Master_BuddyLevelSettings()}
+      set {_uniqueStorage()._buddyLevelSettings = newValue}
+    }
+    /// Returns true if `buddyLevelSettings` has been explicitly set.
+    public var hasBuddyLevelSettings: Bool {return _storage._buddyLevelSettings != nil}
+    /// Clears the value of `buddyLevelSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBuddyLevelSettings() {_uniqueStorage()._buddyLevelSettings = nil}
+
+    public var buddyActivityCategorySettings: POGOProtos_Settings_Master_BuddyActivityCategorySettings {
+      get {return _storage._buddyActivityCategorySettings ?? POGOProtos_Settings_Master_BuddyActivityCategorySettings()}
+      set {_uniqueStorage()._buddyActivityCategorySettings = newValue}
+    }
+    /// Returns true if `buddyActivityCategorySettings` has been explicitly set.
+    public var hasBuddyActivityCategorySettings: Bool {return _storage._buddyActivityCategorySettings != nil}
+    /// Clears the value of `buddyActivityCategorySettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBuddyActivityCategorySettings() {_uniqueStorage()._buddyActivityCategorySettings = nil}
+
+    public var buddyActivitySettings: POGOProtos_Settings_Master_BuddyActivitySettings {
+      get {return _storage._buddyActivitySettings ?? POGOProtos_Settings_Master_BuddyActivitySettings()}
+      set {_uniqueStorage()._buddyActivitySettings = newValue}
+    }
+    /// Returns true if `buddyActivitySettings` has been explicitly set.
+    public var hasBuddyActivitySettings: Bool {return _storage._buddyActivitySettings != nil}
+    /// Clears the value of `buddyActivitySettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBuddyActivitySettings() {_uniqueStorage()._buddyActivitySettings = nil}
+
+    public var buddySwapSettings: POGOProtos_Settings_Master_BuddySwapSettings {
+      get {return _storage._buddySwapSettings ?? POGOProtos_Settings_Master_BuddySwapSettings()}
+      set {_uniqueStorage()._buddySwapSettings = newValue}
+    }
+    /// Returns true if `buddySwapSettings` has been explicitly set.
+    public var hasBuddySwapSettings: Bool {return _storage._buddySwapSettings != nil}
+    /// Clears the value of `buddySwapSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBuddySwapSettings() {_uniqueStorage()._buddySwapSettings = nil}
+
     public var vsSeekerClientSettings: POGOProtos_Settings_Master_VsSeekerClientSettings {
       get {return _storage._vsSeekerClientSettings ?? POGOProtos_Settings_Master_VsSeekerClientSettings()}
       set {_uniqueStorage()._vsSeekerClientSettings = newValue}
@@ -509,6 +545,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     public var hasVsSeekerClientSettings: Bool {return _storage._vsSeekerClientSettings != nil}
     /// Clears the value of `vsSeekerClientSettings`. Subsequent reads from it will return its default value.
     public mutating func clearVsSeekerClientSettings() {_uniqueStorage()._vsSeekerClientSettings = nil}
+
+    public var buddyEncounterCameoSettings: POGOProtos_Settings_Master_BuddyEncounterCameoSettings {
+      get {return _storage._buddyEncounterCameoSettings ?? POGOProtos_Settings_Master_BuddyEncounterCameoSettings()}
+      set {_uniqueStorage()._buddyEncounterCameoSettings = newValue}
+    }
+    /// Returns true if `buddyEncounterCameoSettings` has been explicitly set.
+    public var hasBuddyEncounterCameoSettings: Bool {return _storage._buddyEncounterCameoSettings != nil}
+    /// Clears the value of `buddyEncounterCameoSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBuddyEncounterCameoSettings() {_uniqueStorage()._buddyEncounterCameoSettings = nil}
 
     public var limitedPurchaseSkuSettings: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings {
       get {return _storage._limitedPurchaseSkuSettings ?? POGOProtos_Settings_Master_LimitedPurchaseSkuSettings()}
@@ -519,6 +564,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `limitedPurchaseSkuSettings`. Subsequent reads from it will return its default value.
     public mutating func clearLimitedPurchaseSkuSettings() {_uniqueStorage()._limitedPurchaseSkuSettings = nil}
 
+    public var buddyEmotionLevelSettings: POGOProtos_Settings_Master_BuddyEmotionLevelSettings {
+      get {return _storage._buddyEmotionLevelSettings ?? POGOProtos_Settings_Master_BuddyEmotionLevelSettings()}
+      set {_uniqueStorage()._buddyEmotionLevelSettings = newValue}
+    }
+    /// Returns true if `buddyEmotionLevelSettings` has been explicitly set.
+    public var hasBuddyEmotionLevelSettings: Bool {return _storage._buddyEmotionLevelSettings != nil}
+    /// Clears the value of `buddyEmotionLevelSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBuddyEmotionLevelSettings() {_uniqueStorage()._buddyEmotionLevelSettings = nil}
+
     public var pokestopInvasionAvailabilitySettings: POGOProtos_Settings_Master_InvasionAvailabilitySettings {
       get {return _storage._pokestopInvasionAvailabilitySettings ?? POGOProtos_Settings_Master_InvasionAvailabilitySettings()}
       set {_uniqueStorage()._pokestopInvasionAvailabilitySettings = newValue}
@@ -527,6 +581,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     public var hasPokestopInvasionAvailabilitySettings: Bool {return _storage._pokestopInvasionAvailabilitySettings != nil}
     /// Clears the value of `pokestopInvasionAvailabilitySettings`. Subsequent reads from it will return its default value.
     public mutating func clearPokestopInvasionAvailabilitySettings() {_uniqueStorage()._pokestopInvasionAvailabilitySettings = nil}
+
+    public var buddyInteractionSettings: POGOProtos_Settings_Master_BuddyInteractionSettings {
+      get {return _storage._buddyInteractionSettings ?? POGOProtos_Settings_Master_BuddyInteractionSettings()}
+      set {_uniqueStorage()._buddyInteractionSettings = newValue}
+    }
+    /// Returns true if `buddyInteractionSettings` has been explicitly set.
+    public var hasBuddyInteractionSettings: Bool {return _storage._buddyInteractionSettings != nil}
+    /// Clears the value of `buddyInteractionSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBuddyInteractionSettings() {_uniqueStorage()._buddyInteractionSettings = nil}
 
     public var vsSeekerLootProto: POGOProtos_Data_VsSeeker_VsSeekerLoot {
       get {return _storage._vsSeekerLootProto ?? POGOProtos_Data_VsSeeker_VsSeekerLoot()}
@@ -563,6 +626,42 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     public var hasBattleHubBadgeSettings: Bool {return _storage._battleHubBadgeSettings != nil}
     /// Clears the value of `battleHubBadgeSettings`. Subsequent reads from it will return its default value.
     public mutating func clearBattleHubBadgeSettings() {_uniqueStorage()._battleHubBadgeSettings = nil}
+
+    public var mapBuddySettings: POGOProtos_Settings_Master_MapBuddySettings {
+      get {return _storage._mapBuddySettings ?? POGOProtos_Settings_Master_MapBuddySettings()}
+      set {_uniqueStorage()._mapBuddySettings = newValue}
+    }
+    /// Returns true if `mapBuddySettings` has been explicitly set.
+    public var hasMapBuddySettings: Bool {return _storage._mapBuddySettings != nil}
+    /// Clears the value of `mapBuddySettings`. Subsequent reads from it will return its default value.
+    public mutating func clearMapBuddySettings() {_uniqueStorage()._mapBuddySettings = nil}
+
+    public var buddyWalkSettings: POGOProtos_Settings_Master_BuddyWalkSettings {
+      get {return _storage._buddyWalkSettings ?? POGOProtos_Settings_Master_BuddyWalkSettings()}
+      set {_uniqueStorage()._buddyWalkSettings = newValue}
+    }
+    /// Returns true if `buddyWalkSettings` has been explicitly set.
+    public var hasBuddyWalkSettings: Bool {return _storage._buddyWalkSettings != nil}
+    /// Clears the value of `buddyWalkSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBuddyWalkSettings() {_uniqueStorage()._buddyWalkSettings = nil}
+
+    public var platypusRolloutSettings: POGOProtos_Settings_Master_PlatypusRolloutSettings {
+      get {return _storage._platypusRolloutSettings ?? POGOProtos_Settings_Master_PlatypusRolloutSettings()}
+      set {_uniqueStorage()._platypusRolloutSettings = newValue}
+    }
+    /// Returns true if `platypusRolloutSettings` has been explicitly set.
+    public var hasPlatypusRolloutSettings: Bool {return _storage._platypusRolloutSettings != nil}
+    /// Clears the value of `platypusRolloutSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearPlatypusRolloutSettings() {_uniqueStorage()._platypusRolloutSettings = nil}
+
+    public var buddyHungerSettings: POGOProtos_Settings_Master_BuddyHungerSettings {
+      get {return _storage._buddyHungerSettings ?? POGOProtos_Settings_Master_BuddyHungerSettings()}
+      set {_uniqueStorage()._buddyHungerSettings = newValue}
+    }
+    /// Returns true if `buddyHungerSettings` has been explicitly set.
+    public var hasBuddyHungerSettings: Bool {return _storage._buddyHungerSettings != nil}
+    /// Clears the value of `buddyHungerSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBuddyHungerSettings() {_uniqueStorage()._buddyHungerSettings = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -699,13 +798,24 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     49: .standard(proto: "combat_competitive_season_settings"),
     50: .standard(proto: "combat_ranking_proto_settings"),
     51: .standard(proto: "combat_type"),
+    52: .standard(proto: "buddy_level_settings"),
+    53: .standard(proto: "buddy_activity_category_settings"),
+    54: .standard(proto: "buddy_activity_settings"),
+    56: .standard(proto: "buddy_swap_settings"),
     58: .standard(proto: "vs_seeker_client_settings"),
+    59: .standard(proto: "buddy_encounter_cameo_settings"),
     60: .standard(proto: "limited_purchase_sku_settings"),
+    61: .standard(proto: "buddy_emotion_level_settings"),
     62: .standard(proto: "pokestop_invasion_availability_settings"),
+    63: .standard(proto: "buddy_interaction_settings"),
     64: .standard(proto: "vs_seeker_loot_proto"),
     65: .standard(proto: "vs_seeker_pokemon_rewards"),
     66: .standard(proto: "battle_hub_order_settings"),
     67: .standard(proto: "battle_hub_badge_settings"),
+    68: .standard(proto: "map_buddy_settings"),
+    69: .standard(proto: "buddy_walk_settings"),
+    70: .standard(proto: "platypus_rollout_settings"),
+    72: .standard(proto: "buddy_hunger_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -757,13 +867,24 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _combatCompetitiveSeasonSettings: POGOProtos_Settings_Master_CombatCompetitiveSeasonSettings? = nil
     var _combatRankingProtoSettings: POGOProtos_Settings_Master_CombatRankingSettings? = nil
     var _combatType: POGOProtos_Settings_Master_CombatType? = nil
+    var _buddyLevelSettings: POGOProtos_Settings_Master_BuddyLevelSettings? = nil
+    var _buddyActivityCategorySettings: POGOProtos_Settings_Master_BuddyActivityCategorySettings? = nil
+    var _buddyActivitySettings: POGOProtos_Settings_Master_BuddyActivitySettings? = nil
+    var _buddySwapSettings: POGOProtos_Settings_Master_BuddySwapSettings? = nil
     var _vsSeekerClientSettings: POGOProtos_Settings_Master_VsSeekerClientSettings? = nil
+    var _buddyEncounterCameoSettings: POGOProtos_Settings_Master_BuddyEncounterCameoSettings? = nil
     var _limitedPurchaseSkuSettings: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings? = nil
+    var _buddyEmotionLevelSettings: POGOProtos_Settings_Master_BuddyEmotionLevelSettings? = nil
     var _pokestopInvasionAvailabilitySettings: POGOProtos_Settings_Master_InvasionAvailabilitySettings? = nil
+    var _buddyInteractionSettings: POGOProtos_Settings_Master_BuddyInteractionSettings? = nil
     var _vsSeekerLootProto: POGOProtos_Data_VsSeeker_VsSeekerLoot? = nil
     var _vsSeekerPokemonRewards: POGOProtos_Data_VsSeeker_VsSeekerPokemonRewards? = nil
     var _battleHubOrderSettings: POGOProtos_Settings_Master_BattleHubOrderSettings? = nil
     var _battleHubBadgeSettings: POGOProtos_Settings_Master_BattleHubBadgeSettings? = nil
+    var _mapBuddySettings: POGOProtos_Settings_Master_MapBuddySettings? = nil
+    var _buddyWalkSettings: POGOProtos_Settings_Master_BuddyWalkSettings? = nil
+    var _platypusRolloutSettings: POGOProtos_Settings_Master_PlatypusRolloutSettings? = nil
+    var _buddyHungerSettings: POGOProtos_Settings_Master_BuddyHungerSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -818,13 +939,24 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _combatCompetitiveSeasonSettings = source._combatCompetitiveSeasonSettings
       _combatRankingProtoSettings = source._combatRankingProtoSettings
       _combatType = source._combatType
+      _buddyLevelSettings = source._buddyLevelSettings
+      _buddyActivityCategorySettings = source._buddyActivityCategorySettings
+      _buddyActivitySettings = source._buddyActivitySettings
+      _buddySwapSettings = source._buddySwapSettings
       _vsSeekerClientSettings = source._vsSeekerClientSettings
+      _buddyEncounterCameoSettings = source._buddyEncounterCameoSettings
       _limitedPurchaseSkuSettings = source._limitedPurchaseSkuSettings
+      _buddyEmotionLevelSettings = source._buddyEmotionLevelSettings
       _pokestopInvasionAvailabilitySettings = source._pokestopInvasionAvailabilitySettings
+      _buddyInteractionSettings = source._buddyInteractionSettings
       _vsSeekerLootProto = source._vsSeekerLootProto
       _vsSeekerPokemonRewards = source._vsSeekerPokemonRewards
       _battleHubOrderSettings = source._battleHubOrderSettings
       _battleHubBadgeSettings = source._battleHubBadgeSettings
+      _mapBuddySettings = source._mapBuddySettings
+      _buddyWalkSettings = source._buddyWalkSettings
+      _platypusRolloutSettings = source._platypusRolloutSettings
+      _buddyHungerSettings = source._buddyHungerSettings
     }
   }
 
@@ -888,13 +1020,24 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 49: try decoder.decodeSingularMessageField(value: &_storage._combatCompetitiveSeasonSettings)
         case 50: try decoder.decodeSingularMessageField(value: &_storage._combatRankingProtoSettings)
         case 51: try decoder.decodeSingularMessageField(value: &_storage._combatType)
+        case 52: try decoder.decodeSingularMessageField(value: &_storage._buddyLevelSettings)
+        case 53: try decoder.decodeSingularMessageField(value: &_storage._buddyActivityCategorySettings)
+        case 54: try decoder.decodeSingularMessageField(value: &_storage._buddyActivitySettings)
+        case 56: try decoder.decodeSingularMessageField(value: &_storage._buddySwapSettings)
         case 58: try decoder.decodeSingularMessageField(value: &_storage._vsSeekerClientSettings)
+        case 59: try decoder.decodeSingularMessageField(value: &_storage._buddyEncounterCameoSettings)
         case 60: try decoder.decodeSingularMessageField(value: &_storage._limitedPurchaseSkuSettings)
+        case 61: try decoder.decodeSingularMessageField(value: &_storage._buddyEmotionLevelSettings)
         case 62: try decoder.decodeSingularMessageField(value: &_storage._pokestopInvasionAvailabilitySettings)
+        case 63: try decoder.decodeSingularMessageField(value: &_storage._buddyInteractionSettings)
         case 64: try decoder.decodeSingularMessageField(value: &_storage._vsSeekerLootProto)
         case 65: try decoder.decodeSingularMessageField(value: &_storage._vsSeekerPokemonRewards)
         case 66: try decoder.decodeSingularMessageField(value: &_storage._battleHubOrderSettings)
         case 67: try decoder.decodeSingularMessageField(value: &_storage._battleHubBadgeSettings)
+        case 68: try decoder.decodeSingularMessageField(value: &_storage._mapBuddySettings)
+        case 69: try decoder.decodeSingularMessageField(value: &_storage._buddyWalkSettings)
+        case 70: try decoder.decodeSingularMessageField(value: &_storage._platypusRolloutSettings)
+        case 72: try decoder.decodeSingularMessageField(value: &_storage._buddyHungerSettings)
         default: break
         }
       }
@@ -1047,14 +1190,35 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._combatType {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 51)
       }
+      if let v = _storage._buddyLevelSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 52)
+      }
+      if let v = _storage._buddyActivityCategorySettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 53)
+      }
+      if let v = _storage._buddyActivitySettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 54)
+      }
+      if let v = _storage._buddySwapSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 56)
+      }
       if let v = _storage._vsSeekerClientSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 58)
+      }
+      if let v = _storage._buddyEncounterCameoSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 59)
       }
       if let v = _storage._limitedPurchaseSkuSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 60)
       }
+      if let v = _storage._buddyEmotionLevelSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 61)
+      }
       if let v = _storage._pokestopInvasionAvailabilitySettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 62)
+      }
+      if let v = _storage._buddyInteractionSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 63)
       }
       if let v = _storage._vsSeekerLootProto {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 64)
@@ -1067,6 +1231,18 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       }
       if let v = _storage._battleHubBadgeSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 67)
+      }
+      if let v = _storage._mapBuddySettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 68)
+      }
+      if let v = _storage._buddyWalkSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 69)
+      }
+      if let v = _storage._platypusRolloutSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 70)
+      }
+      if let v = _storage._buddyHungerSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 72)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1125,13 +1301,24 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._combatCompetitiveSeasonSettings != rhs_storage._combatCompetitiveSeasonSettings {return false}
         if _storage._combatRankingProtoSettings != rhs_storage._combatRankingProtoSettings {return false}
         if _storage._combatType != rhs_storage._combatType {return false}
+        if _storage._buddyLevelSettings != rhs_storage._buddyLevelSettings {return false}
+        if _storage._buddyActivityCategorySettings != rhs_storage._buddyActivityCategorySettings {return false}
+        if _storage._buddyActivitySettings != rhs_storage._buddyActivitySettings {return false}
+        if _storage._buddySwapSettings != rhs_storage._buddySwapSettings {return false}
         if _storage._vsSeekerClientSettings != rhs_storage._vsSeekerClientSettings {return false}
+        if _storage._buddyEncounterCameoSettings != rhs_storage._buddyEncounterCameoSettings {return false}
         if _storage._limitedPurchaseSkuSettings != rhs_storage._limitedPurchaseSkuSettings {return false}
+        if _storage._buddyEmotionLevelSettings != rhs_storage._buddyEmotionLevelSettings {return false}
         if _storage._pokestopInvasionAvailabilitySettings != rhs_storage._pokestopInvasionAvailabilitySettings {return false}
+        if _storage._buddyInteractionSettings != rhs_storage._buddyInteractionSettings {return false}
         if _storage._vsSeekerLootProto != rhs_storage._vsSeekerLootProto {return false}
         if _storage._vsSeekerPokemonRewards != rhs_storage._vsSeekerPokemonRewards {return false}
         if _storage._battleHubOrderSettings != rhs_storage._battleHubOrderSettings {return false}
         if _storage._battleHubBadgeSettings != rhs_storage._battleHubBadgeSettings {return false}
+        if _storage._mapBuddySettings != rhs_storage._mapBuddySettings {return false}
+        if _storage._buddyWalkSettings != rhs_storage._buddyWalkSettings {return false}
+        if _storage._platypusRolloutSettings != rhs_storage._platypusRolloutSettings {return false}
+        if _storage._buddyHungerSettings != rhs_storage._buddyHungerSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

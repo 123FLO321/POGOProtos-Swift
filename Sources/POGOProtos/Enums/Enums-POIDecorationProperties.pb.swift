@@ -26,11 +26,12 @@ public enum POGOProtos_Enums_POIDecorationProperties: SwiftProtobuf.Enum {
   case size // = 2
   case text // = 3
   case active // = 4
-  case setRaidData // = 5
-  case nearbyCarrotVisible // = 6
-  case setLowestMotivation // = 7
-  case setNpcClickedAction // = 8
-  case beginExit // = 9
+  case icon // = 5
+  case setRaidData // = 6
+  case nearbyCarrotVisible // = 7
+  case setLowestMotivation // = 8
+  case setNpcClickedAction // = 9
+  case beginExit // = 10
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -44,11 +45,12 @@ public enum POGOProtos_Enums_POIDecorationProperties: SwiftProtobuf.Enum {
     case 2: self = .size
     case 3: self = .text
     case 4: self = .active
-    case 5: self = .setRaidData
-    case 6: self = .nearbyCarrotVisible
-    case 7: self = .setLowestMotivation
-    case 8: self = .setNpcClickedAction
-    case 9: self = .beginExit
+    case 5: self = .icon
+    case 6: self = .setRaidData
+    case 7: self = .nearbyCarrotVisible
+    case 8: self = .setLowestMotivation
+    case 9: self = .setNpcClickedAction
+    case 10: self = .beginExit
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -60,11 +62,12 @@ public enum POGOProtos_Enums_POIDecorationProperties: SwiftProtobuf.Enum {
     case .size: return 2
     case .text: return 3
     case .active: return 4
-    case .setRaidData: return 5
-    case .nearbyCarrotVisible: return 6
-    case .setLowestMotivation: return 7
-    case .setNpcClickedAction: return 8
-    case .beginExit: return 9
+    case .icon: return 5
+    case .setRaidData: return 6
+    case .nearbyCarrotVisible: return 7
+    case .setLowestMotivation: return 8
+    case .setNpcClickedAction: return 9
+    case .beginExit: return 10
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -81,6 +84,7 @@ extension POGOProtos_Enums_POIDecorationProperties: CaseIterable {
     .size,
     .text,
     .active,
+    .icon,
     .setRaidData,
     .nearbyCarrotVisible,
     .setLowestMotivation,
@@ -100,10 +104,11 @@ extension POGOProtos_Enums_POIDecorationProperties: SwiftProtobuf._ProtoNameProv
     2: .same(proto: "SIZE"),
     3: .same(proto: "TEXT"),
     4: .same(proto: "ACTIVE"),
-    5: .same(proto: "SET_RAID_DATA"),
-    6: .same(proto: "NEARBY_CARROT_VISIBLE"),
-    7: .same(proto: "SET_LOWEST_MOTIVATION"),
-    8: .same(proto: "SET_NPC_CLICKED_ACTION"),
-    9: .same(proto: "BEGIN_EXIT"),
+    5: .same(proto: "ICON"),
+    6: .same(proto: "SET_RAID_DATA"),
+    7: .same(proto: "NEARBY_CARROT_VISIBLE"),
+    8: .same(proto: "SET_LOWEST_MOTIVATION"),
+    9: .same(proto: "SET_NPC_CLICKED_ACTION"),
+    10: .same(proto: "BEGIN_EXIT"),
   ]
 }
