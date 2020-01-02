@@ -264,8 +264,6 @@ public struct POGOProtos_Data_Buddy_BuddyData {
 
     public var window: Int64 = 0
 
-    ///TODO: Cant not find single try float
-    ///map<int32, single> buddy_stats = 2;
     public var buddyStats: Dictionary<Int32,Float> = [:]
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
