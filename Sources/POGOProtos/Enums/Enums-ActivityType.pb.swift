@@ -67,6 +67,8 @@ public enum POGOProtos_Enums_ActivityType: SwiftProtobuf.Enum {
   case activityRaidLevel3AdditionalXp // = 44
   case activityRaidLevel4AdditionalXp // = 45
   case activityRaidLevel5AdditionalXp // = 46
+  case activityHatchEggShadow // = 47
+  case activityHatchEggGift // = 48
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -121,6 +123,8 @@ public enum POGOProtos_Enums_ActivityType: SwiftProtobuf.Enum {
     case 44: self = .activityRaidLevel3AdditionalXp
     case 45: self = .activityRaidLevel4AdditionalXp
     case 46: self = .activityRaidLevel5AdditionalXp
+    case 47: self = .activityHatchEggShadow
+    case 48: self = .activityHatchEggGift
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -173,6 +177,8 @@ public enum POGOProtos_Enums_ActivityType: SwiftProtobuf.Enum {
     case .activityRaidLevel3AdditionalXp: return 44
     case .activityRaidLevel4AdditionalXp: return 45
     case .activityRaidLevel5AdditionalXp: return 46
+    case .activityHatchEggShadow: return 47
+    case .activityHatchEggGift: return 48
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -230,6 +236,8 @@ extension POGOProtos_Enums_ActivityType: CaseIterable {
     .activityRaidLevel3AdditionalXp,
     .activityRaidLevel4AdditionalXp,
     .activityRaidLevel5AdditionalXp,
+    .activityHatchEggShadow,
+    .activityHatchEggGift,
   ]
 }
 
@@ -285,5 +293,7 @@ extension POGOProtos_Enums_ActivityType: SwiftProtobuf._ProtoNameProviding {
     44: .same(proto: "ACTIVITY_RAID_LEVEL_3_ADDITIONAL_XP"),
     45: .same(proto: "ACTIVITY_RAID_LEVEL_4_ADDITIONAL_XP"),
     46: .same(proto: "ACTIVITY_RAID_LEVEL_5_ADDITIONAL_XP"),
+    47: .same(proto: "ACTIVITY_HATCH_EGG_SHADOW"),
+    48: .same(proto: "ACTIVITY_HATCH_EGG_GIFT"),
   ]
 }

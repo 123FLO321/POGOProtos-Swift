@@ -19,12 +19,12 @@ fileprivate struct _GeneratedWithProtocGenSwiftVersion: SwiftProtobuf.ProtobufAP
   typealias Version = _2
 }
 
-public struct POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse {
+public struct POGOProtos_Networking_Platform_Responses_GetWebTokenActionResponse {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var status: POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse.Status = .unset
+  public var status: POGOProtos_Networking_Platform_Responses_GetWebTokenActionResponse.Status = .unset
 
   public var accessToken: String = String()
 
@@ -66,9 +66,9 @@ public struct POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse 
 
 #if swift(>=4.2)
 
-extension POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse.Status: CaseIterable {
+extension POGOProtos_Networking_Platform_Responses_GetWebTokenActionResponse.Status: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
-  public static var allCases: [POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse.Status] = [
+  public static var allCases: [POGOProtos_Networking_Platform_Responses_GetWebTokenActionResponse.Status] = [
     .unset,
     .success,
     .errorUnknown,
@@ -79,9 +79,9 @@ extension POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse.Stat
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
-fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Requests"
+fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Responses"
 
-extension POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+extension POGOProtos_Networking_Platform_Responses_GetWebTokenActionResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GetWebTokenActionResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
@@ -108,7 +108,7 @@ extension POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse: Swi
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse, rhs: POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Platform_Responses_GetWebTokenActionResponse, rhs: POGOProtos_Networking_Platform_Responses_GetWebTokenActionResponse) -> Bool {
     if lhs.status != rhs.status {return false}
     if lhs.accessToken != rhs.accessToken {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -116,7 +116,7 @@ extension POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse: Swi
   }
 }
 
-extension POGOProtos_Networking_Platform_Requests_GetWebTokenActionResponse.Status: SwiftProtobuf._ProtoNameProviding {
+extension POGOProtos_Networking_Platform_Responses_GetWebTokenActionResponse.Status: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "UNSET"),
     1: .same(proto: "SUCCESS"),

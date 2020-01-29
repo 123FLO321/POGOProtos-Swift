@@ -32,6 +32,8 @@ public enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
   case developer // = 8
   case sharedSecret // = 9
   case poseidon // = 10
+  case nintendo // = 11
+  case apple // = 12
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -51,6 +53,8 @@ public enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
     case 8: self = .developer
     case 9: self = .sharedSecret
     case 10: self = .poseidon
+    case 11: self = .nintendo
+    case 12: self = .apple
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -68,6 +72,8 @@ public enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
     case .developer: return 8
     case .sharedSecret: return 9
     case .poseidon: return 10
+    case .nintendo: return 11
+    case .apple: return 12
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -90,6 +96,8 @@ extension POGOProtos_Enums_IdentityProvider: CaseIterable {
     .developer,
     .sharedSecret,
     .poseidon,
+    .nintendo,
+    .apple,
   ]
 }
 
@@ -110,5 +118,7 @@ extension POGOProtos_Enums_IdentityProvider: SwiftProtobuf._ProtoNameProviding {
     8: .same(proto: "DEVELOPER"),
     9: .same(proto: "SHARED_SECRET"),
     10: .same(proto: "POSEIDON"),
+    11: .same(proto: "NINTENDO"),
+    12: .same(proto: "APPLE"),
   ]
 }

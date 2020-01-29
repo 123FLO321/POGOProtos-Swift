@@ -75,7 +75,7 @@ public struct POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartCharging
   /// Clears the value of `statsAtRankStart`. Subsequent reads from it will return its default value.
   public mutating func clearStatsAtRankStart() {_uniqueStorage()._statsAtRankStart = nil}
 
-  public var avatarTemplateIDAwarded: String {
+  public var avatarTemplateIDAwarded: [String] {
     get {return _storage._avatarTemplateIDAwarded}
     set {_uniqueStorage()._avatarTemplateIDAwarded = newValue}
   }
@@ -176,7 +176,7 @@ extension POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartChargingResp
     var _previousRank: Int32 = 0
     var _previousRating: Float = 0
     var _statsAtRankStart: POGOProtos_Data_Combat_CombatBaseStats? = nil
-    var _avatarTemplateIDAwarded: String = String()
+    var _avatarTemplateIDAwarded: [String] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -213,7 +213,7 @@ extension POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartChargingResp
         case 5: try decoder.decodeSingularInt32Field(value: &_storage._previousRank)
         case 6: try decoder.decodeSingularFloatField(value: &_storage._previousRating)
         case 7: try decoder.decodeSingularMessageField(value: &_storage._statsAtRankStart)
-        case 8: try decoder.decodeSingularStringField(value: &_storage._avatarTemplateIDAwarded)
+        case 8: try decoder.decodeRepeatedStringField(value: &_storage._avatarTemplateIDAwarded)
         default: break
         }
       }
@@ -244,7 +244,7 @@ extension POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartChargingResp
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
       }
       if !_storage._avatarTemplateIDAwarded.isEmpty {
-        try visitor.visitSingularStringField(value: _storage._avatarTemplateIDAwarded, fieldNumber: 8)
+        try visitor.visitRepeatedStringField(value: _storage._avatarTemplateIDAwarded, fieldNumber: 8)
       }
     }
     try unknownFields.traverse(visitor: &visitor)

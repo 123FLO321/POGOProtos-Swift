@@ -28,6 +28,8 @@ public struct POGOProtos_Data_Login_LoginDetail {
 
   public var email: String = String()
 
+  public var authProviderID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -42,6 +44,7 @@ extension POGOProtos_Data_Login_LoginDetail: SwiftProtobuf.Message, SwiftProtobu
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "identity_provider"),
     2: .same(proto: "email"),
+    3: .standard(proto: "auth_provider_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +52,7 @@ extension POGOProtos_Data_Login_LoginDetail: SwiftProtobuf.Message, SwiftProtobu
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.identityProvider)
       case 2: try decoder.decodeSingularStringField(value: &self.email)
+      case 3: try decoder.decodeSingularStringField(value: &self.authProviderID)
       default: break
       }
     }
@@ -61,12 +65,16 @@ extension POGOProtos_Data_Login_LoginDetail: SwiftProtobuf.Message, SwiftProtobu
     if !self.email.isEmpty {
       try visitor.visitSingularStringField(value: self.email, fieldNumber: 2)
     }
+    if !self.authProviderID.isEmpty {
+      try visitor.visitSingularStringField(value: self.authProviderID, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Login_LoginDetail, rhs: POGOProtos_Data_Login_LoginDetail) -> Bool {
     if lhs.identityProvider != rhs.identityProvider {return false}
     if lhs.email != rhs.email {return false}
+    if lhs.authProviderID != rhs.authProviderID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
