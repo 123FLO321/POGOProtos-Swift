@@ -30,6 +30,12 @@ public struct POGOProtos_Networking_Platform_Requests_DownloadGameMasterTemplate
 
   public var pageOffset: Int32 = 0
 
+  public var applyExperiments: Bool = false
+
+  public var basisExperimentID: [Int32] = []
+
+  public var experimentID: [Int32] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -45,6 +51,9 @@ extension POGOProtos_Networking_Platform_Requests_DownloadGameMasterTemplatesMes
     1: .standard(proto: "basis_batch_id"),
     2: .standard(proto: "batch_id"),
     3: .standard(proto: "page_offset"),
+    4: .standard(proto: "apply_experiments"),
+    5: .standard(proto: "basis_experiment_id"),
+    6: .standard(proto: "experiment_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -53,6 +62,9 @@ extension POGOProtos_Networking_Platform_Requests_DownloadGameMasterTemplatesMes
       case 1: try decoder.decodeSingularInt64Field(value: &self.basisBatchID)
       case 2: try decoder.decodeSingularInt64Field(value: &self.batchID)
       case 3: try decoder.decodeSingularInt32Field(value: &self.pageOffset)
+      case 4: try decoder.decodeSingularBoolField(value: &self.applyExperiments)
+      case 5: try decoder.decodeRepeatedInt32Field(value: &self.basisExperimentID)
+      case 6: try decoder.decodeRepeatedInt32Field(value: &self.experimentID)
       default: break
       }
     }
@@ -68,6 +80,15 @@ extension POGOProtos_Networking_Platform_Requests_DownloadGameMasterTemplatesMes
     if self.pageOffset != 0 {
       try visitor.visitSingularInt32Field(value: self.pageOffset, fieldNumber: 3)
     }
+    if self.applyExperiments != false {
+      try visitor.visitSingularBoolField(value: self.applyExperiments, fieldNumber: 4)
+    }
+    if !self.basisExperimentID.isEmpty {
+      try visitor.visitPackedInt32Field(value: self.basisExperimentID, fieldNumber: 5)
+    }
+    if !self.experimentID.isEmpty {
+      try visitor.visitPackedInt32Field(value: self.experimentID, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -75,6 +96,9 @@ extension POGOProtos_Networking_Platform_Requests_DownloadGameMasterTemplatesMes
     if lhs.basisBatchID != rhs.basisBatchID {return false}
     if lhs.batchID != rhs.batchID {return false}
     if lhs.pageOffset != rhs.pageOffset {return false}
+    if lhs.applyExperiments != rhs.applyExperiments {return false}
+    if lhs.basisExperimentID != rhs.basisExperimentID {return false}
+    if lhs.experimentID != rhs.experimentID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

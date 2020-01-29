@@ -38,6 +38,11 @@ public struct POGOProtos_Networking_Platform_Requests_ReplaceLoginActionMessage 
   /// Clears the value of `newLogin`. Subsequent reads from it will return its default value.
   public mutating func clearNewLogin() {_uniqueStorage()._newLogin = nil}
 
+  public var authProviderID: String {
+    get {return _storage._authProviderID}
+    set {_uniqueStorage()._authProviderID = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -54,11 +59,13 @@ extension POGOProtos_Networking_Platform_Requests_ReplaceLoginActionMessage: Swi
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "existing_identity_provider"),
     2: .standard(proto: "new_login"),
+    3: .standard(proto: "auth_provider_id"),
   ]
 
   fileprivate class _StorageClass {
     var _existingIdentityProvider: POGOProtos_Enums_IdentityProvider = .unsetIdentityProvider
     var _newLogin: POGOProtos_Networking_Platform_Requests_AddLoginActionMessage? = nil
+    var _authProviderID: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -67,6 +74,7 @@ extension POGOProtos_Networking_Platform_Requests_ReplaceLoginActionMessage: Swi
     init(copying source: _StorageClass) {
       _existingIdentityProvider = source._existingIdentityProvider
       _newLogin = source._newLogin
+      _authProviderID = source._authProviderID
     }
   }
 
@@ -84,6 +92,7 @@ extension POGOProtos_Networking_Platform_Requests_ReplaceLoginActionMessage: Swi
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._existingIdentityProvider)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._newLogin)
+        case 3: try decoder.decodeSingularStringField(value: &_storage._authProviderID)
         default: break
         }
       }
@@ -98,6 +107,9 @@ extension POGOProtos_Networking_Platform_Requests_ReplaceLoginActionMessage: Swi
       if let v = _storage._newLogin {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
+      if !_storage._authProviderID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._authProviderID, fieldNumber: 3)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -109,6 +121,7 @@ extension POGOProtos_Networking_Platform_Requests_ReplaceLoginActionMessage: Swi
         let rhs_storage = _args.1
         if _storage._existingIdentityProvider != rhs_storage._existingIdentityProvider {return false}
         if _storage._newLogin != rhs_storage._newLogin {return false}
+        if _storage._authProviderID != rhs_storage._authProviderID {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -34,6 +34,8 @@ public struct POGOProtos_Networking_Responses_DownloadGmTemplatesResponse {
 
   public var pageOffset: Int32 = 0
 
+  public var experimentID: [Int32] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -43,6 +45,7 @@ public struct POGOProtos_Networking_Responses_DownloadGmTemplatesResponse {
     case moreResults // = 2
     case batchIDNotLive // = 3
     case invalidBasisBatchID // = 4
+    case wrongExperiments // = 5
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -56,6 +59,7 @@ public struct POGOProtos_Networking_Responses_DownloadGmTemplatesResponse {
       case 2: self = .moreResults
       case 3: self = .batchIDNotLive
       case 4: self = .invalidBasisBatchID
+      case 5: self = .wrongExperiments
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -67,6 +71,7 @@ public struct POGOProtos_Networking_Responses_DownloadGmTemplatesResponse {
       case .moreResults: return 2
       case .batchIDNotLive: return 3
       case .invalidBasisBatchID: return 4
+      case .wrongExperiments: return 5
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
@@ -100,6 +105,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.Result: Ca
     .moreResults,
     .batchIDNotLive,
     .invalidBasisBatchID,
+    .wrongExperiments,
   ]
 }
 
@@ -117,6 +123,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProt
     3: .standard(proto: "deleted_template"),
     4: .standard(proto: "batch_id"),
     5: .standard(proto: "page_offset"),
+    6: .standard(proto: "experiment_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -127,6 +134,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProt
       case 3: try decoder.decodeRepeatedStringField(value: &self.deletedTemplate)
       case 4: try decoder.decodeSingularFixed64Field(value: &self.batchID)
       case 5: try decoder.decodeSingularInt32Field(value: &self.pageOffset)
+      case 6: try decoder.decodeRepeatedInt32Field(value: &self.experimentID)
       default: break
       }
     }
@@ -148,6 +156,9 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProt
     if self.pageOffset != 0 {
       try visitor.visitSingularInt32Field(value: self.pageOffset, fieldNumber: 5)
     }
+    if !self.experimentID.isEmpty {
+      try visitor.visitPackedInt32Field(value: self.experimentID, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -157,6 +168,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProt
     if lhs.deletedTemplate != rhs.deletedTemplate {return false}
     if lhs.batchID != rhs.batchID {return false}
     if lhs.pageOffset != rhs.pageOffset {return false}
+    if lhs.experimentID != rhs.experimentID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -169,6 +181,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.Result: Sw
     2: .same(proto: "MORE_RESULTS"),
     3: .same(proto: "BATCH_ID_NOT_LIVE"),
     4: .same(proto: "INVALID_BASIS_BATCH_ID"),
+    5: .same(proto: "WRONG_EXPERIMENTS"),
   ]
 }
 

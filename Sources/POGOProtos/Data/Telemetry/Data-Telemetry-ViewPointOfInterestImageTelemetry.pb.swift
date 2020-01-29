@@ -36,6 +36,8 @@ public struct POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry {
 
   public var partnerID: String = String()
 
+  public var campaignID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -54,6 +56,7 @@ extension POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry: SwiftProt
     4: .standard(proto: "in_range"),
     5: .standard(proto: "was_gym_interior"),
     6: .standard(proto: "partner_id"),
+    7: .standard(proto: "campaign_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -65,6 +68,7 @@ extension POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry: SwiftProt
       case 4: try decoder.decodeSingularBoolField(value: &self.inRange)
       case 5: try decoder.decodeSingularBoolField(value: &self.wasGymInterior)
       case 6: try decoder.decodeSingularStringField(value: &self.partnerID)
+      case 7: try decoder.decodeSingularStringField(value: &self.campaignID)
       default: break
       }
     }
@@ -89,6 +93,9 @@ extension POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry: SwiftProt
     if !self.partnerID.isEmpty {
       try visitor.visitSingularStringField(value: self.partnerID, fieldNumber: 6)
     }
+    if !self.campaignID.isEmpty {
+      try visitor.visitSingularStringField(value: self.campaignID, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -99,6 +106,7 @@ extension POGOProtos_Data_Telemetry_ViewPointOfInterestImageTelemetry: SwiftProt
     if lhs.inRange != rhs.inRange {return false}
     if lhs.wasGymInterior != rhs.wasGymInterior {return false}
     if lhs.partnerID != rhs.partnerID {return false}
+    if lhs.campaignID != rhs.campaignID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

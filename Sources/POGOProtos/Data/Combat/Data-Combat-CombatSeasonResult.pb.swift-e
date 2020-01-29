@@ -38,6 +38,8 @@ public struct POGOProtos_Data_Combat_CombatSeasonResult {
 
   public var currentStreak: Int32 = 0
 
+  public var stardustEarned: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -57,6 +59,7 @@ extension POGOProtos_Data_Combat_CombatSeasonResult: SwiftProtobuf.Message, Swif
     5: .same(proto: "rating"),
     6: .standard(proto: "longest_win_streak"),
     7: .standard(proto: "current_streak"),
+    8: .standard(proto: "stardust_earned"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -69,6 +72,7 @@ extension POGOProtos_Data_Combat_CombatSeasonResult: SwiftProtobuf.Message, Swif
       case 5: try decoder.decodeSingularFloatField(value: &self.rating)
       case 6: try decoder.decodeSingularInt32Field(value: &self.longestWinStreak)
       case 7: try decoder.decodeSingularInt32Field(value: &self.currentStreak)
+      case 8: try decoder.decodeSingularInt64Field(value: &self.stardustEarned)
       default: break
       }
     }
@@ -96,6 +100,9 @@ extension POGOProtos_Data_Combat_CombatSeasonResult: SwiftProtobuf.Message, Swif
     if self.currentStreak != 0 {
       try visitor.visitSingularInt32Field(value: self.currentStreak, fieldNumber: 7)
     }
+    if self.stardustEarned != 0 {
+      try visitor.visitSingularInt64Field(value: self.stardustEarned, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -107,6 +114,7 @@ extension POGOProtos_Data_Combat_CombatSeasonResult: SwiftProtobuf.Message, Swif
     if lhs.rating != rhs.rating {return false}
     if lhs.longestWinStreak != rhs.longestWinStreak {return false}
     if lhs.currentStreak != rhs.currentStreak {return false}
+    if lhs.stardustEarned != rhs.stardustEarned {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

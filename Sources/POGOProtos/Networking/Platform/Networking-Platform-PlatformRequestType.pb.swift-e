@@ -65,7 +65,7 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
   case proxySocialAction // = 5012
 
   /// ???
-  case clientTelemetry // = 5013
+  case deprecatedClientTelemetry // = 5013
 
   /// Implemented
   case getAvailableSubmissions // = 5014
@@ -139,10 +139,10 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
   /// ??? maybe same POGOProtos.Networking.Titan.Messages.SubmitNewRouteMessage
   case addNewRoute // = 5038
 
-  /// ???
+  /// Implemented
   case getOutstandingWarnings // = 5039
 
-  /// ???
+  /// Implemented
   case acknowledgeWarnings // = 5040
 
   /// Implemented
@@ -159,6 +159,12 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
 
   /// Implemented
   case getWebTokenAction // = 5045
+
+  /// Implemented
+  case getAdventureSyncSettings // = 5046
+
+  /// Implemented
+  case updateAdventureSyncSettings // = 5047
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -181,7 +187,7 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
     case 5010: self = .listLoginAction
     case 5011: self = .addNewPoi
     case 5012: self = .proxySocialAction
-    case 5013: self = .clientTelemetry
+    case 5013: self = .deprecatedClientTelemetry
     case 5014: self = .getAvailableSubmissions
     case 5015: self = .getSignedURLForPhotoUpload
     case 5016: self = .replaceLoginAction
@@ -213,6 +219,8 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
     case 5043: self = .submitPoiLocationUpdate
     case 5044: self = .submitPoiTakedownRequest
     case 5045: self = .getWebTokenAction
+    case 5046: self = .getAdventureSyncSettings
+    case 5047: self = .updateAdventureSyncSettings
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -233,7 +241,7 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
     case .listLoginAction: return 5010
     case .addNewPoi: return 5011
     case .proxySocialAction: return 5012
-    case .clientTelemetry: return 5013
+    case .deprecatedClientTelemetry: return 5013
     case .getAvailableSubmissions: return 5014
     case .getSignedURLForPhotoUpload: return 5015
     case .replaceLoginAction: return 5016
@@ -265,6 +273,8 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
     case .submitPoiLocationUpdate: return 5043
     case .submitPoiTakedownRequest: return 5044
     case .getWebTokenAction: return 5045
+    case .getAdventureSyncSettings: return 5046
+    case .updateAdventureSyncSettings: return 5047
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -290,7 +300,7 @@ extension POGOProtos_Networking_Platform_PlatformRequestType: CaseIterable {
     .listLoginAction,
     .addNewPoi,
     .proxySocialAction,
-    .clientTelemetry,
+    .deprecatedClientTelemetry,
     .getAvailableSubmissions,
     .getSignedURLForPhotoUpload,
     .replaceLoginAction,
@@ -322,6 +332,8 @@ extension POGOProtos_Networking_Platform_PlatformRequestType: CaseIterable {
     .submitPoiLocationUpdate,
     .submitPoiTakedownRequest,
     .getWebTokenAction,
+    .getAdventureSyncSettings,
+    .updateAdventureSyncSettings,
   ]
 }
 
@@ -345,7 +357,7 @@ extension POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf._Pro
     5010: .same(proto: "LIST_LOGIN_ACTION"),
     5011: .same(proto: "ADD_NEW_POI"),
     5012: .same(proto: "PROXY_SOCIAL_ACTION"),
-    5013: .same(proto: "CLIENT_TELEMETRY"),
+    5013: .same(proto: "DEPRECATED_CLIENT_TELEMETRY"),
     5014: .same(proto: "GET_AVAILABLE_SUBMISSIONS"),
     5015: .same(proto: "GET_SIGNED_URL_FOR_PHOTO_UPLOAD"),
     5016: .same(proto: "REPLACE_LOGIN_ACTION"),
@@ -377,5 +389,7 @@ extension POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf._Pro
     5043: .same(proto: "SUBMIT_POI_LOCATION_UPDATE"),
     5044: .same(proto: "SUBMIT_POI_TAKEDOWN_REQUEST"),
     5045: .same(proto: "GET_WEB_TOKEN_ACTION"),
+    5046: .same(proto: "GET_ADVENTURE_SYNC_SETTINGS"),
+    5047: .same(proto: "UPDATE_ADVENTURE_SYNC_SETTINGS"),
   ]
 }

@@ -26,6 +26,8 @@ public struct POGOProtos_Networking_Titan_Responses_SubmitNewPoiResponse {
 
   public var status: POGOProtos_Networking_Titan_Responses_SubmitNewPoiResponse.Status = .unset
 
+  public var submissionID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Status: SwiftProtobuf.Enum {
@@ -103,12 +105,14 @@ extension POGOProtos_Networking_Titan_Responses_SubmitNewPoiResponse: SwiftProto
   public static let protoMessageName: String = _protobuf_package + ".SubmitNewPoiResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
+    2: .standard(proto: "submission_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.status)
+      case 2: try decoder.decodeSingularStringField(value: &self.submissionID)
       default: break
       }
     }
@@ -118,11 +122,15 @@ extension POGOProtos_Networking_Titan_Responses_SubmitNewPoiResponse: SwiftProto
     if self.status != .unset {
       try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
     }
+    if !self.submissionID.isEmpty {
+      try visitor.visitSingularStringField(value: self.submissionID, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Titan_Responses_SubmitNewPoiResponse, rhs: POGOProtos_Networking_Titan_Responses_SubmitNewPoiResponse) -> Bool {
     if lhs.status != rhs.status {return false}
+    if lhs.submissionID != rhs.submissionID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -24,37 +24,90 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var enabled: Bool = false
+  public var enabled: Bool {
+    get {return _storage._enabled}
+    set {_uniqueStorage()._enabled = newValue}
+  }
 
-  public var avatarType: POGOProtos_Data_Player_PlayerAvatarType = .playerAvatarMale
+  public var avatarType: POGOProtos_Data_Player_PlayerAvatarType {
+    get {return _storage._avatarType}
+    set {_uniqueStorage()._avatarType = newValue}
+  }
 
-  public var slot: [POGOProtos_Data_Avatar_AvatarCustomization.Slot] = []
+  public var slot: [POGOProtos_Data_Avatar_AvatarCustomization.Slot] {
+    get {return _storage._slot}
+    set {_uniqueStorage()._slot = newValue}
+  }
 
-  public var bundleName: String = String()
+  public var bundleName: String {
+    get {return _storage._bundleName}
+    set {_uniqueStorage()._bundleName = newValue}
+  }
 
-  public var assetName: String = String()
+  public var assetName: String {
+    get {return _storage._assetName}
+    set {_uniqueStorage()._assetName = newValue}
+  }
 
-  public var groupName: String = String()
+  public var groupName: String {
+    get {return _storage._groupName}
+    set {_uniqueStorage()._groupName = newValue}
+  }
 
-  public var sortOrder: Int32 = 0
+  public var sortOrder: Int32 {
+    get {return _storage._sortOrder}
+    set {_uniqueStorage()._sortOrder = newValue}
+  }
 
-  public var unlockType: POGOProtos_Data_Avatar_AvatarCustomization.AvatarCustomizationUnlockType = .unsetUnlockType
+  public var unlockType: POGOProtos_Data_Avatar_AvatarCustomization.AvatarCustomizationUnlockType {
+    get {return _storage._unlockType}
+    set {_uniqueStorage()._unlockType = newValue}
+  }
 
-  public var promoType: [POGOProtos_Data_Avatar_AvatarCustomization.AvatarCustomizationPromoType] = []
+  public var promoType: [POGOProtos_Data_Avatar_AvatarCustomization.AvatarCustomizationPromoType] {
+    get {return _storage._promoType}
+    set {_uniqueStorage()._promoType = newValue}
+  }
 
-  public var unlockBadgeType: POGOProtos_Enums_BadgeType = .badgeUnset
+  public var unlockBadgeType: POGOProtos_Enums_BadgeType {
+    get {return _storage._unlockBadgeType}
+    set {_uniqueStorage()._unlockBadgeType = newValue}
+  }
 
-  public var iapSku: String = String()
+  public var iapSku: String {
+    get {return _storage._iapSku}
+    set {_uniqueStorage()._iapSku = newValue}
+  }
 
-  public var unlockBadgeLevel: Int32 = 0
+  public var unlockBadgeLevel: Int32 {
+    get {return _storage._unlockBadgeLevel}
+    set {_uniqueStorage()._unlockBadgeLevel = newValue}
+  }
 
-  public var iconName: String = String()
+  public var iconName: String {
+    get {return _storage._iconName}
+    set {_uniqueStorage()._iconName = newValue}
+  }
 
-  public var unlockPlayerLevel: Int32 = 0
+  public var unlockPlayerLevel: Int32 {
+    get {return _storage._unlockPlayerLevel}
+    set {_uniqueStorage()._unlockPlayerLevel = newValue}
+  }
 
-  public var setName: String = String()
+  public var setName: String {
+    get {return _storage._setName}
+    set {_uniqueStorage()._setName = newValue}
+  }
 
-  public var setPrimeItem: Bool = false
+  public var setPrimeItem: Bool {
+    get {return _storage._setPrimeItem}
+    set {_uniqueStorage()._setPrimeItem = newValue}
+  }
+
+  public var incompatibleBundleNames: [String] {
+    get {return _storage._incompatibleBundleNames}
+    set {_uniqueStorage()._incompatibleBundleNames = newValue}
+  }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -197,6 +250,8 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
   }
 
   public init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 #if swift(>=4.2)
@@ -268,101 +323,171 @@ extension POGOProtos_Data_Avatar_AvatarCustomization: SwiftProtobuf.Message, Swi
     14: .standard(proto: "unlock_player_level"),
     15: .standard(proto: "set_name"),
     16: .standard(proto: "set_prime_item"),
+    17: .standard(proto: "incompatible_bundle_names"),
   ]
 
+  fileprivate class _StorageClass {
+    var _enabled: Bool = false
+    var _avatarType: POGOProtos_Data_Player_PlayerAvatarType = .playerAvatarMale
+    var _slot: [POGOProtos_Data_Avatar_AvatarCustomization.Slot] = []
+    var _bundleName: String = String()
+    var _assetName: String = String()
+    var _groupName: String = String()
+    var _sortOrder: Int32 = 0
+    var _unlockType: POGOProtos_Data_Avatar_AvatarCustomization.AvatarCustomizationUnlockType = .unsetUnlockType
+    var _promoType: [POGOProtos_Data_Avatar_AvatarCustomization.AvatarCustomizationPromoType] = []
+    var _unlockBadgeType: POGOProtos_Enums_BadgeType = .badgeUnset
+    var _iapSku: String = String()
+    var _unlockBadgeLevel: Int32 = 0
+    var _iconName: String = String()
+    var _unlockPlayerLevel: Int32 = 0
+    var _setName: String = String()
+    var _setPrimeItem: Bool = false
+    var _incompatibleBundleNames: [String] = []
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _enabled = source._enabled
+      _avatarType = source._avatarType
+      _slot = source._slot
+      _bundleName = source._bundleName
+      _assetName = source._assetName
+      _groupName = source._groupName
+      _sortOrder = source._sortOrder
+      _unlockType = source._unlockType
+      _promoType = source._promoType
+      _unlockBadgeType = source._unlockBadgeType
+      _iapSku = source._iapSku
+      _unlockBadgeLevel = source._unlockBadgeLevel
+      _iconName = source._iconName
+      _unlockPlayerLevel = source._unlockPlayerLevel
+      _setName = source._setName
+      _setPrimeItem = source._setPrimeItem
+      _incompatibleBundleNames = source._incompatibleBundleNames
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularBoolField(value: &self.enabled)
-      case 2: try decoder.decodeSingularEnumField(value: &self.avatarType)
-      case 3: try decoder.decodeRepeatedEnumField(value: &self.slot)
-      case 4: try decoder.decodeSingularStringField(value: &self.bundleName)
-      case 5: try decoder.decodeSingularStringField(value: &self.assetName)
-      case 6: try decoder.decodeSingularStringField(value: &self.groupName)
-      case 7: try decoder.decodeSingularInt32Field(value: &self.sortOrder)
-      case 8: try decoder.decodeSingularEnumField(value: &self.unlockType)
-      case 9: try decoder.decodeRepeatedEnumField(value: &self.promoType)
-      case 10: try decoder.decodeSingularEnumField(value: &self.unlockBadgeType)
-      case 11: try decoder.decodeSingularStringField(value: &self.iapSku)
-      case 12: try decoder.decodeSingularInt32Field(value: &self.unlockBadgeLevel)
-      case 13: try decoder.decodeSingularStringField(value: &self.iconName)
-      case 14: try decoder.decodeSingularInt32Field(value: &self.unlockPlayerLevel)
-      case 15: try decoder.decodeSingularStringField(value: &self.setName)
-      case 16: try decoder.decodeSingularBoolField(value: &self.setPrimeItem)
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularBoolField(value: &_storage._enabled)
+        case 2: try decoder.decodeSingularEnumField(value: &_storage._avatarType)
+        case 3: try decoder.decodeRepeatedEnumField(value: &_storage._slot)
+        case 4: try decoder.decodeSingularStringField(value: &_storage._bundleName)
+        case 5: try decoder.decodeSingularStringField(value: &_storage._assetName)
+        case 6: try decoder.decodeSingularStringField(value: &_storage._groupName)
+        case 7: try decoder.decodeSingularInt32Field(value: &_storage._sortOrder)
+        case 8: try decoder.decodeSingularEnumField(value: &_storage._unlockType)
+        case 9: try decoder.decodeRepeatedEnumField(value: &_storage._promoType)
+        case 10: try decoder.decodeSingularEnumField(value: &_storage._unlockBadgeType)
+        case 11: try decoder.decodeSingularStringField(value: &_storage._iapSku)
+        case 12: try decoder.decodeSingularInt32Field(value: &_storage._unlockBadgeLevel)
+        case 13: try decoder.decodeSingularStringField(value: &_storage._iconName)
+        case 14: try decoder.decodeSingularInt32Field(value: &_storage._unlockPlayerLevel)
+        case 15: try decoder.decodeSingularStringField(value: &_storage._setName)
+        case 16: try decoder.decodeSingularBoolField(value: &_storage._setPrimeItem)
+        case 17: try decoder.decodeRepeatedStringField(value: &_storage._incompatibleBundleNames)
+        default: break
+        }
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.enabled != false {
-      try visitor.visitSingularBoolField(value: self.enabled, fieldNumber: 1)
-    }
-    if self.avatarType != .playerAvatarMale {
-      try visitor.visitSingularEnumField(value: self.avatarType, fieldNumber: 2)
-    }
-    if !self.slot.isEmpty {
-      try visitor.visitPackedEnumField(value: self.slot, fieldNumber: 3)
-    }
-    if !self.bundleName.isEmpty {
-      try visitor.visitSingularStringField(value: self.bundleName, fieldNumber: 4)
-    }
-    if !self.assetName.isEmpty {
-      try visitor.visitSingularStringField(value: self.assetName, fieldNumber: 5)
-    }
-    if !self.groupName.isEmpty {
-      try visitor.visitSingularStringField(value: self.groupName, fieldNumber: 6)
-    }
-    if self.sortOrder != 0 {
-      try visitor.visitSingularInt32Field(value: self.sortOrder, fieldNumber: 7)
-    }
-    if self.unlockType != .unsetUnlockType {
-      try visitor.visitSingularEnumField(value: self.unlockType, fieldNumber: 8)
-    }
-    if !self.promoType.isEmpty {
-      try visitor.visitPackedEnumField(value: self.promoType, fieldNumber: 9)
-    }
-    if self.unlockBadgeType != .badgeUnset {
-      try visitor.visitSingularEnumField(value: self.unlockBadgeType, fieldNumber: 10)
-    }
-    if !self.iapSku.isEmpty {
-      try visitor.visitSingularStringField(value: self.iapSku, fieldNumber: 11)
-    }
-    if self.unlockBadgeLevel != 0 {
-      try visitor.visitSingularInt32Field(value: self.unlockBadgeLevel, fieldNumber: 12)
-    }
-    if !self.iconName.isEmpty {
-      try visitor.visitSingularStringField(value: self.iconName, fieldNumber: 13)
-    }
-    if self.unlockPlayerLevel != 0 {
-      try visitor.visitSingularInt32Field(value: self.unlockPlayerLevel, fieldNumber: 14)
-    }
-    if !self.setName.isEmpty {
-      try visitor.visitSingularStringField(value: self.setName, fieldNumber: 15)
-    }
-    if self.setPrimeItem != false {
-      try visitor.visitSingularBoolField(value: self.setPrimeItem, fieldNumber: 16)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._enabled != false {
+        try visitor.visitSingularBoolField(value: _storage._enabled, fieldNumber: 1)
+      }
+      if _storage._avatarType != .playerAvatarMale {
+        try visitor.visitSingularEnumField(value: _storage._avatarType, fieldNumber: 2)
+      }
+      if !_storage._slot.isEmpty {
+        try visitor.visitPackedEnumField(value: _storage._slot, fieldNumber: 3)
+      }
+      if !_storage._bundleName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._bundleName, fieldNumber: 4)
+      }
+      if !_storage._assetName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._assetName, fieldNumber: 5)
+      }
+      if !_storage._groupName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._groupName, fieldNumber: 6)
+      }
+      if _storage._sortOrder != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._sortOrder, fieldNumber: 7)
+      }
+      if _storage._unlockType != .unsetUnlockType {
+        try visitor.visitSingularEnumField(value: _storage._unlockType, fieldNumber: 8)
+      }
+      if !_storage._promoType.isEmpty {
+        try visitor.visitPackedEnumField(value: _storage._promoType, fieldNumber: 9)
+      }
+      if _storage._unlockBadgeType != .badgeUnset {
+        try visitor.visitSingularEnumField(value: _storage._unlockBadgeType, fieldNumber: 10)
+      }
+      if !_storage._iapSku.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._iapSku, fieldNumber: 11)
+      }
+      if _storage._unlockBadgeLevel != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._unlockBadgeLevel, fieldNumber: 12)
+      }
+      if !_storage._iconName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._iconName, fieldNumber: 13)
+      }
+      if _storage._unlockPlayerLevel != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._unlockPlayerLevel, fieldNumber: 14)
+      }
+      if !_storage._setName.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._setName, fieldNumber: 15)
+      }
+      if _storage._setPrimeItem != false {
+        try visitor.visitSingularBoolField(value: _storage._setPrimeItem, fieldNumber: 16)
+      }
+      if !_storage._incompatibleBundleNames.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._incompatibleBundleNames, fieldNumber: 17)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Avatar_AvatarCustomization, rhs: POGOProtos_Data_Avatar_AvatarCustomization) -> Bool {
-    if lhs.enabled != rhs.enabled {return false}
-    if lhs.avatarType != rhs.avatarType {return false}
-    if lhs.slot != rhs.slot {return false}
-    if lhs.bundleName != rhs.bundleName {return false}
-    if lhs.assetName != rhs.assetName {return false}
-    if lhs.groupName != rhs.groupName {return false}
-    if lhs.sortOrder != rhs.sortOrder {return false}
-    if lhs.unlockType != rhs.unlockType {return false}
-    if lhs.promoType != rhs.promoType {return false}
-    if lhs.unlockBadgeType != rhs.unlockBadgeType {return false}
-    if lhs.iapSku != rhs.iapSku {return false}
-    if lhs.unlockBadgeLevel != rhs.unlockBadgeLevel {return false}
-    if lhs.iconName != rhs.iconName {return false}
-    if lhs.unlockPlayerLevel != rhs.unlockPlayerLevel {return false}
-    if lhs.setName != rhs.setName {return false}
-    if lhs.setPrimeItem != rhs.setPrimeItem {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._enabled != rhs_storage._enabled {return false}
+        if _storage._avatarType != rhs_storage._avatarType {return false}
+        if _storage._slot != rhs_storage._slot {return false}
+        if _storage._bundleName != rhs_storage._bundleName {return false}
+        if _storage._assetName != rhs_storage._assetName {return false}
+        if _storage._groupName != rhs_storage._groupName {return false}
+        if _storage._sortOrder != rhs_storage._sortOrder {return false}
+        if _storage._unlockType != rhs_storage._unlockType {return false}
+        if _storage._promoType != rhs_storage._promoType {return false}
+        if _storage._unlockBadgeType != rhs_storage._unlockBadgeType {return false}
+        if _storage._iapSku != rhs_storage._iapSku {return false}
+        if _storage._unlockBadgeLevel != rhs_storage._unlockBadgeLevel {return false}
+        if _storage._iconName != rhs_storage._iconName {return false}
+        if _storage._unlockPlayerLevel != rhs_storage._unlockPlayerLevel {return false}
+        if _storage._setName != rhs_storage._setName {return false}
+        if _storage._setPrimeItem != rhs_storage._setPrimeItem {return false}
+        if _storage._incompatibleBundleNames != rhs_storage._incompatibleBundleNames {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

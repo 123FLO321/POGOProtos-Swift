@@ -29,6 +29,8 @@ public enum POGOProtos_Enums_PlayerSubmissionType: SwiftProtobuf.Enum {
   case poiLocationUpdate // = 5
   case poiTakedownRequest // = 6
   case poiArVideoSubmission // = 7
+  case sponsorPoiReport // = 8
+  case sponsorPoiLocationUpdate // = 9
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -45,6 +47,8 @@ public enum POGOProtos_Enums_PlayerSubmissionType: SwiftProtobuf.Enum {
     case 5: self = .poiLocationUpdate
     case 6: self = .poiTakedownRequest
     case 7: self = .poiArVideoSubmission
+    case 8: self = .sponsorPoiReport
+    case 9: self = .sponsorPoiLocationUpdate
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -59,6 +63,8 @@ public enum POGOProtos_Enums_PlayerSubmissionType: SwiftProtobuf.Enum {
     case .poiLocationUpdate: return 5
     case .poiTakedownRequest: return 6
     case .poiArVideoSubmission: return 7
+    case .sponsorPoiReport: return 8
+    case .sponsorPoiLocationUpdate: return 9
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -78,6 +84,8 @@ extension POGOProtos_Enums_PlayerSubmissionType: CaseIterable {
     .poiLocationUpdate,
     .poiTakedownRequest,
     .poiArVideoSubmission,
+    .sponsorPoiReport,
+    .sponsorPoiLocationUpdate,
   ]
 }
 
@@ -95,5 +103,7 @@ extension POGOProtos_Enums_PlayerSubmissionType: SwiftProtobuf._ProtoNameProvidi
     5: .same(proto: "POI_LOCATION_UPDATE"),
     6: .same(proto: "POI_TAKEDOWN_REQUEST"),
     7: .same(proto: "POI_AR_VIDEO_SUBMISSION"),
+    8: .same(proto: "SPONSOR_POI_REPORT"),
+    9: .same(proto: "SPONSOR_POI_LOCATION_UPDATE"),
   ]
 }

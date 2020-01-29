@@ -59,6 +59,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case buddyArPlusTutorial // = 37
   case buddyFeedTutorial // = 38
   case buddyOnMapPrompt // = 39
+  case battleLeagueHelpTutorial // = 40
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -105,6 +106,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case 37: self = .buddyArPlusTutorial
     case 38: self = .buddyFeedTutorial
     case 39: self = .buddyOnMapPrompt
+    case 40: self = .battleLeagueHelpTutorial
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -149,6 +151,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .buddyArPlusTutorial: return 37
     case .buddyFeedTutorial: return 38
     case .buddyOnMapPrompt: return 39
+    case .battleLeagueHelpTutorial: return 40
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -198,6 +201,7 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
     .buddyArPlusTutorial,
     .buddyFeedTutorial,
     .buddyOnMapPrompt,
+    .battleLeagueHelpTutorial,
   ]
 }
 
@@ -245,5 +249,6 @@ extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
     37: .same(proto: "BUDDY_AR_PLUS_TUTORIAL"),
     38: .same(proto: "BUDDY_FEED_TUTORIAL"),
     39: .same(proto: "BUDDY_ON_MAP_PROMPT"),
+    40: .same(proto: "BATTLE_LEAGUE_HELP_TUTORIAL"),
   ]
 }

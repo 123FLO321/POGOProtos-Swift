@@ -32,6 +32,8 @@ public struct POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry 
 
   public var partnerID: String = String()
 
+  public var campaignID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,6 +50,7 @@ extension POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry: Swi
     2: .standard(proto: "fort_id"),
     3: .standard(proto: "fort_type"),
     4: .standard(proto: "partner_id"),
+    5: .standard(proto: "campaign_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +60,7 @@ extension POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry: Swi
       case 2: try decoder.decodeSingularStringField(value: &self.fortID)
       case 3: try decoder.decodeSingularEnumField(value: &self.fortType)
       case 4: try decoder.decodeSingularStringField(value: &self.partnerID)
+      case 5: try decoder.decodeSingularStringField(value: &self.campaignID)
       default: break
       }
     }
@@ -75,6 +79,9 @@ extension POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry: Swi
     if !self.partnerID.isEmpty {
       try visitor.visitSingularStringField(value: self.partnerID, fieldNumber: 4)
     }
+    if !self.campaignID.isEmpty {
+      try visitor.visitSingularStringField(value: self.campaignID, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +90,7 @@ extension POGOProtos_Data_Telemetry_ReadPointOfInterestDescriptionTelemetry: Swi
     if lhs.fortID != rhs.fortID {return false}
     if lhs.fortType != rhs.fortType {return false}
     if lhs.partnerID != rhs.partnerID {return false}
+    if lhs.campaignID != rhs.campaignID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

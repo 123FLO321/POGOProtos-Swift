@@ -26,6 +26,8 @@ public struct POGOProtos_Networking_Platform_Requests_RemoveLoginActionMessage {
 
   public var identityProvider: POGOProtos_Enums_IdentityProvider = .unsetIdentityProvider
 
+  public var authProviderID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -39,12 +41,14 @@ extension POGOProtos_Networking_Platform_Requests_RemoveLoginActionMessage: Swif
   public static let protoMessageName: String = _protobuf_package + ".RemoveLoginActionMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "identity_provider"),
+    3: .standard(proto: "auth_provider_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.identityProvider)
+      case 3: try decoder.decodeSingularStringField(value: &self.authProviderID)
       default: break
       }
     }
@@ -54,11 +58,15 @@ extension POGOProtos_Networking_Platform_Requests_RemoveLoginActionMessage: Swif
     if self.identityProvider != .unsetIdentityProvider {
       try visitor.visitSingularEnumField(value: self.identityProvider, fieldNumber: 1)
     }
+    if !self.authProviderID.isEmpty {
+      try visitor.visitSingularStringField(value: self.authProviderID, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Platform_Requests_RemoveLoginActionMessage, rhs: POGOProtos_Networking_Platform_Requests_RemoveLoginActionMessage) -> Bool {
     if lhs.identityProvider != rhs.identityProvider {return false}
+    if lhs.authProviderID != rhs.authProviderID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

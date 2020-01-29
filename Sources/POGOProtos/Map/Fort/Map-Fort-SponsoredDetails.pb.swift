@@ -32,6 +32,8 @@ public struct POGOProtos_Map_Fort_SponsoredDetails {
 
   public var promoButtonMessageType: POGOProtos_Map_Fort_SponsoredDetails.PromoButtonMessageType = .unset
 
+  public var campaignID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum PromoButtonMessageType: SwiftProtobuf.Enum {
@@ -92,6 +94,7 @@ extension POGOProtos_Map_Fort_SponsoredDetails: SwiftProtobuf.Message, SwiftProt
     2: .standard(proto: "promo_description"),
     3: .standard(proto: "call_to_action_link"),
     4: .standard(proto: "promo_button_message_type"),
+    5: .standard(proto: "campaign_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -101,6 +104,7 @@ extension POGOProtos_Map_Fort_SponsoredDetails: SwiftProtobuf.Message, SwiftProt
       case 2: try decoder.decodeRepeatedStringField(value: &self.promoDescription)
       case 3: try decoder.decodeSingularStringField(value: &self.callToActionLink)
       case 4: try decoder.decodeSingularEnumField(value: &self.promoButtonMessageType)
+      case 5: try decoder.decodeSingularStringField(value: &self.campaignID)
       default: break
       }
     }
@@ -119,6 +123,9 @@ extension POGOProtos_Map_Fort_SponsoredDetails: SwiftProtobuf.Message, SwiftProt
     if self.promoButtonMessageType != .unset {
       try visitor.visitSingularEnumField(value: self.promoButtonMessageType, fieldNumber: 4)
     }
+    if !self.campaignID.isEmpty {
+      try visitor.visitSingularStringField(value: self.campaignID, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -127,6 +134,7 @@ extension POGOProtos_Map_Fort_SponsoredDetails: SwiftProtobuf.Message, SwiftProt
     if lhs.promoDescription != rhs.promoDescription {return false}
     if lhs.callToActionLink != rhs.callToActionLink {return false}
     if lhs.promoButtonMessageType != rhs.promoButtonMessageType {return false}
+    if lhs.campaignID != rhs.campaignID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

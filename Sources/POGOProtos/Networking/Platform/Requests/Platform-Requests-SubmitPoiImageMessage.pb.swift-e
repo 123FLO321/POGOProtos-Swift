@@ -26,6 +26,8 @@ public struct POGOProtos_Networking_Platform_Requests_SubmitPoiImageMessage {
 
   public var poiID: String = String()
 
+  public var asyncFileUpload: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -39,12 +41,14 @@ extension POGOProtos_Networking_Platform_Requests_SubmitPoiImageMessage: SwiftPr
   public static let protoMessageName: String = _protobuf_package + ".SubmitPoiImageMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "poi_id"),
+    2: .standard(proto: "async_file_upload"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.poiID)
+      case 2: try decoder.decodeSingularBoolField(value: &self.asyncFileUpload)
       default: break
       }
     }
@@ -54,11 +58,15 @@ extension POGOProtos_Networking_Platform_Requests_SubmitPoiImageMessage: SwiftPr
     if !self.poiID.isEmpty {
       try visitor.visitSingularStringField(value: self.poiID, fieldNumber: 1)
     }
+    if self.asyncFileUpload != false {
+      try visitor.visitSingularBoolField(value: self.asyncFileUpload, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Platform_Requests_SubmitPoiImageMessage, rhs: POGOProtos_Networking_Platform_Requests_SubmitPoiImageMessage) -> Bool {
     if lhs.poiID != rhs.poiID {return false}
+    if lhs.asyncFileUpload != rhs.asyncFileUpload {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

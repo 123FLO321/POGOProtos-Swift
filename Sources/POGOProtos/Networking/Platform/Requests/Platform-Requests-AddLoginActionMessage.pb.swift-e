@@ -28,6 +28,8 @@ public struct POGOProtos_Networking_Platform_Requests_AddLoginActionMessage {
 
   public var innerMessage: Data = SwiftProtobuf.Internal.emptyData
 
+  public var authProviderID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -42,6 +44,7 @@ extension POGOProtos_Networking_Platform_Requests_AddLoginActionMessage: SwiftPr
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "identity_provider"),
     2: .standard(proto: "inner_message"),
+    3: .standard(proto: "auth_provider_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +52,7 @@ extension POGOProtos_Networking_Platform_Requests_AddLoginActionMessage: SwiftPr
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.identityProvider)
       case 2: try decoder.decodeSingularBytesField(value: &self.innerMessage)
+      case 3: try decoder.decodeSingularStringField(value: &self.authProviderID)
       default: break
       }
     }
@@ -61,12 +65,16 @@ extension POGOProtos_Networking_Platform_Requests_AddLoginActionMessage: SwiftPr
     if !self.innerMessage.isEmpty {
       try visitor.visitSingularBytesField(value: self.innerMessage, fieldNumber: 2)
     }
+    if !self.authProviderID.isEmpty {
+      try visitor.visitSingularStringField(value: self.authProviderID, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Platform_Requests_AddLoginActionMessage, rhs: POGOProtos_Networking_Platform_Requests_AddLoginActionMessage) -> Bool {
     if lhs.identityProvider != rhs.identityProvider {return false}
     if lhs.innerMessage != rhs.innerMessage {return false}
+    if lhs.authProviderID != rhs.authProviderID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

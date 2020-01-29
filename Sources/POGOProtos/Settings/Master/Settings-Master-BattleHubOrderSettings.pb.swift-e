@@ -26,7 +26,21 @@ public struct POGOProtos_Settings_Master_BattleHubOrderSettings {
 
   public var section: [POGOProtos_Settings_Master_BattleHubOrderSettings.SectionSettings] = []
 
+  public var sectionGroup: [POGOProtos_Settings_Master_BattleHubOrderSettings.SectionGroup] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public struct SectionGroup {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var section: [POGOProtos_Settings_Master_BattleHubOrderSettings.SectionSettings.BattleHubSection] = []
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
 
   public struct SectionSettings {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -46,6 +60,8 @@ public struct POGOProtos_Settings_Master_BattleHubOrderSettings {
       case sectionCurrSeason // = 2
       case sectionLastSeason // = 3
       case sectionNearby // = 4
+      case sectionTeamLeaders // = 5
+      case sectionQrCode // = 6
       case UNRECOGNIZED(Int)
 
       public init() {
@@ -59,6 +75,8 @@ public struct POGOProtos_Settings_Master_BattleHubOrderSettings {
         case 2: self = .sectionCurrSeason
         case 3: self = .sectionLastSeason
         case 4: self = .sectionNearby
+        case 5: self = .sectionTeamLeaders
+        case 6: self = .sectionQrCode
         default: self = .UNRECOGNIZED(rawValue)
         }
       }
@@ -70,6 +88,8 @@ public struct POGOProtos_Settings_Master_BattleHubOrderSettings {
         case .sectionCurrSeason: return 2
         case .sectionLastSeason: return 3
         case .sectionNearby: return 4
+        case .sectionTeamLeaders: return 5
+        case .sectionQrCode: return 6
         case .UNRECOGNIZED(let i): return i
         }
       }
@@ -130,12 +150,14 @@ extension POGOProtos_Settings_Master_BattleHubOrderSettings: SwiftProtobuf.Messa
   public static let protoMessageName: String = _protobuf_package + ".BattleHubOrderSettings"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "section"),
+    2: .standard(proto: "section_group"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedMessageField(value: &self.section)
+      case 2: try decoder.decodeRepeatedMessageField(value: &self.sectionGroup)
       default: break
       }
     }
@@ -145,10 +167,43 @@ extension POGOProtos_Settings_Master_BattleHubOrderSettings: SwiftProtobuf.Messa
     if !self.section.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.section, fieldNumber: 1)
     }
+    if !self.sectionGroup.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.sectionGroup, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_Master_BattleHubOrderSettings, rhs: POGOProtos_Settings_Master_BattleHubOrderSettings) -> Bool {
+    if lhs.section != rhs.section {return false}
+    if lhs.sectionGroup != rhs.sectionGroup {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Settings_Master_BattleHubOrderSettings.SectionGroup: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Settings_Master_BattleHubOrderSettings.protoMessageName + ".SectionGroup"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "section"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedEnumField(value: &self.section)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.section.isEmpty {
+      try visitor.visitPackedEnumField(value: self.section, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Settings_Master_BattleHubOrderSettings.SectionGroup, rhs: POGOProtos_Settings_Master_BattleHubOrderSettings.SectionGroup) -> Bool {
     if lhs.section != rhs.section {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
@@ -197,6 +252,8 @@ extension POGOProtos_Settings_Master_BattleHubOrderSettings.SectionSettings.Batt
     2: .same(proto: "SECTION_CURR_SEASON"),
     3: .same(proto: "SECTION_LAST_SEASON"),
     4: .same(proto: "SECTION_NEARBY"),
+    5: .same(proto: "SECTION_TEAM_LEADERS"),
+    6: .same(proto: "SECTION_QR_CODE"),
   ]
 }
 

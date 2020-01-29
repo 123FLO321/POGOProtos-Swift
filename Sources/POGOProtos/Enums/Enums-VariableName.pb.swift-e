@@ -67,6 +67,8 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
   case poiID // = 1034
   case poiExpiration // = 1035
   case buddyLevel // = 1036
+  case numVsSeekerCharges // = 1037
+  case seasonNumber // = 1038
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -121,6 +123,8 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case 1034: self = .poiID
     case 1035: self = .poiExpiration
     case 1036: self = .buddyLevel
+    case 1037: self = .numVsSeekerCharges
+    case 1038: self = .seasonNumber
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -173,6 +177,8 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case .poiID: return 1034
     case .poiExpiration: return 1035
     case .buddyLevel: return 1036
+    case .numVsSeekerCharges: return 1037
+    case .seasonNumber: return 1038
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -230,6 +236,8 @@ extension POGOProtos_Enums_VariableName: CaseIterable {
     .poiID,
     .poiExpiration,
     .buddyLevel,
+    .numVsSeekerCharges,
+    .seasonNumber,
   ]
 }
 
@@ -285,5 +293,7 @@ extension POGOProtos_Enums_VariableName: SwiftProtobuf._ProtoNameProviding {
     1034: .same(proto: "POI_ID"),
     1035: .same(proto: "POI_EXPIRATION"),
     1036: .same(proto: "BUDDY_LEVEL"),
+    1037: .same(proto: "NUM_VS_SEEKER_CHARGES"),
+    1038: .same(proto: "SEASON_NUMBER"),
   ]
 }

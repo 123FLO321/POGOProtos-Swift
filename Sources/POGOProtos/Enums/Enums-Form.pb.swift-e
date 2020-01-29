@@ -2081,6 +2081,8 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case wurmpleSpring2020 // = 2327
   case wobbuffetSpring2020 // = 2328
   case raticateSpring2020 // = 2329
+  case frillishFemale // = 2330
+  case jellicentFemale // = 2331
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -4149,6 +4151,8 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 2327: self = .wurmpleSpring2020
     case 2328: self = .wobbuffetSpring2020
     case 2329: self = .raticateSpring2020
+    case 2330: self = .frillishFemale
+    case 2331: self = .jellicentFemale
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -6215,6 +6219,8 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .wurmpleSpring2020: return 2327
     case .wobbuffetSpring2020: return 2328
     case .raticateSpring2020: return 2329
+    case .frillishFemale: return 2330
+    case .jellicentFemale: return 2331
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -8286,6 +8292,8 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .wurmpleSpring2020,
     .wobbuffetSpring2020,
     .raticateSpring2020,
+    .frillishFemale,
+    .jellicentFemale,
   ]
 }
 
@@ -10355,5 +10363,7 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     2327: .same(proto: "WURMPLE_SPRING_2020"),
     2328: .same(proto: "WOBBUFFET_SPRING_2020"),
     2329: .same(proto: "RATICATE_SPRING_2020"),
+    2330: .same(proto: "FRILLISH_FEMALE"),
+    2331: .same(proto: "JELLICENT_FEMALE"),
   ]
 }
