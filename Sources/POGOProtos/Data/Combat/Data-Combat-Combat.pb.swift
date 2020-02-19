@@ -147,7 +147,7 @@ public struct POGOProtos_Data_Combat_Combat {
       case .finished: return 6
       case .playerQuit: return 7
       case .timeout: return 8
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

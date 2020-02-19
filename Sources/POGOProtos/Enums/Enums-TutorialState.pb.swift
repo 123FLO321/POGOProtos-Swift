@@ -155,7 +155,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .buddyOnMapPrompt: return 39
     case .battleLeagueHelpTutorial: return 40
     case .armpTosConfirmation: return 41
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

@@ -84,7 +84,7 @@ public struct POGOProtos_Map_Fort_InvasionStatus {
       case .errorPlayerBelowV2MinLevel: return 11
       case .errorInvalidHealthUpdates: return 20
       case .errorAttackingPokemonInvalid: return 30
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

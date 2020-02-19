@@ -65,7 +65,7 @@ public enum POGOProtos_Enums_EncounterType: SwiftProtobuf.Enum {
     case .photobomb: return 7
     case .invasion: return 8
     case .vsSeekerReward: return 9
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

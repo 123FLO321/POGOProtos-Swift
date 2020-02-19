@@ -134,7 +134,7 @@ public struct POGOProtos_Data_Buddy_BuddyObservedData {
       case .failedBadBuddy: return 4
       case .failedBuddyV2NotEnabled: return 5
       case .failedPlayerLevelTooLow: return 6
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

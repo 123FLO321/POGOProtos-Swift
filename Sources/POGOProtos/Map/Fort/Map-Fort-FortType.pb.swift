@@ -41,7 +41,7 @@ public enum POGOProtos_Map_Fort_FortType: SwiftProtobuf.Enum {
     switch self {
     case .gym: return 0
     case .checkpoint: return 1
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

@@ -80,7 +80,7 @@ public struct POGOProtos_Networking_Responses_UseItemEggIncubatorResponse {
       case .errorIncubatorAlreadyInUse: return 5
       case .errorPokemonAlreadyIncubating: return 6
       case .errorIncubatorNoUsesRemaining: return 7
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

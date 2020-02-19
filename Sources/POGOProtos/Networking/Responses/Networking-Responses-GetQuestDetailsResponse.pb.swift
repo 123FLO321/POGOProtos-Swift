@@ -58,7 +58,7 @@ public struct POGOProtos_Networking_Responses_GetQuestDetailsResponse {
       case .success: return 1
       case .errorQuestNotFound: return 2
       case .errorInvalidDisplay: return 3
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

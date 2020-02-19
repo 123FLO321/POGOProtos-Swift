@@ -82,7 +82,7 @@ public struct POGOProtos_Networking_Responses_RedeemPoiPasscodeResponse {
       case .invalid: return 7
       case .fullyRedeemed: return 8
       case .expired: return 9
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

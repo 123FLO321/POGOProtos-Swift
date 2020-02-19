@@ -74,7 +74,7 @@ public enum POGOProtos_Enums_IdentityProvider: SwiftProtobuf.Enum {
     case .poseidon: return 10
     case .nintendo: return 11
     case .apple: return 12
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

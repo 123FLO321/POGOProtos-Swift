@@ -107,7 +107,7 @@ public enum POGOProtos_Map_Fort_FortSponsor: SwiftProtobuf.Enum {
     case .plancha: return 21
     case .niaOps: return 22
     case .whisk: return 23
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

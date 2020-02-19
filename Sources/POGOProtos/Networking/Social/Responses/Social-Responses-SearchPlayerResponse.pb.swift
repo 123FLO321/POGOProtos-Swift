@@ -68,7 +68,7 @@ public struct POGOProtos_Networking_Social_Responses_SearchPlayerResponse {
       case .success: return 1
       case .errorUnknown: return 2
       case .errorPlayerNotFound: return 3
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

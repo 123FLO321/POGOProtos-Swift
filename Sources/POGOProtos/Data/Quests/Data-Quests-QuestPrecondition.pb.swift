@@ -135,7 +135,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
       case .equals: return 1
       case .greaterThan: return 2
       case .lessThan: return 3
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -187,7 +187,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
       case .questPreconditionReceivedAnyListedQuest: return 7
       case .questPreconditionMonthYearBucket: return 8
       case .questPreconditionExclusiveInProgressGroup: return 9
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -224,7 +224,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
         switch self {
         case .unset: return 0
         case .giovanni: return 1
-        case .UNRECOGNIZED(let i): return i
+        case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
         }
       }
 

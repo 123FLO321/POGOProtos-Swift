@@ -77,7 +77,7 @@ public struct POGOProtos_Networking_Responses_SetAvatarResponse {
       case .slotNotAllowed: return 4
       case .itemNotOwned: return 5
       case .invalidAvatarType: return 6
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -59,7 +59,7 @@ public enum POGOProtos_Enums_BuddyActivityCategory: SwiftProtobuf.Enum {
     case .buddyCategoryBattle: return 5
     case .buddyCategoryExplore: return 6
     case .buddyCategoryBonus: return 7
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

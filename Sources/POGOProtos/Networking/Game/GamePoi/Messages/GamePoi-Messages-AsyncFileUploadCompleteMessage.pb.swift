@@ -57,7 +57,7 @@ public struct POGOProtos_Networking_Game_GamePoi_Messages_AsyncFileUploadComplet
       case .unset: return 0
       case .uploadDone: return 1
       case .uploadFailed: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

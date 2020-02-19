@@ -50,7 +50,7 @@ public enum POGOProtos_Enums_GymBadgeType: SwiftProtobuf.Enum {
     case .gymBadgeBronze: return 2
     case .gymBadgeSilver: return 3
     case .gymBadgeGold: return 4
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

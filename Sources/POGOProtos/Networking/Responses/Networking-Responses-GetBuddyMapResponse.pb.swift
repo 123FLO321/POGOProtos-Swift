@@ -75,7 +75,7 @@ public struct POGOProtos_Networking_Responses_GetBuddyMapResponse {
       case .unset: return 0
       case .success: return 1
       case .errorBuddyNotValid: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

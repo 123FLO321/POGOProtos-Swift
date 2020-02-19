@@ -89,7 +89,7 @@ public struct POGOProtos_Networking_Responses_AcceptCombatChallengeResponse {
       case .errorAlreadyTimedout: return 8
       case .errorAlreadyCancelled: return 9
       case .errorAccessDenied: return 10
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

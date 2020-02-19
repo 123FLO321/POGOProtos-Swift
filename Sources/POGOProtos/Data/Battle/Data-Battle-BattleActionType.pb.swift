@@ -71,7 +71,7 @@ public enum POGOProtos_Data_Battle_BattleActionType: SwiftProtobuf.Enum {
     case .actionDefeat: return 9
     case .actionTimedOut: return 10
     case .actionSpecialAttack2: return 11
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

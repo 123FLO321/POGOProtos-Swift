@@ -126,7 +126,7 @@ public struct POGOProtos_Networking_Envelopes_ResponseEnvelope {
       case .redirect: return 53
       case .sessionInvalidated: return 100
       case .invalidAuthToken: return 102
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

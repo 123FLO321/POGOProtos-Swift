@@ -44,7 +44,7 @@ public enum POGOProtos_Enums_PokemonCreateContext: SwiftProtobuf.Enum {
     case .createContextWild: return 0
     case .createContextEgg: return 1
     case .createContextEvolve: return 2
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

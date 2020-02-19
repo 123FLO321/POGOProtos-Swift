@@ -83,7 +83,7 @@ public enum POGOProtos_Enums_BuddyActivity: SwiftProtobuf.Enum {
     case .invasionLeader: return 13
     case .invasionGiovanni: return 14
     case .attractivePoi: return 15
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

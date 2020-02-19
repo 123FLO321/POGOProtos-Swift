@@ -44,7 +44,7 @@ public enum POGOProtos_Enums_PhoneBoothPresentationMode: SwiftProtobuf.Enum {
     case .nonePhonebolthpresentationmode: return 0
     case .portrait: return 1
     case .dialog: return 2
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

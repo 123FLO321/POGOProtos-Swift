@@ -47,7 +47,7 @@ public enum POGOProtos_Data_CalendarAddResult: SwiftProtobuf.Enum {
     case .notAdded: return -1
     case .unknown: return 0
     case .added: return 1
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

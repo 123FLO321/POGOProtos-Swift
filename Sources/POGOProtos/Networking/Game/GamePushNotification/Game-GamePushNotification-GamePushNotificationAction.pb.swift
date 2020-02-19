@@ -55,7 +55,7 @@ public enum POGOProtos_Networking_Game_GamePushNotification_GamePushNotification
     case .registerPushNotification: return 320000
     case .unregisterPushNotification: return 320001
     case .optOutPushNotificationCategory: return 320002
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

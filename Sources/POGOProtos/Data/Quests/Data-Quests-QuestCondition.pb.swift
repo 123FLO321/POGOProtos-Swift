@@ -406,7 +406,7 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case .withBuddy: return 28
       case .withBuddyInterestingPoi: return 29
       case .withDailyBuddyAffection: return 30
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -731,7 +731,7 @@ public struct POGOProtos_Data_Quests_QuestCondition {
         case .unset: return 0
         case .storyQuest: return 1
         case .challengeQuest: return 2
-        case .UNRECOGNIZED(let i): return i
+        case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
         }
       }
 

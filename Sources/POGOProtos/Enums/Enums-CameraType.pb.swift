@@ -47,7 +47,7 @@ public enum POGOProtos_Enums_CameraType: SwiftProtobuf.Enum {
     case .shoulder: return 1
     case .enemyPokemonFocus: return 2
     case .myPokemonFocus: return 3
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

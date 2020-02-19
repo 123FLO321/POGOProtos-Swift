@@ -95,7 +95,7 @@ public struct POGOProtos_Networking_Responses_StartRaidBattleResponse {
       case .errorNoTicket: return 10
       case .errorInvalidServer: return 11
       case .errorNeverJoinedBattle: return 12
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

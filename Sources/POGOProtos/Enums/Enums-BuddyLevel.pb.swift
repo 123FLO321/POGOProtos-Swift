@@ -56,7 +56,7 @@ public enum POGOProtos_Enums_BuddyLevel: SwiftProtobuf.Enum {
     case .buddyLevel3: return 4
     case .buddyLevel4: return 5
     case .buddyLevel5: return 6
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

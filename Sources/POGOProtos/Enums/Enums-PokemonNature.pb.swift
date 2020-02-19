@@ -59,7 +59,7 @@ public enum POGOProtos_Enums_PokemonNature: SwiftProtobuf.Enum {
     case .natureProtector: return 5
     case .natureSentry: return 6
     case .natureChampion: return 7
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

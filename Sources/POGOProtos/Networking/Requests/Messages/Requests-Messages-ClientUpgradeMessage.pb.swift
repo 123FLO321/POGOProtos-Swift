@@ -58,7 +58,7 @@ public struct POGOProtos_Networking_Requests_Messages_ClientUpgradeMessage {
       case .osAndroid: return 1
       case .osIos: return 2
       case .osDesktop: return 3
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -65,7 +65,7 @@ public enum POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf.Enum {
     case .iapCategoryTeamChange: return 7
     case .iapCategoryGlobalEventTicket: return 10
     case .iapCategoryVsSeeker: return 11
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

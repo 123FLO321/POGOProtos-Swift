@@ -101,7 +101,7 @@ public struct POGOProtos_Networking_Responses_GetPhotobombResponse {
       case .photobombNotAvailable: return 2
       case .encounterAlreadyCompleted: return 3
       case .errorUnknown: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

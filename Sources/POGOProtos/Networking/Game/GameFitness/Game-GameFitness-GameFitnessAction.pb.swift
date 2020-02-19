@@ -70,7 +70,7 @@ public enum POGOProtos_Networking_Game_GameFitness_GameFitnessAction: SwiftProto
     case .updateAdventureSyncSettings: return 640003
     case .updateAdventureSyncFitness: return 640004
     case .getAdventureSyncFitnessReport: return 640005
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

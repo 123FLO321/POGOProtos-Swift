@@ -77,7 +77,7 @@ public enum POGOProtos_Enums_IncidentDynamicStringTypes: SwiftProtobuf.Enum {
     case .sparkInspire: return 11
     case .gruntDecoy: return 12
     case .combatDecoyQuote: return 13
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

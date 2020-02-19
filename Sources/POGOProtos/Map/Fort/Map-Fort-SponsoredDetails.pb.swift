@@ -61,7 +61,7 @@ public struct POGOProtos_Map_Fort_SponsoredDetails {
       case .unset: return 0
       case .learnMore: return 1
       case .offer: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

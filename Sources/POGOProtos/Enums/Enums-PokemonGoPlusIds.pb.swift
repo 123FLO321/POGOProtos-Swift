@@ -83,7 +83,7 @@ public enum POGOProtos_Enums_PokemonGoPlusIds: SwiftProtobuf.Enum {
     case .pokemonNotCaughtDueError: return 13
     case .pokestopSpun: return 14
     case .pokestopNotSpunDueError: return 15
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -137,7 +137,7 @@ public enum POGOProtos_Enums_DeviceKind: SwiftProtobuf.Enum {
     switch self {
     case .pokemonGoPlusKind: return 0
     case .pokeBallPlus: return 1
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

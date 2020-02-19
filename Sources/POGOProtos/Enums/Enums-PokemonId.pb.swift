@@ -1991,7 +1991,7 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case .genesect: return 649
     case .meltan: return 808
     case .melmetal: return 809
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

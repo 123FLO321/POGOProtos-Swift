@@ -86,7 +86,7 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
       case .invalidPokemon: return 7
       case .moveLocked: return 8
       case .moveCannotBeRerolled: return 9
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

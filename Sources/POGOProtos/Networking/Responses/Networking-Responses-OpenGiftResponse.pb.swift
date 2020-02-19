@@ -110,7 +110,7 @@ public struct POGOProtos_Networking_Responses_OpenGiftResponse {
       case .errorFriendNotFound: return 6
       case .errorInvalidPlayerID: return 7
       case .errorFriendUpdate: return 8
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

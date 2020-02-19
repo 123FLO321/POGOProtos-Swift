@@ -74,7 +74,7 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
     case .invasionRadarViewEmpty: return 10
     case .invasionDecoyFound: return 11
     case .invasionGiovanniFound: return 12
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -137,7 +137,7 @@ public enum POGOProtos_Enums_DeviceServiceTelemetryIds: SwiftProtobuf.Enum {
     case .sfidaDeviceService: return 3
     case .awareness: return 4
     case .adventureSync: return 5
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -199,7 +199,7 @@ public enum POGOProtos_Enums_PermissionContextTelemetryIds: SwiftProtobuf.Enum {
     case .sfidaSessionStarted: return 5
     case .settingsToggle: return 6
     case .nearbyPanelOpened: return 7
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -254,7 +254,7 @@ public enum POGOProtos_Enums_PermissionFlowStepTelemetryIds: SwiftProtobuf.Enum 
     case .fitnessPermission: return 2
     case .locationPermission: return 3
     case .activityPermissions: return 4
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -309,7 +309,7 @@ public enum POGOProtos_Enums_AssetTelemetryIds: SwiftProtobuf.Enum {
     case .downloadFailed: return 3
     case .assetRetrievedFromCache: return 4
     case .cacheThrash: return 5
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -491,7 +491,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case .combatHubEntranceTelemetry: return 45
     case .deviceSpecificationsTelemetry: return 46
     case .screenResolutionTelemetry: return 47
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -601,7 +601,7 @@ public enum POGOProtos_Enums_AvatarCustomizationTelemetryIds: SwiftProtobuf.Enum
     case .selectSlot: return 7
     case .selectColor: return 8
     case .showQuickShop: return 9
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -661,7 +661,7 @@ public enum POGOProtos_Enums_BattlePartyTelemetryIds: SwiftProtobuf.Enum {
     case .gymBattle: return 3
     case .raidBattle: return 4
     case .battlePokemonChanged: return 5
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -708,7 +708,7 @@ public enum POGOProtos_Enums_GenericClickTelemetryIds: SwiftProtobuf.Enum {
     case .undefinedGenericEvent: return 0
     case .speedWarningShow: return 1
     case .speedWarningPassenger: return 2
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -755,7 +755,7 @@ public enum POGOProtos_Enums_ItemUseTelemetryIds: SwiftProtobuf.Enum {
     case .useItem: return 1
     case .recycleItem: return 2
     case .updateItemEquipped: return 3
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -869,7 +869,7 @@ public enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
     case .exitNewPlayer: return 23
     case .exitExistingPlayer: return 24
     case .loginStarted: return 25
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -963,7 +963,7 @@ public enum POGOProtos_Enums_MapEventsTelemetryIds: SwiftProtobuf.Enum {
     case .research: return 9
     case .compass: return 10
     case .nearby: return 11
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1022,7 +1022,7 @@ public enum POGOProtos_Enums_NewsPageTelemetryIds: SwiftProtobuf.Enum {
     case .newsDismissed: return 2
     case .newsLinkClicked: return 3
     case .newsUpdatedApp: return 4
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1071,7 +1071,7 @@ public enum POGOProtos_Enums_PokemonInventoryTelemetryIds: SwiftProtobuf.Enum {
     case .open: return 1
     case .sortingChange: return 2
     case .filter: return 3
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1122,7 +1122,7 @@ public enum POGOProtos_Enums_ProfilePageTelemetryIds: SwiftProtobuf.Enum {
     case .log: return 2
     case .setBuddy: return 3
     case .customizeAvatar: return 4
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1165,7 +1165,7 @@ public enum POGOProtos_Enums_PushNotificationTelemetryIds: SwiftProtobuf.Enum {
     switch self {
     case .undefinedPushNotificationEvent: return 0
     case .openApp: return 1
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1241,7 +1241,7 @@ public enum POGOProtos_Enums_RaidTelemetryIds: SwiftProtobuf.Enum {
     case .lobbyTapAvatar: return 11
     case .lobbyClickRejoinBattle: return 12
     case .lobbyClickLobbyPublic: return 13
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1344,7 +1344,7 @@ public enum POGOProtos_Enums_ShoppingPageTelemetryIds: SwiftProtobuf.Enum {
     case .clickAvatarItemColor: return 16
     case .quitAvatarItemColor: return 17
     case .confirmAvatarItemColor: return 18
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1419,7 +1419,7 @@ public enum POGOProtos_Enums_SocialTelemetryIds: SwiftProtobuf.Enum {
     case .closeOpenGiftConfirmation: return 5
     case .friendListSortChanged: return 6
     case .friendListClosed: return 7
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1465,7 +1465,7 @@ public enum POGOProtos_Enums_WebTelemetryIds: SwiftProtobuf.Enum {
     switch self {
     case .undefinedWebEvent: return 0
     case .pointOfInterestDescriptionWebClick: return 1
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 
@@ -1505,7 +1505,7 @@ public enum POGOProtos_Enums_CombatHubEntranceTelemetryIds: SwiftProtobuf.Enum {
     switch self {
     case .undefinedEvent: return 0
     case .clickedCombatHubButton: return 1
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

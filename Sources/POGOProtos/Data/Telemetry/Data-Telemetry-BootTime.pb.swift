@@ -110,7 +110,7 @@ public struct POGOProtos_Data_Telemetry_BootTime {
       case .loginAuthentication: return 15
       case .modalTime: return 16
       case .initializeAdjust: return 17
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -59,7 +59,7 @@ public struct POGOProtos_Networking_Social_Responses_DeclineFriendInviteResponse
       case .errorUnknown: return 2
       case .errorInviteDoesNotExist: return 3
       case .errorInviteAlreadyDeclined: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

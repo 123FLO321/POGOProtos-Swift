@@ -52,7 +52,7 @@ public struct POGOProtos_Data_Logs_SendGiftLogEntry {
       switch self {
       case .unset: return 0
       case .success: return 1
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

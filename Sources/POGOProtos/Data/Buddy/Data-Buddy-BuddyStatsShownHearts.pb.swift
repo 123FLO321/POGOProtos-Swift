@@ -55,7 +55,7 @@ public struct POGOProtos_Data_Buddy_BuddyStatsShownHearts {
       case .buddyHeartUnset: return 0
       case .buddyHeartSingle: return 1
       case .buddyHeartDouble: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

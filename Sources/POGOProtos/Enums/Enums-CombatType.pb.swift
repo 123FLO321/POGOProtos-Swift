@@ -56,7 +56,7 @@ public enum POGOProtos_Enums_CombatType: SwiftProtobuf.Enum {
     case .nearbyCombat: return 4
     case .soloInvasion: return 5
     case .vsSeeker: return 6
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

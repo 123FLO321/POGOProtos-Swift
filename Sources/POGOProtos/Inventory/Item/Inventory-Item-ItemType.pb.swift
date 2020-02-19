@@ -104,7 +104,7 @@ public enum POGOProtos_Inventory_Item_ItemType: SwiftProtobuf.Enum {
     case .vsSeekerBattleNow: return 21
     case .incidentTicket: return 22
     case .globalEventTicket: return 23
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

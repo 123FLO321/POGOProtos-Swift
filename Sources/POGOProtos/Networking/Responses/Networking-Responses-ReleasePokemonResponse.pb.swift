@@ -64,7 +64,7 @@ public struct POGOProtos_Networking_Responses_ReleasePokemonResponse {
       case .failed: return 3
       case .errorPokemonIsEgg: return 4
       case .errorPokemonIsBuddy: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

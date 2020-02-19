@@ -215,7 +215,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemLeaderMap: return 1502
     case .itemGiovanniMap: return 1503
     case .itemGlobalEventTicket: return 1600
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

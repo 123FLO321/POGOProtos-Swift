@@ -91,7 +91,7 @@ public struct POGOProtos_Networking_Responses_SetBuddyPokemonResponse {
       case .errorPokemonIsEgg: return 4
       case .errorInvalidPokemon: return 5
       case .errorBuddySwapLimitExceeded: return 6
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

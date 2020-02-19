@@ -75,7 +75,7 @@ public struct POGOProtos_Settings_Master_BuddyLevelSettings {
       case .findAttractivePois: return 6
       case .bestBuddyAsset: return 7
       case .cpBoost: return 8
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

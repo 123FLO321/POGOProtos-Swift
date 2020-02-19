@@ -97,7 +97,7 @@ public struct POGOProtos_Networking_Responses_CompleteQuestResponse {
       case .errorMultipartAlreadyCompleted: return 9
       case .errorRedeemCompletedQuestStampCardFirst: return 10
       case .errorInventoryFull: return 11
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

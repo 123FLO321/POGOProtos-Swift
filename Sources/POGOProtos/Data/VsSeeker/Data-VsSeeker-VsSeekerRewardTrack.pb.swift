@@ -41,7 +41,7 @@ public enum POGOProtos_Data_VsSeeker_VsSeekerRewardTrack: SwiftProtobuf.Enum {
     switch self {
     case .free: return 0
     case .premium: return 1
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

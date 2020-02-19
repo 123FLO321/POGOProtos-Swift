@@ -71,7 +71,7 @@ public struct POGOProtos_Networking_Responses_UseIncenseResponse {
       case .incenseAlreadyActive: return 2
       case .noneInInventory: return 3
       case .locationUnset: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

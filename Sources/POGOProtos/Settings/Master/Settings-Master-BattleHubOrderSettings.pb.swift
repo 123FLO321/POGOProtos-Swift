@@ -90,7 +90,7 @@ public struct POGOProtos_Settings_Master_BattleHubOrderSettings {
         case .sectionNearby: return 4
         case .sectionTeamLeaders: return 5
         case .sectionQrCode: return 6
-        case .UNRECOGNIZED(let i): return i
+        case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
         }
       }
 
@@ -130,7 +130,7 @@ public struct POGOProtos_Settings_Master_BattleHubOrderSettings {
         case .subsectionVsPremium: return 3
         case .subsectionNearbyTeamLeaders: return 4
         case .subsectionNearbyQrCode: return 5
-        case .UNRECOGNIZED(let i): return i
+        case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
         }
       }
 

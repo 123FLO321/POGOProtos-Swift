@@ -90,7 +90,7 @@ public struct POGOProtos_Data_Combat_CombatAction {
       case .faint: return 7
       case .changePokemon: return 8
       case .quickSwapPokemon: return 9
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -63,7 +63,7 @@ public struct POGOProtos_Data_EnumWrapper {
       case .cliff: return 4
       case .sierra: return 5
       case .giovanni: return 6
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -238,7 +238,7 @@ public struct POGOProtos_Data_EnumWrapper {
       case .characterGhostGruntMale: return 48
       case .characterElectricGruntFemale: return 49
       case .characterElectricGruntMale: return 50
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -275,7 +275,7 @@ public struct POGOProtos_Data_EnumWrapper {
       case .placeholder2: return 2
       case .placeholder3: return 3
       case .placeholder4: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -306,7 +306,7 @@ public struct POGOProtos_Data_EnumWrapper {
       case .pokestopNormal: return 0
       case .pokestopRocketInvasion: return 1
       case .pokestopRocketVictory: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

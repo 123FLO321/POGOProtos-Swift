@@ -41,7 +41,7 @@ public enum POGOProtos_Enums_IncubationResult: SwiftProtobuf.Enum {
     switch self {
     case .successIncubationResult: return 0
     case .failure: return 1
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

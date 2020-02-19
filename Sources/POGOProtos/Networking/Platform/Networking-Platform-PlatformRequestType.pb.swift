@@ -275,7 +275,7 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
     case .getWebTokenAction: return 5045
     case .getAdventureSyncSettings: return 5046
     case .updateAdventureSyncSettings: return 5047
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

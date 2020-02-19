@@ -66,7 +66,7 @@ public struct POGOProtos_Data_News_NewsArticle {
       switch self {
       case .unset: return 0
       case .defaultTemplate: return 1
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

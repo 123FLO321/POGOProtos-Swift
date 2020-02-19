@@ -149,7 +149,7 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case .questBuddyLevel: return 36
     case .questBuddyWalk: return 37
     case .questBuddyYatta: return 38
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

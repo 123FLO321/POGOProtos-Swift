@@ -79,7 +79,7 @@ public struct POGOProtos_Map_Fort_GymEvent {
       case .raidStarted: return 6
       case .raidEnded: return 7
       case .gymNeutralized: return 8
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

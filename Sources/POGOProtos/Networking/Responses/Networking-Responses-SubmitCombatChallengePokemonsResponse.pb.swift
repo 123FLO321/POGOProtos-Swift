@@ -86,7 +86,7 @@ public struct POGOProtos_Networking_Responses_SubmitCombatChallengePokemonsRespo
       case .errorAlreadyCancelled: return 7
       case .errorAccessDenied: return 8
       case .errorAlreadyDeclined: return 9
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

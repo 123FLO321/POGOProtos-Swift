@@ -173,7 +173,7 @@ public struct POGOProtos_Data_Beluga_BelugaPokemon {
       switch self {
       case .formUnset: return 0
       case .alola: return 1
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -201,7 +201,7 @@ public struct POGOProtos_Data_Beluga_BelugaPokemon {
       switch self {
       case .trainerMale: return 0
       case .trainerFemale: return 1
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

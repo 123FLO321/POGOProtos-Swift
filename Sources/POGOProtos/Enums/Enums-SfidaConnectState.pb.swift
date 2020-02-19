@@ -59,7 +59,7 @@ public enum POGOProtos_Enums_SfidaConnectState: SwiftProtobuf.Enum {
     case .softwareUpdate: return 5
     case .failed: return 6
     case .connecting: return 7
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

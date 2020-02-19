@@ -70,7 +70,7 @@ public struct POGOProtos_Networking_Titan_Responses_SubmitNewPoiResponse {
       case .invalidInput: return 5
       case .minor: return 6
       case .notAvailable: return 7
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

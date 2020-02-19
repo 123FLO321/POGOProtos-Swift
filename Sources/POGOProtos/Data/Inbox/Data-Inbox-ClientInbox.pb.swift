@@ -145,7 +145,7 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
       case .combatVsSeekerCharged: return 30
       case .combatCompetitiveSeasonEnd: return 31
       case .buddyAffectionAttractivePoi: return 32
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -200,7 +200,7 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
         case .unread: return 1
         case .new: return 2
         case .immediate: return 3
-        case .UNRECOGNIZED(let i): return i
+        case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
         }
       }
 

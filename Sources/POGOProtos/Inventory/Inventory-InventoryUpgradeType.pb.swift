@@ -44,7 +44,7 @@ public enum POGOProtos_Inventory_InventoryUpgradeType: SwiftProtobuf.Enum {
     case .upgradeUnset: return 0
     case .increaseItemStorage: return 1
     case .increasePokemonStorage: return 2
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

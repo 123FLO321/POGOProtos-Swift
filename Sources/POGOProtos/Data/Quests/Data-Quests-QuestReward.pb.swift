@@ -157,7 +157,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case .avatarClothing: return 5
       case .quest: return 6
       case .pokemonEncounter: return 7
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

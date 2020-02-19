@@ -93,7 +93,7 @@ public struct POGOProtos_Networking_Responses_VsSeekerRewardEncounterResponse {
       case .errorPlayerNotEnoughVictories: return 3
       case .errorPokemonInventoryFull: return 4
       case .errorRedeemItem: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

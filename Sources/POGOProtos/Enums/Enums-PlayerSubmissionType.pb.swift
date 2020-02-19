@@ -65,7 +65,7 @@ public enum POGOProtos_Enums_PlayerSubmissionType: SwiftProtobuf.Enum {
     case .poiArVideoSubmission: return 7
     case .sponsorPoiReport: return 8
     case .sponsorPoiLocationUpdate: return 9
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

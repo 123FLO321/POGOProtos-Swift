@@ -930,7 +930,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .createBuddyMutliplayerSession: return 1456
     case .joinBuddyMultiplayerSession: return 1457
     case .leaveBuddyMultiplayerSession: return 1458
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

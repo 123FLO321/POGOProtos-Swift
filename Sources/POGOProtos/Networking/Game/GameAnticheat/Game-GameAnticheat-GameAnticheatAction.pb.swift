@@ -50,7 +50,7 @@ public enum POGOProtos_Networking_Game_GameAnticheat_GameAnticheatAction: SwiftP
     case .unknownGameAnticheatAction: return 0
     case .getOutstandingWarnings: return 200000
     case .acknowledgeWarnings: return 200001
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

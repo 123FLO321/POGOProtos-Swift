@@ -71,7 +71,7 @@ public struct POGOProtos_Networking_Responses_QuitCombatResponse {
       case .errorCombatNotFound: return 2
       case .errorInvalidCombatState: return 3
       case .errorPlayerNotInCombat: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -66,7 +66,7 @@ public struct POGOProtos_Networking_Responses_SfidaDowserResponse {
       case .outOfRange: return 3
       case .alreadyCaught: return 4
       case .notAvailable: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

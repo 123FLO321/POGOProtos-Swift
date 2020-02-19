@@ -57,7 +57,7 @@ public struct POGOProtos_Data_Telemetry_ShoppingPageScrollTelemetry {
       case .undefinedShoppingPageScrollType: return 0
       case .lastScroll: return 1
       case .maxScroll: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

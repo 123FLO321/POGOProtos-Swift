@@ -71,7 +71,7 @@ public enum POGOProtos_Enums_PokemonAnim: SwiftProtobuf.Enum {
     case .sleep01: return 9
     case .sleep02: return 10
     case .sleepWait: return 11
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

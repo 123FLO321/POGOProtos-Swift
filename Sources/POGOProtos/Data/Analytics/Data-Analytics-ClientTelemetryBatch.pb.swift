@@ -65,7 +65,7 @@ public struct POGOProtos_Data_Analytics_ClientTelemetryBatch {
       case .game: return 2
       case .titan: return 3
       case .common: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

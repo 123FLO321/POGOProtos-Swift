@@ -68,7 +68,7 @@ public struct POGOProtos_Networking_Game_GamePoi_Responses_SubmitPoiImageRespons
       case .notAvailable: return 5
       case .missingImage: return 6
       case .invalidInput: return 7
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

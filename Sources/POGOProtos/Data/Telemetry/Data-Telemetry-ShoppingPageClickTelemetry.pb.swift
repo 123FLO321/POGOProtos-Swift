@@ -104,7 +104,7 @@ public struct POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry {
       case .sourceBadgeDetailAvatarReward: return 15
       case .sourceQuickShopBuddyInteractionPoffin: return 100
       case .sourceQuickShopBuddyQuickFeedPoffin: return 101
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -66,7 +66,7 @@ public struct POGOProtos_Networking_Game_GamePoi_Messages_SubmitSponsorPoiReport
       case .sponsorPoiReasonNotTruthful: return 3
       case .sponsorPoiReasonNotFamilyFriendly: return 4
       case .sponsorPoiReasonOffensiveContent: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

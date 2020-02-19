@@ -140,7 +140,7 @@ public enum POGOProtos_Networking_Social_SocialAction: SwiftProtobuf.Enum {
     case .updateNotification: return 10103
     case .optOutPushNotificationCategorySocialAction: return 10104
     case .getInbox: return 10105
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

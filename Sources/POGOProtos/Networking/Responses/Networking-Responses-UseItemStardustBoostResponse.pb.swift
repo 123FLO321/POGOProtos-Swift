@@ -74,7 +74,7 @@ public struct POGOProtos_Networking_Responses_UseItemStardustBoostResponse {
       case .errorStardustBoostAlreadyActive: return 3
       case .errorNoItemsRemaining: return 4
       case .errorLocationUnset: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -45,7 +45,7 @@ public enum POGOProtos_Networking_Game_GameNotification_GameNotificationAction: 
     switch self {
     case .unknownGameNotificationAction: return 0
     case .updateNotificationStatus: return 350000
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

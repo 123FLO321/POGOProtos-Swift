@@ -83,7 +83,7 @@ public struct POGOProtos_Networking_Responses_JoinBuddyMultiplayerSessionRespons
       case .joinPlayerLevelTooLow: return 8
       case .joinUnknownError: return 9
       case .joinU13NoPermission: return 10
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -65,7 +65,7 @@ public struct POGOProtos_Networking_Titan_Responses_GetUploadUrlResponse {
       case .success: return 2
       case .missingImageContexts: return 3
       case .duplicateImageContexts: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

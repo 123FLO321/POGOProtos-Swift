@@ -55,7 +55,7 @@ public enum POGOProtos_Networking_Game_GamePing_GamePingAction: SwiftProtobuf.En
     case .ping: return 220000
     case .pingAsync: return 220001
     case .pingDownstream: return 220002
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

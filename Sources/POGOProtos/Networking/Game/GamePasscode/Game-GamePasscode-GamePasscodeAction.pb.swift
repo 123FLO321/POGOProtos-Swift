@@ -45,7 +45,7 @@ public enum POGOProtos_Networking_Game_GamePasscode_GamePasscodeAction: SwiftPro
     switch self {
     case .unknownGamePasscodeAction: return 0
     case .redeemPasscode: return 330000
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

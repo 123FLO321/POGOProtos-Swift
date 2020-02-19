@@ -66,7 +66,7 @@ public struct POGOProtos_Networking_Social_Responses_GetFacebookFriendListRespon
       case .errorFacebookApi: return 3
       case .errorFacebookPermissions: return 4
       case .errorNoFacebookID: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

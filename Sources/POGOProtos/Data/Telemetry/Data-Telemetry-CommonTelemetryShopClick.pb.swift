@@ -83,7 +83,7 @@ public struct POGOProtos_Data_Telemetry_CommonTelemetryShopClick {
       case .unspecified: return 0
       case .passive: return 1
       case .active: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

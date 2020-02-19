@@ -47,7 +47,7 @@ public enum POGOProtos_Enums_AssetBundleStatus: SwiftProtobuf.Enum {
     case .loading: return 1
     case .loaded: return 2
     case .failedAssetBundleStatus: return 3
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

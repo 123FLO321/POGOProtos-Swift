@@ -6221,7 +6221,7 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .raticateSpring2020: return 2329
     case .frillishFemale: return 2330
     case .jellicentFemale: return 2331
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

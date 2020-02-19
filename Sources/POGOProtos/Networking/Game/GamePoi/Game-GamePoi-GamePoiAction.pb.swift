@@ -115,7 +115,7 @@ public enum POGOProtos_Networking_Game_GamePoi_GamePoiAction: SwiftProtobuf.Enum
     case .submitPoiArVideoMetadata: return 620400
     case .getGrapeshotFileUploadURL: return 620401
     case .asyncFileUploadComplete: return 620402
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

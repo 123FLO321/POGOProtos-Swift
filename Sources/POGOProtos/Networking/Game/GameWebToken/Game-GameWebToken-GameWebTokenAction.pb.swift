@@ -45,7 +45,7 @@ public enum POGOProtos_Networking_Game_GameWebToken_GameWebTokenAction: SwiftPro
     switch self {
     case .unknownGameWebTokenAction: return 0
     case .getWebTokenAction: return 370000
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

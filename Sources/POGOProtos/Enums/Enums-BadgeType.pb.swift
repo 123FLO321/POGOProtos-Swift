@@ -521,7 +521,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeSafarizone2019MontrealDay03General: return 5045
     case .badgeSafarizone2019MontrealDay03Earlyaccess: return 5046
     case .badgeGlobalTicketedEvent: return 5100
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

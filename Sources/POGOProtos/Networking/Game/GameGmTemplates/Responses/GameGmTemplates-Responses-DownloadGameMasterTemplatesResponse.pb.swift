@@ -72,7 +72,7 @@ public struct POGOProtos_Networking_Game_GameGmTemplates_Responses_DownloadGameM
       case .batchIDNotLive: return 3
       case .invalidBasisBatchID: return 4
       case .wrongExperiments: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

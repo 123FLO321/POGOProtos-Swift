@@ -104,7 +104,7 @@ public enum POGOProtos_Enums_ItemCategory: SwiftProtobuf.Enum {
     case .incidentTicket: return 21
     case .globalEventTicket: return 22
     case .buddyExclusiveFood: return 23
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

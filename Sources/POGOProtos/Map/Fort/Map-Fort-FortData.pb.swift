@@ -323,7 +323,7 @@ public struct POGOProtos_Map_Fort_FortData {
         case .invasionGrunt: return 1
         case .invasionLeader: return 2
         case .invasionGiovanni: return 3
-        case .UNRECOGNIZED(let i): return i
+        case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
         }
       }
 

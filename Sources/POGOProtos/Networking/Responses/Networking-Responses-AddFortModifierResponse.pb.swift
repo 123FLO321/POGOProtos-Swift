@@ -74,7 +74,7 @@ public struct POGOProtos_Networking_Responses_AddFortModifierResponse {
       case .tooFarAway: return 3
       case .noItemInInventory: return 4
       case .poiInaccessible: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

@@ -74,7 +74,7 @@ public struct POGOProtos_Networking_Responses_PurifyPokemonResponse {
       case .errorPokemonDeployed: return 4
       case .errorPokemonNotFound: return 5
       case .errorPokemonNotShadow: return 6
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

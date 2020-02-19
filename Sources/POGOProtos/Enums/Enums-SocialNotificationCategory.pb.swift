@@ -44,7 +44,7 @@ public enum POGOProtos_Enums_SocialNotificationCategory: SwiftProtobuf.Enum {
     case .unsetSocialNotification: return 0
     case .friendInviteReceivedSocialNotification: return 1
     case .friendInviteAcceptedSocialNotification: return 2
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

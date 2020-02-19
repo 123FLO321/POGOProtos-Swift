@@ -47,7 +47,7 @@ public enum POGOProtos_Enums_PlatformWarningType: SwiftProtobuf.Enum {
     case .platformWarningStrike1: return 1
     case .platformWarningStrike2: return 2
     case .platformWarningStrike3: return 3
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

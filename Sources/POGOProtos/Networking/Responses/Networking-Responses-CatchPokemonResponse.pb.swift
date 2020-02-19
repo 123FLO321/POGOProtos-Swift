@@ -105,7 +105,7 @@ public struct POGOProtos_Networking_Responses_CatchPokemonResponse {
       case .catchEscape: return 2
       case .catchFlee: return 3
       case .catchMissed: return 4
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
@@ -139,7 +139,7 @@ public struct POGOProtos_Networking_Responses_CatchPokemonResponse {
       case .default: return 1
       case .elementalBadge: return 2
       case .criticalCatch: return 3
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

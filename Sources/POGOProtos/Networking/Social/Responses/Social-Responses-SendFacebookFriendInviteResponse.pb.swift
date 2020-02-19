@@ -89,7 +89,7 @@ public struct POGOProtos_Networking_Social_Responses_SendFacebookFriendInviteRes
       case .errorFriendCacheExpired: return 12
       case .errorFriendNotCached: return 13
       case .errorInvalidSenderFacebookID: return 14
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

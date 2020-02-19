@@ -83,7 +83,7 @@ public struct POGOProtos_Networking_Responses_UpgradePokemonResponse {
       case .errorInsufficientResources: return 3
       case .errorUpgradeNotAvailable: return 4
       case .errorPokemonIsDeployed: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

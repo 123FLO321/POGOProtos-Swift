@@ -60,7 +60,7 @@ public enum POGOProtos_Networking_Game_GameAccountRegistry_GameAccountRegistryAc
     case .removeLoginAction: return 600001
     case .listLoginAction: return 600002
     case .replaceLoginAction: return 600003
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

@@ -64,7 +64,7 @@ public struct POGOProtos_Networking_Platform_Responses_AddNewPoiResponse {
       case .internalError: return 3
       case .tooManyRecentSubmissions: return 4
       case .invalidInput: return 5
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

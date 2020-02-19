@@ -58,7 +58,7 @@ public struct POGOProtos_Networking_Requests_Messages_SfidaCertificationMessage 
       case .stage1: return 1
       case .stage2: return 2
       case .stage3: return 3
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 

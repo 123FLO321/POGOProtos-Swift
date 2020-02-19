@@ -50,7 +50,7 @@ public enum POGOProtos_Networking_Game_GameTelemetry_GameTelemetryAction: SwiftP
     case .unknownGameTelemetryAction: return 0
     case .collectClientTelemetry: return 610000
     case .getClientTelemetrySettings: return 610001
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

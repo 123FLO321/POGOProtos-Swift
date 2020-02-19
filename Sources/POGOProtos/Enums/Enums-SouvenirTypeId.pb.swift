@@ -83,7 +83,7 @@ public enum POGOProtos_Enums_SouvenirTypeId: SwiftProtobuf.Enum {
     case .souvenirMarble: return 13
     case .souvenirTornTicket: return 14
     case .souvenirPrettyLeaf: return 15
-    case .UNRECOGNIZED(let i): return i
+    case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
 

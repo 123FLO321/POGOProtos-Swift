@@ -57,7 +57,7 @@ public struct POGOProtos_Networking_Platform_Responses_AddLoginActionResponse {
       case .unset: return 0
       case .authFailure: return 1
       case .loginTaken: return 2
-      case .UNRECOGNIZED(let i): return i
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
