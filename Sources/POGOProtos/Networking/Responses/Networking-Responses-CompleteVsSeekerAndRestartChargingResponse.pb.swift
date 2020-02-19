@@ -75,9 +75,9 @@ public struct POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartCharging
   /// Clears the value of `statsAtRankStart`. Subsequent reads from it will return its default value.
   public mutating func clearStatsAtRankStart() {_uniqueStorage()._statsAtRankStart = nil}
 
-  public var avatarTemplateIDAwarded: [String] {
-    get {return _storage._avatarTemplateIDAwarded}
-    set {_uniqueStorage()._avatarTemplateIDAwarded = newValue}
+  public var avatarTemplateIDRewarded: [String] {
+    get {return _storage._avatarTemplateIDRewarded}
+    set {_uniqueStorage()._avatarTemplateIDRewarded = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -165,7 +165,7 @@ extension POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartChargingResp
     5: .standard(proto: "previous_rank"),
     6: .standard(proto: "previous_rating"),
     7: .standard(proto: "stats_at_rank_start"),
-    8: .standard(proto: "avatar_template_id_awarded"),
+    8: .standard(proto: "avatar_template_id_rewarded"),
   ]
 
   fileprivate class _StorageClass {
@@ -176,7 +176,7 @@ extension POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartChargingResp
     var _previousRank: Int32 = 0
     var _previousRating: Float = 0
     var _statsAtRankStart: POGOProtos_Data_Combat_CombatBaseStats? = nil
-    var _avatarTemplateIDAwarded: [String] = []
+    var _avatarTemplateIDRewarded: [String] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -190,7 +190,7 @@ extension POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartChargingResp
       _previousRank = source._previousRank
       _previousRating = source._previousRating
       _statsAtRankStart = source._statsAtRankStart
-      _avatarTemplateIDAwarded = source._avatarTemplateIDAwarded
+      _avatarTemplateIDRewarded = source._avatarTemplateIDRewarded
     }
   }
 
@@ -213,7 +213,7 @@ extension POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartChargingResp
         case 5: try decoder.decodeSingularInt32Field(value: &_storage._previousRank)
         case 6: try decoder.decodeSingularFloatField(value: &_storage._previousRating)
         case 7: try decoder.decodeSingularMessageField(value: &_storage._statsAtRankStart)
-        case 8: try decoder.decodeRepeatedStringField(value: &_storage._avatarTemplateIDAwarded)
+        case 8: try decoder.decodeRepeatedStringField(value: &_storage._avatarTemplateIDRewarded)
         default: break
         }
       }
@@ -243,8 +243,8 @@ extension POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartChargingResp
       if let v = _storage._statsAtRankStart {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
       }
-      if !_storage._avatarTemplateIDAwarded.isEmpty {
-        try visitor.visitRepeatedStringField(value: _storage._avatarTemplateIDAwarded, fieldNumber: 8)
+      if !_storage._avatarTemplateIDRewarded.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._avatarTemplateIDRewarded, fieldNumber: 8)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -262,7 +262,7 @@ extension POGOProtos_Networking_Responses_CompleteVsSeekerAndRestartChargingResp
         if _storage._previousRank != rhs_storage._previousRank {return false}
         if _storage._previousRating != rhs_storage._previousRating {return false}
         if _storage._statsAtRankStart != rhs_storage._statsAtRankStart {return false}
-        if _storage._avatarTemplateIDAwarded != rhs_storage._avatarTemplateIDAwarded {return false}
+        if _storage._avatarTemplateIDRewarded != rhs_storage._avatarTemplateIDRewarded {return false}
         return true
       }
       if !storagesAreEqual {return false}

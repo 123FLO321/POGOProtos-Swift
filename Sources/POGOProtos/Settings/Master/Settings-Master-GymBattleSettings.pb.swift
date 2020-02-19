@@ -24,41 +24,106 @@ public struct POGOProtos_Settings_Master_GymBattleSettings {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var energyPerSec: Float = 0
+  public var energyPerSec: Float {
+    get {return _storage._energyPerSec}
+    set {_uniqueStorage()._energyPerSec = newValue}
+  }
 
-  public var dodgeEnergyCost: Float = 0
+  public var dodgeEnergyCost: Float {
+    get {return _storage._dodgeEnergyCost}
+    set {_uniqueStorage()._dodgeEnergyCost = newValue}
+  }
 
-  public var retargetSeconds: Float = 0
+  public var retargetSeconds: Float {
+    get {return _storage._retargetSeconds}
+    set {_uniqueStorage()._retargetSeconds = newValue}
+  }
 
-  public var enemyAttackInterval: Float = 0
+  public var enemyAttackInterval: Float {
+    get {return _storage._enemyAttackInterval}
+    set {_uniqueStorage()._enemyAttackInterval = newValue}
+  }
 
-  public var attackServerInterval: Float = 0
+  public var attackServerInterval: Float {
+    get {return _storage._attackServerInterval}
+    set {_uniqueStorage()._attackServerInterval = newValue}
+  }
 
-  public var roundDurationSeconds: Float = 0
+  public var roundDurationSeconds: Float {
+    get {return _storage._roundDurationSeconds}
+    set {_uniqueStorage()._roundDurationSeconds = newValue}
+  }
 
-  public var bonusTimePerAllySeconds: Float = 0
+  public var bonusTimePerAllySeconds: Float {
+    get {return _storage._bonusTimePerAllySeconds}
+    set {_uniqueStorage()._bonusTimePerAllySeconds = newValue}
+  }
 
-  public var maximumAttackersPerBattle: Int32 = 0
+  public var maximumAttackersPerBattle: Int32 {
+    get {return _storage._maximumAttackersPerBattle}
+    set {_uniqueStorage()._maximumAttackersPerBattle = newValue}
+  }
 
-  public var sameTypeAttackBonusMultiplier: Float = 0
+  public var sameTypeAttackBonusMultiplier: Float {
+    get {return _storage._sameTypeAttackBonusMultiplier}
+    set {_uniqueStorage()._sameTypeAttackBonusMultiplier = newValue}
+  }
 
-  public var maximumEnergy: Int32 = 0
+  public var maximumEnergy: Int32 {
+    get {return _storage._maximumEnergy}
+    set {_uniqueStorage()._maximumEnergy = newValue}
+  }
 
-  public var energyDeltaPerHealthLost: Float = 0
+  public var energyDeltaPerHealthLost: Float {
+    get {return _storage._energyDeltaPerHealthLost}
+    set {_uniqueStorage()._energyDeltaPerHealthLost = newValue}
+  }
 
-  public var dodgeDurationMs: Int32 = 0
+  public var dodgeDurationMs: Int32 {
+    get {return _storage._dodgeDurationMs}
+    set {_uniqueStorage()._dodgeDurationMs = newValue}
+  }
 
-  public var minimumPlayerLevel: Int32 = 0
+  public var minimumPlayerLevel: Int32 {
+    get {return _storage._minimumPlayerLevel}
+    set {_uniqueStorage()._minimumPlayerLevel = newValue}
+  }
 
-  public var swapDurationMs: Int32 = 0
+  public var swapDurationMs: Int32 {
+    get {return _storage._swapDurationMs}
+    set {_uniqueStorage()._swapDurationMs = newValue}
+  }
 
-  public var dodgeDamageReductionPercent: Float = 0
+  public var dodgeDamageReductionPercent: Float {
+    get {return _storage._dodgeDamageReductionPercent}
+    set {_uniqueStorage()._dodgeDamageReductionPercent = newValue}
+  }
 
-  public var minimumRaidPlayerLevel: Int32 = 0
+  public var minimumRaidPlayerLevel: Int32 {
+    get {return _storage._minimumRaidPlayerLevel}
+    set {_uniqueStorage()._minimumRaidPlayerLevel = newValue}
+  }
+
+  public var shadowPokemonAttackBonusMultiplier: Float {
+    get {return _storage._shadowPokemonAttackBonusMultiplier}
+    set {_uniqueStorage()._shadowPokemonAttackBonusMultiplier = newValue}
+  }
+
+  public var shadowPokemonDefenseBonusMultiplier: Float {
+    get {return _storage._shadowPokemonDefenseBonusMultiplier}
+    set {_uniqueStorage()._shadowPokemonDefenseBonusMultiplier = newValue}
+  }
+
+  public var purifiedPokemonAttackMultiplierVsShadow: Float {
+    get {return _storage._purifiedPokemonAttackMultiplierVsShadow}
+    set {_uniqueStorage()._purifiedPokemonAttackMultiplierVsShadow = newValue}
+  }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -84,101 +149,187 @@ extension POGOProtos_Settings_Master_GymBattleSettings: SwiftProtobuf.Message, S
     14: .standard(proto: "swap_duration_ms"),
     15: .standard(proto: "dodge_damage_reduction_percent"),
     16: .standard(proto: "minimum_raid_player_level"),
+    17: .standard(proto: "shadow_pokemon_attack_bonus_multiplier"),
+    18: .standard(proto: "shadow_pokemon_defense_bonus_multiplier"),
+    19: .standard(proto: "purified_pokemon_attack_multiplier_vs_shadow"),
   ]
 
+  fileprivate class _StorageClass {
+    var _energyPerSec: Float = 0
+    var _dodgeEnergyCost: Float = 0
+    var _retargetSeconds: Float = 0
+    var _enemyAttackInterval: Float = 0
+    var _attackServerInterval: Float = 0
+    var _roundDurationSeconds: Float = 0
+    var _bonusTimePerAllySeconds: Float = 0
+    var _maximumAttackersPerBattle: Int32 = 0
+    var _sameTypeAttackBonusMultiplier: Float = 0
+    var _maximumEnergy: Int32 = 0
+    var _energyDeltaPerHealthLost: Float = 0
+    var _dodgeDurationMs: Int32 = 0
+    var _minimumPlayerLevel: Int32 = 0
+    var _swapDurationMs: Int32 = 0
+    var _dodgeDamageReductionPercent: Float = 0
+    var _minimumRaidPlayerLevel: Int32 = 0
+    var _shadowPokemonAttackBonusMultiplier: Float = 0
+    var _shadowPokemonDefenseBonusMultiplier: Float = 0
+    var _purifiedPokemonAttackMultiplierVsShadow: Float = 0
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _energyPerSec = source._energyPerSec
+      _dodgeEnergyCost = source._dodgeEnergyCost
+      _retargetSeconds = source._retargetSeconds
+      _enemyAttackInterval = source._enemyAttackInterval
+      _attackServerInterval = source._attackServerInterval
+      _roundDurationSeconds = source._roundDurationSeconds
+      _bonusTimePerAllySeconds = source._bonusTimePerAllySeconds
+      _maximumAttackersPerBattle = source._maximumAttackersPerBattle
+      _sameTypeAttackBonusMultiplier = source._sameTypeAttackBonusMultiplier
+      _maximumEnergy = source._maximumEnergy
+      _energyDeltaPerHealthLost = source._energyDeltaPerHealthLost
+      _dodgeDurationMs = source._dodgeDurationMs
+      _minimumPlayerLevel = source._minimumPlayerLevel
+      _swapDurationMs = source._swapDurationMs
+      _dodgeDamageReductionPercent = source._dodgeDamageReductionPercent
+      _minimumRaidPlayerLevel = source._minimumRaidPlayerLevel
+      _shadowPokemonAttackBonusMultiplier = source._shadowPokemonAttackBonusMultiplier
+      _shadowPokemonDefenseBonusMultiplier = source._shadowPokemonDefenseBonusMultiplier
+      _purifiedPokemonAttackMultiplierVsShadow = source._purifiedPokemonAttackMultiplierVsShadow
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularFloatField(value: &self.energyPerSec)
-      case 2: try decoder.decodeSingularFloatField(value: &self.dodgeEnergyCost)
-      case 3: try decoder.decodeSingularFloatField(value: &self.retargetSeconds)
-      case 4: try decoder.decodeSingularFloatField(value: &self.enemyAttackInterval)
-      case 5: try decoder.decodeSingularFloatField(value: &self.attackServerInterval)
-      case 6: try decoder.decodeSingularFloatField(value: &self.roundDurationSeconds)
-      case 7: try decoder.decodeSingularFloatField(value: &self.bonusTimePerAllySeconds)
-      case 8: try decoder.decodeSingularInt32Field(value: &self.maximumAttackersPerBattle)
-      case 9: try decoder.decodeSingularFloatField(value: &self.sameTypeAttackBonusMultiplier)
-      case 10: try decoder.decodeSingularInt32Field(value: &self.maximumEnergy)
-      case 11: try decoder.decodeSingularFloatField(value: &self.energyDeltaPerHealthLost)
-      case 12: try decoder.decodeSingularInt32Field(value: &self.dodgeDurationMs)
-      case 13: try decoder.decodeSingularInt32Field(value: &self.minimumPlayerLevel)
-      case 14: try decoder.decodeSingularInt32Field(value: &self.swapDurationMs)
-      case 15: try decoder.decodeSingularFloatField(value: &self.dodgeDamageReductionPercent)
-      case 16: try decoder.decodeSingularInt32Field(value: &self.minimumRaidPlayerLevel)
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularFloatField(value: &_storage._energyPerSec)
+        case 2: try decoder.decodeSingularFloatField(value: &_storage._dodgeEnergyCost)
+        case 3: try decoder.decodeSingularFloatField(value: &_storage._retargetSeconds)
+        case 4: try decoder.decodeSingularFloatField(value: &_storage._enemyAttackInterval)
+        case 5: try decoder.decodeSingularFloatField(value: &_storage._attackServerInterval)
+        case 6: try decoder.decodeSingularFloatField(value: &_storage._roundDurationSeconds)
+        case 7: try decoder.decodeSingularFloatField(value: &_storage._bonusTimePerAllySeconds)
+        case 8: try decoder.decodeSingularInt32Field(value: &_storage._maximumAttackersPerBattle)
+        case 9: try decoder.decodeSingularFloatField(value: &_storage._sameTypeAttackBonusMultiplier)
+        case 10: try decoder.decodeSingularInt32Field(value: &_storage._maximumEnergy)
+        case 11: try decoder.decodeSingularFloatField(value: &_storage._energyDeltaPerHealthLost)
+        case 12: try decoder.decodeSingularInt32Field(value: &_storage._dodgeDurationMs)
+        case 13: try decoder.decodeSingularInt32Field(value: &_storage._minimumPlayerLevel)
+        case 14: try decoder.decodeSingularInt32Field(value: &_storage._swapDurationMs)
+        case 15: try decoder.decodeSingularFloatField(value: &_storage._dodgeDamageReductionPercent)
+        case 16: try decoder.decodeSingularInt32Field(value: &_storage._minimumRaidPlayerLevel)
+        case 17: try decoder.decodeSingularFloatField(value: &_storage._shadowPokemonAttackBonusMultiplier)
+        case 18: try decoder.decodeSingularFloatField(value: &_storage._shadowPokemonDefenseBonusMultiplier)
+        case 19: try decoder.decodeSingularFloatField(value: &_storage._purifiedPokemonAttackMultiplierVsShadow)
+        default: break
+        }
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.energyPerSec != 0 {
-      try visitor.visitSingularFloatField(value: self.energyPerSec, fieldNumber: 1)
-    }
-    if self.dodgeEnergyCost != 0 {
-      try visitor.visitSingularFloatField(value: self.dodgeEnergyCost, fieldNumber: 2)
-    }
-    if self.retargetSeconds != 0 {
-      try visitor.visitSingularFloatField(value: self.retargetSeconds, fieldNumber: 3)
-    }
-    if self.enemyAttackInterval != 0 {
-      try visitor.visitSingularFloatField(value: self.enemyAttackInterval, fieldNumber: 4)
-    }
-    if self.attackServerInterval != 0 {
-      try visitor.visitSingularFloatField(value: self.attackServerInterval, fieldNumber: 5)
-    }
-    if self.roundDurationSeconds != 0 {
-      try visitor.visitSingularFloatField(value: self.roundDurationSeconds, fieldNumber: 6)
-    }
-    if self.bonusTimePerAllySeconds != 0 {
-      try visitor.visitSingularFloatField(value: self.bonusTimePerAllySeconds, fieldNumber: 7)
-    }
-    if self.maximumAttackersPerBattle != 0 {
-      try visitor.visitSingularInt32Field(value: self.maximumAttackersPerBattle, fieldNumber: 8)
-    }
-    if self.sameTypeAttackBonusMultiplier != 0 {
-      try visitor.visitSingularFloatField(value: self.sameTypeAttackBonusMultiplier, fieldNumber: 9)
-    }
-    if self.maximumEnergy != 0 {
-      try visitor.visitSingularInt32Field(value: self.maximumEnergy, fieldNumber: 10)
-    }
-    if self.energyDeltaPerHealthLost != 0 {
-      try visitor.visitSingularFloatField(value: self.energyDeltaPerHealthLost, fieldNumber: 11)
-    }
-    if self.dodgeDurationMs != 0 {
-      try visitor.visitSingularInt32Field(value: self.dodgeDurationMs, fieldNumber: 12)
-    }
-    if self.minimumPlayerLevel != 0 {
-      try visitor.visitSingularInt32Field(value: self.minimumPlayerLevel, fieldNumber: 13)
-    }
-    if self.swapDurationMs != 0 {
-      try visitor.visitSingularInt32Field(value: self.swapDurationMs, fieldNumber: 14)
-    }
-    if self.dodgeDamageReductionPercent != 0 {
-      try visitor.visitSingularFloatField(value: self.dodgeDamageReductionPercent, fieldNumber: 15)
-    }
-    if self.minimumRaidPlayerLevel != 0 {
-      try visitor.visitSingularInt32Field(value: self.minimumRaidPlayerLevel, fieldNumber: 16)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._energyPerSec != 0 {
+        try visitor.visitSingularFloatField(value: _storage._energyPerSec, fieldNumber: 1)
+      }
+      if _storage._dodgeEnergyCost != 0 {
+        try visitor.visitSingularFloatField(value: _storage._dodgeEnergyCost, fieldNumber: 2)
+      }
+      if _storage._retargetSeconds != 0 {
+        try visitor.visitSingularFloatField(value: _storage._retargetSeconds, fieldNumber: 3)
+      }
+      if _storage._enemyAttackInterval != 0 {
+        try visitor.visitSingularFloatField(value: _storage._enemyAttackInterval, fieldNumber: 4)
+      }
+      if _storage._attackServerInterval != 0 {
+        try visitor.visitSingularFloatField(value: _storage._attackServerInterval, fieldNumber: 5)
+      }
+      if _storage._roundDurationSeconds != 0 {
+        try visitor.visitSingularFloatField(value: _storage._roundDurationSeconds, fieldNumber: 6)
+      }
+      if _storage._bonusTimePerAllySeconds != 0 {
+        try visitor.visitSingularFloatField(value: _storage._bonusTimePerAllySeconds, fieldNumber: 7)
+      }
+      if _storage._maximumAttackersPerBattle != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._maximumAttackersPerBattle, fieldNumber: 8)
+      }
+      if _storage._sameTypeAttackBonusMultiplier != 0 {
+        try visitor.visitSingularFloatField(value: _storage._sameTypeAttackBonusMultiplier, fieldNumber: 9)
+      }
+      if _storage._maximumEnergy != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._maximumEnergy, fieldNumber: 10)
+      }
+      if _storage._energyDeltaPerHealthLost != 0 {
+        try visitor.visitSingularFloatField(value: _storage._energyDeltaPerHealthLost, fieldNumber: 11)
+      }
+      if _storage._dodgeDurationMs != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._dodgeDurationMs, fieldNumber: 12)
+      }
+      if _storage._minimumPlayerLevel != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._minimumPlayerLevel, fieldNumber: 13)
+      }
+      if _storage._swapDurationMs != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._swapDurationMs, fieldNumber: 14)
+      }
+      if _storage._dodgeDamageReductionPercent != 0 {
+        try visitor.visitSingularFloatField(value: _storage._dodgeDamageReductionPercent, fieldNumber: 15)
+      }
+      if _storage._minimumRaidPlayerLevel != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._minimumRaidPlayerLevel, fieldNumber: 16)
+      }
+      if _storage._shadowPokemonAttackBonusMultiplier != 0 {
+        try visitor.visitSingularFloatField(value: _storage._shadowPokemonAttackBonusMultiplier, fieldNumber: 17)
+      }
+      if _storage._shadowPokemonDefenseBonusMultiplier != 0 {
+        try visitor.visitSingularFloatField(value: _storage._shadowPokemonDefenseBonusMultiplier, fieldNumber: 18)
+      }
+      if _storage._purifiedPokemonAttackMultiplierVsShadow != 0 {
+        try visitor.visitSingularFloatField(value: _storage._purifiedPokemonAttackMultiplierVsShadow, fieldNumber: 19)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_Master_GymBattleSettings, rhs: POGOProtos_Settings_Master_GymBattleSettings) -> Bool {
-    if lhs.energyPerSec != rhs.energyPerSec {return false}
-    if lhs.dodgeEnergyCost != rhs.dodgeEnergyCost {return false}
-    if lhs.retargetSeconds != rhs.retargetSeconds {return false}
-    if lhs.enemyAttackInterval != rhs.enemyAttackInterval {return false}
-    if lhs.attackServerInterval != rhs.attackServerInterval {return false}
-    if lhs.roundDurationSeconds != rhs.roundDurationSeconds {return false}
-    if lhs.bonusTimePerAllySeconds != rhs.bonusTimePerAllySeconds {return false}
-    if lhs.maximumAttackersPerBattle != rhs.maximumAttackersPerBattle {return false}
-    if lhs.sameTypeAttackBonusMultiplier != rhs.sameTypeAttackBonusMultiplier {return false}
-    if lhs.maximumEnergy != rhs.maximumEnergy {return false}
-    if lhs.energyDeltaPerHealthLost != rhs.energyDeltaPerHealthLost {return false}
-    if lhs.dodgeDurationMs != rhs.dodgeDurationMs {return false}
-    if lhs.minimumPlayerLevel != rhs.minimumPlayerLevel {return false}
-    if lhs.swapDurationMs != rhs.swapDurationMs {return false}
-    if lhs.dodgeDamageReductionPercent != rhs.dodgeDamageReductionPercent {return false}
-    if lhs.minimumRaidPlayerLevel != rhs.minimumRaidPlayerLevel {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._energyPerSec != rhs_storage._energyPerSec {return false}
+        if _storage._dodgeEnergyCost != rhs_storage._dodgeEnergyCost {return false}
+        if _storage._retargetSeconds != rhs_storage._retargetSeconds {return false}
+        if _storage._enemyAttackInterval != rhs_storage._enemyAttackInterval {return false}
+        if _storage._attackServerInterval != rhs_storage._attackServerInterval {return false}
+        if _storage._roundDurationSeconds != rhs_storage._roundDurationSeconds {return false}
+        if _storage._bonusTimePerAllySeconds != rhs_storage._bonusTimePerAllySeconds {return false}
+        if _storage._maximumAttackersPerBattle != rhs_storage._maximumAttackersPerBattle {return false}
+        if _storage._sameTypeAttackBonusMultiplier != rhs_storage._sameTypeAttackBonusMultiplier {return false}
+        if _storage._maximumEnergy != rhs_storage._maximumEnergy {return false}
+        if _storage._energyDeltaPerHealthLost != rhs_storage._energyDeltaPerHealthLost {return false}
+        if _storage._dodgeDurationMs != rhs_storage._dodgeDurationMs {return false}
+        if _storage._minimumPlayerLevel != rhs_storage._minimumPlayerLevel {return false}
+        if _storage._swapDurationMs != rhs_storage._swapDurationMs {return false}
+        if _storage._dodgeDamageReductionPercent != rhs_storage._dodgeDamageReductionPercent {return false}
+        if _storage._minimumRaidPlayerLevel != rhs_storage._minimumRaidPlayerLevel {return false}
+        if _storage._shadowPokemonAttackBonusMultiplier != rhs_storage._shadowPokemonAttackBonusMultiplier {return false}
+        if _storage._shadowPokemonDefenseBonusMultiplier != rhs_storage._shadowPokemonDefenseBonusMultiplier {return false}
+        if _storage._purifiedPokemonAttackMultiplierVsShadow != rhs_storage._purifiedPokemonAttackMultiplierVsShadow {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

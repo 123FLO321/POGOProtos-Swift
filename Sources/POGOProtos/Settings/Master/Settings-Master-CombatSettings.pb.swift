@@ -177,6 +177,21 @@ public struct POGOProtos_Settings_Master_CombatSettings {
     set {_uniqueStorage()._npcChargedAttackDelayTurns = newValue}
   }
 
+  public var shadowPokemonAttackBonusMultiplier: Float {
+    get {return _storage._shadowPokemonAttackBonusMultiplier}
+    set {_uniqueStorage()._shadowPokemonAttackBonusMultiplier = newValue}
+  }
+
+  public var shadowPokemonDefenseBonusMultiplier: Float {
+    get {return _storage._shadowPokemonDefenseBonusMultiplier}
+    set {_uniqueStorage()._shadowPokemonDefenseBonusMultiplier = newValue}
+  }
+
+  public var purifiedPokemonAttackMultiplierVsShadow: Float {
+    get {return _storage._purifiedPokemonAttackMultiplierVsShadow}
+    set {_uniqueStorage()._purifiedPokemonAttackMultiplierVsShadow = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct CombatOffensiveInputChallengeSettings {
@@ -252,6 +267,9 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
     27: .standard(proto: "faint_animation_duration_turns"),
     28: .standard(proto: "npc_swap_delay_turns"),
     29: .standard(proto: "npc_charged_attack_delay_turns"),
+    30: .standard(proto: "shadow_pokemon_attack_bonus_multiplier"),
+    31: .standard(proto: "shadow_pokemon_defense_bonus_multiplier"),
+    32: .standard(proto: "purified_pokemon_attack_multiplier_vs_shadow"),
   ]
 
   fileprivate class _StorageClass {
@@ -284,6 +302,9 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
     var _faintAnimationDurationTurns: Int32 = 0
     var _npcSwapDelayTurns: Int32 = 0
     var _npcChargedAttackDelayTurns: Int32 = 0
+    var _shadowPokemonAttackBonusMultiplier: Float = 0
+    var _shadowPokemonDefenseBonusMultiplier: Float = 0
+    var _purifiedPokemonAttackMultiplierVsShadow: Float = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -319,6 +340,9 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
       _faintAnimationDurationTurns = source._faintAnimationDurationTurns
       _npcSwapDelayTurns = source._npcSwapDelayTurns
       _npcChargedAttackDelayTurns = source._npcChargedAttackDelayTurns
+      _shadowPokemonAttackBonusMultiplier = source._shadowPokemonAttackBonusMultiplier
+      _shadowPokemonDefenseBonusMultiplier = source._shadowPokemonDefenseBonusMultiplier
+      _purifiedPokemonAttackMultiplierVsShadow = source._purifiedPokemonAttackMultiplierVsShadow
     }
   }
 
@@ -363,6 +387,9 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
         case 27: try decoder.decodeSingularInt32Field(value: &_storage._faintAnimationDurationTurns)
         case 28: try decoder.decodeSingularInt32Field(value: &_storage._npcSwapDelayTurns)
         case 29: try decoder.decodeSingularInt32Field(value: &_storage._npcChargedAttackDelayTurns)
+        case 30: try decoder.decodeSingularFloatField(value: &_storage._shadowPokemonAttackBonusMultiplier)
+        case 31: try decoder.decodeSingularFloatField(value: &_storage._shadowPokemonDefenseBonusMultiplier)
+        case 32: try decoder.decodeSingularFloatField(value: &_storage._purifiedPokemonAttackMultiplierVsShadow)
         default: break
         }
       }
@@ -458,6 +485,15 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
       if _storage._npcChargedAttackDelayTurns != 0 {
         try visitor.visitSingularInt32Field(value: _storage._npcChargedAttackDelayTurns, fieldNumber: 29)
       }
+      if _storage._shadowPokemonAttackBonusMultiplier != 0 {
+        try visitor.visitSingularFloatField(value: _storage._shadowPokemonAttackBonusMultiplier, fieldNumber: 30)
+      }
+      if _storage._shadowPokemonDefenseBonusMultiplier != 0 {
+        try visitor.visitSingularFloatField(value: _storage._shadowPokemonDefenseBonusMultiplier, fieldNumber: 31)
+      }
+      if _storage._purifiedPokemonAttackMultiplierVsShadow != 0 {
+        try visitor.visitSingularFloatField(value: _storage._purifiedPokemonAttackMultiplierVsShadow, fieldNumber: 32)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -496,6 +532,9 @@ extension POGOProtos_Settings_Master_CombatSettings: SwiftProtobuf.Message, Swif
         if _storage._faintAnimationDurationTurns != rhs_storage._faintAnimationDurationTurns {return false}
         if _storage._npcSwapDelayTurns != rhs_storage._npcSwapDelayTurns {return false}
         if _storage._npcChargedAttackDelayTurns != rhs_storage._npcChargedAttackDelayTurns {return false}
+        if _storage._shadowPokemonAttackBonusMultiplier != rhs_storage._shadowPokemonAttackBonusMultiplier {return false}
+        if _storage._shadowPokemonDefenseBonusMultiplier != rhs_storage._shadowPokemonDefenseBonusMultiplier {return false}
+        if _storage._purifiedPokemonAttackMultiplierVsShadow != rhs_storage._purifiedPokemonAttackMultiplierVsShadow {return false}
         return true
       }
       if !storagesAreEqual {return false}

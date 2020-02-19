@@ -32,6 +32,8 @@ public struct POGOProtos_Settings_Master_BuddyEncounterCameoSettings {
 
   public var buddyInvasionEncounterCameoChancePercent: Float = 0
 
+  public var buddyOnMapRequired: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,6 +50,7 @@ extension POGOProtos_Settings_Master_BuddyEncounterCameoSettings: SwiftProtobuf.
     2: .standard(proto: "buddy_quest_encounter_cameo_chance_percent"),
     3: .standard(proto: "buddy_raid_encounter_cameo_chance_percent"),
     4: .standard(proto: "buddy_invasion_encounter_cameo_chance_percent"),
+    5: .standard(proto: "buddy_on_map_required"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +60,7 @@ extension POGOProtos_Settings_Master_BuddyEncounterCameoSettings: SwiftProtobuf.
       case 2: try decoder.decodeSingularFloatField(value: &self.buddyQuestEncounterCameoChancePercent)
       case 3: try decoder.decodeSingularFloatField(value: &self.buddyRaidEncounterCameoChancePercent)
       case 4: try decoder.decodeSingularFloatField(value: &self.buddyInvasionEncounterCameoChancePercent)
+      case 5: try decoder.decodeSingularBoolField(value: &self.buddyOnMapRequired)
       default: break
       }
     }
@@ -75,6 +79,9 @@ extension POGOProtos_Settings_Master_BuddyEncounterCameoSettings: SwiftProtobuf.
     if self.buddyInvasionEncounterCameoChancePercent != 0 {
       try visitor.visitSingularFloatField(value: self.buddyInvasionEncounterCameoChancePercent, fieldNumber: 4)
     }
+    if self.buddyOnMapRequired != false {
+      try visitor.visitSingularBoolField(value: self.buddyOnMapRequired, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +90,7 @@ extension POGOProtos_Settings_Master_BuddyEncounterCameoSettings: SwiftProtobuf.
     if lhs.buddyQuestEncounterCameoChancePercent != rhs.buddyQuestEncounterCameoChancePercent {return false}
     if lhs.buddyRaidEncounterCameoChancePercent != rhs.buddyRaidEncounterCameoChancePercent {return false}
     if lhs.buddyInvasionEncounterCameoChancePercent != rhs.buddyInvasionEncounterCameoChancePercent {return false}
+    if lhs.buddyOnMapRequired != rhs.buddyOnMapRequired {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

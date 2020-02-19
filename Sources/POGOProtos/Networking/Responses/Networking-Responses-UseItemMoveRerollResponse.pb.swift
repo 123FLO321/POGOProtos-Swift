@@ -51,6 +51,7 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
     case itemNotInInventory // = 6
     case invalidPokemon // = 7
     case moveLocked // = 8
+    case moveCannotBeRerolled // = 9
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -68,6 +69,7 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
       case 6: self = .itemNotInInventory
       case 7: self = .invalidPokemon
       case 8: self = .moveLocked
+      case 9: self = .moveCannotBeRerolled
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -83,6 +85,7 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
       case .itemNotInInventory: return 6
       case .invalidPokemon: return 7
       case .moveLocked: return 8
+      case .moveCannotBeRerolled: return 9
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -108,6 +111,7 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse.Result: Case
     .itemNotInInventory,
     .invalidPokemon,
     .moveLocked,
+    .moveCannotBeRerolled,
   ]
 }
 
@@ -197,5 +201,6 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse.Result: Swif
     6: .same(proto: "ITEM_NOT_IN_INVENTORY"),
     7: .same(proto: "INVALID_POKEMON"),
     8: .same(proto: "MOVE_LOCKED"),
+    9: .same(proto: "MOVE_CANNOT_BE_REROLLED"),
   ]
 }
