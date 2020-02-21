@@ -24,11 +24,7 @@ public struct POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var status: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.Status {
-    get {return _storage._status}
-    set {_uniqueStorage()._status = newValue}
-  }
-
+  ///Status status = 1;
   public var token: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.BackgroundToken {
     get {return _storage._token ?? POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.BackgroundToken()}
     set {_uniqueStorage()._token = newValue}
@@ -112,12 +108,10 @@ fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".RegisterBackgroundDeviceResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "status"),
-    2: .same(proto: "token"),
+    1: .same(proto: "token"),
   ]
 
   fileprivate class _StorageClass {
-    var _status: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.Status = .unset
     var _token: POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse.BackgroundToken? = nil
 
     static let defaultInstance = _StorageClass()
@@ -125,7 +119,6 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: Swif
     private init() {}
 
     init(copying source: _StorageClass) {
-      _status = source._status
       _token = source._token
     }
   }
@@ -142,8 +135,7 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: Swif
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularEnumField(value: &_storage._status)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._token)
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._token)
         default: break
         }
       }
@@ -152,11 +144,8 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: Swif
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._status != .unset {
-        try visitor.visitSingularEnumField(value: _storage._status, fieldNumber: 1)
-      }
       if let v = _storage._token {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -167,7 +156,6 @@ extension POGOProtos_Networking_Responses_RegisterBackgroundDeviceResponse: Swif
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._status != rhs_storage._status {return false}
         if _storage._token != rhs_storage._token {return false}
         return true
       }

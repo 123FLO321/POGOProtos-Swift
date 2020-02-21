@@ -36,6 +36,8 @@ public struct POGOProtos_Data_Telemetry_CommonTelemetryShopClick {
 
   public var fiatPrice: Int64 = 0
 
+  public var inGamePurchaseDetails: [POGOProtos_Data_InGamePurchaseDetails] = []
+
   public var isItemFreeFiat: Bool = false
 
   public var isItemFreeIngame: Bool = false
@@ -116,15 +118,16 @@ extension POGOProtos_Data_Telemetry_CommonTelemetryShopClick: SwiftProtobuf.Mess
     4: .standard(proto: "consolidated_item_id"),
     5: .same(proto: "currency"),
     6: .standard(proto: "fiat_price"),
-    7: .standard(proto: "is_item_free_fiat"),
-    8: .standard(proto: "is_item_free_ingame"),
-    9: .standard(proto: "time_elapsed_since_enter_page"),
-    10: .standard(proto: "root_store_page_session_id"),
-    11: .standard(proto: "pair_id"),
-    12: .standard(proto: "store_page_name"),
-    13: .standard(proto: "root_store_page_name"),
-    14: .standard(proto: "access_type"),
-    15: .standard(proto: "fiat_formatted_price"),
+    7: .standard(proto: "in_game_purchase_details"),
+    8: .standard(proto: "is_item_free_fiat"),
+    9: .standard(proto: "is_item_free_ingame"),
+    10: .standard(proto: "time_elapsed_since_enter_page"),
+    11: .standard(proto: "root_store_page_session_id"),
+    12: .standard(proto: "pair_id"),
+    13: .standard(proto: "store_page_name"),
+    14: .standard(proto: "root_store_page_name"),
+    15: .standard(proto: "access_type"),
+    16: .standard(proto: "fiat_formatted_price"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -136,15 +139,16 @@ extension POGOProtos_Data_Telemetry_CommonTelemetryShopClick: SwiftProtobuf.Mess
       case 4: try decoder.decodeSingularStringField(value: &self.consolidatedItemID)
       case 5: try decoder.decodeSingularStringField(value: &self.currency)
       case 6: try decoder.decodeSingularInt64Field(value: &self.fiatPrice)
-      case 7: try decoder.decodeSingularBoolField(value: &self.isItemFreeFiat)
-      case 8: try decoder.decodeSingularBoolField(value: &self.isItemFreeIngame)
-      case 9: try decoder.decodeSingularInt64Field(value: &self.timeElapsedSinceEnterPage)
-      case 10: try decoder.decodeSingularStringField(value: &self.rootStorePageSessionID)
-      case 11: try decoder.decodeSingularInt64Field(value: &self.pairID)
-      case 12: try decoder.decodeSingularStringField(value: &self.storePageName)
-      case 13: try decoder.decodeSingularStringField(value: &self.rootStorePageName)
-      case 14: try decoder.decodeSingularEnumField(value: &self.accessType)
-      case 15: try decoder.decodeSingularStringField(value: &self.fiatFormattedPrice)
+      case 7: try decoder.decodeRepeatedMessageField(value: &self.inGamePurchaseDetails)
+      case 8: try decoder.decodeSingularBoolField(value: &self.isItemFreeFiat)
+      case 9: try decoder.decodeSingularBoolField(value: &self.isItemFreeIngame)
+      case 10: try decoder.decodeSingularInt64Field(value: &self.timeElapsedSinceEnterPage)
+      case 11: try decoder.decodeSingularStringField(value: &self.rootStorePageSessionID)
+      case 12: try decoder.decodeSingularInt64Field(value: &self.pairID)
+      case 13: try decoder.decodeSingularStringField(value: &self.storePageName)
+      case 14: try decoder.decodeSingularStringField(value: &self.rootStorePageName)
+      case 15: try decoder.decodeSingularEnumField(value: &self.accessType)
+      case 16: try decoder.decodeSingularStringField(value: &self.fiatFormattedPrice)
       default: break
       }
     }
@@ -169,32 +173,35 @@ extension POGOProtos_Data_Telemetry_CommonTelemetryShopClick: SwiftProtobuf.Mess
     if self.fiatPrice != 0 {
       try visitor.visitSingularInt64Field(value: self.fiatPrice, fieldNumber: 6)
     }
+    if !self.inGamePurchaseDetails.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.inGamePurchaseDetails, fieldNumber: 7)
+    }
     if self.isItemFreeFiat != false {
-      try visitor.visitSingularBoolField(value: self.isItemFreeFiat, fieldNumber: 7)
+      try visitor.visitSingularBoolField(value: self.isItemFreeFiat, fieldNumber: 8)
     }
     if self.isItemFreeIngame != false {
-      try visitor.visitSingularBoolField(value: self.isItemFreeIngame, fieldNumber: 8)
+      try visitor.visitSingularBoolField(value: self.isItemFreeIngame, fieldNumber: 9)
     }
     if self.timeElapsedSinceEnterPage != 0 {
-      try visitor.visitSingularInt64Field(value: self.timeElapsedSinceEnterPage, fieldNumber: 9)
+      try visitor.visitSingularInt64Field(value: self.timeElapsedSinceEnterPage, fieldNumber: 10)
     }
     if !self.rootStorePageSessionID.isEmpty {
-      try visitor.visitSingularStringField(value: self.rootStorePageSessionID, fieldNumber: 10)
+      try visitor.visitSingularStringField(value: self.rootStorePageSessionID, fieldNumber: 11)
     }
     if self.pairID != 0 {
-      try visitor.visitSingularInt64Field(value: self.pairID, fieldNumber: 11)
+      try visitor.visitSingularInt64Field(value: self.pairID, fieldNumber: 12)
     }
     if !self.storePageName.isEmpty {
-      try visitor.visitSingularStringField(value: self.storePageName, fieldNumber: 12)
+      try visitor.visitSingularStringField(value: self.storePageName, fieldNumber: 13)
     }
     if !self.rootStorePageName.isEmpty {
-      try visitor.visitSingularStringField(value: self.rootStorePageName, fieldNumber: 13)
+      try visitor.visitSingularStringField(value: self.rootStorePageName, fieldNumber: 14)
     }
     if self.accessType != .unspecified {
-      try visitor.visitSingularEnumField(value: self.accessType, fieldNumber: 14)
+      try visitor.visitSingularEnumField(value: self.accessType, fieldNumber: 15)
     }
     if !self.fiatFormattedPrice.isEmpty {
-      try visitor.visitSingularStringField(value: self.fiatFormattedPrice, fieldNumber: 15)
+      try visitor.visitSingularStringField(value: self.fiatFormattedPrice, fieldNumber: 16)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -206,6 +213,7 @@ extension POGOProtos_Data_Telemetry_CommonTelemetryShopClick: SwiftProtobuf.Mess
     if lhs.consolidatedItemID != rhs.consolidatedItemID {return false}
     if lhs.currency != rhs.currency {return false}
     if lhs.fiatPrice != rhs.fiatPrice {return false}
+    if lhs.inGamePurchaseDetails != rhs.inGamePurchaseDetails {return false}
     if lhs.isItemFreeFiat != rhs.isItemFreeFiat {return false}
     if lhs.isItemFreeIngame != rhs.isItemFreeIngame {return false}
     if lhs.timeElapsedSinceEnterPage != rhs.timeElapsedSinceEnterPage {return false}

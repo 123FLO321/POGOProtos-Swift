@@ -24,11 +24,7 @@ public struct POGOProtos_Networking_Platform_Responses_GetAdventureSyncSettingsR
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var status: POGOProtos_Networking_Platform_Responses_GetAdventureSyncSettingsResponse.Status {
-    get {return _storage._status}
-    set {_uniqueStorage()._status = newValue}
-  }
-
+  ///Status status = 1;
   public var adventureSyncSettings: POGOProtos_Settings_AdventureSyncSettings {
     get {return _storage._adventureSyncSettings ?? POGOProtos_Settings_AdventureSyncSettings()}
     set {_uniqueStorage()._adventureSyncSettings = newValue}
@@ -100,12 +96,10 @@ fileprivate let _protobuf_package = "POGOProtos.Networking.Platform.Responses"
 extension POGOProtos_Networking_Platform_Responses_GetAdventureSyncSettingsResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GetAdventureSyncSettingsResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "status"),
-    2: .standard(proto: "adventure_sync_settings"),
+    1: .standard(proto: "adventure_sync_settings"),
   ]
 
   fileprivate class _StorageClass {
-    var _status: POGOProtos_Networking_Platform_Responses_GetAdventureSyncSettingsResponse.Status = .unset
     var _adventureSyncSettings: POGOProtos_Settings_AdventureSyncSettings? = nil
 
     static let defaultInstance = _StorageClass()
@@ -113,7 +107,6 @@ extension POGOProtos_Networking_Platform_Responses_GetAdventureSyncSettingsRespo
     private init() {}
 
     init(copying source: _StorageClass) {
-      _status = source._status
       _adventureSyncSettings = source._adventureSyncSettings
     }
   }
@@ -130,8 +123,7 @@ extension POGOProtos_Networking_Platform_Responses_GetAdventureSyncSettingsRespo
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularEnumField(value: &_storage._status)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._adventureSyncSettings)
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._adventureSyncSettings)
         default: break
         }
       }
@@ -140,11 +132,8 @@ extension POGOProtos_Networking_Platform_Responses_GetAdventureSyncSettingsRespo
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._status != .unset {
-        try visitor.visitSingularEnumField(value: _storage._status, fieldNumber: 1)
-      }
       if let v = _storage._adventureSyncSettings {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -155,7 +144,6 @@ extension POGOProtos_Networking_Platform_Responses_GetAdventureSyncSettingsRespo
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._status != rhs_storage._status {return false}
         if _storage._adventureSyncSettings != rhs_storage._adventureSyncSettings {return false}
         return true
       }

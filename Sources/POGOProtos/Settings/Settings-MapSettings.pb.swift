@@ -46,6 +46,8 @@ public struct POGOProtos_Settings_MapSettings {
 
   public var googleMapsClientID: String = String()
 
+  public var enableEncounterV2: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -69,6 +71,7 @@ extension POGOProtos_Settings_MapSettings: SwiftProtobuf.Message, SwiftProtobuf.
     9: .standard(proto: "enable_special_weather"),
     10: .standard(proto: "special_weather_probability"),
     11: .standard(proto: "google_maps_client_id"),
+    12: .standard(proto: "enable_encounter_v2"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -85,6 +88,7 @@ extension POGOProtos_Settings_MapSettings: SwiftProtobuf.Message, SwiftProtobuf.
       case 9: try decoder.decodeSingularBoolField(value: &self.enableSpecialWeather)
       case 10: try decoder.decodeSingularFloatField(value: &self.specialWeatherProbability)
       case 11: try decoder.decodeSingularStringField(value: &self.googleMapsClientID)
+      case 12: try decoder.decodeSingularBoolField(value: &self.enableEncounterV2)
       default: break
       }
     }
@@ -124,6 +128,9 @@ extension POGOProtos_Settings_MapSettings: SwiftProtobuf.Message, SwiftProtobuf.
     if !self.googleMapsClientID.isEmpty {
       try visitor.visitSingularStringField(value: self.googleMapsClientID, fieldNumber: 11)
     }
+    if self.enableEncounterV2 != false {
+      try visitor.visitSingularBoolField(value: self.enableEncounterV2, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -139,6 +146,7 @@ extension POGOProtos_Settings_MapSettings: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.enableSpecialWeather != rhs.enableSpecialWeather {return false}
     if lhs.specialWeatherProbability != rhs.specialWeatherProbability {return false}
     if lhs.googleMapsClientID != rhs.googleMapsClientID {return false}
+    if lhs.enableEncounterV2 != rhs.enableEncounterV2 {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

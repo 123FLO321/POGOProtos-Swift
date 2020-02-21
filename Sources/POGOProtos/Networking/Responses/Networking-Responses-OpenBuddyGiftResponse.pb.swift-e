@@ -62,6 +62,7 @@ public struct POGOProtos_Networking_Responses_OpenBuddyGiftResponse {
     case successAddedSouvenirToCollections // = 3
     case errorBuddyHasNotPickedUpAnySouvenirs // = 4
     case errorInventoryIsFull // = 5
+    case errorBuddyNotOnMap // = 6
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -76,6 +77,7 @@ public struct POGOProtos_Networking_Responses_OpenBuddyGiftResponse {
       case 3: self = .successAddedSouvenirToCollections
       case 4: self = .errorBuddyHasNotPickedUpAnySouvenirs
       case 5: self = .errorInventoryIsFull
+      case 6: self = .errorBuddyNotOnMap
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -88,6 +90,7 @@ public struct POGOProtos_Networking_Responses_OpenBuddyGiftResponse {
       case .successAddedSouvenirToCollections: return 3
       case .errorBuddyHasNotPickedUpAnySouvenirs: return 4
       case .errorInventoryIsFull: return 5
+      case .errorBuddyNotOnMap: return 6
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -110,6 +113,7 @@ extension POGOProtos_Networking_Responses_OpenBuddyGiftResponse.Result: CaseIter
     .successAddedSouvenirToCollections,
     .errorBuddyHasNotPickedUpAnySouvenirs,
     .errorInventoryIsFull,
+    .errorBuddyNotOnMap,
   ]
 }
 
@@ -212,5 +216,6 @@ extension POGOProtos_Networking_Responses_OpenBuddyGiftResponse.Result: SwiftPro
     3: .same(proto: "SUCCESS_ADDED_SOUVENIR_TO_COLLECTIONS"),
     4: .same(proto: "ERROR_BUDDY_HAS_NOT_PICKED_UP_ANY_SOUVENIRS"),
     5: .same(proto: "ERROR_INVENTORY_IS_FULL"),
+    6: .same(proto: "ERROR_BUDDY_NOT_ON_MAP"),
   ]
 }

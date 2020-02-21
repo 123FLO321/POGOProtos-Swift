@@ -66,12 +66,21 @@ public struct POGOProtos_Data_VsSeeker_VsSeekerLoot {
       set {_uniqueStorage()._rewardType = .itemLootTable(newValue)}
     }
 
+    public var itemLootTableCount: Int32 {
+      get {
+        if case .itemLootTableCount(let v)? = _storage._rewardType {return v}
+        return 0
+      }
+      set {_uniqueStorage()._rewardType = .itemLootTableCount(newValue)}
+    }
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public enum OneOf_RewardType: Equatable {
       case item(POGOProtos_Inventory_LootItem)
       case pokemonReward(Bool)
       case itemLootTable(Bool)
+      case itemLootTableCount(Int32)
 
     #if !swift(>=4.1)
       public static func ==(lhs: POGOProtos_Data_VsSeeker_VsSeekerLoot.Reward.OneOf_RewardType, rhs: POGOProtos_Data_VsSeeker_VsSeekerLoot.Reward.OneOf_RewardType) -> Bool {
@@ -79,6 +88,7 @@ public struct POGOProtos_Data_VsSeeker_VsSeekerLoot {
         case (.item(let l), .item(let r)): return l == r
         case (.pokemonReward(let l), .pokemonReward(let r)): return l == r
         case (.itemLootTable(let l), .itemLootTable(let r)): return l == r
+        case (.itemLootTableCount(let l), .itemLootTableCount(let r)): return l == r
         default: return false
         }
       }
@@ -144,6 +154,7 @@ extension POGOProtos_Data_VsSeeker_VsSeekerLoot.Reward: SwiftProtobuf.Message, S
     1: .same(proto: "item"),
     2: .standard(proto: "pokemon_reward"),
     3: .standard(proto: "item_loot_table"),
+    4: .standard(proto: "item_loot_table_count"),
   ]
 
   fileprivate class _StorageClass {
@@ -188,6 +199,11 @@ extension POGOProtos_Data_VsSeeker_VsSeekerLoot.Reward: SwiftProtobuf.Message, S
           var v: Bool?
           try decoder.decodeSingularBoolField(value: &v)
           if let v = v {_storage._rewardType = .itemLootTable(v)}
+        case 4:
+          if _storage._rewardType != nil {try decoder.handleConflictingOneOf()}
+          var v: Int32?
+          try decoder.decodeSingularInt32Field(value: &v)
+          if let v = v {_storage._rewardType = .itemLootTableCount(v)}
         default: break
         }
       }
@@ -203,6 +219,8 @@ extension POGOProtos_Data_VsSeeker_VsSeekerLoot.Reward: SwiftProtobuf.Message, S
         try visitor.visitSingularBoolField(value: v, fieldNumber: 2)
       case .itemLootTable(let v)?:
         try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
+      case .itemLootTableCount(let v)?:
+        try visitor.visitSingularInt32Field(value: v, fieldNumber: 4)
       case nil: break
       }
     }

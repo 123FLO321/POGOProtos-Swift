@@ -24,15 +24,6 @@ public struct POGOProtos_Data_Friends_TwoWaySharedFriendshipData {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData {
-    get {return _storage._friendshipLevelData ?? POGOProtos_Data_Friends_FriendshipLevelData()}
-    set {_uniqueStorage()._friendshipLevelData = newValue}
-  }
-  /// Returns true if `friendshipLevelData` has been explicitly set.
-  public var hasFriendshipLevelData: Bool {return _storage._friendshipLevelData != nil}
-  /// Clears the value of `friendshipLevelData`. Subsequent reads from it will return its default value.
-  public mutating func clearFriendshipLevelData() {_uniqueStorage()._friendshipLevelData = nil}
-
   public var isLucky: Bool {
     get {return _storage._isLucky}
     set {_uniqueStorage()._isLucky = newValue}
@@ -43,12 +34,28 @@ public struct POGOProtos_Data_Friends_TwoWaySharedFriendshipData {
     set {_uniqueStorage()._luckyCount = newValue}
   }
 
-  public var score: Int32 {
-    get {return _storage._score}
-    set {_uniqueStorage()._score = newValue}
+  public var sharedMigrations: POGOProtos_Data_Friends_TwoWaySharedFriendshipData.SharedMigrations {
+    get {return _storage._sharedMigrations ?? POGOProtos_Data_Friends_TwoWaySharedFriendshipData.SharedMigrations()}
+    set {_uniqueStorage()._sharedMigrations = newValue}
   }
+  /// Returns true if `sharedMigrations` has been explicitly set.
+  public var hasSharedMigrations: Bool {return _storage._sharedMigrations != nil}
+  /// Clears the value of `sharedMigrations`. Subsequent reads from it will return its default value.
+  public mutating func clearSharedMigrations() {_uniqueStorage()._sharedMigrations = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public struct SharedMigrations {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var isGiftingMigrated: Bool = false
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
 
   public init() {}
 
@@ -62,27 +69,24 @@ fileprivate let _protobuf_package = "POGOProtos.Data.Friends"
 extension POGOProtos_Data_Friends_TwoWaySharedFriendshipData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".TwoWaySharedFriendshipData"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "friendship_level_data"),
-    2: .standard(proto: "is_lucky"),
-    3: .standard(proto: "lucky_count"),
-    4: .same(proto: "score"),
+    1: .standard(proto: "is_lucky"),
+    2: .standard(proto: "lucky_count"),
+    3: .standard(proto: "shared_migrations"),
   ]
 
   fileprivate class _StorageClass {
-    var _friendshipLevelData: POGOProtos_Data_Friends_FriendshipLevelData? = nil
     var _isLucky: Bool = false
     var _luckyCount: Int32 = 0
-    var _score: Int32 = 0
+    var _sharedMigrations: POGOProtos_Data_Friends_TwoWaySharedFriendshipData.SharedMigrations? = nil
 
     static let defaultInstance = _StorageClass()
 
     private init() {}
 
     init(copying source: _StorageClass) {
-      _friendshipLevelData = source._friendshipLevelData
       _isLucky = source._isLucky
       _luckyCount = source._luckyCount
-      _score = source._score
+      _sharedMigrations = source._sharedMigrations
     }
   }
 
@@ -98,10 +102,9 @@ extension POGOProtos_Data_Friends_TwoWaySharedFriendshipData: SwiftProtobuf.Mess
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularMessageField(value: &_storage._friendshipLevelData)
-        case 2: try decoder.decodeSingularBoolField(value: &_storage._isLucky)
-        case 3: try decoder.decodeSingularInt32Field(value: &_storage._luckyCount)
-        case 4: try decoder.decodeSingularInt32Field(value: &_storage._score)
+        case 1: try decoder.decodeSingularBoolField(value: &_storage._isLucky)
+        case 2: try decoder.decodeSingularInt32Field(value: &_storage._luckyCount)
+        case 3: try decoder.decodeSingularMessageField(value: &_storage._sharedMigrations)
         default: break
         }
       }
@@ -110,17 +113,14 @@ extension POGOProtos_Data_Friends_TwoWaySharedFriendshipData: SwiftProtobuf.Mess
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if let v = _storage._friendshipLevelData {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
-      }
       if _storage._isLucky != false {
-        try visitor.visitSingularBoolField(value: _storage._isLucky, fieldNumber: 2)
+        try visitor.visitSingularBoolField(value: _storage._isLucky, fieldNumber: 1)
       }
       if _storage._luckyCount != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._luckyCount, fieldNumber: 3)
+        try visitor.visitSingularInt32Field(value: _storage._luckyCount, fieldNumber: 2)
       }
-      if _storage._score != 0 {
-        try visitor.visitSingularInt32Field(value: _storage._score, fieldNumber: 4)
+      if let v = _storage._sharedMigrations {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -131,14 +131,42 @@ extension POGOProtos_Data_Friends_TwoWaySharedFriendshipData: SwiftProtobuf.Mess
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._friendshipLevelData != rhs_storage._friendshipLevelData {return false}
         if _storage._isLucky != rhs_storage._isLucky {return false}
         if _storage._luckyCount != rhs_storage._luckyCount {return false}
-        if _storage._score != rhs_storage._score {return false}
+        if _storage._sharedMigrations != rhs_storage._sharedMigrations {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Friends_TwoWaySharedFriendshipData.SharedMigrations: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Friends_TwoWaySharedFriendshipData.protoMessageName + ".SharedMigrations"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "is_gifting_migrated"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.isGiftingMigrated)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.isGiftingMigrated != false {
+      try visitor.visitSingularBoolField(value: self.isGiftingMigrated, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Friends_TwoWaySharedFriendshipData.SharedMigrations, rhs: POGOProtos_Data_Friends_TwoWaySharedFriendshipData.SharedMigrations) -> Bool {
+    if lhs.isGiftingMigrated != rhs.isGiftingMigrated {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

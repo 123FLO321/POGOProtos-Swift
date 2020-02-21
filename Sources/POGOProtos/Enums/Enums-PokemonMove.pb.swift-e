@@ -292,6 +292,8 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case sacredSword // = 330
   case flyingPress // = 331
   case auraSphere // = 332
+  case payback // = 333
+  case rockWrecker // = 334
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -571,6 +573,8 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 330: self = .sacredSword
     case 331: self = .flyingPress
     case 332: self = .auraSphere
+    case 333: self = .payback
+    case 334: self = .rockWrecker
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -848,6 +852,8 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .sacredSword: return 330
     case .flyingPress: return 331
     case .auraSphere: return 332
+    case .payback: return 333
+    case .rockWrecker: return 334
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1130,6 +1136,8 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .sacredSword,
     .flyingPress,
     .auraSphere,
+    .payback,
+    .rockWrecker,
   ]
 }
 
@@ -1410,5 +1418,7 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     330: .same(proto: "SACRED_SWORD"),
     331: .same(proto: "FLYING_PRESS"),
     332: .same(proto: "AURA_SPHERE"),
+    333: .same(proto: "PAYBACK"),
+    334: .same(proto: "ROCK_WRECKER"),
   ]
 }

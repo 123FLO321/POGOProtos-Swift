@@ -97,7 +97,7 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
   /// ???
   case redeemDesktopReceipt // = 5023
 
-  /// Implemented
+  /// ???
   case updateFitnessMetrics // = 5024
 
   /// Implemented
@@ -133,7 +133,7 @@ public enum POGOProtos_Networking_Platform_PlatformRequestType: SwiftProtobuf.En
   /// Implemented
   case getGmapSettings // = 5036
 
-  /// ???
+  /// Implemented
   case redeemSamsungReceipt // = 5037
 
   /// ??? maybe same POGOProtos.Networking.Titan.Messages.SubmitNewRouteMessage

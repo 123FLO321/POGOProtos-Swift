@@ -24,14 +24,6 @@ public struct POGOProtos_Networking_Responses_GetFitnessReportResponse {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var status: POGOProtos_Networking_Responses_GetFitnessReportResponse.Status = .unset
-
-  public var dailyReports: [POGOProtos_Data_Fitness_FitnessReport] = []
-
-  public var weeklyReports: [POGOProtos_Data_Fitness_FitnessReport] = []
-
-  public var weekResetTimestampSinceMondayMs: Int64 = 0
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Status: SwiftProtobuf.Enum {
@@ -99,46 +91,18 @@ fileprivate let _protobuf_package = "POGOProtos.Networking.Responses"
 
 extension POGOProtos_Networking_Responses_GetFitnessReportResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".GetFitnessReportResponse"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .same(proto: "status"),
-    2: .standard(proto: "daily_reports"),
-    3: .standard(proto: "weekly_reports"),
-    4: .standard(proto: "week_reset_timestamp_since_monday_ms"),
-  ]
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularEnumField(value: &self.status)
-      case 2: try decoder.decodeRepeatedMessageField(value: &self.dailyReports)
-      case 3: try decoder.decodeRepeatedMessageField(value: &self.weeklyReports)
-      case 4: try decoder.decodeSingularInt64Field(value: &self.weekResetTimestampSinceMondayMs)
-      default: break
-      }
+    while let _ = try decoder.nextFieldNumber() {
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.status != .unset {
-      try visitor.visitSingularEnumField(value: self.status, fieldNumber: 1)
-    }
-    if !self.dailyReports.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.dailyReports, fieldNumber: 2)
-    }
-    if !self.weeklyReports.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.weeklyReports, fieldNumber: 3)
-    }
-    if self.weekResetTimestampSinceMondayMs != 0 {
-      try visitor.visitSingularInt64Field(value: self.weekResetTimestampSinceMondayMs, fieldNumber: 4)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Responses_GetFitnessReportResponse, rhs: POGOProtos_Networking_Responses_GetFitnessReportResponse) -> Bool {
-    if lhs.status != rhs.status {return false}
-    if lhs.dailyReports != rhs.dailyReports {return false}
-    if lhs.weeklyReports != rhs.weeklyReports {return false}
-    if lhs.weekResetTimestampSinceMondayMs != rhs.weekResetTimestampSinceMondayMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

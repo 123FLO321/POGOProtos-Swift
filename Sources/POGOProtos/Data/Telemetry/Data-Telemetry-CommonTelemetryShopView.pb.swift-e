@@ -30,6 +30,8 @@ public struct POGOProtos_Data_Telemetry_CommonTelemetryShopView {
 
   public var viewEndTimestampMs: Int64 = 0
 
+  public var consolidatedItemID: [String] = []
+
   public var rootStorePageSessionID: String = String()
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -47,7 +49,8 @@ extension POGOProtos_Data_Telemetry_CommonTelemetryShopView: SwiftProtobuf.Messa
     1: .standard(proto: "shopping_page_view_type_id"),
     2: .standard(proto: "view_start_timestamp_ms"),
     3: .standard(proto: "view_end_timestamp_ms"),
-    4: .standard(proto: "root_store_page_session_id"),
+    4: .standard(proto: "consolidated_item_id"),
+    5: .standard(proto: "root_store_page_session_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -56,7 +59,8 @@ extension POGOProtos_Data_Telemetry_CommonTelemetryShopView: SwiftProtobuf.Messa
       case 1: try decoder.decodeSingularStringField(value: &self.shoppingPageViewTypeID)
       case 2: try decoder.decodeSingularInt64Field(value: &self.viewStartTimestampMs)
       case 3: try decoder.decodeSingularInt64Field(value: &self.viewEndTimestampMs)
-      case 4: try decoder.decodeSingularStringField(value: &self.rootStorePageSessionID)
+      case 4: try decoder.decodeRepeatedStringField(value: &self.consolidatedItemID)
+      case 5: try decoder.decodeSingularStringField(value: &self.rootStorePageSessionID)
       default: break
       }
     }
@@ -72,8 +76,11 @@ extension POGOProtos_Data_Telemetry_CommonTelemetryShopView: SwiftProtobuf.Messa
     if self.viewEndTimestampMs != 0 {
       try visitor.visitSingularInt64Field(value: self.viewEndTimestampMs, fieldNumber: 3)
     }
+    if !self.consolidatedItemID.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.consolidatedItemID, fieldNumber: 4)
+    }
     if !self.rootStorePageSessionID.isEmpty {
-      try visitor.visitSingularStringField(value: self.rootStorePageSessionID, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.rootStorePageSessionID, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -82,6 +89,7 @@ extension POGOProtos_Data_Telemetry_CommonTelemetryShopView: SwiftProtobuf.Messa
     if lhs.shoppingPageViewTypeID != rhs.shoppingPageViewTypeID {return false}
     if lhs.viewStartTimestampMs != rhs.viewStartTimestampMs {return false}
     if lhs.viewEndTimestampMs != rhs.viewEndTimestampMs {return false}
+    if lhs.consolidatedItemID != rhs.consolidatedItemID {return false}
     if lhs.rootStorePageSessionID != rhs.rootStorePageSessionID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

@@ -43,7 +43,7 @@ public enum POGOProtos_Networking_Game_GameIap_GameIapAction: SwiftProtobuf.Enum
   /// ???
   case redeemDesktopReceipt // = 310102
 
-  /// ???
+  /// Implemented
   case redeemSamsungReceipt // = 310103
   case UNRECOGNIZED(Int)
 

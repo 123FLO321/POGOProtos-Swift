@@ -33,6 +33,8 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
   case feb2019 // = 9
   case may2019Noevolve // = 10
   case jan2020Noevolve // = 11
+  case april2020Noevolve // = 12
+  case safari2020Noevolve // = 13
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -53,6 +55,8 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case 9: self = .feb2019
     case 10: self = .may2019Noevolve
     case 11: self = .jan2020Noevolve
+    case 12: self = .april2020Noevolve
+    case 13: self = .safari2020Noevolve
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -71,6 +75,8 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case .feb2019: return 9
     case .may2019Noevolve: return 10
     case .jan2020Noevolve: return 11
+    case .april2020Noevolve: return 12
+    case .safari2020Noevolve: return 13
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -94,6 +100,8 @@ extension POGOProtos_Enums_Costume: CaseIterable {
     .feb2019,
     .may2019Noevolve,
     .jan2020Noevolve,
+    .april2020Noevolve,
+    .safari2020Noevolve,
   ]
 }
 
@@ -115,5 +123,7 @@ extension POGOProtos_Enums_Costume: SwiftProtobuf._ProtoNameProviding {
     9: .same(proto: "FEB_2019"),
     10: .same(proto: "MAY_2019_NOEVOLVE"),
     11: .same(proto: "JAN_2020_NOEVOLVE"),
+    12: .same(proto: "APRIL_2020_NOEVOLVE"),
+    13: .same(proto: "SAFARI_2020_NOEVOLVE"),
   ]
 }

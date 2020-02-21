@@ -54,6 +54,8 @@ public struct POGOProtos_Settings_BuddyGlobalSettings {
 
   public var arbeEndpointURL: String = String()
 
+  public var buddyOnMapRequiredToOpenGifts: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -81,6 +83,7 @@ extension POGOProtos_Settings_BuddyGlobalSettings: SwiftProtobuf.Message, SwiftP
     13: .standard(proto: "plfe_auth_tokens_enabled"),
     14: .standard(proto: "group_photo_shot_interval_ms"),
     15: .standard(proto: "arbe_endpoint_url"),
+    16: .standard(proto: "buddy_on_map_required_to_open_gifts"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -101,6 +104,7 @@ extension POGOProtos_Settings_BuddyGlobalSettings: SwiftProtobuf.Message, SwiftP
       case 13: try decoder.decodeSingularBoolField(value: &self.plfeAuthTokensEnabled)
       case 14: try decoder.decodeSingularInt32Field(value: &self.groupPhotoShotIntervalMs)
       case 15: try decoder.decodeSingularStringField(value: &self.arbeEndpointURL)
+      case 16: try decoder.decodeSingularBoolField(value: &self.buddyOnMapRequiredToOpenGifts)
       default: break
       }
     }
@@ -152,6 +156,9 @@ extension POGOProtos_Settings_BuddyGlobalSettings: SwiftProtobuf.Message, SwiftP
     if !self.arbeEndpointURL.isEmpty {
       try visitor.visitSingularStringField(value: self.arbeEndpointURL, fieldNumber: 15)
     }
+    if self.buddyOnMapRequiredToOpenGifts != false {
+      try visitor.visitSingularBoolField(value: self.buddyOnMapRequiredToOpenGifts, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -171,6 +178,7 @@ extension POGOProtos_Settings_BuddyGlobalSettings: SwiftProtobuf.Message, SwiftP
     if lhs.plfeAuthTokensEnabled != rhs.plfeAuthTokensEnabled {return false}
     if lhs.groupPhotoShotIntervalMs != rhs.groupPhotoShotIntervalMs {return false}
     if lhs.arbeEndpointURL != rhs.arbeEndpointURL {return false}
+    if lhs.buddyOnMapRequiredToOpenGifts != rhs.buddyOnMapRequiredToOpenGifts {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
