@@ -663,11 +663,32 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `buddyHungerSettings`. Subsequent reads from it will return its default value.
     public mutating func clearBuddyHungerSettings() {_uniqueStorage()._buddyHungerSettings = nil}
 
+    public var projectVacation: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation {
+      get {return _storage._projectVacation ?? POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation()}
+      set {_uniqueStorage()._projectVacation = newValue}
+    }
+    /// Returns true if `projectVacation` has been explicitly set.
+    public var hasProjectVacation: Bool {return _storage._projectVacation != nil}
+    /// Clears the value of `projectVacation`. Subsequent reads from it will return its default value.
+    public mutating func clearProjectVacation() {_uniqueStorage()._projectVacation = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
 
     fileprivate var _storage = _StorageClass.defaultInstance
+  }
+
+  public struct ProjectVacation {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var enable2020: Bool = false
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
   }
 
   public init() {}
@@ -816,6 +837,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     69: .standard(proto: "buddy_walk_settings"),
     70: .standard(proto: "platypus_rollout_settings"),
     72: .standard(proto: "buddy_hunger_settings"),
+    73: .standard(proto: "project_vacation"),
   ]
 
   fileprivate class _StorageClass {
@@ -885,6 +907,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _buddyWalkSettings: POGOProtos_Settings_Master_BuddyWalkSettings? = nil
     var _platypusRolloutSettings: POGOProtos_Settings_Master_PlatypusRolloutSettings? = nil
     var _buddyHungerSettings: POGOProtos_Settings_Master_BuddyHungerSettings? = nil
+    var _projectVacation: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -957,6 +980,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       _buddyWalkSettings = source._buddyWalkSettings
       _platypusRolloutSettings = source._platypusRolloutSettings
       _buddyHungerSettings = source._buddyHungerSettings
+      _projectVacation = source._projectVacation
     }
   }
 
@@ -1038,6 +1062,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         case 69: try decoder.decodeSingularMessageField(value: &_storage._buddyWalkSettings)
         case 70: try decoder.decodeSingularMessageField(value: &_storage._platypusRolloutSettings)
         case 72: try decoder.decodeSingularMessageField(value: &_storage._buddyHungerSettings)
+        case 73: try decoder.decodeSingularMessageField(value: &_storage._projectVacation)
         default: break
         }
       }
@@ -1244,6 +1269,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if let v = _storage._buddyHungerSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 72)
       }
+      if let v = _storage._projectVacation {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 73)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1319,10 +1347,40 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
         if _storage._buddyWalkSettings != rhs_storage._buddyWalkSettings {return false}
         if _storage._platypusRolloutSettings != rhs_storage._platypusRolloutSettings {return false}
         if _storage._buddyHungerSettings != rhs_storage._buddyHungerSettings {return false}
+        if _storage._projectVacation != rhs_storage._projectVacation {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.protoMessageName + ".ProjectVacation"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "enable2020"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.enable2020)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.enable2020 != false {
+      try visitor.visitSingularBoolField(value: self.enable2020, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation) -> Bool {
+    if lhs.enable2020 != rhs.enable2020 {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

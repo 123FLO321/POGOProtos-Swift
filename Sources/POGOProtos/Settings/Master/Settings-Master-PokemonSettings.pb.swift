@@ -279,6 +279,16 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._additionalCpBoostLevel = newValue}
   }
 
+  public var eliteQuickMove: [POGOProtos_Enums_PokemonMove] {
+    get {return _storage._eliteQuickMove}
+    set {_uniqueStorage()._eliteQuickMove = newValue}
+  }
+
+  public var eliteCinematicMove: [POGOProtos_Enums_PokemonMove] {
+    get {return _storage._eliteCinematicMove}
+    set {_uniqueStorage()._eliteCinematicMove = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct PokemonThirdMoveAttributes {
@@ -372,6 +382,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     46: .same(proto: "shadow"),
     47: .standard(proto: "buddy_group_number"),
     48: .standard(proto: "additional_cp_boost_level"),
+    49: .standard(proto: "elite_quick_move"),
+    50: .standard(proto: "elite_cinematic_move"),
   ]
 
   fileprivate class _StorageClass {
@@ -422,6 +434,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     var _shadow: POGOProtos_Settings_Master_PokemonSettings.ShadowAttributes? = nil
     var _buddyGroupNumber: Int32 = 0
     var _additionalCpBoostLevel: Int32 = 0
+    var _eliteQuickMove: [POGOProtos_Enums_PokemonMove] = []
+    var _eliteCinematicMove: [POGOProtos_Enums_PokemonMove] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -475,6 +489,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       _shadow = source._shadow
       _buddyGroupNumber = source._buddyGroupNumber
       _additionalCpBoostLevel = source._additionalCpBoostLevel
+      _eliteQuickMove = source._eliteQuickMove
+      _eliteCinematicMove = source._eliteCinematicMove
     }
   }
 
@@ -537,6 +553,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         case 46: try decoder.decodeSingularMessageField(value: &_storage._shadow)
         case 47: try decoder.decodeSingularInt32Field(value: &_storage._buddyGroupNumber)
         case 48: try decoder.decodeSingularInt32Field(value: &_storage._additionalCpBoostLevel)
+        case 49: try decoder.decodeRepeatedEnumField(value: &_storage._eliteQuickMove)
+        case 50: try decoder.decodeRepeatedEnumField(value: &_storage._eliteCinematicMove)
         default: break
         }
       }
@@ -686,6 +704,12 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       if _storage._additionalCpBoostLevel != 0 {
         try visitor.visitSingularInt32Field(value: _storage._additionalCpBoostLevel, fieldNumber: 48)
       }
+      if !_storage._eliteQuickMove.isEmpty {
+        try visitor.visitPackedEnumField(value: _storage._eliteQuickMove, fieldNumber: 49)
+      }
+      if !_storage._eliteCinematicMove.isEmpty {
+        try visitor.visitPackedEnumField(value: _storage._eliteCinematicMove, fieldNumber: 50)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -742,6 +766,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         if _storage._shadow != rhs_storage._shadow {return false}
         if _storage._buddyGroupNumber != rhs_storage._buddyGroupNumber {return false}
         if _storage._additionalCpBoostLevel != rhs_storage._additionalCpBoostLevel {return false}
+        if _storage._eliteQuickMove != rhs_storage._eliteQuickMove {return false}
+        if _storage._eliteCinematicMove != rhs_storage._eliteCinematicMove {return false}
         return true
       }
       if !storagesAreEqual {return false}

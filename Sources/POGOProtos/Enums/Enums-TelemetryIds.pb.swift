@@ -803,6 +803,9 @@ public enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
   case exitNewPlayer // = 23
   case exitExistingPlayer // = 24
   case loginStarted // = 25
+  case clickApple // = 26
+  case completeApple // = 27
+  case cancelApple // = 28
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -837,6 +840,9 @@ public enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
     case 23: self = .exitNewPlayer
     case 24: self = .exitExistingPlayer
     case 25: self = .loginStarted
+    case 26: self = .clickApple
+    case 27: self = .completeApple
+    case 28: self = .cancelApple
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -869,6 +875,9 @@ public enum POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf.Enum {
     case .exitNewPlayer: return 23
     case .exitExistingPlayer: return 24
     case .loginStarted: return 25
+    case .clickApple: return 26
+    case .completeApple: return 27
+    case .cancelApple: return 28
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -906,6 +915,9 @@ extension POGOProtos_Enums_LoginActionTelemetryIds: CaseIterable {
     .exitNewPlayer,
     .exitExistingPlayer,
     .loginStarted,
+    .clickApple,
+    .completeApple,
+    .cancelApple,
   ]
 }
 
@@ -1712,6 +1724,9 @@ extension POGOProtos_Enums_LoginActionTelemetryIds: SwiftProtobuf._ProtoNameProv
     23: .same(proto: "EXIT_NEW_PLAYER"),
     24: .same(proto: "EXIT_EXISTING_PLAYER"),
     25: .same(proto: "LOGIN_STARTED"),
+    26: .same(proto: "CLICK_APPLE"),
+    27: .same(proto: "COMPLETE_APPLE"),
+    28: .same(proto: "CANCEL_APPLE"),
   ]
 }
 

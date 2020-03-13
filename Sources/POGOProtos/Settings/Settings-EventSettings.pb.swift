@@ -32,6 +32,10 @@ public struct POGOProtos_Settings_EventSettings {
 
   public var eventWebtokenServerURL: String = String()
 
+  public var enableEventLnt: Bool = false
+
+  public var eventLntURL: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,6 +52,8 @@ extension POGOProtos_Settings_EventSettings: SwiftProtobuf.Message, SwiftProtobu
     2: .standard(proto: "enable_event_link"),
     3: .standard(proto: "enable_event_link_for_children"),
     4: .standard(proto: "event_webtoken_server_url"),
+    5: .standard(proto: "enable_event_lnt"),
+    6: .standard(proto: "event_lnt_url"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +63,8 @@ extension POGOProtos_Settings_EventSettings: SwiftProtobuf.Message, SwiftProtobu
       case 2: try decoder.decodeSingularBoolField(value: &self.enableEventLink)
       case 3: try decoder.decodeSingularBoolField(value: &self.enableEventLinkForChildren)
       case 4: try decoder.decodeSingularStringField(value: &self.eventWebtokenServerURL)
+      case 5: try decoder.decodeSingularBoolField(value: &self.enableEventLnt)
+      case 6: try decoder.decodeSingularStringField(value: &self.eventLntURL)
       default: break
       }
     }
@@ -75,6 +83,12 @@ extension POGOProtos_Settings_EventSettings: SwiftProtobuf.Message, SwiftProtobu
     if !self.eventWebtokenServerURL.isEmpty {
       try visitor.visitSingularStringField(value: self.eventWebtokenServerURL, fieldNumber: 4)
     }
+    if self.enableEventLnt != false {
+      try visitor.visitSingularBoolField(value: self.enableEventLnt, fieldNumber: 5)
+    }
+    if !self.eventLntURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.eventLntURL, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +97,8 @@ extension POGOProtos_Settings_EventSettings: SwiftProtobuf.Message, SwiftProtobu
     if lhs.enableEventLink != rhs.enableEventLink {return false}
     if lhs.enableEventLinkForChildren != rhs.enableEventLinkForChildren {return false}
     if lhs.eventWebtokenServerURL != rhs.eventWebtokenServerURL {return false}
+    if lhs.enableEventLnt != rhs.enableEventLnt {return false}
+    if lhs.eventLntURL != rhs.eventLntURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

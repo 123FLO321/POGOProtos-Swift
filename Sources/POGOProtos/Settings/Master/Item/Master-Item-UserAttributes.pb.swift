@@ -289,6 +289,11 @@ public struct POGOProtos_Settings_Master_Item_UserAttributes {
     set {_uniqueStorage()._geoFenceOptInV2 = newValue}
   }
 
+  public var unovaDexCount: Int32 {
+    get {return _storage._unovaDexCount}
+    set {_uniqueStorage()._unovaDexCount = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -356,6 +361,7 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
     51: .standard(proto: "using_lure_magnetic_v2"),
     52: .standard(proto: "adventure_sync_opt_in_v2"),
     53: .standard(proto: "geo_fence_opt_in_v2"),
+    54: .standard(proto: "unova_dex_count"),
   ]
 
   fileprivate class _StorageClass {
@@ -412,6 +418,7 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
     var _usingLureMagneticV2: String = String()
     var _adventureSyncOptInV2: String = String()
     var _geoFenceOptInV2: String = String()
+    var _unovaDexCount: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -471,6 +478,7 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
       _usingLureMagneticV2 = source._usingLureMagneticV2
       _adventureSyncOptInV2 = source._adventureSyncOptInV2
       _geoFenceOptInV2 = source._geoFenceOptInV2
+      _unovaDexCount = source._unovaDexCount
     }
   }
 
@@ -539,6 +547,7 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
         case 51: try decoder.decodeSingularStringField(value: &_storage._usingLureMagneticV2)
         case 52: try decoder.decodeSingularStringField(value: &_storage._adventureSyncOptInV2)
         case 53: try decoder.decodeSingularStringField(value: &_storage._geoFenceOptInV2)
+        case 54: try decoder.decodeSingularInt32Field(value: &_storage._unovaDexCount)
         default: break
         }
       }
@@ -706,6 +715,9 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
       if !_storage._geoFenceOptInV2.isEmpty {
         try visitor.visitSingularStringField(value: _storage._geoFenceOptInV2, fieldNumber: 53)
       }
+      if _storage._unovaDexCount != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._unovaDexCount, fieldNumber: 54)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -768,6 +780,7 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
         if _storage._usingLureMagneticV2 != rhs_storage._usingLureMagneticV2 {return false}
         if _storage._adventureSyncOptInV2 != rhs_storage._adventureSyncOptInV2 {return false}
         if _storage._geoFenceOptInV2 != rhs_storage._geoFenceOptInV2 {return false}
+        if _storage._unovaDexCount != rhs_storage._unovaDexCount {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -296,6 +296,16 @@ public struct POGOProtos_Data_PokemonData {
     set {_uniqueStorage()._preBoostedAdditionalCpMultiplier = newValue}
   }
 
+  public var deployedGymLatDegree: Double {
+    get {return _storage._deployedGymLatDegree}
+    set {_uniqueStorage()._deployedGymLatDegree = newValue}
+  }
+
+  public var deployedGymLngDegree: Double {
+    get {return _storage._deployedGymLngDegree}
+    set {_uniqueStorage()._deployedGymLngDegree = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -362,6 +372,8 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     51: .standard(proto: "limited_pokemon_identifier"),
     52: .standard(proto: "pre_boosted_cp"),
     53: .standard(proto: "pre_boosted_additional_cp_multiplier"),
+    55: .standard(proto: "deployed_gym_lat_degree"),
+    56: .standard(proto: "deployed_gym_lng_degree"),
   ]
 
   fileprivate class _StorageClass {
@@ -417,6 +429,8 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _limitedPokemonIdentifier: String = String()
     var _preBoostedCp: Int32 = 0
     var _preBoostedAdditionalCpMultiplier: Float = 0
+    var _deployedGymLatDegree: Double = 0
+    var _deployedGymLngDegree: Double = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -475,6 +489,8 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _limitedPokemonIdentifier = source._limitedPokemonIdentifier
       _preBoostedCp = source._preBoostedCp
       _preBoostedAdditionalCpMultiplier = source._preBoostedAdditionalCpMultiplier
+      _deployedGymLatDegree = source._deployedGymLatDegree
+      _deployedGymLngDegree = source._deployedGymLngDegree
     }
   }
 
@@ -542,6 +558,8 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 51: try decoder.decodeSingularStringField(value: &_storage._limitedPokemonIdentifier)
         case 52: try decoder.decodeSingularInt32Field(value: &_storage._preBoostedCp)
         case 53: try decoder.decodeSingularFloatField(value: &_storage._preBoostedAdditionalCpMultiplier)
+        case 55: try decoder.decodeSingularDoubleField(value: &_storage._deployedGymLatDegree)
+        case 56: try decoder.decodeSingularDoubleField(value: &_storage._deployedGymLngDegree)
         default: break
         }
       }
@@ -706,6 +724,12 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if _storage._preBoostedAdditionalCpMultiplier != 0 {
         try visitor.visitSingularFloatField(value: _storage._preBoostedAdditionalCpMultiplier, fieldNumber: 53)
       }
+      if _storage._deployedGymLatDegree != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._deployedGymLatDegree, fieldNumber: 55)
+      }
+      if _storage._deployedGymLngDegree != 0 {
+        try visitor.visitSingularDoubleField(value: _storage._deployedGymLngDegree, fieldNumber: 56)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -767,6 +791,8 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._limitedPokemonIdentifier != rhs_storage._limitedPokemonIdentifier {return false}
         if _storage._preBoostedCp != rhs_storage._preBoostedCp {return false}
         if _storage._preBoostedAdditionalCpMultiplier != rhs_storage._preBoostedAdditionalCpMultiplier {return false}
+        if _storage._deployedGymLatDegree != rhs_storage._deployedGymLatDegree {return false}
+        if _storage._deployedGymLngDegree != rhs_storage._deployedGymLngDegree {return false}
         return true
       }
       if !storagesAreEqual {return false}
