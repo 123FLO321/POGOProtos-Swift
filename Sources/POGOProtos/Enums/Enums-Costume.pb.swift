@@ -43,6 +43,10 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
   case notForReleaseBeta // = 19
   case notForReleaseGamma // = 20
   case notForReleaseNoevolve // = 21
+  case kanto2020Noevolve // = 22
+  case johto2020Noevolve // = 23
+  case hoenn2020Noevolve // = 24
+  case sinnoh2020Noevolve // = 25
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -73,6 +77,10 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case 19: self = .notForReleaseBeta
     case 20: self = .notForReleaseGamma
     case 21: self = .notForReleaseNoevolve
+    case 22: self = .kanto2020Noevolve
+    case 23: self = .johto2020Noevolve
+    case 24: self = .hoenn2020Noevolve
+    case 25: self = .sinnoh2020Noevolve
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -101,6 +109,10 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case .notForReleaseBeta: return 19
     case .notForReleaseGamma: return 20
     case .notForReleaseNoevolve: return 21
+    case .kanto2020Noevolve: return 22
+    case .johto2020Noevolve: return 23
+    case .hoenn2020Noevolve: return 24
+    case .sinnoh2020Noevolve: return 25
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -134,6 +146,10 @@ extension POGOProtos_Enums_Costume: CaseIterable {
     .notForReleaseBeta,
     .notForReleaseGamma,
     .notForReleaseNoevolve,
+    .kanto2020Noevolve,
+    .johto2020Noevolve,
+    .hoenn2020Noevolve,
+    .sinnoh2020Noevolve,
   ]
 }
 
@@ -165,5 +181,9 @@ extension POGOProtos_Enums_Costume: SwiftProtobuf._ProtoNameProviding {
     19: .same(proto: "NOT_FOR_RELEASE_BETA"),
     20: .same(proto: "NOT_FOR_RELEASE_GAMMA"),
     21: .same(proto: "NOT_FOR_RELEASE_NOEVOLVE"),
+    22: .same(proto: "KANTO_2020_NOEVOLVE"),
+    23: .same(proto: "JOHTO_2020_NOEVOLVE"),
+    24: .same(proto: "HOENN_2020_NOEVOLVE"),
+    25: .same(proto: "SINNOH_2020_NOEVOLVE"),
   ]
 }

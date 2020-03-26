@@ -33,7 +33,7 @@ public struct POGOProtos_Data_Logs_InvasionVictoryLogEntry {
   /// Clears the value of `rewards`. Subsequent reads from it will return its default value.
   public mutating func clearRewards() {_uniqueStorage()._rewards = nil}
 
-  public var invasionNpc: POGOProtos_Data_EnumWrapper.InvasionCharacter {
+  public var invasionNpc: POGOProtos_Enums_EnumWrapper.InvasionCharacter {
     get {return _storage._invasionNpc}
     set {_uniqueStorage()._invasionNpc = newValue}
   }
@@ -58,7 +58,7 @@ extension POGOProtos_Data_Logs_InvasionVictoryLogEntry: SwiftProtobuf.Message, S
 
   fileprivate class _StorageClass {
     var _rewards: POGOProtos_Inventory_Loot? = nil
-    var _invasionNpc: POGOProtos_Data_EnumWrapper.InvasionCharacter = .characterUnset
+    var _invasionNpc: POGOProtos_Enums_EnumWrapper.InvasionCharacter = .characterUnset
 
     static let defaultInstance = _StorageClass()
 

@@ -239,6 +239,14 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeSafarizone2020LiverpoolDay02Earlyaccess // = 5060
   case badgeSafarizone2020LiverpoolDay03General // = 5061
   case badgeSafarizone2020LiverpoolDay03Earlyaccess // = 5062
+  case badgeSafarizone2020PhiladelphiaDay00General // = 5063
+  case badgeSafarizone2020PhiladelphiaDay00Earlyaccess // = 5064
+  case badgeSafarizone2020PhiladelphiaDay01General // = 5065
+  case badgeSafarizone2020PhiladelphiaDay01Earlyaccess // = 5066
+  case badgeSafarizone2020PhiladelphiaDay02General // = 5067
+  case badgeSafarizone2020PhiladelphiaDay02Earlyaccess // = 5068
+  case badgeSafarizone2020PhiladelphiaDay03General // = 5069
+  case badgeSafarizone2020PhiladelphiaDay03Earlyaccess // = 5070
   case badgeGlobalTicketedEvent // = 5100
   case badgeEvent0001 // = 5201
   case badgeEvent0002 // = 5202
@@ -476,6 +484,14 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 5060: self = .badgeSafarizone2020LiverpoolDay02Earlyaccess
     case 5061: self = .badgeSafarizone2020LiverpoolDay03General
     case 5062: self = .badgeSafarizone2020LiverpoolDay03Earlyaccess
+    case 5063: self = .badgeSafarizone2020PhiladelphiaDay00General
+    case 5064: self = .badgeSafarizone2020PhiladelphiaDay00Earlyaccess
+    case 5065: self = .badgeSafarizone2020PhiladelphiaDay01General
+    case 5066: self = .badgeSafarizone2020PhiladelphiaDay01Earlyaccess
+    case 5067: self = .badgeSafarizone2020PhiladelphiaDay02General
+    case 5068: self = .badgeSafarizone2020PhiladelphiaDay02Earlyaccess
+    case 5069: self = .badgeSafarizone2020PhiladelphiaDay03General
+    case 5070: self = .badgeSafarizone2020PhiladelphiaDay03Earlyaccess
     case 5100: self = .badgeGlobalTicketedEvent
     case 5201: self = .badgeEvent0001
     case 5202: self = .badgeEvent0002
@@ -711,6 +727,14 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeSafarizone2020LiverpoolDay02Earlyaccess: return 5060
     case .badgeSafarizone2020LiverpoolDay03General: return 5061
     case .badgeSafarizone2020LiverpoolDay03Earlyaccess: return 5062
+    case .badgeSafarizone2020PhiladelphiaDay00General: return 5063
+    case .badgeSafarizone2020PhiladelphiaDay00Earlyaccess: return 5064
+    case .badgeSafarizone2020PhiladelphiaDay01General: return 5065
+    case .badgeSafarizone2020PhiladelphiaDay01Earlyaccess: return 5066
+    case .badgeSafarizone2020PhiladelphiaDay02General: return 5067
+    case .badgeSafarizone2020PhiladelphiaDay02Earlyaccess: return 5068
+    case .badgeSafarizone2020PhiladelphiaDay03General: return 5069
+    case .badgeSafarizone2020PhiladelphiaDay03Earlyaccess: return 5070
     case .badgeGlobalTicketedEvent: return 5100
     case .badgeEvent0001: return 5201
     case .badgeEvent0002: return 5202
@@ -951,6 +975,14 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeSafarizone2020LiverpoolDay02Earlyaccess,
     .badgeSafarizone2020LiverpoolDay03General,
     .badgeSafarizone2020LiverpoolDay03Earlyaccess,
+    .badgeSafarizone2020PhiladelphiaDay00General,
+    .badgeSafarizone2020PhiladelphiaDay00Earlyaccess,
+    .badgeSafarizone2020PhiladelphiaDay01General,
+    .badgeSafarizone2020PhiladelphiaDay01Earlyaccess,
+    .badgeSafarizone2020PhiladelphiaDay02General,
+    .badgeSafarizone2020PhiladelphiaDay02Earlyaccess,
+    .badgeSafarizone2020PhiladelphiaDay03General,
+    .badgeSafarizone2020PhiladelphiaDay03Earlyaccess,
     .badgeGlobalTicketedEvent,
     .badgeEvent0001,
     .badgeEvent0002,
@@ -1189,6 +1221,14 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     5060: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_02_EARLYACCESS"),
     5061: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_03_GENERAL"),
     5062: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_03_EARLYACCESS"),
+    5063: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_00_GENERAL"),
+    5064: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_00_EARLYACCESS"),
+    5065: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_01_GENERAL"),
+    5066: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_01_EARLYACCESS"),
+    5067: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_02_GENERAL"),
+    5068: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_02_EARLYACCESS"),
+    5069: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_03_GENERAL"),
+    5070: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_03_EARLYACCESS"),
     5100: .same(proto: "BADGE_GLOBAL_TICKETED_EVENT"),
     5201: .same(proto: "BADGE_EVENT_0001"),
     5202: .same(proto: "BADGE_EVENT_0002"),

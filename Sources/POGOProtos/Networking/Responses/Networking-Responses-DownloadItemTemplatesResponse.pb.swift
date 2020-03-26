@@ -26,7 +26,7 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
 
   public var result: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.Result = .unset
 
-  public var itemTemplates: [POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate] = []
+  public var itemTemplate: [POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate] = []
 
   public var timestampMs: UInt64 = 0
 
@@ -68,7 +68,7 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
 
   }
 
-  public struct ItemTemplate {
+  public struct GameMasterClientTemplate {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
@@ -78,41 +78,41 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
       set {_uniqueStorage()._templateID = newValue}
     }
 
-    public var pokemonSettings: POGOProtos_Settings_Master_PokemonSettings {
-      get {return _storage._pokemonSettings ?? POGOProtos_Settings_Master_PokemonSettings()}
-      set {_uniqueStorage()._pokemonSettings = newValue}
+    public var pokemon: POGOProtos_Settings_Master_PokemonSettings {
+      get {return _storage._pokemon ?? POGOProtos_Settings_Master_PokemonSettings()}
+      set {_uniqueStorage()._pokemon = newValue}
     }
-    /// Returns true if `pokemonSettings` has been explicitly set.
-    public var hasPokemonSettings: Bool {return _storage._pokemonSettings != nil}
-    /// Clears the value of `pokemonSettings`. Subsequent reads from it will return its default value.
-    public mutating func clearPokemonSettings() {_uniqueStorage()._pokemonSettings = nil}
+    /// Returns true if `pokemon` has been explicitly set.
+    public var hasPokemon: Bool {return _storage._pokemon != nil}
+    /// Clears the value of `pokemon`. Subsequent reads from it will return its default value.
+    public mutating func clearPokemon() {_uniqueStorage()._pokemon = nil}
 
-    public var itemSettings: POGOProtos_Settings_Master_ItemSettings {
-      get {return _storage._itemSettings ?? POGOProtos_Settings_Master_ItemSettings()}
-      set {_uniqueStorage()._itemSettings = newValue}
+    public var item: POGOProtos_Settings_Master_ItemSettings {
+      get {return _storage._item ?? POGOProtos_Settings_Master_ItemSettings()}
+      set {_uniqueStorage()._item = newValue}
     }
-    /// Returns true if `itemSettings` has been explicitly set.
-    public var hasItemSettings: Bool {return _storage._itemSettings != nil}
-    /// Clears the value of `itemSettings`. Subsequent reads from it will return its default value.
-    public mutating func clearItemSettings() {_uniqueStorage()._itemSettings = nil}
+    /// Returns true if `item` has been explicitly set.
+    public var hasItem: Bool {return _storage._item != nil}
+    /// Clears the value of `item`. Subsequent reads from it will return its default value.
+    public mutating func clearItem() {_uniqueStorage()._item = nil}
 
-    public var moveSettings: POGOProtos_Settings_Master_MoveSettings {
-      get {return _storage._moveSettings ?? POGOProtos_Settings_Master_MoveSettings()}
-      set {_uniqueStorage()._moveSettings = newValue}
+    public var move: POGOProtos_Settings_Master_MoveSettings {
+      get {return _storage._move ?? POGOProtos_Settings_Master_MoveSettings()}
+      set {_uniqueStorage()._move = newValue}
     }
-    /// Returns true if `moveSettings` has been explicitly set.
-    public var hasMoveSettings: Bool {return _storage._moveSettings != nil}
-    /// Clears the value of `moveSettings`. Subsequent reads from it will return its default value.
-    public mutating func clearMoveSettings() {_uniqueStorage()._moveSettings = nil}
+    /// Returns true if `move` has been explicitly set.
+    public var hasMove: Bool {return _storage._move != nil}
+    /// Clears the value of `move`. Subsequent reads from it will return its default value.
+    public mutating func clearMove() {_uniqueStorage()._move = nil}
 
-    public var moveSequenceSettings: POGOProtos_Settings_Master_MoveSequenceSettings {
-      get {return _storage._moveSequenceSettings ?? POGOProtos_Settings_Master_MoveSequenceSettings()}
-      set {_uniqueStorage()._moveSequenceSettings = newValue}
+    public var moveSequence: POGOProtos_Settings_Master_MoveSequenceSettings {
+      get {return _storage._moveSequence ?? POGOProtos_Settings_Master_MoveSequenceSettings()}
+      set {_uniqueStorage()._moveSequence = newValue}
     }
-    /// Returns true if `moveSequenceSettings` has been explicitly set.
-    public var hasMoveSequenceSettings: Bool {return _storage._moveSequenceSettings != nil}
-    /// Clears the value of `moveSequenceSettings`. Subsequent reads from it will return its default value.
-    public mutating func clearMoveSequenceSettings() {_uniqueStorage()._moveSequenceSettings = nil}
+    /// Returns true if `moveSequence` has been explicitly set.
+    public var hasMoveSequence: Bool {return _storage._moveSequence != nil}
+    /// Clears the value of `moveSequence`. Subsequent reads from it will return its default value.
+    public mutating func clearMoveSequence() {_uniqueStorage()._moveSequence = nil}
 
     public var typeEffective: POGOProtos_Settings_Master_TypeEffectiveSettings {
       get {return _storage._typeEffective ?? POGOProtos_Settings_Master_TypeEffectiveSettings()}
@@ -123,14 +123,14 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `typeEffective`. Subsequent reads from it will return its default value.
     public mutating func clearTypeEffective() {_uniqueStorage()._typeEffective = nil}
 
-    public var badgeSettings: POGOProtos_Settings_Master_BadgeSettings {
-      get {return _storage._badgeSettings ?? POGOProtos_Settings_Master_BadgeSettings()}
-      set {_uniqueStorage()._badgeSettings = newValue}
+    public var badge: POGOProtos_Settings_Master_BadgeSettings {
+      get {return _storage._badge ?? POGOProtos_Settings_Master_BadgeSettings()}
+      set {_uniqueStorage()._badge = newValue}
     }
-    /// Returns true if `badgeSettings` has been explicitly set.
-    public var hasBadgeSettings: Bool {return _storage._badgeSettings != nil}
-    /// Clears the value of `badgeSettings`. Subsequent reads from it will return its default value.
-    public mutating func clearBadgeSettings() {_uniqueStorage()._badgeSettings = nil}
+    /// Returns true if `badge` has been explicitly set.
+    public var hasBadge: Bool {return _storage._badge != nil}
+    /// Clears the value of `badge`. Subsequent reads from it will return its default value.
+    public mutating func clearBadge() {_uniqueStorage()._badge = nil}
 
     public var camera: POGOProtos_Settings_Master_CameraSettings {
       get {return _storage._camera ?? POGOProtos_Settings_Master_CameraSettings()}
@@ -663,8 +663,8 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `buddyHungerSettings`. Subsequent reads from it will return its default value.
     public mutating func clearBuddyHungerSettings() {_uniqueStorage()._buddyHungerSettings = nil}
 
-    public var projectVacation: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation {
-      get {return _storage._projectVacation ?? POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation()}
+    public var projectVacation: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate.ProjectVacation {
+      get {return _storage._projectVacation ?? POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate.ProjectVacation()}
       set {_uniqueStorage()._projectVacation = newValue}
     }
     /// Returns true if `projectVacation` has been explicitly set.
@@ -674,21 +674,21 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
+    public struct ProjectVacation {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var enable2020: Bool = false
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
     public init() {}
 
     fileprivate var _storage = _StorageClass.defaultInstance
-  }
-
-  public struct ProjectVacation {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var enable2020: Bool = false
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
   }
 
   public init() {}
@@ -716,7 +716,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
   public static let protoMessageName: String = _protobuf_package + ".DownloadItemTemplatesResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
-    2: .standard(proto: "item_templates"),
+    2: .standard(proto: "item_template"),
     3: .standard(proto: "timestamp_ms"),
     4: .standard(proto: "page_offset"),
   ]
@@ -725,7 +725,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
-      case 2: try decoder.decodeRepeatedMessageField(value: &self.itemTemplates)
+      case 2: try decoder.decodeRepeatedMessageField(value: &self.itemTemplate)
       case 3: try decoder.decodeSingularUInt64Field(value: &self.timestampMs)
       case 4: try decoder.decodeSingularInt32Field(value: &self.pageOffset)
       default: break
@@ -737,8 +737,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
     if self.result != .unset {
       try visitor.visitSingularEnumField(value: self.result, fieldNumber: 1)
     }
-    if !self.itemTemplates.isEmpty {
-      try visitor.visitRepeatedMessageField(value: self.itemTemplates, fieldNumber: 2)
+    if !self.itemTemplate.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.itemTemplate, fieldNumber: 2)
     }
     if self.timestampMs != 0 {
       try visitor.visitSingularUInt64Field(value: self.timestampMs, fieldNumber: 3)
@@ -751,7 +751,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse: SwiftPr
 
   public static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse) -> Bool {
     if lhs.result != rhs.result {return false}
-    if lhs.itemTemplates != rhs.itemTemplates {return false}
+    if lhs.itemTemplate != rhs.itemTemplate {return false}
     if lhs.timestampMs != rhs.timestampMs {return false}
     if lhs.pageOffset != rhs.pageOffset {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
@@ -768,16 +768,16 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.Result: 
   ]
 }
 
-extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.protoMessageName + ".ItemTemplate"
+extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.protoMessageName + ".GameMasterClientTemplate"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "template_id"),
-    2: .standard(proto: "pokemon_settings"),
-    3: .standard(proto: "item_settings"),
-    4: .standard(proto: "move_settings"),
-    5: .standard(proto: "move_sequence_settings"),
+    2: .same(proto: "pokemon"),
+    3: .same(proto: "item"),
+    4: .same(proto: "move"),
+    5: .standard(proto: "move_sequence"),
     8: .standard(proto: "type_effective"),
-    10: .standard(proto: "badge_settings"),
+    10: .same(proto: "badge"),
     11: .same(proto: "camera"),
     12: .standard(proto: "player_level"),
     13: .standard(proto: "gym_level"),
@@ -842,12 +842,12 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
 
   fileprivate class _StorageClass {
     var _templateID: String = String()
-    var _pokemonSettings: POGOProtos_Settings_Master_PokemonSettings? = nil
-    var _itemSettings: POGOProtos_Settings_Master_ItemSettings? = nil
-    var _moveSettings: POGOProtos_Settings_Master_MoveSettings? = nil
-    var _moveSequenceSettings: POGOProtos_Settings_Master_MoveSequenceSettings? = nil
+    var _pokemon: POGOProtos_Settings_Master_PokemonSettings? = nil
+    var _item: POGOProtos_Settings_Master_ItemSettings? = nil
+    var _move: POGOProtos_Settings_Master_MoveSettings? = nil
+    var _moveSequence: POGOProtos_Settings_Master_MoveSequenceSettings? = nil
     var _typeEffective: POGOProtos_Settings_Master_TypeEffectiveSettings? = nil
-    var _badgeSettings: POGOProtos_Settings_Master_BadgeSettings? = nil
+    var _badge: POGOProtos_Settings_Master_BadgeSettings? = nil
     var _camera: POGOProtos_Settings_Master_CameraSettings? = nil
     var _playerLevel: POGOProtos_Settings_Master_PlayerLevelSettings? = nil
     var _gymLevel: POGOProtos_Settings_Master_GymLevelSettings? = nil
@@ -907,7 +907,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     var _buddyWalkSettings: POGOProtos_Settings_Master_BuddyWalkSettings? = nil
     var _platypusRolloutSettings: POGOProtos_Settings_Master_PlatypusRolloutSettings? = nil
     var _buddyHungerSettings: POGOProtos_Settings_Master_BuddyHungerSettings? = nil
-    var _projectVacation: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation? = nil
+    var _projectVacation: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate.ProjectVacation? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -915,12 +915,12 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
 
     init(copying source: _StorageClass) {
       _templateID = source._templateID
-      _pokemonSettings = source._pokemonSettings
-      _itemSettings = source._itemSettings
-      _moveSettings = source._moveSettings
-      _moveSequenceSettings = source._moveSequenceSettings
+      _pokemon = source._pokemon
+      _item = source._item
+      _move = source._move
+      _moveSequence = source._moveSequence
       _typeEffective = source._typeEffective
-      _badgeSettings = source._badgeSettings
+      _badge = source._badge
       _camera = source._camera
       _playerLevel = source._playerLevel
       _gymLevel = source._gymLevel
@@ -997,12 +997,12 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &_storage._templateID)
-        case 2: try decoder.decodeSingularMessageField(value: &_storage._pokemonSettings)
-        case 3: try decoder.decodeSingularMessageField(value: &_storage._itemSettings)
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._moveSettings)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._moveSequenceSettings)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._pokemon)
+        case 3: try decoder.decodeSingularMessageField(value: &_storage._item)
+        case 4: try decoder.decodeSingularMessageField(value: &_storage._move)
+        case 5: try decoder.decodeSingularMessageField(value: &_storage._moveSequence)
         case 8: try decoder.decodeSingularMessageField(value: &_storage._typeEffective)
-        case 10: try decoder.decodeSingularMessageField(value: &_storage._badgeSettings)
+        case 10: try decoder.decodeSingularMessageField(value: &_storage._badge)
         case 11: try decoder.decodeSingularMessageField(value: &_storage._camera)
         case 12: try decoder.decodeSingularMessageField(value: &_storage._playerLevel)
         case 13: try decoder.decodeSingularMessageField(value: &_storage._gymLevel)
@@ -1074,22 +1074,22 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
       if !_storage._templateID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._templateID, fieldNumber: 1)
       }
-      if let v = _storage._pokemonSettings {
+      if let v = _storage._pokemon {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
-      if let v = _storage._itemSettings {
+      if let v = _storage._item {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
       }
-      if let v = _storage._moveSettings {
+      if let v = _storage._move {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
       }
-      if let v = _storage._moveSequenceSettings {
+      if let v = _storage._moveSequence {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
       }
       if let v = _storage._typeEffective {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
       }
-      if let v = _storage._badgeSettings {
+      if let v = _storage._badge {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
       }
       if let v = _storage._camera {
@@ -1276,18 +1276,18 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemplate) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate) -> Bool {
     if lhs._storage !== rhs._storage {
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._templateID != rhs_storage._templateID {return false}
-        if _storage._pokemonSettings != rhs_storage._pokemonSettings {return false}
-        if _storage._itemSettings != rhs_storage._itemSettings {return false}
-        if _storage._moveSettings != rhs_storage._moveSettings {return false}
-        if _storage._moveSequenceSettings != rhs_storage._moveSequenceSettings {return false}
+        if _storage._pokemon != rhs_storage._pokemon {return false}
+        if _storage._item != rhs_storage._item {return false}
+        if _storage._move != rhs_storage._move {return false}
+        if _storage._moveSequence != rhs_storage._moveSequence {return false}
         if _storage._typeEffective != rhs_storage._typeEffective {return false}
-        if _storage._badgeSettings != rhs_storage._badgeSettings {return false}
+        if _storage._badge != rhs_storage._badge {return false}
         if _storage._camera != rhs_storage._camera {return false}
         if _storage._playerLevel != rhs_storage._playerLevel {return false}
         if _storage._gymLevel != rhs_storage._gymLevel {return false}
@@ -1357,8 +1357,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ItemTemp
   }
 }
 
-extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.protoMessageName + ".ProjectVacation"
+extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate.ProjectVacation: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate.protoMessageName + ".ProjectVacation"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "enable2020"),
   ]
@@ -1379,7 +1379,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectV
     try unknownFields.traverse(visitor: &visitor)
   }
 
-  public static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.ProjectVacation) -> Bool {
+  public static func ==(lhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate.ProjectVacation, rhs: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate.ProjectVacation) -> Bool {
     if lhs.enable2020 != rhs.enable2020 {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

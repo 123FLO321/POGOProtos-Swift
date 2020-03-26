@@ -501,6 +501,14 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .buddyMultiplayerTimeToGetSessionTelemetry(newValue)}
   }
 
+  public var playerHudNotificationClickTelemetry: POGOProtos_Data_Telemetry_PlayerHudNotificationClickTelemetry {
+    get {
+      if case .playerHudNotificationClickTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PlayerHudNotificationClickTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .playerHudNotificationClickTelemetry(newValue)}
+  }
+
   public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
     get {return _storage._serverData ?? POGOProtos_Data_Telemetry_PlatformServerData()}
     set {_uniqueStorage()._serverData = newValue}
@@ -581,6 +589,7 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     case buddyMultiplayerConnectionFailedTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerConnectionFailed)
     case buddyMultiplayerConnectionSucceededTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerConnectionSucceeded)
     case buddyMultiplayerTimeToGetSessionTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerTimeToGetSession)
+    case playerHudNotificationClickTelemetry(POGOProtos_Data_Telemetry_PlayerHudNotificationClickTelemetry)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData, rhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData) -> Bool {
@@ -644,6 +653,7 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
       case (.buddyMultiplayerConnectionFailedTelemetry(let l), .buddyMultiplayerConnectionFailedTelemetry(let r)): return l == r
       case (.buddyMultiplayerConnectionSucceededTelemetry(let l), .buddyMultiplayerConnectionSucceededTelemetry(let r)): return l == r
       case (.buddyMultiplayerTimeToGetSessionTelemetry(let l), .buddyMultiplayerTimeToGetSessionTelemetry(let r)): return l == r
+      case (.playerHudNotificationClickTelemetry(let l), .playerHudNotificationClickTelemetry(let r)): return l == r
       default: return false
       }
     }
@@ -721,6 +731,7 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     57: .standard(proto: "buddy_multiplayer_connection_failed_telemetry"),
     58: .standard(proto: "buddy_multiplayer_connection_succeeded_telemetry"),
     59: .standard(proto: "buddy_multiplayer_time_to_get_session_telemetry"),
+    60: .standard(proto: "player_hud_notification_click_telemetry"),
     1001: .standard(proto: "server_data"),
     1002: .standard(proto: "common_filters"),
   ]
@@ -1225,6 +1236,14 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .buddyMultiplayerTimeToGetSessionTelemetry(v)}
+        case 60:
+          var v: POGOProtos_Data_Telemetry_PlayerHudNotificationClickTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .playerHudNotificationClickTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .playerHudNotificationClickTelemetry(v)}
         case 1001: try decoder.decodeSingularMessageField(value: &_storage._serverData)
         case 1002: try decoder.decodeSingularMessageField(value: &_storage._commonFilters)
         default: break
@@ -1354,6 +1373,8 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         try visitor.visitSingularMessageField(value: v, fieldNumber: 58)
       case .buddyMultiplayerTimeToGetSessionTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 59)
+      case .playerHudNotificationClickTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 60)
       case nil: break
       }
       if let v = _storage._serverData {

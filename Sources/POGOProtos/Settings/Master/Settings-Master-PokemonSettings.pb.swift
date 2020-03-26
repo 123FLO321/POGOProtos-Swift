@@ -24,9 +24,9 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var pokemonID: POGOProtos_Enums_PokemonId {
-    get {return _storage._pokemonID}
-    set {_uniqueStorage()._pokemonID = newValue}
+  public var uniqueID: POGOProtos_Enums_PokemonId {
+    get {return _storage._uniqueID}
+    set {_uniqueStorage()._uniqueID = newValue}
   }
 
   public var modelScale: Float {
@@ -34,9 +34,9 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._modelScale = newValue}
   }
 
-  public var type: POGOProtos_Enums_PokemonType {
-    get {return _storage._type}
-    set {_uniqueStorage()._type = newValue}
+  public var type1: POGOProtos_Enums_PokemonType {
+    get {return _storage._type1}
+    set {_uniqueStorage()._type1 = newValue}
   }
 
   public var type2: POGOProtos_Enums_PokemonType {
@@ -81,14 +81,14 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._cinematicMoves = newValue}
   }
 
-  public var animationTime: [Float] {
-    get {return _storage._animationTime}
-    set {_uniqueStorage()._animationTime = newValue}
+  public var animTime: [Float] {
+    get {return _storage._animTime}
+    set {_uniqueStorage()._animTime = newValue}
   }
 
-  public var evolutionIds: [POGOProtos_Enums_PokemonId] {
-    get {return _storage._evolutionIds}
-    set {_uniqueStorage()._evolutionIds = newValue}
+  public var evolution: [POGOProtos_Enums_PokemonId] {
+    get {return _storage._evolution}
+    set {_uniqueStorage()._evolution = newValue}
   }
 
   public var evolutionPips: Int32 {
@@ -96,9 +96,9 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._evolutionPips = newValue}
   }
 
-  public var rarity: POGOProtos_Enums_PokemonRarity {
-    get {return _storage._rarity}
-    set {_uniqueStorage()._rarity = newValue}
+  public var pokemonClass: POGOProtos_Enums_PokemonClass {
+    get {return _storage._pokemonClass}
+    set {_uniqueStorage()._pokemonClass = newValue}
   }
 
   public var pokedexHeightM: Float {
@@ -111,9 +111,9 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._pokedexWeightKg = newValue}
   }
 
-  public var parentPokemonID: POGOProtos_Enums_PokemonId {
-    get {return _storage._parentPokemonID}
-    set {_uniqueStorage()._parentPokemonID = newValue}
+  public var parentID: POGOProtos_Enums_PokemonId {
+    get {return _storage._parentID}
+    set {_uniqueStorage()._parentID = newValue}
   }
 
   public var heightStdDev: Float {
@@ -335,22 +335,22 @@ fileprivate let _protobuf_package = "POGOProtos.Settings.Master"
 extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".PokemonSettings"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "pokemon_id"),
+    1: .standard(proto: "unique_id"),
     3: .standard(proto: "model_scale"),
-    4: .same(proto: "type"),
-    5: .standard(proto: "type_2"),
+    4: .same(proto: "type1"),
+    5: .same(proto: "type2"),
     6: .same(proto: "camera"),
     7: .same(proto: "encounter"),
     8: .same(proto: "stats"),
     9: .standard(proto: "quick_moves"),
     10: .standard(proto: "cinematic_moves"),
-    11: .standard(proto: "animation_time"),
-    12: .standard(proto: "evolution_ids"),
+    11: .standard(proto: "anim_time"),
+    12: .same(proto: "evolution"),
     13: .standard(proto: "evolution_pips"),
-    14: .same(proto: "rarity"),
+    14: .standard(proto: "pokemon_class"),
     15: .standard(proto: "pokedex_height_m"),
     16: .standard(proto: "pokedex_weight_kg"),
-    17: .standard(proto: "parent_pokemon_id"),
+    17: .standard(proto: "parent_id"),
     18: .standard(proto: "height_std_dev"),
     19: .standard(proto: "weight_std_dev"),
     20: .standard(proto: "km_distance_to_hatch"),
@@ -387,22 +387,22 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
   ]
 
   fileprivate class _StorageClass {
-    var _pokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _uniqueID: POGOProtos_Enums_PokemonId = .missingno
     var _modelScale: Float = 0
-    var _type: POGOProtos_Enums_PokemonType = .none
+    var _type1: POGOProtos_Enums_PokemonType = .none
     var _type2: POGOProtos_Enums_PokemonType = .none
     var _camera: POGOProtos_Settings_Master_Pokemon_CameraAttributes? = nil
     var _encounter: POGOProtos_Settings_Master_Pokemon_EncounterAttributes? = nil
     var _stats: POGOProtos_Settings_Master_Pokemon_StatsAttributes? = nil
     var _quickMoves: [POGOProtos_Enums_PokemonMove] = []
     var _cinematicMoves: [POGOProtos_Enums_PokemonMove] = []
-    var _animationTime: [Float] = []
-    var _evolutionIds: [POGOProtos_Enums_PokemonId] = []
+    var _animTime: [Float] = []
+    var _evolution: [POGOProtos_Enums_PokemonId] = []
     var _evolutionPips: Int32 = 0
-    var _rarity: POGOProtos_Enums_PokemonRarity = .normal
+    var _pokemonClass: POGOProtos_Enums_PokemonClass = .normal
     var _pokedexHeightM: Float = 0
     var _pokedexWeightKg: Float = 0
-    var _parentPokemonID: POGOProtos_Enums_PokemonId = .missingno
+    var _parentID: POGOProtos_Enums_PokemonId = .missingno
     var _heightStdDev: Float = 0
     var _weightStdDev: Float = 0
     var _kmDistanceToHatch: Float = 0
@@ -442,22 +442,22 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     private init() {}
 
     init(copying source: _StorageClass) {
-      _pokemonID = source._pokemonID
+      _uniqueID = source._uniqueID
       _modelScale = source._modelScale
-      _type = source._type
+      _type1 = source._type1
       _type2 = source._type2
       _camera = source._camera
       _encounter = source._encounter
       _stats = source._stats
       _quickMoves = source._quickMoves
       _cinematicMoves = source._cinematicMoves
-      _animationTime = source._animationTime
-      _evolutionIds = source._evolutionIds
+      _animTime = source._animTime
+      _evolution = source._evolution
       _evolutionPips = source._evolutionPips
-      _rarity = source._rarity
+      _pokemonClass = source._pokemonClass
       _pokedexHeightM = source._pokedexHeightM
       _pokedexWeightKg = source._pokedexWeightKg
-      _parentPokemonID = source._parentPokemonID
+      _parentID = source._parentID
       _heightStdDev = source._heightStdDev
       _weightStdDev = source._weightStdDev
       _kmDistanceToHatch = source._kmDistanceToHatch
@@ -506,22 +506,22 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
-        case 1: try decoder.decodeSingularEnumField(value: &_storage._pokemonID)
+        case 1: try decoder.decodeSingularEnumField(value: &_storage._uniqueID)
         case 3: try decoder.decodeSingularFloatField(value: &_storage._modelScale)
-        case 4: try decoder.decodeSingularEnumField(value: &_storage._type)
+        case 4: try decoder.decodeSingularEnumField(value: &_storage._type1)
         case 5: try decoder.decodeSingularEnumField(value: &_storage._type2)
         case 6: try decoder.decodeSingularMessageField(value: &_storage._camera)
         case 7: try decoder.decodeSingularMessageField(value: &_storage._encounter)
         case 8: try decoder.decodeSingularMessageField(value: &_storage._stats)
         case 9: try decoder.decodeRepeatedEnumField(value: &_storage._quickMoves)
         case 10: try decoder.decodeRepeatedEnumField(value: &_storage._cinematicMoves)
-        case 11: try decoder.decodeRepeatedFloatField(value: &_storage._animationTime)
-        case 12: try decoder.decodeRepeatedEnumField(value: &_storage._evolutionIds)
+        case 11: try decoder.decodeRepeatedFloatField(value: &_storage._animTime)
+        case 12: try decoder.decodeRepeatedEnumField(value: &_storage._evolution)
         case 13: try decoder.decodeSingularInt32Field(value: &_storage._evolutionPips)
-        case 14: try decoder.decodeSingularEnumField(value: &_storage._rarity)
+        case 14: try decoder.decodeSingularEnumField(value: &_storage._pokemonClass)
         case 15: try decoder.decodeSingularFloatField(value: &_storage._pokedexHeightM)
         case 16: try decoder.decodeSingularFloatField(value: &_storage._pokedexWeightKg)
-        case 17: try decoder.decodeSingularEnumField(value: &_storage._parentPokemonID)
+        case 17: try decoder.decodeSingularEnumField(value: &_storage._parentID)
         case 18: try decoder.decodeSingularFloatField(value: &_storage._heightStdDev)
         case 19: try decoder.decodeSingularFloatField(value: &_storage._weightStdDev)
         case 20: try decoder.decodeSingularFloatField(value: &_storage._kmDistanceToHatch)
@@ -563,14 +563,14 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
-      if _storage._pokemonID != .missingno {
-        try visitor.visitSingularEnumField(value: _storage._pokemonID, fieldNumber: 1)
+      if _storage._uniqueID != .missingno {
+        try visitor.visitSingularEnumField(value: _storage._uniqueID, fieldNumber: 1)
       }
       if _storage._modelScale != 0 {
         try visitor.visitSingularFloatField(value: _storage._modelScale, fieldNumber: 3)
       }
-      if _storage._type != .none {
-        try visitor.visitSingularEnumField(value: _storage._type, fieldNumber: 4)
+      if _storage._type1 != .none {
+        try visitor.visitSingularEnumField(value: _storage._type1, fieldNumber: 4)
       }
       if _storage._type2 != .none {
         try visitor.visitSingularEnumField(value: _storage._type2, fieldNumber: 5)
@@ -590,17 +590,17 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       if !_storage._cinematicMoves.isEmpty {
         try visitor.visitPackedEnumField(value: _storage._cinematicMoves, fieldNumber: 10)
       }
-      if !_storage._animationTime.isEmpty {
-        try visitor.visitPackedFloatField(value: _storage._animationTime, fieldNumber: 11)
+      if !_storage._animTime.isEmpty {
+        try visitor.visitPackedFloatField(value: _storage._animTime, fieldNumber: 11)
       }
-      if !_storage._evolutionIds.isEmpty {
-        try visitor.visitPackedEnumField(value: _storage._evolutionIds, fieldNumber: 12)
+      if !_storage._evolution.isEmpty {
+        try visitor.visitPackedEnumField(value: _storage._evolution, fieldNumber: 12)
       }
       if _storage._evolutionPips != 0 {
         try visitor.visitSingularInt32Field(value: _storage._evolutionPips, fieldNumber: 13)
       }
-      if _storage._rarity != .normal {
-        try visitor.visitSingularEnumField(value: _storage._rarity, fieldNumber: 14)
+      if _storage._pokemonClass != .normal {
+        try visitor.visitSingularEnumField(value: _storage._pokemonClass, fieldNumber: 14)
       }
       if _storage._pokedexHeightM != 0 {
         try visitor.visitSingularFloatField(value: _storage._pokedexHeightM, fieldNumber: 15)
@@ -608,8 +608,8 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       if _storage._pokedexWeightKg != 0 {
         try visitor.visitSingularFloatField(value: _storage._pokedexWeightKg, fieldNumber: 16)
       }
-      if _storage._parentPokemonID != .missingno {
-        try visitor.visitSingularEnumField(value: _storage._parentPokemonID, fieldNumber: 17)
+      if _storage._parentID != .missingno {
+        try visitor.visitSingularEnumField(value: _storage._parentID, fieldNumber: 17)
       }
       if _storage._heightStdDev != 0 {
         try visitor.visitSingularFloatField(value: _storage._heightStdDev, fieldNumber: 18)
@@ -719,22 +719,22 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
         let _storage = _args.0
         let rhs_storage = _args.1
-        if _storage._pokemonID != rhs_storage._pokemonID {return false}
+        if _storage._uniqueID != rhs_storage._uniqueID {return false}
         if _storage._modelScale != rhs_storage._modelScale {return false}
-        if _storage._type != rhs_storage._type {return false}
+        if _storage._type1 != rhs_storage._type1 {return false}
         if _storage._type2 != rhs_storage._type2 {return false}
         if _storage._camera != rhs_storage._camera {return false}
         if _storage._encounter != rhs_storage._encounter {return false}
         if _storage._stats != rhs_storage._stats {return false}
         if _storage._quickMoves != rhs_storage._quickMoves {return false}
         if _storage._cinematicMoves != rhs_storage._cinematicMoves {return false}
-        if _storage._animationTime != rhs_storage._animationTime {return false}
-        if _storage._evolutionIds != rhs_storage._evolutionIds {return false}
+        if _storage._animTime != rhs_storage._animTime {return false}
+        if _storage._evolution != rhs_storage._evolution {return false}
         if _storage._evolutionPips != rhs_storage._evolutionPips {return false}
-        if _storage._rarity != rhs_storage._rarity {return false}
+        if _storage._pokemonClass != rhs_storage._pokemonClass {return false}
         if _storage._pokedexHeightM != rhs_storage._pokedexHeightM {return false}
         if _storage._pokedexWeightKg != rhs_storage._pokedexWeightKg {return false}
-        if _storage._parentPokemonID != rhs_storage._parentPokemonID {return false}
+        if _storage._parentID != rhs_storage._parentID {return false}
         if _storage._heightStdDev != rhs_storage._heightStdDev {return false}
         if _storage._weightStdDev != rhs_storage._weightStdDev {return false}
         if _storage._kmDistanceToHatch != rhs_storage._kmDistanceToHatch {return false}

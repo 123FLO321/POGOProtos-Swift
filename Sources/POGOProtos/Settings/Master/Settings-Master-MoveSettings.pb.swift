@@ -26,7 +26,8 @@ public struct POGOProtos_Settings_Master_MoveSettings {
 
   public var movementID: POGOProtos_Enums_PokemonMove = .moveUnset
 
-  public var animationID: Int32 = 0
+  ///int32 animation_id = 2;
+  public var animationID: POGOProtos_Enums_PokemonAnim = .nonePokemonAnim
 
   public var pokemonType: POGOProtos_Enums_PokemonType = .none
 
@@ -90,7 +91,7 @@ extension POGOProtos_Settings_Master_MoveSettings: SwiftProtobuf.Message, SwiftP
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.movementID)
-      case 2: try decoder.decodeSingularInt32Field(value: &self.animationID)
+      case 2: try decoder.decodeSingularEnumField(value: &self.animationID)
       case 3: try decoder.decodeSingularEnumField(value: &self.pokemonType)
       case 4: try decoder.decodeSingularFloatField(value: &self.power)
       case 5: try decoder.decodeSingularFloatField(value: &self.accuracyChance)
@@ -114,8 +115,8 @@ extension POGOProtos_Settings_Master_MoveSettings: SwiftProtobuf.Message, SwiftP
     if self.movementID != .moveUnset {
       try visitor.visitSingularEnumField(value: self.movementID, fieldNumber: 1)
     }
-    if self.animationID != 0 {
-      try visitor.visitSingularInt32Field(value: self.animationID, fieldNumber: 2)
+    if self.animationID != .nonePokemonAnim {
+      try visitor.visitSingularEnumField(value: self.animationID, fieldNumber: 2)
     }
     if self.pokemonType != .none {
       try visitor.visitSingularEnumField(value: self.pokemonType, fieldNumber: 3)

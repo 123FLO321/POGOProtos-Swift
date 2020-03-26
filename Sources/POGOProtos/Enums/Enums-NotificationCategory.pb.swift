@@ -24,37 +24,45 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case unsetNotificationCategory // = 0
   case gymRemoval // = 1
   case pokemonHungry // = 2
-  case exclusiveRaidInvite // = 3
-  case exclusiveRaidCancellation // = 4
-  case sharedExclusiveRaidInvite // = 5
+  case pokemonWon // = 3
+  case exclusiveRaidInvite // = 4
+  case exclusiveRaidCancellation // = 5
   case giftboxIncoming // = 6
   case giftboxDelivered // = 7
   case friendshipMilestoneReward // = 8
   case gymBattleFriendshipIncrement // = 9
-  case bgmodeEggHatch // = 10
-  case bgmodeBuddyCandy // = 11
-  case bgmodeWeeklyFitnessReport // = 12
-  case bgmodeOffSessionDistance // = 13
-  case bgmodePoiProximity // = 14
-  case bgmodeNamedBuddyCandy // = 15
-  case appBadgeOnly // = 16
-  case combatChallengeOpened // = 17
-  case luckyFriend // = 18
-  case buddyHungry // = 19
-  case buddyFoundGift // = 20
-  case buddyAffectionLevelMilestone // = 21
-  case buddyAffectionWalking // = 22
-  case buddyAffectionCare // = 23
-  case buddyAffectionBattle // = 24
-  case buddyAffectionPhoto // = 25
-  case buddyAffectionPoi // = 26
-  case buddyAttractivePoi // = 27
-  case friendInviteReceived // = 28
-  case friendInviteAccepted // = 29
-  case combatVsSeekerCharged // = 30
-  case combatCompetitiveSeasonEnd // = 31
-  case buddyAffectionAttractivePoi // = 32
-  case poiPasscodeRedeemed // = 33
+  case sharedExclusiveRaidInvite // = 10
+  case bgmodeEggHatch // = 11
+  case bgmodeBuddyCandy // = 12
+  case bgmodeWeeklyFitnessReport // = 13
+  case combatChallengeOpened // = 14
+  case bgmodeOffSessionDistance // = 15
+  case bgmodePoiProximity // = 16
+  case luckyFriend // = 17
+  case bgmodeNamedBuddyCandy // = 18
+  case appBadgeOnly // = 19
+  case combatVsSeekerCharged // = 20
+  case combatCompetitiveSeasonEnd // = 21
+  case buddyHungry // = 22
+  case buddyFoundGift // = 24
+  case buddyAffectionLevelMilestone // = 25
+  case buddyAffectionWalking // = 26
+  case buddyAffectionCare // = 27
+  case buddyAffectionBattle // = 28
+  case buddyAffectionPhoto // = 29
+  case buddyAffectionPoi // = 30
+  case bgmodeBuddyFoundGift // = 31
+  case buddyAttractivePoi // = 32
+  case bgmodeBuddyAttractivePoi // = 33
+  case buddyAffectionAttractivePoi // = 36
+  case poiPasscodeRedeemed // = 37
+  case noEggsIncubating // = 38
+  case retentionUnopenedGifts // = 39
+  case retentionStarpiece // = 40
+  case retentionIncense // = 41
+  case retentionLuckyEgg // = 42
+  case retentionAdvsyncRewards // = 43
+  case retentionEggsNotIncubating // = 44
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -66,37 +74,45 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 0: self = .unsetNotificationCategory
     case 1: self = .gymRemoval
     case 2: self = .pokemonHungry
-    case 3: self = .exclusiveRaidInvite
-    case 4: self = .exclusiveRaidCancellation
-    case 5: self = .sharedExclusiveRaidInvite
+    case 3: self = .pokemonWon
+    case 4: self = .exclusiveRaidInvite
+    case 5: self = .exclusiveRaidCancellation
     case 6: self = .giftboxIncoming
     case 7: self = .giftboxDelivered
     case 8: self = .friendshipMilestoneReward
     case 9: self = .gymBattleFriendshipIncrement
-    case 10: self = .bgmodeEggHatch
-    case 11: self = .bgmodeBuddyCandy
-    case 12: self = .bgmodeWeeklyFitnessReport
-    case 13: self = .bgmodeOffSessionDistance
-    case 14: self = .bgmodePoiProximity
-    case 15: self = .bgmodeNamedBuddyCandy
-    case 16: self = .appBadgeOnly
-    case 17: self = .combatChallengeOpened
-    case 18: self = .luckyFriend
-    case 19: self = .buddyHungry
-    case 20: self = .buddyFoundGift
-    case 21: self = .buddyAffectionLevelMilestone
-    case 22: self = .buddyAffectionWalking
-    case 23: self = .buddyAffectionCare
-    case 24: self = .buddyAffectionBattle
-    case 25: self = .buddyAffectionPhoto
-    case 26: self = .buddyAffectionPoi
-    case 27: self = .buddyAttractivePoi
-    case 28: self = .friendInviteReceived
-    case 29: self = .friendInviteAccepted
-    case 30: self = .combatVsSeekerCharged
-    case 31: self = .combatCompetitiveSeasonEnd
-    case 32: self = .buddyAffectionAttractivePoi
-    case 33: self = .poiPasscodeRedeemed
+    case 10: self = .sharedExclusiveRaidInvite
+    case 11: self = .bgmodeEggHatch
+    case 12: self = .bgmodeBuddyCandy
+    case 13: self = .bgmodeWeeklyFitnessReport
+    case 14: self = .combatChallengeOpened
+    case 15: self = .bgmodeOffSessionDistance
+    case 16: self = .bgmodePoiProximity
+    case 17: self = .luckyFriend
+    case 18: self = .bgmodeNamedBuddyCandy
+    case 19: self = .appBadgeOnly
+    case 20: self = .combatVsSeekerCharged
+    case 21: self = .combatCompetitiveSeasonEnd
+    case 22: self = .buddyHungry
+    case 24: self = .buddyFoundGift
+    case 25: self = .buddyAffectionLevelMilestone
+    case 26: self = .buddyAffectionWalking
+    case 27: self = .buddyAffectionCare
+    case 28: self = .buddyAffectionBattle
+    case 29: self = .buddyAffectionPhoto
+    case 30: self = .buddyAffectionPoi
+    case 31: self = .bgmodeBuddyFoundGift
+    case 32: self = .buddyAttractivePoi
+    case 33: self = .bgmodeBuddyAttractivePoi
+    case 36: self = .buddyAffectionAttractivePoi
+    case 37: self = .poiPasscodeRedeemed
+    case 38: self = .noEggsIncubating
+    case 39: self = .retentionUnopenedGifts
+    case 40: self = .retentionStarpiece
+    case 41: self = .retentionIncense
+    case 42: self = .retentionLuckyEgg
+    case 43: self = .retentionAdvsyncRewards
+    case 44: self = .retentionEggsNotIncubating
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -106,37 +122,45 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .unsetNotificationCategory: return 0
     case .gymRemoval: return 1
     case .pokemonHungry: return 2
-    case .exclusiveRaidInvite: return 3
-    case .exclusiveRaidCancellation: return 4
-    case .sharedExclusiveRaidInvite: return 5
+    case .pokemonWon: return 3
+    case .exclusiveRaidInvite: return 4
+    case .exclusiveRaidCancellation: return 5
     case .giftboxIncoming: return 6
     case .giftboxDelivered: return 7
     case .friendshipMilestoneReward: return 8
     case .gymBattleFriendshipIncrement: return 9
-    case .bgmodeEggHatch: return 10
-    case .bgmodeBuddyCandy: return 11
-    case .bgmodeWeeklyFitnessReport: return 12
-    case .bgmodeOffSessionDistance: return 13
-    case .bgmodePoiProximity: return 14
-    case .bgmodeNamedBuddyCandy: return 15
-    case .appBadgeOnly: return 16
-    case .combatChallengeOpened: return 17
-    case .luckyFriend: return 18
-    case .buddyHungry: return 19
-    case .buddyFoundGift: return 20
-    case .buddyAffectionLevelMilestone: return 21
-    case .buddyAffectionWalking: return 22
-    case .buddyAffectionCare: return 23
-    case .buddyAffectionBattle: return 24
-    case .buddyAffectionPhoto: return 25
-    case .buddyAffectionPoi: return 26
-    case .buddyAttractivePoi: return 27
-    case .friendInviteReceived: return 28
-    case .friendInviteAccepted: return 29
-    case .combatVsSeekerCharged: return 30
-    case .combatCompetitiveSeasonEnd: return 31
-    case .buddyAffectionAttractivePoi: return 32
-    case .poiPasscodeRedeemed: return 33
+    case .sharedExclusiveRaidInvite: return 10
+    case .bgmodeEggHatch: return 11
+    case .bgmodeBuddyCandy: return 12
+    case .bgmodeWeeklyFitnessReport: return 13
+    case .combatChallengeOpened: return 14
+    case .bgmodeOffSessionDistance: return 15
+    case .bgmodePoiProximity: return 16
+    case .luckyFriend: return 17
+    case .bgmodeNamedBuddyCandy: return 18
+    case .appBadgeOnly: return 19
+    case .combatVsSeekerCharged: return 20
+    case .combatCompetitiveSeasonEnd: return 21
+    case .buddyHungry: return 22
+    case .buddyFoundGift: return 24
+    case .buddyAffectionLevelMilestone: return 25
+    case .buddyAffectionWalking: return 26
+    case .buddyAffectionCare: return 27
+    case .buddyAffectionBattle: return 28
+    case .buddyAffectionPhoto: return 29
+    case .buddyAffectionPoi: return 30
+    case .bgmodeBuddyFoundGift: return 31
+    case .buddyAttractivePoi: return 32
+    case .bgmodeBuddyAttractivePoi: return 33
+    case .buddyAffectionAttractivePoi: return 36
+    case .poiPasscodeRedeemed: return 37
+    case .noEggsIncubating: return 38
+    case .retentionUnopenedGifts: return 39
+    case .retentionStarpiece: return 40
+    case .retentionIncense: return 41
+    case .retentionLuckyEgg: return 42
+    case .retentionAdvsyncRewards: return 43
+    case .retentionEggsNotIncubating: return 44
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -151,22 +175,25 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .unsetNotificationCategory,
     .gymRemoval,
     .pokemonHungry,
+    .pokemonWon,
     .exclusiveRaidInvite,
     .exclusiveRaidCancellation,
-    .sharedExclusiveRaidInvite,
     .giftboxIncoming,
     .giftboxDelivered,
     .friendshipMilestoneReward,
     .gymBattleFriendshipIncrement,
+    .sharedExclusiveRaidInvite,
     .bgmodeEggHatch,
     .bgmodeBuddyCandy,
     .bgmodeWeeklyFitnessReport,
+    .combatChallengeOpened,
     .bgmodeOffSessionDistance,
     .bgmodePoiProximity,
+    .luckyFriend,
     .bgmodeNamedBuddyCandy,
     .appBadgeOnly,
-    .combatChallengeOpened,
-    .luckyFriend,
+    .combatVsSeekerCharged,
+    .combatCompetitiveSeasonEnd,
     .buddyHungry,
     .buddyFoundGift,
     .buddyAffectionLevelMilestone,
@@ -175,13 +202,18 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .buddyAffectionBattle,
     .buddyAffectionPhoto,
     .buddyAffectionPoi,
+    .bgmodeBuddyFoundGift,
     .buddyAttractivePoi,
-    .friendInviteReceived,
-    .friendInviteAccepted,
-    .combatVsSeekerCharged,
-    .combatCompetitiveSeasonEnd,
+    .bgmodeBuddyAttractivePoi,
     .buddyAffectionAttractivePoi,
     .poiPasscodeRedeemed,
+    .noEggsIncubating,
+    .retentionUnopenedGifts,
+    .retentionStarpiece,
+    .retentionIncense,
+    .retentionLuckyEgg,
+    .retentionAdvsyncRewards,
+    .retentionEggsNotIncubating,
   ]
 }
 
@@ -194,36 +226,44 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     0: .same(proto: "UNSET_NOTIFICATION_CATEGORY"),
     1: .same(proto: "GYM_REMOVAL"),
     2: .same(proto: "POKEMON_HUNGRY"),
-    3: .same(proto: "EXCLUSIVE_RAID_INVITE"),
-    4: .same(proto: "EXCLUSIVE_RAID_CANCELLATION"),
-    5: .same(proto: "SHARED_EXCLUSIVE_RAID_INVITE"),
+    3: .same(proto: "POKEMON_WON"),
+    4: .same(proto: "EXCLUSIVE_RAID_INVITE"),
+    5: .same(proto: "EXCLUSIVE_RAID_CANCELLATION"),
     6: .same(proto: "GIFTBOX_INCOMING"),
     7: .same(proto: "GIFTBOX_DELIVERED"),
     8: .same(proto: "FRIENDSHIP_MILESTONE_REWARD"),
     9: .same(proto: "GYM_BATTLE_FRIENDSHIP_INCREMENT"),
-    10: .same(proto: "BGMODE_EGG_HATCH"),
-    11: .same(proto: "BGMODE_BUDDY_CANDY"),
-    12: .same(proto: "BGMODE_WEEKLY_FITNESS_REPORT"),
-    13: .same(proto: "BGMODE_OFF_SESSION_DISTANCE"),
-    14: .same(proto: "BGMODE_POI_PROXIMITY"),
-    15: .same(proto: "BGMODE_NAMED_BUDDY_CANDY"),
-    16: .same(proto: "APP_BADGE_ONLY"),
-    17: .same(proto: "COMBAT_CHALLENGE_OPENED"),
-    18: .same(proto: "LUCKY_FRIEND"),
-    19: .same(proto: "BUDDY_HUNGRY"),
-    20: .same(proto: "BUDDY_FOUND_GIFT"),
-    21: .same(proto: "BUDDY_AFFECTION_LEVEL_MILESTONE"),
-    22: .same(proto: "BUDDY_AFFECTION_WALKING"),
-    23: .same(proto: "BUDDY_AFFECTION_CARE"),
-    24: .same(proto: "BUDDY_AFFECTION_BATTLE"),
-    25: .same(proto: "BUDDY_AFFECTION_PHOTO"),
-    26: .same(proto: "BUDDY_AFFECTION_POI"),
-    27: .same(proto: "BUDDY_ATTRACTIVE_POI"),
-    28: .same(proto: "FRIEND_INVITE_RECEIVED"),
-    29: .same(proto: "FRIEND_INVITE_ACCEPTED"),
-    30: .same(proto: "COMBAT_VS_SEEKER_CHARGED"),
-    31: .same(proto: "COMBAT_COMPETITIVE_SEASON_END"),
-    32: .same(proto: "BUDDY_AFFECTION_ATTRACTIVE_POI"),
-    33: .same(proto: "POI_PASSCODE_REDEEMED"),
+    10: .same(proto: "SHARED_EXCLUSIVE_RAID_INVITE"),
+    11: .same(proto: "BGMODE_EGG_HATCH"),
+    12: .same(proto: "BGMODE_BUDDY_CANDY"),
+    13: .same(proto: "BGMODE_WEEKLY_FITNESS_REPORT"),
+    14: .same(proto: "COMBAT_CHALLENGE_OPENED"),
+    15: .same(proto: "BGMODE_OFF_SESSION_DISTANCE"),
+    16: .same(proto: "BGMODE_POI_PROXIMITY"),
+    17: .same(proto: "LUCKY_FRIEND"),
+    18: .same(proto: "BGMODE_NAMED_BUDDY_CANDY"),
+    19: .same(proto: "APP_BADGE_ONLY"),
+    20: .same(proto: "COMBAT_VS_SEEKER_CHARGED"),
+    21: .same(proto: "COMBAT_COMPETITIVE_SEASON_END"),
+    22: .same(proto: "BUDDY_HUNGRY"),
+    24: .same(proto: "BUDDY_FOUND_GIFT"),
+    25: .same(proto: "BUDDY_AFFECTION_LEVEL_MILESTONE"),
+    26: .same(proto: "BUDDY_AFFECTION_WALKING"),
+    27: .same(proto: "BUDDY_AFFECTION_CARE"),
+    28: .same(proto: "BUDDY_AFFECTION_BATTLE"),
+    29: .same(proto: "BUDDY_AFFECTION_PHOTO"),
+    30: .same(proto: "BUDDY_AFFECTION_POI"),
+    31: .same(proto: "BGMODE_BUDDY_FOUND_GIFT"),
+    32: .same(proto: "BUDDY_ATTRACTIVE_POI"),
+    33: .same(proto: "BGMODE_BUDDY_ATTRACTIVE_POI"),
+    36: .same(proto: "BUDDY_AFFECTION_ATTRACTIVE_POI"),
+    37: .same(proto: "POI_PASSCODE_REDEEMED"),
+    38: .same(proto: "NO_EGGS_INCUBATING"),
+    39: .same(proto: "RETENTION_UNOPENED_GIFTS"),
+    40: .same(proto: "RETENTION_STARPIECE"),
+    41: .same(proto: "RETENTION_INCENSE"),
+    42: .same(proto: "RETENTION_LUCKY_EGG"),
+    43: .same(proto: "RETENTION_ADVSYNC_REWARDS"),
+    44: .same(proto: "RETENTION_EGGS_NOT_INCUBATING"),
   ]
 }
