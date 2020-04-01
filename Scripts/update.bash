@@ -14,14 +14,18 @@ do
     fulldir=$(dirname $file)
     dirname=$(basename $fulldir)
     dirname2=$(basename $(dirname $fulldir))
-    if [ "$dirname2" == "." ]
+    if [ "$dirname" == "." ]
+    then
+        dest="$fulldir/$filename"
+    elif [ "$dirname2" == "." ]
     then
         dest="$fulldir/$dirname-$filename"
     else
         dest="$fulldir/$dirname2-$dirname-$filename"
     fi
+    echo $dirname $dirname2 $file $dest
     mv $file $dest
-    sed -i -e 's/case .UNRECOGNIZED(let i): return i/case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \\(#file) is not up to date!"); return 0/g' $dest
+    sed -i "" -e 's/case .UNRECOGNIZED(let i): return i/case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \\(#file) is not up to date!"); return 0/g' $dest
 done
 
 
