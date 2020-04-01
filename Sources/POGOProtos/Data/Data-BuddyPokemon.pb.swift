@@ -53,6 +53,11 @@ public struct POGOProtos_Data_BuddyPokemon {
     set {_uniqueStorage()._lastKmAwardedMs = newValue}
   }
 
+  public var bestBuddiesBackfilled: Bool {
+    get {return _storage._bestBuddiesBackfilled}
+    set {_uniqueStorage()._bestBuddiesBackfilled = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -72,6 +77,7 @@ extension POGOProtos_Data_BuddyPokemon: SwiftProtobuf.Message, SwiftProtobuf._Me
     3: .standard(proto: "last_km_awarded"),
     4: .standard(proto: "daily_buddy_swaps"),
     5: .standard(proto: "last_km_awarded_ms"),
+    6: .standard(proto: "best_buddies_backfilled"),
   ]
 
   fileprivate class _StorageClass {
@@ -80,6 +86,7 @@ extension POGOProtos_Data_BuddyPokemon: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _lastKmAwarded: Double = 0
     var _dailyBuddySwaps: POGOProtos_Data_Quests_Quest.DailyCounter? = nil
     var _lastKmAwardedMs: Int64 = 0
+    var _bestBuddiesBackfilled: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -91,6 +98,7 @@ extension POGOProtos_Data_BuddyPokemon: SwiftProtobuf.Message, SwiftProtobuf._Me
       _lastKmAwarded = source._lastKmAwarded
       _dailyBuddySwaps = source._dailyBuddySwaps
       _lastKmAwardedMs = source._lastKmAwardedMs
+      _bestBuddiesBackfilled = source._bestBuddiesBackfilled
     }
   }
 
@@ -111,6 +119,7 @@ extension POGOProtos_Data_BuddyPokemon: SwiftProtobuf.Message, SwiftProtobuf._Me
         case 3: try decoder.decodeSingularDoubleField(value: &_storage._lastKmAwarded)
         case 4: try decoder.decodeSingularMessageField(value: &_storage._dailyBuddySwaps)
         case 5: try decoder.decodeSingularInt64Field(value: &_storage._lastKmAwardedMs)
+        case 6: try decoder.decodeSingularBoolField(value: &_storage._bestBuddiesBackfilled)
         default: break
         }
       }
@@ -134,6 +143,9 @@ extension POGOProtos_Data_BuddyPokemon: SwiftProtobuf.Message, SwiftProtobuf._Me
       if _storage._lastKmAwardedMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._lastKmAwardedMs, fieldNumber: 5)
       }
+      if _storage._bestBuddiesBackfilled != false {
+        try visitor.visitSingularBoolField(value: _storage._bestBuddiesBackfilled, fieldNumber: 6)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -148,6 +160,7 @@ extension POGOProtos_Data_BuddyPokemon: SwiftProtobuf.Message, SwiftProtobuf._Me
         if _storage._lastKmAwarded != rhs_storage._lastKmAwarded {return false}
         if _storage._dailyBuddySwaps != rhs_storage._dailyBuddySwaps {return false}
         if _storage._lastKmAwardedMs != rhs_storage._lastKmAwardedMs {return false}
+        if _storage._bestBuddiesBackfilled != rhs_storage._bestBuddiesBackfilled {return false}
         return true
       }
       if !storagesAreEqual {return false}

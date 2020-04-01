@@ -28,8 +28,6 @@ public struct POGOProtos_Networking_Responses_UseItemRareCandyResponse {
 
   public var pokemonID: POGOProtos_Enums_PokemonId = .missingno
 
-  public var updatedCandyCount: Int32 = 0
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -104,7 +102,6 @@ extension POGOProtos_Networking_Responses_UseItemRareCandyResponse: SwiftProtobu
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "pokemon_id"),
-    3: .standard(proto: "updated_candy_count"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -112,7 +109,6 @@ extension POGOProtos_Networking_Responses_UseItemRareCandyResponse: SwiftProtobu
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
       case 2: try decoder.decodeSingularEnumField(value: &self.pokemonID)
-      case 3: try decoder.decodeSingularInt32Field(value: &self.updatedCandyCount)
       default: break
       }
     }
@@ -125,16 +121,12 @@ extension POGOProtos_Networking_Responses_UseItemRareCandyResponse: SwiftProtobu
     if self.pokemonID != .missingno {
       try visitor.visitSingularEnumField(value: self.pokemonID, fieldNumber: 2)
     }
-    if self.updatedCandyCount != 0 {
-      try visitor.visitSingularInt32Field(value: self.updatedCandyCount, fieldNumber: 3)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Responses_UseItemRareCandyResponse, rhs: POGOProtos_Networking_Responses_UseItemRareCandyResponse) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs.pokemonID != rhs.pokemonID {return false}
-    if lhs.updatedCandyCount != rhs.updatedCandyCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

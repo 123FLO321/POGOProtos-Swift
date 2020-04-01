@@ -30,6 +30,8 @@ public struct POGOProtos_Networking_Requests_Messages_UseItemMoveRerollMessage {
 
   public var rerollUnlockedMove: Bool = false
 
+  public var targetEliteMove: POGOProtos_Enums_PokemonMove = .moveUnset
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -45,6 +47,7 @@ extension POGOProtos_Networking_Requests_Messages_UseItemMoveRerollMessage: Swif
     1: .standard(proto: "item_id"),
     2: .standard(proto: "pokemon_id"),
     3: .standard(proto: "reroll_unlocked_move"),
+    4: .standard(proto: "target_elite_move"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -53,6 +56,7 @@ extension POGOProtos_Networking_Requests_Messages_UseItemMoveRerollMessage: Swif
       case 1: try decoder.decodeSingularEnumField(value: &self.itemID)
       case 2: try decoder.decodeSingularFixed64Field(value: &self.pokemonID)
       case 3: try decoder.decodeSingularBoolField(value: &self.rerollUnlockedMove)
+      case 4: try decoder.decodeSingularEnumField(value: &self.targetEliteMove)
       default: break
       }
     }
@@ -68,6 +72,9 @@ extension POGOProtos_Networking_Requests_Messages_UseItemMoveRerollMessage: Swif
     if self.rerollUnlockedMove != false {
       try visitor.visitSingularBoolField(value: self.rerollUnlockedMove, fieldNumber: 3)
     }
+    if self.targetEliteMove != .moveUnset {
+      try visitor.visitSingularEnumField(value: self.targetEliteMove, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -75,6 +82,7 @@ extension POGOProtos_Networking_Requests_Messages_UseItemMoveRerollMessage: Swif
     if lhs.itemID != rhs.itemID {return false}
     if lhs.pokemonID != rhs.pokemonID {return false}
     if lhs.rerollUnlockedMove != rhs.rerollUnlockedMove {return false}
+    if lhs.targetEliteMove != rhs.targetEliteMove {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

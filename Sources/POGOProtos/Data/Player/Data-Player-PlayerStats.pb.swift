@@ -248,6 +248,11 @@ public struct POGOProtos_Data_Player_PlayerStats {
     set {_uniqueStorage()._numGruntsDefeated = newValue}
   }
 
+  public var numBestBuddies: Int32 {
+    get {return _storage._numBestBuddies}
+    set {_uniqueStorage()._numBestBuddies = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -306,6 +311,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     42: .standard(proto: "num_photobomb_seen"),
     43: .standard(proto: "num_pokemon_purified"),
     44: .standard(proto: "num_grunts_defeated"),
+    47: .standard(proto: "num_best_buddies"),
   ]
 
   fileprivate class _StorageClass {
@@ -353,6 +359,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     var _numPhotobombSeen: Int32 = 0
     var _numPokemonPurified: Int32 = 0
     var _numGruntsDefeated: Int32 = 0
+    var _numBestBuddies: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -403,6 +410,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       _numPhotobombSeen = source._numPhotobombSeen
       _numPokemonPurified = source._numPokemonPurified
       _numGruntsDefeated = source._numGruntsDefeated
+      _numBestBuddies = source._numBestBuddies
     }
   }
 
@@ -462,6 +470,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         case 42: try decoder.decodeSingularInt32Field(value: &_storage._numPhotobombSeen)
         case 43: try decoder.decodeSingularInt32Field(value: &_storage._numPokemonPurified)
         case 44: try decoder.decodeSingularInt32Field(value: &_storage._numGruntsDefeated)
+        case 47: try decoder.decodeSingularInt32Field(value: &_storage._numBestBuddies)
         default: break
         }
       }
@@ -602,6 +611,9 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       if _storage._numGruntsDefeated != 0 {
         try visitor.visitSingularInt32Field(value: _storage._numGruntsDefeated, fieldNumber: 44)
       }
+      if _storage._numBestBuddies != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numBestBuddies, fieldNumber: 47)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -655,6 +667,7 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         if _storage._numPhotobombSeen != rhs_storage._numPhotobombSeen {return false}
         if _storage._numPokemonPurified != rhs_storage._numPokemonPurified {return false}
         if _storage._numGruntsDefeated != rhs_storage._numGruntsDefeated {return false}
+        if _storage._numBestBuddies != rhs_storage._numBestBuddies {return false}
         return true
       }
       if !storagesAreEqual {return false}

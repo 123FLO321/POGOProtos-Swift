@@ -135,6 +135,47 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeSentosa20Apr2019 // = 2050
   case badgeSentosa21Apr2019 // = 2051
   case badgeSentosa22Apr2019 // = 2052
+  case badgeCityExplorerPass00 // = 2053
+  case badgeCityExplorerPass01 // = 2054
+  case badgeCityExplorerPass02 // = 2055
+  case badgeCityExplorerPass03 // = 2056
+  case badgeCityExplorerPass04 // = 2057
+  case badgeCityExplorerPass05 // = 2058
+  case badgeCityExplorerPass06 // = 2059
+  case badgeCityExplorerPass07 // = 2060
+  case badgeCityExplorerPass08 // = 2061
+  case badgeCityExplorerPass09 // = 2062
+  case badgeCityExplorerPass10 // = 2063
+  case badgeCityExplorerPass11 // = 2064
+  case badgeCityExplorerPass12 // = 2065
+  case badgeCityExplorerPass13 // = 2066
+  case badgeCityExplorerPass14 // = 2067
+  case badgeCityExplorerPass15 // = 2068
+  case badgeCityExplorerPass16 // = 2069
+  case badgeCityExplorerPass17 // = 2070
+  case badgeCityExplorerPass18 // = 2071
+  case badgeCityExplorerPass19 // = 2072
+  case badgeCityExplorerPass20 // = 2073
+  case badgeCityExplorerPass21 // = 2074
+  case badgeCityExplorerPass22 // = 2075
+  case badgeCityExplorerPass23 // = 2076
+  case badgeCityExplorerPass24 // = 2077
+  case badgeCityExplorerPass25 // = 2078
+  case badgeCityExplorerPass26 // = 2079
+  case badgeCityExplorerPass27 // = 2080
+  case badgeCityExplorerPass28 // = 2081
+  case badgeCityExplorerPass29 // = 2082
+  case badgeCityExplorerPass30 // = 2083
+  case badgeCityExplorerPass31 // = 2084
+  case badgeCityExplorerPass32 // = 2085
+  case badgeCityExplorerPass33 // = 2086
+  case badgeCityExplorerPass34 // = 2087
+  case badgeCityExplorerPass35 // = 2088
+  case badgeCityExplorerPass36 // = 2089
+  case badgeCityExplorerPass37 // = 2090
+  case badgeCityExplorerPass38 // = 2091
+  case badgeCityExplorerPass39 // = 2092
+  case badgeCityExplorerPass40 // = 2093
   case badgeDynamicEventMin // = 5000
   case badgeGofest2019AmericasDay00NorthGeneral // = 5001
   case badgeGofest2019AmericasDay00NorthEarlyaccess // = 5002
@@ -182,7 +223,41 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeSafarizone2019MontrealDay02Earlyaccess // = 5044
   case badgeSafarizone2019MontrealDay03General // = 5045
   case badgeSafarizone2019MontrealDay03Earlyaccess // = 5046
+  case badgeSafarizone2020StlouisDay00General // = 5047
+  case badgeSafarizone2020StlouisDay00Earlyaccess // = 5048
+  case badgeSafarizone2020StlouisDay01General // = 5049
+  case badgeSafarizone2020StlouisDay01Earlyaccess // = 5050
+  case badgeSafarizone2020StlouisDay02General // = 5051
+  case badgeSafarizone2020StlouisDay02Earlyaccess // = 5052
+  case badgeSafarizone2020StlouisDay03General // = 5053
+  case badgeSafarizone2020StlouisDay03Earlyaccess // = 5054
+  case badgeSafarizone2020LiverpoolDay00General // = 5055
+  case badgeSafarizone2020LiverpoolDay00Earlyaccess // = 5056
+  case badgeSafarizone2020LiverpoolDay01General // = 5057
+  case badgeSafarizone2020LiverpoolDay01Earlyaccess // = 5058
+  case badgeSafarizone2020LiverpoolDay02General // = 5059
+  case badgeSafarizone2020LiverpoolDay02Earlyaccess // = 5060
+  case badgeSafarizone2020LiverpoolDay03General // = 5061
+  case badgeSafarizone2020LiverpoolDay03Earlyaccess // = 5062
+  case badgeSafarizone2020PhiladelphiaDay00General // = 5063
+  case badgeSafarizone2020PhiladelphiaDay00Earlyaccess // = 5064
+  case badgeSafarizone2020PhiladelphiaDay01General // = 5065
+  case badgeSafarizone2020PhiladelphiaDay01Earlyaccess // = 5066
+  case badgeSafarizone2020PhiladelphiaDay02General // = 5067
+  case badgeSafarizone2020PhiladelphiaDay02Earlyaccess // = 5068
+  case badgeSafarizone2020PhiladelphiaDay03General // = 5069
+  case badgeSafarizone2020PhiladelphiaDay03Earlyaccess // = 5070
   case badgeGlobalTicketedEvent // = 5100
+  case badgeEvent0001 // = 5201
+  case badgeEvent0002 // = 5202
+  case badgeEvent0003 // = 5203
+  case badgeEvent0004 // = 5204
+  case badgeEvent0005 // = 5205
+  case badgeEvent0006 // = 5206
+  case badgeEvent0007 // = 5207
+  case badgeEvent0008 // = 5208
+  case badgeEvent0009 // = 5209
+  case badgeEvent0010 // = 5210
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -305,6 +380,47 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 2050: self = .badgeSentosa20Apr2019
     case 2051: self = .badgeSentosa21Apr2019
     case 2052: self = .badgeSentosa22Apr2019
+    case 2053: self = .badgeCityExplorerPass00
+    case 2054: self = .badgeCityExplorerPass01
+    case 2055: self = .badgeCityExplorerPass02
+    case 2056: self = .badgeCityExplorerPass03
+    case 2057: self = .badgeCityExplorerPass04
+    case 2058: self = .badgeCityExplorerPass05
+    case 2059: self = .badgeCityExplorerPass06
+    case 2060: self = .badgeCityExplorerPass07
+    case 2061: self = .badgeCityExplorerPass08
+    case 2062: self = .badgeCityExplorerPass09
+    case 2063: self = .badgeCityExplorerPass10
+    case 2064: self = .badgeCityExplorerPass11
+    case 2065: self = .badgeCityExplorerPass12
+    case 2066: self = .badgeCityExplorerPass13
+    case 2067: self = .badgeCityExplorerPass14
+    case 2068: self = .badgeCityExplorerPass15
+    case 2069: self = .badgeCityExplorerPass16
+    case 2070: self = .badgeCityExplorerPass17
+    case 2071: self = .badgeCityExplorerPass18
+    case 2072: self = .badgeCityExplorerPass19
+    case 2073: self = .badgeCityExplorerPass20
+    case 2074: self = .badgeCityExplorerPass21
+    case 2075: self = .badgeCityExplorerPass22
+    case 2076: self = .badgeCityExplorerPass23
+    case 2077: self = .badgeCityExplorerPass24
+    case 2078: self = .badgeCityExplorerPass25
+    case 2079: self = .badgeCityExplorerPass26
+    case 2080: self = .badgeCityExplorerPass27
+    case 2081: self = .badgeCityExplorerPass28
+    case 2082: self = .badgeCityExplorerPass29
+    case 2083: self = .badgeCityExplorerPass30
+    case 2084: self = .badgeCityExplorerPass31
+    case 2085: self = .badgeCityExplorerPass32
+    case 2086: self = .badgeCityExplorerPass33
+    case 2087: self = .badgeCityExplorerPass34
+    case 2088: self = .badgeCityExplorerPass35
+    case 2089: self = .badgeCityExplorerPass36
+    case 2090: self = .badgeCityExplorerPass37
+    case 2091: self = .badgeCityExplorerPass38
+    case 2092: self = .badgeCityExplorerPass39
+    case 2093: self = .badgeCityExplorerPass40
     case 5000: self = .badgeDynamicEventMin
     case 5001: self = .badgeGofest2019AmericasDay00NorthGeneral
     case 5002: self = .badgeGofest2019AmericasDay00NorthEarlyaccess
@@ -352,7 +468,41 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 5044: self = .badgeSafarizone2019MontrealDay02Earlyaccess
     case 5045: self = .badgeSafarizone2019MontrealDay03General
     case 5046: self = .badgeSafarizone2019MontrealDay03Earlyaccess
+    case 5047: self = .badgeSafarizone2020StlouisDay00General
+    case 5048: self = .badgeSafarizone2020StlouisDay00Earlyaccess
+    case 5049: self = .badgeSafarizone2020StlouisDay01General
+    case 5050: self = .badgeSafarizone2020StlouisDay01Earlyaccess
+    case 5051: self = .badgeSafarizone2020StlouisDay02General
+    case 5052: self = .badgeSafarizone2020StlouisDay02Earlyaccess
+    case 5053: self = .badgeSafarizone2020StlouisDay03General
+    case 5054: self = .badgeSafarizone2020StlouisDay03Earlyaccess
+    case 5055: self = .badgeSafarizone2020LiverpoolDay00General
+    case 5056: self = .badgeSafarizone2020LiverpoolDay00Earlyaccess
+    case 5057: self = .badgeSafarizone2020LiverpoolDay01General
+    case 5058: self = .badgeSafarizone2020LiverpoolDay01Earlyaccess
+    case 5059: self = .badgeSafarizone2020LiverpoolDay02General
+    case 5060: self = .badgeSafarizone2020LiverpoolDay02Earlyaccess
+    case 5061: self = .badgeSafarizone2020LiverpoolDay03General
+    case 5062: self = .badgeSafarizone2020LiverpoolDay03Earlyaccess
+    case 5063: self = .badgeSafarizone2020PhiladelphiaDay00General
+    case 5064: self = .badgeSafarizone2020PhiladelphiaDay00Earlyaccess
+    case 5065: self = .badgeSafarizone2020PhiladelphiaDay01General
+    case 5066: self = .badgeSafarizone2020PhiladelphiaDay01Earlyaccess
+    case 5067: self = .badgeSafarizone2020PhiladelphiaDay02General
+    case 5068: self = .badgeSafarizone2020PhiladelphiaDay02Earlyaccess
+    case 5069: self = .badgeSafarizone2020PhiladelphiaDay03General
+    case 5070: self = .badgeSafarizone2020PhiladelphiaDay03Earlyaccess
     case 5100: self = .badgeGlobalTicketedEvent
+    case 5201: self = .badgeEvent0001
+    case 5202: self = .badgeEvent0002
+    case 5203: self = .badgeEvent0003
+    case 5204: self = .badgeEvent0004
+    case 5205: self = .badgeEvent0005
+    case 5206: self = .badgeEvent0006
+    case 5207: self = .badgeEvent0007
+    case 5208: self = .badgeEvent0008
+    case 5209: self = .badgeEvent0009
+    case 5210: self = .badgeEvent0010
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -473,6 +623,47 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeSentosa20Apr2019: return 2050
     case .badgeSentosa21Apr2019: return 2051
     case .badgeSentosa22Apr2019: return 2052
+    case .badgeCityExplorerPass00: return 2053
+    case .badgeCityExplorerPass01: return 2054
+    case .badgeCityExplorerPass02: return 2055
+    case .badgeCityExplorerPass03: return 2056
+    case .badgeCityExplorerPass04: return 2057
+    case .badgeCityExplorerPass05: return 2058
+    case .badgeCityExplorerPass06: return 2059
+    case .badgeCityExplorerPass07: return 2060
+    case .badgeCityExplorerPass08: return 2061
+    case .badgeCityExplorerPass09: return 2062
+    case .badgeCityExplorerPass10: return 2063
+    case .badgeCityExplorerPass11: return 2064
+    case .badgeCityExplorerPass12: return 2065
+    case .badgeCityExplorerPass13: return 2066
+    case .badgeCityExplorerPass14: return 2067
+    case .badgeCityExplorerPass15: return 2068
+    case .badgeCityExplorerPass16: return 2069
+    case .badgeCityExplorerPass17: return 2070
+    case .badgeCityExplorerPass18: return 2071
+    case .badgeCityExplorerPass19: return 2072
+    case .badgeCityExplorerPass20: return 2073
+    case .badgeCityExplorerPass21: return 2074
+    case .badgeCityExplorerPass22: return 2075
+    case .badgeCityExplorerPass23: return 2076
+    case .badgeCityExplorerPass24: return 2077
+    case .badgeCityExplorerPass25: return 2078
+    case .badgeCityExplorerPass26: return 2079
+    case .badgeCityExplorerPass27: return 2080
+    case .badgeCityExplorerPass28: return 2081
+    case .badgeCityExplorerPass29: return 2082
+    case .badgeCityExplorerPass30: return 2083
+    case .badgeCityExplorerPass31: return 2084
+    case .badgeCityExplorerPass32: return 2085
+    case .badgeCityExplorerPass33: return 2086
+    case .badgeCityExplorerPass34: return 2087
+    case .badgeCityExplorerPass35: return 2088
+    case .badgeCityExplorerPass36: return 2089
+    case .badgeCityExplorerPass37: return 2090
+    case .badgeCityExplorerPass38: return 2091
+    case .badgeCityExplorerPass39: return 2092
+    case .badgeCityExplorerPass40: return 2093
     case .badgeDynamicEventMin: return 5000
     case .badgeGofest2019AmericasDay00NorthGeneral: return 5001
     case .badgeGofest2019AmericasDay00NorthEarlyaccess: return 5002
@@ -520,7 +711,41 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeSafarizone2019MontrealDay02Earlyaccess: return 5044
     case .badgeSafarizone2019MontrealDay03General: return 5045
     case .badgeSafarizone2019MontrealDay03Earlyaccess: return 5046
+    case .badgeSafarizone2020StlouisDay00General: return 5047
+    case .badgeSafarizone2020StlouisDay00Earlyaccess: return 5048
+    case .badgeSafarizone2020StlouisDay01General: return 5049
+    case .badgeSafarizone2020StlouisDay01Earlyaccess: return 5050
+    case .badgeSafarizone2020StlouisDay02General: return 5051
+    case .badgeSafarizone2020StlouisDay02Earlyaccess: return 5052
+    case .badgeSafarizone2020StlouisDay03General: return 5053
+    case .badgeSafarizone2020StlouisDay03Earlyaccess: return 5054
+    case .badgeSafarizone2020LiverpoolDay00General: return 5055
+    case .badgeSafarizone2020LiverpoolDay00Earlyaccess: return 5056
+    case .badgeSafarizone2020LiverpoolDay01General: return 5057
+    case .badgeSafarizone2020LiverpoolDay01Earlyaccess: return 5058
+    case .badgeSafarizone2020LiverpoolDay02General: return 5059
+    case .badgeSafarizone2020LiverpoolDay02Earlyaccess: return 5060
+    case .badgeSafarizone2020LiverpoolDay03General: return 5061
+    case .badgeSafarizone2020LiverpoolDay03Earlyaccess: return 5062
+    case .badgeSafarizone2020PhiladelphiaDay00General: return 5063
+    case .badgeSafarizone2020PhiladelphiaDay00Earlyaccess: return 5064
+    case .badgeSafarizone2020PhiladelphiaDay01General: return 5065
+    case .badgeSafarizone2020PhiladelphiaDay01Earlyaccess: return 5066
+    case .badgeSafarizone2020PhiladelphiaDay02General: return 5067
+    case .badgeSafarizone2020PhiladelphiaDay02Earlyaccess: return 5068
+    case .badgeSafarizone2020PhiladelphiaDay03General: return 5069
+    case .badgeSafarizone2020PhiladelphiaDay03Earlyaccess: return 5070
     case .badgeGlobalTicketedEvent: return 5100
+    case .badgeEvent0001: return 5201
+    case .badgeEvent0002: return 5202
+    case .badgeEvent0003: return 5203
+    case .badgeEvent0004: return 5204
+    case .badgeEvent0005: return 5205
+    case .badgeEvent0006: return 5206
+    case .badgeEvent0007: return 5207
+    case .badgeEvent0008: return 5208
+    case .badgeEvent0009: return 5209
+    case .badgeEvent0010: return 5210
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -646,6 +871,47 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeSentosa20Apr2019,
     .badgeSentosa21Apr2019,
     .badgeSentosa22Apr2019,
+    .badgeCityExplorerPass00,
+    .badgeCityExplorerPass01,
+    .badgeCityExplorerPass02,
+    .badgeCityExplorerPass03,
+    .badgeCityExplorerPass04,
+    .badgeCityExplorerPass05,
+    .badgeCityExplorerPass06,
+    .badgeCityExplorerPass07,
+    .badgeCityExplorerPass08,
+    .badgeCityExplorerPass09,
+    .badgeCityExplorerPass10,
+    .badgeCityExplorerPass11,
+    .badgeCityExplorerPass12,
+    .badgeCityExplorerPass13,
+    .badgeCityExplorerPass14,
+    .badgeCityExplorerPass15,
+    .badgeCityExplorerPass16,
+    .badgeCityExplorerPass17,
+    .badgeCityExplorerPass18,
+    .badgeCityExplorerPass19,
+    .badgeCityExplorerPass20,
+    .badgeCityExplorerPass21,
+    .badgeCityExplorerPass22,
+    .badgeCityExplorerPass23,
+    .badgeCityExplorerPass24,
+    .badgeCityExplorerPass25,
+    .badgeCityExplorerPass26,
+    .badgeCityExplorerPass27,
+    .badgeCityExplorerPass28,
+    .badgeCityExplorerPass29,
+    .badgeCityExplorerPass30,
+    .badgeCityExplorerPass31,
+    .badgeCityExplorerPass32,
+    .badgeCityExplorerPass33,
+    .badgeCityExplorerPass34,
+    .badgeCityExplorerPass35,
+    .badgeCityExplorerPass36,
+    .badgeCityExplorerPass37,
+    .badgeCityExplorerPass38,
+    .badgeCityExplorerPass39,
+    .badgeCityExplorerPass40,
     .badgeDynamicEventMin,
     .badgeGofest2019AmericasDay00NorthGeneral,
     .badgeGofest2019AmericasDay00NorthEarlyaccess,
@@ -693,7 +959,41 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeSafarizone2019MontrealDay02Earlyaccess,
     .badgeSafarizone2019MontrealDay03General,
     .badgeSafarizone2019MontrealDay03Earlyaccess,
+    .badgeSafarizone2020StlouisDay00General,
+    .badgeSafarizone2020StlouisDay00Earlyaccess,
+    .badgeSafarizone2020StlouisDay01General,
+    .badgeSafarizone2020StlouisDay01Earlyaccess,
+    .badgeSafarizone2020StlouisDay02General,
+    .badgeSafarizone2020StlouisDay02Earlyaccess,
+    .badgeSafarizone2020StlouisDay03General,
+    .badgeSafarizone2020StlouisDay03Earlyaccess,
+    .badgeSafarizone2020LiverpoolDay00General,
+    .badgeSafarizone2020LiverpoolDay00Earlyaccess,
+    .badgeSafarizone2020LiverpoolDay01General,
+    .badgeSafarizone2020LiverpoolDay01Earlyaccess,
+    .badgeSafarizone2020LiverpoolDay02General,
+    .badgeSafarizone2020LiverpoolDay02Earlyaccess,
+    .badgeSafarizone2020LiverpoolDay03General,
+    .badgeSafarizone2020LiverpoolDay03Earlyaccess,
+    .badgeSafarizone2020PhiladelphiaDay00General,
+    .badgeSafarizone2020PhiladelphiaDay00Earlyaccess,
+    .badgeSafarizone2020PhiladelphiaDay01General,
+    .badgeSafarizone2020PhiladelphiaDay01Earlyaccess,
+    .badgeSafarizone2020PhiladelphiaDay02General,
+    .badgeSafarizone2020PhiladelphiaDay02Earlyaccess,
+    .badgeSafarizone2020PhiladelphiaDay03General,
+    .badgeSafarizone2020PhiladelphiaDay03Earlyaccess,
     .badgeGlobalTicketedEvent,
+    .badgeEvent0001,
+    .badgeEvent0002,
+    .badgeEvent0003,
+    .badgeEvent0004,
+    .badgeEvent0005,
+    .badgeEvent0006,
+    .badgeEvent0007,
+    .badgeEvent0008,
+    .badgeEvent0009,
+    .badgeEvent0010,
   ]
 }
 
@@ -817,6 +1117,47 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     2050: .same(proto: "BADGE_SENTOSA_20_APR_2019"),
     2051: .same(proto: "BADGE_SENTOSA_21_APR_2019"),
     2052: .same(proto: "BADGE_SENTOSA_22_APR_2019"),
+    2053: .same(proto: "BADGE_CITY_EXPLORER_PASS_00"),
+    2054: .same(proto: "BADGE_CITY_EXPLORER_PASS_01"),
+    2055: .same(proto: "BADGE_CITY_EXPLORER_PASS_02"),
+    2056: .same(proto: "BADGE_CITY_EXPLORER_PASS_03"),
+    2057: .same(proto: "BADGE_CITY_EXPLORER_PASS_04"),
+    2058: .same(proto: "BADGE_CITY_EXPLORER_PASS_05"),
+    2059: .same(proto: "BADGE_CITY_EXPLORER_PASS_06"),
+    2060: .same(proto: "BADGE_CITY_EXPLORER_PASS_07"),
+    2061: .same(proto: "BADGE_CITY_EXPLORER_PASS_08"),
+    2062: .same(proto: "BADGE_CITY_EXPLORER_PASS_09"),
+    2063: .same(proto: "BADGE_CITY_EXPLORER_PASS_10"),
+    2064: .same(proto: "BADGE_CITY_EXPLORER_PASS_11"),
+    2065: .same(proto: "BADGE_CITY_EXPLORER_PASS_12"),
+    2066: .same(proto: "BADGE_CITY_EXPLORER_PASS_13"),
+    2067: .same(proto: "BADGE_CITY_EXPLORER_PASS_14"),
+    2068: .same(proto: "BADGE_CITY_EXPLORER_PASS_15"),
+    2069: .same(proto: "BADGE_CITY_EXPLORER_PASS_16"),
+    2070: .same(proto: "BADGE_CITY_EXPLORER_PASS_17"),
+    2071: .same(proto: "BADGE_CITY_EXPLORER_PASS_18"),
+    2072: .same(proto: "BADGE_CITY_EXPLORER_PASS_19"),
+    2073: .same(proto: "BADGE_CITY_EXPLORER_PASS_20"),
+    2074: .same(proto: "BADGE_CITY_EXPLORER_PASS_21"),
+    2075: .same(proto: "BADGE_CITY_EXPLORER_PASS_22"),
+    2076: .same(proto: "BADGE_CITY_EXPLORER_PASS_23"),
+    2077: .same(proto: "BADGE_CITY_EXPLORER_PASS_24"),
+    2078: .same(proto: "BADGE_CITY_EXPLORER_PASS_25"),
+    2079: .same(proto: "BADGE_CITY_EXPLORER_PASS_26"),
+    2080: .same(proto: "BADGE_CITY_EXPLORER_PASS_27"),
+    2081: .same(proto: "BADGE_CITY_EXPLORER_PASS_28"),
+    2082: .same(proto: "BADGE_CITY_EXPLORER_PASS_29"),
+    2083: .same(proto: "BADGE_CITY_EXPLORER_PASS_30"),
+    2084: .same(proto: "BADGE_CITY_EXPLORER_PASS_31"),
+    2085: .same(proto: "BADGE_CITY_EXPLORER_PASS_32"),
+    2086: .same(proto: "BADGE_CITY_EXPLORER_PASS_33"),
+    2087: .same(proto: "BADGE_CITY_EXPLORER_PASS_34"),
+    2088: .same(proto: "BADGE_CITY_EXPLORER_PASS_35"),
+    2089: .same(proto: "BADGE_CITY_EXPLORER_PASS_36"),
+    2090: .same(proto: "BADGE_CITY_EXPLORER_PASS_37"),
+    2091: .same(proto: "BADGE_CITY_EXPLORER_PASS_38"),
+    2092: .same(proto: "BADGE_CITY_EXPLORER_PASS_39"),
+    2093: .same(proto: "BADGE_CITY_EXPLORER_PASS_40"),
     5000: .same(proto: "BADGE_DYNAMIC_EVENT_MIN"),
     5001: .same(proto: "BADGE_GOFEST_2019_AMERICAS_DAY_00_NORTH_GENERAL"),
     5002: .same(proto: "BADGE_GOFEST_2019_AMERICAS_DAY_00_NORTH_EARLYACCESS"),
@@ -864,6 +1205,40 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     5044: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_02_EARLYACCESS"),
     5045: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_03_GENERAL"),
     5046: .same(proto: "BADGE_SAFARIZONE_2019_MONTREAL_DAY_03_EARLYACCESS"),
+    5047: .same(proto: "BADGE_SAFARIZONE_2020_STLOUIS_DAY_00_GENERAL"),
+    5048: .same(proto: "BADGE_SAFARIZONE_2020_STLOUIS_DAY_00_EARLYACCESS"),
+    5049: .same(proto: "BADGE_SAFARIZONE_2020_STLOUIS_DAY_01_GENERAL"),
+    5050: .same(proto: "BADGE_SAFARIZONE_2020_STLOUIS_DAY_01_EARLYACCESS"),
+    5051: .same(proto: "BADGE_SAFARIZONE_2020_STLOUIS_DAY_02_GENERAL"),
+    5052: .same(proto: "BADGE_SAFARIZONE_2020_STLOUIS_DAY_02_EARLYACCESS"),
+    5053: .same(proto: "BADGE_SAFARIZONE_2020_STLOUIS_DAY_03_GENERAL"),
+    5054: .same(proto: "BADGE_SAFARIZONE_2020_STLOUIS_DAY_03_EARLYACCESS"),
+    5055: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_00_GENERAL"),
+    5056: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_00_EARLYACCESS"),
+    5057: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_01_GENERAL"),
+    5058: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_01_EARLYACCESS"),
+    5059: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_02_GENERAL"),
+    5060: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_02_EARLYACCESS"),
+    5061: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_03_GENERAL"),
+    5062: .same(proto: "BADGE_SAFARIZONE_2020_LIVERPOOL_DAY_03_EARLYACCESS"),
+    5063: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_00_GENERAL"),
+    5064: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_00_EARLYACCESS"),
+    5065: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_01_GENERAL"),
+    5066: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_01_EARLYACCESS"),
+    5067: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_02_GENERAL"),
+    5068: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_02_EARLYACCESS"),
+    5069: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_03_GENERAL"),
+    5070: .same(proto: "BADGE_SAFARIZONE_2020_PHILADELPHIA_DAY_03_EARLYACCESS"),
     5100: .same(proto: "BADGE_GLOBAL_TICKETED_EVENT"),
+    5201: .same(proto: "BADGE_EVENT_0001"),
+    5202: .same(proto: "BADGE_EVENT_0002"),
+    5203: .same(proto: "BADGE_EVENT_0003"),
+    5204: .same(proto: "BADGE_EVENT_0004"),
+    5205: .same(proto: "BADGE_EVENT_0005"),
+    5206: .same(proto: "BADGE_EVENT_0006"),
+    5207: .same(proto: "BADGE_EVENT_0007"),
+    5208: .same(proto: "BADGE_EVENT_0008"),
+    5209: .same(proto: "BADGE_EVENT_0009"),
+    5210: .same(proto: "BADGE_EVENT_0010"),
   ]
 }

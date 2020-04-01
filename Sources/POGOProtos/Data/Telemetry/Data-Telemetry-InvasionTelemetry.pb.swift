@@ -26,7 +26,7 @@ public struct POGOProtos_Data_Telemetry_InvasionTelemetry {
 
   public var invasionTelemetryID: POGOProtos_Enums_InvasionTelemetryIds = .undefinedInvasionEvent
 
-  public var npcID: POGOProtos_Data_EnumWrapper.InvasionCharacter = .characterUnset
+  public var npcID: POGOProtos_Enums_EnumWrapper.InvasionCharacter = .characterUnset
 
   public var battleSuccess: Bool = false
 

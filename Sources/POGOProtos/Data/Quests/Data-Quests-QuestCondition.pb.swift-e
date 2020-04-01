@@ -455,7 +455,7 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    public var category: [POGOProtos_Data_EnumWrapper.CharacterCategory] = []
+    public var category: [POGOProtos_Enums_EnumWrapper.CharacterCategory] = []
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 

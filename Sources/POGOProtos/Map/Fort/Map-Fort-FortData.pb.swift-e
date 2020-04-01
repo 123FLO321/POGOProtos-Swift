@@ -334,9 +334,9 @@ public struct POGOProtos_Map_Fort_FortData {
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
-      public var style: POGOProtos_Data_EnumWrapper.PokestopStyle = .pokestopNormal
+      public var style: POGOProtos_Enums_EnumWrapper.PokestopStyle = .pokestopNormal
 
-      public var character: POGOProtos_Data_EnumWrapper.InvasionCharacter = .characterUnset
+      public var character: POGOProtos_Enums_EnumWrapper.InvasionCharacter = .characterUnset
 
       public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -348,7 +348,7 @@ public struct POGOProtos_Map_Fort_FortData {
       // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
       // methods supported on all messages.
 
-      public var style: POGOProtos_Data_EnumWrapper.PokestopStyle = .pokestopNormal
+      public var style: POGOProtos_Enums_EnumWrapper.PokestopStyle = .pokestopNormal
 
       public var unknownFields = SwiftProtobuf.UnknownStorage()
 

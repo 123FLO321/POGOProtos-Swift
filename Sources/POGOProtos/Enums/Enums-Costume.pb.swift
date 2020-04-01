@@ -35,6 +35,18 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
   case jan2020Noevolve // = 11
   case april2020Noevolve // = 12
   case safari2020Noevolve // = 13
+  case spring2020Noevolve // = 14
+  case summer2020Noevolve // = 15
+  case fall2020Noevolve // = 16
+  case winter2020Noevolve // = 17
+  case notForReleaseAlpha // = 18
+  case notForReleaseBeta // = 19
+  case notForReleaseGamma // = 20
+  case notForReleaseNoevolve // = 21
+  case kanto2020Noevolve // = 22
+  case johto2020Noevolve // = 23
+  case hoenn2020Noevolve // = 24
+  case sinnoh2020Noevolve // = 25
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -57,6 +69,18 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case 11: self = .jan2020Noevolve
     case 12: self = .april2020Noevolve
     case 13: self = .safari2020Noevolve
+    case 14: self = .spring2020Noevolve
+    case 15: self = .summer2020Noevolve
+    case 16: self = .fall2020Noevolve
+    case 17: self = .winter2020Noevolve
+    case 18: self = .notForReleaseAlpha
+    case 19: self = .notForReleaseBeta
+    case 20: self = .notForReleaseGamma
+    case 21: self = .notForReleaseNoevolve
+    case 22: self = .kanto2020Noevolve
+    case 23: self = .johto2020Noevolve
+    case 24: self = .hoenn2020Noevolve
+    case 25: self = .sinnoh2020Noevolve
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -77,6 +101,18 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case .jan2020Noevolve: return 11
     case .april2020Noevolve: return 12
     case .safari2020Noevolve: return 13
+    case .spring2020Noevolve: return 14
+    case .summer2020Noevolve: return 15
+    case .fall2020Noevolve: return 16
+    case .winter2020Noevolve: return 17
+    case .notForReleaseAlpha: return 18
+    case .notForReleaseBeta: return 19
+    case .notForReleaseGamma: return 20
+    case .notForReleaseNoevolve: return 21
+    case .kanto2020Noevolve: return 22
+    case .johto2020Noevolve: return 23
+    case .hoenn2020Noevolve: return 24
+    case .sinnoh2020Noevolve: return 25
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -102,6 +138,18 @@ extension POGOProtos_Enums_Costume: CaseIterable {
     .jan2020Noevolve,
     .april2020Noevolve,
     .safari2020Noevolve,
+    .spring2020Noevolve,
+    .summer2020Noevolve,
+    .fall2020Noevolve,
+    .winter2020Noevolve,
+    .notForReleaseAlpha,
+    .notForReleaseBeta,
+    .notForReleaseGamma,
+    .notForReleaseNoevolve,
+    .kanto2020Noevolve,
+    .johto2020Noevolve,
+    .hoenn2020Noevolve,
+    .sinnoh2020Noevolve,
   ]
 }
 
@@ -125,5 +173,17 @@ extension POGOProtos_Enums_Costume: SwiftProtobuf._ProtoNameProviding {
     11: .same(proto: "JAN_2020_NOEVOLVE"),
     12: .same(proto: "APRIL_2020_NOEVOLVE"),
     13: .same(proto: "SAFARI_2020_NOEVOLVE"),
+    14: .same(proto: "SPRING_2020_NOEVOLVE"),
+    15: .same(proto: "SUMMER_2020_NOEVOLVE"),
+    16: .same(proto: "FALL_2020_NOEVOLVE"),
+    17: .same(proto: "WINTER_2020_NOEVOLVE"),
+    18: .same(proto: "NOT_FOR_RELEASE_ALPHA"),
+    19: .same(proto: "NOT_FOR_RELEASE_BETA"),
+    20: .same(proto: "NOT_FOR_RELEASE_GAMMA"),
+    21: .same(proto: "NOT_FOR_RELEASE_NOEVOLVE"),
+    22: .same(proto: "KANTO_2020_NOEVOLVE"),
+    23: .same(proto: "JOHTO_2020_NOEVOLVE"),
+    24: .same(proto: "HOENN_2020_NOEVOLVE"),
+    25: .same(proto: "SINNOH_2020_NOEVOLVE"),
   ]
 }

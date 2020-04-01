@@ -2083,6 +2083,9 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case raticateSpring2020 // = 2329
   case frillishFemale // = 2330
   case jellicentFemale // = 2331
+  case pikachuCostume2020 // = 2332
+  case dragoniteCostume2020 // = 2333
+  case onixCostume2020 // = 2334
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -4153,6 +4156,9 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 2329: self = .raticateSpring2020
     case 2330: self = .frillishFemale
     case 2331: self = .jellicentFemale
+    case 2332: self = .pikachuCostume2020
+    case 2333: self = .dragoniteCostume2020
+    case 2334: self = .onixCostume2020
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -6221,6 +6227,9 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .raticateSpring2020: return 2329
     case .frillishFemale: return 2330
     case .jellicentFemale: return 2331
+    case .pikachuCostume2020: return 2332
+    case .dragoniteCostume2020: return 2333
+    case .onixCostume2020: return 2334
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -8294,6 +8303,9 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .raticateSpring2020,
     .frillishFemale,
     .jellicentFemale,
+    .pikachuCostume2020,
+    .dragoniteCostume2020,
+    .onixCostume2020,
   ]
 }
 
@@ -10365,5 +10377,8 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     2329: .same(proto: "RATICATE_SPRING_2020"),
     2330: .same(proto: "FRILLISH_FEMALE"),
     2331: .same(proto: "JELLICENT_FEMALE"),
+    2332: .same(proto: "PIKACHU_COSTUME_2020"),
+    2333: .same(proto: "DRAGONITE_COSTUME_2020"),
+    2334: .same(proto: "ONIX_COSTUME_2020"),
   ]
 }

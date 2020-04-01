@@ -224,6 +224,7 @@ public struct POGOProtos_Data_Quests_Quest {
     case unset // = 0
     case storyQuest // = 1
     case challengeQuest // = 2
+    case dailyCoinQuest // = 3
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -235,6 +236,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case 0: self = .unset
       case 1: self = .storyQuest
       case 2: self = .challengeQuest
+      case 3: self = .dailyCoinQuest
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -244,6 +246,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case .unset: return 0
       case .storyQuest: return 1
       case .challengeQuest: return 2
+      case .dailyCoinQuest: return 3
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
@@ -367,6 +370,7 @@ extension POGOProtos_Data_Quests_Quest.Context: CaseIterable {
     .unset,
     .storyQuest,
     .challengeQuest,
+    .dailyCoinQuest,
   ]
 }
 
@@ -683,6 +687,7 @@ extension POGOProtos_Data_Quests_Quest.Context: SwiftProtobuf._ProtoNameProvidin
     0: .same(proto: "UNSET"),
     1: .same(proto: "STORY_QUEST"),
     2: .same(proto: "CHALLENGE_QUEST"),
+    3: .same(proto: "DAILY_COIN_QUEST"),
   ]
 }
 

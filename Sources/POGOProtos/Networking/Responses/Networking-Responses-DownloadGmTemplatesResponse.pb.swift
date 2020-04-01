@@ -132,7 +132,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProt
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
       case 2: try decoder.decodeRepeatedMessageField(value: &self.template)
       case 3: try decoder.decodeRepeatedStringField(value: &self.deletedTemplate)
-      case 4: try decoder.decodeSingularFixed64Field(value: &self.batchID)
+      case 4: try decoder.decodeSingularUInt64Field(value: &self.batchID)
       case 5: try decoder.decodeSingularInt32Field(value: &self.pageOffset)
       case 6: try decoder.decodeRepeatedInt32Field(value: &self.experimentID)
       default: break
@@ -151,7 +151,7 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse: SwiftProt
       try visitor.visitRepeatedStringField(value: self.deletedTemplate, fieldNumber: 3)
     }
     if self.batchID != 0 {
-      try visitor.visitSingularFixed64Field(value: self.batchID, fieldNumber: 4)
+      try visitor.visitSingularUInt64Field(value: self.batchID, fieldNumber: 4)
     }
     if self.pageOffset != 0 {
       try visitor.visitSingularInt32Field(value: self.pageOffset, fieldNumber: 5)

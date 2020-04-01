@@ -38,6 +38,8 @@ public struct POGOProtos_Settings_Master_Item_VsSeekerAttributes {
 
   public var battleNowSkuID: String = String()
 
+  public var additionalBattlesGranted: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum VsSeekerStatus: SwiftProtobuf.Enum {
@@ -105,6 +107,7 @@ extension POGOProtos_Settings_Master_Item_VsSeekerAttributes: SwiftProtobuf.Mess
     6: .standard(proto: "max_battles_in_set"),
     7: .standard(proto: "reward_track"),
     8: .standard(proto: "battle_now_sku_id"),
+    9: .standard(proto: "additional_battles_granted"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -117,6 +120,7 @@ extension POGOProtos_Settings_Master_Item_VsSeekerAttributes: SwiftProtobuf.Mess
       case 6: try decoder.decodeSingularInt32Field(value: &self.maxBattlesInSet)
       case 7: try decoder.decodeSingularEnumField(value: &self.rewardTrack)
       case 8: try decoder.decodeSingularStringField(value: &self.battleNowSkuID)
+      case 9: try decoder.decodeSingularBoolField(value: &self.additionalBattlesGranted)
       default: break
       }
     }
@@ -144,6 +148,9 @@ extension POGOProtos_Settings_Master_Item_VsSeekerAttributes: SwiftProtobuf.Mess
     if !self.battleNowSkuID.isEmpty {
       try visitor.visitSingularStringField(value: self.battleNowSkuID, fieldNumber: 8)
     }
+    if self.additionalBattlesGranted != false {
+      try visitor.visitSingularBoolField(value: self.additionalBattlesGranted, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -155,6 +162,7 @@ extension POGOProtos_Settings_Master_Item_VsSeekerAttributes: SwiftProtobuf.Mess
     if lhs.maxBattlesInSet != rhs.maxBattlesInSet {return false}
     if lhs.rewardTrack != rhs.rewardTrack {return false}
     if lhs.battleNowSkuID != rhs.battleNowSkuID {return false}
+    if lhs.additionalBattlesGranted != rhs.additionalBattlesGranted {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

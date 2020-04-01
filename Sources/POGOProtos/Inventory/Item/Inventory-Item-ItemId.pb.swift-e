@@ -70,6 +70,8 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemGen5EvolutionStone // = 1107
   case itemMoveRerollFastAttack // = 1201
   case itemMoveRerollSpecialAttack // = 1202
+  case itemMoveRerollEliteFastAttack // = 1203
+  case itemMoveRerollEliteSpecialAttack // = 1204
   case itemRareCandy // = 1301
   case itemFreeRaidTicket // = 1401
   case itemPaidRaidTicket // = 1402
@@ -138,6 +140,8 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 1107: self = .itemGen5EvolutionStone
     case 1201: self = .itemMoveRerollFastAttack
     case 1202: self = .itemMoveRerollSpecialAttack
+    case 1203: self = .itemMoveRerollEliteFastAttack
+    case 1204: self = .itemMoveRerollEliteSpecialAttack
     case 1301: self = .itemRareCandy
     case 1401: self = .itemFreeRaidTicket
     case 1402: self = .itemPaidRaidTicket
@@ -204,6 +208,8 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemGen5EvolutionStone: return 1107
     case .itemMoveRerollFastAttack: return 1201
     case .itemMoveRerollSpecialAttack: return 1202
+    case .itemMoveRerollEliteFastAttack: return 1203
+    case .itemMoveRerollEliteSpecialAttack: return 1204
     case .itemRareCandy: return 1301
     case .itemFreeRaidTicket: return 1401
     case .itemPaidRaidTicket: return 1402
@@ -275,6 +281,8 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemGen5EvolutionStone,
     .itemMoveRerollFastAttack,
     .itemMoveRerollSpecialAttack,
+    .itemMoveRerollEliteFastAttack,
+    .itemMoveRerollEliteSpecialAttack,
     .itemRareCandy,
     .itemFreeRaidTicket,
     .itemPaidRaidTicket,
@@ -344,6 +352,8 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     1107: .same(proto: "ITEM_GEN5_EVOLUTION_STONE"),
     1201: .same(proto: "ITEM_MOVE_REROLL_FAST_ATTACK"),
     1202: .same(proto: "ITEM_MOVE_REROLL_SPECIAL_ATTACK"),
+    1203: .same(proto: "ITEM_MOVE_REROLL_ELITE_FAST_ATTACK"),
+    1204: .same(proto: "ITEM_MOVE_REROLL_ELITE_SPECIAL_ATTACK"),
     1301: .same(proto: "ITEM_RARE_CANDY"),
     1401: .same(proto: "ITEM_FREE_RAID_TICKET"),
     1402: .same(proto: "ITEM_PAID_RAID_TICKET"),

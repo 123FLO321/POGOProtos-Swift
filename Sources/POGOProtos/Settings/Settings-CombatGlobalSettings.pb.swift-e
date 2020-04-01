@@ -134,6 +134,11 @@ public struct POGOProtos_Settings_CombatGlobalSettings {
     set {_uniqueStorage()._matchmakingTimeoutDurationMs = newValue}
   }
 
+  public var plannedDowntimeTimestampMs: Int64 {
+    get {return _storage._plannedDowntimeTimestampMs}
+    set {_uniqueStorage()._plannedDowntimeTimestampMs = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -170,6 +175,7 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
     20: .standard(proto: "enable_flyout_animations"),
     21: .standard(proto: "enable_battle_hub"),
     22: .standard(proto: "matchmaking_timeout_duration_ms"),
+    23: .standard(proto: "planned_downtime_timestamp_ms"),
   ]
 
   fileprivate class _StorageClass {
@@ -195,6 +201,7 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
     var _enableFlyoutAnimations: Bool = false
     var _enableBattleHub: Bool = false
     var _matchmakingTimeoutDurationMs: Int32 = 0
+    var _plannedDowntimeTimestampMs: Int64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -223,6 +230,7 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
       _enableFlyoutAnimations = source._enableFlyoutAnimations
       _enableBattleHub = source._enableBattleHub
       _matchmakingTimeoutDurationMs = source._matchmakingTimeoutDurationMs
+      _plannedDowntimeTimestampMs = source._plannedDowntimeTimestampMs
     }
   }
 
@@ -260,6 +268,7 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
         case 20: try decoder.decodeSingularBoolField(value: &_storage._enableFlyoutAnimations)
         case 21: try decoder.decodeSingularBoolField(value: &_storage._enableBattleHub)
         case 22: try decoder.decodeSingularInt32Field(value: &_storage._matchmakingTimeoutDurationMs)
+        case 23: try decoder.decodeSingularInt64Field(value: &_storage._plannedDowntimeTimestampMs)
         default: break
         }
       }
@@ -334,6 +343,9 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
       if _storage._matchmakingTimeoutDurationMs != 0 {
         try visitor.visitSingularInt32Field(value: _storage._matchmakingTimeoutDurationMs, fieldNumber: 22)
       }
+      if _storage._plannedDowntimeTimestampMs != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._plannedDowntimeTimestampMs, fieldNumber: 23)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -365,6 +377,7 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
         if _storage._enableFlyoutAnimations != rhs_storage._enableFlyoutAnimations {return false}
         if _storage._enableBattleHub != rhs_storage._enableBattleHub {return false}
         if _storage._matchmakingTimeoutDurationMs != rhs_storage._matchmakingTimeoutDurationMs {return false}
+        if _storage._plannedDowntimeTimestampMs != rhs_storage._plannedDowntimeTimestampMs {return false}
         return true
       }
       if !storagesAreEqual {return false}

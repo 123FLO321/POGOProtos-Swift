@@ -52,6 +52,7 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
     case invalidPokemon // = 7
     case moveLocked // = 8
     case moveCannotBeRerolled // = 9
+    case invalidEliteMove // = 10
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -70,6 +71,7 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
       case 7: self = .invalidPokemon
       case 8: self = .moveLocked
       case 9: self = .moveCannotBeRerolled
+      case 10: self = .invalidEliteMove
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -86,6 +88,7 @@ public struct POGOProtos_Networking_Responses_UseItemMoveRerollResponse {
       case .invalidPokemon: return 7
       case .moveLocked: return 8
       case .moveCannotBeRerolled: return 9
+      case .invalidEliteMove: return 10
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
@@ -112,6 +115,7 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse.Result: Case
     .invalidPokemon,
     .moveLocked,
     .moveCannotBeRerolled,
+    .invalidEliteMove,
   ]
 }
 
@@ -202,5 +206,6 @@ extension POGOProtos_Networking_Responses_UseItemMoveRerollResponse.Result: Swif
     7: .same(proto: "INVALID_POKEMON"),
     8: .same(proto: "MOVE_LOCKED"),
     9: .same(proto: "MOVE_CANNOT_BE_REROLLED"),
+    10: .same(proto: "INVALID_ELITE_MOVE"),
   ]
 }

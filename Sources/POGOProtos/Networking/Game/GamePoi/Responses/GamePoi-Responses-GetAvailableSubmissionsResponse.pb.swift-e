@@ -38,6 +38,8 @@ public struct POGOProtos_Networking_Game_GamePoi_Responses_GetAvailableSubmissio
 
   public var blacklistedOs: [String] = []
 
+  public var availabilityResultPerType: [POGOProtos_Networking_Titan_AvailableSubmissionsPerSubmissionType] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -57,6 +59,7 @@ extension POGOProtos_Networking_Game_GamePoi_Responses_GetAvailableSubmissionsRe
     5: .standard(proto: "time_window_for_submissions_limit_ms"),
     6: .standard(proto: "max_poi_distance_in_meters"),
     7: .standard(proto: "blacklisted_os"),
+    8: .standard(proto: "availability_result_per_type"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -69,6 +72,7 @@ extension POGOProtos_Networking_Game_GamePoi_Responses_GetAvailableSubmissionsRe
       case 5: try decoder.decodeSingularInt64Field(value: &self.timeWindowForSubmissionsLimitMs)
       case 6: try decoder.decodeSingularInt32Field(value: &self.maxPoiDistanceInMeters)
       case 7: try decoder.decodeRepeatedStringField(value: &self.blacklistedOs)
+      case 8: try decoder.decodeRepeatedMessageField(value: &self.availabilityResultPerType)
       default: break
       }
     }
@@ -96,6 +100,9 @@ extension POGOProtos_Networking_Game_GamePoi_Responses_GetAvailableSubmissionsRe
     if !self.blacklistedOs.isEmpty {
       try visitor.visitRepeatedStringField(value: self.blacklistedOs, fieldNumber: 7)
     }
+    if !self.availabilityResultPerType.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.availabilityResultPerType, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -107,6 +114,7 @@ extension POGOProtos_Networking_Game_GamePoi_Responses_GetAvailableSubmissionsRe
     if lhs.timeWindowForSubmissionsLimitMs != rhs.timeWindowForSubmissionsLimitMs {return false}
     if lhs.maxPoiDistanceInMeters != rhs.maxPoiDistanceInMeters {return false}
     if lhs.blacklistedOs != rhs.blacklistedOs {return false}
+    if lhs.availabilityResultPerType != rhs.availabilityResultPerType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

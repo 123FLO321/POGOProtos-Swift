@@ -469,6 +469,14 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .screenResolutionTelemetry(newValue)}
   }
 
+  public var arBuddyMultiplayerSessionTelemetry: POGOProtos_Data_Telemetry_ARBuddyMultiplayerSessionTelemetry {
+    get {
+      if case .arBuddyMultiplayerSessionTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ARBuddyMultiplayerSessionTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .arBuddyMultiplayerSessionTelemetry(newValue)}
+  }
+
   public var buddyMultiplayerConnectionFailedTelemetry: POGOProtos_Data_Buddy_BuddyMultiplayerConnectionFailed {
     get {
       if case .buddyMultiplayerConnectionFailedTelemetry(let v)? = _storage._telemetryData {return v}
@@ -493,13 +501,31 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .buddyMultiplayerTimeToGetSessionTelemetry(newValue)}
   }
 
-  public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
+  public var playerHudNotificationClickTelemetry: POGOProtos_Data_Telemetry_PlayerHudNotificationClickTelemetry {
     get {
-      if case .serverData(let v)? = _storage._telemetryData {return v}
-      return POGOProtos_Data_Telemetry_PlatformServerData()
+      if case .playerHudNotificationClickTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PlayerHudNotificationClickTelemetry()
     }
-    set {_uniqueStorage()._telemetryData = .serverData(newValue)}
+    set {_uniqueStorage()._telemetryData = .playerHudNotificationClickTelemetry(newValue)}
   }
+
+  public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
+    get {return _storage._serverData ?? POGOProtos_Data_Telemetry_PlatformServerData()}
+    set {_uniqueStorage()._serverData = newValue}
+  }
+  /// Returns true if `serverData` has been explicitly set.
+  public var hasServerData: Bool {return _storage._serverData != nil}
+  /// Clears the value of `serverData`. Subsequent reads from it will return its default value.
+  public mutating func clearServerData() {_uniqueStorage()._serverData = nil}
+
+  public var commonFilters: POGOProtos_Networking_Platform_PlatformCommonFilter {
+    get {return _storage._commonFilters ?? POGOProtos_Networking_Platform_PlatformCommonFilter()}
+    set {_uniqueStorage()._commonFilters = newValue}
+  }
+  /// Returns true if `commonFilters` has been explicitly set.
+  public var hasCommonFilters: Bool {return _storage._commonFilters != nil}
+  /// Clears the value of `commonFilters`. Subsequent reads from it will return its default value.
+  public mutating func clearCommonFilters() {_uniqueStorage()._commonFilters = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -559,10 +585,11 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     case shoppingPageScrollTelemetry(POGOProtos_Data_Telemetry_ShoppingPageScrollTelemetry)
     case deviceSpecificationsTelemetry(POGOProtos_Data_Telemetry_DeviceSpecificationsTelemetry)
     case screenResolutionTelemetry(POGOProtos_Data_Telemetry_ScreenResolutionTelemetry)
+    case arBuddyMultiplayerSessionTelemetry(POGOProtos_Data_Telemetry_ARBuddyMultiplayerSessionTelemetry)
     case buddyMultiplayerConnectionFailedTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerConnectionFailed)
     case buddyMultiplayerConnectionSucceededTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerConnectionSucceeded)
     case buddyMultiplayerTimeToGetSessionTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerTimeToGetSession)
-    case serverData(POGOProtos_Data_Telemetry_PlatformServerData)
+    case playerHudNotificationClickTelemetry(POGOProtos_Data_Telemetry_PlayerHudNotificationClickTelemetry)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData, rhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData) -> Bool {
@@ -622,10 +649,11 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
       case (.shoppingPageScrollTelemetry(let l), .shoppingPageScrollTelemetry(let r)): return l == r
       case (.deviceSpecificationsTelemetry(let l), .deviceSpecificationsTelemetry(let r)): return l == r
       case (.screenResolutionTelemetry(let l), .screenResolutionTelemetry(let r)): return l == r
+      case (.arBuddyMultiplayerSessionTelemetry(let l), .arBuddyMultiplayerSessionTelemetry(let r)): return l == r
       case (.buddyMultiplayerConnectionFailedTelemetry(let l), .buddyMultiplayerConnectionFailedTelemetry(let r)): return l == r
       case (.buddyMultiplayerConnectionSucceededTelemetry(let l), .buddyMultiplayerConnectionSucceededTelemetry(let r)): return l == r
       case (.buddyMultiplayerTimeToGetSessionTelemetry(let l), .buddyMultiplayerTimeToGetSessionTelemetry(let r)): return l == r
-      case (.serverData(let l), .serverData(let r)): return l == r
+      case (.playerHudNotificationClickTelemetry(let l), .playerHudNotificationClickTelemetry(let r)): return l == r
       default: return false
       }
     }
@@ -699,14 +727,19 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     53: .standard(proto: "shopping_page_scroll_telemetry"),
     54: .standard(proto: "device_specifications_telemetry"),
     55: .standard(proto: "screen_resolution_telemetry"),
+    56: .standard(proto: "ar_buddy_multiplayer_session_telemetry"),
     57: .standard(proto: "buddy_multiplayer_connection_failed_telemetry"),
     58: .standard(proto: "buddy_multiplayer_connection_succeeded_telemetry"),
     59: .standard(proto: "buddy_multiplayer_time_to_get_session_telemetry"),
+    60: .standard(proto: "player_hud_notification_click_telemetry"),
     1001: .standard(proto: "server_data"),
+    1002: .standard(proto: "common_filters"),
   ]
 
   fileprivate class _StorageClass {
     var _telemetryData: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData?
+    var _serverData: POGOProtos_Data_Telemetry_PlatformServerData? = nil
+    var _commonFilters: POGOProtos_Networking_Platform_PlatformCommonFilter? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -714,6 +747,8 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
 
     init(copying source: _StorageClass) {
       _telemetryData = source._telemetryData
+      _serverData = source._serverData
+      _commonFilters = source._commonFilters
     }
   }
 
@@ -1169,6 +1204,14 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .screenResolutionTelemetry(v)}
+        case 56:
+          var v: POGOProtos_Data_Telemetry_ARBuddyMultiplayerSessionTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .arBuddyMultiplayerSessionTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .arBuddyMultiplayerSessionTelemetry(v)}
         case 57:
           var v: POGOProtos_Data_Buddy_BuddyMultiplayerConnectionFailed?
           if let current = _storage._telemetryData {
@@ -1193,14 +1236,16 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .buddyMultiplayerTimeToGetSessionTelemetry(v)}
-        case 1001:
-          var v: POGOProtos_Data_Telemetry_PlatformServerData?
+        case 60:
+          var v: POGOProtos_Data_Telemetry_PlayerHudNotificationClickTelemetry?
           if let current = _storage._telemetryData {
             try decoder.handleConflictingOneOf()
-            if case .serverData(let m) = current {v = m}
+            if case .playerHudNotificationClickTelemetry(let m) = current {v = m}
           }
           try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._telemetryData = .serverData(v)}
+          if let v = v {_storage._telemetryData = .playerHudNotificationClickTelemetry(v)}
+        case 1001: try decoder.decodeSingularMessageField(value: &_storage._serverData)
+        case 1002: try decoder.decodeSingularMessageField(value: &_storage._commonFilters)
         default: break
         }
       }
@@ -1320,15 +1365,23 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         try visitor.visitSingularMessageField(value: v, fieldNumber: 54)
       case .screenResolutionTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 55)
+      case .arBuddyMultiplayerSessionTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 56)
       case .buddyMultiplayerConnectionFailedTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 57)
       case .buddyMultiplayerConnectionSucceededTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 58)
       case .buddyMultiplayerTimeToGetSessionTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 59)
-      case .serverData(let v)?:
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
+      case .playerHudNotificationClickTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 60)
       case nil: break
+      }
+      if let v = _storage._serverData {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
+      }
+      if let v = _storage._commonFilters {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1002)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1340,6 +1393,8 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._telemetryData != rhs_storage._telemetryData {return false}
+        if _storage._serverData != rhs_storage._serverData {return false}
+        if _storage._commonFilters != rhs_storage._commonFilters {return false}
         return true
       }
       if !storagesAreEqual {return false}

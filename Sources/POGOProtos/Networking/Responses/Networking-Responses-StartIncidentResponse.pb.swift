@@ -187,7 +187,7 @@ public struct POGOProtos_Networking_Responses_StartIncidentResponse {
         // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
         // methods supported on all messages.
 
-        public var character: POGOProtos_Data_EnumWrapper.InvasionCharacter = .characterUnset
+        public var character: POGOProtos_Enums_EnumWrapper.InvasionCharacter = .characterUnset
 
         public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -220,9 +220,9 @@ public struct POGOProtos_Networking_Responses_StartIncidentResponse {
 
           public var text: String = String()
 
-          public var character: POGOProtos_Data_EnumWrapper.InvasionCharacter = .characterUnset
+          public var character: POGOProtos_Enums_EnumWrapper.InvasionCharacter = .characterUnset
 
-          public var expression: POGOProtos_Data_EnumWrapper.InvasionCharacterExpression = .expressionUnset
+          public var expression: POGOProtos_Enums_EnumWrapper.InvasionCharacterExpression = .expressionUnset
 
           public var unknownFields = SwiftProtobuf.UnknownStorage()
 

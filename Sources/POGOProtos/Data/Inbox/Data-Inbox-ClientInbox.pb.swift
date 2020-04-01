@@ -65,6 +65,7 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
     case combatVsSeekerCharged // = 30
     case combatCompetitiveSeasonEnd // = 31
     case buddyAffectionAttractivePoi // = 32
+    case poiPasscodeRedeemed // = 33
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -106,6 +107,7 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
       case 30: self = .combatVsSeekerCharged
       case 31: self = .combatCompetitiveSeasonEnd
       case 32: self = .buddyAffectionAttractivePoi
+      case 33: self = .poiPasscodeRedeemed
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -145,6 +147,7 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
       case .combatVsSeekerCharged: return 30
       case .combatCompetitiveSeasonEnd: return 31
       case .buddyAffectionAttractivePoi: return 32
+      case .poiPasscodeRedeemed: return 33
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
@@ -270,6 +273,7 @@ extension POGOProtos_Data_Inbox_ClientInbox.NotificationCategory: CaseIterable {
     .combatVsSeekerCharged,
     .combatCompetitiveSeasonEnd,
     .buddyAffectionAttractivePoi,
+    .poiPasscodeRedeemed,
   ]
 }
 
@@ -349,6 +353,7 @@ extension POGOProtos_Data_Inbox_ClientInbox.NotificationCategory: SwiftProtobuf.
     30: .same(proto: "COMBAT_VS_SEEKER_CHARGED"),
     31: .same(proto: "COMBAT_COMPETITIVE_SEASON_END"),
     32: .same(proto: "BUDDY_AFFECTION_ATTRACTIVE_POI"),
+    33: .same(proto: "POI_PASSCODE_REDEEMED"),
   ]
 }
 

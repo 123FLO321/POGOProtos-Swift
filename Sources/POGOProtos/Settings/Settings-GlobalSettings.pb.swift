@@ -409,6 +409,15 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `ardkConfigSettings`. Subsequent reads from it will return its default value.
   public mutating func clearArdkConfigSettings() {_uniqueStorage()._ardkConfigSettings = nil}
 
+  public var plannedDowntimeSettings: POGOProtos_Settings_PlannedDowntimeSettings {
+    get {return _storage._plannedDowntimeSettings ?? POGOProtos_Settings_PlannedDowntimeSettings()}
+    set {_uniqueStorage()._plannedDowntimeSettings = newValue}
+  }
+  /// Returns true if `plannedDowntimeSettings` has been explicitly set.
+  public var hasPlannedDowntimeSettings: Bool {return _storage._plannedDowntimeSettings != nil}
+  /// Clears the value of `plannedDowntimeSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearPlannedDowntimeSettings() {_uniqueStorage()._plannedDowntimeSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -468,6 +477,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     45: .standard(proto: "gmt_settings"),
     47: .standard(proto: "use_local_time_action"),
     48: .standard(proto: "ardk_config_settings"),
+    51: .standard(proto: "planned_downtime_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -516,6 +526,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _gmtSettings: POGOProtos_Settings_GmtSettings? = nil
     var _useLocalTimeAction: Bool = false
     var _ardkConfigSettings: POGOProtos_Settings_ArdkConfigSettings? = nil
+    var _plannedDowntimeSettings: POGOProtos_Settings_PlannedDowntimeSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -567,6 +578,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _gmtSettings = source._gmtSettings
       _useLocalTimeAction = source._useLocalTimeAction
       _ardkConfigSettings = source._ardkConfigSettings
+      _plannedDowntimeSettings = source._plannedDowntimeSettings
     }
   }
 
@@ -627,6 +639,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 45: try decoder.decodeSingularMessageField(value: &_storage._gmtSettings)
         case 47: try decoder.decodeSingularBoolField(value: &_storage._useLocalTimeAction)
         case 48: try decoder.decodeSingularMessageField(value: &_storage._ardkConfigSettings)
+        case 51: try decoder.decodeSingularMessageField(value: &_storage._plannedDowntimeSettings)
         default: break
         }
       }
@@ -770,6 +783,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._ardkConfigSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
       }
+      if let v = _storage._plannedDowntimeSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 51)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -824,6 +840,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._gmtSettings != rhs_storage._gmtSettings {return false}
         if _storage._useLocalTimeAction != rhs_storage._useLocalTimeAction {return false}
         if _storage._ardkConfigSettings != rhs_storage._ardkConfigSettings {return false}
+        if _storage._plannedDowntimeSettings != rhs_storage._plannedDowntimeSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

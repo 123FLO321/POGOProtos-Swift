@@ -47,6 +47,8 @@ public struct POGOProtos_Networking_Responses_ActivateVsSeekerResponse {
     case errorNoPremiumBattlePass // = 2
     case errorVsSeekerNotCharged // = 3
     case errorVsSeekerAlreadyActivated // = 4
+    case errorExceededLimit // = 5
+    case errorTemporarilyUnavailable // = 6
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -60,6 +62,8 @@ public struct POGOProtos_Networking_Responses_ActivateVsSeekerResponse {
       case 2: self = .errorNoPremiumBattlePass
       case 3: self = .errorVsSeekerNotCharged
       case 4: self = .errorVsSeekerAlreadyActivated
+      case 5: self = .errorExceededLimit
+      case 6: self = .errorTemporarilyUnavailable
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -71,6 +75,8 @@ public struct POGOProtos_Networking_Responses_ActivateVsSeekerResponse {
       case .errorNoPremiumBattlePass: return 2
       case .errorVsSeekerNotCharged: return 3
       case .errorVsSeekerAlreadyActivated: return 4
+      case .errorExceededLimit: return 5
+      case .errorTemporarilyUnavailable: return 6
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -92,6 +98,8 @@ extension POGOProtos_Networking_Responses_ActivateVsSeekerResponse.Result: CaseI
     .errorNoPremiumBattlePass,
     .errorVsSeekerNotCharged,
     .errorVsSeekerAlreadyActivated,
+    .errorExceededLimit,
+    .errorTemporarilyUnavailable,
   ]
 }
 
@@ -177,5 +185,7 @@ extension POGOProtos_Networking_Responses_ActivateVsSeekerResponse.Result: Swift
     2: .same(proto: "ERROR_NO_PREMIUM_BATTLE_PASS"),
     3: .same(proto: "ERROR_VS_SEEKER_NOT_CHARGED"),
     4: .same(proto: "ERROR_VS_SEEKER_ALREADY_ACTIVATED"),
+    5: .same(proto: "ERROR_EXCEEDED_LIMIT"),
+    6: .same(proto: "ERROR_TEMPORARILY_UNAVAILABLE"),
   ]
 }
