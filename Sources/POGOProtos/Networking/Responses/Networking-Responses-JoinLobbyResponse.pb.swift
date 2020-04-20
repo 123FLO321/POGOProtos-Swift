@@ -52,6 +52,7 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
     case errorPoiInaccessible // = 7
     case errorGymLockout // = 8
     case errorNoTicket // = 9
+    case errorNoRemoteTicket // = 10
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -70,6 +71,7 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
       case 7: self = .errorPoiInaccessible
       case 8: self = .errorGymLockout
       case 9: self = .errorNoTicket
+      case 10: self = .errorNoRemoteTicket
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -86,6 +88,7 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
       case .errorPoiInaccessible: return 7
       case .errorGymLockout: return 8
       case .errorNoTicket: return 9
+      case .errorNoRemoteTicket: return 10
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
@@ -112,6 +115,7 @@ extension POGOProtos_Networking_Responses_JoinLobbyResponse.Result: CaseIterable
     .errorPoiInaccessible,
     .errorGymLockout,
     .errorNoTicket,
+    .errorNoRemoteTicket,
   ]
 }
 
@@ -202,5 +206,6 @@ extension POGOProtos_Networking_Responses_JoinLobbyResponse.Result: SwiftProtobu
     7: .same(proto: "ERROR_POI_INACCESSIBLE"),
     8: .same(proto: "ERROR_GYM_LOCKOUT"),
     9: .same(proto: "ERROR_NO_TICKET"),
+    10: .same(proto: "ERROR_NO_REMOTE_TICKET"),
   ]
 }

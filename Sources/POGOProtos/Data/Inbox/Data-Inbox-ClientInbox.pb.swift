@@ -66,6 +66,15 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
     case combatCompetitiveSeasonEnd // = 31
     case buddyAffectionAttractivePoi // = 32
     case poiPasscodeRedeemed // = 33
+    case noEggsIncubating // = 34
+    case retentionUnopenedGifts // = 39
+    case retentionStarpiece // = 40
+    case retentionIncense // = 41
+    case retentionLuckyEgg // = 42
+    case retentionAdvsyncRewards // = 43
+    case retentionEggsNotIncubating // = 44
+    case retentionPowerWalk // = 45
+    case retentionFunWithFriends // = 46
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -108,6 +117,15 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
       case 31: self = .combatCompetitiveSeasonEnd
       case 32: self = .buddyAffectionAttractivePoi
       case 33: self = .poiPasscodeRedeemed
+      case 34: self = .noEggsIncubating
+      case 39: self = .retentionUnopenedGifts
+      case 40: self = .retentionStarpiece
+      case 41: self = .retentionIncense
+      case 42: self = .retentionLuckyEgg
+      case 43: self = .retentionAdvsyncRewards
+      case 44: self = .retentionEggsNotIncubating
+      case 45: self = .retentionPowerWalk
+      case 46: self = .retentionFunWithFriends
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -148,6 +166,15 @@ public struct POGOProtos_Data_Inbox_ClientInbox {
       case .combatCompetitiveSeasonEnd: return 31
       case .buddyAffectionAttractivePoi: return 32
       case .poiPasscodeRedeemed: return 33
+      case .noEggsIncubating: return 34
+      case .retentionUnopenedGifts: return 39
+      case .retentionStarpiece: return 40
+      case .retentionIncense: return 41
+      case .retentionLuckyEgg: return 42
+      case .retentionAdvsyncRewards: return 43
+      case .retentionEggsNotIncubating: return 44
+      case .retentionPowerWalk: return 45
+      case .retentionFunWithFriends: return 46
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
@@ -274,6 +301,15 @@ extension POGOProtos_Data_Inbox_ClientInbox.NotificationCategory: CaseIterable {
     .combatCompetitiveSeasonEnd,
     .buddyAffectionAttractivePoi,
     .poiPasscodeRedeemed,
+    .noEggsIncubating,
+    .retentionUnopenedGifts,
+    .retentionStarpiece,
+    .retentionIncense,
+    .retentionLuckyEgg,
+    .retentionAdvsyncRewards,
+    .retentionEggsNotIncubating,
+    .retentionPowerWalk,
+    .retentionFunWithFriends,
   ]
 }
 
@@ -354,6 +390,15 @@ extension POGOProtos_Data_Inbox_ClientInbox.NotificationCategory: SwiftProtobuf.
     31: .same(proto: "COMBAT_COMPETITIVE_SEASON_END"),
     32: .same(proto: "BUDDY_AFFECTION_ATTRACTIVE_POI"),
     33: .same(proto: "POI_PASSCODE_REDEEMED"),
+    34: .same(proto: "NO_EGGS_INCUBATING"),
+    39: .same(proto: "RETENTION_UNOPENED_GIFTS"),
+    40: .same(proto: "RETENTION_STARPIECE"),
+    41: .same(proto: "RETENTION_INCENSE"),
+    42: .same(proto: "RETENTION_LUCKY_EGG"),
+    43: .same(proto: "RETENTION_ADVSYNC_REWARDS"),
+    44: .same(proto: "RETENTION_EGGS_NOT_INCUBATING"),
+    45: .same(proto: "RETENTION_POWER_WALK"),
+    46: .same(proto: "RETENTION_FUN_WITH_FRIENDS"),
   ]
 }
 

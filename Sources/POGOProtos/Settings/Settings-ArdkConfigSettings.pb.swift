@@ -28,10 +28,66 @@ public struct POGOProtos_Settings_ArdkConfigSettings {
 
   public var monodpethModelURL: String = String()
 
+  public var monodepthDevices: [String] = []
+
+  public var monodepthContexts: [POGOProtos_Settings_ArdkConfigSettings.ArContext] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum ArContext: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unset // = 0
+    case arEncounter // = 1
+    case arSnapshot // = 2
+    case singleplayerBuddy // = 3
+    case multiplayerBuddy // = 4
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unset
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unset
+      case 1: self = .arEncounter
+      case 2: self = .arSnapshot
+      case 3: self = .singleplayerBuddy
+      case 4: self = .multiplayerBuddy
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unset: return 0
+      case .arEncounter: return 1
+      case .arSnapshot: return 2
+      case .singleplayerBuddy: return 3
+      case .multiplayerBuddy: return 4
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
+      }
+    }
+
+  }
 
   public init() {}
 }
+
+#if swift(>=4.2)
+
+extension POGOProtos_Settings_ArdkConfigSettings.ArContext: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Settings_ArdkConfigSettings.ArContext] = [
+    .unset,
+    .arEncounter,
+    .arSnapshot,
+    .singleplayerBuddy,
+    .multiplayerBuddy,
+  ]
+}
+
+#endif  // swift(>=4.2)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -42,6 +98,8 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "orb_vocab_url"),
     2: .standard(proto: "monodpeth_model_url"),
+    3: .standard(proto: "monodepth_devices"),
+    4: .standard(proto: "monodepth_contexts"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +107,8 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.orbVocabURL)
       case 2: try decoder.decodeSingularStringField(value: &self.monodpethModelURL)
+      case 3: try decoder.decodeRepeatedStringField(value: &self.monodepthDevices)
+      case 4: try decoder.decodeRepeatedEnumField(value: &self.monodepthContexts)
       default: break
       }
     }
@@ -61,13 +121,31 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
     if !self.monodpethModelURL.isEmpty {
       try visitor.visitSingularStringField(value: self.monodpethModelURL, fieldNumber: 2)
     }
+    if !self.monodepthDevices.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.monodepthDevices, fieldNumber: 3)
+    }
+    if !self.monodepthContexts.isEmpty {
+      try visitor.visitPackedEnumField(value: self.monodepthContexts, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_ArdkConfigSettings, rhs: POGOProtos_Settings_ArdkConfigSettings) -> Bool {
     if lhs.orbVocabURL != rhs.orbVocabURL {return false}
     if lhs.monodpethModelURL != rhs.monodpethModelURL {return false}
+    if lhs.monodepthDevices != rhs.monodepthDevices {return false}
+    if lhs.monodepthContexts != rhs.monodepthContexts {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Settings_ArdkConfigSettings.ArContext: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNSET"),
+    1: .same(proto: "AR_ENCOUNTER"),
+    2: .same(proto: "AR_SNAPSHOT"),
+    3: .same(proto: "SINGLEPLAYER_BUDDY"),
+    4: .same(proto: "MULTIPLAYER_BUDDY"),
+  ]
 }

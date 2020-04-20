@@ -32,7 +32,54 @@ public struct POGOProtos_Data_Telemetry_ArPhotoSession {
 
   public var numPhotosShared: Int32 = 0
 
+  public var numPhotosTakenOcclusions: Int32 = 0
+
+  public var numOcclusionsEnabled: Int32 = 0
+
+  public var numOcclusionsDisabled: Int32 = 0
+
+  public var arContext: POGOProtos_Data_Telemetry_ArPhotoSession.ArContext = .none
+
+  public var sessionLength: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum ArContext: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case none // = 0
+    case arEncounter // = 1
+    case arSnapshot // = 2
+    case singleplayerBuddy // = 3
+    case multiplayerBuddy // = 4
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .none
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .none
+      case 1: self = .arEncounter
+      case 2: self = .arSnapshot
+      case 3: self = .singleplayerBuddy
+      case 4: self = .multiplayerBuddy
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .none: return 0
+      case .arEncounter: return 1
+      case .arSnapshot: return 2
+      case .singleplayerBuddy: return 3
+      case .multiplayerBuddy: return 4
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
+      }
+    }
+
+  }
 
   public enum ArType: SwiftProtobuf.Enum {
     public typealias RawValue = Int
@@ -110,6 +157,17 @@ public struct POGOProtos_Data_Telemetry_ArPhotoSession {
 
 #if swift(>=4.2)
 
+extension POGOProtos_Data_Telemetry_ArPhotoSession.ArContext: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Data_Telemetry_ArPhotoSession.ArContext] = [
+    .none,
+    .arEncounter,
+    .arSnapshot,
+    .singleplayerBuddy,
+    .multiplayerBuddy,
+  ]
+}
+
 extension POGOProtos_Data_Telemetry_ArPhotoSession.ArType: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   public static var allCases: [POGOProtos_Data_Telemetry_ArPhotoSession.ArType] = [
@@ -144,6 +202,11 @@ extension POGOProtos_Data_Telemetry_ArPhotoSession: SwiftProtobuf.Message, Swift
     2: .standard(proto: "furthest_step_completed"),
     3: .standard(proto: "num_photos_taken"),
     4: .standard(proto: "num_photos_shared"),
+    5: .standard(proto: "num_photos_taken_occlusions"),
+    6: .standard(proto: "num_occlusions_enabled"),
+    7: .standard(proto: "num_occlusions_disabled"),
+    8: .standard(proto: "ar_context"),
+    9: .standard(proto: "session_length"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -153,6 +216,11 @@ extension POGOProtos_Data_Telemetry_ArPhotoSession: SwiftProtobuf.Message, Swift
       case 2: try decoder.decodeSingularEnumField(value: &self.furthestStepCompleted)
       case 3: try decoder.decodeSingularInt32Field(value: &self.numPhotosTaken)
       case 4: try decoder.decodeSingularInt32Field(value: &self.numPhotosShared)
+      case 5: try decoder.decodeSingularInt32Field(value: &self.numPhotosTakenOcclusions)
+      case 6: try decoder.decodeSingularInt32Field(value: &self.numOcclusionsEnabled)
+      case 7: try decoder.decodeSingularInt32Field(value: &self.numOcclusionsDisabled)
+      case 8: try decoder.decodeSingularEnumField(value: &self.arContext)
+      case 9: try decoder.decodeSingularInt64Field(value: &self.sessionLength)
       default: break
       }
     }
@@ -171,6 +239,21 @@ extension POGOProtos_Data_Telemetry_ArPhotoSession: SwiftProtobuf.Message, Swift
     if self.numPhotosShared != 0 {
       try visitor.visitSingularInt32Field(value: self.numPhotosShared, fieldNumber: 4)
     }
+    if self.numPhotosTakenOcclusions != 0 {
+      try visitor.visitSingularInt32Field(value: self.numPhotosTakenOcclusions, fieldNumber: 5)
+    }
+    if self.numOcclusionsEnabled != 0 {
+      try visitor.visitSingularInt32Field(value: self.numOcclusionsEnabled, fieldNumber: 6)
+    }
+    if self.numOcclusionsDisabled != 0 {
+      try visitor.visitSingularInt32Field(value: self.numOcclusionsDisabled, fieldNumber: 7)
+    }
+    if self.arContext != .none {
+      try visitor.visitSingularEnumField(value: self.arContext, fieldNumber: 8)
+    }
+    if self.sessionLength != 0 {
+      try visitor.visitSingularInt64Field(value: self.sessionLength, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -179,9 +262,24 @@ extension POGOProtos_Data_Telemetry_ArPhotoSession: SwiftProtobuf.Message, Swift
     if lhs.furthestStepCompleted != rhs.furthestStepCompleted {return false}
     if lhs.numPhotosTaken != rhs.numPhotosTaken {return false}
     if lhs.numPhotosShared != rhs.numPhotosShared {return false}
+    if lhs.numPhotosTakenOcclusions != rhs.numPhotosTakenOcclusions {return false}
+    if lhs.numOcclusionsEnabled != rhs.numOcclusionsEnabled {return false}
+    if lhs.numOcclusionsDisabled != rhs.numOcclusionsDisabled {return false}
+    if lhs.arContext != rhs.arContext {return false}
+    if lhs.sessionLength != rhs.sessionLength {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Data_Telemetry_ArPhotoSession.ArContext: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "NONE"),
+    1: .same(proto: "AR_ENCOUNTER"),
+    2: .same(proto: "AR_SNAPSHOT"),
+    3: .same(proto: "SINGLEPLAYER_BUDDY"),
+    4: .same(proto: "MULTIPLAYER_BUDDY"),
+  ]
 }
 
 extension POGOProtos_Data_Telemetry_ArPhotoSession.ArType: SwiftProtobuf._ProtoNameProviding {

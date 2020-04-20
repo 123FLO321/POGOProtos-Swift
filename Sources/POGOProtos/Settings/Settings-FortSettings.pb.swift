@@ -48,6 +48,8 @@ public struct POGOProtos_Settings_FortSettings {
 
   public var enableSponsoredPoiDecorators: Bool = false
 
+  public var remoteInteractionRangeMeters: Double = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -72,6 +74,7 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
     10: .standard(proto: "enable_hyperlinks_in_poi_descriptions"),
     11: .standard(proto: "enable_right_to_left_text_display"),
     12: .standard(proto: "enable_sponsored_poi_decorators"),
+    13: .standard(proto: "remote_interaction_range_meters"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -89,6 +92,7 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
       case 10: try decoder.decodeSingularBoolField(value: &self.enableHyperlinksInPoiDescriptions)
       case 11: try decoder.decodeSingularBoolField(value: &self.enableRightToLeftTextDisplay)
       case 12: try decoder.decodeSingularBoolField(value: &self.enableSponsoredPoiDecorators)
+      case 13: try decoder.decodeSingularDoubleField(value: &self.remoteInteractionRangeMeters)
       default: break
       }
     }
@@ -131,6 +135,9 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
     if self.enableSponsoredPoiDecorators != false {
       try visitor.visitSingularBoolField(value: self.enableSponsoredPoiDecorators, fieldNumber: 12)
     }
+    if self.remoteInteractionRangeMeters != 0 {
+      try visitor.visitSingularDoubleField(value: self.remoteInteractionRangeMeters, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -147,6 +154,7 @@ extension POGOProtos_Settings_FortSettings: SwiftProtobuf.Message, SwiftProtobuf
     if lhs.enableHyperlinksInPoiDescriptions != rhs.enableHyperlinksInPoiDescriptions {return false}
     if lhs.enableRightToLeftTextDisplay != rhs.enableRightToLeftTextDisplay {return false}
     if lhs.enableSponsoredPoiDecorators != rhs.enableSponsoredPoiDecorators {return false}
+    if lhs.remoteInteractionRangeMeters != rhs.remoteInteractionRangeMeters {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

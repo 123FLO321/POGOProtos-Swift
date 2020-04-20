@@ -38,6 +38,11 @@ public struct POGOProtos_Networking_Responses_OpenCombatSessionResponse {
   /// Clears the value of `combat`. Subsequent reads from it will return its default value.
   public mutating func clearCombat() {_uniqueStorage()._combat = nil}
 
+  public var shouldDebugLog: Bool {
+    get {return _storage._shouldDebugLog}
+    set {_uniqueStorage()._shouldDebugLog = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -138,11 +143,13 @@ extension POGOProtos_Networking_Responses_OpenCombatSessionResponse: SwiftProtob
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .same(proto: "combat"),
+    3: .standard(proto: "should_debug_log"),
   ]
 
   fileprivate class _StorageClass {
     var _result: POGOProtos_Networking_Responses_OpenCombatSessionResponse.Result = .unset
     var _combat: POGOProtos_Data_Combat_Combat? = nil
+    var _shouldDebugLog: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -151,6 +158,7 @@ extension POGOProtos_Networking_Responses_OpenCombatSessionResponse: SwiftProtob
     init(copying source: _StorageClass) {
       _result = source._result
       _combat = source._combat
+      _shouldDebugLog = source._shouldDebugLog
     }
   }
 
@@ -168,6 +176,7 @@ extension POGOProtos_Networking_Responses_OpenCombatSessionResponse: SwiftProtob
         switch fieldNumber {
         case 1: try decoder.decodeSingularEnumField(value: &_storage._result)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._combat)
+        case 3: try decoder.decodeSingularBoolField(value: &_storage._shouldDebugLog)
         default: break
         }
       }
@@ -182,6 +191,9 @@ extension POGOProtos_Networking_Responses_OpenCombatSessionResponse: SwiftProtob
       if let v = _storage._combat {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
+      if _storage._shouldDebugLog != false {
+        try visitor.visitSingularBoolField(value: _storage._shouldDebugLog, fieldNumber: 3)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -193,6 +205,7 @@ extension POGOProtos_Networking_Responses_OpenCombatSessionResponse: SwiftProtob
         let rhs_storage = _args.1
         if _storage._result != rhs_storage._result {return false}
         if _storage._combat != rhs_storage._combat {return false}
+        if _storage._shouldDebugLog != rhs_storage._shouldDebugLog {return false}
         return true
       }
       if !storagesAreEqual {return false}

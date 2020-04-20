@@ -47,6 +47,11 @@ public struct POGOProtos_Networking_Responses_UpgradePokemonResponse {
   /// Clears the value of `nextUpgradedPokemon`. Subsequent reads from it will return its default value.
   public mutating func clearNextUpgradedPokemon() {_uniqueStorage()._nextUpgradedPokemon = nil}
 
+  public var bulkUpgradesCostTable: [POGOProtos_Networking_Responses_UpgradePokemonResponse.BulkUpgradesCost] {
+    get {return _storage._bulkUpgradesCostTable}
+    set {_uniqueStorage()._bulkUpgradesCostTable = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -57,6 +62,7 @@ public struct POGOProtos_Networking_Responses_UpgradePokemonResponse {
     case errorInsufficientResources // = 3
     case errorUpgradeNotAvailable // = 4
     case errorPokemonIsDeployed // = 5
+    case errorDuplicateRequest // = 6
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -71,6 +77,7 @@ public struct POGOProtos_Networking_Responses_UpgradePokemonResponse {
       case 3: self = .errorInsufficientResources
       case 4: self = .errorUpgradeNotAvailable
       case 5: self = .errorPokemonIsDeployed
+      case 6: self = .errorDuplicateRequest
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -83,10 +90,35 @@ public struct POGOProtos_Networking_Responses_UpgradePokemonResponse {
       case .errorInsufficientResources: return 3
       case .errorUpgradeNotAvailable: return 4
       case .errorPokemonIsDeployed: return 5
+      case .errorDuplicateRequest: return 6
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
 
+  }
+
+  public struct BulkUpgradesCost {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var numberOfUpgrades: Int32 = 0
+
+    public var pokemonLevel: Int32 = 0
+
+    public var pokemonCp: Int32 = 0
+
+    public var totalStardustCost: Int32 = 0
+
+    public var totalCandyCost: Int32 = 0
+
+    public var totalCpMultiplier: Float = 0
+
+    public var totalXlCandyCost: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
   }
 
   public init() {}
@@ -105,6 +137,7 @@ extension POGOProtos_Networking_Responses_UpgradePokemonResponse.Result: CaseIte
     .errorInsufficientResources,
     .errorUpgradeNotAvailable,
     .errorPokemonIsDeployed,
+    .errorDuplicateRequest,
   ]
 }
 
@@ -120,12 +153,14 @@ extension POGOProtos_Networking_Responses_UpgradePokemonResponse: SwiftProtobuf.
     1: .same(proto: "result"),
     2: .standard(proto: "upgraded_pokemon"),
     3: .standard(proto: "next_upgraded_pokemon"),
+    4: .standard(proto: "bulk_upgrades_cost_table"),
   ]
 
   fileprivate class _StorageClass {
     var _result: POGOProtos_Networking_Responses_UpgradePokemonResponse.Result = .unset
     var _upgradedPokemon: POGOProtos_Data_PokemonData? = nil
     var _nextUpgradedPokemon: POGOProtos_Data_PokemonData? = nil
+    var _bulkUpgradesCostTable: [POGOProtos_Networking_Responses_UpgradePokemonResponse.BulkUpgradesCost] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -135,6 +170,7 @@ extension POGOProtos_Networking_Responses_UpgradePokemonResponse: SwiftProtobuf.
       _result = source._result
       _upgradedPokemon = source._upgradedPokemon
       _nextUpgradedPokemon = source._nextUpgradedPokemon
+      _bulkUpgradesCostTable = source._bulkUpgradesCostTable
     }
   }
 
@@ -153,6 +189,7 @@ extension POGOProtos_Networking_Responses_UpgradePokemonResponse: SwiftProtobuf.
         case 1: try decoder.decodeSingularEnumField(value: &_storage._result)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._upgradedPokemon)
         case 3: try decoder.decodeSingularMessageField(value: &_storage._nextUpgradedPokemon)
+        case 4: try decoder.decodeRepeatedMessageField(value: &_storage._bulkUpgradesCostTable)
         default: break
         }
       }
@@ -170,6 +207,9 @@ extension POGOProtos_Networking_Responses_UpgradePokemonResponse: SwiftProtobuf.
       if let v = _storage._nextUpgradedPokemon {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
       }
+      if !_storage._bulkUpgradesCostTable.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._bulkUpgradesCostTable, fieldNumber: 4)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -182,6 +222,7 @@ extension POGOProtos_Networking_Responses_UpgradePokemonResponse: SwiftProtobuf.
         if _storage._result != rhs_storage._result {return false}
         if _storage._upgradedPokemon != rhs_storage._upgradedPokemon {return false}
         if _storage._nextUpgradedPokemon != rhs_storage._nextUpgradedPokemon {return false}
+        if _storage._bulkUpgradesCostTable != rhs_storage._bulkUpgradesCostTable {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -199,5 +240,71 @@ extension POGOProtos_Networking_Responses_UpgradePokemonResponse.Result: SwiftPr
     3: .same(proto: "ERROR_INSUFFICIENT_RESOURCES"),
     4: .same(proto: "ERROR_UPGRADE_NOT_AVAILABLE"),
     5: .same(proto: "ERROR_POKEMON_IS_DEPLOYED"),
+    6: .same(proto: "ERROR_DUPLICATE_REQUEST"),
   ]
+}
+
+extension POGOProtos_Networking_Responses_UpgradePokemonResponse.BulkUpgradesCost: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_UpgradePokemonResponse.protoMessageName + ".BulkUpgradesCost"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "number_of_upgrades"),
+    2: .standard(proto: "pokemon_level"),
+    3: .standard(proto: "pokemon_cp"),
+    4: .standard(proto: "total_stardust_cost"),
+    5: .standard(proto: "total_candy_cost"),
+    6: .standard(proto: "total_cp_multiplier"),
+    7: .standard(proto: "total_xl_candy_cost"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.numberOfUpgrades)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.pokemonLevel)
+      case 3: try decoder.decodeSingularInt32Field(value: &self.pokemonCp)
+      case 4: try decoder.decodeSingularInt32Field(value: &self.totalStardustCost)
+      case 5: try decoder.decodeSingularInt32Field(value: &self.totalCandyCost)
+      case 6: try decoder.decodeSingularFloatField(value: &self.totalCpMultiplier)
+      case 7: try decoder.decodeSingularInt32Field(value: &self.totalXlCandyCost)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.numberOfUpgrades != 0 {
+      try visitor.visitSingularInt32Field(value: self.numberOfUpgrades, fieldNumber: 1)
+    }
+    if self.pokemonLevel != 0 {
+      try visitor.visitSingularInt32Field(value: self.pokemonLevel, fieldNumber: 2)
+    }
+    if self.pokemonCp != 0 {
+      try visitor.visitSingularInt32Field(value: self.pokemonCp, fieldNumber: 3)
+    }
+    if self.totalStardustCost != 0 {
+      try visitor.visitSingularInt32Field(value: self.totalStardustCost, fieldNumber: 4)
+    }
+    if self.totalCandyCost != 0 {
+      try visitor.visitSingularInt32Field(value: self.totalCandyCost, fieldNumber: 5)
+    }
+    if self.totalCpMultiplier != 0 {
+      try visitor.visitSingularFloatField(value: self.totalCpMultiplier, fieldNumber: 6)
+    }
+    if self.totalXlCandyCost != 0 {
+      try visitor.visitSingularInt32Field(value: self.totalXlCandyCost, fieldNumber: 7)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_UpgradePokemonResponse.BulkUpgradesCost, rhs: POGOProtos_Networking_Responses_UpgradePokemonResponse.BulkUpgradesCost) -> Bool {
+    if lhs.numberOfUpgrades != rhs.numberOfUpgrades {return false}
+    if lhs.pokemonLevel != rhs.pokemonLevel {return false}
+    if lhs.pokemonCp != rhs.pokemonCp {return false}
+    if lhs.totalStardustCost != rhs.totalStardustCost {return false}
+    if lhs.totalCandyCost != rhs.totalCandyCost {return false}
+    if lhs.totalCpMultiplier != rhs.totalCpMultiplier {return false}
+    if lhs.totalXlCandyCost != rhs.totalXlCandyCost {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }

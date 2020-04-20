@@ -61,14 +61,6 @@ public struct POGOProtos_Inventory_LootItem {
     set {_uniqueStorage()._type = .pokemonCandy(newValue)}
   }
 
-  public var count: Int32 {
-    get {
-      if case .count(let v)? = _storage._type {return v}
-      return 0
-    }
-    set {_uniqueStorage()._type = .count(newValue)}
-  }
-
   public var experience: Bool {
     get {
       if case .experience(let v)? = _storage._type {return v}
@@ -93,6 +85,11 @@ public struct POGOProtos_Inventory_LootItem {
     set {_uniqueStorage()._type = .avatarTemplateID(newValue)}
   }
 
+  public var count: Int32 {
+    get {return _storage._count}
+    set {_uniqueStorage()._count = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Type: Equatable {
@@ -100,7 +97,6 @@ public struct POGOProtos_Inventory_LootItem {
     case stardust(Bool)
     case pokecoin(Bool)
     case pokemonCandy(POGOProtos_Enums_PokemonId)
-    case count(Int32)
     case experience(Bool)
     case pokemonEgg(POGOProtos_Data_PokemonData)
     case avatarTemplateID(String)
@@ -112,7 +108,6 @@ public struct POGOProtos_Inventory_LootItem {
       case (.stardust(let l), .stardust(let r)): return l == r
       case (.pokecoin(let l), .pokecoin(let r)): return l == r
       case (.pokemonCandy(let l), .pokemonCandy(let r)): return l == r
-      case (.count(let l), .count(let r)): return l == r
       case (.experience(let l), .experience(let r)): return l == r
       case (.pokemonEgg(let l), .pokemonEgg(let r)): return l == r
       case (.avatarTemplateID(let l), .avatarTemplateID(let r)): return l == r
@@ -138,14 +133,15 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
     2: .same(proto: "stardust"),
     3: .same(proto: "pokecoin"),
     4: .standard(proto: "pokemon_candy"),
-    5: .same(proto: "count"),
     6: .same(proto: "experience"),
     7: .standard(proto: "pokemon_egg"),
     8: .standard(proto: "avatar_template_id"),
+    5: .same(proto: "count"),
   ]
 
   fileprivate class _StorageClass {
     var _type: POGOProtos_Inventory_LootItem.OneOf_Type?
+    var _count: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -153,6 +149,7 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
 
     init(copying source: _StorageClass) {
       _type = source._type
+      _count = source._count
     }
   }
 
@@ -188,11 +185,7 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
           var v: POGOProtos_Enums_PokemonId?
           try decoder.decodeSingularEnumField(value: &v)
           if let v = v {_storage._type = .pokemonCandy(v)}
-        case 5:
-          if _storage._type != nil {try decoder.handleConflictingOneOf()}
-          var v: Int32?
-          try decoder.decodeSingularInt32Field(value: &v)
-          if let v = v {_storage._type = .count(v)}
+        case 5: try decoder.decodeSingularInt32Field(value: &_storage._count)
         case 6:
           if _storage._type != nil {try decoder.handleConflictingOneOf()}
           var v: Bool?
@@ -228,8 +221,13 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
         try visitor.visitSingularBoolField(value: v, fieldNumber: 3)
       case .pokemonCandy(let v)?:
         try visitor.visitSingularEnumField(value: v, fieldNumber: 4)
-      case .count(let v)?:
-        try visitor.visitSingularInt32Field(value: v, fieldNumber: 5)
+      case nil: break
+      default: break
+      }
+      if _storage._count != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._count, fieldNumber: 5)
+      }
+      switch _storage._type {
       case .experience(let v)?:
         try visitor.visitSingularBoolField(value: v, fieldNumber: 6)
       case .pokemonEgg(let v)?:
@@ -237,6 +235,7 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
       case .avatarTemplateID(let v)?:
         try visitor.visitSingularStringField(value: v, fieldNumber: 8)
       case nil: break
+      default: break
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -248,6 +247,7 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._type != rhs_storage._type {return false}
+        if _storage._count != rhs_storage._count {return false}
         return true
       }
       if !storagesAreEqual {return false}

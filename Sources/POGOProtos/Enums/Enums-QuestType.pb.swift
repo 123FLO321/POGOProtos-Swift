@@ -59,6 +59,7 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
   case questBuddyLevel // = 36
   case questBuddyWalk // = 37
   case questBuddyYatta // = 38
+  case questUseIncense // = 39
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -105,6 +106,7 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case 36: self = .questBuddyLevel
     case 37: self = .questBuddyWalk
     case 38: self = .questBuddyYatta
+    case 39: self = .questUseIncense
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -149,6 +151,7 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case .questBuddyLevel: return 36
     case .questBuddyWalk: return 37
     case .questBuddyYatta: return 38
+    case .questUseIncense: return 39
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -198,6 +201,7 @@ extension POGOProtos_Enums_QuestType: CaseIterable {
     .questBuddyLevel,
     .questBuddyWalk,
     .questBuddyYatta,
+    .questUseIncense,
   ]
 }
 
@@ -245,5 +249,6 @@ extension POGOProtos_Enums_QuestType: SwiftProtobuf._ProtoNameProviding {
     36: .same(proto: "QUEST_BUDDY_LEVEL"),
     37: .same(proto: "QUEST_BUDDY_WALK"),
     38: .same(proto: "QUEST_BUDDY_YATTA"),
+    39: .same(proto: "QUEST_USE_INCENSE"),
   ]
 }

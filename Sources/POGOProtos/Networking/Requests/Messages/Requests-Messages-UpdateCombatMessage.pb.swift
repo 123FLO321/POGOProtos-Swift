@@ -38,6 +38,11 @@ public struct POGOProtos_Networking_Requests_Messages_UpdateCombatMessage {
   /// Clears the value of `action`. Subsequent reads from it will return its default value.
   public mutating func clearAction() {_uniqueStorage()._action = nil}
 
+  public var debugLog: String {
+    get {return _storage._debugLog}
+    set {_uniqueStorage()._debugLog = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -54,11 +59,13 @@ extension POGOProtos_Networking_Requests_Messages_UpdateCombatMessage: SwiftProt
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "combat_id"),
     2: .same(proto: "action"),
+    3: .standard(proto: "debug_log"),
   ]
 
   fileprivate class _StorageClass {
     var _combatID: String = String()
     var _action: POGOProtos_Data_Combat_CombatAction? = nil
+    var _debugLog: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -67,6 +74,7 @@ extension POGOProtos_Networking_Requests_Messages_UpdateCombatMessage: SwiftProt
     init(copying source: _StorageClass) {
       _combatID = source._combatID
       _action = source._action
+      _debugLog = source._debugLog
     }
   }
 
@@ -84,6 +92,7 @@ extension POGOProtos_Networking_Requests_Messages_UpdateCombatMessage: SwiftProt
         switch fieldNumber {
         case 1: try decoder.decodeSingularStringField(value: &_storage._combatID)
         case 2: try decoder.decodeSingularMessageField(value: &_storage._action)
+        case 3: try decoder.decodeSingularStringField(value: &_storage._debugLog)
         default: break
         }
       }
@@ -98,6 +107,9 @@ extension POGOProtos_Networking_Requests_Messages_UpdateCombatMessage: SwiftProt
       if let v = _storage._action {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       }
+      if !_storage._debugLog.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._debugLog, fieldNumber: 3)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -109,6 +121,7 @@ extension POGOProtos_Networking_Requests_Messages_UpdateCombatMessage: SwiftProt
         let rhs_storage = _args.1
         if _storage._combatID != rhs_storage._combatID {return false}
         if _storage._action != rhs_storage._action {return false}
+        if _storage._debugLog != rhs_storage._debugLog {return false}
         return true
       }
       if !storagesAreEqual {return false}

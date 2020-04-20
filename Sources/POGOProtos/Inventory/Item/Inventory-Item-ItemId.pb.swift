@@ -79,6 +79,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemStarPiece // = 1404
   case itemFriendGiftBox // = 1405
   case itemTeamChange // = 1406
+  case itemRemoteRaidTicket // = 1408
   case itemLeaderMapFragment // = 1501
   case itemLeaderMap // = 1502
   case itemGiovanniMap // = 1503
@@ -149,6 +150,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 1404: self = .itemStarPiece
     case 1405: self = .itemFriendGiftBox
     case 1406: self = .itemTeamChange
+    case 1408: self = .itemRemoteRaidTicket
     case 1501: self = .itemLeaderMapFragment
     case 1502: self = .itemLeaderMap
     case 1503: self = .itemGiovanniMap
@@ -217,6 +219,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemStarPiece: return 1404
     case .itemFriendGiftBox: return 1405
     case .itemTeamChange: return 1406
+    case .itemRemoteRaidTicket: return 1408
     case .itemLeaderMapFragment: return 1501
     case .itemLeaderMap: return 1502
     case .itemGiovanniMap: return 1503
@@ -290,6 +293,7 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemStarPiece,
     .itemFriendGiftBox,
     .itemTeamChange,
+    .itemRemoteRaidTicket,
     .itemLeaderMapFragment,
     .itemLeaderMap,
     .itemGiovanniMap,
@@ -361,6 +365,7 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     1404: .same(proto: "ITEM_STAR_PIECE"),
     1405: .same(proto: "ITEM_FRIEND_GIFT_BOX"),
     1406: .same(proto: "ITEM_TEAM_CHANGE"),
+    1408: .same(proto: "ITEM_REMOTE_RAID_TICKET"),
     1501: .same(proto: "ITEM_LEADER_MAP_FRAGMENT"),
     1502: .same(proto: "ITEM_LEADER_MAP"),
     1503: .same(proto: "ITEM_GIOVANNI_MAP"),

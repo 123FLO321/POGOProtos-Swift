@@ -82,6 +82,9 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeRocketGruntsDefeated // = 58
   case badgeRocketGiovanniDefeated // = 59
   case badgeBuddyBest // = 60
+  case badgePokedexEntriesGen6 // = 61
+  case badgePokedexEntriesGen7 // = 62
+  case badgePokedexEntriesGen8 // = 63
   case badgeEventMin // = 2000
   case badgeChicagoFestJuly2017 // = 2001
   case badgePikachuOutbreakYokohama2017 // = 2002
@@ -327,6 +330,9 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 58: self = .badgeRocketGruntsDefeated
     case 59: self = .badgeRocketGiovanniDefeated
     case 60: self = .badgeBuddyBest
+    case 61: self = .badgePokedexEntriesGen6
+    case 62: self = .badgePokedexEntriesGen7
+    case 63: self = .badgePokedexEntriesGen8
     case 2000: self = .badgeEventMin
     case 2001: self = .badgeChicagoFestJuly2017
     case 2002: self = .badgePikachuOutbreakYokohama2017
@@ -570,6 +576,9 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeRocketGruntsDefeated: return 58
     case .badgeRocketGiovanniDefeated: return 59
     case .badgeBuddyBest: return 60
+    case .badgePokedexEntriesGen6: return 61
+    case .badgePokedexEntriesGen7: return 62
+    case .badgePokedexEntriesGen8: return 63
     case .badgeEventMin: return 2000
     case .badgeChicagoFestJuly2017: return 2001
     case .badgePikachuOutbreakYokohama2017: return 2002
@@ -818,6 +827,9 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeRocketGruntsDefeated,
     .badgeRocketGiovanniDefeated,
     .badgeBuddyBest,
+    .badgePokedexEntriesGen6,
+    .badgePokedexEntriesGen7,
+    .badgePokedexEntriesGen8,
     .badgeEventMin,
     .badgeChicagoFestJuly2017,
     .badgePikachuOutbreakYokohama2017,
@@ -1064,6 +1076,9 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     58: .same(proto: "BADGE_ROCKET_GRUNTS_DEFEATED"),
     59: .same(proto: "BADGE_ROCKET_GIOVANNI_DEFEATED"),
     60: .same(proto: "BADGE_BUDDY_BEST"),
+    61: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN6"),
+    62: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN7"),
+    63: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN8"),
     2000: .same(proto: "BADGE_EVENT_MIN"),
     2001: .same(proto: "BADGE_CHICAGO_FEST_JULY_2017"),
     2002: .same(proto: "BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017"),

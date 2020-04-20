@@ -26,6 +26,9 @@ public enum POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf.Enum {
   case gen3 // = 2
   case gen4 // = 3
   case gen5 // = 4
+  case gen6 // = 5
+  case gen7 // = 6
+  case gen8 // = 7
   case pokedexGenIDMeltan // = 1001
   case UNRECOGNIZED(Int)
 
@@ -40,6 +43,9 @@ public enum POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf.Enum {
     case 2: self = .gen3
     case 3: self = .gen4
     case 4: self = .gen5
+    case 5: self = .gen6
+    case 6: self = .gen7
+    case 7: self = .gen8
     case 1001: self = .pokedexGenIDMeltan
     default: self = .UNRECOGNIZED(rawValue)
     }
@@ -52,6 +58,9 @@ public enum POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf.Enum {
     case .gen3: return 2
     case .gen4: return 3
     case .gen5: return 4
+    case .gen6: return 5
+    case .gen7: return 6
+    case .gen8: return 7
     case .pokedexGenIDMeltan: return 1001
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
@@ -69,6 +78,9 @@ extension POGOProtos_Enums_PokedexGenerationId: CaseIterable {
     .gen3,
     .gen4,
     .gen5,
+    .gen6,
+    .gen7,
+    .gen8,
     .pokedexGenIDMeltan,
   ]
 }
@@ -84,6 +96,9 @@ extension POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf._ProtoNameProvidin
     2: .same(proto: "GEN3"),
     3: .same(proto: "GEN4"),
     4: .same(proto: "GEN5"),
+    5: .same(proto: "GEN6"),
+    6: .same(proto: "GEN7"),
+    7: .same(proto: "GEN8"),
     1001: .same(proto: "POKEDEX_GEN_ID_MELTAN"),
   ]
 }

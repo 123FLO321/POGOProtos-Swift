@@ -509,6 +509,14 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .playerHudNotificationClickTelemetry(newValue)}
   }
 
+  public var monodepthDownloadTelemetry: POGOProtos_Data_Telemetry_MonodepthDownloadTelemetry {
+    get {
+      if case .monodepthDownloadTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_MonodepthDownloadTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .monodepthDownloadTelemetry(newValue)}
+  }
+
   public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
     get {return _storage._serverData ?? POGOProtos_Data_Telemetry_PlatformServerData()}
     set {_uniqueStorage()._serverData = newValue}
@@ -590,6 +598,7 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     case buddyMultiplayerConnectionSucceededTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerConnectionSucceeded)
     case buddyMultiplayerTimeToGetSessionTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerTimeToGetSession)
     case playerHudNotificationClickTelemetry(POGOProtos_Data_Telemetry_PlayerHudNotificationClickTelemetry)
+    case monodepthDownloadTelemetry(POGOProtos_Data_Telemetry_MonodepthDownloadTelemetry)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData, rhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData) -> Bool {
@@ -654,6 +663,7 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
       case (.buddyMultiplayerConnectionSucceededTelemetry(let l), .buddyMultiplayerConnectionSucceededTelemetry(let r)): return l == r
       case (.buddyMultiplayerTimeToGetSessionTelemetry(let l), .buddyMultiplayerTimeToGetSessionTelemetry(let r)): return l == r
       case (.playerHudNotificationClickTelemetry(let l), .playerHudNotificationClickTelemetry(let r)): return l == r
+      case (.monodepthDownloadTelemetry(let l), .monodepthDownloadTelemetry(let r)): return l == r
       default: return false
       }
     }
@@ -732,6 +742,7 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     58: .standard(proto: "buddy_multiplayer_connection_succeeded_telemetry"),
     59: .standard(proto: "buddy_multiplayer_time_to_get_session_telemetry"),
     60: .standard(proto: "player_hud_notification_click_telemetry"),
+    61: .standard(proto: "monodepth_download_telemetry"),
     1001: .standard(proto: "server_data"),
     1002: .standard(proto: "common_filters"),
   ]
@@ -1244,6 +1255,14 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .playerHudNotificationClickTelemetry(v)}
+        case 61:
+          var v: POGOProtos_Data_Telemetry_MonodepthDownloadTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .monodepthDownloadTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .monodepthDownloadTelemetry(v)}
         case 1001: try decoder.decodeSingularMessageField(value: &_storage._serverData)
         case 1002: try decoder.decodeSingularMessageField(value: &_storage._commonFilters)
         default: break
@@ -1375,6 +1394,8 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         try visitor.visitSingularMessageField(value: v, fieldNumber: 59)
       case .playerHudNotificationClickTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 60)
+      case .monodepthDownloadTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 61)
       case nil: break
       }
       if let v = _storage._serverData {

@@ -194,6 +194,11 @@ public struct POGOProtos_Data_Quests_Quest {
     set {_uniqueStorage()._rewardPokemonIconURL = newValue}
   }
 
+  public var endTimestampMs: Int64 {
+    get {return _storage._endTimestampMs}
+    set {_uniqueStorage()._endTimestampMs = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Quest: Equatable {
@@ -225,6 +230,7 @@ public struct POGOProtos_Data_Quests_Quest {
     case storyQuest // = 1
     case challengeQuest // = 2
     case dailyCoinQuest // = 3
+    case timedStoryQuest // = 4
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -237,6 +243,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case 1: self = .storyQuest
       case 2: self = .challengeQuest
       case 3: self = .dailyCoinQuest
+      case 4: self = .timedStoryQuest
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -247,6 +254,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case .storyQuest: return 1
       case .challengeQuest: return 2
       case .dailyCoinQuest: return 3
+      case .timedStoryQuest: return 4
       case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
       }
     }
@@ -371,6 +379,7 @@ extension POGOProtos_Data_Quests_Quest.Context: CaseIterable {
     .storyQuest,
     .challengeQuest,
     .dailyCoinQuest,
+    .timedStoryQuest,
   ]
 }
 
@@ -419,6 +428,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
     116: .standard(proto: "story_quest_template_version"),
     117: .standard(proto: "daily_counter"),
     118: .standard(proto: "reward_pokemon_icon_url"),
+    119: .standard(proto: "end_timestamp_ms"),
   ]
 
   fileprivate class _StorageClass {
@@ -444,6 +454,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _storyQuestTemplateVersion: Int32 = 0
     var _dailyCounter: POGOProtos_Data_Quests_Quest.DailyCounter? = nil
     var _rewardPokemonIconURL: String = String()
+    var _endTimestampMs: Int64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -472,6 +483,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
       _storyQuestTemplateVersion = source._storyQuestTemplateVersion
       _dailyCounter = source._dailyCounter
       _rewardPokemonIconURL = source._rewardPokemonIconURL
+      _endTimestampMs = source._endTimestampMs
     }
   }
 
@@ -556,6 +568,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
         case 116: try decoder.decodeSingularInt32Field(value: &_storage._storyQuestTemplateVersion)
         case 117: try decoder.decodeSingularMessageField(value: &_storage._dailyCounter)
         case 118: try decoder.decodeSingularStringField(value: &_storage._rewardPokemonIconURL)
+        case 119: try decoder.decodeSingularInt64Field(value: &_storage._endTimestampMs)
         default: break
         }
       }
@@ -642,6 +655,9 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
       if !_storage._rewardPokemonIconURL.isEmpty {
         try visitor.visitSingularStringField(value: _storage._rewardPokemonIconURL, fieldNumber: 118)
       }
+      if _storage._endTimestampMs != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._endTimestampMs, fieldNumber: 119)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -673,6 +689,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
         if _storage._storyQuestTemplateVersion != rhs_storage._storyQuestTemplateVersion {return false}
         if _storage._dailyCounter != rhs_storage._dailyCounter {return false}
         if _storage._rewardPokemonIconURL != rhs_storage._rewardPokemonIconURL {return false}
+        if _storage._endTimestampMs != rhs_storage._endTimestampMs {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -688,6 +705,7 @@ extension POGOProtos_Data_Quests_Quest.Context: SwiftProtobuf._ProtoNameProvidin
     1: .same(proto: "STORY_QUEST"),
     2: .same(proto: "CHALLENGE_QUEST"),
     3: .same(proto: "DAILY_COIN_QUEST"),
+    4: .same(proto: "TIMED_STORY_QUEST"),
   ]
 }
 

@@ -24,15 +24,39 @@ public struct POGOProtos_Map_Fort_SponsoredDetails {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var promoImageURL: [String] = []
+  public var promoImageURL: [String] {
+    get {return _storage._promoImageURL}
+    set {_uniqueStorage()._promoImageURL = newValue}
+  }
 
-  public var promoDescription: [String] = []
+  public var promoDescription: [String] {
+    get {return _storage._promoDescription}
+    set {_uniqueStorage()._promoDescription = newValue}
+  }
 
-  public var callToActionLink: String = String()
+  public var callToActionLink: String {
+    get {return _storage._callToActionLink}
+    set {_uniqueStorage()._callToActionLink = newValue}
+  }
 
-  public var promoButtonMessageType: POGOProtos_Map_Fort_SponsoredDetails.PromoButtonMessageType = .unset
+  public var promoButtonMessageType: POGOProtos_Map_Fort_SponsoredDetails.PromoButtonMessageType {
+    get {return _storage._promoButtonMessageType}
+    set {_uniqueStorage()._promoButtonMessageType = newValue}
+  }
 
-  public var campaignID: String = String()
+  public var campaignID: String {
+    get {return _storage._campaignID}
+    set {_uniqueStorage()._campaignID = newValue}
+  }
+
+  public var promoImageCreative: POGOProtos_Map_Fort_SponsoredDetails.ImageTextCreative {
+    get {return _storage._promoImageCreative ?? POGOProtos_Map_Fort_SponsoredDetails.ImageTextCreative()}
+    set {_uniqueStorage()._promoImageCreative = newValue}
+  }
+  /// Returns true if `promoImageCreative` has been explicitly set.
+  public var hasPromoImageCreative: Bool {return _storage._promoImageCreative != nil}
+  /// Clears the value of `promoImageCreative`. Subsequent reads from it will return its default value.
+  public mutating func clearPromoImageCreative() {_uniqueStorage()._promoImageCreative = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -67,7 +91,31 @@ public struct POGOProtos_Map_Fort_SponsoredDetails {
 
   }
 
+  public struct ImageTextCreative {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var name: String = String()
+
+    public var title: String = String()
+
+    public var description_p: String = String()
+
+    public var previewImageURL: String = String()
+
+    public var fullscreenImageURL: String = String()
+
+    public var ctaLink: String = String()
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
   public init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 #if swift(>=4.2)
@@ -95,46 +143,94 @@ extension POGOProtos_Map_Fort_SponsoredDetails: SwiftProtobuf.Message, SwiftProt
     3: .standard(proto: "call_to_action_link"),
     4: .standard(proto: "promo_button_message_type"),
     5: .standard(proto: "campaign_id"),
+    6: .standard(proto: "promo_image_creative"),
   ]
 
+  fileprivate class _StorageClass {
+    var _promoImageURL: [String] = []
+    var _promoDescription: [String] = []
+    var _callToActionLink: String = String()
+    var _promoButtonMessageType: POGOProtos_Map_Fort_SponsoredDetails.PromoButtonMessageType = .unset
+    var _campaignID: String = String()
+    var _promoImageCreative: POGOProtos_Map_Fort_SponsoredDetails.ImageTextCreative? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _promoImageURL = source._promoImageURL
+      _promoDescription = source._promoDescription
+      _callToActionLink = source._callToActionLink
+      _promoButtonMessageType = source._promoButtonMessageType
+      _campaignID = source._campaignID
+      _promoImageCreative = source._promoImageCreative
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeRepeatedStringField(value: &self.promoImageURL)
-      case 2: try decoder.decodeRepeatedStringField(value: &self.promoDescription)
-      case 3: try decoder.decodeSingularStringField(value: &self.callToActionLink)
-      case 4: try decoder.decodeSingularEnumField(value: &self.promoButtonMessageType)
-      case 5: try decoder.decodeSingularStringField(value: &self.campaignID)
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeRepeatedStringField(value: &_storage._promoImageURL)
+        case 2: try decoder.decodeRepeatedStringField(value: &_storage._promoDescription)
+        case 3: try decoder.decodeSingularStringField(value: &_storage._callToActionLink)
+        case 4: try decoder.decodeSingularEnumField(value: &_storage._promoButtonMessageType)
+        case 5: try decoder.decodeSingularStringField(value: &_storage._campaignID)
+        case 6: try decoder.decodeSingularMessageField(value: &_storage._promoImageCreative)
+        default: break
+        }
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.promoImageURL.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.promoImageURL, fieldNumber: 1)
-    }
-    if !self.promoDescription.isEmpty {
-      try visitor.visitRepeatedStringField(value: self.promoDescription, fieldNumber: 2)
-    }
-    if !self.callToActionLink.isEmpty {
-      try visitor.visitSingularStringField(value: self.callToActionLink, fieldNumber: 3)
-    }
-    if self.promoButtonMessageType != .unset {
-      try visitor.visitSingularEnumField(value: self.promoButtonMessageType, fieldNumber: 4)
-    }
-    if !self.campaignID.isEmpty {
-      try visitor.visitSingularStringField(value: self.campaignID, fieldNumber: 5)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._promoImageURL.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._promoImageURL, fieldNumber: 1)
+      }
+      if !_storage._promoDescription.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._promoDescription, fieldNumber: 2)
+      }
+      if !_storage._callToActionLink.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._callToActionLink, fieldNumber: 3)
+      }
+      if _storage._promoButtonMessageType != .unset {
+        try visitor.visitSingularEnumField(value: _storage._promoButtonMessageType, fieldNumber: 4)
+      }
+      if !_storage._campaignID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._campaignID, fieldNumber: 5)
+      }
+      if let v = _storage._promoImageCreative {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Map_Fort_SponsoredDetails, rhs: POGOProtos_Map_Fort_SponsoredDetails) -> Bool {
-    if lhs.promoImageURL != rhs.promoImageURL {return false}
-    if lhs.promoDescription != rhs.promoDescription {return false}
-    if lhs.callToActionLink != rhs.callToActionLink {return false}
-    if lhs.promoButtonMessageType != rhs.promoButtonMessageType {return false}
-    if lhs.campaignID != rhs.campaignID {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._promoImageURL != rhs_storage._promoImageURL {return false}
+        if _storage._promoDescription != rhs_storage._promoDescription {return false}
+        if _storage._callToActionLink != rhs_storage._callToActionLink {return false}
+        if _storage._promoButtonMessageType != rhs_storage._promoButtonMessageType {return false}
+        if _storage._campaignID != rhs_storage._campaignID {return false}
+        if _storage._promoImageCreative != rhs_storage._promoImageCreative {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -146,4 +242,63 @@ extension POGOProtos_Map_Fort_SponsoredDetails.PromoButtonMessageType: SwiftProt
     1: .same(proto: "LEARN_MORE"),
     2: .same(proto: "OFFER"),
   ]
+}
+
+extension POGOProtos_Map_Fort_SponsoredDetails.ImageTextCreative: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Map_Fort_SponsoredDetails.protoMessageName + ".ImageTextCreative"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .same(proto: "title"),
+    3: .same(proto: "description"),
+    4: .standard(proto: "preview_image_url"),
+    5: .standard(proto: "fullscreen_image_url"),
+    6: .standard(proto: "cta_link"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.name)
+      case 2: try decoder.decodeSingularStringField(value: &self.title)
+      case 3: try decoder.decodeSingularStringField(value: &self.description_p)
+      case 4: try decoder.decodeSingularStringField(value: &self.previewImageURL)
+      case 5: try decoder.decodeSingularStringField(value: &self.fullscreenImageURL)
+      case 6: try decoder.decodeSingularStringField(value: &self.ctaLink)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+    }
+    if !self.title.isEmpty {
+      try visitor.visitSingularStringField(value: self.title, fieldNumber: 2)
+    }
+    if !self.description_p.isEmpty {
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 3)
+    }
+    if !self.previewImageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.previewImageURL, fieldNumber: 4)
+    }
+    if !self.fullscreenImageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.fullscreenImageURL, fieldNumber: 5)
+    }
+    if !self.ctaLink.isEmpty {
+      try visitor.visitSingularStringField(value: self.ctaLink, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Map_Fort_SponsoredDetails.ImageTextCreative, rhs: POGOProtos_Map_Fort_SponsoredDetails.ImageTextCreative) -> Bool {
+    if lhs.name != rhs.name {return false}
+    if lhs.title != rhs.title {return false}
+    if lhs.description_p != rhs.description_p {return false}
+    if lhs.previewImageURL != rhs.previewImageURL {return false}
+    if lhs.fullscreenImageURL != rhs.fullscreenImageURL {return false}
+    if lhs.ctaLink != rhs.ctaLink {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }

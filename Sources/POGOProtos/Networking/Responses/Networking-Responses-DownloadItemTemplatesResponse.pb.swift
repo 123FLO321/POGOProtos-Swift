@@ -672,6 +672,33 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `projectVacation`. Subsequent reads from it will return its default value.
     public mutating func clearProjectVacation() {_uniqueStorage()._projectVacation = nil}
 
+    public var avatarGroupOrderSettings: POGOProtos_Settings_Master_AvatarGroupOrderSettings {
+      get {return _storage._avatarGroupOrderSettings ?? POGOProtos_Settings_Master_AvatarGroupOrderSettings()}
+      set {_uniqueStorage()._avatarGroupOrderSettings = newValue}
+    }
+    /// Returns true if `avatarGroupOrderSettings` has been explicitly set.
+    public var hasAvatarGroupOrderSettings: Bool {return _storage._avatarGroupOrderSettings != nil}
+    /// Clears the value of `avatarGroupOrderSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearAvatarGroupOrderSettings() {_uniqueStorage()._avatarGroupOrderSettings = nil}
+
+    public var monodepthSettings: POGOProtos_Settings_Master_MonodepthSettings {
+      get {return _storage._monodepthSettings ?? POGOProtos_Settings_Master_MonodepthSettings()}
+      set {_uniqueStorage()._monodepthSettings = newValue}
+    }
+    /// Returns true if `monodepthSettings` has been explicitly set.
+    public var hasMonodepthSettings: Bool {return _storage._monodepthSettings != nil}
+    /// Clears the value of `monodepthSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearMonodepthSettings() {_uniqueStorage()._monodepthSettings = nil}
+
+    public var raidSettingsProto: POGOProtos_Settings_Master_RaidClientSettings {
+      get {return _storage._raidSettingsProto ?? POGOProtos_Settings_Master_RaidClientSettings()}
+      set {_uniqueStorage()._raidSettingsProto = newValue}
+    }
+    /// Returns true if `raidSettingsProto` has been explicitly set.
+    public var hasRaidSettingsProto: Bool {return _storage._raidSettingsProto != nil}
+    /// Clears the value of `raidSettingsProto`. Subsequent reads from it will return its default value.
+    public mutating func clearRaidSettingsProto() {_uniqueStorage()._raidSettingsProto = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public struct ProjectVacation {
@@ -838,6 +865,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
     70: .standard(proto: "platypus_rollout_settings"),
     72: .standard(proto: "buddy_hunger_settings"),
     73: .standard(proto: "project_vacation"),
+    76: .standard(proto: "avatar_group_order_settings"),
+    78: .standard(proto: "monodepth_settings"),
+    81: .standard(proto: "raid_settings_proto"),
   ]
 
   fileprivate class _StorageClass {
@@ -908,6 +938,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
     var _platypusRolloutSettings: POGOProtos_Settings_Master_PlatypusRolloutSettings? = nil
     var _buddyHungerSettings: POGOProtos_Settings_Master_BuddyHungerSettings? = nil
     var _projectVacation: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate.ProjectVacation? = nil
+    var _avatarGroupOrderSettings: POGOProtos_Settings_Master_AvatarGroupOrderSettings? = nil
+    var _monodepthSettings: POGOProtos_Settings_Master_MonodepthSettings? = nil
+    var _raidSettingsProto: POGOProtos_Settings_Master_RaidClientSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -981,6 +1014,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
       _platypusRolloutSettings = source._platypusRolloutSettings
       _buddyHungerSettings = source._buddyHungerSettings
       _projectVacation = source._projectVacation
+      _avatarGroupOrderSettings = source._avatarGroupOrderSettings
+      _monodepthSettings = source._monodepthSettings
+      _raidSettingsProto = source._raidSettingsProto
     }
   }
 
@@ -1063,6 +1099,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
         case 70: try decoder.decodeSingularMessageField(value: &_storage._platypusRolloutSettings)
         case 72: try decoder.decodeSingularMessageField(value: &_storage._buddyHungerSettings)
         case 73: try decoder.decodeSingularMessageField(value: &_storage._projectVacation)
+        case 76: try decoder.decodeSingularMessageField(value: &_storage._avatarGroupOrderSettings)
+        case 78: try decoder.decodeSingularMessageField(value: &_storage._monodepthSettings)
+        case 81: try decoder.decodeSingularMessageField(value: &_storage._raidSettingsProto)
         default: break
         }
       }
@@ -1272,6 +1311,15 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
       if let v = _storage._projectVacation {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 73)
       }
+      if let v = _storage._avatarGroupOrderSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 76)
+      }
+      if let v = _storage._monodepthSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 78)
+      }
+      if let v = _storage._raidSettingsProto {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 81)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1348,6 +1396,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
         if _storage._platypusRolloutSettings != rhs_storage._platypusRolloutSettings {return false}
         if _storage._buddyHungerSettings != rhs_storage._buddyHungerSettings {return false}
         if _storage._projectVacation != rhs_storage._projectVacation {return false}
+        if _storage._avatarGroupOrderSettings != rhs_storage._avatarGroupOrderSettings {return false}
+        if _storage._monodepthSettings != rhs_storage._monodepthSettings {return false}
+        if _storage._raidSettingsProto != rhs_storage._raidSettingsProto {return false}
         return true
       }
       if !storagesAreEqual {return false}

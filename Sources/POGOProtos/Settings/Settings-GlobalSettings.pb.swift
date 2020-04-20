@@ -409,6 +409,24 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `ardkConfigSettings`. Subsequent reads from it will return its default value.
   public mutating func clearArdkConfigSettings() {_uniqueStorage()._ardkConfigSettings = nil}
 
+  public var enabledPokemon: POGOProtos_Settings_EnabledPokemonSettings {
+    get {return _storage._enabledPokemon ?? POGOProtos_Settings_EnabledPokemonSettings()}
+    set {_uniqueStorage()._enabledPokemon = newValue}
+  }
+  /// Returns true if `enabledPokemon` has been explicitly set.
+  public var hasEnabledPokemon: Bool {return _storage._enabledPokemon != nil}
+  /// Clears the value of `enabledPokemon`. Subsequent reads from it will return its default value.
+  public mutating func clearEnabledPokemon() {_uniqueStorage()._enabledPokemon = nil}
+
+  public var pokemonBulkUpgradeSettings: POGOProtos_Settings_PokemonBulkUpgradeSettings {
+    get {return _storage._pokemonBulkUpgradeSettings ?? POGOProtos_Settings_PokemonBulkUpgradeSettings()}
+    set {_uniqueStorage()._pokemonBulkUpgradeSettings = newValue}
+  }
+  /// Returns true if `pokemonBulkUpgradeSettings` has been explicitly set.
+  public var hasPokemonBulkUpgradeSettings: Bool {return _storage._pokemonBulkUpgradeSettings != nil}
+  /// Clears the value of `pokemonBulkUpgradeSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearPokemonBulkUpgradeSettings() {_uniqueStorage()._pokemonBulkUpgradeSettings = nil}
+
   public var plannedDowntimeSettings: POGOProtos_Settings_PlannedDowntimeSettings {
     get {return _storage._plannedDowntimeSettings ?? POGOProtos_Settings_PlannedDowntimeSettings()}
     set {_uniqueStorage()._plannedDowntimeSettings = newValue}
@@ -477,6 +495,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     45: .standard(proto: "gmt_settings"),
     47: .standard(proto: "use_local_time_action"),
     48: .standard(proto: "ardk_config_settings"),
+    49: .standard(proto: "enabled_pokemon"),
+    50: .standard(proto: "pokemon_bulk_upgrade_settings"),
     51: .standard(proto: "planned_downtime_settings"),
   ]
 
@@ -526,6 +546,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _gmtSettings: POGOProtos_Settings_GmtSettings? = nil
     var _useLocalTimeAction: Bool = false
     var _ardkConfigSettings: POGOProtos_Settings_ArdkConfigSettings? = nil
+    var _enabledPokemon: POGOProtos_Settings_EnabledPokemonSettings? = nil
+    var _pokemonBulkUpgradeSettings: POGOProtos_Settings_PokemonBulkUpgradeSettings? = nil
     var _plannedDowntimeSettings: POGOProtos_Settings_PlannedDowntimeSettings? = nil
 
     static let defaultInstance = _StorageClass()
@@ -578,6 +600,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _gmtSettings = source._gmtSettings
       _useLocalTimeAction = source._useLocalTimeAction
       _ardkConfigSettings = source._ardkConfigSettings
+      _enabledPokemon = source._enabledPokemon
+      _pokemonBulkUpgradeSettings = source._pokemonBulkUpgradeSettings
       _plannedDowntimeSettings = source._plannedDowntimeSettings
     }
   }
@@ -639,6 +663,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 45: try decoder.decodeSingularMessageField(value: &_storage._gmtSettings)
         case 47: try decoder.decodeSingularBoolField(value: &_storage._useLocalTimeAction)
         case 48: try decoder.decodeSingularMessageField(value: &_storage._ardkConfigSettings)
+        case 49: try decoder.decodeSingularMessageField(value: &_storage._enabledPokemon)
+        case 50: try decoder.decodeSingularMessageField(value: &_storage._pokemonBulkUpgradeSettings)
         case 51: try decoder.decodeSingularMessageField(value: &_storage._plannedDowntimeSettings)
         default: break
         }
@@ -783,6 +809,12 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._ardkConfigSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 48)
       }
+      if let v = _storage._enabledPokemon {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 49)
+      }
+      if let v = _storage._pokemonBulkUpgradeSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 50)
+      }
       if let v = _storage._plannedDowntimeSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 51)
       }
@@ -840,6 +872,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._gmtSettings != rhs_storage._gmtSettings {return false}
         if _storage._useLocalTimeAction != rhs_storage._useLocalTimeAction {return false}
         if _storage._ardkConfigSettings != rhs_storage._ardkConfigSettings {return false}
+        if _storage._enabledPokemon != rhs_storage._enabledPokemon {return false}
+        if _storage._pokemonBulkUpgradeSettings != rhs_storage._pokemonBulkUpgradeSettings {return false}
         if _storage._plannedDowntimeSettings != rhs_storage._plannedDowntimeSettings {return false}
         return true
       }

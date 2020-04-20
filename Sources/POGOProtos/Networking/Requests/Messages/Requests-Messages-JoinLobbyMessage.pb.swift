@@ -40,6 +40,8 @@ public struct POGOProtos_Networking_Requests_Messages_JoinLobbyMessage {
 
   public var gymLngDegrees: Double = 0
 
+  public var useRemotePass: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -60,6 +62,7 @@ extension POGOProtos_Networking_Requests_Messages_JoinLobbyMessage: SwiftProtobu
     6: .standard(proto: "player_lng_degrees"),
     7: .standard(proto: "gym_lat_degrees"),
     8: .standard(proto: "gym_lng_degrees"),
+    9: .standard(proto: "use_remote_pass"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -73,6 +76,7 @@ extension POGOProtos_Networking_Requests_Messages_JoinLobbyMessage: SwiftProtobu
       case 6: try decoder.decodeSingularDoubleField(value: &self.playerLngDegrees)
       case 7: try decoder.decodeSingularDoubleField(value: &self.gymLatDegrees)
       case 8: try decoder.decodeSingularDoubleField(value: &self.gymLngDegrees)
+      case 9: try decoder.decodeSingularBoolField(value: &self.useRemotePass)
       default: break
       }
     }
@@ -103,6 +107,9 @@ extension POGOProtos_Networking_Requests_Messages_JoinLobbyMessage: SwiftProtobu
     if self.gymLngDegrees != 0 {
       try visitor.visitSingularDoubleField(value: self.gymLngDegrees, fieldNumber: 8)
     }
+    if self.useRemotePass != false {
+      try visitor.visitSingularBoolField(value: self.useRemotePass, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -115,6 +122,7 @@ extension POGOProtos_Networking_Requests_Messages_JoinLobbyMessage: SwiftProtobu
     if lhs.playerLngDegrees != rhs.playerLngDegrees {return false}
     if lhs.gymLatDegrees != rhs.gymLatDegrees {return false}
     if lhs.gymLngDegrees != rhs.gymLngDegrees {return false}
+    if lhs.useRemotePass != rhs.useRemotePass {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

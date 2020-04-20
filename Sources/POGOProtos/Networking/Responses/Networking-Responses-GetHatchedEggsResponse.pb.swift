@@ -38,6 +38,8 @@ public struct POGOProtos_Networking_Responses_GetHatchedEggsResponse {
 
   public var hatchedPokemon: [POGOProtos_Data_PokemonData] = []
 
+  public var xlCandyAwarded: [Int32] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -57,6 +59,7 @@ extension POGOProtos_Networking_Responses_GetHatchedEggsResponse: SwiftProtobuf.
     5: .standard(proto: "stardust_awarded"),
     6: .standard(proto: "egg_km_walked"),
     7: .standard(proto: "hatched_pokemon"),
+    8: .standard(proto: "xl_candy_awarded"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -69,6 +72,7 @@ extension POGOProtos_Networking_Responses_GetHatchedEggsResponse: SwiftProtobuf.
       case 5: try decoder.decodeRepeatedInt32Field(value: &self.stardustAwarded)
       case 6: try decoder.decodeRepeatedFloatField(value: &self.eggKmWalked)
       case 7: try decoder.decodeRepeatedMessageField(value: &self.hatchedPokemon)
+      case 8: try decoder.decodeRepeatedInt32Field(value: &self.xlCandyAwarded)
       default: break
       }
     }
@@ -96,6 +100,9 @@ extension POGOProtos_Networking_Responses_GetHatchedEggsResponse: SwiftProtobuf.
     if !self.hatchedPokemon.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.hatchedPokemon, fieldNumber: 7)
     }
+    if !self.xlCandyAwarded.isEmpty {
+      try visitor.visitPackedInt32Field(value: self.xlCandyAwarded, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -107,6 +114,7 @@ extension POGOProtos_Networking_Responses_GetHatchedEggsResponse: SwiftProtobuf.
     if lhs.stardustAwarded != rhs.stardustAwarded {return false}
     if lhs.eggKmWalked != rhs.eggKmWalked {return false}
     if lhs.hatchedPokemon != rhs.hatchedPokemon {return false}
+    if lhs.xlCandyAwarded != rhs.xlCandyAwarded {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

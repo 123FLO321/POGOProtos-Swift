@@ -38,6 +38,8 @@ public struct POGOProtos_Settings_InventorySettings {
 
   public var teamChangeItemResetPeriodInDays: Int64 = 0
 
+  public var maxItemBoostDurationMs: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -57,6 +59,7 @@ extension POGOProtos_Settings_InventorySettings: SwiftProtobuf.Message, SwiftPro
     5: .standard(proto: "base_eggs"),
     6: .standard(proto: "max_team_changes"),
     7: .standard(proto: "team_change_item_reset_period_in_days"),
+    8: .standard(proto: "max_item_boost_duration_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -69,6 +72,7 @@ extension POGOProtos_Settings_InventorySettings: SwiftProtobuf.Message, SwiftPro
       case 5: try decoder.decodeSingularInt32Field(value: &self.baseEggs)
       case 6: try decoder.decodeSingularInt32Field(value: &self.maxTeamChanges)
       case 7: try decoder.decodeSingularInt64Field(value: &self.teamChangeItemResetPeriodInDays)
+      case 8: try decoder.decodeSingularInt64Field(value: &self.maxItemBoostDurationMs)
       default: break
       }
     }
@@ -96,6 +100,9 @@ extension POGOProtos_Settings_InventorySettings: SwiftProtobuf.Message, SwiftPro
     if self.teamChangeItemResetPeriodInDays != 0 {
       try visitor.visitSingularInt64Field(value: self.teamChangeItemResetPeriodInDays, fieldNumber: 7)
     }
+    if self.maxItemBoostDurationMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.maxItemBoostDurationMs, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -107,6 +114,7 @@ extension POGOProtos_Settings_InventorySettings: SwiftProtobuf.Message, SwiftPro
     if lhs.baseEggs != rhs.baseEggs {return false}
     if lhs.maxTeamChanges != rhs.maxTeamChanges {return false}
     if lhs.teamChangeItemResetPeriodInDays != rhs.teamChangeItemResetPeriodInDays {return false}
+    if lhs.maxItemBoostDurationMs != rhs.maxItemBoostDurationMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

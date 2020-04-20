@@ -63,6 +63,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case retentionLuckyEgg // = 42
   case retentionAdvsyncRewards // = 43
   case retentionEggsNotIncubating // = 44
+  case retentionPowerWalk // = 45
+  case retentionFunWithFriends // = 46
+  case buddyRemoteGift // = 47
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -113,6 +116,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 42: self = .retentionLuckyEgg
     case 43: self = .retentionAdvsyncRewards
     case 44: self = .retentionEggsNotIncubating
+    case 45: self = .retentionPowerWalk
+    case 46: self = .retentionFunWithFriends
+    case 47: self = .buddyRemoteGift
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -161,6 +167,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .retentionLuckyEgg: return 42
     case .retentionAdvsyncRewards: return 43
     case .retentionEggsNotIncubating: return 44
+    case .retentionPowerWalk: return 45
+    case .retentionFunWithFriends: return 46
+    case .buddyRemoteGift: return 47
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -214,6 +223,9 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .retentionLuckyEgg,
     .retentionAdvsyncRewards,
     .retentionEggsNotIncubating,
+    .retentionPowerWalk,
+    .retentionFunWithFriends,
+    .buddyRemoteGift,
   ]
 }
 
@@ -265,5 +277,8 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     42: .same(proto: "RETENTION_LUCKY_EGG"),
     43: .same(proto: "RETENTION_ADVSYNC_REWARDS"),
     44: .same(proto: "RETENTION_EGGS_NOT_INCUBATING"),
+    45: .same(proto: "RETENTION_POWER_WALK"),
+    46: .same(proto: "RETENTION_FUN_WITH_FRIENDS"),
+    47: .same(proto: "BUDDY_REMOTE_GIFT"),
   ]
 }

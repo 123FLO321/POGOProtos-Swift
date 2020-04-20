@@ -28,6 +28,8 @@ public struct POGOProtos_Data_Analytics_ClientTelemetryBatch {
 
   public var events: [POGOProtos_Data_Analytics_ClientTelemetryRecord] = []
 
+  public var metrics: [POGOProtos_Data_Analytics_ClientTelemetryRecord] = []
+
   public var apiVersion: String = String()
 
   public var messageVersion: String = String()
@@ -98,8 +100,9 @@ extension POGOProtos_Data_Analytics_ClientTelemetryBatch: SwiftProtobuf.Message,
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "telemetry_scope_id"),
     2: .same(proto: "events"),
-    3: .standard(proto: "api_version"),
-    4: .standard(proto: "message_version"),
+    3: .same(proto: "metrics"),
+    4: .standard(proto: "api_version"),
+    5: .standard(proto: "message_version"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -107,8 +110,9 @@ extension POGOProtos_Data_Analytics_ClientTelemetryBatch: SwiftProtobuf.Message,
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.telemetryScopeID)
       case 2: try decoder.decodeRepeatedMessageField(value: &self.events)
-      case 3: try decoder.decodeSingularStringField(value: &self.apiVersion)
-      case 4: try decoder.decodeSingularStringField(value: &self.messageVersion)
+      case 3: try decoder.decodeRepeatedMessageField(value: &self.metrics)
+      case 4: try decoder.decodeSingularStringField(value: &self.apiVersion)
+      case 5: try decoder.decodeSingularStringField(value: &self.messageVersion)
       default: break
       }
     }
@@ -121,11 +125,14 @@ extension POGOProtos_Data_Analytics_ClientTelemetryBatch: SwiftProtobuf.Message,
     if !self.events.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.events, fieldNumber: 2)
     }
+    if !self.metrics.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.metrics, fieldNumber: 3)
+    }
     if !self.apiVersion.isEmpty {
-      try visitor.visitSingularStringField(value: self.apiVersion, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.apiVersion, fieldNumber: 4)
     }
     if !self.messageVersion.isEmpty {
-      try visitor.visitSingularStringField(value: self.messageVersion, fieldNumber: 4)
+      try visitor.visitSingularStringField(value: self.messageVersion, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -133,6 +140,7 @@ extension POGOProtos_Data_Analytics_ClientTelemetryBatch: SwiftProtobuf.Message,
   public static func ==(lhs: POGOProtos_Data_Analytics_ClientTelemetryBatch, rhs: POGOProtos_Data_Analytics_ClientTelemetryBatch) -> Bool {
     if lhs.telemetryScopeID != rhs.telemetryScopeID {return false}
     if lhs.events != rhs.events {return false}
+    if lhs.metrics != rhs.metrics {return false}
     if lhs.apiVersion != rhs.apiVersion {return false}
     if lhs.messageVersion != rhs.messageVersion {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

@@ -130,6 +130,14 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
         set {_uniqueStorage()._section = .upNext(newValue)}
       }
 
+      public var timedQuest: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedQuestSection {
+        get {
+          if case .timedQuest(let v)? = _storage._section {return v}
+          return POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedQuestSection()
+        }
+        set {_uniqueStorage()._section = .timedQuest(newValue)}
+      }
+
       public var unknownFields = SwiftProtobuf.UnknownStorage()
 
       public enum OneOf_Section: Equatable {
@@ -138,6 +146,7 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
         case streaks(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.DailyStreaks)
         case event(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.EventSection)
         case upNext(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.UpNextSection)
+        case timedQuest(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedQuestSection)
 
       #if !swift(>=4.1)
         public static func ==(lhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.OneOf_Section, rhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.OneOf_Section) -> Bool {
@@ -147,10 +156,23 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
           case (.streaks(let l), .streaks(let r)): return l == r
           case (.event(let l), .event(let r)): return l == r
           case (.upNext(let l), .upNext(let r)): return l == r
+          case (.timedQuest(let l), .timedQuest(let r)): return l == r
           default: return false
           }
         }
       #endif
+      }
+
+      public struct TimedQuestSection {
+        // SwiftProtobuf.Message conformance is added in an extension below. See the
+        // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+        // methods supported on all messages.
+
+        public var questID: String = String()
+
+        public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+        public init() {}
       }
 
       public struct DailyStreaks {
@@ -531,6 +553,7 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
     3: .same(proto: "streaks"),
     4: .same(proto: "event"),
     5: .standard(proto: "up_next"),
+    6: .standard(proto: "timed_quest"),
   ]
 
   fileprivate class _StorageClass {
@@ -597,6 +620,14 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._section = .upNext(v)}
+        case 6:
+          var v: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedQuestSection?
+          if let current = _storage._section {
+            try decoder.handleConflictingOneOf()
+            if case .timedQuest(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._section = .timedQuest(v)}
         default: break
         }
       }
@@ -616,6 +647,8 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
       case .upNext(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+      case .timedQuest(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
       case nil: break
       }
     }
@@ -632,6 +665,35 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedQuestSection: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.protoMessageName + ".TimedQuestSection"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "quest_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.questID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.questID.isEmpty {
+      try visitor.visitSingularStringField(value: self.questID, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedQuestSection, rhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedQuestSection) -> Bool {
+    if lhs.questID != rhs.questID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

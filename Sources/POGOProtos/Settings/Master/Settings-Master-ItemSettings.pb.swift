@@ -166,6 +166,11 @@ public struct POGOProtos_Settings_Master_ItemSettings {
   /// Clears the value of `globalEventTicket`. Subsequent reads from it will return its default value.
   public mutating func clearGlobalEventTicket() {_uniqueStorage()._globalEventTicket = nil}
 
+  public var ignoreInventorySpace: Bool {
+    get {return _storage._ignoreInventorySpace}
+    set {_uniqueStorage()._ignoreInventorySpace = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -198,6 +203,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
     16: .standard(proto: "stardust_boost"),
     17: .standard(proto: "incident_ticket"),
     18: .standard(proto: "global_event_ticket"),
+    19: .standard(proto: "ignore_inventory_space"),
   ]
 
   fileprivate class _StorageClass {
@@ -219,6 +225,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
     var _stardustBoost: POGOProtos_Settings_Master_Item_StardustBoostAttributes? = nil
     var _incidentTicket: POGOProtos_Settings_Master_Item_IncidentTicketAttributes? = nil
     var _globalEventTicket: POGOProtos_Settings_Master_Item_GlobalEventTicketAttributes? = nil
+    var _ignoreInventorySpace: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -243,6 +250,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
       _stardustBoost = source._stardustBoost
       _incidentTicket = source._incidentTicket
       _globalEventTicket = source._globalEventTicket
+      _ignoreInventorySpace = source._ignoreInventorySpace
     }
   }
 
@@ -276,6 +284,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
         case 16: try decoder.decodeSingularMessageField(value: &_storage._stardustBoost)
         case 17: try decoder.decodeSingularMessageField(value: &_storage._incidentTicket)
         case 18: try decoder.decodeSingularMessageField(value: &_storage._globalEventTicket)
+        case 19: try decoder.decodeSingularBoolField(value: &_storage._ignoreInventorySpace)
         default: break
         }
       }
@@ -338,6 +347,9 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
       if let v = _storage._globalEventTicket {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 18)
       }
+      if _storage._ignoreInventorySpace != false {
+        try visitor.visitSingularBoolField(value: _storage._ignoreInventorySpace, fieldNumber: 19)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -365,6 +377,7 @@ extension POGOProtos_Settings_Master_ItemSettings: SwiftProtobuf.Message, SwiftP
         if _storage._stardustBoost != rhs_storage._stardustBoost {return false}
         if _storage._incidentTicket != rhs_storage._incidentTicket {return false}
         if _storage._globalEventTicket != rhs_storage._globalEventTicket {return false}
+        if _storage._ignoreInventorySpace != rhs_storage._ignoreInventorySpace {return false}
         return true
       }
       if !storagesAreEqual {return false}

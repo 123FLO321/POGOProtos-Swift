@@ -53,6 +53,30 @@ public struct POGOProtos_Data_Telemetry_ApprovedCommonTelemetry {
     set {_uniqueStorage()._telemetryData = .shopView(newValue)}
   }
 
+  public var poiSubmissionTelemetry: POGOProtos_Data_Telemetry_PoiSubmissionTelemetry {
+    get {
+      if case .poiSubmissionTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PoiSubmissionTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .poiSubmissionTelemetry(newValue)}
+  }
+
+  public var poiSubmissionPhotoUploadErrorTelemetry: POGOProtos_Data_Telemetry_PoiSubmissionPhotoUploadErrorTelemetry {
+    get {
+      if case .poiSubmissionPhotoUploadErrorTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PoiSubmissionPhotoUploadErrorTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .poiSubmissionPhotoUploadErrorTelemetry(newValue)}
+  }
+
+  public var logIn: POGOProtos_Data_Telemetry_CommonTelemetryLogIn {
+    get {
+      if case .logIn(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_CommonTelemetryLogIn()
+    }
+    set {_uniqueStorage()._telemetryData = .logIn(newValue)}
+  }
+
   public var serverData: POGOProtos_Data_Telemetry_ServerRecordMetadata {
     get {return _storage._serverData ?? POGOProtos_Data_Telemetry_ServerRecordMetadata()}
     set {_uniqueStorage()._serverData = newValue}
@@ -77,6 +101,9 @@ public struct POGOProtos_Data_Telemetry_ApprovedCommonTelemetry {
     case bootTime(POGOProtos_Data_Telemetry_CommonTelemetryBootTime)
     case shopClick(POGOProtos_Data_Telemetry_CommonTelemetryShopClick)
     case shopView(POGOProtos_Data_Telemetry_CommonTelemetryShopView)
+    case poiSubmissionTelemetry(POGOProtos_Data_Telemetry_PoiSubmissionTelemetry)
+    case poiSubmissionPhotoUploadErrorTelemetry(POGOProtos_Data_Telemetry_PoiSubmissionPhotoUploadErrorTelemetry)
+    case logIn(POGOProtos_Data_Telemetry_CommonTelemetryLogIn)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Telemetry_ApprovedCommonTelemetry.OneOf_TelemetryData, rhs: POGOProtos_Data_Telemetry_ApprovedCommonTelemetry.OneOf_TelemetryData) -> Bool {
@@ -84,6 +111,9 @@ public struct POGOProtos_Data_Telemetry_ApprovedCommonTelemetry {
       case (.bootTime(let l), .bootTime(let r)): return l == r
       case (.shopClick(let l), .shopClick(let r)): return l == r
       case (.shopView(let l), .shopView(let r)): return l == r
+      case (.poiSubmissionTelemetry(let l), .poiSubmissionTelemetry(let r)): return l == r
+      case (.poiSubmissionPhotoUploadErrorTelemetry(let l), .poiSubmissionPhotoUploadErrorTelemetry(let r)): return l == r
+      case (.logIn(let l), .logIn(let r)): return l == r
       default: return false
       }
     }
@@ -105,8 +135,11 @@ extension POGOProtos_Data_Telemetry_ApprovedCommonTelemetry: SwiftProtobuf.Messa
     1: .standard(proto: "boot_time"),
     2: .standard(proto: "shop_click"),
     3: .standard(proto: "shop_view"),
-    4: .standard(proto: "server_data"),
-    5: .standard(proto: "common_filters"),
+    4: .standard(proto: "poi_submission_telemetry"),
+    5: .standard(proto: "poi_submission_photo_upload_error_telemetry"),
+    6: .standard(proto: "log_in"),
+    7: .standard(proto: "server_data"),
+    8: .standard(proto: "common_filters"),
   ]
 
   fileprivate class _StorageClass {
@@ -161,8 +194,32 @@ extension POGOProtos_Data_Telemetry_ApprovedCommonTelemetry: SwiftProtobuf.Messa
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .shopView(v)}
-        case 4: try decoder.decodeSingularMessageField(value: &_storage._serverData)
-        case 5: try decoder.decodeSingularMessageField(value: &_storage._commonFilters)
+        case 4:
+          var v: POGOProtos_Data_Telemetry_PoiSubmissionTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .poiSubmissionTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .poiSubmissionTelemetry(v)}
+        case 5:
+          var v: POGOProtos_Data_Telemetry_PoiSubmissionPhotoUploadErrorTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .poiSubmissionPhotoUploadErrorTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .poiSubmissionPhotoUploadErrorTelemetry(v)}
+        case 6:
+          var v: POGOProtos_Data_Telemetry_CommonTelemetryLogIn?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .logIn(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .logIn(v)}
+        case 7: try decoder.decodeSingularMessageField(value: &_storage._serverData)
+        case 8: try decoder.decodeSingularMessageField(value: &_storage._commonFilters)
         default: break
         }
       }
@@ -178,13 +235,19 @@ extension POGOProtos_Data_Telemetry_ApprovedCommonTelemetry: SwiftProtobuf.Messa
         try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
       case .shopView(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+      case .poiSubmissionTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+      case .poiSubmissionPhotoUploadErrorTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+      case .logIn(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
       case nil: break
       }
       if let v = _storage._serverData {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
       }
       if let v = _storage._commonFilters {
-        try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
