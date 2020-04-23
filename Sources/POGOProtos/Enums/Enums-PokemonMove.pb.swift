@@ -295,6 +295,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case payback // = 333
   case rockWrecker // = 334
   case aeroblast // = 335
+  case technoBlastNormal // = 336
+  case technoBlastBurn // = 337
+  case technoBlastChill // = 338
+  case technoBlastWater // = 339
+  case technoBlastShock // = 340
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -577,6 +582,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 333: self = .payback
     case 334: self = .rockWrecker
     case 335: self = .aeroblast
+    case 336: self = .technoBlastNormal
+    case 337: self = .technoBlastBurn
+    case 338: self = .technoBlastChill
+    case 339: self = .technoBlastWater
+    case 340: self = .technoBlastShock
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -857,6 +867,11 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .payback: return 333
     case .rockWrecker: return 334
     case .aeroblast: return 335
+    case .technoBlastNormal: return 336
+    case .technoBlastBurn: return 337
+    case .technoBlastChill: return 338
+    case .technoBlastWater: return 339
+    case .technoBlastShock: return 340
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -1142,6 +1157,11 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .payback,
     .rockWrecker,
     .aeroblast,
+    .technoBlastNormal,
+    .technoBlastBurn,
+    .technoBlastChill,
+    .technoBlastWater,
+    .technoBlastShock,
   ]
 }
 
@@ -1425,5 +1445,10 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     333: .same(proto: "PAYBACK"),
     334: .same(proto: "ROCK_WRECKER"),
     335: .same(proto: "AEROBLAST"),
+    336: .same(proto: "TECHNO_BLAST_NORMAL"),
+    337: .same(proto: "TECHNO_BLAST_BURN"),
+    338: .same(proto: "TECHNO_BLAST_CHILL"),
+    339: .same(proto: "TECHNO_BLAST_WATER"),
+    340: .same(proto: "TECHNO_BLAST_SHOCK"),
   ]
 }

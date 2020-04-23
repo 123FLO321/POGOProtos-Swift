@@ -32,6 +32,10 @@ public struct POGOProtos_Settings_ArdkConfigSettings {
 
   public var monodepthContexts: [POGOProtos_Settings_ArdkConfigSettings.ArContext] = []
 
+  public var iosMonodepthModelURL: String = String()
+
+  public var androidMonodepthModelURL: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum ArContext: SwiftProtobuf.Enum {
@@ -100,6 +104,8 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
     2: .standard(proto: "monodpeth_model_url"),
     3: .standard(proto: "monodepth_devices"),
     4: .standard(proto: "monodepth_contexts"),
+    5: .standard(proto: "ios_monodepth_model_url"),
+    6: .standard(proto: "android_monodepth_model_url"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -109,6 +115,8 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
       case 2: try decoder.decodeSingularStringField(value: &self.monodpethModelURL)
       case 3: try decoder.decodeRepeatedStringField(value: &self.monodepthDevices)
       case 4: try decoder.decodeRepeatedEnumField(value: &self.monodepthContexts)
+      case 5: try decoder.decodeSingularStringField(value: &self.iosMonodepthModelURL)
+      case 6: try decoder.decodeSingularStringField(value: &self.androidMonodepthModelURL)
       default: break
       }
     }
@@ -127,6 +135,12 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
     if !self.monodepthContexts.isEmpty {
       try visitor.visitPackedEnumField(value: self.monodepthContexts, fieldNumber: 4)
     }
+    if !self.iosMonodepthModelURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.iosMonodepthModelURL, fieldNumber: 5)
+    }
+    if !self.androidMonodepthModelURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.androidMonodepthModelURL, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -135,6 +149,8 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
     if lhs.monodpethModelURL != rhs.monodpethModelURL {return false}
     if lhs.monodepthDevices != rhs.monodepthDevices {return false}
     if lhs.monodepthContexts != rhs.monodepthContexts {return false}
+    if lhs.iosMonodepthModelURL != rhs.iosMonodepthModelURL {return false}
+    if lhs.androidMonodepthModelURL != rhs.androidMonodepthModelURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

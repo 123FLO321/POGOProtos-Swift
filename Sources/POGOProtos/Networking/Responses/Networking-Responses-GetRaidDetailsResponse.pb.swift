@@ -101,6 +101,11 @@ public struct POGOProtos_Networking_Responses_GetRaidDetailsResponse {
     set {_uniqueStorage()._displayHighUserWarning = newValue}
   }
 
+  public var numFriendInvitesRemaining: Int32 {
+    get {return _storage._numFriendInvitesRemaining}
+    set {_uniqueStorage()._numFriendInvitesRemaining = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -188,6 +193,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
     11: .standard(proto: "server_ms"),
     12: .standard(proto: "server_instance"),
     13: .standard(proto: "display_high_user_warning"),
+    14: .standard(proto: "num_friend_invites_remaining"),
   ]
 
   fileprivate class _StorageClass {
@@ -204,6 +210,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
     var _serverMs: Int64 = 0
     var _serverInstance: Int32 = 0
     var _displayHighUserWarning: Bool = false
+    var _numFriendInvitesRemaining: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -223,6 +230,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
       _serverMs = source._serverMs
       _serverInstance = source._serverInstance
       _displayHighUserWarning = source._displayHighUserWarning
+      _numFriendInvitesRemaining = source._numFriendInvitesRemaining
     }
   }
 
@@ -251,6 +259,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
         case 11: try decoder.decodeSingularInt64Field(value: &_storage._serverMs)
         case 12: try decoder.decodeSingularInt32Field(value: &_storage._serverInstance)
         case 13: try decoder.decodeSingularBoolField(value: &_storage._displayHighUserWarning)
+        case 14: try decoder.decodeSingularInt32Field(value: &_storage._numFriendInvitesRemaining)
         default: break
         }
       }
@@ -298,6 +307,9 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
       if _storage._displayHighUserWarning != false {
         try visitor.visitSingularBoolField(value: _storage._displayHighUserWarning, fieldNumber: 13)
       }
+      if _storage._numFriendInvitesRemaining != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numFriendInvitesRemaining, fieldNumber: 14)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -320,6 +332,7 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
         if _storage._serverMs != rhs_storage._serverMs {return false}
         if _storage._serverInstance != rhs_storage._serverInstance {return false}
         if _storage._displayHighUserWarning != rhs_storage._displayHighUserWarning {return false}
+        if _storage._numFriendInvitesRemaining != rhs_storage._numFriendInvitesRemaining {return false}
         return true
       }
       if !storagesAreEqual {return false}

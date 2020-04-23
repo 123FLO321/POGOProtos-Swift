@@ -69,6 +69,12 @@ public enum POGOProtos_Enums_ActivityType: SwiftProtobuf.Enum {
   case activityRaidLevel5AdditionalXp // = 46
   case activityHatchEggShadow // = 47
   case activityHatchEggGift // = 48
+  case activityRemoteDefeatRaidPokemon // = 49
+  case activityRemoteRaidLevel1AdditionalXp // = 50
+  case activityRemoteRaidLevel2AdditionalXp // = 51
+  case activityRemoteRaidLevel3AdditionalXp // = 52
+  case activityRemoteRaidLevel4AdditionalXp // = 53
+  case activityRemoteRaidLevel5AdditionalXp // = 54
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -125,6 +131,12 @@ public enum POGOProtos_Enums_ActivityType: SwiftProtobuf.Enum {
     case 46: self = .activityRaidLevel5AdditionalXp
     case 47: self = .activityHatchEggShadow
     case 48: self = .activityHatchEggGift
+    case 49: self = .activityRemoteDefeatRaidPokemon
+    case 50: self = .activityRemoteRaidLevel1AdditionalXp
+    case 51: self = .activityRemoteRaidLevel2AdditionalXp
+    case 52: self = .activityRemoteRaidLevel3AdditionalXp
+    case 53: self = .activityRemoteRaidLevel4AdditionalXp
+    case 54: self = .activityRemoteRaidLevel5AdditionalXp
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -179,6 +191,12 @@ public enum POGOProtos_Enums_ActivityType: SwiftProtobuf.Enum {
     case .activityRaidLevel5AdditionalXp: return 46
     case .activityHatchEggShadow: return 47
     case .activityHatchEggGift: return 48
+    case .activityRemoteDefeatRaidPokemon: return 49
+    case .activityRemoteRaidLevel1AdditionalXp: return 50
+    case .activityRemoteRaidLevel2AdditionalXp: return 51
+    case .activityRemoteRaidLevel3AdditionalXp: return 52
+    case .activityRemoteRaidLevel4AdditionalXp: return 53
+    case .activityRemoteRaidLevel5AdditionalXp: return 54
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -238,6 +256,12 @@ extension POGOProtos_Enums_ActivityType: CaseIterable {
     .activityRaidLevel5AdditionalXp,
     .activityHatchEggShadow,
     .activityHatchEggGift,
+    .activityRemoteDefeatRaidPokemon,
+    .activityRemoteRaidLevel1AdditionalXp,
+    .activityRemoteRaidLevel2AdditionalXp,
+    .activityRemoteRaidLevel3AdditionalXp,
+    .activityRemoteRaidLevel4AdditionalXp,
+    .activityRemoteRaidLevel5AdditionalXp,
   ]
 }
 
@@ -295,5 +319,11 @@ extension POGOProtos_Enums_ActivityType: SwiftProtobuf._ProtoNameProviding {
     46: .same(proto: "ACTIVITY_RAID_LEVEL_5_ADDITIONAL_XP"),
     47: .same(proto: "ACTIVITY_HATCH_EGG_SHADOW"),
     48: .same(proto: "ACTIVITY_HATCH_EGG_GIFT"),
+    49: .same(proto: "ACTIVITY_REMOTE_DEFEAT_RAID_POKEMON"),
+    50: .same(proto: "ACTIVITY_REMOTE_RAID_LEVEL_1_ADDITIONAL_XP"),
+    51: .same(proto: "ACTIVITY_REMOTE_RAID_LEVEL_2_ADDITIONAL_XP"),
+    52: .same(proto: "ACTIVITY_REMOTE_RAID_LEVEL_3_ADDITIONAL_XP"),
+    53: .same(proto: "ACTIVITY_REMOTE_RAID_LEVEL_4_ADDITIONAL_XP"),
+    54: .same(proto: "ACTIVITY_REMOTE_RAID_LEVEL_5_ADDITIONAL_XP"),
   ]
 }

@@ -561,6 +561,12 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
 
   /// Implemented
   case getTodayView // = 1501
+
+  /// Implemented
+  case remoteGiftPing // = 1503
+
+  /// Implemented
+  case sendRaidInvitation // = 1504
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -749,6 +755,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1457: self = .joinBuddyMultiplayerSession
     case 1458: self = .leaveBuddyMultiplayerSession
     case 1501: self = .getTodayView
+    case 1503: self = .remoteGiftPing
+    case 1504: self = .sendRaidInvitation
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -935,6 +943,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .joinBuddyMultiplayerSession: return 1457
     case .leaveBuddyMultiplayerSession: return 1458
     case .getTodayView: return 1501
+    case .remoteGiftPing: return 1503
+    case .sendRaidInvitation: return 1504
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -1126,6 +1136,8 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .joinBuddyMultiplayerSession,
     .leaveBuddyMultiplayerSession,
     .getTodayView,
+    .remoteGiftPing,
+    .sendRaidInvitation,
   ]
 }
 
@@ -1315,5 +1327,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1457: .same(proto: "JOIN_BUDDY_MULTIPLAYER_SESSION"),
     1458: .same(proto: "LEAVE_BUDDY_MULTIPLAYER_SESSION"),
     1501: .same(proto: "GET_TODAY_VIEW"),
+    1503: .same(proto: "REMOTE_GIFT_PING"),
+    1504: .same(proto: "SEND_RAID_INVITATION"),
   ]
 }

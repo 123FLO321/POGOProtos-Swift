@@ -70,6 +70,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
   case numVsSeekerCharges // = 1037
   case seasonNumber // = 1038
   case poiPasscodeRedemptionResponse // = 1039
+  case giftboxCount // = 1040
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -127,6 +128,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case 1037: self = .numVsSeekerCharges
     case 1038: self = .seasonNumber
     case 1039: self = .poiPasscodeRedemptionResponse
+    case 1040: self = .giftboxCount
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -182,6 +184,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case .numVsSeekerCharges: return 1037
     case .seasonNumber: return 1038
     case .poiPasscodeRedemptionResponse: return 1039
+    case .giftboxCount: return 1040
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -242,6 +245,7 @@ extension POGOProtos_Enums_VariableName: CaseIterable {
     .numVsSeekerCharges,
     .seasonNumber,
     .poiPasscodeRedemptionResponse,
+    .giftboxCount,
   ]
 }
 
@@ -300,5 +304,6 @@ extension POGOProtos_Enums_VariableName: SwiftProtobuf._ProtoNameProviding {
     1037: .same(proto: "NUM_VS_SEEKER_CHARGES"),
     1038: .same(proto: "SEASON_NUMBER"),
     1039: .same(proto: "POI_PASSCODE_REDEMPTION_RESPONSE"),
+    1040: .same(proto: "GIFTBOX_COUNT"),
   ]
 }

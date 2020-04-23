@@ -273,6 +273,9 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
             case teamRocket // = 21
             case trade // = 22
             case transferCandy // = 23
+            case battle // = 24
+            case xp // = 25
+            case shop // = 26
             case UNRECOGNIZED(Int)
 
             public init() {
@@ -305,6 +308,9 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
               case 21: self = .teamRocket
               case 22: self = .trade
               case 23: self = .transferCandy
+              case 24: self = .battle
+              case 25: self = .xp
+              case 26: self = .shop
               default: self = .UNRECOGNIZED(rawValue)
               }
             }
@@ -335,6 +341,9 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
               case .teamRocket: return 21
               case .trade: return 22
               case .transferCandy: return 23
+              case .battle: return 24
+              case .xp: return 25
+              case .shop: return 26
               case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
               }
             }
@@ -921,6 +930,9 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
     21: .same(proto: "TEAM_ROCKET"),
     22: .same(proto: "TRADE"),
     23: .same(proto: "TRANSFER_CANDY"),
+    24: .same(proto: "BATTLE"),
+    25: .same(proto: "XP"),
+    26: .same(proto: "SHOP"),
   ]
 }
 

@@ -66,6 +66,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case retentionPowerWalk // = 45
   case retentionFunWithFriends // = 46
   case buddyRemoteGift // = 47
+  case bgmodeBuddyRemoteGift // = 48
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -119,6 +120,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 45: self = .retentionPowerWalk
     case 46: self = .retentionFunWithFriends
     case 47: self = .buddyRemoteGift
+    case 48: self = .bgmodeBuddyRemoteGift
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -170,6 +172,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .retentionPowerWalk: return 45
     case .retentionFunWithFriends: return 46
     case .buddyRemoteGift: return 47
+    case .bgmodeBuddyRemoteGift: return 48
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -226,6 +229,7 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .retentionPowerWalk,
     .retentionFunWithFriends,
     .buddyRemoteGift,
+    .bgmodeBuddyRemoteGift,
   ]
 }
 
@@ -280,5 +284,6 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     45: .same(proto: "RETENTION_POWER_WALK"),
     46: .same(proto: "RETENTION_FUN_WITH_FRIENDS"),
     47: .same(proto: "BUDDY_REMOTE_GIFT"),
+    48: .same(proto: "BGMODE_BUDDY_REMOTE_GIFT"),
   ]
 }

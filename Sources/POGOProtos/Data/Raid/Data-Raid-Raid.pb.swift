@@ -44,6 +44,10 @@ public struct POGOProtos_Data_Raid_Raid {
 
   public var completedBattleMs: Int64 = 0
 
+  public var numFriendInvites: Int32 = 0
+
+  public var isRemote: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -66,6 +70,8 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
     8: .standard(proto: "received_default_rewards"),
     9: .standard(proto: "incremented_raid_friends"),
     10: .standard(proto: "completed_battle_ms"),
+    11: .standard(proto: "num_friend_invites"),
+    12: .standard(proto: "is_remote"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -81,6 +87,8 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
       case 8: try decoder.decodeSingularBoolField(value: &self.receivedDefaultRewards)
       case 9: try decoder.decodeSingularBoolField(value: &self.incrementedRaidFriends)
       case 10: try decoder.decodeSingularInt64Field(value: &self.completedBattleMs)
+      case 11: try decoder.decodeSingularInt32Field(value: &self.numFriendInvites)
+      case 12: try decoder.decodeSingularBoolField(value: &self.isRemote)
       default: break
       }
     }
@@ -117,6 +125,12 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if self.completedBattleMs != 0 {
       try visitor.visitSingularInt64Field(value: self.completedBattleMs, fieldNumber: 10)
     }
+    if self.numFriendInvites != 0 {
+      try visitor.visitSingularInt32Field(value: self.numFriendInvites, fieldNumber: 11)
+    }
+    if self.isRemote != false {
+      try visitor.visitSingularBoolField(value: self.isRemote, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -131,6 +145,8 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if lhs.receivedDefaultRewards != rhs.receivedDefaultRewards {return false}
     if lhs.incrementedRaidFriends != rhs.incrementedRaidFriends {return false}
     if lhs.completedBattleMs != rhs.completedBattleMs {return false}
+    if lhs.numFriendInvites != rhs.numFriendInvites {return false}
+    if lhs.isRemote != rhs.isRemote {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -42,6 +42,12 @@ public struct POGOProtos_Data_Telemetry_ArPhotoSession {
 
   public var sessionLength: Int64 = 0
 
+  public var sessionLengthOcclusions: Int64 = 0
+
+  public var numPhotosSharedOcclusions: Int32 = 0
+
+  public var modelURL: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum ArContext: SwiftProtobuf.Enum {
@@ -207,6 +213,9 @@ extension POGOProtos_Data_Telemetry_ArPhotoSession: SwiftProtobuf.Message, Swift
     7: .standard(proto: "num_occlusions_disabled"),
     8: .standard(proto: "ar_context"),
     9: .standard(proto: "session_length"),
+    10: .standard(proto: "session_length_occlusions"),
+    11: .standard(proto: "num_photos_shared_occlusions"),
+    12: .standard(proto: "model_url"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -221,6 +230,9 @@ extension POGOProtos_Data_Telemetry_ArPhotoSession: SwiftProtobuf.Message, Swift
       case 7: try decoder.decodeSingularInt32Field(value: &self.numOcclusionsDisabled)
       case 8: try decoder.decodeSingularEnumField(value: &self.arContext)
       case 9: try decoder.decodeSingularInt64Field(value: &self.sessionLength)
+      case 10: try decoder.decodeSingularInt64Field(value: &self.sessionLengthOcclusions)
+      case 11: try decoder.decodeSingularInt32Field(value: &self.numPhotosSharedOcclusions)
+      case 12: try decoder.decodeSingularStringField(value: &self.modelURL)
       default: break
       }
     }
@@ -254,6 +266,15 @@ extension POGOProtos_Data_Telemetry_ArPhotoSession: SwiftProtobuf.Message, Swift
     if self.sessionLength != 0 {
       try visitor.visitSingularInt64Field(value: self.sessionLength, fieldNumber: 9)
     }
+    if self.sessionLengthOcclusions != 0 {
+      try visitor.visitSingularInt64Field(value: self.sessionLengthOcclusions, fieldNumber: 10)
+    }
+    if self.numPhotosSharedOcclusions != 0 {
+      try visitor.visitSingularInt32Field(value: self.numPhotosSharedOcclusions, fieldNumber: 11)
+    }
+    if !self.modelURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.modelURL, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -267,6 +288,9 @@ extension POGOProtos_Data_Telemetry_ArPhotoSession: SwiftProtobuf.Message, Swift
     if lhs.numOcclusionsDisabled != rhs.numOcclusionsDisabled {return false}
     if lhs.arContext != rhs.arContext {return false}
     if lhs.sessionLength != rhs.sessionLength {return false}
+    if lhs.sessionLengthOcclusions != rhs.sessionLengthOcclusions {return false}
+    if lhs.numPhotosSharedOcclusions != rhs.numPhotosSharedOcclusions {return false}
+    if lhs.modelURL != rhs.modelURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

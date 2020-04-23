@@ -48,6 +48,8 @@ public struct POGOProtos_Data_Raid_Lobby {
 
   public var weatherCondition: POGOProtos_Enums_WeatherCondition = .none
 
+  public var invitedPlayerIds: [String] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -72,6 +74,7 @@ extension POGOProtos_Data_Raid_Lobby: SwiftProtobuf.Message, SwiftProtobuf._Mess
     11: .standard(proto: "creation_ms"),
     12: .standard(proto: "battle_plfe_instance"),
     13: .standard(proto: "weather_condition"),
+    14: .standard(proto: "invited_player_ids"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -89,6 +92,7 @@ extension POGOProtos_Data_Raid_Lobby: SwiftProtobuf.Message, SwiftProtobuf._Mess
       case 11: try decoder.decodeSingularInt64Field(value: &self.creationMs)
       case 12: try decoder.decodeSingularInt32Field(value: &self.battlePlfeInstance)
       case 13: try decoder.decodeSingularEnumField(value: &self.weatherCondition)
+      case 14: try decoder.decodeRepeatedStringField(value: &self.invitedPlayerIds)
       default: break
       }
     }
@@ -131,6 +135,9 @@ extension POGOProtos_Data_Raid_Lobby: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if self.weatherCondition != .none {
       try visitor.visitSingularEnumField(value: self.weatherCondition, fieldNumber: 13)
     }
+    if !self.invitedPlayerIds.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.invitedPlayerIds, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -147,6 +154,7 @@ extension POGOProtos_Data_Raid_Lobby: SwiftProtobuf.Message, SwiftProtobuf._Mess
     if lhs.creationMs != rhs.creationMs {return false}
     if lhs.battlePlfeInstance != rhs.battlePlfeInstance {return false}
     if lhs.weatherCondition != rhs.weatherCondition {return false}
+    if lhs.invitedPlayerIds != rhs.invitedPlayerIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

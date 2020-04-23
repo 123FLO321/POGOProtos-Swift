@@ -517,6 +517,22 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .monodepthDownloadTelemetry(newValue)}
   }
 
+  public var arMappingTelemetry: POGOProtos_Data_Telemetry_ArMappingTelemetry {
+    get {
+      if case .arMappingTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ArMappingTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .arMappingTelemetry(newValue)}
+  }
+
+  public var remoteRaidTelemetry: POGOProtos_Data_Telemetry_RemoteRaidTelemetry {
+    get {
+      if case .remoteRaidTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_RemoteRaidTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .remoteRaidTelemetry(newValue)}
+  }
+
   public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
     get {return _storage._serverData ?? POGOProtos_Data_Telemetry_PlatformServerData()}
     set {_uniqueStorage()._serverData = newValue}
@@ -599,6 +615,8 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     case buddyMultiplayerTimeToGetSessionTelemetry(POGOProtos_Data_Buddy_BuddyMultiplayerTimeToGetSession)
     case playerHudNotificationClickTelemetry(POGOProtos_Data_Telemetry_PlayerHudNotificationClickTelemetry)
     case monodepthDownloadTelemetry(POGOProtos_Data_Telemetry_MonodepthDownloadTelemetry)
+    case arMappingTelemetry(POGOProtos_Data_Telemetry_ArMappingTelemetry)
+    case remoteRaidTelemetry(POGOProtos_Data_Telemetry_RemoteRaidTelemetry)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData, rhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData) -> Bool {
@@ -664,6 +682,8 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
       case (.buddyMultiplayerTimeToGetSessionTelemetry(let l), .buddyMultiplayerTimeToGetSessionTelemetry(let r)): return l == r
       case (.playerHudNotificationClickTelemetry(let l), .playerHudNotificationClickTelemetry(let r)): return l == r
       case (.monodepthDownloadTelemetry(let l), .monodepthDownloadTelemetry(let r)): return l == r
+      case (.arMappingTelemetry(let l), .arMappingTelemetry(let r)): return l == r
+      case (.remoteRaidTelemetry(let l), .remoteRaidTelemetry(let r)): return l == r
       default: return false
       }
     }
@@ -743,6 +763,8 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     59: .standard(proto: "buddy_multiplayer_time_to_get_session_telemetry"),
     60: .standard(proto: "player_hud_notification_click_telemetry"),
     61: .standard(proto: "monodepth_download_telemetry"),
+    62: .standard(proto: "ar_mapping_telemetry"),
+    63: .standard(proto: "remote_raid_telemetry"),
     1001: .standard(proto: "server_data"),
     1002: .standard(proto: "common_filters"),
   ]
@@ -1263,6 +1285,22 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .monodepthDownloadTelemetry(v)}
+        case 62:
+          var v: POGOProtos_Data_Telemetry_ArMappingTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .arMappingTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .arMappingTelemetry(v)}
+        case 63:
+          var v: POGOProtos_Data_Telemetry_RemoteRaidTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .remoteRaidTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .remoteRaidTelemetry(v)}
         case 1001: try decoder.decodeSingularMessageField(value: &_storage._serverData)
         case 1002: try decoder.decodeSingularMessageField(value: &_storage._commonFilters)
         default: break
@@ -1396,6 +1434,10 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         try visitor.visitSingularMessageField(value: v, fieldNumber: 60)
       case .monodepthDownloadTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 61)
+      case .arMappingTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 62)
+      case .remoteRaidTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 63)
       case nil: break
       }
       if let v = _storage._serverData {

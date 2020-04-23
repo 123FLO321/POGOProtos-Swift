@@ -85,6 +85,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgePokedexEntriesGen6 // = 61
   case badgePokedexEntriesGen7 // = 62
   case badgePokedexEntriesGen8 // = 63
+  case badgeWayfarer // = 68
   case badgeEventMin // = 2000
   case badgeChicagoFestJuly2017 // = 2001
   case badgePikachuOutbreakYokohama2017 // = 2002
@@ -333,6 +334,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 61: self = .badgePokedexEntriesGen6
     case 62: self = .badgePokedexEntriesGen7
     case 63: self = .badgePokedexEntriesGen8
+    case 68: self = .badgeWayfarer
     case 2000: self = .badgeEventMin
     case 2001: self = .badgeChicagoFestJuly2017
     case 2002: self = .badgePikachuOutbreakYokohama2017
@@ -579,6 +581,7 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgePokedexEntriesGen6: return 61
     case .badgePokedexEntriesGen7: return 62
     case .badgePokedexEntriesGen8: return 63
+    case .badgeWayfarer: return 68
     case .badgeEventMin: return 2000
     case .badgeChicagoFestJuly2017: return 2001
     case .badgePikachuOutbreakYokohama2017: return 2002
@@ -830,6 +833,7 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgePokedexEntriesGen6,
     .badgePokedexEntriesGen7,
     .badgePokedexEntriesGen8,
+    .badgeWayfarer,
     .badgeEventMin,
     .badgeChicagoFestJuly2017,
     .badgePikachuOutbreakYokohama2017,
@@ -1079,6 +1083,7 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     61: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN6"),
     62: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN7"),
     63: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN8"),
+    68: .same(proto: "BADGE_WAYFARER"),
     2000: .same(proto: "BADGE_EVENT_MIN"),
     2001: .same(proto: "BADGE_CHICAGO_FEST_JULY_2017"),
     2002: .same(proto: "BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017"),

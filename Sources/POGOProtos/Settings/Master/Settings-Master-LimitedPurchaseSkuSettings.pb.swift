@@ -28,10 +28,70 @@ public struct POGOProtos_Settings_Master_LimitedPurchaseSkuSettings {
 
   public var version: Int32 = 0
 
+  public var chronoUnit: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings.ChronoUnit = .unset
+
+  public var resetInterval: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum ChronoUnit: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unset // = 0
+    case minute // = 1
+    case hour // = 2
+    case day // = 3
+    case week // = 4
+    case month // = 5
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unset
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unset
+      case 1: self = .minute
+      case 2: self = .hour
+      case 3: self = .day
+      case 4: self = .week
+      case 5: self = .month
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unset: return 0
+      case .minute: return 1
+      case .hour: return 2
+      case .day: return 3
+      case .week: return 4
+      case .month: return 5
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
+      }
+    }
+
+  }
 
   public init() {}
 }
+
+#if swift(>=4.2)
+
+extension POGOProtos_Settings_Master_LimitedPurchaseSkuSettings.ChronoUnit: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Settings_Master_LimitedPurchaseSkuSettings.ChronoUnit] = [
+    .unset,
+    .minute,
+    .hour,
+    .day,
+    .week,
+    .month,
+  ]
+}
+
+#endif  // swift(>=4.2)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -42,6 +102,8 @@ extension POGOProtos_Settings_Master_LimitedPurchaseSkuSettings: SwiftProtobuf.M
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "purchase_limit"),
     2: .same(proto: "version"),
+    3: .standard(proto: "chrono_unit"),
+    20: .standard(proto: "reset_interval"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +111,8 @@ extension POGOProtos_Settings_Master_LimitedPurchaseSkuSettings: SwiftProtobuf.M
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.purchaseLimit)
       case 2: try decoder.decodeSingularInt32Field(value: &self.version)
+      case 3: try decoder.decodeSingularEnumField(value: &self.chronoUnit)
+      case 20: try decoder.decodeSingularInt32Field(value: &self.resetInterval)
       default: break
       }
     }
@@ -61,13 +125,32 @@ extension POGOProtos_Settings_Master_LimitedPurchaseSkuSettings: SwiftProtobuf.M
     if self.version != 0 {
       try visitor.visitSingularInt32Field(value: self.version, fieldNumber: 2)
     }
+    if self.chronoUnit != .unset {
+      try visitor.visitSingularEnumField(value: self.chronoUnit, fieldNumber: 3)
+    }
+    if self.resetInterval != 0 {
+      try visitor.visitSingularInt32Field(value: self.resetInterval, fieldNumber: 20)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings, rhs: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings) -> Bool {
     if lhs.purchaseLimit != rhs.purchaseLimit {return false}
     if lhs.version != rhs.version {return false}
+    if lhs.chronoUnit != rhs.chronoUnit {return false}
+    if lhs.resetInterval != rhs.resetInterval {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Settings_Master_LimitedPurchaseSkuSettings.ChronoUnit: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNSET"),
+    1: .same(proto: "MINUTE"),
+    2: .same(proto: "HOUR"),
+    3: .same(proto: "DAY"),
+    4: .same(proto: "WEEK"),
+    5: .same(proto: "MONTH"),
+  ]
 }

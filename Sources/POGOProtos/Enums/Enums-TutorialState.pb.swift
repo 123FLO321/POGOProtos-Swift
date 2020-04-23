@@ -61,6 +61,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case buddyOnMapPrompt // = 39
   case battleLeagueHelpTutorial // = 40
   case armpTosConfirmation // = 41
+  case buddyRemoteGiftTutorial // = 42
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -109,6 +110,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case 39: self = .buddyOnMapPrompt
     case 40: self = .battleLeagueHelpTutorial
     case 41: self = .armpTosConfirmation
+    case 42: self = .buddyRemoteGiftTutorial
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -155,6 +157,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .buddyOnMapPrompt: return 39
     case .battleLeagueHelpTutorial: return 40
     case .armpTosConfirmation: return 41
+    case .buddyRemoteGiftTutorial: return 42
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -206,6 +209,7 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
     .buddyOnMapPrompt,
     .battleLeagueHelpTutorial,
     .armpTosConfirmation,
+    .buddyRemoteGiftTutorial,
   ]
 }
 
@@ -255,5 +259,6 @@ extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
     39: .same(proto: "BUDDY_ON_MAP_PROMPT"),
     40: .same(proto: "BATTLE_LEAGUE_HELP_TUTORIAL"),
     41: .same(proto: "ARMP_TOS_CONFIRMATION"),
+    42: .same(proto: "BUDDY_REMOTE_GIFT_TUTORIAL"),
   ]
 }

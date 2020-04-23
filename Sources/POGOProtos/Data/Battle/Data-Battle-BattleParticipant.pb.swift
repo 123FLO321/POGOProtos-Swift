@@ -87,6 +87,11 @@ public struct POGOProtos_Data_Battle_BattleParticipant {
     set {_uniqueStorage()._isRemote = newValue}
   }
 
+  public var isSocialInvite: Bool {
+    get {return _storage._isSocialInvite}
+    set {_uniqueStorage()._isSocialInvite = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -112,6 +117,7 @@ extension POGOProtos_Data_Battle_BattleParticipant: SwiftProtobuf.Message, Swift
     9: .standard(proto: "highest_friendship_milestone"),
     10: .standard(proto: "friend_codename"),
     11: .standard(proto: "is_remote"),
+    12: .standard(proto: "is_social_invite"),
   ]
 
   fileprivate class _StorageClass {
@@ -126,6 +132,7 @@ extension POGOProtos_Data_Battle_BattleParticipant: SwiftProtobuf.Message, Swift
     var _highestFriendshipMilestone: POGOProtos_Enums_FriendshipLevelMilestone = .friendshipLevelUnset
     var _friendCodename: [String] = []
     var _isRemote: Bool = false
+    var _isSocialInvite: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -143,6 +150,7 @@ extension POGOProtos_Data_Battle_BattleParticipant: SwiftProtobuf.Message, Swift
       _highestFriendshipMilestone = source._highestFriendshipMilestone
       _friendCodename = source._friendCodename
       _isRemote = source._isRemote
+      _isSocialInvite = source._isSocialInvite
     }
   }
 
@@ -169,6 +177,7 @@ extension POGOProtos_Data_Battle_BattleParticipant: SwiftProtobuf.Message, Swift
         case 9: try decoder.decodeSingularEnumField(value: &_storage._highestFriendshipMilestone)
         case 10: try decoder.decodeRepeatedStringField(value: &_storage._friendCodename)
         case 11: try decoder.decodeSingularBoolField(value: &_storage._isRemote)
+        case 12: try decoder.decodeSingularBoolField(value: &_storage._isSocialInvite)
         default: break
         }
       }
@@ -210,6 +219,9 @@ extension POGOProtos_Data_Battle_BattleParticipant: SwiftProtobuf.Message, Swift
       if _storage._isRemote != false {
         try visitor.visitSingularBoolField(value: _storage._isRemote, fieldNumber: 11)
       }
+      if _storage._isSocialInvite != false {
+        try visitor.visitSingularBoolField(value: _storage._isSocialInvite, fieldNumber: 12)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -230,6 +242,7 @@ extension POGOProtos_Data_Battle_BattleParticipant: SwiftProtobuf.Message, Swift
         if _storage._highestFriendshipMilestone != rhs_storage._highestFriendshipMilestone {return false}
         if _storage._friendCodename != rhs_storage._friendCodename {return false}
         if _storage._isRemote != rhs_storage._isRemote {return false}
+        if _storage._isSocialInvite != rhs_storage._isSocialInvite {return false}
         return true
       }
       if !storagesAreEqual {return false}

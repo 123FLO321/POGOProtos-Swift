@@ -436,6 +436,24 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `plannedDowntimeSettings`. Subsequent reads from it will return its default value.
   public mutating func clearPlannedDowntimeSettings() {_uniqueStorage()._plannedDowntimeSettings = nil}
 
+  public var arMappingSettings: POGOProtos_Settings_ArMappingSettings {
+    get {return _storage._arMappingSettings ?? POGOProtos_Settings_ArMappingSettings()}
+    set {_uniqueStorage()._arMappingSettings = newValue}
+  }
+  /// Returns true if `arMappingSettings` has been explicitly set.
+  public var hasArMappingSettings: Bool {return _storage._arMappingSettings != nil}
+  /// Clears the value of `arMappingSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearArMappingSettings() {_uniqueStorage()._arMappingSettings = nil}
+
+  public var raidInviteFriendsSettings: POGOProtos_Settings_RaidInviteFriendsSettings {
+    get {return _storage._raidInviteFriendsSettings ?? POGOProtos_Settings_RaidInviteFriendsSettings()}
+    set {_uniqueStorage()._raidInviteFriendsSettings = newValue}
+  }
+  /// Returns true if `raidInviteFriendsSettings` has been explicitly set.
+  public var hasRaidInviteFriendsSettings: Bool {return _storage._raidInviteFriendsSettings != nil}
+  /// Clears the value of `raidInviteFriendsSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearRaidInviteFriendsSettings() {_uniqueStorage()._raidInviteFriendsSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -498,6 +516,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     49: .standard(proto: "enabled_pokemon"),
     50: .standard(proto: "pokemon_bulk_upgrade_settings"),
     51: .standard(proto: "planned_downtime_settings"),
+    52: .standard(proto: "ar_mapping_settings"),
+    53: .standard(proto: "raid_invite_friends_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -549,6 +569,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _enabledPokemon: POGOProtos_Settings_EnabledPokemonSettings? = nil
     var _pokemonBulkUpgradeSettings: POGOProtos_Settings_PokemonBulkUpgradeSettings? = nil
     var _plannedDowntimeSettings: POGOProtos_Settings_PlannedDowntimeSettings? = nil
+    var _arMappingSettings: POGOProtos_Settings_ArMappingSettings? = nil
+    var _raidInviteFriendsSettings: POGOProtos_Settings_RaidInviteFriendsSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -603,6 +625,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _enabledPokemon = source._enabledPokemon
       _pokemonBulkUpgradeSettings = source._pokemonBulkUpgradeSettings
       _plannedDowntimeSettings = source._plannedDowntimeSettings
+      _arMappingSettings = source._arMappingSettings
+      _raidInviteFriendsSettings = source._raidInviteFriendsSettings
     }
   }
 
@@ -666,6 +690,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 49: try decoder.decodeSingularMessageField(value: &_storage._enabledPokemon)
         case 50: try decoder.decodeSingularMessageField(value: &_storage._pokemonBulkUpgradeSettings)
         case 51: try decoder.decodeSingularMessageField(value: &_storage._plannedDowntimeSettings)
+        case 52: try decoder.decodeSingularMessageField(value: &_storage._arMappingSettings)
+        case 53: try decoder.decodeSingularMessageField(value: &_storage._raidInviteFriendsSettings)
         default: break
         }
       }
@@ -818,6 +844,12 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._plannedDowntimeSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 51)
       }
+      if let v = _storage._arMappingSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 52)
+      }
+      if let v = _storage._raidInviteFriendsSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 53)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -875,6 +907,8 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._enabledPokemon != rhs_storage._enabledPokemon {return false}
         if _storage._pokemonBulkUpgradeSettings != rhs_storage._pokemonBulkUpgradeSettings {return false}
         if _storage._plannedDowntimeSettings != rhs_storage._plannedDowntimeSettings {return false}
+        if _storage._arMappingSettings != rhs_storage._arMappingSettings {return false}
+        if _storage._raidInviteFriendsSettings != rhs_storage._raidInviteFriendsSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

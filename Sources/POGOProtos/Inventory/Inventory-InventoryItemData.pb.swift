@@ -230,6 +230,8 @@ public struct POGOProtos_Inventory_InventoryItemData {
 
       public var numPurchases: Int32 = 0
 
+      public var lastPurchaseMs: Int64 = 0
+
       public var unknownFields = SwiftProtobuf.UnknownStorage()
 
       public init() {}
@@ -527,6 +529,7 @@ extension POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purcha
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "version"),
     2: .standard(proto: "num_purchases"),
+    4: .standard(proto: "last_purchase_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -534,6 +537,7 @@ extension POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purcha
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt32Field(value: &self.version)
       case 2: try decoder.decodeSingularInt32Field(value: &self.numPurchases)
+      case 4: try decoder.decodeSingularInt64Field(value: &self.lastPurchaseMs)
       default: break
       }
     }
@@ -546,12 +550,16 @@ extension POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purcha
     if self.numPurchases != 0 {
       try visitor.visitSingularInt32Field(value: self.numPurchases, fieldNumber: 2)
     }
+    if self.lastPurchaseMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.lastPurchaseMs, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purchase, rhs: POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purchase) -> Bool {
     if lhs.version != rhs.version {return false}
     if lhs.numPurchases != rhs.numPurchases {return false}
+    if lhs.lastPurchaseMs != rhs.lastPurchaseMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
