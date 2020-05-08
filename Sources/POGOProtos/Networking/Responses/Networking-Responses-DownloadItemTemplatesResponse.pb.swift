@@ -699,6 +699,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `raidSettingsProto`. Subsequent reads from it will return its default value.
     public mutating func clearRaidSettingsProto() {_uniqueStorage()._raidSettingsProto = nil}
 
+    public var stickerMetadata: POGOProtos_Data_Sticker_StickerMetadata {
+      get {return _storage._stickerMetadata ?? POGOProtos_Data_Sticker_StickerMetadata()}
+      set {_uniqueStorage()._stickerMetadata = newValue}
+    }
+    /// Returns true if `stickerMetadata` has been explicitly set.
+    public var hasStickerMetadata: Bool {return _storage._stickerMetadata != nil}
+    /// Clears the value of `stickerMetadata`. Subsequent reads from it will return its default value.
+    public mutating func clearStickerMetadata() {_uniqueStorage()._stickerMetadata = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public struct ProjectVacation {
@@ -868,6 +877,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
     76: .standard(proto: "avatar_group_order_settings"),
     78: .standard(proto: "monodepth_settings"),
     81: .standard(proto: "raid_settings_proto"),
+    85: .standard(proto: "sticker_metadata"),
   ]
 
   fileprivate class _StorageClass {
@@ -941,6 +951,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
     var _avatarGroupOrderSettings: POGOProtos_Settings_Master_AvatarGroupOrderSettings? = nil
     var _monodepthSettings: POGOProtos_Settings_Master_MonodepthSettings? = nil
     var _raidSettingsProto: POGOProtos_Settings_Master_RaidClientSettings? = nil
+    var _stickerMetadata: POGOProtos_Data_Sticker_StickerMetadata? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -1017,6 +1028,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
       _avatarGroupOrderSettings = source._avatarGroupOrderSettings
       _monodepthSettings = source._monodepthSettings
       _raidSettingsProto = source._raidSettingsProto
+      _stickerMetadata = source._stickerMetadata
     }
   }
 
@@ -1102,6 +1114,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
         case 76: try decoder.decodeSingularMessageField(value: &_storage._avatarGroupOrderSettings)
         case 78: try decoder.decodeSingularMessageField(value: &_storage._monodepthSettings)
         case 81: try decoder.decodeSingularMessageField(value: &_storage._raidSettingsProto)
+        case 85: try decoder.decodeSingularMessageField(value: &_storage._stickerMetadata)
         default: break
         }
       }
@@ -1320,6 +1333,9 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
       if let v = _storage._raidSettingsProto {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 81)
       }
+      if let v = _storage._stickerMetadata {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 85)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1399,6 +1415,7 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
         if _storage._avatarGroupOrderSettings != rhs_storage._avatarGroupOrderSettings {return false}
         if _storage._monodepthSettings != rhs_storage._monodepthSettings {return false}
         if _storage._raidSettingsProto != rhs_storage._raidSettingsProto {return false}
+        if _storage._stickerMetadata != rhs_storage._stickerMetadata {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -253,6 +253,16 @@ public struct POGOProtos_Data_Player_PlayerStats {
     set {_uniqueStorage()._numBestBuddies = newValue}
   }
 
+  public var numWayfarerAgreement: Int32 {
+    get {return _storage._numWayfarerAgreement}
+    set {_uniqueStorage()._numWayfarerAgreement = newValue}
+  }
+
+  public var wayfarerAgreementUpdateMs: Int64 {
+    get {return _storage._wayfarerAgreementUpdateMs}
+    set {_uniqueStorage()._wayfarerAgreementUpdateMs = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -312,6 +322,8 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     43: .standard(proto: "num_pokemon_purified"),
     44: .standard(proto: "num_grunts_defeated"),
     47: .standard(proto: "num_best_buddies"),
+    54: .standard(proto: "num_wayfarer_agreement"),
+    55: .standard(proto: "wayfarer_agreement_update_ms"),
   ]
 
   fileprivate class _StorageClass {
@@ -360,6 +372,8 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     var _numPokemonPurified: Int32 = 0
     var _numGruntsDefeated: Int32 = 0
     var _numBestBuddies: Int32 = 0
+    var _numWayfarerAgreement: Int32 = 0
+    var _wayfarerAgreementUpdateMs: Int64 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -411,6 +425,8 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       _numPokemonPurified = source._numPokemonPurified
       _numGruntsDefeated = source._numGruntsDefeated
       _numBestBuddies = source._numBestBuddies
+      _numWayfarerAgreement = source._numWayfarerAgreement
+      _wayfarerAgreementUpdateMs = source._wayfarerAgreementUpdateMs
     }
   }
 
@@ -471,6 +487,8 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         case 43: try decoder.decodeSingularInt32Field(value: &_storage._numPokemonPurified)
         case 44: try decoder.decodeSingularInt32Field(value: &_storage._numGruntsDefeated)
         case 47: try decoder.decodeSingularInt32Field(value: &_storage._numBestBuddies)
+        case 54: try decoder.decodeSingularInt32Field(value: &_storage._numWayfarerAgreement)
+        case 55: try decoder.decodeSingularInt64Field(value: &_storage._wayfarerAgreementUpdateMs)
         default: break
         }
       }
@@ -614,6 +632,12 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       if _storage._numBestBuddies != 0 {
         try visitor.visitSingularInt32Field(value: _storage._numBestBuddies, fieldNumber: 47)
       }
+      if _storage._numWayfarerAgreement != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numWayfarerAgreement, fieldNumber: 54)
+      }
+      if _storage._wayfarerAgreementUpdateMs != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._wayfarerAgreementUpdateMs, fieldNumber: 55)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -668,6 +692,8 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         if _storage._numPokemonPurified != rhs_storage._numPokemonPurified {return false}
         if _storage._numGruntsDefeated != rhs_storage._numGruntsDefeated {return false}
         if _storage._numBestBuddies != rhs_storage._numBestBuddies {return false}
+        if _storage._numWayfarerAgreement != rhs_storage._numWayfarerAgreement {return false}
+        if _storage._wayfarerAgreementUpdateMs != rhs_storage._wayfarerAgreementUpdateMs {return false}
         return true
       }
       if !storagesAreEqual {return false}

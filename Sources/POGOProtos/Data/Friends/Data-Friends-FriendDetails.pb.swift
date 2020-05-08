@@ -48,12 +48,65 @@ public struct POGOProtos_Data_Friends_FriendDetails {
     set {_uniqueStorage()._dataWithMe = newValue}
   }
 
+  public var onlineStatus: POGOProtos_Data_Friends_FriendDetails.OnlineStatus {
+    get {return _storage._onlineStatus}
+    set {_uniqueStorage()._onlineStatus = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OnlineStatus: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unset // = 0
+    case statusUnknown // = 1
+    case statusOnline // = 2
+    case statusOffline // = 3
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unset
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unset
+      case 1: self = .statusUnknown
+      case 2: self = .statusOnline
+      case 3: self = .statusOffline
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unset: return 0
+      case .statusUnknown: return 1
+      case .statusOnline: return 2
+      case .statusOffline: return 3
+      case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
+      }
+    }
+
+  }
 
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
+
+#if swift(>=4.2)
+
+extension POGOProtos_Data_Friends_FriendDetails.OnlineStatus: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Data_Friends_FriendDetails.OnlineStatus] = [
+    .unset,
+    .statusUnknown,
+    .statusOnline,
+    .statusOffline,
+  ]
+}
+
+#endif  // swift(>=4.2)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -66,6 +119,7 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
     2: .standard(proto: "friend_visible_data"),
     3: .same(proto: "score"),
     4: .standard(proto: "data_with_me"),
+    5: .standard(proto: "online_status"),
   ]
 
   fileprivate class _StorageClass {
@@ -73,6 +127,7 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
     var _friendVisibleData: Data = SwiftProtobuf.Internal.emptyData
     var _score: Int32 = 0
     var _dataWithMe: Data = SwiftProtobuf.Internal.emptyData
+    var _onlineStatus: POGOProtos_Data_Friends_FriendDetails.OnlineStatus = .unset
 
     static let defaultInstance = _StorageClass()
 
@@ -83,6 +138,7 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
       _friendVisibleData = source._friendVisibleData
       _score = source._score
       _dataWithMe = source._dataWithMe
+      _onlineStatus = source._onlineStatus
     }
   }
 
@@ -102,6 +158,7 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
         case 2: try decoder.decodeSingularBytesField(value: &_storage._friendVisibleData)
         case 3: try decoder.decodeSingularInt32Field(value: &_storage._score)
         case 4: try decoder.decodeSingularBytesField(value: &_storage._dataWithMe)
+        case 5: try decoder.decodeSingularEnumField(value: &_storage._onlineStatus)
         default: break
         }
       }
@@ -122,6 +179,9 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
       if !_storage._dataWithMe.isEmpty {
         try visitor.visitSingularBytesField(value: _storage._dataWithMe, fieldNumber: 4)
       }
+      if _storage._onlineStatus != .unset {
+        try visitor.visitSingularEnumField(value: _storage._onlineStatus, fieldNumber: 5)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -135,6 +195,7 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
         if _storage._friendVisibleData != rhs_storage._friendVisibleData {return false}
         if _storage._score != rhs_storage._score {return false}
         if _storage._dataWithMe != rhs_storage._dataWithMe {return false}
+        if _storage._onlineStatus != rhs_storage._onlineStatus {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -142,4 +203,13 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Data_Friends_FriendDetails.OnlineStatus: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNSET"),
+    1: .same(proto: "STATUS_UNKNOWN"),
+    2: .same(proto: "STATUS_ONLINE"),
+    3: .same(proto: "STATUS_OFFLINE"),
+  ]
 }

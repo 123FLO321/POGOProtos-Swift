@@ -32,6 +32,7 @@ public enum POGOProtos_Enums_EncounterType: SwiftProtobuf.Enum {
   case invasion // = 8
   case vsSeekerReward // = 9
   case timedStoryQuest // = 10
+  case dailyBonus // = 11
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -51,6 +52,7 @@ public enum POGOProtos_Enums_EncounterType: SwiftProtobuf.Enum {
     case 8: self = .invasion
     case 9: self = .vsSeekerReward
     case 10: self = .timedStoryQuest
+    case 11: self = .dailyBonus
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -68,6 +70,7 @@ public enum POGOProtos_Enums_EncounterType: SwiftProtobuf.Enum {
     case .invasion: return 8
     case .vsSeekerReward: return 9
     case .timedStoryQuest: return 10
+    case .dailyBonus: return 11
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -90,6 +93,7 @@ extension POGOProtos_Enums_EncounterType: CaseIterable {
     .invasion,
     .vsSeekerReward,
     .timedStoryQuest,
+    .dailyBonus,
   ]
 }
 
@@ -110,5 +114,6 @@ extension POGOProtos_Enums_EncounterType: SwiftProtobuf._ProtoNameProviding {
     8: .same(proto: "INVASION"),
     9: .same(proto: "VS_SEEKER_REWARD"),
     10: .same(proto: "TIMED_STORY_QUEST"),
+    11: .same(proto: "DAILY_BONUS"),
   ]
 }

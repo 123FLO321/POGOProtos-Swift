@@ -25,6 +25,7 @@ public enum POGOProtos_Enums_SocialNotificationVariableName: SwiftProtobuf.Enum 
   case socialCodename // = 1
   case socialTeam // = 2
   case socialPlayerSummary // = 3
+  case socialFullName // = 4
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -37,6 +38,7 @@ public enum POGOProtos_Enums_SocialNotificationVariableName: SwiftProtobuf.Enum 
     case 1: self = .socialCodename
     case 2: self = .socialTeam
     case 3: self = .socialPlayerSummary
+    case 4: self = .socialFullName
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -47,6 +49,7 @@ public enum POGOProtos_Enums_SocialNotificationVariableName: SwiftProtobuf.Enum 
     case .socialCodename: return 1
     case .socialTeam: return 2
     case .socialPlayerSummary: return 3
+    case .socialFullName: return 4
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -62,6 +65,7 @@ extension POGOProtos_Enums_SocialNotificationVariableName: CaseIterable {
     .socialCodename,
     .socialTeam,
     .socialPlayerSummary,
+    .socialFullName,
   ]
 }
 
@@ -75,5 +79,6 @@ extension POGOProtos_Enums_SocialNotificationVariableName: SwiftProtobuf._ProtoN
     1: .same(proto: "SOCIAL_CODENAME"),
     2: .same(proto: "SOCIAL_TEAM"),
     3: .same(proto: "SOCIAL_PLAYER_SUMMARY"),
+    4: .same(proto: "SOCIAL_FULL_NAME"),
   ]
 }

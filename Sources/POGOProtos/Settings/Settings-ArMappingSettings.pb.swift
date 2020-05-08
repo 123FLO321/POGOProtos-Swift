@@ -48,6 +48,8 @@ public struct POGOProtos_Settings_ArMappingSettings {
 
   public var ardkUpdateDistanceMm: Int32 = 0
 
+  public var maxPendingUploadKilobytes: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -72,6 +74,7 @@ extension POGOProtos_Settings_ArMappingSettings: SwiftProtobuf.Message, SwiftPro
     10: .standard(proto: "max_upload_chunk_rejected_count"),
     11: .standard(proto: "ardk_desired_accuracy_mm"),
     12: .standard(proto: "ardk_update_distance_mm"),
+    13: .standard(proto: "max_pending_upload_kilobytes"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -89,6 +92,7 @@ extension POGOProtos_Settings_ArMappingSettings: SwiftProtobuf.Message, SwiftPro
       case 10: try decoder.decodeSingularInt32Field(value: &self.maxUploadChunkRejectedCount)
       case 11: try decoder.decodeSingularInt32Field(value: &self.ardkDesiredAccuracyMm)
       case 12: try decoder.decodeSingularInt32Field(value: &self.ardkUpdateDistanceMm)
+      case 13: try decoder.decodeSingularInt32Field(value: &self.maxPendingUploadKilobytes)
       default: break
       }
     }
@@ -131,6 +135,9 @@ extension POGOProtos_Settings_ArMappingSettings: SwiftProtobuf.Message, SwiftPro
     if self.ardkUpdateDistanceMm != 0 {
       try visitor.visitSingularInt32Field(value: self.ardkUpdateDistanceMm, fieldNumber: 12)
     }
+    if self.maxPendingUploadKilobytes != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxPendingUploadKilobytes, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -147,6 +154,7 @@ extension POGOProtos_Settings_ArMappingSettings: SwiftProtobuf.Message, SwiftPro
     if lhs.maxUploadChunkRejectedCount != rhs.maxUploadChunkRejectedCount {return false}
     if lhs.ardkDesiredAccuracyMm != rhs.ardkDesiredAccuracyMm {return false}
     if lhs.ardkUpdateDistanceMm != rhs.ardkUpdateDistanceMm {return false}
+    if lhs.maxPendingUploadKilobytes != rhs.maxPendingUploadKilobytes {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -2086,6 +2086,21 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case pikachuCostume2020 // = 2332
   case dragoniteCostume2020 // = 2333
   case onixCostume2020 // = 2334
+  case meowthGalarian // = 2335
+  case farfetchdGalarian // = 2338
+  case darumakaGalarian // = 2341
+  case darmanitanGalarianStandard // = 2342
+  case darmanitanGalarianZen // = 2343
+  case stunfiskGalarian // = 2345
+  case obstagoonNormal // = 2501
+  case obstagoonShadow // = 2502
+  case obstagoonPurified // = 2503
+  case perrserkerNormal // = 2504
+  case perrserkerShadow // = 2505
+  case perrserkerPurified // = 2506
+  case sirfetchdNormal // = 2510
+  case sirfetchdShadow // = 2511
+  case sirfetchdPurified // = 2512
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -4159,6 +4174,21 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 2332: self = .pikachuCostume2020
     case 2333: self = .dragoniteCostume2020
     case 2334: self = .onixCostume2020
+    case 2335: self = .meowthGalarian
+    case 2338: self = .farfetchdGalarian
+    case 2341: self = .darumakaGalarian
+    case 2342: self = .darmanitanGalarianStandard
+    case 2343: self = .darmanitanGalarianZen
+    case 2345: self = .stunfiskGalarian
+    case 2501: self = .obstagoonNormal
+    case 2502: self = .obstagoonShadow
+    case 2503: self = .obstagoonPurified
+    case 2504: self = .perrserkerNormal
+    case 2505: self = .perrserkerShadow
+    case 2506: self = .perrserkerPurified
+    case 2510: self = .sirfetchdNormal
+    case 2511: self = .sirfetchdShadow
+    case 2512: self = .sirfetchdPurified
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -6230,6 +6260,21 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .pikachuCostume2020: return 2332
     case .dragoniteCostume2020: return 2333
     case .onixCostume2020: return 2334
+    case .meowthGalarian: return 2335
+    case .farfetchdGalarian: return 2338
+    case .darumakaGalarian: return 2341
+    case .darmanitanGalarianStandard: return 2342
+    case .darmanitanGalarianZen: return 2343
+    case .stunfiskGalarian: return 2345
+    case .obstagoonNormal: return 2501
+    case .obstagoonShadow: return 2502
+    case .obstagoonPurified: return 2503
+    case .perrserkerNormal: return 2504
+    case .perrserkerShadow: return 2505
+    case .perrserkerPurified: return 2506
+    case .sirfetchdNormal: return 2510
+    case .sirfetchdShadow: return 2511
+    case .sirfetchdPurified: return 2512
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -8306,6 +8351,21 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .pikachuCostume2020,
     .dragoniteCostume2020,
     .onixCostume2020,
+    .meowthGalarian,
+    .farfetchdGalarian,
+    .darumakaGalarian,
+    .darmanitanGalarianStandard,
+    .darmanitanGalarianZen,
+    .stunfiskGalarian,
+    .obstagoonNormal,
+    .obstagoonShadow,
+    .obstagoonPurified,
+    .perrserkerNormal,
+    .perrserkerShadow,
+    .perrserkerPurified,
+    .sirfetchdNormal,
+    .sirfetchdShadow,
+    .sirfetchdPurified,
   ]
 }
 
@@ -10380,5 +10440,20 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     2332: .same(proto: "PIKACHU_COSTUME_2020"),
     2333: .same(proto: "DRAGONITE_COSTUME_2020"),
     2334: .same(proto: "ONIX_COSTUME_2020"),
+    2335: .same(proto: "MEOWTH_GALARIAN"),
+    2338: .same(proto: "FARFETCHD_GALARIAN"),
+    2341: .same(proto: "DARUMAKA_GALARIAN"),
+    2342: .same(proto: "DARMANITAN_GALARIAN_STANDARD"),
+    2343: .same(proto: "DARMANITAN_GALARIAN_ZEN"),
+    2345: .same(proto: "STUNFISK_GALARIAN"),
+    2501: .same(proto: "OBSTAGOON_NORMAL"),
+    2502: .same(proto: "OBSTAGOON_SHADOW"),
+    2503: .same(proto: "OBSTAGOON_PURIFIED"),
+    2504: .same(proto: "PERRSERKER_NORMAL"),
+    2505: .same(proto: "PERRSERKER_SHADOW"),
+    2506: .same(proto: "PERRSERKER_PURIFIED"),
+    2510: .same(proto: "SIRFETCHD_NORMAL"),
+    2511: .same(proto: "SIRFETCHD_SHADOW"),
+    2512: .same(proto: "SIRFETCHD_PURIFIED"),
   ]
 }

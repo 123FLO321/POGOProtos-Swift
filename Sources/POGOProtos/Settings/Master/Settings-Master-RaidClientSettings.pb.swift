@@ -40,6 +40,10 @@ public struct POGOProtos_Settings_Master_RaidClientSettings {
 
   public var canInviteFriendsRemotely: Bool = false
 
+  public var maxPlayersPerLobby: Int32 = 0
+
+  public var maxRemotePlayersPerLobby: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -60,6 +64,8 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
     6: .standard(proto: "friend_invite_cutoff_time_sec"),
     7: .standard(proto: "can_invite_friends_in_person"),
     8: .standard(proto: "can_invite_friends_remotely"),
+    9: .standard(proto: "max_players_per_lobby"),
+    10: .standard(proto: "max_remote_players_per_lobby"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -73,6 +79,8 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
       case 6: try decoder.decodeSingularInt32Field(value: &self.friendInviteCutoffTimeSec)
       case 7: try decoder.decodeSingularBoolField(value: &self.canInviteFriendsInPerson)
       case 8: try decoder.decodeSingularBoolField(value: &self.canInviteFriendsRemotely)
+      case 9: try decoder.decodeSingularInt32Field(value: &self.maxPlayersPerLobby)
+      case 10: try decoder.decodeSingularInt32Field(value: &self.maxRemotePlayersPerLobby)
       default: break
       }
     }
@@ -103,6 +111,12 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
     if self.canInviteFriendsRemotely != false {
       try visitor.visitSingularBoolField(value: self.canInviteFriendsRemotely, fieldNumber: 8)
     }
+    if self.maxPlayersPerLobby != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxPlayersPerLobby, fieldNumber: 9)
+    }
+    if self.maxRemotePlayersPerLobby != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxRemotePlayersPerLobby, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -115,6 +129,8 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
     if lhs.friendInviteCutoffTimeSec != rhs.friendInviteCutoffTimeSec {return false}
     if lhs.canInviteFriendsInPerson != rhs.canInviteFriendsInPerson {return false}
     if lhs.canInviteFriendsRemotely != rhs.canInviteFriendsRemotely {return false}
+    if lhs.maxPlayersPerLobby != rhs.maxPlayersPerLobby {return false}
+    if lhs.maxRemotePlayersPerLobby != rhs.maxRemotePlayersPerLobby {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

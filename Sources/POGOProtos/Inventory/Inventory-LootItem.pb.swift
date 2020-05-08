@@ -85,6 +85,14 @@ public struct POGOProtos_Inventory_LootItem {
     set {_uniqueStorage()._type = .avatarTemplateID(newValue)}
   }
 
+  public var stickerID: String {
+    get {
+      if case .stickerID(let v)? = _storage._type {return v}
+      return String()
+    }
+    set {_uniqueStorage()._type = .stickerID(newValue)}
+  }
+
   public var count: Int32 {
     get {return _storage._count}
     set {_uniqueStorage()._count = newValue}
@@ -100,6 +108,7 @@ public struct POGOProtos_Inventory_LootItem {
     case experience(Bool)
     case pokemonEgg(POGOProtos_Data_PokemonData)
     case avatarTemplateID(String)
+    case stickerID(String)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Inventory_LootItem.OneOf_Type, rhs: POGOProtos_Inventory_LootItem.OneOf_Type) -> Bool {
@@ -111,6 +120,7 @@ public struct POGOProtos_Inventory_LootItem {
       case (.experience(let l), .experience(let r)): return l == r
       case (.pokemonEgg(let l), .pokemonEgg(let r)): return l == r
       case (.avatarTemplateID(let l), .avatarTemplateID(let r)): return l == r
+      case (.stickerID(let l), .stickerID(let r)): return l == r
       default: return false
       }
     }
@@ -136,6 +146,7 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
     6: .same(proto: "experience"),
     7: .standard(proto: "pokemon_egg"),
     8: .standard(proto: "avatar_template_id"),
+    9: .standard(proto: "sticker_id"),
     5: .same(proto: "count"),
   ]
 
@@ -204,6 +215,11 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
           var v: String?
           try decoder.decodeSingularStringField(value: &v)
           if let v = v {_storage._type = .avatarTemplateID(v)}
+        case 9:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: String?
+          try decoder.decodeSingularStringField(value: &v)
+          if let v = v {_storage._type = .stickerID(v)}
         default: break
         }
       }
@@ -234,6 +250,8 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
         try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
       case .avatarTemplateID(let v)?:
         try visitor.visitSingularStringField(value: v, fieldNumber: 8)
+      case .stickerID(let v)?:
+        try visitor.visitSingularStringField(value: v, fieldNumber: 9)
       case nil: break
       default: break
       }

@@ -32,6 +32,10 @@ public struct POGOProtos_Settings_GpsSettings {
 
   public var drivingSpeedSampleCount: Int32 = 0
 
+  public var idleThresholdSpeedMetersPerSecond: Float = 0
+
+  public var idleThresholdDurationSeconds: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,6 +52,8 @@ extension POGOProtos_Settings_GpsSettings: SwiftProtobuf.Message, SwiftProtobuf.
     2: .standard(proto: "driving_warning_cooldown_minutes"),
     3: .standard(proto: "driving_speed_sample_interval_seconds"),
     4: .standard(proto: "driving_speed_sample_count"),
+    5: .standard(proto: "idle_threshold_speed_meters_per_second"),
+    6: .standard(proto: "idle_threshold_duration_seconds"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +63,8 @@ extension POGOProtos_Settings_GpsSettings: SwiftProtobuf.Message, SwiftProtobuf.
       case 2: try decoder.decodeSingularFloatField(value: &self.drivingWarningCooldownMinutes)
       case 3: try decoder.decodeSingularFloatField(value: &self.drivingSpeedSampleIntervalSeconds)
       case 4: try decoder.decodeSingularInt32Field(value: &self.drivingSpeedSampleCount)
+      case 5: try decoder.decodeSingularFloatField(value: &self.idleThresholdSpeedMetersPerSecond)
+      case 6: try decoder.decodeSingularInt32Field(value: &self.idleThresholdDurationSeconds)
       default: break
       }
     }
@@ -75,6 +83,12 @@ extension POGOProtos_Settings_GpsSettings: SwiftProtobuf.Message, SwiftProtobuf.
     if self.drivingSpeedSampleCount != 0 {
       try visitor.visitSingularInt32Field(value: self.drivingSpeedSampleCount, fieldNumber: 4)
     }
+    if self.idleThresholdSpeedMetersPerSecond != 0 {
+      try visitor.visitSingularFloatField(value: self.idleThresholdSpeedMetersPerSecond, fieldNumber: 5)
+    }
+    if self.idleThresholdDurationSeconds != 0 {
+      try visitor.visitSingularInt32Field(value: self.idleThresholdDurationSeconds, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +97,8 @@ extension POGOProtos_Settings_GpsSettings: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.drivingWarningCooldownMinutes != rhs.drivingWarningCooldownMinutes {return false}
     if lhs.drivingSpeedSampleIntervalSeconds != rhs.drivingSpeedSampleIntervalSeconds {return false}
     if lhs.drivingSpeedSampleCount != rhs.drivingSpeedSampleCount {return false}
+    if lhs.idleThresholdSpeedMetersPerSecond != rhs.idleThresholdSpeedMetersPerSecond {return false}
+    if lhs.idleThresholdDurationSeconds != rhs.idleThresholdDurationSeconds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -673,6 +673,9 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
   case genesect // = 649
   case meltan // = 808
   case melmetal // = 809
+  case obstagoon // = 862
+  case perrserker // = 863
+  case sirfetchd // = 865
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -1333,6 +1336,9 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case 649: self = .genesect
     case 808: self = .meltan
     case 809: self = .melmetal
+    case 862: self = .obstagoon
+    case 863: self = .perrserker
+    case 865: self = .sirfetchd
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -1991,6 +1997,9 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case .genesect: return 649
     case .meltan: return 808
     case .melmetal: return 809
+    case .obstagoon: return 862
+    case .perrserker: return 863
+    case .sirfetchd: return 865
     case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \(#file) is not up to date!"); return 0
     }
   }
@@ -2654,6 +2663,9 @@ extension POGOProtos_Enums_PokemonId: CaseIterable {
     .genesect,
     .meltan,
     .melmetal,
+    .obstagoon,
+    .perrserker,
+    .sirfetchd,
   ]
 }
 
@@ -3315,5 +3327,8 @@ extension POGOProtos_Enums_PokemonId: SwiftProtobuf._ProtoNameProviding {
     649: .same(proto: "GENESECT"),
     808: .same(proto: "MELTAN"),
     809: .same(proto: "MELMETAL"),
+    862: .same(proto: "OBSTAGOON"),
+    863: .same(proto: "PERRSERKER"),
+    865: .same(proto: "SIRFETCHD"),
   ]
 }

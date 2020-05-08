@@ -30,6 +30,8 @@ public struct POGOProtos_Settings_Master_LimitedPurchaseSkuSettings {
 
   public var chronoUnit: POGOProtos_Settings_Master_LimitedPurchaseSkuSettings.ChronoUnit = .unset
 
+  public var lootTableID: String = String()
+
   public var resetInterval: Int32 = 0
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -103,6 +105,7 @@ extension POGOProtos_Settings_Master_LimitedPurchaseSkuSettings: SwiftProtobuf.M
     1: .standard(proto: "purchase_limit"),
     2: .same(proto: "version"),
     3: .standard(proto: "chrono_unit"),
+    4: .standard(proto: "loot_table_id"),
     20: .standard(proto: "reset_interval"),
   ]
 
@@ -112,6 +115,7 @@ extension POGOProtos_Settings_Master_LimitedPurchaseSkuSettings: SwiftProtobuf.M
       case 1: try decoder.decodeSingularInt32Field(value: &self.purchaseLimit)
       case 2: try decoder.decodeSingularInt32Field(value: &self.version)
       case 3: try decoder.decodeSingularEnumField(value: &self.chronoUnit)
+      case 4: try decoder.decodeSingularStringField(value: &self.lootTableID)
       case 20: try decoder.decodeSingularInt32Field(value: &self.resetInterval)
       default: break
       }
@@ -128,6 +132,9 @@ extension POGOProtos_Settings_Master_LimitedPurchaseSkuSettings: SwiftProtobuf.M
     if self.chronoUnit != .unset {
       try visitor.visitSingularEnumField(value: self.chronoUnit, fieldNumber: 3)
     }
+    if !self.lootTableID.isEmpty {
+      try visitor.visitSingularStringField(value: self.lootTableID, fieldNumber: 4)
+    }
     if self.resetInterval != 0 {
       try visitor.visitSingularInt32Field(value: self.resetInterval, fieldNumber: 20)
     }
@@ -138,6 +145,7 @@ extension POGOProtos_Settings_Master_LimitedPurchaseSkuSettings: SwiftProtobuf.M
     if lhs.purchaseLimit != rhs.purchaseLimit {return false}
     if lhs.version != rhs.version {return false}
     if lhs.chronoUnit != rhs.chronoUnit {return false}
+    if lhs.lootTableID != rhs.lootTableID {return false}
     if lhs.resetInterval != rhs.resetInterval {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

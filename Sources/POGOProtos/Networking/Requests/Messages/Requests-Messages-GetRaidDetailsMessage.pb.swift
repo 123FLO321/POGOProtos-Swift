@@ -38,6 +38,8 @@ public struct POGOProtos_Networking_Requests_Messages_GetRaidDetailsMessage {
 
   public var gymLngDegrees: Double = 0
 
+  public var inviterID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -57,6 +59,7 @@ extension POGOProtos_Networking_Requests_Messages_GetRaidDetailsMessage: SwiftPr
     5: .standard(proto: "player_lng_degrees"),
     6: .standard(proto: "gym_lat_degrees"),
     7: .standard(proto: "gym_lng_degrees"),
+    8: .standard(proto: "inviter_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -69,6 +72,7 @@ extension POGOProtos_Networking_Requests_Messages_GetRaidDetailsMessage: SwiftPr
       case 5: try decoder.decodeSingularDoubleField(value: &self.playerLngDegrees)
       case 6: try decoder.decodeSingularDoubleField(value: &self.gymLatDegrees)
       case 7: try decoder.decodeSingularDoubleField(value: &self.gymLngDegrees)
+      case 8: try decoder.decodeSingularStringField(value: &self.inviterID)
       default: break
       }
     }
@@ -96,6 +100,9 @@ extension POGOProtos_Networking_Requests_Messages_GetRaidDetailsMessage: SwiftPr
     if self.gymLngDegrees != 0 {
       try visitor.visitSingularDoubleField(value: self.gymLngDegrees, fieldNumber: 7)
     }
+    if !self.inviterID.isEmpty {
+      try visitor.visitSingularStringField(value: self.inviterID, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -107,6 +114,7 @@ extension POGOProtos_Networking_Requests_Messages_GetRaidDetailsMessage: SwiftPr
     if lhs.playerLngDegrees != rhs.playerLngDegrees {return false}
     if lhs.gymLatDegrees != rhs.gymLatDegrees {return false}
     if lhs.gymLngDegrees != rhs.gymLngDegrees {return false}
+    if lhs.inviterID != rhs.inviterID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
