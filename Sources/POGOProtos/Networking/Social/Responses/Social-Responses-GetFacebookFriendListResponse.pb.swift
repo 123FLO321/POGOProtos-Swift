@@ -40,6 +40,7 @@ public struct POGOProtos_Networking_Social_Responses_GetFacebookFriendListRespon
     case errorFacebookApi // = 3
     case errorFacebookPermissions // = 4
     case errorNoFacebookID // = 5
+    case errorPlayerNotFound // = 6
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -54,6 +55,7 @@ public struct POGOProtos_Networking_Social_Responses_GetFacebookFriendListRespon
       case 3: self = .errorFacebookApi
       case 4: self = .errorFacebookPermissions
       case 5: self = .errorNoFacebookID
+      case 6: self = .errorPlayerNotFound
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -66,6 +68,7 @@ public struct POGOProtos_Networking_Social_Responses_GetFacebookFriendListRespon
       case .errorFacebookApi: return 3
       case .errorFacebookPermissions: return 4
       case .errorNoFacebookID: return 5
+      case .errorPlayerNotFound: return 6
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -109,6 +112,7 @@ extension POGOProtos_Networking_Social_Responses_GetFacebookFriendListResponse.R
     .errorFacebookApi,
     .errorFacebookPermissions,
     .errorNoFacebookID,
+    .errorPlayerNotFound,
   ]
 }
 
@@ -167,6 +171,7 @@ extension POGOProtos_Networking_Social_Responses_GetFacebookFriendListResponse.R
     3: .same(proto: "ERROR_FACEBOOK_API"),
     4: .same(proto: "ERROR_FACEBOOK_PERMISSIONS"),
     5: .same(proto: "ERROR_NO_FACEBOOK_ID"),
+    6: .same(proto: "ERROR_PLAYER_NOT_FOUND"),
   ]
 }
 

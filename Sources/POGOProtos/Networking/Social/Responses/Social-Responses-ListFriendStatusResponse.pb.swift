@@ -90,6 +90,8 @@ public struct POGOProtos_Networking_Social_Responses_ListFriendStatusResponse {
 
     public var calleeList: [POGOProtos_Networking_Social_Responses_ListFriendStatusResponse.Debug.Callee] = []
 
+    public var fetchedFromSameServerAsPlayer: Int32 = 0
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public struct Callee {
@@ -191,6 +193,7 @@ extension POGOProtos_Networking_Social_Responses_ListFriendStatusResponse.Debug:
     4: .standard(proto: "fetched_from_status_cache"),
     5: .standard(proto: "failed_to_fetch"),
     6: .standard(proto: "callee_list"),
+    7: .standard(proto: "fetched_from_same_server_as_player"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -202,6 +205,7 @@ extension POGOProtos_Networking_Social_Responses_ListFriendStatusResponse.Debug:
       case 4: try decoder.decodeSingularInt32Field(value: &self.fetchedFromStatusCache)
       case 5: try decoder.decodeSingularInt32Field(value: &self.failedToFetch)
       case 6: try decoder.decodeRepeatedMessageField(value: &self.calleeList)
+      case 7: try decoder.decodeSingularInt32Field(value: &self.fetchedFromSameServerAsPlayer)
       default: break
       }
     }
@@ -226,6 +230,9 @@ extension POGOProtos_Networking_Social_Responses_ListFriendStatusResponse.Debug:
     if !self.calleeList.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.calleeList, fieldNumber: 6)
     }
+    if self.fetchedFromSameServerAsPlayer != 0 {
+      try visitor.visitSingularInt32Field(value: self.fetchedFromSameServerAsPlayer, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -236,6 +243,7 @@ extension POGOProtos_Networking_Social_Responses_ListFriendStatusResponse.Debug:
     if lhs.fetchedFromStatusCache != rhs.fetchedFromStatusCache {return false}
     if lhs.failedToFetch != rhs.failedToFetch {return false}
     if lhs.calleeList != rhs.calleeList {return false}
+    if lhs.fetchedFromSameServerAsPlayer != rhs.fetchedFromSameServerAsPlayer {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

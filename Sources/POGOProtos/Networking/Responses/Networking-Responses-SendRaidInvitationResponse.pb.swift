@@ -40,6 +40,7 @@ public struct POGOProtos_Networking_Responses_SendRaidInvitationResponse {
     case errorPastCutOffTime // = 5
     case errorNoInvitesRemaining // = 6
     case errorLobbyFull // = 7
+    case errorInviterNotFound // = 8
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -56,6 +57,7 @@ public struct POGOProtos_Networking_Responses_SendRaidInvitationResponse {
       case 5: self = .errorPastCutOffTime
       case 6: self = .errorNoInvitesRemaining
       case 7: self = .errorLobbyFull
+      case 8: self = .errorInviterNotFound
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -70,6 +72,7 @@ public struct POGOProtos_Networking_Responses_SendRaidInvitationResponse {
       case .errorPastCutOffTime: return 5
       case .errorNoInvitesRemaining: return 6
       case .errorLobbyFull: return 7
+      case .errorInviterNotFound: return 8
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -92,6 +95,7 @@ extension POGOProtos_Networking_Responses_SendRaidInvitationResponse.Result: Cas
     .errorPastCutOffTime,
     .errorNoInvitesRemaining,
     .errorLobbyFull,
+    .errorInviterNotFound,
   ]
 }
 
@@ -146,5 +150,6 @@ extension POGOProtos_Networking_Responses_SendRaidInvitationResponse.Result: Swi
     5: .same(proto: "ERROR_PAST_CUT_OFF_TIME"),
     6: .same(proto: "ERROR_NO_INVITES_REMAINING"),
     7: .same(proto: "ERROR_LOBBY_FULL"),
+    8: .same(proto: "ERROR_INVITER_NOT_FOUND"),
   ]
 }

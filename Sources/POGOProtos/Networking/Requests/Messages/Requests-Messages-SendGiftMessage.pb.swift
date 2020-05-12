@@ -28,6 +28,8 @@ public struct POGOProtos_Networking_Requests_Messages_SendGiftMessage {
 
   public var playerID: String = String()
 
+  public var stickersSent: [POGOProtos_Data_Sticker_StickerSent] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -42,6 +44,7 @@ extension POGOProtos_Networking_Requests_Messages_SendGiftMessage: SwiftProtobuf
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "giftbox_id"),
     2: .standard(proto: "player_id"),
+    3: .standard(proto: "stickers_sent"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +52,7 @@ extension POGOProtos_Networking_Requests_Messages_SendGiftMessage: SwiftProtobuf
       switch fieldNumber {
       case 1: try decoder.decodeSingularFixed64Field(value: &self.giftboxID)
       case 2: try decoder.decodeSingularStringField(value: &self.playerID)
+      case 3: try decoder.decodeRepeatedMessageField(value: &self.stickersSent)
       default: break
       }
     }
@@ -61,12 +65,16 @@ extension POGOProtos_Networking_Requests_Messages_SendGiftMessage: SwiftProtobuf
     if !self.playerID.isEmpty {
       try visitor.visitSingularStringField(value: self.playerID, fieldNumber: 2)
     }
+    if !self.stickersSent.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.stickersSent, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Requests_Messages_SendGiftMessage, rhs: POGOProtos_Networking_Requests_Messages_SendGiftMessage) -> Bool {
     if lhs.giftboxID != rhs.giftboxID {return false}
     if lhs.playerID != rhs.playerID {return false}
+    if lhs.stickersSent != rhs.stickersSent {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

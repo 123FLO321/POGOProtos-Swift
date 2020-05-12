@@ -50,6 +50,7 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
     case errorGymLockout // = 8
     case errorNoTicket // = 9
     case errorNoRemoteTicket // = 10
+    case errorNoInvite // = 11
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -69,6 +70,7 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
       case 8: self = .errorGymLockout
       case 9: self = .errorNoTicket
       case 10: self = .errorNoRemoteTicket
+      case 11: self = .errorNoInvite
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -86,6 +88,7 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
       case .errorGymLockout: return 8
       case .errorNoTicket: return 9
       case .errorNoRemoteTicket: return 10
+      case .errorNoInvite: return 11
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -113,6 +116,7 @@ extension POGOProtos_Networking_Responses_JoinLobbyResponse.Result: CaseIterable
     .errorGymLockout,
     .errorNoTicket,
     .errorNoRemoteTicket,
+    .errorNoInvite,
   ]
 }
 
@@ -170,5 +174,6 @@ extension POGOProtos_Networking_Responses_JoinLobbyResponse.Result: SwiftProtobu
     8: .same(proto: "ERROR_GYM_LOCKOUT"),
     9: .same(proto: "ERROR_NO_TICKET"),
     10: .same(proto: "ERROR_NO_REMOTE_TICKET"),
+    11: .same(proto: "ERROR_NO_INVITE"),
   ]
 }

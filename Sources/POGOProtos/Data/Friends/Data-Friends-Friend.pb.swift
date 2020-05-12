@@ -42,9 +42,38 @@ public struct POGOProtos_Data_Friends_Friend {
 
   public var isFacebookFriendship: Bool = false
 
+  public var sharedData: POGOProtos_Data_Friends_Friend.SharedFriendship {
+    get {return _sharedData ?? POGOProtos_Data_Friends_Friend.SharedFriendship()}
+    set {_sharedData = newValue}
+  }
+  /// Returns true if `sharedData` has been explicitly set.
+  public var hasSharedData: Bool {return self._sharedData != nil}
+  /// Clears the value of `sharedData`. Subsequent reads from it will return its default value.
+  public mutating func clearSharedData() {self._sharedData = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
+  public struct SharedFriendship {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var sharedData: Data = SwiftProtobuf.Internal.emptyData
+
+    public var version: Int64 = 0
+
+    public var dataFromMe: Data = SwiftProtobuf.Internal.emptyData
+
+    public var dataToMe: Data = SwiftProtobuf.Internal.emptyData
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
   public init() {}
+
+  fileprivate var _sharedData: POGOProtos_Data_Friends_Friend.SharedFriendship? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -63,6 +92,7 @@ extension POGOProtos_Data_Friends_Friend: SwiftProtobuf.Message, SwiftProtobuf._
     7: .standard(proto: "created_ms"),
     8: .standard(proto: "fb_user_id"),
     9: .standard(proto: "is_facebook_friendship"),
+    10: .standard(proto: "shared_data"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -77,6 +107,7 @@ extension POGOProtos_Data_Friends_Friend: SwiftProtobuf.Message, SwiftProtobuf._
       case 7: try decoder.decodeSingularInt64Field(value: &self.createdMs)
       case 8: try decoder.decodeSingularStringField(value: &self.fbUserID)
       case 9: try decoder.decodeSingularBoolField(value: &self.isFacebookFriendship)
+      case 10: try decoder.decodeSingularMessageField(value: &self._sharedData)
       default: break
       }
     }
@@ -110,6 +141,9 @@ extension POGOProtos_Data_Friends_Friend: SwiftProtobuf.Message, SwiftProtobuf._
     if self.isFacebookFriendship != false {
       try visitor.visitSingularBoolField(value: self.isFacebookFriendship, fieldNumber: 9)
     }
+    if let v = self._sharedData {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -123,6 +157,54 @@ extension POGOProtos_Data_Friends_Friend: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.createdMs != rhs.createdMs {return false}
     if lhs.fbUserID != rhs.fbUserID {return false}
     if lhs.isFacebookFriendship != rhs.isFacebookFriendship {return false}
+    if lhs._sharedData != rhs._sharedData {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Friends_Friend.SharedFriendship: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Friends_Friend.protoMessageName + ".SharedFriendship"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "shared_data"),
+    2: .same(proto: "version"),
+    3: .standard(proto: "data_from_me"),
+    4: .standard(proto: "data_to_me"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBytesField(value: &self.sharedData)
+      case 2: try decoder.decodeSingularInt64Field(value: &self.version)
+      case 3: try decoder.decodeSingularBytesField(value: &self.dataFromMe)
+      case 4: try decoder.decodeSingularBytesField(value: &self.dataToMe)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.sharedData.isEmpty {
+      try visitor.visitSingularBytesField(value: self.sharedData, fieldNumber: 1)
+    }
+    if self.version != 0 {
+      try visitor.visitSingularInt64Field(value: self.version, fieldNumber: 2)
+    }
+    if !self.dataFromMe.isEmpty {
+      try visitor.visitSingularBytesField(value: self.dataFromMe, fieldNumber: 3)
+    }
+    if !self.dataToMe.isEmpty {
+      try visitor.visitSingularBytesField(value: self.dataToMe, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Friends_Friend.SharedFriendship, rhs: POGOProtos_Data_Friends_Friend.SharedFriendship) -> Bool {
+    if lhs.sharedData != rhs.sharedData {return false}
+    if lhs.version != rhs.version {return false}
+    if lhs.dataFromMe != rhs.dataFromMe {return false}
+    if lhs.dataToMe != rhs.dataToMe {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

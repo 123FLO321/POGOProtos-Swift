@@ -52,6 +52,8 @@ public struct POGOProtos_Data_Gift_GiftBoxDetails {
 
   public var isSponsored: Bool = false
 
+  public var stickersSent: [POGOProtos_Data_Sticker_StickerSent] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -78,6 +80,7 @@ extension POGOProtos_Data_Gift_GiftBoxDetails: SwiftProtobuf.Message, SwiftProto
     12: .standard(proto: "sent_timestamp"),
     13: .standard(proto: "delivery_pokemon_id"),
     14: .standard(proto: "is_sponsored"),
+    15: .standard(proto: "stickers_sent"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -97,6 +100,7 @@ extension POGOProtos_Data_Gift_GiftBoxDetails: SwiftProtobuf.Message, SwiftProto
       case 12: try decoder.decodeSingularInt64Field(value: &self.sentTimestamp)
       case 13: try decoder.decodeSingularFixed64Field(value: &self.deliveryPokemonID)
       case 14: try decoder.decodeSingularBoolField(value: &self.isSponsored)
+      case 15: try decoder.decodeRepeatedMessageField(value: &self.stickersSent)
       default: break
       }
     }
@@ -145,6 +149,9 @@ extension POGOProtos_Data_Gift_GiftBoxDetails: SwiftProtobuf.Message, SwiftProto
     if self.isSponsored != false {
       try visitor.visitSingularBoolField(value: self.isSponsored, fieldNumber: 14)
     }
+    if !self.stickersSent.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.stickersSent, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -163,6 +170,7 @@ extension POGOProtos_Data_Gift_GiftBoxDetails: SwiftProtobuf.Message, SwiftProto
     if lhs.sentTimestamp != rhs.sentTimestamp {return false}
     if lhs.deliveryPokemonID != rhs.deliveryPokemonID {return false}
     if lhs.isSponsored != rhs.isSponsored {return false}
+    if lhs.stickersSent != rhs.stickersSent {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

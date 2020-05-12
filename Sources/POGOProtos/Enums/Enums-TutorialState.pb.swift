@@ -62,6 +62,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case battleLeagueHelpTutorial // = 40
   case armpTosConfirmation // = 41
   case buddyRemoteGiftTutorial // = 42
+  case dailyBonusEncounterTutorial // = 45
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -111,6 +112,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case 40: self = .battleLeagueHelpTutorial
     case 41: self = .armpTosConfirmation
     case 42: self = .buddyRemoteGiftTutorial
+    case 45: self = .dailyBonusEncounterTutorial
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -158,6 +160,7 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .battleLeagueHelpTutorial: return 40
     case .armpTosConfirmation: return 41
     case .buddyRemoteGiftTutorial: return 42
+    case .dailyBonusEncounterTutorial: return 45
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -210,6 +213,7 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
     .battleLeagueHelpTutorial,
     .armpTosConfirmation,
     .buddyRemoteGiftTutorial,
+    .dailyBonusEncounterTutorial,
   ]
 }
 
@@ -260,5 +264,6 @@ extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
     40: .same(proto: "BATTLE_LEAGUE_HELP_TUTORIAL"),
     41: .same(proto: "ARMP_TOS_CONFIRMATION"),
     42: .same(proto: "BUDDY_REMOTE_GIFT_TUTORIAL"),
+    45: .same(proto: "DAILY_BONUS_ENCOUNTER_TUTORIAL"),
   ]
 }

@@ -26,40 +26,114 @@ public struct POGOProtos_Data_Combat_PokemonCondition {
 
   public var type: POGOProtos_Enums_ConditionType = .unsetCondition
 
+  public var condition: POGOProtos_Data_Combat_PokemonCondition.OneOf_Condition? = nil
+
   public var withPokemonCpLimit: POGOProtos_Data_Combat_WithPokemonCpLimit {
-    get {return _withPokemonCpLimit ?? POGOProtos_Data_Combat_WithPokemonCpLimit()}
-    set {_withPokemonCpLimit = newValue}
+    get {
+      if case .withPokemonCpLimit(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_WithPokemonCpLimit()
+    }
+    set {condition = .withPokemonCpLimit(newValue)}
   }
-  /// Returns true if `withPokemonCpLimit` has been explicitly set.
-  public var hasWithPokemonCpLimit: Bool {return self._withPokemonCpLimit != nil}
-  /// Clears the value of `withPokemonCpLimit`. Subsequent reads from it will return its default value.
-  public mutating func clearWithPokemonCpLimit() {self._withPokemonCpLimit = nil}
 
   public var withPokemonType: POGOProtos_Data_Combat_WithPokemonType {
-    get {return _withPokemonType ?? POGOProtos_Data_Combat_WithPokemonType()}
-    set {_withPokemonType = newValue}
+    get {
+      if case .withPokemonType(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_WithPokemonType()
+    }
+    set {condition = .withPokemonType(newValue)}
   }
-  /// Returns true if `withPokemonType` has been explicitly set.
-  public var hasWithPokemonType: Bool {return self._withPokemonType != nil}
-  /// Clears the value of `withPokemonType`. Subsequent reads from it will return its default value.
-  public mutating func clearWithPokemonType() {self._withPokemonType = nil}
 
   public var withPokemonCategory: POGOProtos_Data_Combat_WithPokemonCategory {
-    get {return _withPokemonCategory ?? POGOProtos_Data_Combat_WithPokemonCategory()}
-    set {_withPokemonCategory = newValue}
+    get {
+      if case .withPokemonCategory(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_WithPokemonCategory()
+    }
+    set {condition = .withPokemonCategory(newValue)}
   }
-  /// Returns true if `withPokemonCategory` has been explicitly set.
-  public var hasWithPokemonCategory: Bool {return self._withPokemonCategory != nil}
-  /// Clears the value of `withPokemonCategory`. Subsequent reads from it will return its default value.
-  public mutating func clearWithPokemonCategory() {self._withPokemonCategory = nil}
+
+  public var pokemonWhitelist: POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist {
+    get {
+      if case .pokemonWhitelist(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist()
+    }
+    set {condition = .pokemonWhitelist(newValue)}
+  }
+
+  public var pokemonBanlist: POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist {
+    get {
+      if case .pokemonBanlist(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist()
+    }
+    set {condition = .pokemonBanlist(newValue)}
+  }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public init() {}
+  public enum OneOf_Condition: Equatable {
+    case withPokemonCpLimit(POGOProtos_Data_Combat_WithPokemonCpLimit)
+    case withPokemonType(POGOProtos_Data_Combat_WithPokemonType)
+    case withPokemonCategory(POGOProtos_Data_Combat_WithPokemonCategory)
+    case pokemonWhitelist(POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist)
+    case pokemonBanlist(POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist)
 
-  fileprivate var _withPokemonCpLimit: POGOProtos_Data_Combat_WithPokemonCpLimit? = nil
-  fileprivate var _withPokemonType: POGOProtos_Data_Combat_WithPokemonType? = nil
-  fileprivate var _withPokemonCategory: POGOProtos_Data_Combat_WithPokemonCategory? = nil
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition.OneOf_Condition, rhs: POGOProtos_Data_Combat_PokemonCondition.OneOf_Condition) -> Bool {
+      switch (lhs, rhs) {
+      case (.withPokemonCpLimit(let l), .withPokemonCpLimit(let r)): return l == r
+      case (.withPokemonType(let l), .withPokemonType(let r)): return l == r
+      case (.withPokemonCategory(let l), .withPokemonCategory(let r)): return l == r
+      case (.pokemonWhitelist(let l), .pokemonWhitelist(let r)): return l == r
+      case (.pokemonBanlist(let l), .pokemonBanlist(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
+
+  public struct PokemonBanlist {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var name: String = String()
+
+    public var pokemon: [POGOProtos_Data_Combat_PokemonCondition.PokemonWithForm] = []
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct PokemonWhitelist {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var name: String = String()
+
+    public var pokemon: [POGOProtos_Data_Combat_PokemonCondition.PokemonWithForm] = []
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct PokemonWithForm {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var id: POGOProtos_Enums_PokemonId = .missingno
+
+    public var form: POGOProtos_Enums_Form = .unset
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -73,15 +147,54 @@ extension POGOProtos_Data_Combat_PokemonCondition: SwiftProtobuf.Message, SwiftP
     2: .standard(proto: "with_pokemon_cp_limit"),
     3: .standard(proto: "with_pokemon_type"),
     4: .standard(proto: "with_pokemon_category"),
+    5: .standard(proto: "pokemon_whitelist"),
+    6: .standard(proto: "pokemon_banlist"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.type)
-      case 2: try decoder.decodeSingularMessageField(value: &self._withPokemonCpLimit)
-      case 3: try decoder.decodeSingularMessageField(value: &self._withPokemonType)
-      case 4: try decoder.decodeSingularMessageField(value: &self._withPokemonCategory)
+      case 2:
+        var v: POGOProtos_Data_Combat_WithPokemonCpLimit?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .withPokemonCpLimit(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .withPokemonCpLimit(v)}
+      case 3:
+        var v: POGOProtos_Data_Combat_WithPokemonType?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .withPokemonType(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .withPokemonType(v)}
+      case 4:
+        var v: POGOProtos_Data_Combat_WithPokemonCategory?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .withPokemonCategory(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .withPokemonCategory(v)}
+      case 5:
+        var v: POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .pokemonWhitelist(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .pokemonWhitelist(v)}
+      case 6:
+        var v: POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .pokemonBanlist(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .pokemonBanlist(v)}
       default: break
       }
     }
@@ -91,23 +204,130 @@ extension POGOProtos_Data_Combat_PokemonCondition: SwiftProtobuf.Message, SwiftP
     if self.type != .unsetCondition {
       try visitor.visitSingularEnumField(value: self.type, fieldNumber: 1)
     }
-    if let v = self._withPokemonCpLimit {
+    switch self.condition {
+    case .withPokemonCpLimit(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
-    }
-    if let v = self._withPokemonType {
+    case .withPokemonType(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._withPokemonCategory {
+    case .withPokemonCategory(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    case .pokemonWhitelist(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+    case .pokemonBanlist(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+    case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition, rhs: POGOProtos_Data_Combat_PokemonCondition) -> Bool {
     if lhs.type != rhs.type {return false}
-    if lhs._withPokemonCpLimit != rhs._withPokemonCpLimit {return false}
-    if lhs._withPokemonType != rhs._withPokemonType {return false}
-    if lhs._withPokemonCategory != rhs._withPokemonCategory {return false}
+    if lhs.condition != rhs.condition {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Combat_PokemonCondition.protoMessageName + ".PokemonBanlist"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .same(proto: "pokemon"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.name)
+      case 2: try decoder.decodeRepeatedMessageField(value: &self.pokemon)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+    }
+    if !self.pokemon.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.pokemon, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist, rhs: POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist) -> Bool {
+    if lhs.name != rhs.name {return false}
+    if lhs.pokemon != rhs.pokemon {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Combat_PokemonCondition.protoMessageName + ".PokemonWhitelist"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .same(proto: "pokemon"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.name)
+      case 2: try decoder.decodeRepeatedMessageField(value: &self.pokemon)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+    }
+    if !self.pokemon.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.pokemon, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist, rhs: POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist) -> Bool {
+    if lhs.name != rhs.name {return false}
+    if lhs.pokemon != rhs.pokemon {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Combat_PokemonCondition.PokemonWithForm: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Combat_PokemonCondition.protoMessageName + ".PokemonWithForm"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "id"),
+    2: .same(proto: "form"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.id)
+      case 2: try decoder.decodeSingularEnumField(value: &self.form)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.id != .missingno {
+      try visitor.visitSingularEnumField(value: self.id, fieldNumber: 1)
+    }
+    if self.form != .unset {
+      try visitor.visitSingularEnumField(value: self.form, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition.PokemonWithForm, rhs: POGOProtos_Data_Combat_PokemonCondition.PokemonWithForm) -> Bool {
+    if lhs.id != rhs.id {return false}
+    if lhs.form != rhs.form {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

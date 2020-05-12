@@ -92,6 +92,14 @@ public struct POGOProtos_Data_Quests_QuestReward {
     set {reward = .pokecoin(newValue)}
   }
 
+  public var stickerID: String {
+    get {
+      if case .stickerID(let v)? = reward {return v}
+      return String()
+    }
+    set {reward = .stickerID(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Reward: Equatable {
@@ -103,6 +111,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
     case questTemplateID(String)
     case pokemonEncounter(POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward)
     case pokecoin(Int32)
+    case stickerID(String)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Quests_QuestReward.OneOf_Reward, rhs: POGOProtos_Data_Quests_QuestReward.OneOf_Reward) -> Bool {
@@ -115,6 +124,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case (.questTemplateID(let l), .questTemplateID(let r)): return l == r
       case (.pokemonEncounter(let l), .pokemonEncounter(let r)): return l == r
       case (.pokecoin(let l), .pokecoin(let r)): return l == r
+      case (.stickerID(let l), .stickerID(let r)): return l == r
       default: return false
       }
     }
@@ -132,6 +142,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
     case quest // = 6
     case pokemonEncounter // = 7
     case pokecoin // = 8
+    case sticker // = 11
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -149,6 +160,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case 6: self = .quest
       case 7: self = .pokemonEncounter
       case 8: self = .pokecoin
+      case 11: self = .sticker
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -164,6 +176,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case .quest: return 6
       case .pokemonEncounter: return 7
       case .pokecoin: return 8
+      case .sticker: return 11
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -281,6 +294,7 @@ extension POGOProtos_Data_Quests_QuestReward.TypeEnum: CaseIterable {
     .quest,
     .pokemonEncounter,
     .pokecoin,
+    .sticker,
   ]
 }
 
@@ -302,6 +316,7 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
     7: .standard(proto: "quest_template_id"),
     8: .standard(proto: "pokemon_encounter"),
     9: .same(proto: "pokecoin"),
+    12: .standard(proto: "sticker_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -357,6 +372,11 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
         var v: Int32?
         try decoder.decodeSingularInt32Field(value: &v)
         if let v = v {self.reward = .pokecoin(v)}
+      case 12:
+        if self.reward != nil {try decoder.handleConflictingOneOf()}
+        var v: String?
+        try decoder.decodeSingularStringField(value: &v)
+        if let v = v {self.reward = .stickerID(v)}
       default: break
       }
     }
@@ -383,6 +403,8 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
     case .pokecoin(let v)?:
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 9)
+    case .stickerID(let v)?:
+      try visitor.visitSingularStringField(value: v, fieldNumber: 12)
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -407,6 +429,7 @@ extension POGOProtos_Data_Quests_QuestReward.TypeEnum: SwiftProtobuf._ProtoNameP
     6: .same(proto: "QUEST"),
     7: .same(proto: "POKEMON_ENCOUNTER"),
     8: .same(proto: "POKECOIN"),
+    11: .same(proto: "STICKER"),
   ]
 }
 

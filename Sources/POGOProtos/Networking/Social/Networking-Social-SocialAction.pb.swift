@@ -71,6 +71,27 @@ public enum POGOProtos_Networking_Social_SocialAction: SwiftProtobuf.Enum {
   case updateFacebookStatus // = 10015
 
   /// Implemented
+  case savePlayerSettings // = 10016
+
+  /// Implemented
+  case getPlayerSettings // = 10017
+
+  /// Implemented
+  case getNianticFriendList // = 10018
+
+  /// Implemented
+  case getNianticFriendDetails // = 10019
+
+  /// ???
+  case sendNianticFriendInvite // = 10020
+
+  /// Implemented
+  case setAccountSettings // = 10021
+
+  /// Implemented
+  case getAccountSettings // = 10022
+
+  /// Implemented
   case registerPushNotificationSocialAction // = 10101
 
   /// ???
@@ -108,6 +129,13 @@ public enum POGOProtos_Networking_Social_SocialAction: SwiftProtobuf.Enum {
     case 10013: self = .createInviteCode
     case 10014: self = .getFacebookFriendList
     case 10015: self = .updateFacebookStatus
+    case 10016: self = .savePlayerSettings
+    case 10017: self = .getPlayerSettings
+    case 10018: self = .getNianticFriendList
+    case 10019: self = .getNianticFriendDetails
+    case 10020: self = .sendNianticFriendInvite
+    case 10021: self = .setAccountSettings
+    case 10022: self = .getAccountSettings
     case 10101: self = .registerPushNotificationSocialAction
     case 10102: self = .unregisterPushNotificationSocialAction
     case 10103: self = .updateNotification
@@ -135,6 +163,13 @@ public enum POGOProtos_Networking_Social_SocialAction: SwiftProtobuf.Enum {
     case .createInviteCode: return 10013
     case .getFacebookFriendList: return 10014
     case .updateFacebookStatus: return 10015
+    case .savePlayerSettings: return 10016
+    case .getPlayerSettings: return 10017
+    case .getNianticFriendList: return 10018
+    case .getNianticFriendDetails: return 10019
+    case .sendNianticFriendInvite: return 10020
+    case .setAccountSettings: return 10021
+    case .getAccountSettings: return 10022
     case .registerPushNotificationSocialAction: return 10101
     case .unregisterPushNotificationSocialAction: return 10102
     case .updateNotification: return 10103
@@ -167,6 +202,13 @@ extension POGOProtos_Networking_Social_SocialAction: CaseIterable {
     .createInviteCode,
     .getFacebookFriendList,
     .updateFacebookStatus,
+    .savePlayerSettings,
+    .getPlayerSettings,
+    .getNianticFriendList,
+    .getNianticFriendDetails,
+    .sendNianticFriendInvite,
+    .setAccountSettings,
+    .getAccountSettings,
     .registerPushNotificationSocialAction,
     .unregisterPushNotificationSocialAction,
     .updateNotification,
@@ -197,6 +239,13 @@ extension POGOProtos_Networking_Social_SocialAction: SwiftProtobuf._ProtoNamePro
     10013: .same(proto: "CREATE_INVITE_CODE"),
     10014: .same(proto: "GET_FACEBOOK_FRIEND_LIST"),
     10015: .same(proto: "UPDATE_FACEBOOK_STATUS"),
+    10016: .same(proto: "SAVE_PLAYER_SETTINGS"),
+    10017: .same(proto: "GET_PLAYER_SETTINGS"),
+    10018: .same(proto: "GET_NIANTIC_FRIEND_LIST"),
+    10019: .same(proto: "GET_NIANTIC_FRIEND_DETAILS"),
+    10020: .same(proto: "SEND_NIANTIC_FRIEND_INVITE"),
+    10021: .same(proto: "SET_ACCOUNT_SETTINGS"),
+    10022: .same(proto: "GET_ACCOUNT_SETTINGS"),
     10101: .same(proto: "REGISTER_PUSH_NOTIFICATION_SOCIAL_ACTION"),
     10102: .same(proto: "UNREGISTER_PUSH_NOTIFICATION_SOCIAL_ACTION"),
     10103: .same(proto: "UPDATE_NOTIFICATION"),

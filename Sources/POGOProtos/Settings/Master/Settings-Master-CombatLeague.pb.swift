@@ -44,10 +44,58 @@ public struct POGOProtos_Settings_Master_CombatLeague {
 
   public var battlePartyCombatLeagueTemplateID: String = String()
 
+  public var leagueType: POGOProtos_Settings_Master_CombatLeague.LeagueType = .none
+
+  public var borderColorHex: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum LeagueType: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case none // = 0
+    case standard // = 1
+    case premier // = 2
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .none
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .none
+      case 1: self = .standard
+      case 2: self = .premier
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .none: return 0
+      case .standard: return 1
+      case .premier: return 2
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+
+  }
 
   public init() {}
 }
+
+#if swift(>=4.2)
+
+extension POGOProtos_Settings_Master_CombatLeague.LeagueType: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Settings_Master_CombatLeague.LeagueType] = [
+    .none,
+    .standard,
+    .premier,
+  ]
+}
+
+#endif  // swift(>=4.2)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -66,6 +114,8 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
     8: .standard(proto: "badge_type"),
     9: .standard(proto: "minigame_defense_chance_limit"),
     10: .standard(proto: "battle_party_combat_league_template_id"),
+    11: .standard(proto: "league_type"),
+    12: .standard(proto: "border_color_hex"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -81,6 +131,8 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
       case 8: try decoder.decodeSingularEnumField(value: &self.badgeType)
       case 9: try decoder.decodeSingularInt32Field(value: &self.minigameDefenseChanceLimit)
       case 10: try decoder.decodeSingularStringField(value: &self.battlePartyCombatLeagueTemplateID)
+      case 11: try decoder.decodeSingularEnumField(value: &self.leagueType)
+      case 12: try decoder.decodeSingularStringField(value: &self.borderColorHex)
       default: break
       }
     }
@@ -117,6 +169,12 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
     if !self.battlePartyCombatLeagueTemplateID.isEmpty {
       try visitor.visitSingularStringField(value: self.battlePartyCombatLeagueTemplateID, fieldNumber: 10)
     }
+    if self.leagueType != .none {
+      try visitor.visitSingularEnumField(value: self.leagueType, fieldNumber: 11)
+    }
+    if !self.borderColorHex.isEmpty {
+      try visitor.visitSingularStringField(value: self.borderColorHex, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -131,7 +189,17 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
     if lhs.badgeType != rhs.badgeType {return false}
     if lhs.minigameDefenseChanceLimit != rhs.minigameDefenseChanceLimit {return false}
     if lhs.battlePartyCombatLeagueTemplateID != rhs.battlePartyCombatLeagueTemplateID {return false}
+    if lhs.leagueType != rhs.leagueType {return false}
+    if lhs.borderColorHex != rhs.borderColorHex {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Settings_Master_CombatLeague.LeagueType: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "NONE"),
+    1: .same(proto: "STANDARD"),
+    2: .same(proto: "PREMIER"),
+  ]
 }

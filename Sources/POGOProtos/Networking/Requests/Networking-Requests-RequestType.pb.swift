@@ -567,6 +567,12 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
 
   /// Implemented
   case sendRaidInvitation // = 1504
+
+  /// Implemented
+  case getDailyEncounter // = 1601
+
+  /// Implemented
+  case dailyEncounter // = 1602
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -757,6 +763,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1501: self = .getTodayView
     case 1503: self = .remoteGiftPing
     case 1504: self = .sendRaidInvitation
+    case 1601: self = .getDailyEncounter
+    case 1602: self = .dailyEncounter
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -945,6 +953,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .getTodayView: return 1501
     case .remoteGiftPing: return 1503
     case .sendRaidInvitation: return 1504
+    case .getDailyEncounter: return 1601
+    case .dailyEncounter: return 1602
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1138,6 +1148,8 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .getTodayView,
     .remoteGiftPing,
     .sendRaidInvitation,
+    .getDailyEncounter,
+    .dailyEncounter,
   ]
 }
 
@@ -1329,5 +1341,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1501: .same(proto: "GET_TODAY_VIEW"),
     1503: .same(proto: "REMOTE_GIFT_PING"),
     1504: .same(proto: "SEND_RAID_INVITATION"),
+    1601: .same(proto: "GET_DAILY_ENCOUNTER"),
+    1602: .same(proto: "DAILY_ENCOUNTER"),
   ]
 }

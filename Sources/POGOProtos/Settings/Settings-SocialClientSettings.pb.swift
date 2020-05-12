@@ -42,7 +42,11 @@ public struct POGOProtos_Settings_SocialClientSettings {
 
   public var disableFacebookFriendsOpeningPrompt: Bool = false
 
+  public var enableGiftabilityV2: Bool = false
+
   public var enableRemoteGifting: Bool = false
+
+  public var enableSticker: Bool = false
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -79,7 +83,9 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     7: .standard(proto: "enable_facebook_friends"),
     8: .standard(proto: "facebook_friend_limit_per_request"),
     9: .standard(proto: "disable_facebook_friends_opening_prompt"),
+    11: .standard(proto: "enable_giftability_v2"),
     12: .standard(proto: "enable_remote_gifting"),
+    13: .standard(proto: "enable_sticker"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -94,7 +100,9 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
       case 7: try decoder.decodeSingularBoolField(value: &self.enableFacebookFriends)
       case 8: try decoder.decodeSingularInt32Field(value: &self.facebookFriendLimitPerRequest)
       case 9: try decoder.decodeSingularBoolField(value: &self.disableFacebookFriendsOpeningPrompt)
+      case 11: try decoder.decodeSingularBoolField(value: &self.enableGiftabilityV2)
       case 12: try decoder.decodeSingularBoolField(value: &self.enableRemoteGifting)
+      case 13: try decoder.decodeSingularBoolField(value: &self.enableSticker)
       default: break
       }
     }
@@ -128,8 +136,14 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     if self.disableFacebookFriendsOpeningPrompt != false {
       try visitor.visitSingularBoolField(value: self.disableFacebookFriendsOpeningPrompt, fieldNumber: 9)
     }
+    if self.enableGiftabilityV2 != false {
+      try visitor.visitSingularBoolField(value: self.enableGiftabilityV2, fieldNumber: 11)
+    }
     if self.enableRemoteGifting != false {
       try visitor.visitSingularBoolField(value: self.enableRemoteGifting, fieldNumber: 12)
+    }
+    if self.enableSticker != false {
+      try visitor.visitSingularBoolField(value: self.enableSticker, fieldNumber: 13)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -144,7 +158,9 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     if lhs.enableFacebookFriends != rhs.enableFacebookFriends {return false}
     if lhs.facebookFriendLimitPerRequest != rhs.facebookFriendLimitPerRequest {return false}
     if lhs.disableFacebookFriendsOpeningPrompt != rhs.disableFacebookFriendsOpeningPrompt {return false}
+    if lhs.enableGiftabilityV2 != rhs.enableGiftabilityV2 {return false}
     if lhs.enableRemoteGifting != rhs.enableRemoteGifting {return false}
+    if lhs.enableSticker != rhs.enableSticker {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

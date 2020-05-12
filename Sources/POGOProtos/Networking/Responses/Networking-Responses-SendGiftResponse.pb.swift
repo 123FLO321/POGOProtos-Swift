@@ -40,6 +40,7 @@ public struct POGOProtos_Networking_Responses_SendGiftResponse {
     case errorGiftAlreadySentToday // = 5
     case errorPlayerHasUnopenedGift // = 6
     case errorFriendUpdate // = 7
+    case errorPlayerHasNoStickers // = 8
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -56,6 +57,7 @@ public struct POGOProtos_Networking_Responses_SendGiftResponse {
       case 5: self = .errorGiftAlreadySentToday
       case 6: self = .errorPlayerHasUnopenedGift
       case 7: self = .errorFriendUpdate
+      case 8: self = .errorPlayerHasNoStickers
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -70,6 +72,7 @@ public struct POGOProtos_Networking_Responses_SendGiftResponse {
       case .errorGiftAlreadySentToday: return 5
       case .errorPlayerHasUnopenedGift: return 6
       case .errorFriendUpdate: return 7
+      case .errorPlayerHasNoStickers: return 8
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -92,6 +95,7 @@ extension POGOProtos_Networking_Responses_SendGiftResponse.Result: CaseIterable 
     .errorGiftAlreadySentToday,
     .errorPlayerHasUnopenedGift,
     .errorFriendUpdate,
+    .errorPlayerHasNoStickers,
   ]
 }
 
@@ -146,5 +150,6 @@ extension POGOProtos_Networking_Responses_SendGiftResponse.Result: SwiftProtobuf
     5: .same(proto: "ERROR_GIFT_ALREADY_SENT_TODAY"),
     6: .same(proto: "ERROR_PLAYER_HAS_UNOPENED_GIFT"),
     7: .same(proto: "ERROR_FRIEND_UPDATE"),
+    8: .same(proto: "ERROR_PLAYER_HAS_NO_STICKERS"),
   ]
 }

@@ -39,12 +39,62 @@ public struct POGOProtos_Data_Friends_FriendDetails {
 
   public var dataWithMe: Data = SwiftProtobuf.Internal.emptyData
 
+  public var onlineStatus: POGOProtos_Data_Friends_FriendDetails.OnlineStatus = .unset
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum OnlineStatus: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unset // = 0
+    case statusUnknown // = 1
+    case statusOnline // = 2
+    case statusOffline // = 3
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unset
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unset
+      case 1: self = .statusUnknown
+      case 2: self = .statusOnline
+      case 3: self = .statusOffline
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unset: return 0
+      case .statusUnknown: return 1
+      case .statusOnline: return 2
+      case .statusOffline: return 3
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+
+  }
 
   public init() {}
 
   fileprivate var _player: POGOProtos_Data_Player_PlayerSummary? = nil
 }
+
+#if swift(>=4.2)
+
+extension POGOProtos_Data_Friends_FriendDetails.OnlineStatus: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Data_Friends_FriendDetails.OnlineStatus] = [
+    .unset,
+    .statusUnknown,
+    .statusOnline,
+    .statusOffline,
+  ]
+}
+
+#endif  // swift(>=4.2)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -57,6 +107,7 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
     2: .standard(proto: "friend_visible_data"),
     3: .same(proto: "score"),
     4: .standard(proto: "data_with_me"),
+    5: .standard(proto: "online_status"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -66,6 +117,7 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
       case 2: try decoder.decodeSingularBytesField(value: &self.friendVisibleData)
       case 3: try decoder.decodeSingularInt32Field(value: &self.score)
       case 4: try decoder.decodeSingularBytesField(value: &self.dataWithMe)
+      case 5: try decoder.decodeSingularEnumField(value: &self.onlineStatus)
       default: break
       }
     }
@@ -84,6 +136,9 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
     if !self.dataWithMe.isEmpty {
       try visitor.visitSingularBytesField(value: self.dataWithMe, fieldNumber: 4)
     }
+    if self.onlineStatus != .unset {
+      try visitor.visitSingularEnumField(value: self.onlineStatus, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -92,7 +147,17 @@ extension POGOProtos_Data_Friends_FriendDetails: SwiftProtobuf.Message, SwiftPro
     if lhs.friendVisibleData != rhs.friendVisibleData {return false}
     if lhs.score != rhs.score {return false}
     if lhs.dataWithMe != rhs.dataWithMe {return false}
+    if lhs.onlineStatus != rhs.onlineStatus {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Data_Friends_FriendDetails.OnlineStatus: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNSET"),
+    1: .same(proto: "STATUS_UNKNOWN"),
+    2: .same(proto: "STATUS_ONLINE"),
+    3: .same(proto: "STATUS_OFFLINE"),
+  ]
 }

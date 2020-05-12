@@ -31,6 +31,8 @@ public enum POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf.Enum {
   case iapCategoryTeamChange // = 7
   case iapCategoryGlobalEventTicket // = 10
   case iapCategoryVsSeeker // = 11
+  case iapCategorySticker // = 12
+  case iapCategoryFree // = 13
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -49,6 +51,8 @@ public enum POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf.Enum {
     case 7: self = .iapCategoryTeamChange
     case 10: self = .iapCategoryGlobalEventTicket
     case 11: self = .iapCategoryVsSeeker
+    case 12: self = .iapCategorySticker
+    case 13: self = .iapCategoryFree
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -65,6 +69,8 @@ public enum POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf.Enum {
     case .iapCategoryTeamChange: return 7
     case .iapCategoryGlobalEventTicket: return 10
     case .iapCategoryVsSeeker: return 11
+    case .iapCategorySticker: return 12
+    case .iapCategoryFree: return 13
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -86,6 +92,8 @@ extension POGOProtos_Enums_HoloIapItemCategory: CaseIterable {
     .iapCategoryTeamChange,
     .iapCategoryGlobalEventTicket,
     .iapCategoryVsSeeker,
+    .iapCategorySticker,
+    .iapCategoryFree,
   ]
 }
 
@@ -105,5 +113,7 @@ extension POGOProtos_Enums_HoloIapItemCategory: SwiftProtobuf._ProtoNameProvidin
     7: .same(proto: "IAP_CATEGORY_TEAM_CHANGE"),
     10: .same(proto: "IAP_CATEGORY_GLOBAL_EVENT_TICKET"),
     11: .same(proto: "IAP_CATEGORY_VS_SEEKER"),
+    12: .same(proto: "IAP_CATEGORY_STICKER"),
+    13: .same(proto: "IAP_CATEGORY_FREE"),
   ]
 }

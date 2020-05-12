@@ -165,6 +165,14 @@ public struct POGOProtos_Inventory_InventoryItemData {
     set {_uniqueStorage()._type = .limitedPurchaseSkuRecord(newValue)}
   }
 
+  public var sticker: POGOProtos_Data_Sticker_Sticker {
+    get {
+      if case .sticker(let v)? = _storage._type {return v}
+      return POGOProtos_Data_Sticker_Sticker()
+    }
+    set {_uniqueStorage()._type = .sticker(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Type: Equatable {
@@ -185,6 +193,7 @@ public struct POGOProtos_Inventory_InventoryItemData {
     case giftBoxes(POGOProtos_Data_Gift_GiftBoxes)
     case belugaIncense(POGOProtos_Data_Beluga_BelugaIncenseBox)
     case limitedPurchaseSkuRecord(POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord)
+    case sticker(POGOProtos_Data_Sticker_Sticker)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.OneOf_Type, rhs: POGOProtos_Inventory_InventoryItemData.OneOf_Type) -> Bool {
@@ -206,6 +215,7 @@ public struct POGOProtos_Inventory_InventoryItemData {
       case (.giftBoxes(let l), .giftBoxes(let r)): return l == r
       case (.belugaIncense(let l), .belugaIncense(let r)): return l == r
       case (.limitedPurchaseSkuRecord(let l), .limitedPurchaseSkuRecord(let r)): return l == r
+      case (.sticker(let l), .sticker(let r)): return l == r
       default: return false
       }
     }
@@ -231,6 +241,8 @@ public struct POGOProtos_Inventory_InventoryItemData {
       public var numPurchases: Int32 = 0
 
       public var lastPurchaseMs: Int64 = 0
+
+      public var totalNumPurchases: Int32 = 0
 
       public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -269,6 +281,7 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
     15: .standard(proto: "gift_boxes"),
     16: .standard(proto: "beluga_incense"),
     19: .standard(proto: "limited_purchase_sku_record"),
+    22: .same(proto: "sticker"),
   ]
 
   fileprivate class _StorageClass {
@@ -431,6 +444,14 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._type = .limitedPurchaseSkuRecord(v)}
+        case 22:
+          var v: POGOProtos_Data_Sticker_Sticker?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .sticker(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .sticker(v)}
         default: break
         }
       }
@@ -474,6 +495,8 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
       case .limitedPurchaseSkuRecord(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
+      case .sticker(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
       case nil: break
       }
     }
@@ -530,6 +553,7 @@ extension POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purcha
     1: .same(proto: "version"),
     2: .standard(proto: "num_purchases"),
     4: .standard(proto: "last_purchase_ms"),
+    5: .standard(proto: "total_num_purchases"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -538,6 +562,7 @@ extension POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purcha
       case 1: try decoder.decodeSingularInt32Field(value: &self.version)
       case 2: try decoder.decodeSingularInt32Field(value: &self.numPurchases)
       case 4: try decoder.decodeSingularInt64Field(value: &self.lastPurchaseMs)
+      case 5: try decoder.decodeSingularInt32Field(value: &self.totalNumPurchases)
       default: break
       }
     }
@@ -553,6 +578,9 @@ extension POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purcha
     if self.lastPurchaseMs != 0 {
       try visitor.visitSingularInt64Field(value: self.lastPurchaseMs, fieldNumber: 4)
     }
+    if self.totalNumPurchases != 0 {
+      try visitor.visitSingularInt32Field(value: self.totalNumPurchases, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -560,6 +588,7 @@ extension POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purcha
     if lhs.version != rhs.version {return false}
     if lhs.numPurchases != rhs.numPurchases {return false}
     if lhs.lastPurchaseMs != rhs.lastPurchaseMs {return false}
+    if lhs.totalNumPurchases != rhs.totalNumPurchases {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

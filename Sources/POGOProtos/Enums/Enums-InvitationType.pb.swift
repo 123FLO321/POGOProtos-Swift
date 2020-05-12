@@ -25,6 +25,7 @@ public enum POGOProtos_Enums_InvitationType: SwiftProtobuf.Enum {
   case code // = 1
   case facebook // = 2
   case serverRequest // = 3
+  case nianticSocialGraph // = 4
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -37,6 +38,7 @@ public enum POGOProtos_Enums_InvitationType: SwiftProtobuf.Enum {
     case 1: self = .code
     case 2: self = .facebook
     case 3: self = .serverRequest
+    case 4: self = .nianticSocialGraph
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -47,6 +49,7 @@ public enum POGOProtos_Enums_InvitationType: SwiftProtobuf.Enum {
     case .code: return 1
     case .facebook: return 2
     case .serverRequest: return 3
+    case .nianticSocialGraph: return 4
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -62,6 +65,7 @@ extension POGOProtos_Enums_InvitationType: CaseIterable {
     .code,
     .facebook,
     .serverRequest,
+    .nianticSocialGraph,
   ]
 }
 
@@ -75,5 +79,6 @@ extension POGOProtos_Enums_InvitationType: SwiftProtobuf._ProtoNameProviding {
     1: .same(proto: "INVITATION_TYPE_CODE"),
     2: .same(proto: "INVITATION_TYPE_FACEBOOK"),
     3: .same(proto: "INVITATION_TYPE_SERVER_REQUEST"),
+    4: .same(proto: "INVITATION_TYPE_NIANTIC_SOCIAL_GRAPH"),
   ]
 }

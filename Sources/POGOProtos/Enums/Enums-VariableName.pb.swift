@@ -71,6 +71,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
   case seasonNumber // = 1038
   case poiPasscodeRedemptionResponse // = 1039
   case giftboxCount // = 1040
+  case raidInvitationDetails // = 1041
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -129,6 +130,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case 1038: self = .seasonNumber
     case 1039: self = .poiPasscodeRedemptionResponse
     case 1040: self = .giftboxCount
+    case 1041: self = .raidInvitationDetails
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -185,6 +187,7 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case .seasonNumber: return 1038
     case .poiPasscodeRedemptionResponse: return 1039
     case .giftboxCount: return 1040
+    case .raidInvitationDetails: return 1041
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -246,6 +249,7 @@ extension POGOProtos_Enums_VariableName: CaseIterable {
     .seasonNumber,
     .poiPasscodeRedemptionResponse,
     .giftboxCount,
+    .raidInvitationDetails,
   ]
 }
 
@@ -305,5 +309,6 @@ extension POGOProtos_Enums_VariableName: SwiftProtobuf._ProtoNameProviding {
     1038: .same(proto: "SEASON_NUMBER"),
     1039: .same(proto: "POI_PASSCODE_REDEMPTION_RESPONSE"),
     1040: .same(proto: "GIFTBOX_COUNT"),
+    1041: .same(proto: "RAID_INVITATION_DETAILS"),
   ]
 }

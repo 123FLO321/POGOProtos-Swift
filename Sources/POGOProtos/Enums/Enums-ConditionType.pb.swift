@@ -27,6 +27,8 @@ public enum POGOProtos_Enums_ConditionType: SwiftProtobuf.Enum {
   case withPokemonType // = 3
   case withPokemonCategory // = 4
   case withUniquePokemon // = 5
+  case pokemonWhitelist // = 6
+  case pokemonBanlist // = 7
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -41,6 +43,8 @@ public enum POGOProtos_Enums_ConditionType: SwiftProtobuf.Enum {
     case 3: self = .withPokemonType
     case 4: self = .withPokemonCategory
     case 5: self = .withUniquePokemon
+    case 6: self = .pokemonWhitelist
+    case 7: self = .pokemonBanlist
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -53,6 +57,8 @@ public enum POGOProtos_Enums_ConditionType: SwiftProtobuf.Enum {
     case .withPokemonType: return 3
     case .withPokemonCategory: return 4
     case .withUniquePokemon: return 5
+    case .pokemonWhitelist: return 6
+    case .pokemonBanlist: return 7
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -70,6 +76,8 @@ extension POGOProtos_Enums_ConditionType: CaseIterable {
     .withPokemonType,
     .withPokemonCategory,
     .withUniquePokemon,
+    .pokemonWhitelist,
+    .pokemonBanlist,
   ]
 }
 
@@ -85,5 +93,7 @@ extension POGOProtos_Enums_ConditionType: SwiftProtobuf._ProtoNameProviding {
     3: .same(proto: "WITH_POKEMON_TYPE"),
     4: .same(proto: "WITH_POKEMON_CATEGORY"),
     5: .same(proto: "WITH_UNIQUE_POKEMON"),
+    6: .same(proto: "POKEMON_WHITELIST"),
+    7: .same(proto: "POKEMON_BANLIST"),
   ]
 }

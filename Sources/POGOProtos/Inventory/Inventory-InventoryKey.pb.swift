@@ -173,6 +173,14 @@ public struct POGOProtos_Inventory_InventoryKey {
     set {_uniqueStorage()._type = .limitedPurchaseSkuRecord(newValue)}
   }
 
+  public var stickerID: String {
+    get {
+      if case .stickerID(let v)? = _storage._type {return v}
+      return String()
+    }
+    set {_uniqueStorage()._type = .stickerID(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Type: Equatable {
@@ -194,6 +202,7 @@ public struct POGOProtos_Inventory_InventoryKey {
     case belugaIncenseBox(Bool)
     case vsSeekerUpgrades(Bool)
     case limitedPurchaseSkuRecord(Bool)
+    case stickerID(String)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Inventory_InventoryKey.OneOf_Type, rhs: POGOProtos_Inventory_InventoryKey.OneOf_Type) -> Bool {
@@ -216,6 +225,7 @@ public struct POGOProtos_Inventory_InventoryKey {
       case (.belugaIncenseBox(let l), .belugaIncenseBox(let r)): return l == r
       case (.vsSeekerUpgrades(let l), .vsSeekerUpgrades(let r)): return l == r
       case (.limitedPurchaseSkuRecord(let l), .limitedPurchaseSkuRecord(let r)): return l == r
+      case (.stickerID(let l), .stickerID(let r)): return l == r
       default: return false
       }
     }
@@ -252,6 +262,7 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
     16: .standard(proto: "beluga_incense_box"),
     17: .standard(proto: "vs_seeker_upgrades"),
     19: .standard(proto: "limited_purchase_sku_record"),
+    22: .standard(proto: "sticker_id"),
   ]
 
   fileprivate class _StorageClass {
@@ -368,6 +379,11 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
           var v: Bool?
           try decoder.decodeSingularBoolField(value: &v)
           if let v = v {_storage._type = .limitedPurchaseSkuRecord(v)}
+        case 22:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: String?
+          try decoder.decodeSingularStringField(value: &v)
+          if let v = v {_storage._type = .stickerID(v)}
         default: break
         }
       }
@@ -413,6 +429,8 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
         try visitor.visitSingularBoolField(value: v, fieldNumber: 17)
       case .limitedPurchaseSkuRecord(let v)?:
         try visitor.visitSingularBoolField(value: v, fieldNumber: 19)
+      case .stickerID(let v)?:
+        try visitor.visitSingularStringField(value: v, fieldNumber: 22)
       case nil: break
       }
     }
