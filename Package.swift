@@ -7,7 +7,7 @@ let package = Package(
         .library(name: "POGOProtos", targets: ["POGOProtos"])
     ],
     dependencies: [
-        .package(name: "SwiftProtobuf", url: "https://github.com/apple/swift-protobuf.git", from: "1.1.0")    
+        .package(name: "SwiftProtobuf", url: "https://github.com/apple/swift-protobuf.git", from: "1.9.0")
     ],
     targets: [
         .target(name: "POGOProtos", dependencies: ["SwiftProtobuf"])
