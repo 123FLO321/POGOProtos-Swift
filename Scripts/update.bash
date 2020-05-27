@@ -23,11 +23,8 @@ do
     else
         dest="$fulldir/$dirname2-$dirname-$filename"
     fi
-    echo $dirname $dirname2 $file $dest
     mv $file $dest
-    sed -i "" -e 's/case .UNRECOGNIZED(let i): return i/case .UNRECOGNIZED(let i): return i; default: print("[ERROR] \\(#file) is not up to date!"); return 0/g' $dest
 done
-
 
 cd $DIR
 swift build
