@@ -542,8 +542,8 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
   /// Clears the value of `serverData`. Subsequent reads from it will return its default value.
   public mutating func clearServerData() {_uniqueStorage()._serverData = nil}
 
-  public var commonFilters: POGOProtos_Networking_Platform_PlatformCommonFilter {
-    get {return _storage._commonFilters ?? POGOProtos_Networking_Platform_PlatformCommonFilter()}
+  public var commonFilters: POGOProtos_Data_Platform_PlatformCommonFilter {
+    get {return _storage._commonFilters ?? POGOProtos_Data_Platform_PlatformCommonFilter()}
     set {_uniqueStorage()._commonFilters = newValue}
   }
   /// Returns true if `commonFilters` has been explicitly set.
@@ -772,7 +772,7 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
   fileprivate class _StorageClass {
     var _telemetryData: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData?
     var _serverData: POGOProtos_Data_Telemetry_PlatformServerData? = nil
-    var _commonFilters: POGOProtos_Networking_Platform_PlatformCommonFilter? = nil
+    var _commonFilters: POGOProtos_Data_Platform_PlatformCommonFilter? = nil
 
     static let defaultInstance = _StorageClass()
 
