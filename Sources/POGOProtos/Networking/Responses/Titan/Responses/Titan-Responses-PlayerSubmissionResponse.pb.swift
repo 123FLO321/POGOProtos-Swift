@@ -28,6 +28,8 @@ public struct POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse {
 
   public var submissionID: String = String()
 
+  public var messages: [String] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Status: SwiftProtobuf.Enum {
@@ -40,6 +42,7 @@ public struct POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse {
     case notAvailable // = 5
     case invalidInput // = 6
     case missingImage // = 7
+    case distanceValidationFailed // = 8
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -56,6 +59,7 @@ public struct POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse {
       case 5: self = .notAvailable
       case 6: self = .invalidInput
       case 7: self = .missingImage
+      case 8: self = .distanceValidationFailed
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -70,6 +74,7 @@ public struct POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse {
       case .notAvailable: return 5
       case .invalidInput: return 6
       case .missingImage: return 7
+      case .distanceValidationFailed: return 8
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -92,6 +97,7 @@ extension POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse.Status:
     .notAvailable,
     .invalidInput,
     .missingImage,
+    .distanceValidationFailed,
   ]
 }
 
@@ -106,6 +112,7 @@ extension POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse: SwiftP
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "status"),
     2: .standard(proto: "submission_id"),
+    3: .same(proto: "messages"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -113,6 +120,7 @@ extension POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse: SwiftP
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.status)
       case 2: try decoder.decodeSingularStringField(value: &self.submissionID)
+      case 3: try decoder.decodeRepeatedStringField(value: &self.messages)
       default: break
       }
     }
@@ -125,12 +133,16 @@ extension POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse: SwiftP
     if !self.submissionID.isEmpty {
       try visitor.visitSingularStringField(value: self.submissionID, fieldNumber: 2)
     }
+    if !self.messages.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.messages, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse, rhs: POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse) -> Bool {
     if lhs.status != rhs.status {return false}
     if lhs.submissionID != rhs.submissionID {return false}
+    if lhs.messages != rhs.messages {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -146,5 +158,6 @@ extension POGOProtos_Networking_Responses_Titan_PlayerSubmissionResponse.Status:
     5: .same(proto: "NOT_AVAILABLE"),
     6: .same(proto: "INVALID_INPUT"),
     7: .same(proto: "MISSING_IMAGE"),
+    8: .same(proto: "DISTANCE_VALIDATION_FAILED"),
   ]
 }

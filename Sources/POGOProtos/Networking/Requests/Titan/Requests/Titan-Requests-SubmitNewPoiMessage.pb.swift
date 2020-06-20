@@ -34,8 +34,6 @@ public struct POGOProtos_Networking_Requests_Titan_Requests_SubmitNewPoiMessage 
 
   public var supportingStatement: String = String()
 
-  public var asyncFileUpload: Bool = false
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -53,7 +51,6 @@ extension POGOProtos_Networking_Requests_Titan_Requests_SubmitNewPoiMessage: Swi
     4: .standard(proto: "lat_e6"),
     5: .standard(proto: "lng_e6"),
     14: .standard(proto: "supporting_statement"),
-    18: .standard(proto: "async_file_upload"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -64,7 +61,6 @@ extension POGOProtos_Networking_Requests_Titan_Requests_SubmitNewPoiMessage: Swi
       case 4: try decoder.decodeSingularInt32Field(value: &self.latE6)
       case 5: try decoder.decodeSingularInt32Field(value: &self.lngE6)
       case 14: try decoder.decodeSingularStringField(value: &self.supportingStatement)
-      case 18: try decoder.decodeSingularBoolField(value: &self.asyncFileUpload)
       default: break
       }
     }
@@ -86,9 +82,6 @@ extension POGOProtos_Networking_Requests_Titan_Requests_SubmitNewPoiMessage: Swi
     if !self.supportingStatement.isEmpty {
       try visitor.visitSingularStringField(value: self.supportingStatement, fieldNumber: 14)
     }
-    if self.asyncFileUpload != false {
-      try visitor.visitSingularBoolField(value: self.asyncFileUpload, fieldNumber: 18)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -98,7 +91,6 @@ extension POGOProtos_Networking_Requests_Titan_Requests_SubmitNewPoiMessage: Swi
     if lhs.latE6 != rhs.latE6 {return false}
     if lhs.lngE6 != rhs.lngE6 {return false}
     if lhs.supportingStatement != rhs.supportingStatement {return false}
-    if lhs.asyncFileUpload != rhs.asyncFileUpload {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

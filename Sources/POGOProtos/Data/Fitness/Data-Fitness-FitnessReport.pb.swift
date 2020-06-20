@@ -84,8 +84,8 @@ extension POGOProtos_Data_Fitness_FitnessReport: SwiftProtobuf.Message, SwiftPro
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "day_offset_from_now"),
     2: .standard(proto: "week_offset_from_now"),
-    10: .same(proto: "metrics"),
-    11: .standard(proto: "game_data"),
+    3: .same(proto: "metrics"),
+    4: .standard(proto: "game_data"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -101,8 +101,8 @@ extension POGOProtos_Data_Fitness_FitnessReport: SwiftProtobuf.Message, SwiftPro
         var v: Int32?
         try decoder.decodeSingularInt32Field(value: &v)
         if let v = v {self.window = .weekOffsetFromNow(v)}
-      case 10: try decoder.decodeSingularMessageField(value: &self._metrics)
-      case 11: try decoder.decodeSingularBytesField(value: &self.gameData)
+      case 3: try decoder.decodeSingularMessageField(value: &self._metrics)
+      case 4: try decoder.decodeSingularBytesField(value: &self.gameData)
       default: break
       }
     }
@@ -117,10 +117,10 @@ extension POGOProtos_Data_Fitness_FitnessReport: SwiftProtobuf.Message, SwiftPro
     case nil: break
     }
     if let v = self._metrics {
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
     }
     if !self.gameData.isEmpty {
-      try visitor.visitSingularBytesField(value: self.gameData, fieldNumber: 11)
+      try visitor.visitSingularBytesField(value: self.gameData, fieldNumber: 4)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

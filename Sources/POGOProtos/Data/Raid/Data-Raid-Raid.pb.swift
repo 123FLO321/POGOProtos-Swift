@@ -48,6 +48,8 @@ public struct POGOProtos_Data_Raid_Raid {
 
   public var isRemote: Bool = false
 
+  public var consumedTicket: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -72,6 +74,7 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
     10: .standard(proto: "completed_battle_ms"),
     11: .standard(proto: "num_friend_invites"),
     12: .standard(proto: "is_remote"),
+    13: .standard(proto: "consumed_ticket"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -89,6 +92,7 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
       case 10: try decoder.decodeSingularInt64Field(value: &self.completedBattleMs)
       case 11: try decoder.decodeSingularInt32Field(value: &self.numFriendInvites)
       case 12: try decoder.decodeSingularBoolField(value: &self.isRemote)
+      case 13: try decoder.decodeSingularBoolField(value: &self.consumedTicket)
       default: break
       }
     }
@@ -131,6 +135,9 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if self.isRemote != false {
       try visitor.visitSingularBoolField(value: self.isRemote, fieldNumber: 12)
     }
+    if self.consumedTicket != false {
+      try visitor.visitSingularBoolField(value: self.consumedTicket, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -147,6 +154,7 @@ extension POGOProtos_Data_Raid_Raid: SwiftProtobuf.Message, SwiftProtobuf._Messa
     if lhs.completedBattleMs != rhs.completedBattleMs {return false}
     if lhs.numFriendInvites != rhs.numFriendInvites {return false}
     if lhs.isRemote != rhs.isRemote {return false}
+    if lhs.consumedTicket != rhs.consumedTicket {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

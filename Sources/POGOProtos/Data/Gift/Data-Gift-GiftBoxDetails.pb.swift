@@ -86,7 +86,7 @@ extension POGOProtos_Data_Gift_GiftBoxDetails: SwiftProtobuf.Message, SwiftProto
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularFixed64Field(value: &self.giftboxID)
+      case 1: try decoder.decodeSingularUInt64Field(value: &self.giftboxID)
       case 2: try decoder.decodeSingularStringField(value: &self.senderID)
       case 3: try decoder.decodeSingularStringField(value: &self.senderCodename)
       case 4: try decoder.decodeSingularStringField(value: &self.receiverID)
@@ -108,7 +108,7 @@ extension POGOProtos_Data_Gift_GiftBoxDetails: SwiftProtobuf.Message, SwiftProto
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if self.giftboxID != 0 {
-      try visitor.visitSingularFixed64Field(value: self.giftboxID, fieldNumber: 1)
+      try visitor.visitSingularUInt64Field(value: self.giftboxID, fieldNumber: 1)
     }
     if !self.senderID.isEmpty {
       try visitor.visitSingularStringField(value: self.senderID, fieldNumber: 2)

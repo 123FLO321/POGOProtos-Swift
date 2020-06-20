@@ -47,7 +47,7 @@ extension POGOProtos_Networking_Requests_Messages_GiftDetailsMessage: SwiftProto
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeRepeatedFixed64Field(value: &self.giftboxID)
+      case 1: try decoder.decodeRepeatedUInt64Field(value: &self.giftboxID)
       case 2: try decoder.decodeSingularStringField(value: &self.playerID)
       default: break
       }
@@ -56,7 +56,7 @@ extension POGOProtos_Networking_Requests_Messages_GiftDetailsMessage: SwiftProto
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
     if !self.giftboxID.isEmpty {
-      try visitor.visitPackedFixed64Field(value: self.giftboxID, fieldNumber: 1)
+      try visitor.visitPackedUInt64Field(value: self.giftboxID, fieldNumber: 1)
     }
     if !self.playerID.isEmpty {
       try visitor.visitSingularStringField(value: self.playerID, fieldNumber: 2)

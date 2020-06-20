@@ -26,6 +26,8 @@ public struct POGOProtos_Networking_Responses_Game_GamePoi_Responses_AsyncFileUp
 
   public var error: POGOProtos_Networking_Responses_Game_GamePoi_Responses_AsyncFileUploadCompleteResponse.ErrorStatus = .unset
 
+  public var submissionType: POGOProtos_Enums_PlayerSubmissionType = .typeUnspecified
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum ErrorStatus: SwiftProtobuf.Enum {
@@ -91,12 +93,14 @@ extension POGOProtos_Networking_Responses_Game_GamePoi_Responses_AsyncFileUpload
   public static let protoMessageName: String = _protobuf_package + ".AsyncFileUploadCompleteResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "error"),
+    2: .standard(proto: "submission_type"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.error)
+      case 2: try decoder.decodeSingularEnumField(value: &self.submissionType)
       default: break
       }
     }
@@ -106,11 +110,15 @@ extension POGOProtos_Networking_Responses_Game_GamePoi_Responses_AsyncFileUpload
     if self.error != .unset {
       try visitor.visitSingularEnumField(value: self.error, fieldNumber: 1)
     }
+    if self.submissionType != .typeUnspecified {
+      try visitor.visitSingularEnumField(value: self.submissionType, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Responses_Game_GamePoi_Responses_AsyncFileUploadCompleteResponse, rhs: POGOProtos_Networking_Responses_Game_GamePoi_Responses_AsyncFileUploadCompleteResponse) -> Bool {
     if lhs.error != rhs.error {return false}
+    if lhs.submissionType != rhs.submissionType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

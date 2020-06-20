@@ -463,6 +463,15 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `dailyEncounterSettings`. Subsequent reads from it will return its default value.
   public mutating func clearDailyEncounterSettings() {_uniqueStorage()._dailyEncounterSettings = nil}
 
+  public var raidTicketSettings: POGOProtos_Settings_RaidTicketSettings {
+    get {return _storage._raidTicketSettings ?? POGOProtos_Settings_RaidTicketSettings()}
+    set {_uniqueStorage()._raidTicketSettings = newValue}
+  }
+  /// Returns true if `raidTicketSettings` has been explicitly set.
+  public var hasRaidTicketSettings: Bool {return _storage._raidTicketSettings != nil}
+  /// Clears the value of `raidTicketSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearRaidTicketSettings() {_uniqueStorage()._raidTicketSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -528,6 +537,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     52: .standard(proto: "ar_mapping_settings"),
     53: .standard(proto: "raid_invite_friends_settings"),
     54: .standard(proto: "daily_encounter_settings"),
+    55: .standard(proto: "raid_ticket_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -582,6 +592,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _arMappingSettings: POGOProtos_Settings_ArMappingSettings? = nil
     var _raidInviteFriendsSettings: POGOProtos_Settings_RaidInviteFriendsSettings? = nil
     var _dailyEncounterSettings: POGOProtos_Settings_DailyEncounterGlobalSettings? = nil
+    var _raidTicketSettings: POGOProtos_Settings_RaidTicketSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -639,6 +650,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _arMappingSettings = source._arMappingSettings
       _raidInviteFriendsSettings = source._raidInviteFriendsSettings
       _dailyEncounterSettings = source._dailyEncounterSettings
+      _raidTicketSettings = source._raidTicketSettings
     }
   }
 
@@ -705,6 +717,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 52: try decoder.decodeSingularMessageField(value: &_storage._arMappingSettings)
         case 53: try decoder.decodeSingularMessageField(value: &_storage._raidInviteFriendsSettings)
         case 54: try decoder.decodeSingularMessageField(value: &_storage._dailyEncounterSettings)
+        case 55: try decoder.decodeSingularMessageField(value: &_storage._raidTicketSettings)
         default: break
         }
       }
@@ -866,6 +879,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._dailyEncounterSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 54)
       }
+      if let v = _storage._raidTicketSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 55)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -926,6 +942,7 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._arMappingSettings != rhs_storage._arMappingSettings {return false}
         if _storage._raidInviteFriendsSettings != rhs_storage._raidInviteFriendsSettings {return false}
         if _storage._dailyEncounterSettings != rhs_storage._dailyEncounterSettings {return false}
+        if _storage._raidTicketSettings != rhs_storage._raidTicketSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

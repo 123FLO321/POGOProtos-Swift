@@ -99,6 +99,13 @@ public struct POGOProtos_Data_Telemetry_ArMappingTelemetry {
     case startUploadSettings // = 13
     case uploadSuccess // = 14
     case optInLearnMore // = 15
+    case exitFromPreview // = 16
+    case submitPoiArVideoMetadataFail // = 17
+    case uploadFailure // = 18
+    case uploadLaterWifiPrompt // = 19
+    case clearScans // = 20
+    case openInfoPanel // = 21
+    case rescanFromPreview // = 22
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -123,6 +130,13 @@ public struct POGOProtos_Data_Telemetry_ArMappingTelemetry {
       case 13: self = .startUploadSettings
       case 14: self = .uploadSuccess
       case 15: self = .optInLearnMore
+      case 16: self = .exitFromPreview
+      case 17: self = .submitPoiArVideoMetadataFail
+      case 18: self = .uploadFailure
+      case 19: self = .uploadLaterWifiPrompt
+      case 20: self = .clearScans
+      case 21: self = .openInfoPanel
+      case 22: self = .rescanFromPreview
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -145,6 +159,13 @@ public struct POGOProtos_Data_Telemetry_ArMappingTelemetry {
       case .startUploadSettings: return 13
       case .uploadSuccess: return 14
       case .optInLearnMore: return 15
+      case .exitFromPreview: return 16
+      case .submitPoiArVideoMetadataFail: return 17
+      case .uploadFailure: return 18
+      case .uploadLaterWifiPrompt: return 19
+      case .clearScans: return 20
+      case .openInfoPanel: return 21
+      case .rescanFromPreview: return 22
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -188,6 +209,13 @@ extension POGOProtos_Data_Telemetry_ArMappingTelemetry.ArMappingEventId: CaseIte
     .startUploadSettings,
     .uploadSuccess,
     .optInLearnMore,
+    .exitFromPreview,
+    .submitPoiArVideoMetadataFail,
+    .uploadFailure,
+    .uploadLaterWifiPrompt,
+    .clearScans,
+    .openInfoPanel,
+    .rescanFromPreview,
   ]
 }
 
@@ -286,5 +314,12 @@ extension POGOProtos_Data_Telemetry_ArMappingTelemetry.ArMappingEventId: SwiftPr
     13: .same(proto: "START_UPLOAD_SETTINGS"),
     14: .same(proto: "UPLOAD_SUCCESS"),
     15: .same(proto: "OPT_IN_LEARN_MORE"),
+    16: .same(proto: "EXIT_FROM_PREVIEW"),
+    17: .same(proto: "SUBMIT_POI_AR_VIDEO_METADATA_FAIL"),
+    18: .same(proto: "UPLOAD_FAILURE"),
+    19: .same(proto: "UPLOAD_LATER_WIFI_PROMPT"),
+    20: .same(proto: "CLEAR_SCANS"),
+    21: .same(proto: "OPEN_INFO_PANEL"),
+    22: .same(proto: "RESCAN_FROM_PREVIEW"),
   ]
 }

@@ -42,6 +42,8 @@ public struct POGOProtos_Data_SkuData {
 
   public var enabledWindowEndMs: Int64 = 0
 
+  public var subscriptionID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum SkuPaymentType: SwiftProtobuf.Enum {
@@ -149,6 +151,7 @@ extension POGOProtos_Data_SkuData: SwiftProtobuf.Message, SwiftProtobuf._Message
     7: .standard(proto: "presentation_data"),
     8: .standard(proto: "enabled_window_start_ms"),
     9: .standard(proto: "enabled_window_end_ms"),
+    10: .standard(proto: "subscription_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -163,6 +166,7 @@ extension POGOProtos_Data_SkuData: SwiftProtobuf.Message, SwiftProtobuf._Message
       case 7: try decoder.decodeRepeatedMessageField(value: &self.presentationData)
       case 8: try decoder.decodeSingularInt64Field(value: &self.enabledWindowStartMs)
       case 9: try decoder.decodeSingularInt64Field(value: &self.enabledWindowEndMs)
+      case 10: try decoder.decodeSingularStringField(value: &self.subscriptionID)
       default: break
       }
     }
@@ -196,6 +200,9 @@ extension POGOProtos_Data_SkuData: SwiftProtobuf.Message, SwiftProtobuf._Message
     if self.enabledWindowEndMs != 0 {
       try visitor.visitSingularInt64Field(value: self.enabledWindowEndMs, fieldNumber: 9)
     }
+    if !self.subscriptionID.isEmpty {
+      try visitor.visitSingularStringField(value: self.subscriptionID, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -209,6 +216,7 @@ extension POGOProtos_Data_SkuData: SwiftProtobuf.Message, SwiftProtobuf._Message
     if lhs.presentationData != rhs.presentationData {return false}
     if lhs.enabledWindowStartMs != rhs.enabledWindowStartMs {return false}
     if lhs.enabledWindowEndMs != rhs.enabledWindowEndMs {return false}
+    if lhs.subscriptionID != rhs.subscriptionID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

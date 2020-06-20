@@ -35,6 +35,9 @@ public enum POGOProtos_Networking_Requests_Game_GamePoi_GamePoiAction: SwiftProt
   case getSignedURLForPhotoUpload // = 620002
 
   /// Implemented
+  case getPlayerSubmissionValidationSettings // = 620003
+
+  /// Implemented
   case submitPoiImage // = 620100
 
   /// Implemented
@@ -81,6 +84,7 @@ public enum POGOProtos_Networking_Requests_Game_GamePoi_GamePoiAction: SwiftProt
     case 620000: self = .addNewPoi
     case 620001: self = .getAvailableSubmissions
     case 620002: self = .getSignedURLForPhotoUpload
+    case 620003: self = .getPlayerSubmissionValidationSettings
     case 620100: self = .submitPoiImage
     case 620101: self = .submitPoiTextMetadataUpdate
     case 620102: self = .submitPoiLocationUpdate
@@ -103,6 +107,7 @@ public enum POGOProtos_Networking_Requests_Game_GamePoi_GamePoiAction: SwiftProt
     case .addNewPoi: return 620000
     case .getAvailableSubmissions: return 620001
     case .getSignedURLForPhotoUpload: return 620002
+    case .getPlayerSubmissionValidationSettings: return 620003
     case .submitPoiImage: return 620100
     case .submitPoiTextMetadataUpdate: return 620101
     case .submitPoiLocationUpdate: return 620102
@@ -130,6 +135,7 @@ extension POGOProtos_Networking_Requests_Game_GamePoi_GamePoiAction: CaseIterabl
     .addNewPoi,
     .getAvailableSubmissions,
     .getSignedURLForPhotoUpload,
+    .getPlayerSubmissionValidationSettings,
     .submitPoiImage,
     .submitPoiTextMetadataUpdate,
     .submitPoiLocationUpdate,
@@ -155,6 +161,7 @@ extension POGOProtos_Networking_Requests_Game_GamePoi_GamePoiAction: SwiftProtob
     620000: .same(proto: "ADD_NEW_POI"),
     620001: .same(proto: "GET_AVAILABLE_SUBMISSIONS"),
     620002: .same(proto: "GET_SIGNED_URL_FOR_PHOTO_UPLOAD"),
+    620003: .same(proto: "GET_PLAYER_SUBMISSION_VALIDATION_SETTINGS"),
     620100: .same(proto: "SUBMIT_POI_IMAGE"),
     620101: .same(proto: "SUBMIT_POI_TEXT_METADATA_UPDATE"),
     620102: .same(proto: "SUBMIT_POI_LOCATION_UPDATE"),

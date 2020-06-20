@@ -26,8 +26,6 @@ public struct POGOProtos_Networking_Requests_Game_GamePoi_Requests_AsyncFileUplo
 
   public var submissionID: String = String()
 
-  public var submissionType: POGOProtos_Enums_PlayerSubmissionType = .typeUnspecified
-
   public var uploadStatus: POGOProtos_Networking_Requests_Game_GamePoi_Requests_AsyncFileUploadCompleteMessage.Status = .unset
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -87,7 +85,6 @@ extension POGOProtos_Networking_Requests_Game_GamePoi_Requests_AsyncFileUploadCo
   public static let protoMessageName: String = _protobuf_package + ".AsyncFileUploadCompleteMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "submission_id"),
-    2: .standard(proto: "submission_type"),
     3: .standard(proto: "upload_status"),
   ]
 
@@ -95,7 +92,6 @@ extension POGOProtos_Networking_Requests_Game_GamePoi_Requests_AsyncFileUploadCo
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.submissionID)
-      case 2: try decoder.decodeSingularEnumField(value: &self.submissionType)
       case 3: try decoder.decodeSingularEnumField(value: &self.uploadStatus)
       default: break
       }
@@ -106,9 +102,6 @@ extension POGOProtos_Networking_Requests_Game_GamePoi_Requests_AsyncFileUploadCo
     if !self.submissionID.isEmpty {
       try visitor.visitSingularStringField(value: self.submissionID, fieldNumber: 1)
     }
-    if self.submissionType != .typeUnspecified {
-      try visitor.visitSingularEnumField(value: self.submissionType, fieldNumber: 2)
-    }
     if self.uploadStatus != .unset {
       try visitor.visitSingularEnumField(value: self.uploadStatus, fieldNumber: 3)
     }
@@ -117,7 +110,6 @@ extension POGOProtos_Networking_Requests_Game_GamePoi_Requests_AsyncFileUploadCo
 
   public static func ==(lhs: POGOProtos_Networking_Requests_Game_GamePoi_Requests_AsyncFileUploadCompleteMessage, rhs: POGOProtos_Networking_Requests_Game_GamePoi_Requests_AsyncFileUploadCompleteMessage) -> Bool {
     if lhs.submissionID != rhs.submissionID {return false}
-    if lhs.submissionType != rhs.submissionType {return false}
     if lhs.uploadStatus != rhs.uploadStatus {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true

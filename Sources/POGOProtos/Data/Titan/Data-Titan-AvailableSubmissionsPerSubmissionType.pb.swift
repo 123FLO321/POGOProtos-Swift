@@ -38,6 +38,8 @@ public struct POGOProtos_Data_Titan_AvailableSubmissionsPerSubmissionType {
 
   public var blacklistedOs: [String] = []
 
+  public var blacklistedDeviceID: [String] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -57,6 +59,7 @@ extension POGOProtos_Data_Titan_AvailableSubmissionsPerSubmissionType: SwiftProt
     5: .standard(proto: "time_window_for_submissions_limit_ms"),
     6: .standard(proto: "max_poi_distance_in_meters"),
     7: .standard(proto: "blacklisted_os"),
+    8: .standard(proto: "blacklisted_device_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -69,6 +72,7 @@ extension POGOProtos_Data_Titan_AvailableSubmissionsPerSubmissionType: SwiftProt
       case 5: try decoder.decodeSingularInt64Field(value: &self.timeWindowForSubmissionsLimitMs)
       case 6: try decoder.decodeSingularInt32Field(value: &self.maxPoiDistanceInMeters)
       case 7: try decoder.decodeRepeatedStringField(value: &self.blacklistedOs)
+      case 8: try decoder.decodeRepeatedStringField(value: &self.blacklistedDeviceID)
       default: break
       }
     }
@@ -96,6 +100,9 @@ extension POGOProtos_Data_Titan_AvailableSubmissionsPerSubmissionType: SwiftProt
     if !self.blacklistedOs.isEmpty {
       try visitor.visitRepeatedStringField(value: self.blacklistedOs, fieldNumber: 7)
     }
+    if !self.blacklistedDeviceID.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.blacklistedDeviceID, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -107,6 +114,7 @@ extension POGOProtos_Data_Titan_AvailableSubmissionsPerSubmissionType: SwiftProt
     if lhs.timeWindowForSubmissionsLimitMs != rhs.timeWindowForSubmissionsLimitMs {return false}
     if lhs.maxPoiDistanceInMeters != rhs.maxPoiDistanceInMeters {return false}
     if lhs.blacklistedOs != rhs.blacklistedOs {return false}
+    if lhs.blacklistedDeviceID != rhs.blacklistedDeviceID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

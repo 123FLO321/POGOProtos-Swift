@@ -48,7 +48,7 @@ extension POGOProtos_Networking_Requests_Messages_DeleteGiftMessage: SwiftProtob
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.playerID)
-      case 2: try decoder.decodeSingularFixed64Field(value: &self.giftboxID)
+      case 2: try decoder.decodeSingularUInt64Field(value: &self.giftboxID)
       default: break
       }
     }
@@ -59,7 +59,7 @@ extension POGOProtos_Networking_Requests_Messages_DeleteGiftMessage: SwiftProtob
       try visitor.visitSingularStringField(value: self.playerID, fieldNumber: 1)
     }
     if self.giftboxID != 0 {
-      try visitor.visitSingularFixed64Field(value: self.giftboxID, fieldNumber: 2)
+      try visitor.visitSingularUInt64Field(value: self.giftboxID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

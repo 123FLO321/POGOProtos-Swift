@@ -45,6 +45,15 @@ public enum POGOProtos_Networking_Requests_Game_GameIap_GameIapAction: SwiftProt
 
   /// Implemented
   case redeemSamsungReceipt // = 310103
+
+  /// ???
+  case getAvailableSubscriptions // = 310200
+
+  /// ??? CollectAdIdMessage???
+  case getActiveSubscriptions // = 310201
+
+  /// ???
+  case redeemGoogleSubscription // = 310202
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -61,6 +70,9 @@ public enum POGOProtos_Networking_Requests_Game_GameIap_GameIapAction: SwiftProt
     case 310101: self = .redeemAppleReceipt
     case 310102: self = .redeemDesktopReceipt
     case 310103: self = .redeemSamsungReceipt
+    case 310200: self = .getAvailableSubscriptions
+    case 310201: self = .getActiveSubscriptions
+    case 310202: self = .redeemGoogleSubscription
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -75,6 +87,9 @@ public enum POGOProtos_Networking_Requests_Game_GameIap_GameIapAction: SwiftProt
     case .redeemAppleReceipt: return 310101
     case .redeemDesktopReceipt: return 310102
     case .redeemSamsungReceipt: return 310103
+    case .getAvailableSubscriptions: return 310200
+    case .getActiveSubscriptions: return 310201
+    case .redeemGoogleSubscription: return 310202
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -94,6 +109,9 @@ extension POGOProtos_Networking_Requests_Game_GameIap_GameIapAction: CaseIterabl
     .redeemAppleReceipt,
     .redeemDesktopReceipt,
     .redeemSamsungReceipt,
+    .getAvailableSubscriptions,
+    .getActiveSubscriptions,
+    .redeemGoogleSubscription,
   ]
 }
 
@@ -111,5 +129,8 @@ extension POGOProtos_Networking_Requests_Game_GameIap_GameIapAction: SwiftProtob
     310101: .same(proto: "REDEEM_APPLE_RECEIPT"),
     310102: .same(proto: "REDEEM_DESKTOP_RECEIPT"),
     310103: .same(proto: "REDEEM_SAMSUNG_RECEIPT"),
+    310200: .same(proto: "GET_AVAILABLE_SUBSCRIPTIONS"),
+    310201: .same(proto: "GET_ACTIVE_SUBSCRIPTIONS"),
+    310202: .same(proto: "REDEEM_GOOGLE_SUBSCRIPTION"),
   ]
 }
