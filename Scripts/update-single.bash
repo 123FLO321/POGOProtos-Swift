@@ -10,6 +10,7 @@ echo "Generating .swift file"
 protoc --swift_out=$DIR/../Sources --swift_opt=Visibility=Public base/base.proto
 mv $DIR/../Sources/base $DIR/../Sources/POGOProtos
 mv $DIR/../Sources/POGOProtos/base.pb.swift $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
+sed -i '' -e 's/POGOProtos_Rpc_//g' $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
 
 cd $DIR
 echo "Starting Swift Build"
