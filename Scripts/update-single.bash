@@ -3,13 +3,13 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 echo "Removing old dir"
 rm -rf $DIR/../Sources/POGOProtos
+mkdir $DIR/../Sources/POGOProtos/
 cd $DIR/../../POGOProtos
 echo "Updating base repo"
 git pull
 echo "Generating .swift file"
-protoc --swift_out=$DIR/../Sources --swift_opt=Visibility=Public base/base.proto
-mv $DIR/../Sources/base $DIR/../Sources/POGOProtos
-mv $DIR/../Sources/POGOProtos/base.pb.swift $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
+python compile_single_file.py -l swift -p pogo -1
+mv out/single_file/swift/POGOProtos.Rpc.pb.swift $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
 sed -i '' -e 's/POGOProtos_Rpc_//g' $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
 
 cd $DIR
