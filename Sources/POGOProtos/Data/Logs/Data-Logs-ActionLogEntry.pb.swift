@@ -207,6 +207,14 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     set {_uniqueStorage()._action = .vsSeekerWinRewards(newValue)}
   }
 
+  public var buddyConsumables: POGOProtos_Data_Logs_BuddyConsumablesLogEntry {
+    get {
+      if case .buddyConsumables(let v)? = _storage._action {return v}
+      return POGOProtos_Data_Logs_BuddyConsumablesLogEntry()
+    }
+    set {_uniqueStorage()._action = .buddyConsumables(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Action: Equatable {
@@ -231,6 +239,7 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
     case vsSeekerSet(POGOProtos_Data_Logs_VsSeekerSetLogEntry)
     case vsSeekerCompleteSeason(POGOProtos_Data_Logs_VsSeekerCompleteSeasonLogEntry)
     case vsSeekerWinRewards(POGOProtos_Data_Logs_VsSeekerWinRewardsLogEntry)
+    case buddyConsumables(POGOProtos_Data_Logs_BuddyConsumablesLogEntry)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action, rhs: POGOProtos_Data_Logs_ActionLogEntry.OneOf_Action) -> Bool {
@@ -256,6 +265,7 @@ public struct POGOProtos_Data_Logs_ActionLogEntry {
       case (.vsSeekerSet(let l), .vsSeekerSet(let r)): return l == r
       case (.vsSeekerCompleteSeason(let l), .vsSeekerCompleteSeason(let r)): return l == r
       case (.vsSeekerWinRewards(let l), .vsSeekerWinRewards(let r)): return l == r
+      case (.buddyConsumables(let l), .buddyConsumables(let r)): return l == r
       default: return false
       }
     }
@@ -297,6 +307,7 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
     21: .standard(proto: "vs_seeker_set"),
     22: .standard(proto: "vs_seeker_complete_season"),
     23: .standard(proto: "vs_seeker_win_rewards"),
+    24: .standard(proto: "buddy_consumables"),
   ]
 
   fileprivate class _StorageClass {
@@ -497,6 +508,14 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._action = .vsSeekerWinRewards(v)}
+        case 24:
+          var v: POGOProtos_Data_Logs_BuddyConsumablesLogEntry?
+          if let current = _storage._action {
+            try decoder.handleConflictingOneOf()
+            if case .buddyConsumables(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._action = .buddyConsumables(v)}
         default: break
         }
       }
@@ -554,6 +573,8 @@ extension POGOProtos_Data_Logs_ActionLogEntry: SwiftProtobuf.Message, SwiftProto
         try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
       case .vsSeekerWinRewards(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
+      case .buddyConsumables(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 24)
       case nil: break
       }
     }

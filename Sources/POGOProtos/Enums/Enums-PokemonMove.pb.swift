@@ -301,6 +301,7 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case technoBlastWater // = 339
   case technoBlastShock // = 340
   case fly // = 341
+  case vCreate // = 342
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -589,6 +590,7 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 339: self = .technoBlastWater
     case 340: self = .technoBlastShock
     case 341: self = .fly
+    case 342: self = .vCreate
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -875,6 +877,7 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .technoBlastWater: return 339
     case .technoBlastShock: return 340
     case .fly: return 341
+    case .vCreate: return 342
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1166,6 +1169,7 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .technoBlastWater,
     .technoBlastShock,
     .fly,
+    .vCreate,
   ]
 }
 
@@ -1455,5 +1459,6 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     339: .same(proto: "TECHNO_BLAST_WATER"),
     340: .same(proto: "TECHNO_BLAST_SHOCK"),
     341: .same(proto: "FLY"),
+    342: .same(proto: "V_CREATE"),
   ]
 }

@@ -50,6 +50,8 @@ public struct POGOProtos_Settings_Master_RaidClientSettings {
 
   public var unsupportedRaidLevelsForFriendInvites: [POGOProtos_Enums_RaidLevel] = []
 
+  public var unsupportedRemoteRaidLevels: [POGOProtos_Enums_RaidLevel] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -75,6 +77,7 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
     11: .standard(proto: "invite_cooldown_duration_millis"),
     12: .standard(proto: "max_num_friend_invites_per_action"),
     13: .standard(proto: "unsupported_raid_levels_for_friend_invites"),
+    14: .standard(proto: "unsupported_remote_raid_levels"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -93,6 +96,7 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
       case 11: try decoder.decodeSingularInt64Field(value: &self.inviteCooldownDurationMillis)
       case 12: try decoder.decodeSingularInt32Field(value: &self.maxNumFriendInvitesPerAction)
       case 13: try decoder.decodeRepeatedEnumField(value: &self.unsupportedRaidLevelsForFriendInvites)
+      case 14: try decoder.decodeRepeatedEnumField(value: &self.unsupportedRemoteRaidLevels)
       default: break
       }
     }
@@ -138,6 +142,9 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
     if !self.unsupportedRaidLevelsForFriendInvites.isEmpty {
       try visitor.visitPackedEnumField(value: self.unsupportedRaidLevelsForFriendInvites, fieldNumber: 13)
     }
+    if !self.unsupportedRemoteRaidLevels.isEmpty {
+      try visitor.visitPackedEnumField(value: self.unsupportedRemoteRaidLevels, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -155,6 +162,7 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
     if lhs.inviteCooldownDurationMillis != rhs.inviteCooldownDurationMillis {return false}
     if lhs.maxNumFriendInvitesPerAction != rhs.maxNumFriendInvitesPerAction {return false}
     if lhs.unsupportedRaidLevelsForFriendInvites != rhs.unsupportedRaidLevelsForFriendInvites {return false}
+    if lhs.unsupportedRemoteRaidLevels != rhs.unsupportedRemoteRaidLevels {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

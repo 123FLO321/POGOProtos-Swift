@@ -2087,10 +2087,15 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case dragoniteCostume2020 // = 2333
   case onixCostume2020 // = 2334
   case meowthGalarian // = 2335
+  case ponytaGalarian // = 2336
+  case rapidashGalarian // = 2337
   case farfetchdGalarian // = 2338
+  case mrMimeGalarian // = 2339
+  case corsolaGalarian // = 2340
   case darumakaGalarian // = 2341
   case darmanitanGalarianStandard // = 2342
   case darmanitanGalarianZen // = 2343
+  case yamaskGalarian // = 2344
   case stunfiskGalarian // = 2345
   case obstagoonNormal // = 2501
   case obstagoonShadow // = 2502
@@ -2101,6 +2106,10 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case sirfetchdNormal // = 2510
   case sirfetchdShadow // = 2511
   case sirfetchdPurified // = 2512
+  case slowpokeGalarian // = 2582
+  case slowbroGalarian // = 2583
+  case laprasCostume2020 // = 2585
+  case gengarCostume2020 // = 2586
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -4175,10 +4184,15 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 2333: self = .dragoniteCostume2020
     case 2334: self = .onixCostume2020
     case 2335: self = .meowthGalarian
+    case 2336: self = .ponytaGalarian
+    case 2337: self = .rapidashGalarian
     case 2338: self = .farfetchdGalarian
+    case 2339: self = .mrMimeGalarian
+    case 2340: self = .corsolaGalarian
     case 2341: self = .darumakaGalarian
     case 2342: self = .darmanitanGalarianStandard
     case 2343: self = .darmanitanGalarianZen
+    case 2344: self = .yamaskGalarian
     case 2345: self = .stunfiskGalarian
     case 2501: self = .obstagoonNormal
     case 2502: self = .obstagoonShadow
@@ -4189,6 +4203,10 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 2510: self = .sirfetchdNormal
     case 2511: self = .sirfetchdShadow
     case 2512: self = .sirfetchdPurified
+    case 2582: self = .slowpokeGalarian
+    case 2583: self = .slowbroGalarian
+    case 2585: self = .laprasCostume2020
+    case 2586: self = .gengarCostume2020
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -6261,10 +6279,15 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .dragoniteCostume2020: return 2333
     case .onixCostume2020: return 2334
     case .meowthGalarian: return 2335
+    case .ponytaGalarian: return 2336
+    case .rapidashGalarian: return 2337
     case .farfetchdGalarian: return 2338
+    case .mrMimeGalarian: return 2339
+    case .corsolaGalarian: return 2340
     case .darumakaGalarian: return 2341
     case .darmanitanGalarianStandard: return 2342
     case .darmanitanGalarianZen: return 2343
+    case .yamaskGalarian: return 2344
     case .stunfiskGalarian: return 2345
     case .obstagoonNormal: return 2501
     case .obstagoonShadow: return 2502
@@ -6275,6 +6298,10 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .sirfetchdNormal: return 2510
     case .sirfetchdShadow: return 2511
     case .sirfetchdPurified: return 2512
+    case .slowpokeGalarian: return 2582
+    case .slowbroGalarian: return 2583
+    case .laprasCostume2020: return 2585
+    case .gengarCostume2020: return 2586
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -8352,10 +8379,15 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .dragoniteCostume2020,
     .onixCostume2020,
     .meowthGalarian,
+    .ponytaGalarian,
+    .rapidashGalarian,
     .farfetchdGalarian,
+    .mrMimeGalarian,
+    .corsolaGalarian,
     .darumakaGalarian,
     .darmanitanGalarianStandard,
     .darmanitanGalarianZen,
+    .yamaskGalarian,
     .stunfiskGalarian,
     .obstagoonNormal,
     .obstagoonShadow,
@@ -8366,6 +8398,10 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .sirfetchdNormal,
     .sirfetchdShadow,
     .sirfetchdPurified,
+    .slowpokeGalarian,
+    .slowbroGalarian,
+    .laprasCostume2020,
+    .gengarCostume2020,
   ]
 }
 
@@ -10441,10 +10477,15 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     2333: .same(proto: "DRAGONITE_COSTUME_2020"),
     2334: .same(proto: "ONIX_COSTUME_2020"),
     2335: .same(proto: "MEOWTH_GALARIAN"),
+    2336: .same(proto: "PONYTA_GALARIAN"),
+    2337: .same(proto: "RAPIDASH_GALARIAN"),
     2338: .same(proto: "FARFETCHD_GALARIAN"),
+    2339: .same(proto: "MR_MIME_GALARIAN"),
+    2340: .same(proto: "CORSOLA_GALARIAN"),
     2341: .same(proto: "DARUMAKA_GALARIAN"),
     2342: .same(proto: "DARMANITAN_GALARIAN_STANDARD"),
     2343: .same(proto: "DARMANITAN_GALARIAN_ZEN"),
+    2344: .same(proto: "YAMASK_GALARIAN"),
     2345: .same(proto: "STUNFISK_GALARIAN"),
     2501: .same(proto: "OBSTAGOON_NORMAL"),
     2502: .same(proto: "OBSTAGOON_SHADOW"),
@@ -10455,5 +10496,9 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     2510: .same(proto: "SIRFETCHD_NORMAL"),
     2511: .same(proto: "SIRFETCHD_SHADOW"),
     2512: .same(proto: "SIRFETCHD_PURIFIED"),
+    2582: .same(proto: "SLOWPOKE_GALARIAN"),
+    2583: .same(proto: "SLOWBRO_GALARIAN"),
+    2585: .same(proto: "LAPRAS_COSTUME_2020"),
+    2586: .same(proto: "GENGAR_COSTUME_2020"),
   ]
 }

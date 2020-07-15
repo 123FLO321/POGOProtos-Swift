@@ -32,6 +32,8 @@ public struct POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry {
 
   public var hasItem_p: Bool = false
 
+  public var mlBundleTrackingID: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum ShoppingPageTelemetrySource: SwiftProtobuf.Enum {
@@ -152,6 +154,7 @@ extension POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry: SwiftProtobuf.Me
     2: .standard(proto: "shopping_page_click_source"),
     3: .standard(proto: "item_sku"),
     4: .standard(proto: "has_item"),
+    5: .standard(proto: "ml_bundle_tracking_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -161,6 +164,7 @@ extension POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry: SwiftProtobuf.Me
       case 2: try decoder.decodeSingularEnumField(value: &self.shoppingPageClickSource)
       case 3: try decoder.decodeSingularStringField(value: &self.itemSku)
       case 4: try decoder.decodeSingularBoolField(value: &self.hasItem_p)
+      case 5: try decoder.decodeSingularStringField(value: &self.mlBundleTrackingID)
       default: break
       }
     }
@@ -179,6 +183,9 @@ extension POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry: SwiftProtobuf.Me
     if self.hasItem_p != false {
       try visitor.visitSingularBoolField(value: self.hasItem_p, fieldNumber: 4)
     }
+    if !self.mlBundleTrackingID.isEmpty {
+      try visitor.visitSingularStringField(value: self.mlBundleTrackingID, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -187,6 +194,7 @@ extension POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry: SwiftProtobuf.Me
     if lhs.shoppingPageClickSource != rhs.shoppingPageClickSource {return false}
     if lhs.itemSku != rhs.itemSku {return false}
     if lhs.hasItem_p != rhs.hasItem_p {return false}
+    if lhs.mlBundleTrackingID != rhs.mlBundleTrackingID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

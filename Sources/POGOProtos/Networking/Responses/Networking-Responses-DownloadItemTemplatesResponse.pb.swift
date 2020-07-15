@@ -726,6 +726,24 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `crossGameSocialSettings`. Subsequent reads from it will return its default value.
     public mutating func clearCrossGameSocialSettings() {_uniqueStorage()._crossGameSocialSettings = nil}
 
+    public var mapDisplaySettings: POGOProtos_Settings_Master_MapDisplaySettings {
+      get {return _storage._mapDisplaySettings ?? POGOProtos_Settings_Master_MapDisplaySettings()}
+      set {_uniqueStorage()._mapDisplaySettings = newValue}
+    }
+    /// Returns true if `mapDisplaySettings` has been explicitly set.
+    public var hasMapDisplaySettings: Bool {return _storage._mapDisplaySettings != nil}
+    /// Clears the value of `mapDisplaySettings`. Subsequent reads from it will return its default value.
+    public mutating func clearMapDisplaySettings() {_uniqueStorage()._mapDisplaySettings = nil}
+
+    public var arTelemetrySettings: POGOProtos_Settings_Master_ArTelemetrySettings {
+      get {return _storage._arTelemetrySettings ?? POGOProtos_Settings_Master_ArTelemetrySettings()}
+      set {_uniqueStorage()._arTelemetrySettings = newValue}
+    }
+    /// Returns true if `arTelemetrySettings` has been explicitly set.
+    public var hasArTelemetrySettings: Bool {return _storage._arTelemetrySettings != nil}
+    /// Clears the value of `arTelemetrySettings`. Subsequent reads from it will return its default value.
+    public mutating func clearArTelemetrySettings() {_uniqueStorage()._arTelemetrySettings = nil}
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public struct ProjectVacation {
@@ -898,6 +916,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
     84: .standard(proto: "sponsored_geofence_gift_settings"),
     85: .standard(proto: "sticker_metadata"),
     86: .standard(proto: "cross_game_social_settings"),
+    87: .standard(proto: "map_display_settings"),
+    90: .standard(proto: "ar_telemetry_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -974,6 +994,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
     var _sponsoredGeofenceGiftSettings: POGOProtos_Settings_Master_SponsoredGeofenceGiftSettings? = nil
     var _stickerMetadata: POGOProtos_Data_Sticker_StickerMetadata? = nil
     var _crossGameSocialSettings: POGOProtos_Settings_Master_CrossGameSocialSettings? = nil
+    var _mapDisplaySettings: POGOProtos_Settings_Master_MapDisplaySettings? = nil
+    var _arTelemetrySettings: POGOProtos_Settings_Master_ArTelemetrySettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -1053,6 +1075,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
       _sponsoredGeofenceGiftSettings = source._sponsoredGeofenceGiftSettings
       _stickerMetadata = source._stickerMetadata
       _crossGameSocialSettings = source._crossGameSocialSettings
+      _mapDisplaySettings = source._mapDisplaySettings
+      _arTelemetrySettings = source._arTelemetrySettings
     }
   }
 
@@ -1141,6 +1165,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
         case 84: try decoder.decodeSingularMessageField(value: &_storage._sponsoredGeofenceGiftSettings)
         case 85: try decoder.decodeSingularMessageField(value: &_storage._stickerMetadata)
         case 86: try decoder.decodeSingularMessageField(value: &_storage._crossGameSocialSettings)
+        case 87: try decoder.decodeSingularMessageField(value: &_storage._mapDisplaySettings)
+        case 90: try decoder.decodeSingularMessageField(value: &_storage._arTelemetrySettings)
         default: break
         }
       }
@@ -1368,6 +1394,12 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
       if let v = _storage._crossGameSocialSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 86)
       }
+      if let v = _storage._mapDisplaySettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 87)
+      }
+      if let v = _storage._arTelemetrySettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 90)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -1450,6 +1482,8 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
         if _storage._sponsoredGeofenceGiftSettings != rhs_storage._sponsoredGeofenceGiftSettings {return false}
         if _storage._stickerMetadata != rhs_storage._stickerMetadata {return false}
         if _storage._crossGameSocialSettings != rhs_storage._crossGameSocialSettings {return false}
+        if _storage._mapDisplaySettings != rhs_storage._mapDisplaySettings {return false}
+        if _storage._arTelemetrySettings != rhs_storage._arTelemetrySettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

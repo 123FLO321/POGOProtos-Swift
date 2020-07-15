@@ -311,6 +311,11 @@ public struct POGOProtos_Data_PokemonData {
     set {_uniqueStorage()._eggType = newValue}
   }
 
+  public var questBuddyEvolutionRequirement: [POGOProtos_Data_Quests_ClientQuest] {
+    get {return _storage._questBuddyEvolutionRequirement}
+    set {_uniqueStorage()._questBuddyEvolutionRequirement = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -380,6 +385,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     55: .standard(proto: "deployed_gym_lat_degree"),
     56: .standard(proto: "deployed_gym_lng_degree"),
     58: .standard(proto: "egg_type"),
+    62: .standard(proto: "quest_buddy_evolution_requirement"),
   ]
 
   fileprivate class _StorageClass {
@@ -438,6 +444,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _deployedGymLatDegree: Double = 0
     var _deployedGymLngDegree: Double = 0
     var _eggType: POGOProtos_Enums_HoloPokemonEggType = .eggTypeUnset
+    var _questBuddyEvolutionRequirement: [POGOProtos_Data_Quests_ClientQuest] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -499,6 +506,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _deployedGymLatDegree = source._deployedGymLatDegree
       _deployedGymLngDegree = source._deployedGymLngDegree
       _eggType = source._eggType
+      _questBuddyEvolutionRequirement = source._questBuddyEvolutionRequirement
     }
   }
 
@@ -569,6 +577,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 55: try decoder.decodeSingularDoubleField(value: &_storage._deployedGymLatDegree)
         case 56: try decoder.decodeSingularDoubleField(value: &_storage._deployedGymLngDegree)
         case 58: try decoder.decodeSingularEnumField(value: &_storage._eggType)
+        case 62: try decoder.decodeRepeatedMessageField(value: &_storage._questBuddyEvolutionRequirement)
         default: break
         }
       }
@@ -742,6 +751,9 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if _storage._eggType != .eggTypeUnset {
         try visitor.visitSingularEnumField(value: _storage._eggType, fieldNumber: 58)
       }
+      if !_storage._questBuddyEvolutionRequirement.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._questBuddyEvolutionRequirement, fieldNumber: 62)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -806,6 +818,7 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._deployedGymLatDegree != rhs_storage._deployedGymLatDegree {return false}
         if _storage._deployedGymLngDegree != rhs_storage._deployedGymLngDegree {return false}
         if _storage._eggType != rhs_storage._eggType {return false}
+        if _storage._questBuddyEvolutionRequirement != rhs_storage._questBuddyEvolutionRequirement {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -385,6 +385,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
   case combatHubEntranceTelemetry // = 45
   case deviceSpecificationsTelemetry // = 46
   case screenResolutionTelemetry // = 47
+  case deviceOsTelemetry // = 48
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -441,6 +442,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case 45: self = .combatHubEntranceTelemetry
     case 46: self = .deviceSpecificationsTelemetry
     case 47: self = .screenResolutionTelemetry
+    case 48: self = .deviceOsTelemetry
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -495,6 +497,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case .combatHubEntranceTelemetry: return 45
     case .deviceSpecificationsTelemetry: return 46
     case .screenResolutionTelemetry: return 47
+    case .deviceOsTelemetry: return 48
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -554,6 +557,7 @@ extension POGOProtos_Enums_ClientTelemetryIds: CaseIterable {
     .combatHubEntranceTelemetry,
     .deviceSpecificationsTelemetry,
     .screenResolutionTelemetry,
+    .deviceOsTelemetry,
   ]
 }
 
@@ -1655,6 +1659,7 @@ extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding
     45: .same(proto: "COMBAT_HUB_ENTRANCE_TELEMETRY"),
     46: .same(proto: "DEVICE_SPECIFICATIONS_TELEMETRY"),
     47: .same(proto: "SCREEN_RESOLUTION_TELEMETRY"),
+    48: .same(proto: "DEVICE_OS_TELEMETRY"),
   ]
 }
 

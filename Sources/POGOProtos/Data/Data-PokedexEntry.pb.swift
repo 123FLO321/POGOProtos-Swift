@@ -54,6 +54,8 @@ public struct POGOProtos_Data_PokedexEntry {
 
   public var timesPurified: Int32 = 0
 
+  public var capturedShinyForms: [POGOProtos_Enums_Form] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -81,6 +83,7 @@ extension POGOProtos_Data_PokedexEntry: SwiftProtobuf.Message, SwiftProtobuf._Me
     13: .standard(proto: "encountered_shiny"),
     14: .standard(proto: "times_lucky_received"),
     15: .standard(proto: "times_purified"),
+    17: .standard(proto: "captured_shiny_forms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -101,6 +104,7 @@ extension POGOProtos_Data_PokedexEntry: SwiftProtobuf.Message, SwiftProtobuf._Me
       case 13: try decoder.decodeSingularBoolField(value: &self.encounteredShiny)
       case 14: try decoder.decodeSingularInt32Field(value: &self.timesLuckyReceived)
       case 15: try decoder.decodeSingularInt32Field(value: &self.timesPurified)
+      case 17: try decoder.decodeRepeatedEnumField(value: &self.capturedShinyForms)
       default: break
       }
     }
@@ -152,6 +156,9 @@ extension POGOProtos_Data_PokedexEntry: SwiftProtobuf.Message, SwiftProtobuf._Me
     if self.timesPurified != 0 {
       try visitor.visitSingularInt32Field(value: self.timesPurified, fieldNumber: 15)
     }
+    if !self.capturedShinyForms.isEmpty {
+      try visitor.visitPackedEnumField(value: self.capturedShinyForms, fieldNumber: 17)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -171,6 +178,7 @@ extension POGOProtos_Data_PokedexEntry: SwiftProtobuf.Message, SwiftProtobuf._Me
     if lhs.encounteredShiny != rhs.encounteredShiny {return false}
     if lhs.timesLuckyReceived != rhs.timesLuckyReceived {return false}
     if lhs.timesPurified != rhs.timesPurified {return false}
+    if lhs.capturedShinyForms != rhs.capturedShinyForms {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

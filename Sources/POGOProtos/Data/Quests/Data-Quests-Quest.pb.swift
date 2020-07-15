@@ -251,6 +251,7 @@ public struct POGOProtos_Data_Quests_Quest {
     case challengeQuest // = 2
     case dailyCoinQuest // = 3
     case timedStoryQuest // = 4
+    case tgcTrackingQuest // = 7
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -264,6 +265,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case 2: self = .challengeQuest
       case 3: self = .dailyCoinQuest
       case 4: self = .timedStoryQuest
+      case 7: self = .tgcTrackingQuest
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -275,6 +277,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case .challengeQuest: return 2
       case .dailyCoinQuest: return 3
       case .timedStoryQuest: return 4
+      case .tgcTrackingQuest: return 7
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -426,6 +429,7 @@ extension POGOProtos_Data_Quests_Quest.Context: CaseIterable {
     .challengeQuest,
     .dailyCoinQuest,
     .timedStoryQuest,
+    .tgcTrackingQuest,
   ]
 }
 
@@ -774,6 +778,7 @@ extension POGOProtos_Data_Quests_Quest.Context: SwiftProtobuf._ProtoNameProvidin
     2: .same(proto: "CHALLENGE_QUEST"),
     3: .same(proto: "DAILY_COIN_QUEST"),
     4: .same(proto: "TIMED_STORY_QUEST"),
+    7: .same(proto: "TGC_TRACKING_QUEST"),
   ]
 }
 

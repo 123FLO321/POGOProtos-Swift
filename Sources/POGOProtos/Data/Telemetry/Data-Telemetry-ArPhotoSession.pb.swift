@@ -24,31 +24,154 @@ public struct POGOProtos_Data_Telemetry_ArPhotoSession {
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
   // methods supported on all messages.
 
-  public var arType: POGOProtos_Data_Telemetry_ArPhotoSession.ArType = .unset
+  public var arType: POGOProtos_Data_Telemetry_ArPhotoSession.ArType {
+    get {return _storage._arType}
+    set {_uniqueStorage()._arType = newValue}
+  }
 
-  public var furthestStepCompleted: POGOProtos_Data_Telemetry_ArPhotoSession.Step = .unknown
+  public var furthestStepCompleted: POGOProtos_Data_Telemetry_ArPhotoSession.Step {
+    get {return _storage._furthestStepCompleted}
+    set {_uniqueStorage()._furthestStepCompleted = newValue}
+  }
 
-  public var numPhotosTaken: Int32 = 0
+  public var numPhotosTaken: Int32 {
+    get {return _storage._numPhotosTaken}
+    set {_uniqueStorage()._numPhotosTaken = newValue}
+  }
 
-  public var numPhotosShared: Int32 = 0
+  public var numPhotosShared: Int32 {
+    get {return _storage._numPhotosShared}
+    set {_uniqueStorage()._numPhotosShared = newValue}
+  }
 
-  public var numPhotosTakenOcclusions: Int32 = 0
+  public var numPhotosTakenOcclusions: Int32 {
+    get {return _storage._numPhotosTakenOcclusions}
+    set {_uniqueStorage()._numPhotosTakenOcclusions = newValue}
+  }
 
-  public var numOcclusionsEnabled: Int32 = 0
+  public var numOcclusionsEnabled: Int32 {
+    get {return _storage._numOcclusionsEnabled}
+    set {_uniqueStorage()._numOcclusionsEnabled = newValue}
+  }
 
-  public var numOcclusionsDisabled: Int32 = 0
+  public var numOcclusionsDisabled: Int32 {
+    get {return _storage._numOcclusionsDisabled}
+    set {_uniqueStorage()._numOcclusionsDisabled = newValue}
+  }
 
-  public var arContext: POGOProtos_Data_Telemetry_ArPhotoSession.ArContext = .none
+  public var arContext: POGOProtos_Data_Telemetry_ArPhotoSession.ArContext {
+    get {return _storage._arContext}
+    set {_uniqueStorage()._arContext = newValue}
+  }
 
-  public var sessionLength: Int64 = 0
+  public var sessionLength: Int64 {
+    get {return _storage._sessionLength}
+    set {_uniqueStorage()._sessionLength = newValue}
+  }
 
-  public var sessionLengthOcclusions: Int64 = 0
+  public var sessionLengthOcclusions: Int64 {
+    get {return _storage._sessionLengthOcclusions}
+    set {_uniqueStorage()._sessionLengthOcclusions = newValue}
+  }
 
-  public var numPhotosSharedOcclusions: Int32 = 0
+  public var numPhotosSharedOcclusions: Int32 {
+    get {return _storage._numPhotosSharedOcclusions}
+    set {_uniqueStorage()._numPhotosSharedOcclusions = newValue}
+  }
 
-  public var modelURL: String = String()
+  public var modelURL: String {
+    get {return _storage._modelURL}
+    set {_uniqueStorage()._modelURL = newValue}
+  }
+
+  public var ardkVersion: String {
+    get {return _storage._ardkVersion}
+    set {_uniqueStorage()._ardkVersion = newValue}
+  }
+
+  public var averageFramerate: Int32 {
+    get {return _storage._averageFramerate}
+    set {_uniqueStorage()._averageFramerate = newValue}
+  }
+
+  public var averageBatteryPerMin: Float {
+    get {return _storage._averageBatteryPerMin}
+    set {_uniqueStorage()._averageBatteryPerMin = newValue}
+  }
+
+  public var averageCpuUsage: Float {
+    get {return _storage._averageCpuUsage}
+    set {_uniqueStorage()._averageCpuUsage = newValue}
+  }
+
+  public var averageGpuUsage: Float {
+    get {return _storage._averageGpuUsage}
+    set {_uniqueStorage()._averageGpuUsage = newValue}
+  }
+
+  public var framerateSamples: [POGOProtos_Data_Telemetry_ArPhotoSession.FramerateSample] {
+    get {return _storage._framerateSamples}
+    set {_uniqueStorage()._framerateSamples = newValue}
+  }
+
+  public var batterySamples: [POGOProtos_Data_Telemetry_ArPhotoSession.BatterySample] {
+    get {return _storage._batterySamples}
+    set {_uniqueStorage()._batterySamples = newValue}
+  }
+
+  public var processorSamples: [POGOProtos_Data_Telemetry_ArPhotoSession.ProcessorSample] {
+    get {return _storage._processorSamples}
+    set {_uniqueStorage()._processorSamples = newValue}
+  }
+
+  public var sessionStartToPlaneDetectionMs: Int32 {
+    get {return _storage._sessionStartToPlaneDetectionMs}
+    set {_uniqueStorage()._sessionStartToPlaneDetectionMs = newValue}
+  }
+
+  public var planeDetectionToUserInteractionMs: Int32 {
+    get {return _storage._planeDetectionToUserInteractionMs}
+    set {_uniqueStorage()._planeDetectionToUserInteractionMs = newValue}
+  }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum BatteryStatus: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case undetermined // = 0
+    case charging // = 1
+    case discharging // = 2
+    case notCharging // = 3
+    case full // = 4
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .undetermined
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .undetermined
+      case 1: self = .charging
+      case 2: self = .discharging
+      case 3: self = .notCharging
+      case 4: self = .full
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .undetermined: return 0
+      case .charging: return 1
+      case .discharging: return 2
+      case .notCharging: return 3
+      case .full: return 4
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+
+  }
 
   public enum ArContext: SwiftProtobuf.Enum {
     public typealias RawValue = Int
@@ -158,10 +281,127 @@ public struct POGOProtos_Data_Telemetry_ArPhotoSession {
 
   }
 
+  public struct ArConditions {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var timestamp: Int64 = 0
+
+    public var occlusionsEnabled: Bool = false
+
+    public var currentArStep: POGOProtos_Data_Telemetry_ArPhotoSession.Step = .unknown
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct BatterySample {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var conditions: POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions {
+      get {return _storage._conditions ?? POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions()}
+      set {_uniqueStorage()._conditions = newValue}
+    }
+    /// Returns true if `conditions` has been explicitly set.
+    public var hasConditions: Bool {return _storage._conditions != nil}
+    /// Clears the value of `conditions`. Subsequent reads from it will return its default value.
+    public mutating func clearConditions() {_uniqueStorage()._conditions = nil}
+
+    public var batteryLevel: Float {
+      get {return _storage._batteryLevel}
+      set {_uniqueStorage()._batteryLevel = newValue}
+    }
+
+    public var status: POGOProtos_Data_Telemetry_ArPhotoSession.BatteryStatus {
+      get {return _storage._status}
+      set {_uniqueStorage()._status = newValue}
+    }
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+
+    fileprivate var _storage = _StorageClass.defaultInstance
+  }
+
+  public struct FramerateSample {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var conditions: POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions {
+      get {return _storage._conditions ?? POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions()}
+      set {_uniqueStorage()._conditions = newValue}
+    }
+    /// Returns true if `conditions` has been explicitly set.
+    public var hasConditions: Bool {return _storage._conditions != nil}
+    /// Clears the value of `conditions`. Subsequent reads from it will return its default value.
+    public mutating func clearConditions() {_uniqueStorage()._conditions = nil}
+
+    public var framerate: Int32 {
+      get {return _storage._framerate}
+      set {_uniqueStorage()._framerate = newValue}
+    }
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+
+    fileprivate var _storage = _StorageClass.defaultInstance
+  }
+
+  public struct ProcessorSample {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var conditions: POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions {
+      get {return _storage._conditions ?? POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions()}
+      set {_uniqueStorage()._conditions = newValue}
+    }
+    /// Returns true if `conditions` has been explicitly set.
+    public var hasConditions: Bool {return _storage._conditions != nil}
+    /// Clears the value of `conditions`. Subsequent reads from it will return its default value.
+    public mutating func clearConditions() {_uniqueStorage()._conditions = nil}
+
+    public var cpuUsage: Float {
+      get {return _storage._cpuUsage}
+      set {_uniqueStorage()._cpuUsage = newValue}
+    }
+
+    public var gpuUsage: Float {
+      get {return _storage._gpuUsage}
+      set {_uniqueStorage()._gpuUsage = newValue}
+    }
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+
+    fileprivate var _storage = _StorageClass.defaultInstance
+  }
+
   public init() {}
+
+  fileprivate var _storage = _StorageClass.defaultInstance
 }
 
 #if swift(>=4.2)
+
+extension POGOProtos_Data_Telemetry_ArPhotoSession.BatteryStatus: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Data_Telemetry_ArPhotoSession.BatteryStatus] = [
+    .undetermined,
+    .charging,
+    .discharging,
+    .notCharging,
+    .full,
+  ]
+}
 
 extension POGOProtos_Data_Telemetry_ArPhotoSession.ArContext: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
@@ -216,84 +456,228 @@ extension POGOProtos_Data_Telemetry_ArPhotoSession: SwiftProtobuf.Message, Swift
     10: .standard(proto: "session_length_occlusions"),
     11: .standard(proto: "num_photos_shared_occlusions"),
     12: .standard(proto: "model_url"),
+    13: .standard(proto: "ardk_version"),
+    14: .standard(proto: "average_framerate"),
+    15: .standard(proto: "average_battery_per_min"),
+    16: .standard(proto: "average_cpu_usage"),
+    17: .standard(proto: "average_gpu_usage"),
+    18: .standard(proto: "framerate_samples"),
+    19: .standard(proto: "battery_samples"),
+    20: .standard(proto: "processor_samples"),
+    21: .standard(proto: "session_start_to_plane_detection_ms"),
+    22: .standard(proto: "plane_detection_to_user_interaction_ms"),
   ]
 
+  fileprivate class _StorageClass {
+    var _arType: POGOProtos_Data_Telemetry_ArPhotoSession.ArType = .unset
+    var _furthestStepCompleted: POGOProtos_Data_Telemetry_ArPhotoSession.Step = .unknown
+    var _numPhotosTaken: Int32 = 0
+    var _numPhotosShared: Int32 = 0
+    var _numPhotosTakenOcclusions: Int32 = 0
+    var _numOcclusionsEnabled: Int32 = 0
+    var _numOcclusionsDisabled: Int32 = 0
+    var _arContext: POGOProtos_Data_Telemetry_ArPhotoSession.ArContext = .none
+    var _sessionLength: Int64 = 0
+    var _sessionLengthOcclusions: Int64 = 0
+    var _numPhotosSharedOcclusions: Int32 = 0
+    var _modelURL: String = String()
+    var _ardkVersion: String = String()
+    var _averageFramerate: Int32 = 0
+    var _averageBatteryPerMin: Float = 0
+    var _averageCpuUsage: Float = 0
+    var _averageGpuUsage: Float = 0
+    var _framerateSamples: [POGOProtos_Data_Telemetry_ArPhotoSession.FramerateSample] = []
+    var _batterySamples: [POGOProtos_Data_Telemetry_ArPhotoSession.BatterySample] = []
+    var _processorSamples: [POGOProtos_Data_Telemetry_ArPhotoSession.ProcessorSample] = []
+    var _sessionStartToPlaneDetectionMs: Int32 = 0
+    var _planeDetectionToUserInteractionMs: Int32 = 0
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _arType = source._arType
+      _furthestStepCompleted = source._furthestStepCompleted
+      _numPhotosTaken = source._numPhotosTaken
+      _numPhotosShared = source._numPhotosShared
+      _numPhotosTakenOcclusions = source._numPhotosTakenOcclusions
+      _numOcclusionsEnabled = source._numOcclusionsEnabled
+      _numOcclusionsDisabled = source._numOcclusionsDisabled
+      _arContext = source._arContext
+      _sessionLength = source._sessionLength
+      _sessionLengthOcclusions = source._sessionLengthOcclusions
+      _numPhotosSharedOcclusions = source._numPhotosSharedOcclusions
+      _modelURL = source._modelURL
+      _ardkVersion = source._ardkVersion
+      _averageFramerate = source._averageFramerate
+      _averageBatteryPerMin = source._averageBatteryPerMin
+      _averageCpuUsage = source._averageCpuUsage
+      _averageGpuUsage = source._averageGpuUsage
+      _framerateSamples = source._framerateSamples
+      _batterySamples = source._batterySamples
+      _processorSamples = source._processorSamples
+      _sessionStartToPlaneDetectionMs = source._sessionStartToPlaneDetectionMs
+      _planeDetectionToUserInteractionMs = source._planeDetectionToUserInteractionMs
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularEnumField(value: &self.arType)
-      case 2: try decoder.decodeSingularEnumField(value: &self.furthestStepCompleted)
-      case 3: try decoder.decodeSingularInt32Field(value: &self.numPhotosTaken)
-      case 4: try decoder.decodeSingularInt32Field(value: &self.numPhotosShared)
-      case 5: try decoder.decodeSingularInt32Field(value: &self.numPhotosTakenOcclusions)
-      case 6: try decoder.decodeSingularInt32Field(value: &self.numOcclusionsEnabled)
-      case 7: try decoder.decodeSingularInt32Field(value: &self.numOcclusionsDisabled)
-      case 8: try decoder.decodeSingularEnumField(value: &self.arContext)
-      case 9: try decoder.decodeSingularInt64Field(value: &self.sessionLength)
-      case 10: try decoder.decodeSingularInt64Field(value: &self.sessionLengthOcclusions)
-      case 11: try decoder.decodeSingularInt32Field(value: &self.numPhotosSharedOcclusions)
-      case 12: try decoder.decodeSingularStringField(value: &self.modelURL)
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularEnumField(value: &_storage._arType)
+        case 2: try decoder.decodeSingularEnumField(value: &_storage._furthestStepCompleted)
+        case 3: try decoder.decodeSingularInt32Field(value: &_storage._numPhotosTaken)
+        case 4: try decoder.decodeSingularInt32Field(value: &_storage._numPhotosShared)
+        case 5: try decoder.decodeSingularInt32Field(value: &_storage._numPhotosTakenOcclusions)
+        case 6: try decoder.decodeSingularInt32Field(value: &_storage._numOcclusionsEnabled)
+        case 7: try decoder.decodeSingularInt32Field(value: &_storage._numOcclusionsDisabled)
+        case 8: try decoder.decodeSingularEnumField(value: &_storage._arContext)
+        case 9: try decoder.decodeSingularInt64Field(value: &_storage._sessionLength)
+        case 10: try decoder.decodeSingularInt64Field(value: &_storage._sessionLengthOcclusions)
+        case 11: try decoder.decodeSingularInt32Field(value: &_storage._numPhotosSharedOcclusions)
+        case 12: try decoder.decodeSingularStringField(value: &_storage._modelURL)
+        case 13: try decoder.decodeSingularStringField(value: &_storage._ardkVersion)
+        case 14: try decoder.decodeSingularInt32Field(value: &_storage._averageFramerate)
+        case 15: try decoder.decodeSingularFloatField(value: &_storage._averageBatteryPerMin)
+        case 16: try decoder.decodeSingularFloatField(value: &_storage._averageCpuUsage)
+        case 17: try decoder.decodeSingularFloatField(value: &_storage._averageGpuUsage)
+        case 18: try decoder.decodeRepeatedMessageField(value: &_storage._framerateSamples)
+        case 19: try decoder.decodeRepeatedMessageField(value: &_storage._batterySamples)
+        case 20: try decoder.decodeRepeatedMessageField(value: &_storage._processorSamples)
+        case 21: try decoder.decodeSingularInt32Field(value: &_storage._sessionStartToPlaneDetectionMs)
+        case 22: try decoder.decodeSingularInt32Field(value: &_storage._planeDetectionToUserInteractionMs)
+        default: break
+        }
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.arType != .unset {
-      try visitor.visitSingularEnumField(value: self.arType, fieldNumber: 1)
-    }
-    if self.furthestStepCompleted != .unknown {
-      try visitor.visitSingularEnumField(value: self.furthestStepCompleted, fieldNumber: 2)
-    }
-    if self.numPhotosTaken != 0 {
-      try visitor.visitSingularInt32Field(value: self.numPhotosTaken, fieldNumber: 3)
-    }
-    if self.numPhotosShared != 0 {
-      try visitor.visitSingularInt32Field(value: self.numPhotosShared, fieldNumber: 4)
-    }
-    if self.numPhotosTakenOcclusions != 0 {
-      try visitor.visitSingularInt32Field(value: self.numPhotosTakenOcclusions, fieldNumber: 5)
-    }
-    if self.numOcclusionsEnabled != 0 {
-      try visitor.visitSingularInt32Field(value: self.numOcclusionsEnabled, fieldNumber: 6)
-    }
-    if self.numOcclusionsDisabled != 0 {
-      try visitor.visitSingularInt32Field(value: self.numOcclusionsDisabled, fieldNumber: 7)
-    }
-    if self.arContext != .none {
-      try visitor.visitSingularEnumField(value: self.arContext, fieldNumber: 8)
-    }
-    if self.sessionLength != 0 {
-      try visitor.visitSingularInt64Field(value: self.sessionLength, fieldNumber: 9)
-    }
-    if self.sessionLengthOcclusions != 0 {
-      try visitor.visitSingularInt64Field(value: self.sessionLengthOcclusions, fieldNumber: 10)
-    }
-    if self.numPhotosSharedOcclusions != 0 {
-      try visitor.visitSingularInt32Field(value: self.numPhotosSharedOcclusions, fieldNumber: 11)
-    }
-    if !self.modelURL.isEmpty {
-      try visitor.visitSingularStringField(value: self.modelURL, fieldNumber: 12)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if _storage._arType != .unset {
+        try visitor.visitSingularEnumField(value: _storage._arType, fieldNumber: 1)
+      }
+      if _storage._furthestStepCompleted != .unknown {
+        try visitor.visitSingularEnumField(value: _storage._furthestStepCompleted, fieldNumber: 2)
+      }
+      if _storage._numPhotosTaken != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numPhotosTaken, fieldNumber: 3)
+      }
+      if _storage._numPhotosShared != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numPhotosShared, fieldNumber: 4)
+      }
+      if _storage._numPhotosTakenOcclusions != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numPhotosTakenOcclusions, fieldNumber: 5)
+      }
+      if _storage._numOcclusionsEnabled != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numOcclusionsEnabled, fieldNumber: 6)
+      }
+      if _storage._numOcclusionsDisabled != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numOcclusionsDisabled, fieldNumber: 7)
+      }
+      if _storage._arContext != .none {
+        try visitor.visitSingularEnumField(value: _storage._arContext, fieldNumber: 8)
+      }
+      if _storage._sessionLength != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._sessionLength, fieldNumber: 9)
+      }
+      if _storage._sessionLengthOcclusions != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._sessionLengthOcclusions, fieldNumber: 10)
+      }
+      if _storage._numPhotosSharedOcclusions != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numPhotosSharedOcclusions, fieldNumber: 11)
+      }
+      if !_storage._modelURL.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._modelURL, fieldNumber: 12)
+      }
+      if !_storage._ardkVersion.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._ardkVersion, fieldNumber: 13)
+      }
+      if _storage._averageFramerate != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._averageFramerate, fieldNumber: 14)
+      }
+      if _storage._averageBatteryPerMin != 0 {
+        try visitor.visitSingularFloatField(value: _storage._averageBatteryPerMin, fieldNumber: 15)
+      }
+      if _storage._averageCpuUsage != 0 {
+        try visitor.visitSingularFloatField(value: _storage._averageCpuUsage, fieldNumber: 16)
+      }
+      if _storage._averageGpuUsage != 0 {
+        try visitor.visitSingularFloatField(value: _storage._averageGpuUsage, fieldNumber: 17)
+      }
+      if !_storage._framerateSamples.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._framerateSamples, fieldNumber: 18)
+      }
+      if !_storage._batterySamples.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._batterySamples, fieldNumber: 19)
+      }
+      if !_storage._processorSamples.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._processorSamples, fieldNumber: 20)
+      }
+      if _storage._sessionStartToPlaneDetectionMs != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._sessionStartToPlaneDetectionMs, fieldNumber: 21)
+      }
+      if _storage._planeDetectionToUserInteractionMs != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._planeDetectionToUserInteractionMs, fieldNumber: 22)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Telemetry_ArPhotoSession, rhs: POGOProtos_Data_Telemetry_ArPhotoSession) -> Bool {
-    if lhs.arType != rhs.arType {return false}
-    if lhs.furthestStepCompleted != rhs.furthestStepCompleted {return false}
-    if lhs.numPhotosTaken != rhs.numPhotosTaken {return false}
-    if lhs.numPhotosShared != rhs.numPhotosShared {return false}
-    if lhs.numPhotosTakenOcclusions != rhs.numPhotosTakenOcclusions {return false}
-    if lhs.numOcclusionsEnabled != rhs.numOcclusionsEnabled {return false}
-    if lhs.numOcclusionsDisabled != rhs.numOcclusionsDisabled {return false}
-    if lhs.arContext != rhs.arContext {return false}
-    if lhs.sessionLength != rhs.sessionLength {return false}
-    if lhs.sessionLengthOcclusions != rhs.sessionLengthOcclusions {return false}
-    if lhs.numPhotosSharedOcclusions != rhs.numPhotosSharedOcclusions {return false}
-    if lhs.modelURL != rhs.modelURL {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._arType != rhs_storage._arType {return false}
+        if _storage._furthestStepCompleted != rhs_storage._furthestStepCompleted {return false}
+        if _storage._numPhotosTaken != rhs_storage._numPhotosTaken {return false}
+        if _storage._numPhotosShared != rhs_storage._numPhotosShared {return false}
+        if _storage._numPhotosTakenOcclusions != rhs_storage._numPhotosTakenOcclusions {return false}
+        if _storage._numOcclusionsEnabled != rhs_storage._numOcclusionsEnabled {return false}
+        if _storage._numOcclusionsDisabled != rhs_storage._numOcclusionsDisabled {return false}
+        if _storage._arContext != rhs_storage._arContext {return false}
+        if _storage._sessionLength != rhs_storage._sessionLength {return false}
+        if _storage._sessionLengthOcclusions != rhs_storage._sessionLengthOcclusions {return false}
+        if _storage._numPhotosSharedOcclusions != rhs_storage._numPhotosSharedOcclusions {return false}
+        if _storage._modelURL != rhs_storage._modelURL {return false}
+        if _storage._ardkVersion != rhs_storage._ardkVersion {return false}
+        if _storage._averageFramerate != rhs_storage._averageFramerate {return false}
+        if _storage._averageBatteryPerMin != rhs_storage._averageBatteryPerMin {return false}
+        if _storage._averageCpuUsage != rhs_storage._averageCpuUsage {return false}
+        if _storage._averageGpuUsage != rhs_storage._averageGpuUsage {return false}
+        if _storage._framerateSamples != rhs_storage._framerateSamples {return false}
+        if _storage._batterySamples != rhs_storage._batterySamples {return false}
+        if _storage._processorSamples != rhs_storage._processorSamples {return false}
+        if _storage._sessionStartToPlaneDetectionMs != rhs_storage._sessionStartToPlaneDetectionMs {return false}
+        if _storage._planeDetectionToUserInteractionMs != rhs_storage._planeDetectionToUserInteractionMs {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Data_Telemetry_ArPhotoSession.BatteryStatus: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNDETERMINED"),
+    1: .same(proto: "CHARGING"),
+    2: .same(proto: "DISCHARGING"),
+    3: .same(proto: "NOT_CHARGING"),
+    4: .same(proto: "FULL"),
+  ]
 }
 
 extension POGOProtos_Data_Telemetry_ArPhotoSession.ArContext: SwiftProtobuf._ProtoNameProviding {
@@ -323,4 +707,268 @@ extension POGOProtos_Data_Telemetry_ArPhotoSession.Step: SwiftProtobuf._ProtoNam
     4: .same(proto: "PHOTO_TAKEN"),
     5: .same(proto: "PHOTO_SHARED"),
   ]
+}
+
+extension POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Telemetry_ArPhotoSession.protoMessageName + ".ArConditions"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "timestamp"),
+    2: .standard(proto: "occlusions_enabled"),
+    3: .standard(proto: "current_ar_step"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt64Field(value: &self.timestamp)
+      case 2: try decoder.decodeSingularBoolField(value: &self.occlusionsEnabled)
+      case 3: try decoder.decodeSingularEnumField(value: &self.currentArStep)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.timestamp != 0 {
+      try visitor.visitSingularInt64Field(value: self.timestamp, fieldNumber: 1)
+    }
+    if self.occlusionsEnabled != false {
+      try visitor.visitSingularBoolField(value: self.occlusionsEnabled, fieldNumber: 2)
+    }
+    if self.currentArStep != .unknown {
+      try visitor.visitSingularEnumField(value: self.currentArStep, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions, rhs: POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions) -> Bool {
+    if lhs.timestamp != rhs.timestamp {return false}
+    if lhs.occlusionsEnabled != rhs.occlusionsEnabled {return false}
+    if lhs.currentArStep != rhs.currentArStep {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Telemetry_ArPhotoSession.BatterySample: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Telemetry_ArPhotoSession.protoMessageName + ".BatterySample"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "conditions"),
+    2: .standard(proto: "battery_level"),
+    3: .same(proto: "status"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _conditions: POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions? = nil
+    var _batteryLevel: Float = 0
+    var _status: POGOProtos_Data_Telemetry_ArPhotoSession.BatteryStatus = .undetermined
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _conditions = source._conditions
+      _batteryLevel = source._batteryLevel
+      _status = source._status
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._conditions)
+        case 2: try decoder.decodeSingularFloatField(value: &_storage._batteryLevel)
+        case 3: try decoder.decodeSingularEnumField(value: &_storage._status)
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._conditions {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if _storage._batteryLevel != 0 {
+        try visitor.visitSingularFloatField(value: _storage._batteryLevel, fieldNumber: 2)
+      }
+      if _storage._status != .undetermined {
+        try visitor.visitSingularEnumField(value: _storage._status, fieldNumber: 3)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Telemetry_ArPhotoSession.BatterySample, rhs: POGOProtos_Data_Telemetry_ArPhotoSession.BatterySample) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._conditions != rhs_storage._conditions {return false}
+        if _storage._batteryLevel != rhs_storage._batteryLevel {return false}
+        if _storage._status != rhs_storage._status {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Telemetry_ArPhotoSession.FramerateSample: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Telemetry_ArPhotoSession.protoMessageName + ".FramerateSample"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "conditions"),
+    2: .same(proto: "framerate"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _conditions: POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions? = nil
+    var _framerate: Int32 = 0
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _conditions = source._conditions
+      _framerate = source._framerate
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._conditions)
+        case 2: try decoder.decodeSingularInt32Field(value: &_storage._framerate)
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._conditions {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if _storage._framerate != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._framerate, fieldNumber: 2)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Telemetry_ArPhotoSession.FramerateSample, rhs: POGOProtos_Data_Telemetry_ArPhotoSession.FramerateSample) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._conditions != rhs_storage._conditions {return false}
+        if _storage._framerate != rhs_storage._framerate {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Telemetry_ArPhotoSession.ProcessorSample: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Telemetry_ArPhotoSession.protoMessageName + ".ProcessorSample"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "conditions"),
+    2: .standard(proto: "cpu_usage"),
+    3: .standard(proto: "gpu_usage"),
+  ]
+
+  fileprivate class _StorageClass {
+    var _conditions: POGOProtos_Data_Telemetry_ArPhotoSession.ArConditions? = nil
+    var _cpuUsage: Float = 0
+    var _gpuUsage: Float = 0
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _conditions = source._conditions
+      _cpuUsage = source._cpuUsage
+      _gpuUsage = source._gpuUsage
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularMessageField(value: &_storage._conditions)
+        case 2: try decoder.decodeSingularFloatField(value: &_storage._cpuUsage)
+        case 3: try decoder.decodeSingularFloatField(value: &_storage._gpuUsage)
+        default: break
+        }
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if let v = _storage._conditions {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+      }
+      if _storage._cpuUsage != 0 {
+        try visitor.visitSingularFloatField(value: _storage._cpuUsage, fieldNumber: 2)
+      }
+      if _storage._gpuUsage != 0 {
+        try visitor.visitSingularFloatField(value: _storage._gpuUsage, fieldNumber: 3)
+      }
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Telemetry_ArPhotoSession.ProcessorSample, rhs: POGOProtos_Data_Telemetry_ArPhotoSession.ProcessorSample) -> Bool {
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._conditions != rhs_storage._conditions {return false}
+        if _storage._cpuUsage != rhs_storage._cpuUsage {return false}
+        if _storage._gpuUsage != rhs_storage._gpuUsage {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }

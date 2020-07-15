@@ -48,6 +48,8 @@ public struct POGOProtos_Settings_Master_Pokemon_EvolutionBranch {
 
   public var noCandyCostViaTrade: Bool = false
 
+  public var questRequirementTemplateID: [String] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -72,6 +74,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     11: .standard(proto: "only_nighttime"),
     12: .same(proto: "priority"),
     13: .standard(proto: "no_candy_cost_via_trade"),
+    17: .standard(proto: "quest_requirement_template_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -89,6 +92,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
       case 11: try decoder.decodeSingularBoolField(value: &self.onlyNighttime)
       case 12: try decoder.decodeSingularInt32Field(value: &self.priority)
       case 13: try decoder.decodeSingularBoolField(value: &self.noCandyCostViaTrade)
+      case 17: try decoder.decodeRepeatedStringField(value: &self.questRequirementTemplateID)
       default: break
       }
     }
@@ -131,6 +135,9 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     if self.noCandyCostViaTrade != false {
       try visitor.visitSingularBoolField(value: self.noCandyCostViaTrade, fieldNumber: 13)
     }
+    if !self.questRequirementTemplateID.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.questRequirementTemplateID, fieldNumber: 17)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -147,6 +154,7 @@ extension POGOProtos_Settings_Master_Pokemon_EvolutionBranch: SwiftProtobuf.Mess
     if lhs.onlyNighttime != rhs.onlyNighttime {return false}
     if lhs.priority != rhs.priority {return false}
     if lhs.noCandyCostViaTrade != rhs.noCandyCostViaTrade {return false}
+    if lhs.questRequirementTemplateID != rhs.questRequirementTemplateID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

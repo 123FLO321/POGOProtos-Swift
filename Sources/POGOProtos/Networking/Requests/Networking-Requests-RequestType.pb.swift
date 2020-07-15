@@ -588,6 +588,9 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
 
   /// Implemented
   case savePlayerPreferences // = 1652
+
+  /// Implemented
+  case getTimedGroupChallenge // = 1700
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -785,6 +788,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1650: self = .openSponsoredGift
     case 1651: self = .sponsoredGiftReportInteraction
     case 1652: self = .savePlayerPreferences
+    case 1700: self = .getTimedGroupChallenge
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -980,6 +984,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .openSponsoredGift: return 1650
     case .sponsoredGiftReportInteraction: return 1651
     case .savePlayerPreferences: return 1652
+    case .getTimedGroupChallenge: return 1700
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1180,6 +1185,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .openSponsoredGift,
     .sponsoredGiftReportInteraction,
     .savePlayerPreferences,
+    .getTimedGroupChallenge,
   ]
 }
 
@@ -1378,5 +1384,6 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1650: .same(proto: "OPEN_SPONSORED_GIFT"),
     1651: .same(proto: "SPONSORED_GIFT_REPORT_INTERACTION"),
     1652: .same(proto: "SAVE_PLAYER_PREFERENCES"),
+    1700: .same(proto: "GET_TIMED_GROUP_CHALLENGE"),
   ]
 }

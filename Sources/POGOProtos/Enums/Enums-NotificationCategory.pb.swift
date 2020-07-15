@@ -68,6 +68,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case buddyRemoteGift // = 47
   case bgmodeBuddyRemoteGift // = 48
   case remoteRaidInvitation // = 49
+  case itemRewards // = 50
+  case timedGroupChallengeStarted // = 51
+  case timedGroupChallengeGoalMet // = 52
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -123,6 +126,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 47: self = .buddyRemoteGift
     case 48: self = .bgmodeBuddyRemoteGift
     case 49: self = .remoteRaidInvitation
+    case 50: self = .itemRewards
+    case 51: self = .timedGroupChallengeStarted
+    case 52: self = .timedGroupChallengeGoalMet
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -176,6 +182,9 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .buddyRemoteGift: return 47
     case .bgmodeBuddyRemoteGift: return 48
     case .remoteRaidInvitation: return 49
+    case .itemRewards: return 50
+    case .timedGroupChallengeStarted: return 51
+    case .timedGroupChallengeGoalMet: return 52
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -234,6 +243,9 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .buddyRemoteGift,
     .bgmodeBuddyRemoteGift,
     .remoteRaidInvitation,
+    .itemRewards,
+    .timedGroupChallengeStarted,
+    .timedGroupChallengeGoalMet,
   ]
 }
 
@@ -290,5 +302,8 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     47: .same(proto: "BUDDY_REMOTE_GIFT"),
     48: .same(proto: "BGMODE_BUDDY_REMOTE_GIFT"),
     49: .same(proto: "REMOTE_RAID_INVITATION"),
+    50: .same(proto: "ITEM_REWARDS"),
+    51: .same(proto: "TIMED_GROUP_CHALLENGE_STARTED"),
+    52: .same(proto: "TIMED_GROUP_CHALLENGE_GOAL_MET"),
   ]
 }

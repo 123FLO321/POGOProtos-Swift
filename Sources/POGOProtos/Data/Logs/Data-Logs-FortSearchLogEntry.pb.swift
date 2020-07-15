@@ -44,6 +44,8 @@ public struct POGOProtos_Data_Logs_FortSearchLogEntry {
 
   public var giftBoxes: [POGOProtos_Data_Gift_GiftBox] = []
 
+  public var stickers: [POGOProtos_Inventory_LootItem] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -106,6 +108,7 @@ extension POGOProtos_Data_Logs_FortSearchLogEntry: SwiftProtobuf.Message, SwiftP
     8: .standard(proto: "bonus_items"),
     9: .standard(proto: "team_bonus_items"),
     10: .standard(proto: "gift_boxes"),
+    11: .same(proto: "stickers"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -121,6 +124,7 @@ extension POGOProtos_Data_Logs_FortSearchLogEntry: SwiftProtobuf.Message, SwiftP
       case 8: try decoder.decodeRepeatedMessageField(value: &self.bonusItems)
       case 9: try decoder.decodeRepeatedMessageField(value: &self.teamBonusItems)
       case 10: try decoder.decodeRepeatedMessageField(value: &self.giftBoxes)
+      case 11: try decoder.decodeRepeatedMessageField(value: &self.stickers)
       default: break
       }
     }
@@ -157,6 +161,9 @@ extension POGOProtos_Data_Logs_FortSearchLogEntry: SwiftProtobuf.Message, SwiftP
     if !self.giftBoxes.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.giftBoxes, fieldNumber: 10)
     }
+    if !self.stickers.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.stickers, fieldNumber: 11)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -171,6 +178,7 @@ extension POGOProtos_Data_Logs_FortSearchLogEntry: SwiftProtobuf.Message, SwiftP
     if lhs.bonusItems != rhs.bonusItems {return false}
     if lhs.teamBonusItems != rhs.teamBonusItems {return false}
     if lhs.giftBoxes != rhs.giftBoxes {return false}
+    if lhs.stickers != rhs.stickers {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
