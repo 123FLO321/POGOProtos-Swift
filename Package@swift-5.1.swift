@@ -1,4 +1,4 @@
-// swift-tools-version:5.1.3
+// swift-tools-version:5.1
 import PackageDescription
 
 let package = Package(
@@ -11,6 +11,5 @@ let package = Package(
     ],
     targets: [
         .target(name: "POGOProtos", dependencies: ["SwiftProtobuf"])
-    ],
-    swiftLanguageVersions: [.v5_1_3]
+    ]
 )
