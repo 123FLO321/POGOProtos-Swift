@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "POGOProtos-Swift",
+    name: "POGOProtos",
     products: [
         .library(name: "POGOProtos", targets: ["POGOProtos"])
     ],
