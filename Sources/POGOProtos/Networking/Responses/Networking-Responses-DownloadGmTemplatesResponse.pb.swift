@@ -83,13 +83,25 @@ public struct POGOProtos_Networking_Responses_DownloadGmTemplatesResponse {
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    public var templateID: String = String()
+    public var templateID: String {
+      get {return _storage._templateID}
+      set {_uniqueStorage()._templateID = newValue}
+    }
 
-    public var data: Data = SwiftProtobuf.Internal.emptyData
+    public var data: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate {
+      get {return _storage._data ?? POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate()}
+      set {_uniqueStorage()._data = newValue}
+    }
+    /// Returns true if `data` has been explicitly set.
+    public var hasData: Bool {return _storage._data != nil}
+    /// Clears the value of `data`. Subsequent reads from it will return its default value.
+    public mutating func clearData() {_uniqueStorage()._data = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
+
+    fileprivate var _storage = _StorageClass.defaultInstance
   }
 
   public init() {}
@@ -192,29 +204,63 @@ extension POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGame
     2: .same(proto: "data"),
   ]
 
+  fileprivate class _StorageClass {
+    var _templateID: String = String()
+    var _data: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate? = nil
+
+    static let defaultInstance = _StorageClass()
+
+    private init() {}
+
+    init(copying source: _StorageClass) {
+      _templateID = source._templateID
+      _data = source._data
+    }
+  }
+
+  fileprivate mutating func _uniqueStorage() -> _StorageClass {
+    if !isKnownUniquelyReferenced(&_storage) {
+      _storage = _StorageClass(copying: _storage)
+    }
+    return _storage
+  }
+
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeSingularStringField(value: &self.templateID)
-      case 2: try decoder.decodeSingularBytesField(value: &self.data)
-      default: break
+    _ = _uniqueStorage()
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      while let fieldNumber = try decoder.nextFieldNumber() {
+        switch fieldNumber {
+        case 1: try decoder.decodeSingularStringField(value: &_storage._templateID)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._data)
+        default: break
+        }
       }
     }
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.templateID.isEmpty {
-      try visitor.visitSingularStringField(value: self.templateID, fieldNumber: 1)
-    }
-    if !self.data.isEmpty {
-      try visitor.visitSingularBytesField(value: self.data, fieldNumber: 2)
+    try withExtendedLifetime(_storage) { (_storage: _StorageClass) in
+      if !_storage._templateID.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._templateID, fieldNumber: 1)
+      }
+      if let v = _storage._data {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGameMasterTemplate, rhs: POGOProtos_Networking_Responses_DownloadGmTemplatesResponse.ClientGameMasterTemplate) -> Bool {
-    if lhs.templateID != rhs.templateID {return false}
-    if lhs.data != rhs.data {return false}
+    if lhs._storage !== rhs._storage {
+      let storagesAreEqual: Bool = withExtendedLifetime((lhs._storage, rhs._storage)) { (_args: (_StorageClass, _StorageClass)) in
+        let _storage = _args.0
+        let rhs_storage = _args.1
+        if _storage._templateID != rhs_storage._templateID {return false}
+        if _storage._data != rhs_storage._data {return false}
+        return true
+      }
+      if !storagesAreEqual {return false}
+    }
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -27,6 +27,7 @@ public enum POGOProtos_Enums_RaidLevel: SwiftProtobuf.Enum {
   case raidLevel3 // = 3
   case raidLevel4 // = 4
   case raidLevel5 // = 5
+  case mega // = 6
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -41,6 +42,7 @@ public enum POGOProtos_Enums_RaidLevel: SwiftProtobuf.Enum {
     case 3: self = .raidLevel3
     case 4: self = .raidLevel4
     case 5: self = .raidLevel5
+    case 6: self = .mega
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -53,6 +55,7 @@ public enum POGOProtos_Enums_RaidLevel: SwiftProtobuf.Enum {
     case .raidLevel3: return 3
     case .raidLevel4: return 4
     case .raidLevel5: return 5
+    case .mega: return 6
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -70,6 +73,7 @@ extension POGOProtos_Enums_RaidLevel: CaseIterable {
     .raidLevel3,
     .raidLevel4,
     .raidLevel5,
+    .mega,
   ]
 }
 
@@ -85,5 +89,6 @@ extension POGOProtos_Enums_RaidLevel: SwiftProtobuf._ProtoNameProviding {
     3: .same(proto: "RAID_LEVEL_3"),
     4: .same(proto: "RAID_LEVEL_4"),
     5: .same(proto: "RAID_LEVEL_5"),
+    6: .same(proto: "RAID_LEVEL_MEGA"),
   ]
 }

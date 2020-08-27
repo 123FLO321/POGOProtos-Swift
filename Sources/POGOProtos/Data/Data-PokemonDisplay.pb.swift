@@ -38,6 +38,8 @@ public struct POGOProtos_Data_PokemonDisplay {
 
   public var pokemonBadge: POGOProtos_Data_PokemonDisplay.PokemonBadge = .unset
 
+  public var pokemonEvolution: POGOProtos_Enums_PokemonEvolution = .evolutionUnset
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Alignment: SwiftProtobuf.Enum {
@@ -137,6 +139,7 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     5: .standard(proto: "weather_boosted_condition"),
     6: .same(proto: "alignment"),
     7: .standard(proto: "pokemon_badge"),
+    8: .standard(proto: "pokemon_evolution"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -149,6 +152,7 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
       case 5: try decoder.decodeSingularEnumField(value: &self.weatherBoostedCondition)
       case 6: try decoder.decodeSingularEnumField(value: &self.alignment)
       case 7: try decoder.decodeSingularEnumField(value: &self.pokemonBadge)
+      case 8: try decoder.decodeSingularEnumField(value: &self.pokemonEvolution)
       default: break
       }
     }
@@ -176,6 +180,9 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     if self.pokemonBadge != .unset {
       try visitor.visitSingularEnumField(value: self.pokemonBadge, fieldNumber: 7)
     }
+    if self.pokemonEvolution != .evolutionUnset {
+      try visitor.visitSingularEnumField(value: self.pokemonEvolution, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -187,6 +194,7 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.weatherBoostedCondition != rhs.weatherBoostedCondition {return false}
     if lhs.alignment != rhs.alignment {return false}
     if lhs.pokemonBadge != rhs.pokemonBadge {return false}
+    if lhs.pokemonEvolution != rhs.pokemonEvolution {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
