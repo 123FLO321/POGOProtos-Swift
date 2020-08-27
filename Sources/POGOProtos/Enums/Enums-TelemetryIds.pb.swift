@@ -34,6 +34,7 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
   case invasionRadarViewEmpty // = 10
   case invasionDecoyFound // = 11
   case invasionGiovanniFound // = 12
+  case invasionBalloonTap // = 13
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -55,6 +56,7 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
     case 10: self = .invasionRadarViewEmpty
     case 11: self = .invasionDecoyFound
     case 12: self = .invasionGiovanniFound
+    case 13: self = .invasionBalloonTap
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -74,6 +76,7 @@ public enum POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf.Enum {
     case .invasionRadarViewEmpty: return 10
     case .invasionDecoyFound: return 11
     case .invasionGiovanniFound: return 12
+    case .invasionBalloonTap: return 13
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -98,6 +101,7 @@ extension POGOProtos_Enums_InvasionTelemetryIds: CaseIterable {
     .invasionRadarViewEmpty,
     .invasionDecoyFound,
     .invasionGiovanniFound,
+    .invasionBalloonTap,
   ]
 }
 
@@ -381,6 +385,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
   case combatHubEntranceTelemetry // = 45
   case deviceSpecificationsTelemetry // = 46
   case screenResolutionTelemetry // = 47
+  case deviceOsTelemetry // = 48
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -437,6 +442,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case 45: self = .combatHubEntranceTelemetry
     case 46: self = .deviceSpecificationsTelemetry
     case 47: self = .screenResolutionTelemetry
+    case 48: self = .deviceOsTelemetry
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -491,6 +497,7 @@ public enum POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf.Enum {
     case .combatHubEntranceTelemetry: return 45
     case .deviceSpecificationsTelemetry: return 46
     case .screenResolutionTelemetry: return 47
+    case .deviceOsTelemetry: return 48
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -550,6 +557,7 @@ extension POGOProtos_Enums_ClientTelemetryIds: CaseIterable {
     .combatHubEntranceTelemetry,
     .deviceSpecificationsTelemetry,
     .screenResolutionTelemetry,
+    .deviceOsTelemetry,
   ]
 }
 
@@ -1552,6 +1560,7 @@ extension POGOProtos_Enums_InvasionTelemetryIds: SwiftProtobuf._ProtoNameProvidi
     10: .same(proto: "INVASION_RADAR_VIEW_EMPTY"),
     11: .same(proto: "INVASION_DECOY_FOUND"),
     12: .same(proto: "INVASION_GIOVANNI_FOUND"),
+    13: .same(proto: "INVASION_BALLOON_TAP"),
   ]
 }
 
@@ -1650,6 +1659,7 @@ extension POGOProtos_Enums_ClientTelemetryIds: SwiftProtobuf._ProtoNameProviding
     45: .same(proto: "COMBAT_HUB_ENTRANCE_TELEMETRY"),
     46: .same(proto: "DEVICE_SPECIFICATIONS_TELEMETRY"),
     47: .same(proto: "SCREEN_RESOLUTION_TELEMETRY"),
+    48: .same(proto: "DEVICE_OS_TELEMETRY"),
   ]
 }
 

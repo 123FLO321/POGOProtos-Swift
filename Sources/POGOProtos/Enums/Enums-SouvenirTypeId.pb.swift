@@ -37,6 +37,8 @@ public enum POGOProtos_Enums_SouvenirTypeId: SwiftProtobuf.Enum {
   case souvenirMarble // = 13
   case souvenirTornTicket // = 14
   case souvenirPrettyLeaf // = 15
+  case souvenirConfetti // = 16
+  case souvenirPikachuVisor // = 17
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -61,6 +63,8 @@ public enum POGOProtos_Enums_SouvenirTypeId: SwiftProtobuf.Enum {
     case 13: self = .souvenirMarble
     case 14: self = .souvenirTornTicket
     case 15: self = .souvenirPrettyLeaf
+    case 16: self = .souvenirConfetti
+    case 17: self = .souvenirPikachuVisor
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -83,6 +87,8 @@ public enum POGOProtos_Enums_SouvenirTypeId: SwiftProtobuf.Enum {
     case .souvenirMarble: return 13
     case .souvenirTornTicket: return 14
     case .souvenirPrettyLeaf: return 15
+    case .souvenirConfetti: return 16
+    case .souvenirPikachuVisor: return 17
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -110,6 +116,8 @@ extension POGOProtos_Enums_SouvenirTypeId: CaseIterable {
     .souvenirMarble,
     .souvenirTornTicket,
     .souvenirPrettyLeaf,
+    .souvenirConfetti,
+    .souvenirPikachuVisor,
   ]
 }
 
@@ -135,5 +143,7 @@ extension POGOProtos_Enums_SouvenirTypeId: SwiftProtobuf._ProtoNameProviding {
     13: .same(proto: "SOUVENIR_MARBLE"),
     14: .same(proto: "SOUVENIR_TORN_TICKET"),
     15: .same(proto: "SOUVENIR_PRETTY_LEAF"),
+    16: .same(proto: "SOUVENIR_CONFETTI"),
+    17: .same(proto: "SOUVENIR_PIKACHU_VISOR"),
   ]
 }

@@ -108,6 +108,7 @@ public struct POGOProtos_Data_Telemetry_RemoteRaidTelemetry {
     case undefinedRemoteRaidInviteAcceptSource // = 0
     case remoteRaidInApp // = 1
     case remoteRaidPushNotification // = 2
+    case remoteRaidNearbyWindow // = 3
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -119,6 +120,7 @@ public struct POGOProtos_Data_Telemetry_RemoteRaidTelemetry {
       case 0: self = .undefinedRemoteRaidInviteAcceptSource
       case 1: self = .remoteRaidInApp
       case 2: self = .remoteRaidPushNotification
+      case 3: self = .remoteRaidNearbyWindow
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -128,6 +130,7 @@ public struct POGOProtos_Data_Telemetry_RemoteRaidTelemetry {
       case .undefinedRemoteRaidInviteAcceptSource: return 0
       case .remoteRaidInApp: return 1
       case .remoteRaidPushNotification: return 2
+      case .remoteRaidNearbyWindow: return 3
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -166,6 +169,7 @@ extension POGOProtos_Data_Telemetry_RemoteRaidTelemetry.RemoteRaidInviteAcceptSo
     .undefinedRemoteRaidInviteAcceptSource,
     .remoteRaidInApp,
     .remoteRaidPushNotification,
+    .remoteRaidNearbyWindow,
   ]
 }
 
@@ -240,5 +244,6 @@ extension POGOProtos_Data_Telemetry_RemoteRaidTelemetry.RemoteRaidInviteAcceptSo
     0: .same(proto: "UNDEFINED_REMOTE_RAID_INVITE_ACCEPT_SOURCE"),
     1: .same(proto: "REMOTE_RAID_IN_APP"),
     2: .same(proto: "REMOTE_RAID_PUSH_NOTIFICATION"),
+    3: .same(proto: "REMOTE_RAID_NEARBY_WINDOW"),
   ]
 }

@@ -139,6 +139,11 @@ public struct POGOProtos_Settings_CombatGlobalSettings {
     set {_uniqueStorage()._plannedDowntimeTimestampMs = newValue}
   }
 
+  public var latencyCompensationThresholdMs: Int32 {
+    get {return _storage._latencyCompensationThresholdMs}
+    set {_uniqueStorage()._latencyCompensationThresholdMs = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -176,6 +181,7 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
     21: .standard(proto: "enable_battle_hub"),
     22: .standard(proto: "matchmaking_timeout_duration_ms"),
     23: .standard(proto: "planned_downtime_timestamp_ms"),
+    24: .standard(proto: "latency_compensation_threshold_ms"),
   ]
 
   fileprivate class _StorageClass {
@@ -202,6 +208,7 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
     var _enableBattleHub: Bool = false
     var _matchmakingTimeoutDurationMs: Int32 = 0
     var _plannedDowntimeTimestampMs: Int64 = 0
+    var _latencyCompensationThresholdMs: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -231,6 +238,7 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
       _enableBattleHub = source._enableBattleHub
       _matchmakingTimeoutDurationMs = source._matchmakingTimeoutDurationMs
       _plannedDowntimeTimestampMs = source._plannedDowntimeTimestampMs
+      _latencyCompensationThresholdMs = source._latencyCompensationThresholdMs
     }
   }
 
@@ -269,6 +277,7 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
         case 21: try decoder.decodeSingularBoolField(value: &_storage._enableBattleHub)
         case 22: try decoder.decodeSingularInt32Field(value: &_storage._matchmakingTimeoutDurationMs)
         case 23: try decoder.decodeSingularInt64Field(value: &_storage._plannedDowntimeTimestampMs)
+        case 24: try decoder.decodeSingularInt32Field(value: &_storage._latencyCompensationThresholdMs)
         default: break
         }
       }
@@ -346,6 +355,9 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
       if _storage._plannedDowntimeTimestampMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._plannedDowntimeTimestampMs, fieldNumber: 23)
       }
+      if _storage._latencyCompensationThresholdMs != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._latencyCompensationThresholdMs, fieldNumber: 24)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -378,6 +390,7 @@ extension POGOProtos_Settings_CombatGlobalSettings: SwiftProtobuf.Message, Swift
         if _storage._enableBattleHub != rhs_storage._enableBattleHub {return false}
         if _storage._matchmakingTimeoutDurationMs != rhs_storage._matchmakingTimeoutDurationMs {return false}
         if _storage._plannedDowntimeTimestampMs != rhs_storage._plannedDowntimeTimestampMs {return false}
+        if _storage._latencyCompensationThresholdMs != rhs_storage._latencyCompensationThresholdMs {return false}
         return true
       }
       if !storagesAreEqual {return false}

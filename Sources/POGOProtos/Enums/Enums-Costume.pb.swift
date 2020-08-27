@@ -47,6 +47,7 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
   case johto2020Noevolve // = 23
   case hoenn2020Noevolve // = 24
   case sinnoh2020Noevolve // = 25
+  case halloween2020 // = 26
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -81,6 +82,7 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case 23: self = .johto2020Noevolve
     case 24: self = .hoenn2020Noevolve
     case 25: self = .sinnoh2020Noevolve
+    case 26: self = .halloween2020
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -113,6 +115,7 @@ public enum POGOProtos_Enums_Costume: SwiftProtobuf.Enum {
     case .johto2020Noevolve: return 23
     case .hoenn2020Noevolve: return 24
     case .sinnoh2020Noevolve: return 25
+    case .halloween2020: return 26
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -150,6 +153,7 @@ extension POGOProtos_Enums_Costume: CaseIterable {
     .johto2020Noevolve,
     .hoenn2020Noevolve,
     .sinnoh2020Noevolve,
+    .halloween2020,
   ]
 }
 
@@ -185,5 +189,6 @@ extension POGOProtos_Enums_Costume: SwiftProtobuf._ProtoNameProviding {
     23: .same(proto: "JOHTO_2020_NOEVOLVE"),
     24: .same(proto: "HOENN_2020_NOEVOLVE"),
     25: .same(proto: "SINNOH_2020_NOEVOLVE"),
+    26: .same(proto: "HALLOWEEN_2020"),
   ]
 }

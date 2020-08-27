@@ -51,6 +51,9 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
     case errorNoTicket // = 9
     case errorNoRemoteTicket // = 10
     case errorNoInvite // = 11
+    case errorNoRemoteSlotsRemaining // = 12
+    case errorLobbyFull // = 13
+    case errorLobbyExpired // = 14
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -71,6 +74,9 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
       case 9: self = .errorNoTicket
       case 10: self = .errorNoRemoteTicket
       case 11: self = .errorNoInvite
+      case 12: self = .errorNoRemoteSlotsRemaining
+      case 13: self = .errorLobbyFull
+      case 14: self = .errorLobbyExpired
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -89,6 +95,9 @@ public struct POGOProtos_Networking_Responses_JoinLobbyResponse {
       case .errorNoTicket: return 9
       case .errorNoRemoteTicket: return 10
       case .errorNoInvite: return 11
+      case .errorNoRemoteSlotsRemaining: return 12
+      case .errorLobbyFull: return 13
+      case .errorLobbyExpired: return 14
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -117,6 +126,9 @@ extension POGOProtos_Networking_Responses_JoinLobbyResponse.Result: CaseIterable
     .errorNoTicket,
     .errorNoRemoteTicket,
     .errorNoInvite,
+    .errorNoRemoteSlotsRemaining,
+    .errorLobbyFull,
+    .errorLobbyExpired,
   ]
 }
 
@@ -175,5 +187,8 @@ extension POGOProtos_Networking_Responses_JoinLobbyResponse.Result: SwiftProtobu
     9: .same(proto: "ERROR_NO_TICKET"),
     10: .same(proto: "ERROR_NO_REMOTE_TICKET"),
     11: .same(proto: "ERROR_NO_INVITE"),
+    12: .same(proto: "ERROR_NO_REMOTE_SLOTS_REMAINING"),
+    13: .same(proto: "ERROR_LOBBY_FULL"),
+    14: .same(proto: "ERROR_LOBBY_EXPIRED"),
   ]
 }

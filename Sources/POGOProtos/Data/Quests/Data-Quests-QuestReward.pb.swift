@@ -92,12 +92,12 @@ public struct POGOProtos_Data_Quests_QuestReward {
     set {reward = .pokecoin(newValue)}
   }
 
-  public var stickerID: String {
+  public var sticker: POGOProtos_Data_Quests_QuestReward.StickerReward {
     get {
-      if case .stickerID(let v)? = reward {return v}
-      return String()
+      if case .sticker(let v)? = reward {return v}
+      return POGOProtos_Data_Quests_QuestReward.StickerReward()
     }
-    set {reward = .stickerID(newValue)}
+    set {reward = .sticker(newValue)}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -111,7 +111,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
     case questTemplateID(String)
     case pokemonEncounter(POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward)
     case pokecoin(Int32)
-    case stickerID(String)
+    case sticker(POGOProtos_Data_Quests_QuestReward.StickerReward)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Quests_QuestReward.OneOf_Reward, rhs: POGOProtos_Data_Quests_QuestReward.OneOf_Reward) -> Bool {
@@ -124,7 +124,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case (.questTemplateID(let l), .questTemplateID(let r)): return l == r
       case (.pokemonEncounter(let l), .pokemonEncounter(let r)): return l == r
       case (.pokecoin(let l), .pokecoin(let r)): return l == r
-      case (.stickerID(let l), .stickerID(let r)): return l == r
+      case (.sticker(let l), .sticker(let r)): return l == r
       default: return false
       }
     }
@@ -181,6 +181,20 @@ public struct POGOProtos_Data_Quests_QuestReward {
       }
     }
 
+  }
+
+  public struct StickerReward {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var stickerID: String = String()
+
+    public var amount: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
   }
 
   public struct ItemReward {
@@ -316,7 +330,7 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
     7: .standard(proto: "quest_template_id"),
     8: .standard(proto: "pokemon_encounter"),
     9: .same(proto: "pokecoin"),
-    12: .standard(proto: "sticker_id"),
+    12: .same(proto: "sticker"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -373,10 +387,13 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
         try decoder.decodeSingularInt32Field(value: &v)
         if let v = v {self.reward = .pokecoin(v)}
       case 12:
-        if self.reward != nil {try decoder.handleConflictingOneOf()}
-        var v: String?
-        try decoder.decodeSingularStringField(value: &v)
-        if let v = v {self.reward = .stickerID(v)}
+        var v: POGOProtos_Data_Quests_QuestReward.StickerReward?
+        if let current = self.reward {
+          try decoder.handleConflictingOneOf()
+          if case .sticker(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.reward = .sticker(v)}
       default: break
       }
     }
@@ -403,8 +420,8 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
     case .pokecoin(let v)?:
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 9)
-    case .stickerID(let v)?:
-      try visitor.visitSingularStringField(value: v, fieldNumber: 12)
+    case .sticker(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -431,6 +448,41 @@ extension POGOProtos_Data_Quests_QuestReward.TypeEnum: SwiftProtobuf._ProtoNameP
     8: .same(proto: "POKECOIN"),
     11: .same(proto: "STICKER"),
   ]
+}
+
+extension POGOProtos_Data_Quests_QuestReward.StickerReward: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestReward.protoMessageName + ".StickerReward"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "sticker_id"),
+    2: .same(proto: "amount"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.stickerID)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.amount)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.stickerID.isEmpty {
+      try visitor.visitSingularStringField(value: self.stickerID, fieldNumber: 1)
+    }
+    if self.amount != 0 {
+      try visitor.visitSingularInt32Field(value: self.amount, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestReward.StickerReward, rhs: POGOProtos_Data_Quests_QuestReward.StickerReward) -> Bool {
+    if lhs.stickerID != rhs.stickerID {return false}
+    if lhs.amount != rhs.amount {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
 extension POGOProtos_Data_Quests_QuestReward.ItemReward: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {

@@ -63,6 +63,8 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
   case armpTosConfirmation // = 41
   case buddyRemoteGiftTutorial // = 42
   case dailyBonusEncounterTutorial // = 45
+  case sponsoredGiftTutorial // = 46
+  case xgsOnlineConsentNote // = 47
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -113,6 +115,8 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case 41: self = .armpTosConfirmation
     case 42: self = .buddyRemoteGiftTutorial
     case 45: self = .dailyBonusEncounterTutorial
+    case 46: self = .sponsoredGiftTutorial
+    case 47: self = .xgsOnlineConsentNote
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -161,6 +165,8 @@ public enum POGOProtos_Enums_TutorialState: SwiftProtobuf.Enum {
     case .armpTosConfirmation: return 41
     case .buddyRemoteGiftTutorial: return 42
     case .dailyBonusEncounterTutorial: return 45
+    case .sponsoredGiftTutorial: return 46
+    case .xgsOnlineConsentNote: return 47
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -214,6 +220,8 @@ extension POGOProtos_Enums_TutorialState: CaseIterable {
     .armpTosConfirmation,
     .buddyRemoteGiftTutorial,
     .dailyBonusEncounterTutorial,
+    .sponsoredGiftTutorial,
+    .xgsOnlineConsentNote,
   ]
 }
 
@@ -265,5 +273,7 @@ extension POGOProtos_Enums_TutorialState: SwiftProtobuf._ProtoNameProviding {
     41: .same(proto: "ARMP_TOS_CONFIRMATION"),
     42: .same(proto: "BUDDY_REMOTE_GIFT_TUTORIAL"),
     45: .same(proto: "DAILY_BONUS_ENCOUNTER_TUTORIAL"),
+    46: .same(proto: "SPONSORED_GIFT_TUTORIAL"),
+    47: .same(proto: "XGS_ONLINE_CONSENT_NOTE"),
   ]
 }

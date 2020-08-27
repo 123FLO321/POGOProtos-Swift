@@ -53,6 +53,7 @@ public struct POGOProtos_Networking_Responses_VsSeekerStartMatchmakingResponse {
     case errorVsSeekerNotActivated // = 9
     case errorTemporarilyUnavailable // = 10
     case errorExceededLimit // = 11
+    case errorQueueTooFull // = 12
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -73,6 +74,7 @@ public struct POGOProtos_Networking_Responses_VsSeekerStartMatchmakingResponse {
       case 9: self = .errorVsSeekerNotActivated
       case 10: self = .errorTemporarilyUnavailable
       case 11: self = .errorExceededLimit
+      case 12: self = .errorQueueTooFull
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -91,6 +93,7 @@ public struct POGOProtos_Networking_Responses_VsSeekerStartMatchmakingResponse {
       case .errorVsSeekerNotActivated: return 9
       case .errorTemporarilyUnavailable: return 10
       case .errorExceededLimit: return 11
+      case .errorQueueTooFull: return 12
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -119,6 +122,7 @@ extension POGOProtos_Networking_Responses_VsSeekerStartMatchmakingResponse.Resul
     .errorVsSeekerNotActivated,
     .errorTemporarilyUnavailable,
     .errorExceededLimit,
+    .errorQueueTooFull,
   ]
 }
 
@@ -183,5 +187,6 @@ extension POGOProtos_Networking_Responses_VsSeekerStartMatchmakingResponse.Resul
     9: .same(proto: "ERROR_VS_SEEKER_NOT_ACTIVATED"),
     10: .same(proto: "ERROR_TEMPORARILY_UNAVAILABLE"),
     11: .same(proto: "ERROR_EXCEEDED_LIMIT"),
+    12: .same(proto: "ERROR_QUEUE_TOO_FULL"),
   ]
 }

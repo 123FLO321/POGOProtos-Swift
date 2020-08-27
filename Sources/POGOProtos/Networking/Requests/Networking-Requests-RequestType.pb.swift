@@ -506,6 +506,12 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case purifyPokemon // = 1205
 
   /// Implemented
+  case getRocketBalloon // = 1206
+
+  /// ???
+  case startRocketBalloonIncident // = 1207
+
+  /// Implemented
   case vsSeekerStartMatchmaking // = 1300
 
   /// Implemented
@@ -573,6 +579,18 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
 
   /// Implemented
   case dailyEncounter // = 1602
+
+  /// Implemented
+  case openSponsoredGift // = 1650
+
+  /// ???
+  case sponsoredGiftReportInteraction // = 1651
+
+  /// Implemented
+  case savePlayerPreferences // = 1652
+
+  /// Implemented
+  case getTimedGroupChallenge // = 1700
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -742,6 +760,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1203: self = .invasionBattleUpdate
     case 1204: self = .invasionEncounter
     case 1205: self = .purifyPokemon
+    case 1206: self = .getRocketBalloon
+    case 1207: self = .startRocketBalloonIncident
     case 1300: self = .vsSeekerStartMatchmaking
     case 1301: self = .cancelMatchmaking
     case 1302: self = .getMatchmakingStatus
@@ -765,6 +785,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1504: self = .sendRaidInvitation
     case 1601: self = .getDailyEncounter
     case 1602: self = .dailyEncounter
+    case 1650: self = .openSponsoredGift
+    case 1651: self = .sponsoredGiftReportInteraction
+    case 1652: self = .savePlayerPreferences
+    case 1700: self = .getTimedGroupChallenge
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -932,6 +956,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .invasionBattleUpdate: return 1203
     case .invasionEncounter: return 1204
     case .purifyPokemon: return 1205
+    case .getRocketBalloon: return 1206
+    case .startRocketBalloonIncident: return 1207
     case .vsSeekerStartMatchmaking: return 1300
     case .cancelMatchmaking: return 1301
     case .getMatchmakingStatus: return 1302
@@ -955,6 +981,10 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .sendRaidInvitation: return 1504
     case .getDailyEncounter: return 1601
     case .dailyEncounter: return 1602
+    case .openSponsoredGift: return 1650
+    case .sponsoredGiftReportInteraction: return 1651
+    case .savePlayerPreferences: return 1652
+    case .getTimedGroupChallenge: return 1700
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1127,6 +1157,8 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .invasionBattleUpdate,
     .invasionEncounter,
     .purifyPokemon,
+    .getRocketBalloon,
+    .startRocketBalloonIncident,
     .vsSeekerStartMatchmaking,
     .cancelMatchmaking,
     .getMatchmakingStatus,
@@ -1150,6 +1182,10 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .sendRaidInvitation,
     .getDailyEncounter,
     .dailyEncounter,
+    .openSponsoredGift,
+    .sponsoredGiftReportInteraction,
+    .savePlayerPreferences,
+    .getTimedGroupChallenge,
   ]
 }
 
@@ -1320,6 +1356,8 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1203: .same(proto: "INVASION_BATTLE_UPDATE"),
     1204: .same(proto: "INVASION_ENCOUNTER"),
     1205: .same(proto: "PURIFY_POKEMON"),
+    1206: .same(proto: "GET_ROCKET_BALLOON"),
+    1207: .same(proto: "START_ROCKET_BALLOON_INCIDENT"),
     1300: .same(proto: "VS_SEEKER_START_MATCHMAKING"),
     1301: .same(proto: "CANCEL_MATCHMAKING"),
     1302: .same(proto: "GET_MATCHMAKING_STATUS"),
@@ -1343,5 +1381,9 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1504: .same(proto: "SEND_RAID_INVITATION"),
     1601: .same(proto: "GET_DAILY_ENCOUNTER"),
     1602: .same(proto: "DAILY_ENCOUNTER"),
+    1650: .same(proto: "OPEN_SPONSORED_GIFT"),
+    1651: .same(proto: "SPONSORED_GIFT_REPORT_INTERACTION"),
+    1652: .same(proto: "SAVE_PLAYER_PREFERENCES"),
+    1700: .same(proto: "GET_TIMED_GROUP_CHALLENGE"),
   ]
 }

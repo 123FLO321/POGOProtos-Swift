@@ -30,8 +30,6 @@ public struct POGOProtos_Data_Telemetry_PlatformServerData {
 
   public var sessionID: String = String()
 
-  public var experimentIds: [Int32] = []
-
   public var eventRequestID: String = String()
 
   public var serverTimestampMs: Int64 = 0
@@ -51,9 +49,8 @@ extension POGOProtos_Data_Telemetry_PlatformServerData: SwiftProtobuf.Message, S
     1: .standard(proto: "user_id"),
     2: .standard(proto: "telemetry_id"),
     3: .standard(proto: "session_id"),
-    4: .standard(proto: "experiment_ids"),
-    5: .standard(proto: "event_request_id"),
-    6: .standard(proto: "server_timestamp_ms"),
+    4: .standard(proto: "event_request_id"),
+    5: .standard(proto: "server_timestamp_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -62,9 +59,8 @@ extension POGOProtos_Data_Telemetry_PlatformServerData: SwiftProtobuf.Message, S
       case 1: try decoder.decodeSingularStringField(value: &self.userID)
       case 2: try decoder.decodeSingularStringField(value: &self.telemetryID)
       case 3: try decoder.decodeSingularStringField(value: &self.sessionID)
-      case 4: try decoder.decodeRepeatedInt32Field(value: &self.experimentIds)
-      case 5: try decoder.decodeSingularStringField(value: &self.eventRequestID)
-      case 6: try decoder.decodeSingularInt64Field(value: &self.serverTimestampMs)
+      case 4: try decoder.decodeSingularStringField(value: &self.eventRequestID)
+      case 5: try decoder.decodeSingularInt64Field(value: &self.serverTimestampMs)
       default: break
       }
     }
@@ -80,14 +76,11 @@ extension POGOProtos_Data_Telemetry_PlatformServerData: SwiftProtobuf.Message, S
     if !self.sessionID.isEmpty {
       try visitor.visitSingularStringField(value: self.sessionID, fieldNumber: 3)
     }
-    if !self.experimentIds.isEmpty {
-      try visitor.visitPackedInt32Field(value: self.experimentIds, fieldNumber: 4)
-    }
     if !self.eventRequestID.isEmpty {
-      try visitor.visitSingularStringField(value: self.eventRequestID, fieldNumber: 5)
+      try visitor.visitSingularStringField(value: self.eventRequestID, fieldNumber: 4)
     }
     if self.serverTimestampMs != 0 {
-      try visitor.visitSingularInt64Field(value: self.serverTimestampMs, fieldNumber: 6)
+      try visitor.visitSingularInt64Field(value: self.serverTimestampMs, fieldNumber: 5)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -96,7 +89,6 @@ extension POGOProtos_Data_Telemetry_PlatformServerData: SwiftProtobuf.Message, S
     if lhs.userID != rhs.userID {return false}
     if lhs.telemetryID != rhs.telemetryID {return false}
     if lhs.sessionID != rhs.sessionID {return false}
-    if lhs.experimentIds != rhs.experimentIds {return false}
     if lhs.eventRequestID != rhs.eventRequestID {return false}
     if lhs.serverTimestampMs != rhs.serverTimestampMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}

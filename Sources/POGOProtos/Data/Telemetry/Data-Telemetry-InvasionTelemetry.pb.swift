@@ -50,6 +50,10 @@ public struct POGOProtos_Data_Telemetry_InvasionTelemetry {
 
   public var distance: Float = 0
 
+  public var invasionContext: POGOProtos_Enums_EnumWrapper.InvasionContext = .pokestopIncident
+
+  public var balloonType: POGOProtos_Data_Rocket_RocketBalloonDisplay.BalloonType = .rocket
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -75,6 +79,8 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
     11: .same(proto: "curfew"),
     12: .same(proto: "duration"),
     13: .same(proto: "distance"),
+    14: .standard(proto: "invasion_context"),
+    15: .standard(proto: "balloon_type"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -93,6 +99,8 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
       case 11: try decoder.decodeSingularBoolField(value: &self.curfew)
       case 12: try decoder.decodeSingularFloatField(value: &self.duration)
       case 13: try decoder.decodeSingularFloatField(value: &self.distance)
+      case 14: try decoder.decodeSingularEnumField(value: &self.invasionContext)
+      case 15: try decoder.decodeSingularEnumField(value: &self.balloonType)
       default: break
       }
     }
@@ -138,6 +146,12 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
     if self.distance != 0 {
       try visitor.visitSingularFloatField(value: self.distance, fieldNumber: 13)
     }
+    if self.invasionContext != .pokestopIncident {
+      try visitor.visitSingularEnumField(value: self.invasionContext, fieldNumber: 14)
+    }
+    if self.balloonType != .rocket {
+      try visitor.visitSingularEnumField(value: self.balloonType, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -155,6 +169,8 @@ extension POGOProtos_Data_Telemetry_InvasionTelemetry: SwiftProtobuf.Message, Sw
     if lhs.curfew != rhs.curfew {return false}
     if lhs.duration != rhs.duration {return false}
     if lhs.distance != rhs.distance {return false}
+    if lhs.invasionContext != rhs.invasionContext {return false}
+    if lhs.balloonType != rhs.balloonType {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

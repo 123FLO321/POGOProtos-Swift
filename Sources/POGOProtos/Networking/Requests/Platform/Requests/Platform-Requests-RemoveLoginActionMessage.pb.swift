@@ -41,14 +41,14 @@ extension POGOProtos_Networking_Requests_Platform_Requests_RemoveLoginActionMess
   public static let protoMessageName: String = _protobuf_package + ".RemoveLoginActionMessage"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "identity_provider"),
-    3: .standard(proto: "auth_provider_id"),
+    2: .standard(proto: "auth_provider_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.identityProvider)
-      case 3: try decoder.decodeSingularStringField(value: &self.authProviderID)
+      case 2: try decoder.decodeSingularStringField(value: &self.authProviderID)
       default: break
       }
     }
@@ -59,7 +59,7 @@ extension POGOProtos_Networking_Requests_Platform_Requests_RemoveLoginActionMess
       try visitor.visitSingularEnumField(value: self.identityProvider, fieldNumber: 1)
     }
     if !self.authProviderID.isEmpty {
-      try visitor.visitSingularStringField(value: self.authProviderID, fieldNumber: 3)
+      try visitor.visitSingularStringField(value: self.authProviderID, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

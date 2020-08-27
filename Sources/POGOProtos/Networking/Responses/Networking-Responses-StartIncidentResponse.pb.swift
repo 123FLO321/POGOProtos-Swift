@@ -106,6 +106,8 @@ public struct POGOProtos_Networking_Responses_StartIncidentResponse {
     /// Clears the value of `completionDisplay`. Subsequent reads from it will return its default value.
     public mutating func clearCompletionDisplay() {self._completionDisplay = nil}
 
+    public var context: POGOProtos_Enums_EnumWrapper.InvasionContext = .pokestopIncident
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public struct ClientIncidentStep {
@@ -299,6 +301,7 @@ extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident: 
     5: .standard(proto: "current_step"),
     6: .same(proto: "step"),
     7: .standard(proto: "completion_display"),
+    8: .same(proto: "context"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -311,6 +314,7 @@ extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident: 
       case 5: try decoder.decodeSingularInt32Field(value: &self.currentStep)
       case 6: try decoder.decodeRepeatedMessageField(value: &self.step)
       case 7: try decoder.decodeSingularMessageField(value: &self._completionDisplay)
+      case 8: try decoder.decodeSingularEnumField(value: &self.context)
       default: break
       }
     }
@@ -338,6 +342,9 @@ extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident: 
     if let v = self._completionDisplay {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
     }
+    if self.context != .pokestopIncident {
+      try visitor.visitSingularEnumField(value: self.context, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -349,6 +356,7 @@ extension POGOProtos_Networking_Responses_StartIncidentResponse.ClientIncident: 
     if lhs.currentStep != rhs.currentStep {return false}
     if lhs.step != rhs.step {return false}
     if lhs._completionDisplay != rhs._completionDisplay {return false}
+    if lhs.context != rhs.context {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

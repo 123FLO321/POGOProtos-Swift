@@ -48,9 +48,20 @@ public struct POGOProtos_Settings_SocialClientSettings {
 
   public var enableSticker: Bool = false
 
+  public var crossGameSocialSettings: POGOProtos_Settings_CrossGameSocialGlobalSettings {
+    get {return _crossGameSocialSettings ?? POGOProtos_Settings_CrossGameSocialGlobalSettings()}
+    set {_crossGameSocialSettings = newValue}
+  }
+  /// Returns true if `crossGameSocialSettings` has been explicitly set.
+  public var hasCrossGameSocialSettings: Bool {return self._crossGameSocialSettings != nil}
+  /// Clears the value of `crossGameSocialSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearCrossGameSocialSettings() {self._crossGameSocialSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
+
+  fileprivate var _crossGameSocialSettings: POGOProtos_Settings_CrossGameSocialGlobalSettings? = nil
 }
 
 public struct POGOProtos_Settings_SocialGiftCountTelemetry {
@@ -86,6 +97,7 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     11: .standard(proto: "enable_giftability_v2"),
     12: .standard(proto: "enable_remote_gifting"),
     13: .standard(proto: "enable_sticker"),
+    14: .standard(proto: "cross_game_social_settings"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -103,6 +115,7 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
       case 11: try decoder.decodeSingularBoolField(value: &self.enableGiftabilityV2)
       case 12: try decoder.decodeSingularBoolField(value: &self.enableRemoteGifting)
       case 13: try decoder.decodeSingularBoolField(value: &self.enableSticker)
+      case 14: try decoder.decodeSingularMessageField(value: &self._crossGameSocialSettings)
       default: break
       }
     }
@@ -145,6 +158,9 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     if self.enableSticker != false {
       try visitor.visitSingularBoolField(value: self.enableSticker, fieldNumber: 13)
     }
+    if let v = self._crossGameSocialSettings {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -161,6 +177,7 @@ extension POGOProtos_Settings_SocialClientSettings: SwiftProtobuf.Message, Swift
     if lhs.enableGiftabilityV2 != rhs.enableGiftabilityV2 {return false}
     if lhs.enableRemoteGifting != rhs.enableRemoteGifting {return false}
     if lhs.enableSticker != rhs.enableSticker {return false}
+    if lhs._crossGameSocialSettings != rhs._crossGameSocialSettings {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

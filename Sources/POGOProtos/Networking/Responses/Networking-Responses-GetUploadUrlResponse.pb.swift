@@ -30,6 +30,8 @@ public struct POGOProtos_Networking_Responses_GetUploadUrlResponse {
 
   public var supportingImageSignedURL: String = String()
 
+  public var contextSignedUrls: Dictionary<String,String> = [:]
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Status: SwiftProtobuf.Enum {
@@ -37,6 +39,8 @@ public struct POGOProtos_Networking_Responses_GetUploadUrlResponse {
     case unset // = 0
     case failures // = 1
     case success // = 2
+    case missingImageContexts // = 3
+    case duplicateImageContexts // = 4
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -48,6 +52,8 @@ public struct POGOProtos_Networking_Responses_GetUploadUrlResponse {
       case 0: self = .unset
       case 1: self = .failures
       case 2: self = .success
+      case 3: self = .missingImageContexts
+      case 4: self = .duplicateImageContexts
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -57,6 +63,8 @@ public struct POGOProtos_Networking_Responses_GetUploadUrlResponse {
       case .unset: return 0
       case .failures: return 1
       case .success: return 2
+      case .missingImageContexts: return 3
+      case .duplicateImageContexts: return 4
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -74,6 +82,8 @@ extension POGOProtos_Networking_Responses_GetUploadUrlResponse.Status: CaseItera
     .unset,
     .failures,
     .success,
+    .missingImageContexts,
+    .duplicateImageContexts,
   ]
 }
 
@@ -89,6 +99,7 @@ extension POGOProtos_Networking_Responses_GetUploadUrlResponse: SwiftProtobuf.Me
     1: .same(proto: "status"),
     2: .standard(proto: "signed_url"),
     3: .standard(proto: "supporting_image_signed_url"),
+    4: .standard(proto: "context_signed_urls"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -97,6 +108,7 @@ extension POGOProtos_Networking_Responses_GetUploadUrlResponse: SwiftProtobuf.Me
       case 1: try decoder.decodeSingularEnumField(value: &self.status)
       case 2: try decoder.decodeSingularStringField(value: &self.signedURL)
       case 3: try decoder.decodeSingularStringField(value: &self.supportingImageSignedURL)
+      case 4: try decoder.decodeMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: &self.contextSignedUrls)
       default: break
       }
     }
@@ -112,6 +124,9 @@ extension POGOProtos_Networking_Responses_GetUploadUrlResponse: SwiftProtobuf.Me
     if !self.supportingImageSignedURL.isEmpty {
       try visitor.visitSingularStringField(value: self.supportingImageSignedURL, fieldNumber: 3)
     }
+    if !self.contextSignedUrls.isEmpty {
+      try visitor.visitMapField(fieldType: SwiftProtobuf._ProtobufMap<SwiftProtobuf.ProtobufString,SwiftProtobuf.ProtobufString>.self, value: self.contextSignedUrls, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -119,6 +134,7 @@ extension POGOProtos_Networking_Responses_GetUploadUrlResponse: SwiftProtobuf.Me
     if lhs.status != rhs.status {return false}
     if lhs.signedURL != rhs.signedURL {return false}
     if lhs.supportingImageSignedURL != rhs.supportingImageSignedURL {return false}
+    if lhs.contextSignedUrls != rhs.contextSignedUrls {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -129,5 +145,7 @@ extension POGOProtos_Networking_Responses_GetUploadUrlResponse.Status: SwiftProt
     0: .same(proto: "UNSET"),
     1: .same(proto: "FAILURES"),
     2: .same(proto: "SUCCESS"),
+    3: .same(proto: "MISSING_IMAGE_CONTEXTS"),
+    4: .same(proto: "DUPLICATE_IMAGE_CONTEXTS"),
   ]
 }

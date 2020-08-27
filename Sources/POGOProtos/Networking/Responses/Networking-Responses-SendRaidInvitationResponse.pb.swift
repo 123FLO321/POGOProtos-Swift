@@ -41,6 +41,7 @@ public struct POGOProtos_Networking_Responses_SendRaidInvitationResponse {
     case errorNoInvitesRemaining // = 6
     case errorLobbyFull // = 7
     case errorInviterNotFound // = 8
+    case errorNoRemoteSlotsRemaining // = 9
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -58,6 +59,7 @@ public struct POGOProtos_Networking_Responses_SendRaidInvitationResponse {
       case 6: self = .errorNoInvitesRemaining
       case 7: self = .errorLobbyFull
       case 8: self = .errorInviterNotFound
+      case 9: self = .errorNoRemoteSlotsRemaining
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -73,6 +75,7 @@ public struct POGOProtos_Networking_Responses_SendRaidInvitationResponse {
       case .errorNoInvitesRemaining: return 6
       case .errorLobbyFull: return 7
       case .errorInviterNotFound: return 8
+      case .errorNoRemoteSlotsRemaining: return 9
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -96,6 +99,7 @@ extension POGOProtos_Networking_Responses_SendRaidInvitationResponse.Result: Cas
     .errorNoInvitesRemaining,
     .errorLobbyFull,
     .errorInviterNotFound,
+    .errorNoRemoteSlotsRemaining,
   ]
 }
 
@@ -151,5 +155,6 @@ extension POGOProtos_Networking_Responses_SendRaidInvitationResponse.Result: Swi
     6: .same(proto: "ERROR_NO_INVITES_REMAINING"),
     7: .same(proto: "ERROR_LOBBY_FULL"),
     8: .same(proto: "ERROR_INVITER_NOT_FOUND"),
+    9: .same(proto: "ERROR_NO_REMOTE_SLOTS_REMAINING"),
   ]
 }

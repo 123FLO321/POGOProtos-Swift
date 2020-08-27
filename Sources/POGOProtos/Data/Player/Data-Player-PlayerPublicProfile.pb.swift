@@ -57,11 +57,21 @@ public struct POGOProtos_Data_Player_PlayerPublicProfile {
 
   public var combatRating: Float = 0
 
+  public var timedGroupChallengeStats: POGOProtos_Data_Player_TimedGroupChallengePlayerStats {
+    get {return _timedGroupChallengeStats ?? POGOProtos_Data_Player_TimedGroupChallengePlayerStats()}
+    set {_timedGroupChallengeStats = newValue}
+  }
+  /// Returns true if `timedGroupChallengeStats` has been explicitly set.
+  public var hasTimedGroupChallengeStats: Bool {return self._timedGroupChallengeStats != nil}
+  /// Clears the value of `timedGroupChallengeStats`. Subsequent reads from it will return its default value.
+  public mutating func clearTimedGroupChallengeStats() {self._timedGroupChallengeStats = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
 
   fileprivate var _avatar: POGOProtos_Data_Player_PlayerAvatar? = nil
+  fileprivate var _timedGroupChallengeStats: POGOProtos_Data_Player_TimedGroupChallengePlayerStats? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -84,6 +94,7 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
     11: .standard(proto: "has_shared_ex_pass"),
     12: .standard(proto: "combat_rank"),
     13: .standard(proto: "combat_rating"),
+    14: .standard(proto: "timed_group_challenge_stats"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -102,6 +113,7 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
       case 11: try decoder.decodeSingularBoolField(value: &self.hasSharedExPass_p)
       case 12: try decoder.decodeSingularInt32Field(value: &self.combatRank)
       case 13: try decoder.decodeSingularFloatField(value: &self.combatRating)
+      case 14: try decoder.decodeSingularMessageField(value: &self._timedGroupChallengeStats)
       default: break
       }
     }
@@ -147,6 +159,9 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
     if self.combatRating != 0 {
       try visitor.visitSingularFloatField(value: self.combatRating, fieldNumber: 13)
     }
+    if let v = self._timedGroupChallengeStats {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -164,6 +179,7 @@ extension POGOProtos_Data_Player_PlayerPublicProfile: SwiftProtobuf.Message, Swi
     if lhs.hasSharedExPass_p != rhs.hasSharedExPass_p {return false}
     if lhs.combatRank != rhs.combatRank {return false}
     if lhs.combatRating != rhs.combatRating {return false}
+    if lhs._timedGroupChallengeStats != rhs._timedGroupChallengeStats {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

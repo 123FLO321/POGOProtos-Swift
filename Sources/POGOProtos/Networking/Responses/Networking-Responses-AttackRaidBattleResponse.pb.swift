@@ -35,6 +35,15 @@ public struct POGOProtos_Networking_Responses_AttackRaidBattleResponse {
   /// Clears the value of `battleUpdate`. Subsequent reads from it will return its default value.
   public mutating func clearBattleUpdate() {self._battleUpdate = nil}
 
+  public var sponsoredGift: POGOProtos_Data_Vasa_AdDetails {
+    get {return _sponsoredGift ?? POGOProtos_Data_Vasa_AdDetails()}
+    set {_sponsoredGift = newValue}
+  }
+  /// Returns true if `sponsoredGift` has been explicitly set.
+  public var hasSponsoredGift: Bool {return self._sponsoredGift != nil}
+  /// Clears the value of `sponsoredGift`. Subsequent reads from it will return its default value.
+  public mutating func clearSponsoredGift() {self._sponsoredGift = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -83,6 +92,7 @@ public struct POGOProtos_Networking_Responses_AttackRaidBattleResponse {
   public init() {}
 
   fileprivate var _battleUpdate: POGOProtos_Data_Battle_BattleUpdate? = nil
+  fileprivate var _sponsoredGift: POGOProtos_Data_Vasa_AdDetails? = nil
 }
 
 #if swift(>=4.2)
@@ -111,6 +121,7 @@ extension POGOProtos_Networking_Responses_AttackRaidBattleResponse: SwiftProtobu
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "result"),
     2: .standard(proto: "battle_update"),
+    3: .standard(proto: "sponsored_gift"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -118,6 +129,7 @@ extension POGOProtos_Networking_Responses_AttackRaidBattleResponse: SwiftProtobu
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.result)
       case 2: try decoder.decodeSingularMessageField(value: &self._battleUpdate)
+      case 3: try decoder.decodeSingularMessageField(value: &self._sponsoredGift)
       default: break
       }
     }
@@ -130,12 +142,16 @@ extension POGOProtos_Networking_Responses_AttackRaidBattleResponse: SwiftProtobu
     if let v = self._battleUpdate {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     }
+    if let v = self._sponsoredGift {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Responses_AttackRaidBattleResponse, rhs: POGOProtos_Networking_Responses_AttackRaidBattleResponse) -> Bool {
     if lhs.result != rhs.result {return false}
     if lhs._battleUpdate != rhs._battleUpdate {return false}
+    if lhs._sponsoredGift != rhs._sponsoredGift {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

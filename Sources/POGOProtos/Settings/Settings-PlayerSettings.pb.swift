@@ -26,6 +26,8 @@ public struct POGOProtos_Settings_PlayerSettings {
 
   public var optOutOnlineStatus: Bool = false
 
+  public var completedTutorials: [POGOProtos_Settings_SocialSettings.TutorialType] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -39,12 +41,14 @@ extension POGOProtos_Settings_PlayerSettings: SwiftProtobuf.Message, SwiftProtob
   public static let protoMessageName: String = _protobuf_package + ".PlayerSettings"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "opt_out_online_status"),
+    2: .standard(proto: "completed_tutorials"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.optOutOnlineStatus)
+      case 2: try decoder.decodeRepeatedEnumField(value: &self.completedTutorials)
       default: break
       }
     }
@@ -54,11 +58,15 @@ extension POGOProtos_Settings_PlayerSettings: SwiftProtobuf.Message, SwiftProtob
     if self.optOutOnlineStatus != false {
       try visitor.visitSingularBoolField(value: self.optOutOnlineStatus, fieldNumber: 1)
     }
+    if !self.completedTutorials.isEmpty {
+      try visitor.visitPackedEnumField(value: self.completedTutorials, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_PlayerSettings, rhs: POGOProtos_Settings_PlayerSettings) -> Bool {
     if lhs.optOutOnlineStatus != rhs.optOutOnlineStatus {return false}
+    if lhs.completedTutorials != rhs.completedTutorials {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -34,6 +34,10 @@ public struct POGOProtos_Data_Player_PlayerSummary {
 
   public var fbUserID: String = String()
 
+  public var level: Int32 = 0
+
+  public var experience: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +55,8 @@ extension POGOProtos_Data_Player_PlayerSummary: SwiftProtobuf.Message, SwiftProt
     3: .standard(proto: "public_data"),
     4: .same(proto: "team"),
     5: .standard(proto: "fb_user_id"),
+    6: .same(proto: "level"),
+    7: .same(proto: "experience"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -61,6 +67,8 @@ extension POGOProtos_Data_Player_PlayerSummary: SwiftProtobuf.Message, SwiftProt
       case 3: try decoder.decodeSingularBytesField(value: &self.publicData)
       case 4: try decoder.decodeSingularStringField(value: &self.team)
       case 5: try decoder.decodeSingularStringField(value: &self.fbUserID)
+      case 6: try decoder.decodeSingularInt32Field(value: &self.level)
+      case 7: try decoder.decodeSingularInt64Field(value: &self.experience)
       default: break
       }
     }
@@ -82,6 +90,12 @@ extension POGOProtos_Data_Player_PlayerSummary: SwiftProtobuf.Message, SwiftProt
     if !self.fbUserID.isEmpty {
       try visitor.visitSingularStringField(value: self.fbUserID, fieldNumber: 5)
     }
+    if self.level != 0 {
+      try visitor.visitSingularInt32Field(value: self.level, fieldNumber: 6)
+    }
+    if self.experience != 0 {
+      try visitor.visitSingularInt64Field(value: self.experience, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -91,6 +105,8 @@ extension POGOProtos_Data_Player_PlayerSummary: SwiftProtobuf.Message, SwiftProt
     if lhs.publicData != rhs.publicData {return false}
     if lhs.team != rhs.team {return false}
     if lhs.fbUserID != rhs.fbUserID {return false}
+    if lhs.level != rhs.level {return false}
+    if lhs.experience != rhs.experience {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

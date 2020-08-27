@@ -68,6 +68,14 @@ public struct POGOProtos_Data_Combat_PokemonCondition {
     set {condition = .pokemonBanlist(newValue)}
   }
 
+  public var pokemonCaughtTimestamp: POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp {
+    get {
+      if case .pokemonCaughtTimestamp(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp()
+    }
+    set {condition = .pokemonCaughtTimestamp(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Condition: Equatable {
@@ -76,6 +84,7 @@ public struct POGOProtos_Data_Combat_PokemonCondition {
     case withPokemonCategory(POGOProtos_Data_Combat_WithPokemonCategory)
     case pokemonWhitelist(POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist)
     case pokemonBanlist(POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist)
+    case pokemonCaughtTimestamp(POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition.OneOf_Condition, rhs: POGOProtos_Data_Combat_PokemonCondition.OneOf_Condition) -> Bool {
@@ -85,10 +94,25 @@ public struct POGOProtos_Data_Combat_PokemonCondition {
       case (.withPokemonCategory(let l), .withPokemonCategory(let r)): return l == r
       case (.pokemonWhitelist(let l), .pokemonWhitelist(let r)): return l == r
       case (.pokemonBanlist(let l), .pokemonBanlist(let r)): return l == r
+      case (.pokemonCaughtTimestamp(let l), .pokemonCaughtTimestamp(let r)): return l == r
       default: return false
       }
     }
   #endif
+  }
+
+  public struct PokemonCaughtTimestamp {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var afterTimestamp: Int64 = 0
+
+    public var beforeTimestamp: Int64 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
   }
 
   public struct PokemonBanlist {
@@ -149,6 +173,7 @@ extension POGOProtos_Data_Combat_PokemonCondition: SwiftProtobuf.Message, SwiftP
     4: .standard(proto: "with_pokemon_category"),
     5: .standard(proto: "pokemon_whitelist"),
     6: .standard(proto: "pokemon_banlist"),
+    7: .standard(proto: "pokemon_caught_timestamp"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -195,6 +220,14 @@ extension POGOProtos_Data_Combat_PokemonCondition: SwiftProtobuf.Message, SwiftP
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.condition = .pokemonBanlist(v)}
+      case 7:
+        var v: POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .pokemonCaughtTimestamp(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .pokemonCaughtTimestamp(v)}
       default: break
       }
     }
@@ -215,6 +248,8 @@ extension POGOProtos_Data_Combat_PokemonCondition: SwiftProtobuf.Message, SwiftP
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
     case .pokemonBanlist(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+    case .pokemonCaughtTimestamp(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -223,6 +258,41 @@ extension POGOProtos_Data_Combat_PokemonCondition: SwiftProtobuf.Message, SwiftP
   public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition, rhs: POGOProtos_Data_Combat_PokemonCondition) -> Bool {
     if lhs.type != rhs.type {return false}
     if lhs.condition != rhs.condition {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Combat_PokemonCondition.protoMessageName + ".PokemonCaughtTimestamp"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "after_timestamp"),
+    2: .standard(proto: "before_timestamp"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt64Field(value: &self.afterTimestamp)
+      case 2: try decoder.decodeSingularInt64Field(value: &self.beforeTimestamp)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.afterTimestamp != 0 {
+      try visitor.visitSingularInt64Field(value: self.afterTimestamp, fieldNumber: 1)
+    }
+    if self.beforeTimestamp != 0 {
+      try visitor.visitSingularInt64Field(value: self.beforeTimestamp, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp, rhs: POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp) -> Bool {
+    if lhs.afterTimestamp != rhs.afterTimestamp {return false}
+    if lhs.beforeTimestamp != rhs.beforeTimestamp {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

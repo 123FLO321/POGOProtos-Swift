@@ -103,6 +103,15 @@ public struct POGOProtos_Networking_Responses_FortSearchResponse {
   /// Clears the value of `giftBox`. Subsequent reads from it will return its default value.
   public mutating func clearGiftBox() {self._giftBox = nil}
 
+  public var sponsoredGift: POGOProtos_Data_Vasa_AdDetails {
+    get {return _sponsoredGift ?? POGOProtos_Data_Vasa_AdDetails()}
+    set {_sponsoredGift = newValue}
+  }
+  /// Returns true if `sponsoredGift` has been explicitly set.
+  public var hasSponsoredGift: Bool {return self._sponsoredGift != nil}
+  /// Clears the value of `sponsoredGift`. Subsequent reads from it will return its default value.
+  public mutating func clearSponsoredGift() {self._sponsoredGift = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -157,6 +166,7 @@ public struct POGOProtos_Networking_Responses_FortSearchResponse {
   fileprivate var _teamBonusLoot: POGOProtos_Inventory_Loot? = nil
   fileprivate var _challengeQuest: POGOProtos_Data_Quests_ClientQuest? = nil
   fileprivate var _giftBox: POGOProtos_Data_Gift_GiftBox? = nil
+  fileprivate var _sponsoredGift: POGOProtos_Data_Vasa_AdDetails? = nil
 }
 
 #if swift(>=4.2)
@@ -198,6 +208,7 @@ extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Mess
     13: .standard(proto: "fort_id"),
     14: .standard(proto: "challenge_quest"),
     15: .standard(proto: "gift_box"),
+    16: .standard(proto: "sponsored_gift"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -218,6 +229,7 @@ extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Mess
       case 13: try decoder.decodeSingularStringField(value: &self.fortID)
       case 14: try decoder.decodeSingularMessageField(value: &self._challengeQuest)
       case 15: try decoder.decodeSingularMessageField(value: &self._giftBox)
+      case 16: try decoder.decodeSingularMessageField(value: &self._sponsoredGift)
       default: break
       }
     }
@@ -269,6 +281,9 @@ extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Mess
     if let v = self._giftBox {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 15)
     }
+    if let v = self._sponsoredGift {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -288,6 +303,7 @@ extension POGOProtos_Networking_Responses_FortSearchResponse: SwiftProtobuf.Mess
     if lhs.fortID != rhs.fortID {return false}
     if lhs._challengeQuest != rhs._challengeQuest {return false}
     if lhs._giftBox != rhs._giftBox {return false}
+    if lhs._sponsoredGift != rhs._sponsoredGift {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

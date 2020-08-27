@@ -36,6 +36,10 @@ public struct POGOProtos_Settings_GpsSettings {
 
   public var idleThresholdDurationSeconds: Int32 = 0
 
+  public var idleSampleIntervalSeconds: Float = 0
+
+  public var idleSpeedSampleCount: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -54,6 +58,8 @@ extension POGOProtos_Settings_GpsSettings: SwiftProtobuf.Message, SwiftProtobuf.
     4: .standard(proto: "driving_speed_sample_count"),
     5: .standard(proto: "idle_threshold_speed_meters_per_second"),
     6: .standard(proto: "idle_threshold_duration_seconds"),
+    7: .standard(proto: "idle_sample_interval_seconds"),
+    8: .standard(proto: "idle_speed_sample_count"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -65,6 +71,8 @@ extension POGOProtos_Settings_GpsSettings: SwiftProtobuf.Message, SwiftProtobuf.
       case 4: try decoder.decodeSingularInt32Field(value: &self.drivingSpeedSampleCount)
       case 5: try decoder.decodeSingularFloatField(value: &self.idleThresholdSpeedMetersPerSecond)
       case 6: try decoder.decodeSingularInt32Field(value: &self.idleThresholdDurationSeconds)
+      case 7: try decoder.decodeSingularFloatField(value: &self.idleSampleIntervalSeconds)
+      case 8: try decoder.decodeSingularInt32Field(value: &self.idleSpeedSampleCount)
       default: break
       }
     }
@@ -89,6 +97,12 @@ extension POGOProtos_Settings_GpsSettings: SwiftProtobuf.Message, SwiftProtobuf.
     if self.idleThresholdDurationSeconds != 0 {
       try visitor.visitSingularInt32Field(value: self.idleThresholdDurationSeconds, fieldNumber: 6)
     }
+    if self.idleSampleIntervalSeconds != 0 {
+      try visitor.visitSingularFloatField(value: self.idleSampleIntervalSeconds, fieldNumber: 7)
+    }
+    if self.idleSpeedSampleCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.idleSpeedSampleCount, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -99,6 +113,8 @@ extension POGOProtos_Settings_GpsSettings: SwiftProtobuf.Message, SwiftProtobuf.
     if lhs.drivingSpeedSampleCount != rhs.drivingSpeedSampleCount {return false}
     if lhs.idleThresholdSpeedMetersPerSecond != rhs.idleThresholdSpeedMetersPerSecond {return false}
     if lhs.idleThresholdDurationSeconds != rhs.idleThresholdDurationSeconds {return false}
+    if lhs.idleSampleIntervalSeconds != rhs.idleSampleIntervalSeconds {return false}
+    if lhs.idleSpeedSampleCount != rhs.idleSpeedSampleCount {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

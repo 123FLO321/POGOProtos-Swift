@@ -84,6 +84,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemLeaderMap // = 1502
   case itemGiovanniMap // = 1503
   case itemGlobalEventTicket // = 1600
+  case itemEventTicketPink // = 1601
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -155,6 +156,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 1502: self = .itemLeaderMap
     case 1503: self = .itemGiovanniMap
     case 1600: self = .itemGlobalEventTicket
+    case 1601: self = .itemEventTicketPink
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -224,6 +226,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemLeaderMap: return 1502
     case .itemGiovanniMap: return 1503
     case .itemGlobalEventTicket: return 1600
+    case .itemEventTicketPink: return 1601
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -298,6 +301,7 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemLeaderMap,
     .itemGiovanniMap,
     .itemGlobalEventTicket,
+    .itemEventTicketPink,
   ]
 }
 
@@ -370,5 +374,6 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     1502: .same(proto: "ITEM_LEADER_MAP"),
     1503: .same(proto: "ITEM_GIOVANNI_MAP"),
     1600: .same(proto: "ITEM_GLOBAL_EVENT_TICKET"),
+    1601: .same(proto: "ITEM_EVENT_TICKET_PINK"),
   ]
 }

@@ -26,6 +26,8 @@ public struct POGOProtos_Settings_GmtSettings {
 
   public var enableGmtdownloadV2: Bool = false
 
+  public var downloadPollPeriodMs: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -39,12 +41,14 @@ extension POGOProtos_Settings_GmtSettings: SwiftProtobuf.Message, SwiftProtobuf.
   public static let protoMessageName: String = _protobuf_package + ".GmtSettings"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "enable_gmtdownload_v2"),
+    2: .standard(proto: "download_poll_period_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.enableGmtdownloadV2)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.downloadPollPeriodMs)
       default: break
       }
     }
@@ -54,11 +58,15 @@ extension POGOProtos_Settings_GmtSettings: SwiftProtobuf.Message, SwiftProtobuf.
     if self.enableGmtdownloadV2 != false {
       try visitor.visitSingularBoolField(value: self.enableGmtdownloadV2, fieldNumber: 1)
     }
+    if self.downloadPollPeriodMs != 0 {
+      try visitor.visitSingularInt32Field(value: self.downloadPollPeriodMs, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_GmtSettings, rhs: POGOProtos_Settings_GmtSettings) -> Bool {
     if lhs.enableGmtdownloadV2 != rhs.enableGmtdownloadV2 {return false}
+    if lhs.downloadPollPeriodMs != rhs.downloadPollPeriodMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

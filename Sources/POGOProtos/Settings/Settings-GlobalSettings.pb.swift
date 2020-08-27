@@ -472,6 +472,33 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `raidTicketSettings`. Subsequent reads from it will return its default value.
   public mutating func clearRaidTicketSettings() {_uniqueStorage()._raidTicketSettings = nil}
 
+  public var rocketBalloonSettings: POGOProtos_Settings_RocketBalloonGlobalSettings {
+    get {return _storage._rocketBalloonSettings ?? POGOProtos_Settings_RocketBalloonGlobalSettings()}
+    set {_uniqueStorage()._rocketBalloonSettings = newValue}
+  }
+  /// Returns true if `rocketBalloonSettings` has been explicitly set.
+  public var hasRocketBalloonSettings: Bool {return _storage._rocketBalloonSettings != nil}
+  /// Clears the value of `rocketBalloonSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearRocketBalloonSettings() {_uniqueStorage()._rocketBalloonSettings = nil}
+
+  public var timedGroupChallengeSettings: POGOProtos_Settings_TimedGroupChallengeSettings {
+    get {return _storage._timedGroupChallengeSettings ?? POGOProtos_Settings_TimedGroupChallengeSettings()}
+    set {_uniqueStorage()._timedGroupChallengeSettings = newValue}
+  }
+  /// Returns true if `timedGroupChallengeSettings` has been explicitly set.
+  public var hasTimedGroupChallengeSettings: Bool {return _storage._timedGroupChallengeSettings != nil}
+  /// Clears the value of `timedGroupChallengeSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearTimedGroupChallengeSettings() {_uniqueStorage()._timedGroupChallengeSettings = nil}
+
+  public var lobbyClientSettings: POGOProtos_Settings_LobbyClientSettings {
+    get {return _storage._lobbyClientSettings ?? POGOProtos_Settings_LobbyClientSettings()}
+    set {_uniqueStorage()._lobbyClientSettings = newValue}
+  }
+  /// Returns true if `lobbyClientSettings` has been explicitly set.
+  public var hasLobbyClientSettings: Bool {return _storage._lobbyClientSettings != nil}
+  /// Clears the value of `lobbyClientSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearLobbyClientSettings() {_uniqueStorage()._lobbyClientSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -538,6 +565,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     53: .standard(proto: "raid_invite_friends_settings"),
     54: .standard(proto: "daily_encounter_settings"),
     55: .standard(proto: "raid_ticket_settings"),
+    56: .standard(proto: "rocket_balloon_settings"),
+    57: .standard(proto: "timed_group_challenge_settings"),
+    59: .standard(proto: "lobby_client_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -593,6 +623,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _raidInviteFriendsSettings: POGOProtos_Settings_RaidInviteFriendsSettings? = nil
     var _dailyEncounterSettings: POGOProtos_Settings_DailyEncounterGlobalSettings? = nil
     var _raidTicketSettings: POGOProtos_Settings_RaidTicketSettings? = nil
+    var _rocketBalloonSettings: POGOProtos_Settings_RocketBalloonGlobalSettings? = nil
+    var _timedGroupChallengeSettings: POGOProtos_Settings_TimedGroupChallengeSettings? = nil
+    var _lobbyClientSettings: POGOProtos_Settings_LobbyClientSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -651,6 +684,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _raidInviteFriendsSettings = source._raidInviteFriendsSettings
       _dailyEncounterSettings = source._dailyEncounterSettings
       _raidTicketSettings = source._raidTicketSettings
+      _rocketBalloonSettings = source._rocketBalloonSettings
+      _timedGroupChallengeSettings = source._timedGroupChallengeSettings
+      _lobbyClientSettings = source._lobbyClientSettings
     }
   }
 
@@ -718,6 +754,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 53: try decoder.decodeSingularMessageField(value: &_storage._raidInviteFriendsSettings)
         case 54: try decoder.decodeSingularMessageField(value: &_storage._dailyEncounterSettings)
         case 55: try decoder.decodeSingularMessageField(value: &_storage._raidTicketSettings)
+        case 56: try decoder.decodeSingularMessageField(value: &_storage._rocketBalloonSettings)
+        case 57: try decoder.decodeSingularMessageField(value: &_storage._timedGroupChallengeSettings)
+        case 59: try decoder.decodeSingularMessageField(value: &_storage._lobbyClientSettings)
         default: break
         }
       }
@@ -882,6 +921,15 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._raidTicketSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 55)
       }
+      if let v = _storage._rocketBalloonSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 56)
+      }
+      if let v = _storage._timedGroupChallengeSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 57)
+      }
+      if let v = _storage._lobbyClientSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 59)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -943,6 +991,9 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._raidInviteFriendsSettings != rhs_storage._raidInviteFriendsSettings {return false}
         if _storage._dailyEncounterSettings != rhs_storage._dailyEncounterSettings {return false}
         if _storage._raidTicketSettings != rhs_storage._raidTicketSettings {return false}
+        if _storage._rocketBalloonSettings != rhs_storage._rocketBalloonSettings {return false}
+        if _storage._timedGroupChallengeSettings != rhs_storage._timedGroupChallengeSettings {return false}
+        if _storage._lobbyClientSettings != rhs_storage._lobbyClientSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

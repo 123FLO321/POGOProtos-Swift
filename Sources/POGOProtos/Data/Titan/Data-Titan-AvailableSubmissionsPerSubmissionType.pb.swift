@@ -40,6 +40,8 @@ public struct POGOProtos_Data_Titan_AvailableSubmissionsPerSubmissionType {
 
   public var blacklistedDeviceID: [String] = []
 
+  public var isWhitelistedUser: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -60,6 +62,7 @@ extension POGOProtos_Data_Titan_AvailableSubmissionsPerSubmissionType: SwiftProt
     6: .standard(proto: "max_poi_distance_in_meters"),
     7: .standard(proto: "blacklisted_os"),
     8: .standard(proto: "blacklisted_device_id"),
+    9: .standard(proto: "is_whitelisted_user"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -73,6 +76,7 @@ extension POGOProtos_Data_Titan_AvailableSubmissionsPerSubmissionType: SwiftProt
       case 6: try decoder.decodeSingularInt32Field(value: &self.maxPoiDistanceInMeters)
       case 7: try decoder.decodeRepeatedStringField(value: &self.blacklistedOs)
       case 8: try decoder.decodeRepeatedStringField(value: &self.blacklistedDeviceID)
+      case 9: try decoder.decodeSingularBoolField(value: &self.isWhitelistedUser)
       default: break
       }
     }
@@ -103,6 +107,9 @@ extension POGOProtos_Data_Titan_AvailableSubmissionsPerSubmissionType: SwiftProt
     if !self.blacklistedDeviceID.isEmpty {
       try visitor.visitRepeatedStringField(value: self.blacklistedDeviceID, fieldNumber: 8)
     }
+    if self.isWhitelistedUser != false {
+      try visitor.visitSingularBoolField(value: self.isWhitelistedUser, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -115,6 +122,7 @@ extension POGOProtos_Data_Titan_AvailableSubmissionsPerSubmissionType: SwiftProt
     if lhs.maxPoiDistanceInMeters != rhs.maxPoiDistanceInMeters {return false}
     if lhs.blacklistedOs != rhs.blacklistedOs {return false}
     if lhs.blacklistedDeviceID != rhs.blacklistedDeviceID {return false}
+    if lhs.isWhitelistedUser != rhs.isWhitelistedUser {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

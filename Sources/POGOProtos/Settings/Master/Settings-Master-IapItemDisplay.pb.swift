@@ -50,6 +50,10 @@ public struct POGOProtos_Settings_Master_IapItemDisplay {
 
   public var skuDisableTimeUtcMs: Int64 = 0
 
+  public var subcategories: [String] = []
+
+  public var imageURL: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -74,6 +78,8 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
     12: .standard(proto: "sku_disable_time"),
     13: .standard(proto: "sku_enable_time_utc_ms"),
     14: .standard(proto: "sku_disable_time_utc_ms"),
+    15: .same(proto: "subcategories"),
+    16: .standard(proto: "image_url"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -91,6 +97,8 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
       case 12: try decoder.decodeSingularStringField(value: &self.skuDisableTime)
       case 13: try decoder.decodeSingularInt64Field(value: &self.skuEnableTimeUtcMs)
       case 14: try decoder.decodeSingularInt64Field(value: &self.skuDisableTimeUtcMs)
+      case 15: try decoder.decodeRepeatedStringField(value: &self.subcategories)
+      case 16: try decoder.decodeSingularStringField(value: &self.imageURL)
       default: break
       }
     }
@@ -133,6 +141,12 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
     if self.skuDisableTimeUtcMs != 0 {
       try visitor.visitSingularInt64Field(value: self.skuDisableTimeUtcMs, fieldNumber: 14)
     }
+    if !self.subcategories.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.subcategories, fieldNumber: 15)
+    }
+    if !self.imageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.imageURL, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -149,6 +163,8 @@ extension POGOProtos_Settings_Master_IapItemDisplay: SwiftProtobuf.Message, Swif
     if lhs.skuDisableTime != rhs.skuDisableTime {return false}
     if lhs.skuEnableTimeUtcMs != rhs.skuEnableTimeUtcMs {return false}
     if lhs.skuDisableTimeUtcMs != rhs.skuDisableTimeUtcMs {return false}
+    if lhs.subcategories != rhs.subcategories {return false}
+    if lhs.imageURL != rhs.imageURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

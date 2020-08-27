@@ -44,6 +44,14 @@ public struct POGOProtos_Settings_Master_RaidClientSettings {
 
   public var maxRemotePlayersPerLobby: Int32 = 0
 
+  public var inviteCooldownDurationMillis: Int64 = 0
+
+  public var maxNumFriendInvitesPerAction: Int32 = 0
+
+  public var unsupportedRaidLevelsForFriendInvites: [POGOProtos_Enums_RaidLevel] = []
+
+  public var unsupportedRemoteRaidLevels: [POGOProtos_Enums_RaidLevel] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -66,6 +74,10 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
     8: .standard(proto: "can_invite_friends_remotely"),
     9: .standard(proto: "max_players_per_lobby"),
     10: .standard(proto: "max_remote_players_per_lobby"),
+    11: .standard(proto: "invite_cooldown_duration_millis"),
+    12: .standard(proto: "max_num_friend_invites_per_action"),
+    13: .standard(proto: "unsupported_raid_levels_for_friend_invites"),
+    14: .standard(proto: "unsupported_remote_raid_levels"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -81,6 +93,10 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
       case 8: try decoder.decodeSingularBoolField(value: &self.canInviteFriendsRemotely)
       case 9: try decoder.decodeSingularInt32Field(value: &self.maxPlayersPerLobby)
       case 10: try decoder.decodeSingularInt32Field(value: &self.maxRemotePlayersPerLobby)
+      case 11: try decoder.decodeSingularInt64Field(value: &self.inviteCooldownDurationMillis)
+      case 12: try decoder.decodeSingularInt32Field(value: &self.maxNumFriendInvitesPerAction)
+      case 13: try decoder.decodeRepeatedEnumField(value: &self.unsupportedRaidLevelsForFriendInvites)
+      case 14: try decoder.decodeRepeatedEnumField(value: &self.unsupportedRemoteRaidLevels)
       default: break
       }
     }
@@ -117,6 +133,18 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
     if self.maxRemotePlayersPerLobby != 0 {
       try visitor.visitSingularInt32Field(value: self.maxRemotePlayersPerLobby, fieldNumber: 10)
     }
+    if self.inviteCooldownDurationMillis != 0 {
+      try visitor.visitSingularInt64Field(value: self.inviteCooldownDurationMillis, fieldNumber: 11)
+    }
+    if self.maxNumFriendInvitesPerAction != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxNumFriendInvitesPerAction, fieldNumber: 12)
+    }
+    if !self.unsupportedRaidLevelsForFriendInvites.isEmpty {
+      try visitor.visitPackedEnumField(value: self.unsupportedRaidLevelsForFriendInvites, fieldNumber: 13)
+    }
+    if !self.unsupportedRemoteRaidLevels.isEmpty {
+      try visitor.visitPackedEnumField(value: self.unsupportedRemoteRaidLevels, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -131,6 +159,10 @@ extension POGOProtos_Settings_Master_RaidClientSettings: SwiftProtobuf.Message, 
     if lhs.canInviteFriendsRemotely != rhs.canInviteFriendsRemotely {return false}
     if lhs.maxPlayersPerLobby != rhs.maxPlayersPerLobby {return false}
     if lhs.maxRemotePlayersPerLobby != rhs.maxRemotePlayersPerLobby {return false}
+    if lhs.inviteCooldownDurationMillis != rhs.inviteCooldownDurationMillis {return false}
+    if lhs.maxNumFriendInvitesPerAction != rhs.maxNumFriendInvitesPerAction {return false}
+    if lhs.unsupportedRaidLevelsForFriendInvites != rhs.unsupportedRaidLevelsForFriendInvites {return false}
+    if lhs.unsupportedRemoteRaidLevels != rhs.unsupportedRemoteRaidLevels {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

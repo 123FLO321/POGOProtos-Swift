@@ -274,6 +274,7 @@ public struct POGOProtos_Map_Fort_FortData {
       case invasionGrunt // = 1
       case invasionLeader // = 2
       case invasionGiovanni // = 3
+      case invasionGruntb // = 4
       case UNRECOGNIZED(Int)
 
       public init() {
@@ -286,6 +287,7 @@ public struct POGOProtos_Map_Fort_FortData {
         case 1: self = .invasionGrunt
         case 2: self = .invasionLeader
         case 3: self = .invasionGiovanni
+        case 4: self = .invasionGruntb
         default: self = .UNRECOGNIZED(rawValue)
         }
       }
@@ -296,6 +298,7 @@ public struct POGOProtos_Map_Fort_FortData {
         case .invasionGrunt: return 1
         case .invasionLeader: return 2
         case .invasionGiovanni: return 3
+        case .invasionGruntb: return 4
         case .UNRECOGNIZED(let i): return i
         }
       }
@@ -345,6 +348,7 @@ extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay.IncidentDisplayTy
     .invasionGrunt,
     .invasionLeader,
     .invasionGiovanni,
+    .invasionGruntb,
   ]
 }
 
@@ -766,6 +770,7 @@ extension POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay.IncidentDisplayTy
     1: .same(proto: "INVASION_GRUNT"),
     2: .same(proto: "INVASION_LEADER"),
     3: .same(proto: "INVASION_GIOVANNI"),
+    4: .same(proto: "INVASION_GRUNTB"),
   ]
 }
 

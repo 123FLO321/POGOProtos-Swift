@@ -132,6 +132,22 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
         set {section = .timedQuest(newValue)}
       }
 
+      public var eventBanner: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.EventBannerSection {
+        get {
+          if case .eventBanner(let v)? = section {return v}
+          return POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.EventBannerSection()
+        }
+        set {section = .eventBanner(newValue)}
+      }
+
+      public var timedGroupChallenge: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedGroupChallengeSection {
+        get {
+          if case .timedGroupChallenge(let v)? = section {return v}
+          return POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedGroupChallengeSection()
+        }
+        set {section = .timedGroupChallenge(newValue)}
+      }
+
       public var unknownFields = SwiftProtobuf.UnknownStorage()
 
       public enum OneOf_Section: Equatable {
@@ -141,6 +157,8 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
         case event(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.EventSection)
         case upNext(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.UpNextSection)
         case timedQuest(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedQuestSection)
+        case eventBanner(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.EventBannerSection)
+        case timedGroupChallenge(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedGroupChallengeSection)
 
       #if !swift(>=4.1)
         public static func ==(lhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.OneOf_Section, rhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.OneOf_Section) -> Bool {
@@ -151,10 +169,52 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
           case (.event(let l), .event(let r)): return l == r
           case (.upNext(let l), .upNext(let r)): return l == r
           case (.timedQuest(let l), .timedQuest(let r)): return l == r
+          case (.eventBanner(let l), .eventBanner(let r)): return l == r
+          case (.timedGroupChallenge(let l), .timedGroupChallenge(let r)): return l == r
           default: return false
           }
         }
       #endif
+      }
+
+      public struct TimedGroupChallengeSection {
+        // SwiftProtobuf.Message conformance is added in an extension below. See the
+        // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+        // methods supported on all messages.
+
+        public var challengeID: String = String()
+
+        public var headerImageURL: String = String()
+
+        public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+        public init() {}
+      }
+
+      public struct EventBannerSection {
+        // SwiftProtobuf.Message conformance is added in an extension below. See the
+        // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+        // methods supported on all messages.
+
+        public var eventIcon: String = String()
+
+        public var titleText: String = String()
+
+        public var bodyText: String = String()
+
+        public var imageURL: String = String()
+
+        public var headerImageURL: String = String()
+
+        public var imageOverlayText: String = String()
+
+        public var linkFromImage: String = String()
+
+        public var imageSubText: String = String()
+
+        public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+        public init() {}
       }
 
       public struct TimedQuestSection {
@@ -545,6 +605,8 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
     4: .same(proto: "event"),
     5: .standard(proto: "up_next"),
     6: .standard(proto: "timed_quest"),
+    7: .standard(proto: "event_banner"),
+    8: .standard(proto: "timed_group_challenge"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -598,6 +660,22 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.section = .timedQuest(v)}
+      case 7:
+        var v: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.EventBannerSection?
+        if let current = self.section {
+          try decoder.handleConflictingOneOf()
+          if case .eventBanner(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.section = .eventBanner(v)}
+      case 8:
+        var v: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedGroupChallengeSection?
+        if let current = self.section {
+          try decoder.handleConflictingOneOf()
+          if case .timedGroupChallenge(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.section = .timedGroupChallenge(v)}
       default: break
       }
     }
@@ -617,6 +695,10 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
     case .timedQuest(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+    case .eventBanner(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+    case .timedGroupChallenge(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -624,6 +706,112 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
 
   public static func ==(lhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection, rhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection) -> Bool {
     if lhs.section != rhs.section {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedGroupChallengeSection: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.protoMessageName + ".TimedGroupChallengeSection"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "challenge_id"),
+    2: .standard(proto: "header_image_url"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.challengeID)
+      case 2: try decoder.decodeSingularStringField(value: &self.headerImageURL)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.challengeID.isEmpty {
+      try visitor.visitSingularStringField(value: self.challengeID, fieldNumber: 1)
+    }
+    if !self.headerImageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.headerImageURL, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedGroupChallengeSection, rhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedGroupChallengeSection) -> Bool {
+    if lhs.challengeID != rhs.challengeID {return false}
+    if lhs.headerImageURL != rhs.headerImageURL {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.EventBannerSection: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.protoMessageName + ".EventBannerSection"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "event_icon"),
+    2: .standard(proto: "title_text"),
+    3: .standard(proto: "body_text"),
+    4: .standard(proto: "image_url"),
+    5: .standard(proto: "header_image_url"),
+    6: .standard(proto: "image_overlay_text"),
+    7: .standard(proto: "link_from_image"),
+    8: .standard(proto: "image_sub_text"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.eventIcon)
+      case 2: try decoder.decodeSingularStringField(value: &self.titleText)
+      case 3: try decoder.decodeSingularStringField(value: &self.bodyText)
+      case 4: try decoder.decodeSingularStringField(value: &self.imageURL)
+      case 5: try decoder.decodeSingularStringField(value: &self.headerImageURL)
+      case 6: try decoder.decodeSingularStringField(value: &self.imageOverlayText)
+      case 7: try decoder.decodeSingularStringField(value: &self.linkFromImage)
+      case 8: try decoder.decodeSingularStringField(value: &self.imageSubText)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.eventIcon.isEmpty {
+      try visitor.visitSingularStringField(value: self.eventIcon, fieldNumber: 1)
+    }
+    if !self.titleText.isEmpty {
+      try visitor.visitSingularStringField(value: self.titleText, fieldNumber: 2)
+    }
+    if !self.bodyText.isEmpty {
+      try visitor.visitSingularStringField(value: self.bodyText, fieldNumber: 3)
+    }
+    if !self.imageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.imageURL, fieldNumber: 4)
+    }
+    if !self.headerImageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.headerImageURL, fieldNumber: 5)
+    }
+    if !self.imageOverlayText.isEmpty {
+      try visitor.visitSingularStringField(value: self.imageOverlayText, fieldNumber: 6)
+    }
+    if !self.linkFromImage.isEmpty {
+      try visitor.visitSingularStringField(value: self.linkFromImage, fieldNumber: 7)
+    }
+    if !self.imageSubText.isEmpty {
+      try visitor.visitSingularStringField(value: self.imageSubText, fieldNumber: 8)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.EventBannerSection, rhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.EventBannerSection) -> Bool {
+    if lhs.eventIcon != rhs.eventIcon {return false}
+    if lhs.titleText != rhs.titleText {return false}
+    if lhs.bodyText != rhs.bodyText {return false}
+    if lhs.imageURL != rhs.imageURL {return false}
+    if lhs.headerImageURL != rhs.headerImageURL {return false}
+    if lhs.imageOverlayText != rhs.imageOverlayText {return false}
+    if lhs.linkFromImage != rhs.linkFromImage {return false}
+    if lhs.imageSubText != rhs.imageSubText {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

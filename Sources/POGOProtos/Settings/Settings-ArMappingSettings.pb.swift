@@ -52,6 +52,8 @@ public struct POGOProtos_Settings_ArMappingSettings {
 
   public var enableSponsorPoiScan: Bool = false
 
+  public var minDiskSpaceNeededMb: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -78,6 +80,7 @@ extension POGOProtos_Settings_ArMappingSettings: SwiftProtobuf.Message, SwiftPro
     12: .standard(proto: "ardk_update_distance_mm"),
     13: .standard(proto: "max_pending_upload_kilobytes"),
     14: .standard(proto: "enable_sponsor_poi_scan"),
+    15: .standard(proto: "min_disk_space_needed_mb"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -97,6 +100,7 @@ extension POGOProtos_Settings_ArMappingSettings: SwiftProtobuf.Message, SwiftPro
       case 12: try decoder.decodeSingularInt32Field(value: &self.ardkUpdateDistanceMm)
       case 13: try decoder.decodeSingularInt32Field(value: &self.maxPendingUploadKilobytes)
       case 14: try decoder.decodeSingularBoolField(value: &self.enableSponsorPoiScan)
+      case 15: try decoder.decodeSingularInt32Field(value: &self.minDiskSpaceNeededMb)
       default: break
       }
     }
@@ -145,6 +149,9 @@ extension POGOProtos_Settings_ArMappingSettings: SwiftProtobuf.Message, SwiftPro
     if self.enableSponsorPoiScan != false {
       try visitor.visitSingularBoolField(value: self.enableSponsorPoiScan, fieldNumber: 14)
     }
+    if self.minDiskSpaceNeededMb != 0 {
+      try visitor.visitSingularInt32Field(value: self.minDiskSpaceNeededMb, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -163,6 +170,7 @@ extension POGOProtos_Settings_ArMappingSettings: SwiftProtobuf.Message, SwiftPro
     if lhs.ardkUpdateDistanceMm != rhs.ardkUpdateDistanceMm {return false}
     if lhs.maxPendingUploadKilobytes != rhs.maxPendingUploadKilobytes {return false}
     if lhs.enableSponsorPoiScan != rhs.enableSponsorPoiScan {return false}
+    if lhs.minDiskSpaceNeededMb != rhs.minDiskSpaceNeededMb {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

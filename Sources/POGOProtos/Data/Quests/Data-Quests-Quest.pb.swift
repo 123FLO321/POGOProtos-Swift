@@ -251,6 +251,7 @@ public struct POGOProtos_Data_Quests_Quest {
     case challengeQuest // = 2
     case dailyCoinQuest // = 3
     case timedStoryQuest // = 4
+    case tgcTrackingQuest // = 7
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -264,6 +265,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case 2: self = .challengeQuest
       case 3: self = .dailyCoinQuest
       case 4: self = .timedStoryQuest
+      case 7: self = .tgcTrackingQuest
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -275,6 +277,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case .challengeQuest: return 2
       case .dailyCoinQuest: return 3
       case .timedStoryQuest: return 4
+      case .tgcTrackingQuest: return 7
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -404,6 +407,8 @@ public struct POGOProtos_Data_Quests_Quest {
 
     public var count: Int32 = 0
 
+    public var bucketsPerDay: Int32 = 0
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -424,6 +429,7 @@ extension POGOProtos_Data_Quests_Quest.Context: CaseIterable {
     .challengeQuest,
     .dailyCoinQuest,
     .timedStoryQuest,
+    .tgcTrackingQuest,
   ]
 }
 
@@ -772,6 +778,7 @@ extension POGOProtos_Data_Quests_Quest.Context: SwiftProtobuf._ProtoNameProvidin
     2: .same(proto: "CHALLENGE_QUEST"),
     3: .same(proto: "DAILY_COIN_QUEST"),
     4: .same(proto: "TIMED_STORY_QUEST"),
+    7: .same(proto: "TGC_TRACKING_QUEST"),
   ]
 }
 
@@ -968,6 +975,7 @@ extension POGOProtos_Data_Quests_Quest.DailyCounter: SwiftProtobuf.Message, Swif
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .same(proto: "window"),
     2: .same(proto: "count"),
+    3: .standard(proto: "buckets_per_day"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -975,6 +983,7 @@ extension POGOProtos_Data_Quests_Quest.DailyCounter: SwiftProtobuf.Message, Swif
       switch fieldNumber {
       case 1: try decoder.decodeSingularInt64Field(value: &self.window)
       case 2: try decoder.decodeSingularInt32Field(value: &self.count)
+      case 3: try decoder.decodeSingularInt32Field(value: &self.bucketsPerDay)
       default: break
       }
     }
@@ -987,12 +996,16 @@ extension POGOProtos_Data_Quests_Quest.DailyCounter: SwiftProtobuf.Message, Swif
     if self.count != 0 {
       try visitor.visitSingularInt32Field(value: self.count, fieldNumber: 2)
     }
+    if self.bucketsPerDay != 0 {
+      try visitor.visitSingularInt32Field(value: self.bucketsPerDay, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Quests_Quest.DailyCounter, rhs: POGOProtos_Data_Quests_Quest.DailyCounter) -> Bool {
     if lhs.window != rhs.window {return false}
     if lhs.count != rhs.count {return false}
+    if lhs.bucketsPerDay != rhs.bucketsPerDay {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

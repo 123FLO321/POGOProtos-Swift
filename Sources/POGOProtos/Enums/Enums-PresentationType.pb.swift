@@ -25,6 +25,7 @@ public enum POGOProtos_Enums_PresentationType: SwiftProtobuf.Enum {
   case category // = 1
   case sort // = 2
   case sale // = 3
+  case mlBundleTrackingID // = 4
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -37,6 +38,7 @@ public enum POGOProtos_Enums_PresentationType: SwiftProtobuf.Enum {
     case 1: self = .category
     case 2: self = .sort
     case 3: self = .sale
+    case 4: self = .mlBundleTrackingID
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -47,6 +49,7 @@ public enum POGOProtos_Enums_PresentationType: SwiftProtobuf.Enum {
     case .category: return 1
     case .sort: return 2
     case .sale: return 3
+    case .mlBundleTrackingID: return 4
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -62,6 +65,7 @@ extension POGOProtos_Enums_PresentationType: CaseIterable {
     .category,
     .sort,
     .sale,
+    .mlBundleTrackingID,
   ]
 }
 
@@ -75,5 +79,6 @@ extension POGOProtos_Enums_PresentationType: SwiftProtobuf._ProtoNameProviding {
     1: .same(proto: "CATEGORY"),
     2: .same(proto: "SORT"),
     3: .same(proto: "SALE"),
+    4: .same(proto: "ML_BUNDLE_TRACKING_ID"),
   ]
 }

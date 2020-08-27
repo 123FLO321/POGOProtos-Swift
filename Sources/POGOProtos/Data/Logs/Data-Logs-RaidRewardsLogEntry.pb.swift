@@ -34,6 +34,8 @@ public struct POGOProtos_Data_Logs_RaidRewardsLogEntry {
 
   public var stardust: Int32 = 0
 
+  public var stickers: [POGOProtos_Inventory_LootItem] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -91,6 +93,7 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
     3: .same(proto: "items"),
     4: .standard(proto: "default_rewards"),
     5: .same(proto: "stardust"),
+    6: .same(proto: "stickers"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -101,6 +104,7 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
       case 3: try decoder.decodeRepeatedMessageField(value: &self.items)
       case 4: try decoder.decodeRepeatedMessageField(value: &self.defaultRewards)
       case 5: try decoder.decodeSingularInt32Field(value: &self.stardust)
+      case 6: try decoder.decodeRepeatedMessageField(value: &self.stickers)
       default: break
       }
     }
@@ -122,6 +126,9 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
     if self.stardust != 0 {
       try visitor.visitSingularInt32Field(value: self.stardust, fieldNumber: 5)
     }
+    if !self.stickers.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.stickers, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -131,6 +138,7 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
     if lhs.items != rhs.items {return false}
     if lhs.defaultRewards != rhs.defaultRewards {return false}
     if lhs.stardust != rhs.stardust {return false}
+    if lhs.stickers != rhs.stickers {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

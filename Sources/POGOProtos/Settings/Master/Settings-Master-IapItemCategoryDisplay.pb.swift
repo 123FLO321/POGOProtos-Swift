@@ -40,6 +40,10 @@ public struct POGOProtos_Settings_Master_IapItemCategoryDisplay {
 
   public var description_p: String = String()
 
+  public var displayRows: Int32 = 0
+
+  public var subcategory: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -60,6 +64,8 @@ extension POGOProtos_Settings_Master_IapItemCategoryDisplay: SwiftProtobuf.Messa
     6: .standard(proto: "banner_title"),
     7: .standard(proto: "image_url"),
     8: .same(proto: "description"),
+    9: .standard(proto: "display_rows"),
+    10: .same(proto: "subcategory"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -73,6 +79,8 @@ extension POGOProtos_Settings_Master_IapItemCategoryDisplay: SwiftProtobuf.Messa
       case 6: try decoder.decodeSingularStringField(value: &self.bannerTitle)
       case 7: try decoder.decodeSingularStringField(value: &self.imageURL)
       case 8: try decoder.decodeSingularStringField(value: &self.description_p)
+      case 9: try decoder.decodeSingularInt32Field(value: &self.displayRows)
+      case 10: try decoder.decodeSingularStringField(value: &self.subcategory)
       default: break
       }
     }
@@ -103,6 +111,12 @@ extension POGOProtos_Settings_Master_IapItemCategoryDisplay: SwiftProtobuf.Messa
     if !self.description_p.isEmpty {
       try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 8)
     }
+    if self.displayRows != 0 {
+      try visitor.visitSingularInt32Field(value: self.displayRows, fieldNumber: 9)
+    }
+    if !self.subcategory.isEmpty {
+      try visitor.visitSingularStringField(value: self.subcategory, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -115,6 +129,8 @@ extension POGOProtos_Settings_Master_IapItemCategoryDisplay: SwiftProtobuf.Messa
     if lhs.bannerTitle != rhs.bannerTitle {return false}
     if lhs.imageURL != rhs.imageURL {return false}
     if lhs.description_p != rhs.description_p {return false}
+    if lhs.displayRows != rhs.displayRows {return false}
+    if lhs.subcategory != rhs.subcategory {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

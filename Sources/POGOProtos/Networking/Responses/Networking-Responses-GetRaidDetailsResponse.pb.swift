@@ -73,6 +73,10 @@ public struct POGOProtos_Networking_Responses_GetRaidDetailsResponse {
 
   public var numFriendInvitesRemaining: Int32 = 0
 
+  public var remoteTicketUsed: Bool = false
+
+  public var isWithinPlfeRange: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -163,6 +167,8 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
     12: .standard(proto: "server_instance"),
     13: .standard(proto: "display_high_user_warning"),
     14: .standard(proto: "num_friend_invites_remaining"),
+    15: .standard(proto: "remote_ticket_used"),
+    16: .standard(proto: "is_within_plfe_range"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -182,6 +188,8 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
       case 12: try decoder.decodeSingularInt32Field(value: &self.serverInstance)
       case 13: try decoder.decodeSingularBoolField(value: &self.displayHighUserWarning)
       case 14: try decoder.decodeSingularInt32Field(value: &self.numFriendInvitesRemaining)
+      case 15: try decoder.decodeSingularBoolField(value: &self.remoteTicketUsed)
+      case 16: try decoder.decodeSingularBoolField(value: &self.isWithinPlfeRange)
       default: break
       }
     }
@@ -230,6 +238,12 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
     if self.numFriendInvitesRemaining != 0 {
       try visitor.visitSingularInt32Field(value: self.numFriendInvitesRemaining, fieldNumber: 14)
     }
+    if self.remoteTicketUsed != false {
+      try visitor.visitSingularBoolField(value: self.remoteTicketUsed, fieldNumber: 15)
+    }
+    if self.isWithinPlfeRange != false {
+      try visitor.visitSingularBoolField(value: self.isWithinPlfeRange, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -248,6 +262,8 @@ extension POGOProtos_Networking_Responses_GetRaidDetailsResponse: SwiftProtobuf.
     if lhs.serverInstance != rhs.serverInstance {return false}
     if lhs.displayHighUserWarning != rhs.displayHighUserWarning {return false}
     if lhs.numFriendInvitesRemaining != rhs.numFriendInvitesRemaining {return false}
+    if lhs.remoteTicketUsed != rhs.remoteTicketUsed {return false}
+    if lhs.isWithinPlfeRange != rhs.isWithinPlfeRange {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

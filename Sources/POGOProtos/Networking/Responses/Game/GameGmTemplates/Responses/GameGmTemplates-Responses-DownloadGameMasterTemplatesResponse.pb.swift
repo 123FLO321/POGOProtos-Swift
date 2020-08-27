@@ -85,11 +85,20 @@ public struct POGOProtos_Networking_Responses_Game_GameGmTemplates_Responses_Dow
 
     public var templateID: String = String()
 
-    public var data: Data = SwiftProtobuf.Internal.emptyData
+    public var data: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate {
+      get {return _data ?? POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate()}
+      set {_data = newValue}
+    }
+    /// Returns true if `data` has been explicitly set.
+    public var hasData: Bool {return self._data != nil}
+    /// Clears the value of `data`. Subsequent reads from it will return its default value.
+    public mutating func clearData() {self._data = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
+
+    fileprivate var _data: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate? = nil
   }
 
   public init() {}
@@ -196,7 +205,7 @@ extension POGOProtos_Networking_Responses_Game_GameGmTemplates_Responses_Downloa
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.templateID)
-      case 2: try decoder.decodeSingularBytesField(value: &self.data)
+      case 2: try decoder.decodeSingularMessageField(value: &self._data)
       default: break
       }
     }
@@ -206,15 +215,15 @@ extension POGOProtos_Networking_Responses_Game_GameGmTemplates_Responses_Downloa
     if !self.templateID.isEmpty {
       try visitor.visitSingularStringField(value: self.templateID, fieldNumber: 1)
     }
-    if !self.data.isEmpty {
-      try visitor.visitSingularBytesField(value: self.data, fieldNumber: 2)
+    if let v = self._data {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Responses_Game_GameGmTemplates_Responses_DownloadGameMasterTemplatesResponse.ClientGameMasterTemplate, rhs: POGOProtos_Networking_Responses_Game_GameGmTemplates_Responses_DownloadGameMasterTemplatesResponse.ClientGameMasterTemplate) -> Bool {
     if lhs.templateID != rhs.templateID {return false}
-    if lhs.data != rhs.data {return false}
+    if lhs._data != rhs._data {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

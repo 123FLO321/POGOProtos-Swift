@@ -32,6 +32,8 @@ public struct POGOProtos_Map_Fort_IncidentLookup {
 
   public var fortLng: Double = 0
 
+  public var context: POGOProtos_Enums_EnumWrapper.InvasionContext = .pokestopIncident
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,6 +50,7 @@ extension POGOProtos_Map_Fort_IncidentLookup: SwiftProtobuf.Message, SwiftProtob
     2: .standard(proto: "fort_id"),
     3: .standard(proto: "fort_lat"),
     4: .standard(proto: "fort_lng"),
+    5: .same(proto: "context"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +60,7 @@ extension POGOProtos_Map_Fort_IncidentLookup: SwiftProtobuf.Message, SwiftProtob
       case 2: try decoder.decodeSingularStringField(value: &self.fortID)
       case 3: try decoder.decodeSingularDoubleField(value: &self.fortLat)
       case 4: try decoder.decodeSingularDoubleField(value: &self.fortLng)
+      case 5: try decoder.decodeSingularEnumField(value: &self.context)
       default: break
       }
     }
@@ -75,6 +79,9 @@ extension POGOProtos_Map_Fort_IncidentLookup: SwiftProtobuf.Message, SwiftProtob
     if self.fortLng != 0 {
       try visitor.visitSingularDoubleField(value: self.fortLng, fieldNumber: 4)
     }
+    if self.context != .pokestopIncident {
+      try visitor.visitSingularEnumField(value: self.context, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +90,7 @@ extension POGOProtos_Map_Fort_IncidentLookup: SwiftProtobuf.Message, SwiftProtob
     if lhs.fortID != rhs.fortID {return false}
     if lhs.fortLat != rhs.fortLat {return false}
     if lhs.fortLng != rhs.fortLng {return false}
+    if lhs.context != rhs.context {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -46,6 +46,7 @@ public struct POGOProtos_Networking_Responses_SetAvatarResponse {
     case slotNotAllowed // = 4
     case itemNotOwned // = 5
     case invalidAvatarType // = 6
+    case avatarReset // = 7
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -61,6 +62,7 @@ public struct POGOProtos_Networking_Responses_SetAvatarResponse {
       case 4: self = .slotNotAllowed
       case 5: self = .itemNotOwned
       case 6: self = .invalidAvatarType
+      case 7: self = .avatarReset
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -74,6 +76,7 @@ public struct POGOProtos_Networking_Responses_SetAvatarResponse {
       case .slotNotAllowed: return 4
       case .itemNotOwned: return 5
       case .invalidAvatarType: return 6
+      case .avatarReset: return 7
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -97,6 +100,7 @@ extension POGOProtos_Networking_Responses_SetAvatarResponse.Status: CaseIterable
     .slotNotAllowed,
     .itemNotOwned,
     .invalidAvatarType,
+    .avatarReset,
   ]
 }
 
@@ -150,5 +154,6 @@ extension POGOProtos_Networking_Responses_SetAvatarResponse.Status: SwiftProtobu
     4: .same(proto: "SLOT_NOT_ALLOWED"),
     5: .same(proto: "ITEM_NOT_OWNED"),
     6: .same(proto: "INVALID_AVATAR_TYPE"),
+    7: .same(proto: "AVATAR_RESET"),
   ]
 }

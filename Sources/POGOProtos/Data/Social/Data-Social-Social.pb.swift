@@ -29,9 +29,9 @@ public struct POGOProtos_Data_Social_Social {
   public enum AppKey: SwiftProtobuf.Enum {
     public typealias RawValue = Int
     case invalid // = 0
-    case ingress // = 1
-    case holoholo // = 2
-    case lexicon // = 3
+    case ingressDeleted // = 1
+    case holoholoDeleted // = 2
+    case lexiconDeleted // = 3
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -41,9 +41,9 @@ public struct POGOProtos_Data_Social_Social {
     public init?(rawValue: Int) {
       switch rawValue {
       case 0: self = .invalid
-      case 1: self = .ingress
-      case 2: self = .holoholo
-      case 3: self = .lexicon
+      case 1: self = .ingressDeleted
+      case 2: self = .holoholoDeleted
+      case 3: self = .lexiconDeleted
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -51,9 +51,9 @@ public struct POGOProtos_Data_Social_Social {
     public var rawValue: Int {
       switch self {
       case .invalid: return 0
-      case .ingress: return 1
-      case .holoholo: return 2
-      case .lexicon: return 3
+      case .ingressDeleted: return 1
+      case .holoholoDeleted: return 2
+      case .lexiconDeleted: return 3
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -69,9 +69,9 @@ extension POGOProtos_Data_Social_Social.AppKey: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   public static var allCases: [POGOProtos_Data_Social_Social.AppKey] = [
     .invalid,
-    .ingress,
-    .holoholo,
-    .lexicon,
+    .ingressDeleted,
+    .holoholoDeleted,
+    .lexiconDeleted,
   ]
 }
 
@@ -103,8 +103,8 @@ extension POGOProtos_Data_Social_Social: SwiftProtobuf.Message, SwiftProtobuf._M
 extension POGOProtos_Data_Social_Social.AppKey: SwiftProtobuf._ProtoNameProviding {
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "INVALID"),
-    1: .same(proto: "INGRESS"),
-    2: .same(proto: "HOLOHOLO"),
-    3: .same(proto: "LEXICON"),
+    1: .same(proto: "INGRESS_DELETED"),
+    2: .same(proto: "HOLOHOLO_DELETED"),
+    3: .same(proto: "LEXICON_DELETED"),
   ]
 }
