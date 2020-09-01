@@ -30,6 +30,8 @@ public enum POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf.Enum {
   case gen7 // = 6
   case gen8 // = 7
   case pokedexGenIDMeltan // = 1001
+  case pokedexGenIDMegaevo // = 1002
+  case pokedexGenIDAll // = 5001
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -47,6 +49,8 @@ public enum POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf.Enum {
     case 6: self = .gen7
     case 7: self = .gen8
     case 1001: self = .pokedexGenIDMeltan
+    case 1002: self = .pokedexGenIDMegaevo
+    case 5001: self = .pokedexGenIDAll
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -62,6 +66,8 @@ public enum POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf.Enum {
     case .gen7: return 6
     case .gen8: return 7
     case .pokedexGenIDMeltan: return 1001
+    case .pokedexGenIDMegaevo: return 1002
+    case .pokedexGenIDAll: return 5001
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -82,6 +88,8 @@ extension POGOProtos_Enums_PokedexGenerationId: CaseIterable {
     .gen7,
     .gen8,
     .pokedexGenIDMeltan,
+    .pokedexGenIDMegaevo,
+    .pokedexGenIDAll,
   ]
 }
 
@@ -100,5 +108,7 @@ extension POGOProtos_Enums_PokedexGenerationId: SwiftProtobuf._ProtoNameProvidin
     6: .same(proto: "GEN7"),
     7: .same(proto: "GEN8"),
     1001: .same(proto: "POKEDEX_GEN_ID_MELTAN"),
+    1002: .same(proto: "POKEDEX_GEN_ID_MEGAEVO"),
+    5001: .same(proto: "POKEDEX_GEN_ID_ALL"),
   ]
 }
