@@ -106,6 +106,14 @@ public struct POGOProtos_Data_Quests_QuestReward {
     set {_uniqueStorage()._reward = .sticker(newValue)}
   }
 
+  public var megaResource: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward {
+    get {
+      if case .megaResource(let v)? = _storage._reward {return v}
+      return POGOProtos_Data_Quests_QuestReward.PokemonCandyReward()
+    }
+    set {_uniqueStorage()._reward = .megaResource(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Reward: Equatable {
@@ -118,6 +126,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
     case pokemonEncounter(POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward)
     case pokecoin(Int32)
     case sticker(POGOProtos_Data_Quests_QuestReward.StickerReward)
+    case megaResource(POGOProtos_Data_Quests_QuestReward.PokemonCandyReward)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Quests_QuestReward.OneOf_Reward, rhs: POGOProtos_Data_Quests_QuestReward.OneOf_Reward) -> Bool {
@@ -131,6 +140,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case (.pokemonEncounter(let l), .pokemonEncounter(let r)): return l == r
       case (.pokecoin(let l), .pokecoin(let r)): return l == r
       case (.sticker(let l), .sticker(let r)): return l == r
+      case (.megaResource(let l), .megaResource(let r)): return l == r
       default: return false
       }
     }
@@ -149,6 +159,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
     case pokemonEncounter // = 7
     case pokecoin // = 8
     case sticker // = 11
+    case megaResource // = 12
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -167,6 +178,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case 7: self = .pokemonEncounter
       case 8: self = .pokecoin
       case 11: self = .sticker
+      case 12: self = .megaResource
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -183,6 +195,7 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case .pokemonEncounter: return 7
       case .pokecoin: return 8
       case .sticker: return 11
+      case .megaResource: return 12
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -322,6 +335,7 @@ extension POGOProtos_Data_Quests_QuestReward.TypeEnum: CaseIterable {
     .pokemonEncounter,
     .pokecoin,
     .sticker,
+    .megaResource,
   ]
 }
 
@@ -344,6 +358,7 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
     8: .standard(proto: "pokemon_encounter"),
     9: .same(proto: "pokecoin"),
     12: .same(proto: "sticker"),
+    13: .standard(proto: "mega_resource"),
   ]
 
   fileprivate class _StorageClass {
@@ -430,6 +445,14 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._reward = .sticker(v)}
+        case 13:
+          var v: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward?
+          if let current = _storage._reward {
+            try decoder.handleConflictingOneOf()
+            if case .megaResource(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._reward = .megaResource(v)}
         default: break
         }
       }
@@ -460,6 +483,8 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
         try visitor.visitSingularInt32Field(value: v, fieldNumber: 9)
       case .sticker(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
+      case .megaResource(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
       case nil: break
       }
     }
@@ -494,6 +519,7 @@ extension POGOProtos_Data_Quests_QuestReward.TypeEnum: SwiftProtobuf._ProtoNameP
     7: .same(proto: "POKEMON_ENCOUNTER"),
     8: .same(proto: "POKECOIN"),
     11: .same(proto: "STICKER"),
+    12: .same(proto: "MEGA_RESOURCE"),
   ]
 }
 
