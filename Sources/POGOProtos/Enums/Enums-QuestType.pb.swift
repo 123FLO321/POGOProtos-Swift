@@ -60,6 +60,7 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
   case questBuddyWalk // = 37
   case questBuddyYatta // = 38
   case questUseIncense // = 39
+  case questMegaEvolvePokemon // = 43
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -107,6 +108,7 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case 37: self = .questBuddyWalk
     case 38: self = .questBuddyYatta
     case 39: self = .questUseIncense
+    case 43: self = .questMegaEvolvePokemon
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -152,6 +154,7 @@ public enum POGOProtos_Enums_QuestType: SwiftProtobuf.Enum {
     case .questBuddyWalk: return 37
     case .questBuddyYatta: return 38
     case .questUseIncense: return 39
+    case .questMegaEvolvePokemon: return 43
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -202,6 +205,7 @@ extension POGOProtos_Enums_QuestType: CaseIterable {
     .questBuddyWalk,
     .questBuddyYatta,
     .questUseIncense,
+    .questMegaEvolvePokemon,
   ]
 }
 
@@ -250,5 +254,6 @@ extension POGOProtos_Enums_QuestType: SwiftProtobuf._ProtoNameProviding {
     37: .same(proto: "QUEST_BUDDY_WALK"),
     38: .same(proto: "QUEST_BUDDY_YATTA"),
     39: .same(proto: "QUEST_USE_INCENSE"),
+    43: .same(proto: "QUEST_MEGA_EVOLVE_POKEMON"),
   ]
 }
