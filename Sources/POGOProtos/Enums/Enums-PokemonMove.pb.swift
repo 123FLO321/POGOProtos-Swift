@@ -304,6 +304,9 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
   case vCreate // = 342
   case leafStorm // = 343
   case triAttack // = 344
+  case gustFast // = 345
+  case incinerateFast // = 346
+  case darkVoid // = 347
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -595,6 +598,9 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case 342: self = .vCreate
     case 343: self = .leafStorm
     case 344: self = .triAttack
+    case 345: self = .gustFast
+    case 346: self = .incinerateFast
+    case 347: self = .darkVoid
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -884,6 +890,9 @@ public enum POGOProtos_Enums_PokemonMove: SwiftProtobuf.Enum {
     case .vCreate: return 342
     case .leafStorm: return 343
     case .triAttack: return 344
+    case .gustFast: return 345
+    case .incinerateFast: return 346
+    case .darkVoid: return 347
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1178,6 +1187,9 @@ extension POGOProtos_Enums_PokemonMove: CaseIterable {
     .vCreate,
     .leafStorm,
     .triAttack,
+    .gustFast,
+    .incinerateFast,
+    .darkVoid,
   ]
 }
 
@@ -1470,5 +1482,8 @@ extension POGOProtos_Enums_PokemonMove: SwiftProtobuf._ProtoNameProviding {
     342: .same(proto: "V_CREATE"),
     343: .same(proto: "LEAF_STORM"),
     344: .same(proto: "TRI_ATTACK"),
+    345: .same(proto: "GUST_FAST"),
+    346: .same(proto: "INCINERATE_FAST"),
+    347: .same(proto: "DARK_VOID"),
   ]
 }
