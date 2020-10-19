@@ -33,6 +33,15 @@ public struct POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse {
   /// Clears the value of `featureFlags`. Subsequent reads from it will return its default value.
   public mutating func clearFeatureFlags() {_uniqueStorage()._featureFlags = nil}
 
+  public var globalSettings: POGOProtos_Settings_SocialClientGlobalSettings {
+    get {return _storage._globalSettings ?? POGOProtos_Settings_SocialClientGlobalSettings()}
+    set {_uniqueStorage()._globalSettings = newValue}
+  }
+  /// Returns true if `globalSettings` has been explicitly set.
+  public var hasGlobalSettings: Bool {return _storage._globalSettings != nil}
+  /// Clears the value of `globalSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearGlobalSettings() {_uniqueStorage()._globalSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct SocialClientFeatures {
@@ -148,10 +157,12 @@ extension POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse: SwiftProtobuf
   public static let protoMessageName: String = _protobuf_package + ".GetClientFeatureFlagsResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "feature_flags"),
+    2: .standard(proto: "global_settings"),
   ]
 
   fileprivate class _StorageClass {
     var _featureFlags: POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse.SocialClientFeatures? = nil
+    var _globalSettings: POGOProtos_Settings_SocialClientGlobalSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -159,6 +170,7 @@ extension POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse: SwiftProtobuf
 
     init(copying source: _StorageClass) {
       _featureFlags = source._featureFlags
+      _globalSettings = source._globalSettings
     }
   }
 
@@ -175,6 +187,7 @@ extension POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse: SwiftProtobuf
       while let fieldNumber = try decoder.nextFieldNumber() {
         switch fieldNumber {
         case 1: try decoder.decodeSingularMessageField(value: &_storage._featureFlags)
+        case 2: try decoder.decodeSingularMessageField(value: &_storage._globalSettings)
         default: break
         }
       }
@@ -186,6 +199,9 @@ extension POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse: SwiftProtobuf
       if let v = _storage._featureFlags {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
       }
+      if let v = _storage._globalSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -196,6 +212,7 @@ extension POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse: SwiftProtobuf
         let _storage = _args.0
         let rhs_storage = _args.1
         if _storage._featureFlags != rhs_storage._featureFlags {return false}
+        if _storage._globalSettings != rhs_storage._globalSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

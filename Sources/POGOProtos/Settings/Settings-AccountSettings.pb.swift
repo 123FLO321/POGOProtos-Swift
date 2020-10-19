@@ -30,6 +30,8 @@ public struct POGOProtos_Settings_AccountSettings {
 
   public var lastPlayedDateConsent: POGOProtos_Settings_SocialSettings.ConsentStatus = .unknown
 
+  public var codenameConsent: POGOProtos_Settings_SocialSettings.ConsentStatus = .unknown
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -45,6 +47,7 @@ extension POGOProtos_Settings_AccountSettings: SwiftProtobuf.Message, SwiftProto
     1: .standard(proto: "opt_out_social_graph_import"),
     2: .standard(proto: "online_status_consent"),
     3: .standard(proto: "last_played_date_consent"),
+    4: .standard(proto: "codename_consent"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -53,6 +56,7 @@ extension POGOProtos_Settings_AccountSettings: SwiftProtobuf.Message, SwiftProto
       case 1: try decoder.decodeSingularBoolField(value: &self.optOutSocialGraphImport)
       case 2: try decoder.decodeSingularEnumField(value: &self.onlineStatusConsent)
       case 3: try decoder.decodeSingularEnumField(value: &self.lastPlayedDateConsent)
+      case 4: try decoder.decodeSingularEnumField(value: &self.codenameConsent)
       default: break
       }
     }
@@ -68,6 +72,9 @@ extension POGOProtos_Settings_AccountSettings: SwiftProtobuf.Message, SwiftProto
     if self.lastPlayedDateConsent != .unknown {
       try visitor.visitSingularEnumField(value: self.lastPlayedDateConsent, fieldNumber: 3)
     }
+    if self.codenameConsent != .unknown {
+      try visitor.visitSingularEnumField(value: self.codenameConsent, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -75,6 +82,7 @@ extension POGOProtos_Settings_AccountSettings: SwiftProtobuf.Message, SwiftProto
     if lhs.optOutSocialGraphImport != rhs.optOutSocialGraphImport {return false}
     if lhs.onlineStatusConsent != rhs.onlineStatusConsent {return false}
     if lhs.lastPlayedDateConsent != rhs.lastPlayedDateConsent {return false}
+    if lhs.codenameConsent != rhs.codenameConsent {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

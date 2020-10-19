@@ -28,12 +28,6 @@ public struct POGOProtos_Data_Player_Currency {
 
   public var quantity: Int32 = 0
 
-  public var fiatPurchasedQuantity: Int32 = 0
-
-  public var fiatCurrencyType: String = String()
-
-  public var fiatCurrencyCostE6: Int64 = 0
-
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,9 +42,6 @@ extension POGOProtos_Data_Player_Currency: SwiftProtobuf.Message, SwiftProtobuf.
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "currency_type"),
     2: .same(proto: "quantity"),
-    3: .standard(proto: "fiat_purchased_quantity"),
-    4: .standard(proto: "fiat_currency_type"),
-    5: .standard(proto: "fiat_currency_cost_e6"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -58,9 +49,6 @@ extension POGOProtos_Data_Player_Currency: SwiftProtobuf.Message, SwiftProtobuf.
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.currencyType)
       case 2: try decoder.decodeSingularInt32Field(value: &self.quantity)
-      case 3: try decoder.decodeSingularInt32Field(value: &self.fiatPurchasedQuantity)
-      case 4: try decoder.decodeSingularStringField(value: &self.fiatCurrencyType)
-      case 5: try decoder.decodeSingularInt64Field(value: &self.fiatCurrencyCostE6)
       default: break
       }
     }
@@ -73,24 +61,12 @@ extension POGOProtos_Data_Player_Currency: SwiftProtobuf.Message, SwiftProtobuf.
     if self.quantity != 0 {
       try visitor.visitSingularInt32Field(value: self.quantity, fieldNumber: 2)
     }
-    if self.fiatPurchasedQuantity != 0 {
-      try visitor.visitSingularInt32Field(value: self.fiatPurchasedQuantity, fieldNumber: 3)
-    }
-    if !self.fiatCurrencyType.isEmpty {
-      try visitor.visitSingularStringField(value: self.fiatCurrencyType, fieldNumber: 4)
-    }
-    if self.fiatCurrencyCostE6 != 0 {
-      try visitor.visitSingularInt64Field(value: self.fiatCurrencyCostE6, fieldNumber: 5)
-    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Player_Currency, rhs: POGOProtos_Data_Player_Currency) -> Bool {
     if lhs.currencyType != rhs.currencyType {return false}
     if lhs.quantity != rhs.quantity {return false}
-    if lhs.fiatPurchasedQuantity != rhs.fiatPurchasedQuantity {return false}
-    if lhs.fiatCurrencyType != rhs.fiatCurrencyType {return false}
-    if lhs.fiatCurrencyCostE6 != rhs.fiatCurrencyCostE6 {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

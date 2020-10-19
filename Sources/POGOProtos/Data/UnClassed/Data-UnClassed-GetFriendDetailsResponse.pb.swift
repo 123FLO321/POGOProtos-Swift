@@ -132,6 +132,11 @@ public struct POGOProtos_Data_UnClassed_GetFriendDetailsResponse {
     /// Clears the value of `callingGameData`. Subsequent reads from it will return its default value.
     public mutating func clearCallingGameData() {_uniqueStorage()._callingGameData = nil}
 
+    public var invitationStatus: POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.InvitationStatus {
+      get {return _storage._invitationStatus}
+      set {_uniqueStorage()._invitationStatus = newValue}
+    }
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -218,6 +223,34 @@ public struct POGOProtos_Data_UnClassed_GetFriendDetailsResponse {
     // methods supported on all messages.
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public enum InvitationStatus: SwiftProtobuf.Enum {
+      public typealias RawValue = Int
+      case unset // = 0
+      case invited // = 1
+      case UNRECOGNIZED(Int)
+
+      public init() {
+        self = .unset
+      }
+
+      public init?(rawValue: Int) {
+        switch rawValue {
+        case 0: self = .unset
+        case 1: self = .invited
+        default: self = .UNRECOGNIZED(rawValue)
+        }
+      }
+
+      public var rawValue: Int {
+        switch self {
+        case .unset: return 0
+        case .invited: return 1
+        case .UNRECOGNIZED(let i): return i
+        }
+      }
+
+    }
 
     public enum OnlineStatus: SwiftProtobuf.Enum {
       public typealias RawValue = Int
@@ -361,6 +394,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
     2: .same(proto: "profile"),
     3: .standard(proto: "player_status"),
     4: .standard(proto: "calling_game_data"),
+    5: .standard(proto: "invitation_status"),
   ]
 
   fileprivate class _StorageClass {
@@ -368,6 +402,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
     var _profile: POGOProtos_Data_UnClassed_GetProfileResponse.ProfileDetails? = nil
     var _playerStatus: POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlayerStatusDetailsProto? = nil
     var _callingGameData: POGOProtos_Data_Friends_FriendDetails? = nil
+    var _invitationStatus: POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.InvitationStatus = .unset
 
     static let defaultInstance = _StorageClass()
 
@@ -378,6 +413,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
       _profile = source._profile
       _playerStatus = source._playerStatus
       _callingGameData = source._callingGameData
+      _invitationStatus = source._invitationStatus
     }
   }
 
@@ -397,6 +433,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
         case 2: try decoder.decodeSingularMessageField(value: &_storage._profile)
         case 3: try decoder.decodeSingularMessageField(value: &_storage._playerStatus)
         case 4: try decoder.decodeSingularMessageField(value: &_storage._callingGameData)
+        case 5: try decoder.decodeSingularEnumField(value: &_storage._invitationStatus)
         default: break
         }
       }
@@ -417,6 +454,9 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
       if let v = _storage._callingGameData {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
       }
+      if _storage._invitationStatus != .unset {
+        try visitor.visitSingularEnumField(value: _storage._invitationStatus, fieldNumber: 5)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -430,6 +470,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
         if _storage._profile != rhs_storage._profile {return false}
         if _storage._playerStatus != rhs_storage._playerStatus {return false}
         if _storage._callingGameData != rhs_storage._callingGameData {return false}
+        if _storage._invitationStatus != rhs_storage._invitationStatus {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -551,6 +592,13 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum: Swift
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.InvitationStatus: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "INVITATION_STATUS_UNSET"),
+    1: .same(proto: "INVITED"),
+  ]
 }
 
 extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.OnlineStatus: SwiftProtobuf._ProtoNameProviding {
