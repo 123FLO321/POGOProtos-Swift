@@ -2106,10 +2106,14 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case sirfetchdNormal // = 2510
   case sirfetchdShadow // = 2511
   case sirfetchdPurified // = 2512
+  case runerigusNormal // = 2516
+  case runerigusShadow // = 2517
+  case runerigusPurified // = 2518
   case slowpokeGalarian // = 2582
   case slowbroGalarian // = 2583
   case laprasCostume2020 // = 2585
   case gengarCostume2020 // = 2586
+  case sableyeCostume2020 // = 2668
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -4203,10 +4207,14 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 2510: self = .sirfetchdNormal
     case 2511: self = .sirfetchdShadow
     case 2512: self = .sirfetchdPurified
+    case 2516: self = .runerigusNormal
+    case 2517: self = .runerigusShadow
+    case 2518: self = .runerigusPurified
     case 2582: self = .slowpokeGalarian
     case 2583: self = .slowbroGalarian
     case 2585: self = .laprasCostume2020
     case 2586: self = .gengarCostume2020
+    case 2668: self = .sableyeCostume2020
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -6310,10 +6318,14 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .sirfetchdNormal: return 2510
     case .sirfetchdShadow: return 2511
     case .sirfetchdPurified: return 2512
+    case .runerigusNormal: return 2516
+    case .runerigusShadow: return 2517
+    case .runerigusPurified: return 2518
     case .slowpokeGalarian: return 2582
     case .slowbroGalarian: return 2583
     case .laprasCostume2020: return 2585
     case .gengarCostume2020: return 2586
+    case .sableyeCostume2020: return 2668
     case .UNRECOGNIZED(let i): return i
     default: break
     }
@@ -8415,10 +8427,14 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .sirfetchdNormal,
     .sirfetchdShadow,
     .sirfetchdPurified,
+    .runerigusNormal,
+    .runerigusShadow,
+    .runerigusPurified,
     .slowpokeGalarian,
     .slowbroGalarian,
     .laprasCostume2020,
     .gengarCostume2020,
+    .sableyeCostume2020,
   ]
 }
 
@@ -10513,9 +10529,13 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     2510: .same(proto: "SIRFETCHD_NORMAL"),
     2511: .same(proto: "SIRFETCHD_SHADOW"),
     2512: .same(proto: "SIRFETCHD_PURIFIED"),
+    2516: .same(proto: "RUNERIGUS_NORMAL"),
+    2517: .same(proto: "RUNERIGUS_SHADOW"),
+    2518: .same(proto: "RUNERIGUS_PURIFIED"),
     2582: .same(proto: "SLOWPOKE_GALARIAN"),
     2583: .same(proto: "SLOWBRO_GALARIAN"),
     2585: .same(proto: "LAPRAS_COSTUME_2020"),
     2586: .same(proto: "GENGAR_COSTUME_2020"),
+    2668: .same(proto: "SABLEYE_COSTUME_2020"),
   ]
 }
