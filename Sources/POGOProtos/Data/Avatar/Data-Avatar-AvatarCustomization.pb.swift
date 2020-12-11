@@ -199,6 +199,7 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
     case necklace // = 12
     case skin // = 13
     case pose // = 14
+    case face // = 15
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -222,6 +223,7 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
       case 12: self = .necklace
       case 13: self = .skin
       case 14: self = .pose
+      case 15: self = .face
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -243,6 +245,7 @@ public struct POGOProtos_Data_Avatar_AvatarCustomization {
       case .necklace: return 12
       case .skin: return 13
       case .pose: return 14
+      case .face: return 15
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -295,6 +298,7 @@ extension POGOProtos_Data_Avatar_AvatarCustomization.Slot: CaseIterable {
     .necklace,
     .skin,
     .pose,
+    .face,
   ]
 }
 
@@ -529,5 +533,6 @@ extension POGOProtos_Data_Avatar_AvatarCustomization.Slot: SwiftProtobuf._ProtoN
     12: .same(proto: "NECKLACE"),
     13: .same(proto: "SKIN"),
     14: .same(proto: "POSE"),
+    15: .same(proto: "FACE"),
   ]
 }

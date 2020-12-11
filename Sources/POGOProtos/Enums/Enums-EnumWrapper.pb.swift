@@ -132,6 +132,42 @@ public struct POGOProtos_Enums_EnumWrapper {
     case characterBalloonGruntMale // = 52
     case characterGruntbFemale // = 53
     case characterGruntbMale // = 54
+    case characterBugBalloonGruntFemale // = 55
+    case characterBugBalloonGruntMale // = 56
+    case characterDarkBalloonGruntFemale // = 57
+    case characterDarkBalloonGruntMale // = 58
+    case characterDragonBalloonGruntFemale // = 59
+    case characterDragonBalloonGruntMale // = 60
+    case characterFairyBalloonGruntFemale // = 61
+    case characterFairyBalloonGruntMale // = 62
+    case characterFightingBalloonGruntFemale // = 63
+    case characterFightingBalloonGruntMale // = 64
+    case characterFireBalloonGruntFemale // = 65
+    case characterFireBalloonGruntMale // = 66
+    case characterFlyingBalloonGruntFemale // = 67
+    case characterFlyingBalloonGruntMale // = 68
+    case characterGrassBalloonGruntFemale // = 69
+    case characterGrassBalloonGruntMale // = 70
+    case characterGroundBalloonGruntFemale // = 71
+    case characterGroundBalloonGruntMale // = 72
+    case characterIceBalloonGruntFemale // = 73
+    case characterIceBalloonGruntMale // = 74
+    case characterMetalBalloonGruntFemale // = 75
+    case characterMetalBalloonGruntMale // = 76
+    case characterNormalBalloonGruntFemale // = 77
+    case characterNormalBalloonGruntMale // = 78
+    case characterPoisonBalloonGruntFemale // = 79
+    case characterPoisonBalloonGruntMale // = 80
+    case characterPsychicBalloonGruntFemale // = 81
+    case characterPsychicBalloonGruntMale // = 82
+    case characterRockBalloonGruntFemale // = 83
+    case characterRockBalloonGruntMale // = 84
+    case characterWaterBalloonGruntFemale // = 85
+    case characterWaterBalloonGruntMale // = 86
+    case characterGhostBalloonGruntFemale // = 87
+    case characterGhostBalloonGruntMale // = 88
+    case characterElectricBalloonGruntFemale // = 89
+    case characterElectricBalloonGruntMale // = 90
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -195,6 +231,42 @@ public struct POGOProtos_Enums_EnumWrapper {
       case 52: self = .characterBalloonGruntMale
       case 53: self = .characterGruntbFemale
       case 54: self = .characterGruntbMale
+      case 55: self = .characterBugBalloonGruntFemale
+      case 56: self = .characterBugBalloonGruntMale
+      case 57: self = .characterDarkBalloonGruntFemale
+      case 58: self = .characterDarkBalloonGruntMale
+      case 59: self = .characterDragonBalloonGruntFemale
+      case 60: self = .characterDragonBalloonGruntMale
+      case 61: self = .characterFairyBalloonGruntFemale
+      case 62: self = .characterFairyBalloonGruntMale
+      case 63: self = .characterFightingBalloonGruntFemale
+      case 64: self = .characterFightingBalloonGruntMale
+      case 65: self = .characterFireBalloonGruntFemale
+      case 66: self = .characterFireBalloonGruntMale
+      case 67: self = .characterFlyingBalloonGruntFemale
+      case 68: self = .characterFlyingBalloonGruntMale
+      case 69: self = .characterGrassBalloonGruntFemale
+      case 70: self = .characterGrassBalloonGruntMale
+      case 71: self = .characterGroundBalloonGruntFemale
+      case 72: self = .characterGroundBalloonGruntMale
+      case 73: self = .characterIceBalloonGruntFemale
+      case 74: self = .characterIceBalloonGruntMale
+      case 75: self = .characterMetalBalloonGruntFemale
+      case 76: self = .characterMetalBalloonGruntMale
+      case 77: self = .characterNormalBalloonGruntFemale
+      case 78: self = .characterNormalBalloonGruntMale
+      case 79: self = .characterPoisonBalloonGruntFemale
+      case 80: self = .characterPoisonBalloonGruntMale
+      case 81: self = .characterPsychicBalloonGruntFemale
+      case 82: self = .characterPsychicBalloonGruntMale
+      case 83: self = .characterRockBalloonGruntFemale
+      case 84: self = .characterRockBalloonGruntMale
+      case 85: self = .characterWaterBalloonGruntFemale
+      case 86: self = .characterWaterBalloonGruntMale
+      case 87: self = .characterGhostBalloonGruntFemale
+      case 88: self = .characterGhostBalloonGruntMale
+      case 89: self = .characterElectricBalloonGruntFemale
+      case 90: self = .characterElectricBalloonGruntMale
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -256,6 +328,42 @@ public struct POGOProtos_Enums_EnumWrapper {
       case .characterBalloonGruntMale: return 52
       case .characterGruntbFemale: return 53
       case .characterGruntbMale: return 54
+      case .characterBugBalloonGruntFemale: return 55
+      case .characterBugBalloonGruntMale: return 56
+      case .characterDarkBalloonGruntFemale: return 57
+      case .characterDarkBalloonGruntMale: return 58
+      case .characterDragonBalloonGruntFemale: return 59
+      case .characterDragonBalloonGruntMale: return 60
+      case .characterFairyBalloonGruntFemale: return 61
+      case .characterFairyBalloonGruntMale: return 62
+      case .characterFightingBalloonGruntFemale: return 63
+      case .characterFightingBalloonGruntMale: return 64
+      case .characterFireBalloonGruntFemale: return 65
+      case .characterFireBalloonGruntMale: return 66
+      case .characterFlyingBalloonGruntFemale: return 67
+      case .characterFlyingBalloonGruntMale: return 68
+      case .characterGrassBalloonGruntFemale: return 69
+      case .characterGrassBalloonGruntMale: return 70
+      case .characterGroundBalloonGruntFemale: return 71
+      case .characterGroundBalloonGruntMale: return 72
+      case .characterIceBalloonGruntFemale: return 73
+      case .characterIceBalloonGruntMale: return 74
+      case .characterMetalBalloonGruntFemale: return 75
+      case .characterMetalBalloonGruntMale: return 76
+      case .characterNormalBalloonGruntFemale: return 77
+      case .characterNormalBalloonGruntMale: return 78
+      case .characterPoisonBalloonGruntFemale: return 79
+      case .characterPoisonBalloonGruntMale: return 80
+      case .characterPsychicBalloonGruntFemale: return 81
+      case .characterPsychicBalloonGruntMale: return 82
+      case .characterRockBalloonGruntFemale: return 83
+      case .characterRockBalloonGruntMale: return 84
+      case .characterWaterBalloonGruntFemale: return 85
+      case .characterWaterBalloonGruntMale: return 86
+      case .characterGhostBalloonGruntFemale: return 87
+      case .characterGhostBalloonGruntMale: return 88
+      case .characterElectricBalloonGruntFemale: return 89
+      case .characterElectricBalloonGruntMale: return 90
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -448,6 +556,42 @@ extension POGOProtos_Enums_EnumWrapper.InvasionCharacter: CaseIterable {
     .characterBalloonGruntMale,
     .characterGruntbFemale,
     .characterGruntbMale,
+    .characterBugBalloonGruntFemale,
+    .characterBugBalloonGruntMale,
+    .characterDarkBalloonGruntFemale,
+    .characterDarkBalloonGruntMale,
+    .characterDragonBalloonGruntFemale,
+    .characterDragonBalloonGruntMale,
+    .characterFairyBalloonGruntFemale,
+    .characterFairyBalloonGruntMale,
+    .characterFightingBalloonGruntFemale,
+    .characterFightingBalloonGruntMale,
+    .characterFireBalloonGruntFemale,
+    .characterFireBalloonGruntMale,
+    .characterFlyingBalloonGruntFemale,
+    .characterFlyingBalloonGruntMale,
+    .characterGrassBalloonGruntFemale,
+    .characterGrassBalloonGruntMale,
+    .characterGroundBalloonGruntFemale,
+    .characterGroundBalloonGruntMale,
+    .characterIceBalloonGruntFemale,
+    .characterIceBalloonGruntMale,
+    .characterMetalBalloonGruntFemale,
+    .characterMetalBalloonGruntMale,
+    .characterNormalBalloonGruntFemale,
+    .characterNormalBalloonGruntMale,
+    .characterPoisonBalloonGruntFemale,
+    .characterPoisonBalloonGruntMale,
+    .characterPsychicBalloonGruntFemale,
+    .characterPsychicBalloonGruntMale,
+    .characterRockBalloonGruntFemale,
+    .characterRockBalloonGruntMale,
+    .characterWaterBalloonGruntFemale,
+    .characterWaterBalloonGruntMale,
+    .characterGhostBalloonGruntFemale,
+    .characterGhostBalloonGruntMale,
+    .characterElectricBalloonGruntFemale,
+    .characterElectricBalloonGruntMale,
   ]
 }
 
@@ -579,6 +723,42 @@ extension POGOProtos_Enums_EnumWrapper.InvasionCharacter: SwiftProtobuf._ProtoNa
     52: .same(proto: "CHARACTER_BALLOON_GRUNT_MALE"),
     53: .same(proto: "CHARACTER_GRUNTB_FEMALE"),
     54: .same(proto: "CHARACTER_GRUNTB_MALE"),
+    55: .same(proto: "CHARACTER_BUG_BALLOON_GRUNT_FEMALE"),
+    56: .same(proto: "CHARACTER_BUG_BALLOON_GRUNT_MALE"),
+    57: .same(proto: "CHARACTER_DARK_BALLOON_GRUNT_FEMALE"),
+    58: .same(proto: "CHARACTER_DARK_BALLOON_GRUNT_MALE"),
+    59: .same(proto: "CHARACTER_DRAGON_BALLOON_GRUNT_FEMALE"),
+    60: .same(proto: "CHARACTER_DRAGON_BALLOON_GRUNT_MALE"),
+    61: .same(proto: "CHARACTER_FAIRY_BALLOON_GRUNT_FEMALE"),
+    62: .same(proto: "CHARACTER_FAIRY_BALLOON_GRUNT_MALE"),
+    63: .same(proto: "CHARACTER_FIGHTING_BALLOON_GRUNT_FEMALE"),
+    64: .same(proto: "CHARACTER_FIGHTING_BALLOON_GRUNT_MALE"),
+    65: .same(proto: "CHARACTER_FIRE_BALLOON_GRUNT_FEMALE"),
+    66: .same(proto: "CHARACTER_FIRE_BALLOON_GRUNT_MALE"),
+    67: .same(proto: "CHARACTER_FLYING_BALLOON_GRUNT_FEMALE"),
+    68: .same(proto: "CHARACTER_FLYING_BALLOON_GRUNT_MALE"),
+    69: .same(proto: "CHARACTER_GRASS_BALLOON_GRUNT_FEMALE"),
+    70: .same(proto: "CHARACTER_GRASS_BALLOON_GRUNT_MALE"),
+    71: .same(proto: "CHARACTER_GROUND_BALLOON_GRUNT_FEMALE"),
+    72: .same(proto: "CHARACTER_GROUND_BALLOON_GRUNT_MALE"),
+    73: .same(proto: "CHARACTER_ICE_BALLOON_GRUNT_FEMALE"),
+    74: .same(proto: "CHARACTER_ICE_BALLOON_GRUNT_MALE"),
+    75: .same(proto: "CHARACTER_METAL_BALLOON_GRUNT_FEMALE"),
+    76: .same(proto: "CHARACTER_METAL_BALLOON_GRUNT_MALE"),
+    77: .same(proto: "CHARACTER_NORMAL_BALLOON_GRUNT_FEMALE"),
+    78: .same(proto: "CHARACTER_NORMAL_BALLOON_GRUNT_MALE"),
+    79: .same(proto: "CHARACTER_POISON_BALLOON_GRUNT_FEMALE"),
+    80: .same(proto: "CHARACTER_POISON_BALLOON_GRUNT_MALE"),
+    81: .same(proto: "CHARACTER_PSYCHIC_BALLOON_GRUNT_FEMALE"),
+    82: .same(proto: "CHARACTER_PSYCHIC_BALLOON_GRUNT_MALE"),
+    83: .same(proto: "CHARACTER_ROCK_BALLOON_GRUNT_FEMALE"),
+    84: .same(proto: "CHARACTER_ROCK_BALLOON_GRUNT_MALE"),
+    85: .same(proto: "CHARACTER_WATER_BALLOON_GRUNT_FEMALE"),
+    86: .same(proto: "CHARACTER_WATER_BALLOON_GRUNT_MALE"),
+    87: .same(proto: "CHARACTER_GHOST_BALLOON_GRUNT_FEMALE"),
+    88: .same(proto: "CHARACTER_GHOST_BALLOON_GRUNT_MALE"),
+    89: .same(proto: "CHARACTER_ELECTRIC_BALLOON_GRUNT_FEMALE"),
+    90: .same(proto: "CHARACTER_ELECTRIC_BALLOON_GRUNT_MALE"),
   ]
 }
 

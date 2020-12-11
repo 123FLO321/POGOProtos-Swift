@@ -139,6 +139,11 @@ public struct POGOProtos_Data_Player_PlayerAvatar {
     set {_uniqueStorage()._avatarPose = newValue}
   }
 
+  public var avatarFace: String {
+    get {return _storage._avatarFace}
+    set {_uniqueStorage()._avatarFace = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -176,6 +181,7 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
     22: .standard(proto: "avatar_necklace"),
     23: .standard(proto: "avatar_skin"),
     24: .standard(proto: "avatar_pose"),
+    25: .standard(proto: "avatar_face"),
   ]
 
   fileprivate class _StorageClass {
@@ -202,6 +208,7 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
     var _avatarNecklace: String = String()
     var _avatarSkin: String = String()
     var _avatarPose: String = String()
+    var _avatarFace: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -231,6 +238,7 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
       _avatarNecklace = source._avatarNecklace
       _avatarSkin = source._avatarSkin
       _avatarPose = source._avatarPose
+      _avatarFace = source._avatarFace
     }
   }
 
@@ -269,6 +277,7 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
         case 22: try decoder.decodeSingularStringField(value: &_storage._avatarNecklace)
         case 23: try decoder.decodeSingularStringField(value: &_storage._avatarSkin)
         case 24: try decoder.decodeSingularStringField(value: &_storage._avatarPose)
+        case 25: try decoder.decodeSingularStringField(value: &_storage._avatarFace)
         default: break
         }
       }
@@ -346,6 +355,9 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
       if !_storage._avatarPose.isEmpty {
         try visitor.visitSingularStringField(value: _storage._avatarPose, fieldNumber: 24)
       }
+      if !_storage._avatarFace.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._avatarFace, fieldNumber: 25)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -378,6 +390,7 @@ extension POGOProtos_Data_Player_PlayerAvatar: SwiftProtobuf.Message, SwiftProto
         if _storage._avatarNecklace != rhs_storage._avatarNecklace {return false}
         if _storage._avatarSkin != rhs_storage._avatarSkin {return false}
         if _storage._avatarPose != rhs_storage._avatarPose {return false}
+        if _storage._avatarFace != rhs_storage._avatarFace {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -289,7 +289,92 @@ public struct POGOProtos_Settings_Master_PokemonSettings {
     set {_uniqueStorage()._eliteCinematicMove = newValue}
   }
 
+  public var tempEvoOverrides: [POGOProtos_Settings_Master_PokemonSettings.TempEvoOverride] {
+    get {return _storage._tempEvoOverrides}
+    set {_uniqueStorage()._tempEvoOverrides = newValue}
+  }
+
+  public var buddyWalkedMegaEnergyAward: Int32 {
+    get {return _storage._buddyWalkedMegaEnergyAward}
+    set {_uniqueStorage()._buddyWalkedMegaEnergyAward = newValue}
+  }
+
+  public var disableTransferToPokemonHome: Bool {
+    get {return _storage._disableTransferToPokemonHome}
+    set {_uniqueStorage()._disableTransferToPokemonHome = newValue}
+  }
+
+  public var raidBossDistanceOffset: Float {
+    get {return _storage._raidBossDistanceOffset}
+    set {_uniqueStorage()._raidBossDistanceOffset = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public struct TempEvoOverride {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var tempEvoID: POGOProtos_Enums_TemporaryEvolutionId = .evolutionUnset
+
+    public var stats: POGOProtos_Settings_Master_Pokemon_StatsAttributes {
+      get {return _stats ?? POGOProtos_Settings_Master_Pokemon_StatsAttributes()}
+      set {_stats = newValue}
+    }
+    /// Returns true if `stats` has been explicitly set.
+    public var hasStats: Bool {return self._stats != nil}
+    /// Clears the value of `stats`. Subsequent reads from it will return its default value.
+    public mutating func clearStats() {self._stats = nil}
+
+    public var averageHeightM: Float = 0
+
+    public var averageWeightKg: Float = 0
+
+    public var typeOverride1: POGOProtos_Enums_PokemonType = .none
+
+    public var typeOverride2: POGOProtos_Enums_PokemonType = .none
+
+    public var cpMultiplierOverride: Float = 0
+
+    public var camera: POGOProtos_Settings_Master_Pokemon_CameraAttributes {
+      get {return _camera ?? POGOProtos_Settings_Master_Pokemon_CameraAttributes()}
+      set {_camera = newValue}
+    }
+    /// Returns true if `camera` has been explicitly set.
+    public var hasCamera: Bool {return self._camera != nil}
+    /// Clears the value of `camera`. Subsequent reads from it will return its default value.
+    public mutating func clearCamera() {self._camera = nil}
+
+    public var encounter: POGOProtos_Settings_Master_Pokemon_EncounterAttributes {
+      get {return _encounter ?? POGOProtos_Settings_Master_Pokemon_EncounterAttributes()}
+      set {_encounter = newValue}
+    }
+    /// Returns true if `encounter` has been explicitly set.
+    public var hasEncounter: Bool {return self._encounter != nil}
+    /// Clears the value of `encounter`. Subsequent reads from it will return its default value.
+    public mutating func clearEncounter() {self._encounter = nil}
+
+    public var modelScaleV2: Float = 0
+
+    public var modelHeight: Float = 0
+
+    public var buddyOffsetMale: [Float] = []
+
+    public var buddyOffsetFemale: [Float] = []
+
+    public var buddyPortraitOffset: [Float] = []
+
+    public var raidBossDistanceOffset: Float = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+
+    fileprivate var _stats: POGOProtos_Settings_Master_Pokemon_StatsAttributes? = nil
+    fileprivate var _camera: POGOProtos_Settings_Master_Pokemon_CameraAttributes? = nil
+    fileprivate var _encounter: POGOProtos_Settings_Master_Pokemon_EncounterAttributes? = nil
+  }
 
   public struct PokemonThirdMoveAttributes {
     // SwiftProtobuf.Message conformance is added in an extension below. See the
@@ -384,6 +469,10 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     48: .standard(proto: "additional_cp_boost_level"),
     49: .standard(proto: "elite_quick_move"),
     50: .standard(proto: "elite_cinematic_move"),
+    51: .standard(proto: "temp_evo_overrides"),
+    52: .standard(proto: "buddy_walked_mega_energy_award"),
+    61: .standard(proto: "disable_transfer_to_pokemon_home"),
+    62: .standard(proto: "raid_boss_distance_offset"),
   ]
 
   fileprivate class _StorageClass {
@@ -436,6 +525,10 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
     var _additionalCpBoostLevel: Int32 = 0
     var _eliteQuickMove: [POGOProtos_Enums_PokemonMove] = []
     var _eliteCinematicMove: [POGOProtos_Enums_PokemonMove] = []
+    var _tempEvoOverrides: [POGOProtos_Settings_Master_PokemonSettings.TempEvoOverride] = []
+    var _buddyWalkedMegaEnergyAward: Int32 = 0
+    var _disableTransferToPokemonHome: Bool = false
+    var _raidBossDistanceOffset: Float = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -491,6 +584,10 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       _additionalCpBoostLevel = source._additionalCpBoostLevel
       _eliteQuickMove = source._eliteQuickMove
       _eliteCinematicMove = source._eliteCinematicMove
+      _tempEvoOverrides = source._tempEvoOverrides
+      _buddyWalkedMegaEnergyAward = source._buddyWalkedMegaEnergyAward
+      _disableTransferToPokemonHome = source._disableTransferToPokemonHome
+      _raidBossDistanceOffset = source._raidBossDistanceOffset
     }
   }
 
@@ -555,6 +652,10 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         case 48: try decoder.decodeSingularInt32Field(value: &_storage._additionalCpBoostLevel)
         case 49: try decoder.decodeRepeatedEnumField(value: &_storage._eliteQuickMove)
         case 50: try decoder.decodeRepeatedEnumField(value: &_storage._eliteCinematicMove)
+        case 51: try decoder.decodeRepeatedMessageField(value: &_storage._tempEvoOverrides)
+        case 52: try decoder.decodeSingularInt32Field(value: &_storage._buddyWalkedMegaEnergyAward)
+        case 61: try decoder.decodeSingularBoolField(value: &_storage._disableTransferToPokemonHome)
+        case 62: try decoder.decodeSingularFloatField(value: &_storage._raidBossDistanceOffset)
         default: break
         }
       }
@@ -710,6 +811,18 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
       if !_storage._eliteCinematicMove.isEmpty {
         try visitor.visitPackedEnumField(value: _storage._eliteCinematicMove, fieldNumber: 50)
       }
+      if !_storage._tempEvoOverrides.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._tempEvoOverrides, fieldNumber: 51)
+      }
+      if _storage._buddyWalkedMegaEnergyAward != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._buddyWalkedMegaEnergyAward, fieldNumber: 52)
+      }
+      if _storage._disableTransferToPokemonHome != false {
+        try visitor.visitSingularBoolField(value: _storage._disableTransferToPokemonHome, fieldNumber: 61)
+      }
+      if _storage._raidBossDistanceOffset != 0 {
+        try visitor.visitSingularFloatField(value: _storage._raidBossDistanceOffset, fieldNumber: 62)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -768,10 +881,127 @@ extension POGOProtos_Settings_Master_PokemonSettings: SwiftProtobuf.Message, Swi
         if _storage._additionalCpBoostLevel != rhs_storage._additionalCpBoostLevel {return false}
         if _storage._eliteQuickMove != rhs_storage._eliteQuickMove {return false}
         if _storage._eliteCinematicMove != rhs_storage._eliteCinematicMove {return false}
+        if _storage._tempEvoOverrides != rhs_storage._tempEvoOverrides {return false}
+        if _storage._buddyWalkedMegaEnergyAward != rhs_storage._buddyWalkedMegaEnergyAward {return false}
+        if _storage._disableTransferToPokemonHome != rhs_storage._disableTransferToPokemonHome {return false}
+        if _storage._raidBossDistanceOffset != rhs_storage._raidBossDistanceOffset {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Settings_Master_PokemonSettings.TempEvoOverride: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Settings_Master_PokemonSettings.protoMessageName + ".TempEvoOverride"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "temp_evo_id"),
+    2: .same(proto: "stats"),
+    3: .standard(proto: "average_height_m"),
+    4: .standard(proto: "average_weight_kg"),
+    5: .standard(proto: "type_override1"),
+    6: .standard(proto: "type_override2"),
+    7: .standard(proto: "cp_multiplier_override"),
+    8: .same(proto: "camera"),
+    9: .same(proto: "encounter"),
+    10: .standard(proto: "model_scale_v2"),
+    11: .standard(proto: "model_height"),
+    12: .standard(proto: "buddy_offset_male"),
+    13: .standard(proto: "buddy_offset_female"),
+    14: .standard(proto: "buddy_portrait_offset"),
+    15: .standard(proto: "raid_boss_distance_offset"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.tempEvoID)
+      case 2: try decoder.decodeSingularMessageField(value: &self._stats)
+      case 3: try decoder.decodeSingularFloatField(value: &self.averageHeightM)
+      case 4: try decoder.decodeSingularFloatField(value: &self.averageWeightKg)
+      case 5: try decoder.decodeSingularEnumField(value: &self.typeOverride1)
+      case 6: try decoder.decodeSingularEnumField(value: &self.typeOverride2)
+      case 7: try decoder.decodeSingularFloatField(value: &self.cpMultiplierOverride)
+      case 8: try decoder.decodeSingularMessageField(value: &self._camera)
+      case 9: try decoder.decodeSingularMessageField(value: &self._encounter)
+      case 10: try decoder.decodeSingularFloatField(value: &self.modelScaleV2)
+      case 11: try decoder.decodeSingularFloatField(value: &self.modelHeight)
+      case 12: try decoder.decodeRepeatedFloatField(value: &self.buddyOffsetMale)
+      case 13: try decoder.decodeRepeatedFloatField(value: &self.buddyOffsetFemale)
+      case 14: try decoder.decodeRepeatedFloatField(value: &self.buddyPortraitOffset)
+      case 15: try decoder.decodeSingularFloatField(value: &self.raidBossDistanceOffset)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.tempEvoID != .evolutionUnset {
+      try visitor.visitSingularEnumField(value: self.tempEvoID, fieldNumber: 1)
+    }
+    if let v = self._stats {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    }
+    if self.averageHeightM != 0 {
+      try visitor.visitSingularFloatField(value: self.averageHeightM, fieldNumber: 3)
+    }
+    if self.averageWeightKg != 0 {
+      try visitor.visitSingularFloatField(value: self.averageWeightKg, fieldNumber: 4)
+    }
+    if self.typeOverride1 != .none {
+      try visitor.visitSingularEnumField(value: self.typeOverride1, fieldNumber: 5)
+    }
+    if self.typeOverride2 != .none {
+      try visitor.visitSingularEnumField(value: self.typeOverride2, fieldNumber: 6)
+    }
+    if self.cpMultiplierOverride != 0 {
+      try visitor.visitSingularFloatField(value: self.cpMultiplierOverride, fieldNumber: 7)
+    }
+    if let v = self._camera {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    }
+    if let v = self._encounter {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
+    }
+    if self.modelScaleV2 != 0 {
+      try visitor.visitSingularFloatField(value: self.modelScaleV2, fieldNumber: 10)
+    }
+    if self.modelHeight != 0 {
+      try visitor.visitSingularFloatField(value: self.modelHeight, fieldNumber: 11)
+    }
+    if !self.buddyOffsetMale.isEmpty {
+      try visitor.visitPackedFloatField(value: self.buddyOffsetMale, fieldNumber: 12)
+    }
+    if !self.buddyOffsetFemale.isEmpty {
+      try visitor.visitPackedFloatField(value: self.buddyOffsetFemale, fieldNumber: 13)
+    }
+    if !self.buddyPortraitOffset.isEmpty {
+      try visitor.visitPackedFloatField(value: self.buddyPortraitOffset, fieldNumber: 14)
+    }
+    if self.raidBossDistanceOffset != 0 {
+      try visitor.visitSingularFloatField(value: self.raidBossDistanceOffset, fieldNumber: 15)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Settings_Master_PokemonSettings.TempEvoOverride, rhs: POGOProtos_Settings_Master_PokemonSettings.TempEvoOverride) -> Bool {
+    if lhs.tempEvoID != rhs.tempEvoID {return false}
+    if lhs._stats != rhs._stats {return false}
+    if lhs.averageHeightM != rhs.averageHeightM {return false}
+    if lhs.averageWeightKg != rhs.averageWeightKg {return false}
+    if lhs.typeOverride1 != rhs.typeOverride1 {return false}
+    if lhs.typeOverride2 != rhs.typeOverride2 {return false}
+    if lhs.cpMultiplierOverride != rhs.cpMultiplierOverride {return false}
+    if lhs._camera != rhs._camera {return false}
+    if lhs._encounter != rhs._encounter {return false}
+    if lhs.modelScaleV2 != rhs.modelScaleV2 {return false}
+    if lhs.modelHeight != rhs.modelHeight {return false}
+    if lhs.buddyOffsetMale != rhs.buddyOffsetMale {return false}
+    if lhs.buddyOffsetFemale != rhs.buddyOffsetFemale {return false}
+    if lhs.buddyPortraitOffset != rhs.buddyPortraitOffset {return false}
+    if lhs.raidBossDistanceOffset != rhs.raidBossDistanceOffset {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

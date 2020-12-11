@@ -671,11 +671,85 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
   case keldeo // = 647
   case meloetta // = 648
   case genesect // = 649
+  case chespin // = 650
+  case quilladin // = 651
+  case chesnaught // = 652
+  case fennekin // = 653
+  case braixen // = 654
+  case delphox // = 655
+  case froakie // = 656
+  case frogadier // = 657
+  case greninja // = 658
+  case bunnelby // = 659
+  case diggersby // = 660
+  case fletchling // = 661
+  case fletchinder // = 662
+  case talonflame // = 663
+  case scatterbug // = 664
+  case spewpa // = 665
+  case vivillon // = 666
+  case litleo // = 667
+  case pyroar // = 668
+  case flabebe // = 669
+  case floette // = 670
+  case florges // = 671
+  case skiddo // = 672
+  case gogoat // = 673
+  case pancham // = 674
+  case pangoro // = 675
+  case furfrou // = 676
+  case espurr // = 677
+  case meowstic // = 678
+  case honedge // = 679
+  case doublade // = 680
+  case aegislash // = 681
+  case spritzee // = 682
+  case aromatisse // = 683
+  case swirlix // = 684
+  case slurpuff // = 685
+  case inkay // = 686
+  case malamar // = 687
+  case binacle // = 688
+  case barbaracle // = 689
+  case skrelp // = 690
+  case dragalge // = 691
+  case clauncher // = 692
+  case clawitzer // = 693
+  case helioptile // = 694
+  case heliolisk // = 695
+  case tyrunt // = 696
+  case tyrantrum // = 697
+  case amaura // = 698
+  case aurorus // = 699
+  case sylveon // = 700
+  case hawlucha // = 701
+  case dedenne // = 702
+  case carbink // = 703
+  case goomy // = 704
+  case sliggoo // = 705
+  case goodra // = 706
+  case klefki // = 707
+  case phantump // = 708
+  case trevenant // = 709
+  case pumpkaboo // = 710
+  case gourgeist // = 711
+  case bergmite // = 712
+  case avalugg // = 713
+  case noibat // = 714
+  case noivern // = 715
+  case xerneas // = 716
+  case yveltal // = 717
+  case zygarde // = 718
+  case diancie // = 719
+  case hoopa // = 720
+  case volcanion // = 721
   case meltan // = 808
   case melmetal // = 809
   case obstagoon // = 862
   case perrserker // = 863
   case sirfetchd // = 865
+  case mrRime // = 866
+  case runerigus // = 867
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -1334,11 +1408,85 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case 647: self = .keldeo
     case 648: self = .meloetta
     case 649: self = .genesect
+    case 650: self = .chespin
+    case 651: self = .quilladin
+    case 652: self = .chesnaught
+    case 653: self = .fennekin
+    case 654: self = .braixen
+    case 655: self = .delphox
+    case 656: self = .froakie
+    case 657: self = .frogadier
+    case 658: self = .greninja
+    case 659: self = .bunnelby
+    case 660: self = .diggersby
+    case 661: self = .fletchling
+    case 662: self = .fletchinder
+    case 663: self = .talonflame
+    case 664: self = .scatterbug
+    case 665: self = .spewpa
+    case 666: self = .vivillon
+    case 667: self = .litleo
+    case 668: self = .pyroar
+    case 669: self = .flabebe
+    case 670: self = .floette
+    case 671: self = .florges
+    case 672: self = .skiddo
+    case 673: self = .gogoat
+    case 674: self = .pancham
+    case 675: self = .pangoro
+    case 676: self = .furfrou
+    case 677: self = .espurr
+    case 678: self = .meowstic
+    case 679: self = .honedge
+    case 680: self = .doublade
+    case 681: self = .aegislash
+    case 682: self = .spritzee
+    case 683: self = .aromatisse
+    case 684: self = .swirlix
+    case 685: self = .slurpuff
+    case 686: self = .inkay
+    case 687: self = .malamar
+    case 688: self = .binacle
+    case 689: self = .barbaracle
+    case 690: self = .skrelp
+    case 691: self = .dragalge
+    case 692: self = .clauncher
+    case 693: self = .clawitzer
+    case 694: self = .helioptile
+    case 695: self = .heliolisk
+    case 696: self = .tyrunt
+    case 697: self = .tyrantrum
+    case 698: self = .amaura
+    case 699: self = .aurorus
+    case 700: self = .sylveon
+    case 701: self = .hawlucha
+    case 702: self = .dedenne
+    case 703: self = .carbink
+    case 704: self = .goomy
+    case 705: self = .sliggoo
+    case 706: self = .goodra
+    case 707: self = .klefki
+    case 708: self = .phantump
+    case 709: self = .trevenant
+    case 710: self = .pumpkaboo
+    case 711: self = .gourgeist
+    case 712: self = .bergmite
+    case 713: self = .avalugg
+    case 714: self = .noibat
+    case 715: self = .noivern
+    case 716: self = .xerneas
+    case 717: self = .yveltal
+    case 718: self = .zygarde
+    case 719: self = .diancie
+    case 720: self = .hoopa
+    case 721: self = .volcanion
     case 808: self = .meltan
     case 809: self = .melmetal
     case 862: self = .obstagoon
     case 863: self = .perrserker
     case 865: self = .sirfetchd
+    case 866: self = .mrRime
+    case 867: self = .runerigus
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -1998,11 +2146,85 @@ public enum POGOProtos_Enums_PokemonId: SwiftProtobuf.Enum {
     case .keldeo: return 647
     case .meloetta: return 648
     case .genesect: return 649
+    case .chespin: return 650
+    case .quilladin: return 651
+    case .chesnaught: return 652
+    case .fennekin: return 653
+    case .braixen: return 654
+    case .delphox: return 655
+    case .froakie: return 656
+    case .frogadier: return 657
+    case .greninja: return 658
+    case .bunnelby: return 659
+    case .diggersby: return 660
+    case .fletchling: return 661
+    case .fletchinder: return 662
+    case .talonflame: return 663
+    case .scatterbug: return 664
+    case .spewpa: return 665
+    case .vivillon: return 666
+    case .litleo: return 667
+    case .pyroar: return 668
+    case .flabebe: return 669
+    case .floette: return 670
+    case .florges: return 671
+    case .skiddo: return 672
+    case .gogoat: return 673
+    case .pancham: return 674
+    case .pangoro: return 675
+    case .furfrou: return 676
+    case .espurr: return 677
+    case .meowstic: return 678
+    case .honedge: return 679
+    case .doublade: return 680
+    case .aegislash: return 681
+    case .spritzee: return 682
+    case .aromatisse: return 683
+    case .swirlix: return 684
+    case .slurpuff: return 685
+    case .inkay: return 686
+    case .malamar: return 687
+    case .binacle: return 688
+    case .barbaracle: return 689
+    case .skrelp: return 690
+    case .dragalge: return 691
+    case .clauncher: return 692
+    case .clawitzer: return 693
+    case .helioptile: return 694
+    case .heliolisk: return 695
+    case .tyrunt: return 696
+    case .tyrantrum: return 697
+    case .amaura: return 698
+    case .aurorus: return 699
+    case .sylveon: return 700
+    case .hawlucha: return 701
+    case .dedenne: return 702
+    case .carbink: return 703
+    case .goomy: return 704
+    case .sliggoo: return 705
+    case .goodra: return 706
+    case .klefki: return 707
+    case .phantump: return 708
+    case .trevenant: return 709
+    case .pumpkaboo: return 710
+    case .gourgeist: return 711
+    case .bergmite: return 712
+    case .avalugg: return 713
+    case .noibat: return 714
+    case .noivern: return 715
+    case .xerneas: return 716
+    case .yveltal: return 717
+    case .zygarde: return 718
+    case .diancie: return 719
+    case .hoopa: return 720
+    case .volcanion: return 721
     case .meltan: return 808
     case .melmetal: return 809
     case .obstagoon: return 862
     case .perrserker: return 863
     case .sirfetchd: return 865
+    case .mrRime: return 866
+    case .runerigus: return 867
     case .UNRECOGNIZED(let i): return i
     default: break
     }
@@ -2669,11 +2891,85 @@ extension POGOProtos_Enums_PokemonId: CaseIterable {
     .keldeo,
     .meloetta,
     .genesect,
+    .chespin,
+    .quilladin,
+    .chesnaught,
+    .fennekin,
+    .braixen,
+    .delphox,
+    .froakie,
+    .frogadier,
+    .greninja,
+    .bunnelby,
+    .diggersby,
+    .fletchling,
+    .fletchinder,
+    .talonflame,
+    .scatterbug,
+    .spewpa,
+    .vivillon,
+    .litleo,
+    .pyroar,
+    .flabebe,
+    .floette,
+    .florges,
+    .skiddo,
+    .gogoat,
+    .pancham,
+    .pangoro,
+    .furfrou,
+    .espurr,
+    .meowstic,
+    .honedge,
+    .doublade,
+    .aegislash,
+    .spritzee,
+    .aromatisse,
+    .swirlix,
+    .slurpuff,
+    .inkay,
+    .malamar,
+    .binacle,
+    .barbaracle,
+    .skrelp,
+    .dragalge,
+    .clauncher,
+    .clawitzer,
+    .helioptile,
+    .heliolisk,
+    .tyrunt,
+    .tyrantrum,
+    .amaura,
+    .aurorus,
+    .sylveon,
+    .hawlucha,
+    .dedenne,
+    .carbink,
+    .goomy,
+    .sliggoo,
+    .goodra,
+    .klefki,
+    .phantump,
+    .trevenant,
+    .pumpkaboo,
+    .gourgeist,
+    .bergmite,
+    .avalugg,
+    .noibat,
+    .noivern,
+    .xerneas,
+    .yveltal,
+    .zygarde,
+    .diancie,
+    .hoopa,
+    .volcanion,
     .meltan,
     .melmetal,
     .obstagoon,
     .perrserker,
     .sirfetchd,
+    .mrRime,
+    .runerigus,
   ]
 }
 
@@ -3333,10 +3629,84 @@ extension POGOProtos_Enums_PokemonId: SwiftProtobuf._ProtoNameProviding {
     647: .same(proto: "KELDEO"),
     648: .same(proto: "MELOETTA"),
     649: .same(proto: "GENESECT"),
+    650: .same(proto: "CHESPIN"),
+    651: .same(proto: "QUILLADIN"),
+    652: .same(proto: "CHESNAUGHT"),
+    653: .same(proto: "FENNEKIN"),
+    654: .same(proto: "BRAIXEN"),
+    655: .same(proto: "DELPHOX"),
+    656: .same(proto: "FROAKIE"),
+    657: .same(proto: "FROGADIER"),
+    658: .same(proto: "GRENINJA"),
+    659: .same(proto: "BUNNELBY"),
+    660: .same(proto: "DIGGERSBY"),
+    661: .same(proto: "FLETCHLING"),
+    662: .same(proto: "FLETCHINDER"),
+    663: .same(proto: "TALONFLAME"),
+    664: .same(proto: "SCATTERBUG"),
+    665: .same(proto: "SPEWPA"),
+    666: .same(proto: "VIVILLON"),
+    667: .same(proto: "LITLEO"),
+    668: .same(proto: "PYROAR"),
+    669: .same(proto: "FLABEBE"),
+    670: .same(proto: "FLOETTE"),
+    671: .same(proto: "FLORGES"),
+    672: .same(proto: "SKIDDO"),
+    673: .same(proto: "GOGOAT"),
+    674: .same(proto: "PANCHAM"),
+    675: .same(proto: "PANGORO"),
+    676: .same(proto: "FURFROU"),
+    677: .same(proto: "ESPURR"),
+    678: .same(proto: "MEOWSTIC"),
+    679: .same(proto: "HONEDGE"),
+    680: .same(proto: "DOUBLADE"),
+    681: .same(proto: "AEGISLASH"),
+    682: .same(proto: "SPRITZEE"),
+    683: .same(proto: "AROMATISSE"),
+    684: .same(proto: "SWIRLIX"),
+    685: .same(proto: "SLURPUFF"),
+    686: .same(proto: "INKAY"),
+    687: .same(proto: "MALAMAR"),
+    688: .same(proto: "BINACLE"),
+    689: .same(proto: "BARBARACLE"),
+    690: .same(proto: "SKRELP"),
+    691: .same(proto: "DRAGALGE"),
+    692: .same(proto: "CLAUNCHER"),
+    693: .same(proto: "CLAWITZER"),
+    694: .same(proto: "HELIOPTILE"),
+    695: .same(proto: "HELIOLISK"),
+    696: .same(proto: "TYRUNT"),
+    697: .same(proto: "TYRANTRUM"),
+    698: .same(proto: "AMAURA"),
+    699: .same(proto: "AURORUS"),
+    700: .same(proto: "SYLVEON"),
+    701: .same(proto: "HAWLUCHA"),
+    702: .same(proto: "DEDENNE"),
+    703: .same(proto: "CARBINK"),
+    704: .same(proto: "GOOMY"),
+    705: .same(proto: "SLIGGOO"),
+    706: .same(proto: "GOODRA"),
+    707: .same(proto: "KLEFKI"),
+    708: .same(proto: "PHANTUMP"),
+    709: .same(proto: "TREVENANT"),
+    710: .same(proto: "PUMPKABOO"),
+    711: .same(proto: "GOURGEIST"),
+    712: .same(proto: "BERGMITE"),
+    713: .same(proto: "AVALUGG"),
+    714: .same(proto: "NOIBAT"),
+    715: .same(proto: "NOIVERN"),
+    716: .same(proto: "XERNEAS"),
+    717: .same(proto: "YVELTAL"),
+    718: .same(proto: "ZYGARDE"),
+    719: .same(proto: "DIANCIE"),
+    720: .same(proto: "HOOPA"),
+    721: .same(proto: "VOLCANION"),
     808: .same(proto: "MELTAN"),
     809: .same(proto: "MELMETAL"),
     862: .same(proto: "OBSTAGOON"),
     863: .same(proto: "PERRSERKER"),
     865: .same(proto: "SIRFETCHD"),
+    866: .same(proto: "MR_RIME"),
+    867: .same(proto: "RUNERIGUS"),
   ]
 }

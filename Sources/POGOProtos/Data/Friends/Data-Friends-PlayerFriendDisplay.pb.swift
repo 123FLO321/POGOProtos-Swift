@@ -52,12 +52,38 @@ public struct POGOProtos_Data_Friends_PlayerFriendDisplay {
 
   public var buddyCandyAwarded: Int32 = 0
 
+  public var activeMegaEvoInfo: POGOProtos_Data_Friends_PlayerFriendDisplay.MegaEvoInfo {
+    get {return _activeMegaEvoInfo ?? POGOProtos_Data_Friends_PlayerFriendDisplay.MegaEvoInfo()}
+    set {_activeMegaEvoInfo = newValue}
+  }
+  /// Returns true if `activeMegaEvoInfo` has been explicitly set.
+  public var hasActiveMegaEvoInfo: Bool {return self._activeMegaEvoInfo != nil}
+  /// Clears the value of `activeMegaEvoInfo`. Subsequent reads from it will return its default value.
+  public mutating func clearActiveMegaEvoInfo() {self._activeMegaEvoInfo = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public struct MegaEvoInfo {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var pokedexID: POGOProtos_Enums_PokemonId = .missingno
+
+    public var tempEvoID: POGOProtos_Enums_TemporaryEvolutionId = .evolutionUnset
+
+    public var evoExpirationTimeMs: Int64 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
 
   public init() {}
 
   fileprivate var _buddy: POGOProtos_Data_PokemonDisplay? = nil
   fileprivate var _lastPokemonCaught: POGOProtos_Data_PokemonDisplay? = nil
+  fileprivate var _activeMegaEvoInfo: POGOProtos_Data_Friends_PlayerFriendDisplay.MegaEvoInfo? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -74,6 +100,7 @@ extension POGOProtos_Data_Friends_PlayerFriendDisplay: SwiftProtobuf.Message, Sw
     5: .standard(proto: "last_pokemon_caught_display_id"),
     6: .standard(proto: "last_pokemon_caught_timestamp"),
     7: .standard(proto: "buddy_candy_awarded"),
+    8: .standard(proto: "active_mega_evo_info"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -86,6 +113,7 @@ extension POGOProtos_Data_Friends_PlayerFriendDisplay: SwiftProtobuf.Message, Sw
       case 5: try decoder.decodeSingularInt32Field(value: &self.lastPokemonCaughtDisplayID)
       case 6: try decoder.decodeSingularInt64Field(value: &self.lastPokemonCaughtTimestamp)
       case 7: try decoder.decodeSingularInt32Field(value: &self.buddyCandyAwarded)
+      case 8: try decoder.decodeSingularMessageField(value: &self._activeMegaEvoInfo)
       default: break
       }
     }
@@ -113,6 +141,9 @@ extension POGOProtos_Data_Friends_PlayerFriendDisplay: SwiftProtobuf.Message, Sw
     if self.buddyCandyAwarded != 0 {
       try visitor.visitSingularInt32Field(value: self.buddyCandyAwarded, fieldNumber: 7)
     }
+    if let v = self._activeMegaEvoInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -124,6 +155,48 @@ extension POGOProtos_Data_Friends_PlayerFriendDisplay: SwiftProtobuf.Message, Sw
     if lhs.lastPokemonCaughtDisplayID != rhs.lastPokemonCaughtDisplayID {return false}
     if lhs.lastPokemonCaughtTimestamp != rhs.lastPokemonCaughtTimestamp {return false}
     if lhs.buddyCandyAwarded != rhs.buddyCandyAwarded {return false}
+    if lhs._activeMegaEvoInfo != rhs._activeMegaEvoInfo {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Friends_PlayerFriendDisplay.MegaEvoInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Friends_PlayerFriendDisplay.protoMessageName + ".MegaEvoInfo"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "pokedex_id"),
+    2: .standard(proto: "temp_evo_id"),
+    3: .standard(proto: "evo_expiration_time_ms"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.pokedexID)
+      case 2: try decoder.decodeSingularEnumField(value: &self.tempEvoID)
+      case 3: try decoder.decodeSingularInt64Field(value: &self.evoExpirationTimeMs)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.pokedexID != .missingno {
+      try visitor.visitSingularEnumField(value: self.pokedexID, fieldNumber: 1)
+    }
+    if self.tempEvoID != .evolutionUnset {
+      try visitor.visitSingularEnumField(value: self.tempEvoID, fieldNumber: 2)
+    }
+    if self.evoExpirationTimeMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.evoExpirationTimeMs, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Friends_PlayerFriendDisplay.MegaEvoInfo, rhs: POGOProtos_Data_Friends_PlayerFriendDisplay.MegaEvoInfo) -> Bool {
+    if lhs.pokedexID != rhs.pokedexID {return false}
+    if lhs.tempEvoID != rhs.tempEvoID {return false}
+    if lhs.evoExpirationTimeMs != rhs.evoExpirationTimeMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

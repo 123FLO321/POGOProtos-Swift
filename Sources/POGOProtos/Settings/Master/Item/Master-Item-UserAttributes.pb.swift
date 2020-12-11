@@ -294,6 +294,16 @@ public struct POGOProtos_Settings_Master_Item_UserAttributes {
     set {_uniqueStorage()._unovaDexCount = newValue}
   }
 
+  public var balloonBattlesCompleted: Int32 {
+    get {return _storage._balloonBattlesCompleted}
+    set {_uniqueStorage()._balloonBattlesCompleted = newValue}
+  }
+
+  public var balloonBattlesWon: Int32 {
+    get {return _storage._balloonBattlesWon}
+    set {_uniqueStorage()._balloonBattlesWon = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -362,6 +372,8 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
     52: .standard(proto: "adventure_sync_opt_in_v2"),
     53: .standard(proto: "geo_fence_opt_in_v2"),
     54: .standard(proto: "unova_dex_count"),
+    55: .standard(proto: "balloon_battles_completed"),
+    56: .standard(proto: "balloon_battles_won"),
   ]
 
   fileprivate class _StorageClass {
@@ -419,6 +431,8 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
     var _adventureSyncOptInV2: String = String()
     var _geoFenceOptInV2: String = String()
     var _unovaDexCount: Int32 = 0
+    var _balloonBattlesCompleted: Int32 = 0
+    var _balloonBattlesWon: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -479,6 +493,8 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
       _adventureSyncOptInV2 = source._adventureSyncOptInV2
       _geoFenceOptInV2 = source._geoFenceOptInV2
       _unovaDexCount = source._unovaDexCount
+      _balloonBattlesCompleted = source._balloonBattlesCompleted
+      _balloonBattlesWon = source._balloonBattlesWon
     }
   }
 
@@ -548,6 +564,8 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
         case 52: try decoder.decodeSingularStringField(value: &_storage._adventureSyncOptInV2)
         case 53: try decoder.decodeSingularStringField(value: &_storage._geoFenceOptInV2)
         case 54: try decoder.decodeSingularInt32Field(value: &_storage._unovaDexCount)
+        case 55: try decoder.decodeSingularInt32Field(value: &_storage._balloonBattlesCompleted)
+        case 56: try decoder.decodeSingularInt32Field(value: &_storage._balloonBattlesWon)
         default: break
         }
       }
@@ -718,6 +736,12 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
       if _storage._unovaDexCount != 0 {
         try visitor.visitSingularInt32Field(value: _storage._unovaDexCount, fieldNumber: 54)
       }
+      if _storage._balloonBattlesCompleted != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._balloonBattlesCompleted, fieldNumber: 55)
+      }
+      if _storage._balloonBattlesWon != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._balloonBattlesWon, fieldNumber: 56)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -781,6 +805,8 @@ extension POGOProtos_Settings_Master_Item_UserAttributes: SwiftProtobuf.Message,
         if _storage._adventureSyncOptInV2 != rhs_storage._adventureSyncOptInV2 {return false}
         if _storage._geoFenceOptInV2 != rhs_storage._geoFenceOptInV2 {return false}
         if _storage._unovaDexCount != rhs_storage._unovaDexCount {return false}
+        if _storage._balloonBattlesCompleted != rhs_storage._balloonBattlesCompleted {return false}
+        if _storage._balloonBattlesWon != rhs_storage._balloonBattlesWon {return false}
         return true
       }
       if !storagesAreEqual {return false}

@@ -36,6 +36,8 @@ public struct POGOProtos_Settings_ArdkConfigSettings {
 
   public var androidMonodepthModelURL: String = String()
 
+  public var monodepthModelURL: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum ArContext: SwiftProtobuf.Enum {
@@ -106,6 +108,7 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
     4: .standard(proto: "monodepth_contexts"),
     5: .standard(proto: "ios_monodepth_model_url"),
     6: .standard(proto: "android_monodepth_model_url"),
+    7: .standard(proto: "monodepth_model_url"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -117,6 +120,7 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
       case 4: try decoder.decodeRepeatedEnumField(value: &self.monodepthContexts)
       case 5: try decoder.decodeSingularStringField(value: &self.iosMonodepthModelURL)
       case 6: try decoder.decodeSingularStringField(value: &self.androidMonodepthModelURL)
+      case 7: try decoder.decodeSingularStringField(value: &self.monodepthModelURL)
       default: break
       }
     }
@@ -141,6 +145,9 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
     if !self.androidMonodepthModelURL.isEmpty {
       try visitor.visitSingularStringField(value: self.androidMonodepthModelURL, fieldNumber: 6)
     }
+    if !self.monodepthModelURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.monodepthModelURL, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -151,6 +158,7 @@ extension POGOProtos_Settings_ArdkConfigSettings: SwiftProtobuf.Message, SwiftPr
     if lhs.monodepthContexts != rhs.monodepthContexts {return false}
     if lhs.iosMonodepthModelURL != rhs.iosMonodepthModelURL {return false}
     if lhs.androidMonodepthModelURL != rhs.androidMonodepthModelURL {return false}
+    if lhs.monodepthModelURL != rhs.monodepthModelURL {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

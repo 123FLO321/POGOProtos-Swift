@@ -54,6 +54,8 @@ public struct POGOProtos_Networking_Responses_GymFeedPokemonResponse {
 
   public var cooldownComplete: Int64 = 0
 
+  public var numXlCandyAwarded: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -165,6 +167,7 @@ extension POGOProtos_Networking_Responses_GymFeedPokemonResponse: SwiftProtobuf.
     6: .standard(proto: "num_candy_awarded"),
     7: .standard(proto: "family_candy_id"),
     8: .standard(proto: "cooldown_complete"),
+    9: .standard(proto: "num_xl_candy_awarded"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -178,6 +181,7 @@ extension POGOProtos_Networking_Responses_GymFeedPokemonResponse: SwiftProtobuf.
       case 6: try decoder.decodeSingularInt32Field(value: &self.numCandyAwarded)
       case 7: try decoder.decodeSingularEnumField(value: &self.familyCandyID)
       case 8: try decoder.decodeSingularInt64Field(value: &self.cooldownComplete)
+      case 9: try decoder.decodeSingularInt32Field(value: &self.numXlCandyAwarded)
       default: break
       }
     }
@@ -208,6 +212,9 @@ extension POGOProtos_Networking_Responses_GymFeedPokemonResponse: SwiftProtobuf.
     if self.cooldownComplete != 0 {
       try visitor.visitSingularInt64Field(value: self.cooldownComplete, fieldNumber: 8)
     }
+    if self.numXlCandyAwarded != 0 {
+      try visitor.visitSingularInt32Field(value: self.numXlCandyAwarded, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -220,6 +227,7 @@ extension POGOProtos_Networking_Responses_GymFeedPokemonResponse: SwiftProtobuf.
     if lhs.numCandyAwarded != rhs.numCandyAwarded {return false}
     if lhs.familyCandyID != rhs.familyCandyID {return false}
     if lhs.cooldownComplete != rhs.cooldownComplete {return false}
+    if lhs.numXlCandyAwarded != rhs.numXlCandyAwarded {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

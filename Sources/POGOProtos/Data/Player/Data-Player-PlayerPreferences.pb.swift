@@ -26,9 +26,20 @@ public struct POGOProtos_Data_Player_PlayerPreferences {
 
   public var optOutOfSponsoredGifts: Bool = false
 
+  public var battleParties: POGOProtos_Data_Battle_BattleParties {
+    get {return _battleParties ?? POGOProtos_Data_Battle_BattleParties()}
+    set {_battleParties = newValue}
+  }
+  /// Returns true if `battleParties` has been explicitly set.
+  public var hasBattleParties: Bool {return self._battleParties != nil}
+  /// Clears the value of `battleParties`. Subsequent reads from it will return its default value.
+  public mutating func clearBattleParties() {self._battleParties = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
+
+  fileprivate var _battleParties: POGOProtos_Data_Battle_BattleParties? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -39,12 +50,14 @@ extension POGOProtos_Data_Player_PlayerPreferences: SwiftProtobuf.Message, Swift
   public static let protoMessageName: String = _protobuf_package + ".PlayerPreferences"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "opt_out_of_sponsored_gifts"),
+    2: .standard(proto: "battle_parties"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.optOutOfSponsoredGifts)
+      case 2: try decoder.decodeSingularMessageField(value: &self._battleParties)
       default: break
       }
     }
@@ -54,11 +67,15 @@ extension POGOProtos_Data_Player_PlayerPreferences: SwiftProtobuf.Message, Swift
     if self.optOutOfSponsoredGifts != false {
       try visitor.visitSingularBoolField(value: self.optOutOfSponsoredGifts, fieldNumber: 1)
     }
+    if let v = self._battleParties {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Player_PlayerPreferences, rhs: POGOProtos_Data_Player_PlayerPreferences) -> Bool {
     if lhs.optOutOfSponsoredGifts != rhs.optOutOfSponsoredGifts {return false}
+    if lhs._battleParties != rhs._battleParties {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

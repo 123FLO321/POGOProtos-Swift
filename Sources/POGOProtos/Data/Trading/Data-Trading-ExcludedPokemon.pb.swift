@@ -46,6 +46,7 @@ public struct POGOProtos_Data_Trading_ExcludedPokemon {
     case playerCannotAfford // = 11
     case playerReachedDailyLimit // = 12
     case favorite // = 13
+    case tempEvolved // = 14
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -68,6 +69,7 @@ public struct POGOProtos_Data_Trading_ExcludedPokemon {
       case 11: self = .playerCannotAfford
       case 12: self = .playerReachedDailyLimit
       case 13: self = .favorite
+      case 14: self = .tempEvolved
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -88,6 +90,7 @@ public struct POGOProtos_Data_Trading_ExcludedPokemon {
       case .playerCannotAfford: return 11
       case .playerReachedDailyLimit: return 12
       case .favorite: return 13
+      case .tempEvolved: return 14
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -116,6 +119,7 @@ extension POGOProtos_Data_Trading_ExcludedPokemon.ExclusionReason: CaseIterable 
     .playerCannotAfford,
     .playerReachedDailyLimit,
     .favorite,
+    .tempEvolved,
   ]
 }
 
@@ -176,5 +180,6 @@ extension POGOProtos_Data_Trading_ExcludedPokemon.ExclusionReason: SwiftProtobuf
     11: .same(proto: "PLAYER_CANNOT_AFFORD"),
     12: .same(proto: "PLAYER_REACHED_DAILY_LIMIT"),
     13: .same(proto: "FAVORITE"),
+    14: .same(proto: "TEMP_EVOLVED"),
   ]
 }

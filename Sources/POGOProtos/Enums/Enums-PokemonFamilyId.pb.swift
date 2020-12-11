@@ -354,6 +354,43 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
   case familyKeldeo // = 647
   case familyMeloetta // = 648
   case familyGenesect // = 649
+  case familyChespin // = 650
+  case familyFennekin // = 653
+  case familyFroakie // = 656
+  case familyBunnelby // = 659
+  case familyFletchling // = 661
+  case familyScatterbug // = 664
+  case familyLitleo // = 667
+  case familyFlabebe // = 669
+  case familySkiddo // = 672
+  case familyPancham // = 674
+  case familyFurfrou // = 676
+  case familyEspurr // = 677
+  case familyHonedge // = 679
+  case familySpritzee // = 682
+  case familySwirlix // = 684
+  case familyInkay // = 686
+  case familyBinacle // = 688
+  case familySkrelp // = 690
+  case familyClauncher // = 692
+  case familyHelioptile // = 694
+  case familyTyrunt // = 696
+  case familyAmaura // = 698
+  case familyHawlucha // = 701
+  case familyDedenne // = 702
+  case familyCarbink // = 703
+  case familyGoomy // = 704
+  case familyKlefki // = 707
+  case familyPhantump // = 708
+  case familyPumpkaboo // = 710
+  case familyBergmite // = 712
+  case familyNoibat // = 714
+  case familyXerneas // = 716
+  case familyYveltal // = 717
+  case familyZygarde // = 718
+  case familyDiancie // = 719
+  case familyHoopa // = 720
+  case familyVolcanion // = 721
   case familyMeltan // = 808
   case UNRECOGNIZED(Int)
 
@@ -696,6 +733,43 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
     case 647: self = .familyKeldeo
     case 648: self = .familyMeloetta
     case 649: self = .familyGenesect
+    case 650: self = .familyChespin
+    case 653: self = .familyFennekin
+    case 656: self = .familyFroakie
+    case 659: self = .familyBunnelby
+    case 661: self = .familyFletchling
+    case 664: self = .familyScatterbug
+    case 667: self = .familyLitleo
+    case 669: self = .familyFlabebe
+    case 672: self = .familySkiddo
+    case 674: self = .familyPancham
+    case 676: self = .familyFurfrou
+    case 677: self = .familyEspurr
+    case 679: self = .familyHonedge
+    case 682: self = .familySpritzee
+    case 684: self = .familySwirlix
+    case 686: self = .familyInkay
+    case 688: self = .familyBinacle
+    case 690: self = .familySkrelp
+    case 692: self = .familyClauncher
+    case 694: self = .familyHelioptile
+    case 696: self = .familyTyrunt
+    case 698: self = .familyAmaura
+    case 701: self = .familyHawlucha
+    case 702: self = .familyDedenne
+    case 703: self = .familyCarbink
+    case 704: self = .familyGoomy
+    case 707: self = .familyKlefki
+    case 708: self = .familyPhantump
+    case 710: self = .familyPumpkaboo
+    case 712: self = .familyBergmite
+    case 714: self = .familyNoibat
+    case 716: self = .familyXerneas
+    case 717: self = .familyYveltal
+    case 718: self = .familyZygarde
+    case 719: self = .familyDiancie
+    case 720: self = .familyHoopa
+    case 721: self = .familyVolcanion
     case 808: self = .familyMeltan
     default: self = .UNRECOGNIZED(rawValue)
     }
@@ -1036,6 +1110,43 @@ public enum POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf.Enum {
     case .familyKeldeo: return 647
     case .familyMeloetta: return 648
     case .familyGenesect: return 649
+    case .familyChespin: return 650
+    case .familyFennekin: return 653
+    case .familyFroakie: return 656
+    case .familyBunnelby: return 659
+    case .familyFletchling: return 661
+    case .familyScatterbug: return 664
+    case .familyLitleo: return 667
+    case .familyFlabebe: return 669
+    case .familySkiddo: return 672
+    case .familyPancham: return 674
+    case .familyFurfrou: return 676
+    case .familyEspurr: return 677
+    case .familyHonedge: return 679
+    case .familySpritzee: return 682
+    case .familySwirlix: return 684
+    case .familyInkay: return 686
+    case .familyBinacle: return 688
+    case .familySkrelp: return 690
+    case .familyClauncher: return 692
+    case .familyHelioptile: return 694
+    case .familyTyrunt: return 696
+    case .familyAmaura: return 698
+    case .familyHawlucha: return 701
+    case .familyDedenne: return 702
+    case .familyCarbink: return 703
+    case .familyGoomy: return 704
+    case .familyKlefki: return 707
+    case .familyPhantump: return 708
+    case .familyPumpkaboo: return 710
+    case .familyBergmite: return 712
+    case .familyNoibat: return 714
+    case .familyXerneas: return 716
+    case .familyYveltal: return 717
+    case .familyZygarde: return 718
+    case .familyDiancie: return 719
+    case .familyHoopa: return 720
+    case .familyVolcanion: return 721
     case .familyMeltan: return 808
     case .UNRECOGNIZED(let i): return i
     }
@@ -1381,6 +1492,43 @@ extension POGOProtos_Enums_PokemonFamilyId: CaseIterable {
     .familyKeldeo,
     .familyMeloetta,
     .familyGenesect,
+    .familyChespin,
+    .familyFennekin,
+    .familyFroakie,
+    .familyBunnelby,
+    .familyFletchling,
+    .familyScatterbug,
+    .familyLitleo,
+    .familyFlabebe,
+    .familySkiddo,
+    .familyPancham,
+    .familyFurfrou,
+    .familyEspurr,
+    .familyHonedge,
+    .familySpritzee,
+    .familySwirlix,
+    .familyInkay,
+    .familyBinacle,
+    .familySkrelp,
+    .familyClauncher,
+    .familyHelioptile,
+    .familyTyrunt,
+    .familyAmaura,
+    .familyHawlucha,
+    .familyDedenne,
+    .familyCarbink,
+    .familyGoomy,
+    .familyKlefki,
+    .familyPhantump,
+    .familyPumpkaboo,
+    .familyBergmite,
+    .familyNoibat,
+    .familyXerneas,
+    .familyYveltal,
+    .familyZygarde,
+    .familyDiancie,
+    .familyHoopa,
+    .familyVolcanion,
     .familyMeltan,
   ]
 }
@@ -1724,6 +1872,43 @@ extension POGOProtos_Enums_PokemonFamilyId: SwiftProtobuf._ProtoNameProviding {
     647: .same(proto: "FAMILY_KELDEO"),
     648: .same(proto: "FAMILY_MELOETTA"),
     649: .same(proto: "FAMILY_GENESECT"),
+    650: .same(proto: "FAMILY_CHESPIN"),
+    653: .same(proto: "FAMILY_FENNEKIN"),
+    656: .same(proto: "FAMILY_FROAKIE"),
+    659: .same(proto: "FAMILY_BUNNELBY"),
+    661: .same(proto: "FAMILY_FLETCHLING"),
+    664: .same(proto: "FAMILY_SCATTERBUG"),
+    667: .same(proto: "FAMILY_LITLEO"),
+    669: .same(proto: "FAMILY_FLABEBE"),
+    672: .same(proto: "FAMILY_SKIDDO"),
+    674: .same(proto: "FAMILY_PANCHAM"),
+    676: .same(proto: "FAMILY_FURFROU"),
+    677: .same(proto: "FAMILY_ESPURR"),
+    679: .same(proto: "FAMILY_HONEDGE"),
+    682: .same(proto: "FAMILY_SPRITZEE"),
+    684: .same(proto: "FAMILY_SWIRLIX"),
+    686: .same(proto: "FAMILY_INKAY"),
+    688: .same(proto: "FAMILY_BINACLE"),
+    690: .same(proto: "FAMILY_SKRELP"),
+    692: .same(proto: "FAMILY_CLAUNCHER"),
+    694: .same(proto: "FAMILY_HELIOPTILE"),
+    696: .same(proto: "FAMILY_TYRUNT"),
+    698: .same(proto: "FAMILY_AMAURA"),
+    701: .same(proto: "FAMILY_HAWLUCHA"),
+    702: .same(proto: "FAMILY_DEDENNE"),
+    703: .same(proto: "FAMILY_CARBINK"),
+    704: .same(proto: "FAMILY_GOOMY"),
+    707: .same(proto: "FAMILY_KLEFKI"),
+    708: .same(proto: "FAMILY_PHANTUMP"),
+    710: .same(proto: "FAMILY_PUMPKABOO"),
+    712: .same(proto: "FAMILY_BERGMITE"),
+    714: .same(proto: "FAMILY_NOIBAT"),
+    716: .same(proto: "FAMILY_XERNEAS"),
+    717: .same(proto: "FAMILY_YVELTAL"),
+    718: .same(proto: "FAMILY_ZYGARDE"),
+    719: .same(proto: "FAMILY_DIANCIE"),
+    720: .same(proto: "FAMILY_HOOPA"),
+    721: .same(proto: "FAMILY_VOLCANION"),
     808: .same(proto: "FAMILY_MELTAN"),
   ]
 }

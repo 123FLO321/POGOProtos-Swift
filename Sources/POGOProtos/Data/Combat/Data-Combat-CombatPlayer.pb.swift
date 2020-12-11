@@ -76,6 +76,10 @@ public struct POGOProtos_Data_Combat_CombatPlayer {
 
   public var timesCombatActionsCalled: Int32 = 0
 
+  public var lobbyJoinTimeMs: Int64 = 0
+
+  public var superEffectiveChargeAttacksUsed: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -105,6 +109,8 @@ extension POGOProtos_Data_Combat_CombatPlayer: SwiftProtobuf.Message, SwiftProto
     10: .standard(proto: "minigame_defense_chances_left"),
     11: .standard(proto: "combat_npc_personality_id"),
     12: .standard(proto: "times_combat_actions_called"),
+    13: .standard(proto: "lobby_join_time_ms"),
+    14: .standard(proto: "super_effective_charge_attacks_used"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -122,6 +128,8 @@ extension POGOProtos_Data_Combat_CombatPlayer: SwiftProtobuf.Message, SwiftProto
       case 10: try decoder.decodeSingularInt32Field(value: &self.minigameDefenseChancesLeft)
       case 11: try decoder.decodeSingularStringField(value: &self.combatNpcPersonalityID)
       case 12: try decoder.decodeSingularInt32Field(value: &self.timesCombatActionsCalled)
+      case 13: try decoder.decodeSingularInt64Field(value: &self.lobbyJoinTimeMs)
+      case 14: try decoder.decodeSingularInt32Field(value: &self.superEffectiveChargeAttacksUsed)
       default: break
       }
     }
@@ -164,6 +172,12 @@ extension POGOProtos_Data_Combat_CombatPlayer: SwiftProtobuf.Message, SwiftProto
     if self.timesCombatActionsCalled != 0 {
       try visitor.visitSingularInt32Field(value: self.timesCombatActionsCalled, fieldNumber: 12)
     }
+    if self.lobbyJoinTimeMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.lobbyJoinTimeMs, fieldNumber: 13)
+    }
+    if self.superEffectiveChargeAttacksUsed != 0 {
+      try visitor.visitSingularInt32Field(value: self.superEffectiveChargeAttacksUsed, fieldNumber: 14)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -180,6 +194,8 @@ extension POGOProtos_Data_Combat_CombatPlayer: SwiftProtobuf.Message, SwiftProto
     if lhs.minigameDefenseChancesLeft != rhs.minigameDefenseChancesLeft {return false}
     if lhs.combatNpcPersonalityID != rhs.combatNpcPersonalityID {return false}
     if lhs.timesCombatActionsCalled != rhs.timesCombatActionsCalled {return false}
+    if lhs.lobbyJoinTimeMs != rhs.lobbyJoinTimeMs {return false}
+    if lhs.superEffectiveChargeAttacksUsed != rhs.superEffectiveChargeAttacksUsed {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -76,6 +76,14 @@ public struct POGOProtos_Data_Combat_PokemonCondition {
     set {condition = .pokemonCaughtTimestamp(newValue)}
   }
 
+  public var pokemonLevelRange: POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange {
+    get {
+      if case .pokemonLevelRange(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange()
+    }
+    set {condition = .pokemonLevelRange(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Condition: Equatable {
@@ -85,6 +93,7 @@ public struct POGOProtos_Data_Combat_PokemonCondition {
     case pokemonWhitelist(POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist)
     case pokemonBanlist(POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist)
     case pokemonCaughtTimestamp(POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp)
+    case pokemonLevelRange(POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition.OneOf_Condition, rhs: POGOProtos_Data_Combat_PokemonCondition.OneOf_Condition) -> Bool {
@@ -95,10 +104,25 @@ public struct POGOProtos_Data_Combat_PokemonCondition {
       case (.pokemonWhitelist(let l), .pokemonWhitelist(let r)): return l == r
       case (.pokemonBanlist(let l), .pokemonBanlist(let r)): return l == r
       case (.pokemonCaughtTimestamp(let l), .pokemonCaughtTimestamp(let r)): return l == r
+      case (.pokemonLevelRange(let l), .pokemonLevelRange(let r)): return l == r
       default: return false
       }
     }
   #endif
+  }
+
+  public struct PokemonLevelRange {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var minLevel: Int32 = 0
+
+    public var maxLevel: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
   }
 
   public struct PokemonCaughtTimestamp {
@@ -174,6 +198,7 @@ extension POGOProtos_Data_Combat_PokemonCondition: SwiftProtobuf.Message, SwiftP
     5: .standard(proto: "pokemon_whitelist"),
     6: .standard(proto: "pokemon_banlist"),
     7: .standard(proto: "pokemon_caught_timestamp"),
+    8: .standard(proto: "pokemon_level_range"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -228,6 +253,14 @@ extension POGOProtos_Data_Combat_PokemonCondition: SwiftProtobuf.Message, SwiftP
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.condition = .pokemonCaughtTimestamp(v)}
+      case 8:
+        var v: POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .pokemonLevelRange(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .pokemonLevelRange(v)}
       default: break
       }
     }
@@ -250,6 +283,8 @@ extension POGOProtos_Data_Combat_PokemonCondition: SwiftProtobuf.Message, SwiftP
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
     case .pokemonCaughtTimestamp(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+    case .pokemonLevelRange(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -258,6 +293,41 @@ extension POGOProtos_Data_Combat_PokemonCondition: SwiftProtobuf.Message, SwiftP
   public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition, rhs: POGOProtos_Data_Combat_PokemonCondition) -> Bool {
     if lhs.type != rhs.type {return false}
     if lhs.condition != rhs.condition {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Combat_PokemonCondition.protoMessageName + ".PokemonLevelRange"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "min_level"),
+    2: .standard(proto: "max_level"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.minLevel)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.maxLevel)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.minLevel != 0 {
+      try visitor.visitSingularInt32Field(value: self.minLevel, fieldNumber: 1)
+    }
+    if self.maxLevel != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxLevel, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange, rhs: POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange) -> Bool {
+    if lhs.minLevel != rhs.minLevel {return false}
+    if lhs.maxLevel != rhs.maxLevel {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

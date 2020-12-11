@@ -48,6 +48,8 @@ public struct POGOProtos_Settings_Master_CombatLeague {
 
   public var borderColorHex: String = String()
 
+  public var allowTempEvos: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum LeagueType: SwiftProtobuf.Enum {
@@ -116,6 +118,7 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
     10: .standard(proto: "battle_party_combat_league_template_id"),
     11: .standard(proto: "league_type"),
     12: .standard(proto: "border_color_hex"),
+    13: .standard(proto: "allow_temp_evos"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -133,6 +136,7 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
       case 10: try decoder.decodeSingularStringField(value: &self.battlePartyCombatLeagueTemplateID)
       case 11: try decoder.decodeSingularEnumField(value: &self.leagueType)
       case 12: try decoder.decodeSingularStringField(value: &self.borderColorHex)
+      case 13: try decoder.decodeSingularBoolField(value: &self.allowTempEvos)
       default: break
       }
     }
@@ -175,6 +179,9 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
     if !self.borderColorHex.isEmpty {
       try visitor.visitSingularStringField(value: self.borderColorHex, fieldNumber: 12)
     }
+    if self.allowTempEvos != false {
+      try visitor.visitSingularBoolField(value: self.allowTempEvos, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -191,6 +198,7 @@ extension POGOProtos_Settings_Master_CombatLeague: SwiftProtobuf.Message, SwiftP
     if lhs.battlePartyCombatLeagueTemplateID != rhs.battlePartyCombatLeagueTemplateID {return false}
     if lhs.leagueType != rhs.leagueType {return false}
     if lhs.borderColorHex != rhs.borderColorHex {return false}
+    if lhs.allowTempEvos != rhs.allowTempEvos {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -148,6 +148,14 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
         set {section = .timedGroupChallenge(newValue)}
       }
 
+      public var miniCollection: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.MiniCollectionSection {
+        get {
+          if case .miniCollection(let v)? = section {return v}
+          return POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.MiniCollectionSection()
+        }
+        set {section = .miniCollection(newValue)}
+      }
+
       public var unknownFields = SwiftProtobuf.UnknownStorage()
 
       public enum OneOf_Section: Equatable {
@@ -159,6 +167,7 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
         case timedQuest(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedQuestSection)
         case eventBanner(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.EventBannerSection)
         case timedGroupChallenge(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.TimedGroupChallengeSection)
+        case miniCollection(POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.MiniCollectionSection)
 
       #if !swift(>=4.1)
         public static func ==(lhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.OneOf_Section, rhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.OneOf_Section) -> Bool {
@@ -171,10 +180,23 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
           case (.timedQuest(let l), .timedQuest(let r)): return l == r
           case (.eventBanner(let l), .eventBanner(let r)): return l == r
           case (.timedGroupChallenge(let l), .timedGroupChallenge(let r)): return l == r
+          case (.miniCollection(let l), .miniCollection(let r)): return l == r
           default: return false
           }
         }
       #endif
+      }
+
+      public struct MiniCollectionSection {
+        // SwiftProtobuf.Message conformance is added in an extension below. See the
+        // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+        // methods supported on all messages.
+
+        public var questID: String = String()
+
+        public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+        public init() {}
       }
 
       public struct TimedGroupChallengeSection {
@@ -321,6 +343,10 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
             case battle // = 24
             case xp // = 25
             case shop // = 26
+            case location // = 27
+            case event // = 28
+            case mysteryBox // = 29
+            case tradeBall // = 30
             case UNRECOGNIZED(Int)
 
             public init() {
@@ -356,6 +382,10 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
               case 24: self = .battle
               case 25: self = .xp
               case 26: self = .shop
+              case 27: self = .location
+              case 28: self = .event
+              case 29: self = .mysteryBox
+              case 30: self = .tradeBall
               default: self = .UNRECOGNIZED(rawValue)
               }
             }
@@ -389,6 +419,10 @@ public struct POGOProtos_Networking_Responses_GetTodayViewResponse {
               case .battle: return 24
               case .xp: return 25
               case .shop: return 26
+              case .location: return 27
+              case .event: return 28
+              case .mysteryBox: return 29
+              case .tradeBall: return 30
               case .UNRECOGNIZED(let i): return i
               }
             }
@@ -515,6 +549,10 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
     .battle,
     .xp,
     .shop,
+    .location,
+    .event,
+    .mysteryBox,
+    .tradeBall,
   ]
 }
 
@@ -607,6 +645,7 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
     6: .standard(proto: "timed_quest"),
     7: .standard(proto: "event_banner"),
     8: .standard(proto: "timed_group_challenge"),
+    9: .standard(proto: "mini_collection"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -676,6 +715,14 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.section = .timedGroupChallenge(v)}
+      case 9:
+        var v: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.MiniCollectionSection?
+        if let current = self.section {
+          try decoder.handleConflictingOneOf()
+          if case .miniCollection(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.section = .miniCollection(v)}
       default: break
       }
     }
@@ -699,6 +746,8 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
     case .timedGroupChallenge(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    case .miniCollection(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -706,6 +755,35 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
 
   public static func ==(lhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection, rhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection) -> Bool {
     if lhs.section != rhs.section {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.MiniCollectionSection: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.protoMessageName + ".MiniCollectionSection"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "quest_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.questID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.questID.isEmpty {
+      try visitor.visitSingularStringField(value: self.questID, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.MiniCollectionSection, rhs: POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayViewSection.MiniCollectionSection) -> Bool {
+    if lhs.questID != rhs.questID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1033,6 +1111,10 @@ extension POGOProtos_Networking_Responses_GetTodayViewResponse.TodayView.TodayVi
     24: .same(proto: "BATTLE"),
     25: .same(proto: "XP"),
     26: .same(proto: "SHOP"),
+    27: .same(proto: "LOCATION"),
+    28: .same(proto: "EVENT"),
+    29: .same(proto: "MYSTERY_BOX"),
+    30: .same(proto: "TRADE_BALL"),
   ]
 }
 

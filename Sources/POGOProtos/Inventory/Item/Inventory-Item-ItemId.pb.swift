@@ -56,6 +56,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemGoldenPinapBerry // = 708
   case itemPoffin // = 709
   case itemSpecialCamera // = 801
+  case itemStickerInventory // = 802
   case itemIncubatorBasicUnlimited // = 901
   case itemIncubatorBasic // = 902
   case itemIncubatorSuper // = 903
@@ -73,6 +74,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
   case itemMoveRerollEliteFastAttack // = 1203
   case itemMoveRerollEliteSpecialAttack // = 1204
   case itemRareCandy // = 1301
+  case itemXlRareCandy // = 1302
   case itemFreeRaidTicket // = 1401
   case itemPaidRaidTicket // = 1402
   case itemLegendaryRaidTicket // = 1403
@@ -128,6 +130,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 708: self = .itemGoldenPinapBerry
     case 709: self = .itemPoffin
     case 801: self = .itemSpecialCamera
+    case 802: self = .itemStickerInventory
     case 901: self = .itemIncubatorBasicUnlimited
     case 902: self = .itemIncubatorBasic
     case 903: self = .itemIncubatorSuper
@@ -145,6 +148,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case 1203: self = .itemMoveRerollEliteFastAttack
     case 1204: self = .itemMoveRerollEliteSpecialAttack
     case 1301: self = .itemRareCandy
+    case 1302: self = .itemXlRareCandy
     case 1401: self = .itemFreeRaidTicket
     case 1402: self = .itemPaidRaidTicket
     case 1403: self = .itemLegendaryRaidTicket
@@ -198,6 +202,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemGoldenPinapBerry: return 708
     case .itemPoffin: return 709
     case .itemSpecialCamera: return 801
+    case .itemStickerInventory: return 802
     case .itemIncubatorBasicUnlimited: return 901
     case .itemIncubatorBasic: return 902
     case .itemIncubatorSuper: return 903
@@ -215,6 +220,7 @@ public enum POGOProtos_Inventory_Item_ItemId: SwiftProtobuf.Enum {
     case .itemMoveRerollEliteFastAttack: return 1203
     case .itemMoveRerollEliteSpecialAttack: return 1204
     case .itemRareCandy: return 1301
+    case .itemXlRareCandy: return 1302
     case .itemFreeRaidTicket: return 1401
     case .itemPaidRaidTicket: return 1402
     case .itemLegendaryRaidTicket: return 1403
@@ -273,6 +279,7 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemGoldenPinapBerry,
     .itemPoffin,
     .itemSpecialCamera,
+    .itemStickerInventory,
     .itemIncubatorBasicUnlimited,
     .itemIncubatorBasic,
     .itemIncubatorSuper,
@@ -290,6 +297,7 @@ extension POGOProtos_Inventory_Item_ItemId: CaseIterable {
     .itemMoveRerollEliteFastAttack,
     .itemMoveRerollEliteSpecialAttack,
     .itemRareCandy,
+    .itemXlRareCandy,
     .itemFreeRaidTicket,
     .itemPaidRaidTicket,
     .itemLegendaryRaidTicket,
@@ -346,6 +354,7 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     708: .same(proto: "ITEM_GOLDEN_PINAP_BERRY"),
     709: .same(proto: "ITEM_POFFIN"),
     801: .same(proto: "ITEM_SPECIAL_CAMERA"),
+    802: .same(proto: "ITEM_STICKER_INVENTORY"),
     901: .same(proto: "ITEM_INCUBATOR_BASIC_UNLIMITED"),
     902: .same(proto: "ITEM_INCUBATOR_BASIC"),
     903: .same(proto: "ITEM_INCUBATOR_SUPER"),
@@ -363,6 +372,7 @@ extension POGOProtos_Inventory_Item_ItemId: SwiftProtobuf._ProtoNameProviding {
     1203: .same(proto: "ITEM_MOVE_REROLL_ELITE_FAST_ATTACK"),
     1204: .same(proto: "ITEM_MOVE_REROLL_ELITE_SPECIAL_ATTACK"),
     1301: .same(proto: "ITEM_RARE_CANDY"),
+    1302: .same(proto: "ITEM_XL_RARE_CANDY"),
     1401: .same(proto: "ITEM_FREE_RAID_TICKET"),
     1402: .same(proto: "ITEM_PAID_RAID_TICKET"),
     1403: .same(proto: "ITEM_LEGENDARY_RAID_TICKET"),

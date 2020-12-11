@@ -51,12 +51,13 @@ public struct POGOProtos_Data_Titan_TitanGameClientTelemetryOmni {
   }
 
   public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
-    get {
-      if case .serverData(let v)? = telemetryData {return v}
-      return POGOProtos_Data_Telemetry_PlatformServerData()
-    }
-    set {telemetryData = .serverData(newValue)}
+    get {return _serverData ?? POGOProtos_Data_Telemetry_PlatformServerData()}
+    set {_serverData = newValue}
   }
+  /// Returns true if `serverData` has been explicitly set.
+  public var hasServerData: Bool {return self._serverData != nil}
+  /// Clears the value of `serverData`. Subsequent reads from it will return its default value.
+  public mutating func clearServerData() {self._serverData = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -64,7 +65,6 @@ public struct POGOProtos_Data_Titan_TitanGameClientTelemetryOmni {
     case poiSubmissionTelemetry(POGOProtos_Data_Titan_TitanGameClientTelemetryOmni.PoiSubmissionTelemetry)
     case poiSubmissionPhotoUploadErrorTelemetry(POGOProtos_Data_Titan_TitanGameClientTelemetryOmni.PoiSubmissionPhotoUploadErrorTelemetry)
     case playerMetadataTelemetry(POGOProtos_Data_Titan_TitanGameClientTelemetryOmni.PoiPlayerMetadataTelemetry)
-    case serverData(POGOProtos_Data_Telemetry_PlatformServerData)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Titan_TitanGameClientTelemetryOmni.OneOf_TelemetryData, rhs: POGOProtos_Data_Titan_TitanGameClientTelemetryOmni.OneOf_TelemetryData) -> Bool {
@@ -72,7 +72,6 @@ public struct POGOProtos_Data_Titan_TitanGameClientTelemetryOmni {
       case (.poiSubmissionTelemetry(let l), .poiSubmissionTelemetry(let r)): return l == r
       case (.poiSubmissionPhotoUploadErrorTelemetry(let l), .poiSubmissionPhotoUploadErrorTelemetry(let r)): return l == r
       case (.playerMetadataTelemetry(let l), .playerMetadataTelemetry(let r)): return l == r
-      case (.serverData(let l), .serverData(let r)): return l == r
       default: return false
       }
     }
@@ -261,6 +260,8 @@ public struct POGOProtos_Data_Titan_TitanGameClientTelemetryOmni {
   }
 
   public init() {}
+
+  fileprivate var _serverData: POGOProtos_Data_Telemetry_PlatformServerData? = nil
 }
 
 #if swift(>=4.2)
@@ -348,14 +349,7 @@ extension POGOProtos_Data_Titan_TitanGameClientTelemetryOmni: SwiftProtobuf.Mess
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.telemetryData = .playerMetadataTelemetry(v)}
-      case 1001:
-        var v: POGOProtos_Data_Telemetry_PlatformServerData?
-        if let current = self.telemetryData {
-          try decoder.handleConflictingOneOf()
-          if case .serverData(let m) = current {v = m}
-        }
-        try decoder.decodeSingularMessageField(value: &v)
-        if let v = v {self.telemetryData = .serverData(v)}
+      case 1001: try decoder.decodeSingularMessageField(value: &self._serverData)
       default: break
       }
     }
@@ -369,15 +363,17 @@ extension POGOProtos_Data_Titan_TitanGameClientTelemetryOmni: SwiftProtobuf.Mess
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     case .playerMetadataTelemetry(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    case .serverData(let v)?:
-      try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
     case nil: break
+    }
+    if let v = self._serverData {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1001)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Titan_TitanGameClientTelemetryOmni, rhs: POGOProtos_Data_Titan_TitanGameClientTelemetryOmni) -> Bool {
     if lhs.telemetryData != rhs.telemetryData {return false}
+    if lhs._serverData != rhs._serverData {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

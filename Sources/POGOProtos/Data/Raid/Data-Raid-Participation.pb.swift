@@ -44,6 +44,12 @@ public struct POGOProtos_Data_Raid_Participation {
 
   public var highestFriendshipPokeballs: Int32 = 0
 
+  public var speedCompletionPokeballs: Int32 = 0
+
+  public var speedCompletionMegaResource: Int32 = 0
+
+  public var megaResourceCapped: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -66,6 +72,9 @@ extension POGOProtos_Data_Raid_Participation: SwiftProtobuf.Message, SwiftProtob
     8: .standard(proto: "bonus_item_multiplier"),
     9: .standard(proto: "highest_friendship_milestone"),
     10: .standard(proto: "highest_friendship_pokeballs"),
+    11: .standard(proto: "speed_completion_pokeballs"),
+    12: .standard(proto: "speed_completion_mega_resource"),
+    13: .standard(proto: "mega_resource_capped"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -81,6 +90,9 @@ extension POGOProtos_Data_Raid_Participation: SwiftProtobuf.Message, SwiftProtob
       case 8: try decoder.decodeSingularFloatField(value: &self.bonusItemMultiplier)
       case 9: try decoder.decodeSingularEnumField(value: &self.highestFriendshipMilestone)
       case 10: try decoder.decodeSingularInt32Field(value: &self.highestFriendshipPokeballs)
+      case 11: try decoder.decodeSingularInt32Field(value: &self.speedCompletionPokeballs)
+      case 12: try decoder.decodeSingularInt32Field(value: &self.speedCompletionMegaResource)
+      case 13: try decoder.decodeSingularBoolField(value: &self.megaResourceCapped)
       default: break
       }
     }
@@ -117,6 +129,15 @@ extension POGOProtos_Data_Raid_Participation: SwiftProtobuf.Message, SwiftProtob
     if self.highestFriendshipPokeballs != 0 {
       try visitor.visitSingularInt32Field(value: self.highestFriendshipPokeballs, fieldNumber: 10)
     }
+    if self.speedCompletionPokeballs != 0 {
+      try visitor.visitSingularInt32Field(value: self.speedCompletionPokeballs, fieldNumber: 11)
+    }
+    if self.speedCompletionMegaResource != 0 {
+      try visitor.visitSingularInt32Field(value: self.speedCompletionMegaResource, fieldNumber: 12)
+    }
+    if self.megaResourceCapped != false {
+      try visitor.visitSingularBoolField(value: self.megaResourceCapped, fieldNumber: 13)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -131,6 +152,9 @@ extension POGOProtos_Data_Raid_Participation: SwiftProtobuf.Message, SwiftProtob
     if lhs.bonusItemMultiplier != rhs.bonusItemMultiplier {return false}
     if lhs.highestFriendshipMilestone != rhs.highestFriendshipMilestone {return false}
     if lhs.highestFriendshipPokeballs != rhs.highestFriendshipPokeballs {return false}
+    if lhs.speedCompletionPokeballs != rhs.speedCompletionPokeballs {return false}
+    if lhs.speedCompletionMegaResource != rhs.speedCompletionMegaResource {return false}
+    if lhs.megaResourceCapped != rhs.megaResourceCapped {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

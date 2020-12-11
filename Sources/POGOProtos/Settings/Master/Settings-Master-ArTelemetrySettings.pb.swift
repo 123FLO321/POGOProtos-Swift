@@ -36,6 +36,8 @@ public struct POGOProtos_Settings_Master_ArTelemetrySettings {
 
   public var framerateSamplingIntervalMs: Int32 = 0
 
+  public var percentageSessionsToSample: Float = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -54,6 +56,7 @@ extension POGOProtos_Settings_Master_ArTelemetrySettings: SwiftProtobuf.Message,
     4: .standard(proto: "processor_sampling_interval_ms"),
     5: .standard(proto: "measure_framerate"),
     6: .standard(proto: "framerate_sampling_interval_ms"),
+    7: .standard(proto: "percentage_sessions_to_sample"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -65,6 +68,7 @@ extension POGOProtos_Settings_Master_ArTelemetrySettings: SwiftProtobuf.Message,
       case 4: try decoder.decodeSingularInt32Field(value: &self.processorSamplingIntervalMs)
       case 5: try decoder.decodeSingularBoolField(value: &self.measureFramerate)
       case 6: try decoder.decodeSingularInt32Field(value: &self.framerateSamplingIntervalMs)
+      case 7: try decoder.decodeSingularFloatField(value: &self.percentageSessionsToSample)
       default: break
       }
     }
@@ -89,6 +93,9 @@ extension POGOProtos_Settings_Master_ArTelemetrySettings: SwiftProtobuf.Message,
     if self.framerateSamplingIntervalMs != 0 {
       try visitor.visitSingularInt32Field(value: self.framerateSamplingIntervalMs, fieldNumber: 6)
     }
+    if self.percentageSessionsToSample != 0 {
+      try visitor.visitSingularFloatField(value: self.percentageSessionsToSample, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -99,6 +106,7 @@ extension POGOProtos_Settings_Master_ArTelemetrySettings: SwiftProtobuf.Message,
     if lhs.processorSamplingIntervalMs != rhs.processorSamplingIntervalMs {return false}
     if lhs.measureFramerate != rhs.measureFramerate {return false}
     if lhs.framerateSamplingIntervalMs != rhs.framerateSamplingIntervalMs {return false}
+    if lhs.percentageSessionsToSample != rhs.percentageSessionsToSample {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

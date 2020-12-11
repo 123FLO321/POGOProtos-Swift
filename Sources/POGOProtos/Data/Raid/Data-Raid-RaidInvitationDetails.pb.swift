@@ -61,6 +61,8 @@ public struct POGOProtos_Data_Raid_RaidInvitationDetails {
 
   public var inviterTeam: POGOProtos_Enums_TeamColor = .neutral
 
+  public var raidPokemonTempEvoID: POGOProtos_Enums_TemporaryEvolutionId = .evolutionUnset
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -90,6 +92,7 @@ extension POGOProtos_Data_Raid_RaidInvitationDetails: SwiftProtobuf.Message, Swi
     13: .standard(proto: "inviter_nickname"),
     14: .standard(proto: "inviter_avatar"),
     15: .standard(proto: "inviter_team"),
+    16: .standard(proto: "raid_pokemon_temp_evo_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -110,6 +113,7 @@ extension POGOProtos_Data_Raid_RaidInvitationDetails: SwiftProtobuf.Message, Swi
       case 13: try decoder.decodeSingularStringField(value: &self.inviterNickname)
       case 14: try decoder.decodeSingularMessageField(value: &self._inviterAvatar)
       case 15: try decoder.decodeSingularEnumField(value: &self.inviterTeam)
+      case 16: try decoder.decodeSingularEnumField(value: &self.raidPokemonTempEvoID)
       default: break
       }
     }
@@ -161,6 +165,9 @@ extension POGOProtos_Data_Raid_RaidInvitationDetails: SwiftProtobuf.Message, Swi
     if self.inviterTeam != .neutral {
       try visitor.visitSingularEnumField(value: self.inviterTeam, fieldNumber: 15)
     }
+    if self.raidPokemonTempEvoID != .evolutionUnset {
+      try visitor.visitSingularEnumField(value: self.raidPokemonTempEvoID, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -180,6 +187,7 @@ extension POGOProtos_Data_Raid_RaidInvitationDetails: SwiftProtobuf.Message, Swi
     if lhs.inviterNickname != rhs.inviterNickname {return false}
     if lhs._inviterAvatar != rhs._inviterAvatar {return false}
     if lhs.inviterTeam != rhs.inviterTeam {return false}
+    if lhs.raidPokemonTempEvoID != rhs.raidPokemonTempEvoID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

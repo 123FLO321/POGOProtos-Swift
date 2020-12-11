@@ -234,12 +234,52 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     set {_uniqueStorage()._condition = .withDailyBuddyAffection(newValue)}
   }
 
-  public var withMegaEvoPokemon: POGOProtos_Data_Quests_QuestCondition.WithMegaEvoPokemon {
+  public var withPokemonLevel: POGOProtos_Data_Quests_QuestCondition.WithPokemonLevel {
     get {
-      if case .withMegaEvoPokemon(let v)? = _storage._condition {return v}
-      return POGOProtos_Data_Quests_QuestCondition.WithMegaEvoPokemon()
+      if case .withPokemonLevel(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithPokemonLevel()
     }
-    set {_uniqueStorage()._condition = .withMegaEvoPokemon(newValue)}
+    set {_uniqueStorage()._condition = .withPokemonLevel(newValue)}
+  }
+
+  public var withMaxCp: POGOProtos_Data_Quests_QuestCondition.WithMaxCp {
+    get {
+      if case .withMaxCp(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithMaxCp()
+    }
+    set {_uniqueStorage()._condition = .withMaxCp(newValue)}
+  }
+
+  public var withTempEvoID: POGOProtos_Data_Quests_QuestCondition.WithTempEvoId {
+    get {
+      if case .withTempEvoID(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithTempEvoId()
+    }
+    set {_uniqueStorage()._condition = .withTempEvoID(newValue)}
+  }
+
+  public var withGblRank: POGOProtos_Data_Quests_QuestCondition.WithGblRank {
+    get {
+      if case .withGblRank(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithGblRank()
+    }
+    set {_uniqueStorage()._condition = .withGblRank(newValue)}
+  }
+
+  public var withEncounterType: POGOProtos_Data_Quests_QuestCondition.WithEncounterType {
+    get {
+      if case .withEncounterType(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithEncounterType()
+    }
+    set {_uniqueStorage()._condition = .withEncounterType(newValue)}
+  }
+
+  public var withCombatType: POGOProtos_Data_Quests_QuestCondition.WithCombatType {
+    get {
+      if case .withCombatType(let v)? = _storage._condition {return v}
+      return POGOProtos_Data_Quests_QuestCondition.WithCombatType()
+    }
+    set {_uniqueStorage()._condition = .withCombatType(newValue)}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -270,7 +310,12 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     case withPokemonAlignment(POGOProtos_Data_Quests_QuestCondition.WithPokemonAlignment)
     case withBuddy(POGOProtos_Data_Quests_QuestCondition.WithBuddy)
     case withDailyBuddyAffection(POGOProtos_Data_Quests_QuestCondition.WithDailyBuddyAffection)
-    case withMegaEvoPokemon(POGOProtos_Data_Quests_QuestCondition.WithMegaEvoPokemon)
+    case withPokemonLevel(POGOProtos_Data_Quests_QuestCondition.WithPokemonLevel)
+    case withMaxCp(POGOProtos_Data_Quests_QuestCondition.WithMaxCp)
+    case withTempEvoID(POGOProtos_Data_Quests_QuestCondition.WithTempEvoId)
+    case withGblRank(POGOProtos_Data_Quests_QuestCondition.WithGblRank)
+    case withEncounterType(POGOProtos_Data_Quests_QuestCondition.WithEncounterType)
+    case withCombatType(POGOProtos_Data_Quests_QuestCondition.WithCombatType)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition, rhs: POGOProtos_Data_Quests_QuestCondition.OneOf_Condition) -> Bool {
@@ -300,7 +345,12 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case (.withPokemonAlignment(let l), .withPokemonAlignment(let r)): return l == r
       case (.withBuddy(let l), .withBuddy(let r)): return l == r
       case (.withDailyBuddyAffection(let l), .withDailyBuddyAffection(let r)): return l == r
-      case (.withMegaEvoPokemon(let l), .withMegaEvoPokemon(let r)): return l == r
+      case (.withPokemonLevel(let l), .withPokemonLevel(let r)): return l == r
+      case (.withMaxCp(let l), .withMaxCp(let r)): return l == r
+      case (.withTempEvoID(let l), .withTempEvoID(let r)): return l == r
+      case (.withGblRank(let l), .withGblRank(let r)): return l == r
+      case (.withEncounterType(let l), .withEncounterType(let r)): return l == r
+      case (.withCombatType(let l), .withCombatType(let r)): return l == r
       default: return false
       }
     }
@@ -340,7 +390,17 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     case withBuddy // = 28
     case withBuddyInterestingPoi // = 29
     case withDailyBuddyAffection // = 30
-    case withMegaEvoPokemon // = 37
+    case withPokemonLevel // = 31
+    case withSingleDay // = 32
+    case withUniquePokemonTeam // = 33
+    case withMaxCp // = 34
+    case withLuckyPokemon // = 35
+    case withLegendaryPokemon // = 36
+    case withTempEvoPokemon // = 37
+    case withGblRank // = 38
+    case withCatchesInARow // = 39
+    case withEncounterType // = 40
+    case withCombatType // = 41
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -380,7 +440,17 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case 28: self = .withBuddy
       case 29: self = .withBuddyInterestingPoi
       case 30: self = .withDailyBuddyAffection
-      case 37: self = .withMegaEvoPokemon
+      case 31: self = .withPokemonLevel
+      case 32: self = .withSingleDay
+      case 33: self = .withUniquePokemonTeam
+      case 34: self = .withMaxCp
+      case 35: self = .withLuckyPokemon
+      case 36: self = .withLegendaryPokemon
+      case 37: self = .withTempEvoPokemon
+      case 38: self = .withGblRank
+      case 39: self = .withCatchesInARow
+      case 40: self = .withEncounterType
+      case 41: self = .withCombatType
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -418,11 +488,93 @@ public struct POGOProtos_Data_Quests_QuestCondition {
       case .withBuddy: return 28
       case .withBuddyInterestingPoi: return 29
       case .withDailyBuddyAffection: return 30
-      case .withMegaEvoPokemon: return 37
+      case .withPokemonLevel: return 31
+      case .withSingleDay: return 32
+      case .withUniquePokemonTeam: return 33
+      case .withMaxCp: return 34
+      case .withLuckyPokemon: return 35
+      case .withLegendaryPokemon: return 36
+      case .withTempEvoPokemon: return 37
+      case .withGblRank: return 38
+      case .withCatchesInARow: return 39
+      case .withEncounterType: return 40
+      case .withCombatType: return 41
       case .UNRECOGNIZED(let i): return i
       }
     }
 
+  }
+
+  public struct WithCombatType {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var combatType: [POGOProtos_Enums_CombatType] = []
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithEncounterType {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var encounterType: [POGOProtos_Enums_EncounterType] = []
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithGblRank {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var rank: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithTempEvoId {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var megaForm: [POGOProtos_Enums_TemporaryEvolutionId] = []
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithMaxCp {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var maxCp: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithPokemonLevel {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var maxLevel: Bool = false
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
   }
 
   public struct WithDailyBuddyAffection {
@@ -493,6 +645,8 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     public var requiresWin: Bool = false
 
     public var combatLeagueTemplateID: [String] = []
+
+    public var combatLeagueBadge: POGOProtos_Enums_BadgeType = .badgeUnset
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -791,18 +945,6 @@ public struct POGOProtos_Data_Quests_QuestCondition {
     public init() {}
   }
 
-  public struct WithMegaEvoPokemon {
-    // SwiftProtobuf.Message conformance is added in an extension below. See the
-    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
-    // methods supported on all messages.
-
-    public var pokemonEvolution: [POGOProtos_Enums_PokemonEvolution] = []
-
-    public var unknownFields = SwiftProtobuf.UnknownStorage()
-
-    public init() {}
-  }
-
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
@@ -844,7 +986,17 @@ extension POGOProtos_Data_Quests_QuestCondition.ConditionType: CaseIterable {
     .withBuddy,
     .withBuddyInterestingPoi,
     .withDailyBuddyAffection,
-    .withMegaEvoPokemon,
+    .withPokemonLevel,
+    .withSingleDay,
+    .withUniquePokemonTeam,
+    .withMaxCp,
+    .withLuckyPokemon,
+    .withLegendaryPokemon,
+    .withTempEvoPokemon,
+    .withGblRank,
+    .withCatchesInARow,
+    .withEncounterType,
+    .withCombatType,
   ]
 }
 
@@ -892,7 +1044,12 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
     24: .standard(proto: "with_pokemon_alignment"),
     25: .standard(proto: "with_buddy"),
     26: .standard(proto: "with_daily_buddy_affection"),
-    29: .standard(proto: "with_mega_evo_pokemon"),
+    27: .standard(proto: "with_pokemon_level"),
+    28: .standard(proto: "with_max_cp"),
+    29: .standard(proto: "with_temp_evo_id"),
+    30: .standard(proto: "with_gbl_rank"),
+    31: .standard(proto: "with_encounter_type"),
+    32: .standard(proto: "with_combat_type"),
   ]
 
   fileprivate class _StorageClass {
@@ -1122,14 +1279,54 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._condition = .withDailyBuddyAffection(v)}
-        case 29:
-          var v: POGOProtos_Data_Quests_QuestCondition.WithMegaEvoPokemon?
+        case 27:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithPokemonLevel?
           if let current = _storage._condition {
             try decoder.handleConflictingOneOf()
-            if case .withMegaEvoPokemon(let m) = current {v = m}
+            if case .withPokemonLevel(let m) = current {v = m}
           }
           try decoder.decodeSingularMessageField(value: &v)
-          if let v = v {_storage._condition = .withMegaEvoPokemon(v)}
+          if let v = v {_storage._condition = .withPokemonLevel(v)}
+        case 28:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithMaxCp?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withMaxCp(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withMaxCp(v)}
+        case 29:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithTempEvoId?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withTempEvoID(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withTempEvoID(v)}
+        case 30:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithGblRank?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withGblRank(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withGblRank(v)}
+        case 31:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithEncounterType?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withEncounterType(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withEncounterType(v)}
+        case 32:
+          var v: POGOProtos_Data_Quests_QuestCondition.WithCombatType?
+          if let current = _storage._condition {
+            try decoder.handleConflictingOneOf()
+            if case .withCombatType(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._condition = .withCombatType(v)}
         default: break
         }
       }
@@ -1192,8 +1389,18 @@ extension POGOProtos_Data_Quests_QuestCondition: SwiftProtobuf.Message, SwiftPro
         try visitor.visitSingularMessageField(value: v, fieldNumber: 25)
       case .withDailyBuddyAffection(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 26)
-      case .withMegaEvoPokemon(let v)?:
+      case .withPokemonLevel(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 27)
+      case .withMaxCp(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 28)
+      case .withTempEvoID(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 29)
+      case .withGblRank(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 30)
+      case .withEncounterType(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 31)
+      case .withCombatType(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 32)
       case nil: break
       }
     }
@@ -1249,8 +1456,192 @@ extension POGOProtos_Data_Quests_QuestCondition.ConditionType: SwiftProtobuf._Pr
     28: .same(proto: "WITH_BUDDY"),
     29: .same(proto: "WITH_BUDDY_INTERESTING_POI"),
     30: .same(proto: "WITH_DAILY_BUDDY_AFFECTION"),
-    37: .same(proto: "WITH_MEGA_EVO_POKEMON"),
+    31: .same(proto: "WITH_POKEMON_LEVEL"),
+    32: .same(proto: "WITH_SINGLE_DAY"),
+    33: .same(proto: "WITH_UNIQUE_POKEMON_TEAM"),
+    34: .same(proto: "WITH_MAX_CP"),
+    35: .same(proto: "WITH_LUCKY_POKEMON"),
+    36: .same(proto: "WITH_LEGENDARY_POKEMON"),
+    37: .same(proto: "WITH_TEMP_EVO_POKEMON"),
+    38: .same(proto: "WITH_GBL_RANK"),
+    39: .same(proto: "WITH_CATCHES_IN_A_ROW"),
+    40: .same(proto: "WITH_ENCOUNTER_TYPE"),
+    41: .same(proto: "WITH_COMBAT_TYPE"),
   ]
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithCombatType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithCombatType"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "combat_type"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedEnumField(value: &self.combatType)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.combatType.isEmpty {
+      try visitor.visitPackedEnumField(value: self.combatType, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithCombatType, rhs: POGOProtos_Data_Quests_QuestCondition.WithCombatType) -> Bool {
+    if lhs.combatType != rhs.combatType {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithEncounterType: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithEncounterType"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "encounter_type"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedEnumField(value: &self.encounterType)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.encounterType.isEmpty {
+      try visitor.visitPackedEnumField(value: self.encounterType, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithEncounterType, rhs: POGOProtos_Data_Quests_QuestCondition.WithEncounterType) -> Bool {
+    if lhs.encounterType != rhs.encounterType {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithGblRank: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithGblRank"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "rank"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.rank)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.rank != 0 {
+      try visitor.visitSingularInt32Field(value: self.rank, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithGblRank, rhs: POGOProtos_Data_Quests_QuestCondition.WithGblRank) -> Bool {
+    if lhs.rank != rhs.rank {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithTempEvoId: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithTempEvoId"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "mega_form"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedEnumField(value: &self.megaForm)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.megaForm.isEmpty {
+      try visitor.visitPackedEnumField(value: self.megaForm, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithTempEvoId, rhs: POGOProtos_Data_Quests_QuestCondition.WithTempEvoId) -> Bool {
+    if lhs.megaForm != rhs.megaForm {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithMaxCp: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithMaxCp"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "max_cp"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.maxCp)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.maxCp != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxCp, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithMaxCp, rhs: POGOProtos_Data_Quests_QuestCondition.WithMaxCp) -> Bool {
+    if lhs.maxCp != rhs.maxCp {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestCondition.WithPokemonLevel: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithPokemonLevel"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "max_level"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.maxLevel)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.maxLevel != false {
+      try visitor.visitSingularBoolField(value: self.maxLevel, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonLevel, rhs: POGOProtos_Data_Quests_QuestCondition.WithPokemonLevel) -> Bool {
+    if lhs.maxLevel != rhs.maxLevel {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
 extension POGOProtos_Data_Quests_QuestCondition.WithDailyBuddyAffection: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
@@ -1399,6 +1790,7 @@ extension POGOProtos_Data_Quests_QuestCondition.WithPvpCombat: SwiftProtobuf.Mes
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "requires_win"),
     2: .standard(proto: "combat_league_template_id"),
+    3: .standard(proto: "combat_league_badge"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -1406,6 +1798,7 @@ extension POGOProtos_Data_Quests_QuestCondition.WithPvpCombat: SwiftProtobuf.Mes
       switch fieldNumber {
       case 1: try decoder.decodeSingularBoolField(value: &self.requiresWin)
       case 2: try decoder.decodeRepeatedStringField(value: &self.combatLeagueTemplateID)
+      case 3: try decoder.decodeSingularEnumField(value: &self.combatLeagueBadge)
       default: break
       }
     }
@@ -1418,12 +1811,16 @@ extension POGOProtos_Data_Quests_QuestCondition.WithPvpCombat: SwiftProtobuf.Mes
     if !self.combatLeagueTemplateID.isEmpty {
       try visitor.visitRepeatedStringField(value: self.combatLeagueTemplateID, fieldNumber: 2)
     }
+    if self.combatLeagueBadge != .badgeUnset {
+      try visitor.visitSingularEnumField(value: self.combatLeagueBadge, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithPvpCombat, rhs: POGOProtos_Data_Quests_QuestCondition.WithPvpCombat) -> Bool {
     if lhs.requiresWin != rhs.requiresWin {return false}
     if lhs.combatLeagueTemplateID != rhs.combatLeagueTemplateID {return false}
+    if lhs.combatLeagueBadge != rhs.combatLeagueBadge {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -1960,35 +2357,6 @@ extension POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus: SwiftProtob
   }
 
   public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus, rhs: POGOProtos_Data_Quests_QuestCondition.WithWinBattleStatus) -> Bool {
-    if lhs.unknownFields != rhs.unknownFields {return false}
-    return true
-  }
-}
-
-extension POGOProtos_Data_Quests_QuestCondition.WithMegaEvoPokemon: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
-  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestCondition.protoMessageName + ".WithMegaEvoPokemon"
-  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "pokemon_evolution"),
-  ]
-
-  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
-    while let fieldNumber = try decoder.nextFieldNumber() {
-      switch fieldNumber {
-      case 1: try decoder.decodeRepeatedEnumField(value: &self.pokemonEvolution)
-      default: break
-      }
-    }
-  }
-
-  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if !self.pokemonEvolution.isEmpty {
-      try visitor.visitPackedEnumField(value: self.pokemonEvolution, fieldNumber: 1)
-    }
-    try unknownFields.traverse(visitor: &visitor)
-  }
-
-  public static func ==(lhs: POGOProtos_Data_Quests_QuestCondition.WithMegaEvoPokemon, rhs: POGOProtos_Data_Quests_QuestCondition.WithMegaEvoPokemon) -> Bool {
-    if lhs.pokemonEvolution != rhs.pokemonEvolution {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

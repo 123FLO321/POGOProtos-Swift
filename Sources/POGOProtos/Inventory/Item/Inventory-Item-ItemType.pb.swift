@@ -44,6 +44,7 @@ public enum POGOProtos_Inventory_Item_ItemType: SwiftProtobuf.Enum {
   case vsSeekerBattleNow // = 21
   case incidentTicket // = 22
   case globalEventTicket // = 23
+  case stickerInventory // = 24
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -75,6 +76,7 @@ public enum POGOProtos_Inventory_Item_ItemType: SwiftProtobuf.Enum {
     case 21: self = .vsSeekerBattleNow
     case 22: self = .incidentTicket
     case 23: self = .globalEventTicket
+    case 24: self = .stickerInventory
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -104,6 +106,7 @@ public enum POGOProtos_Inventory_Item_ItemType: SwiftProtobuf.Enum {
     case .vsSeekerBattleNow: return 21
     case .incidentTicket: return 22
     case .globalEventTicket: return 23
+    case .stickerInventory: return 24
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -138,6 +141,7 @@ extension POGOProtos_Inventory_Item_ItemType: CaseIterable {
     .vsSeekerBattleNow,
     .incidentTicket,
     .globalEventTicket,
+    .stickerInventory,
   ]
 }
 
@@ -170,5 +174,6 @@ extension POGOProtos_Inventory_Item_ItemType: SwiftProtobuf._ProtoNameProviding 
     21: .same(proto: "ITEM_TYPE_VS_SEEKER_BATTLE_NOW"),
     22: .same(proto: "ITEM_TYPE_INCIDENT_TICKET"),
     23: .same(proto: "ITEM_TYPE_GLOBAL_EVENT_TICKET"),
+    24: .same(proto: "ITEM_TYPE_STICKER_INVENTORY"),
   ]
 }

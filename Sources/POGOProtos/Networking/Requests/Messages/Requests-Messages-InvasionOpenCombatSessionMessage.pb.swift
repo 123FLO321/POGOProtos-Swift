@@ -37,6 +37,8 @@ public struct POGOProtos_Networking_Requests_Messages_InvasionOpenCombatSessionM
 
   public var attackingPokemonID: [UInt64] = []
 
+  public var lobbyJoinTimeMs: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -54,6 +56,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionOpenCombatSessionMessa
     1: .standard(proto: "incident_lookup"),
     2: .same(proto: "step"),
     3: .standard(proto: "attacking_pokemon_id"),
+    4: .standard(proto: "lobby_join_time_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -62,6 +65,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionOpenCombatSessionMessa
       case 1: try decoder.decodeSingularMessageField(value: &self._incidentLookup)
       case 2: try decoder.decodeSingularInt32Field(value: &self.step)
       case 3: try decoder.decodeRepeatedFixed64Field(value: &self.attackingPokemonID)
+      case 4: try decoder.decodeSingularInt64Field(value: &self.lobbyJoinTimeMs)
       default: break
       }
     }
@@ -77,6 +81,9 @@ extension POGOProtos_Networking_Requests_Messages_InvasionOpenCombatSessionMessa
     if !self.attackingPokemonID.isEmpty {
       try visitor.visitPackedFixed64Field(value: self.attackingPokemonID, fieldNumber: 3)
     }
+    if self.lobbyJoinTimeMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.lobbyJoinTimeMs, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -84,6 +91,7 @@ extension POGOProtos_Networking_Requests_Messages_InvasionOpenCombatSessionMessa
     if lhs._incidentLookup != rhs._incidentLookup {return false}
     if lhs.step != rhs.step {return false}
     if lhs.attackingPokemonID != rhs.attackingPokemonID {return false}
+    if lhs.lobbyJoinTimeMs != rhs.lobbyJoinTimeMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

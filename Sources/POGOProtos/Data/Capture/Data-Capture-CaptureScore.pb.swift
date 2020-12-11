@@ -32,6 +32,10 @@ public struct POGOProtos_Data_Capture_CaptureScore {
 
   public var stardust: [Int32] = []
 
+  public var xlCandy: [Int32] = []
+
+  public var candyFromActiveMega: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -48,6 +52,8 @@ extension POGOProtos_Data_Capture_CaptureScore: SwiftProtobuf.Message, SwiftProt
     2: .same(proto: "exp"),
     3: .same(proto: "candy"),
     4: .same(proto: "stardust"),
+    5: .standard(proto: "xl_candy"),
+    6: .standard(proto: "candy_from_active_mega"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +63,8 @@ extension POGOProtos_Data_Capture_CaptureScore: SwiftProtobuf.Message, SwiftProt
       case 2: try decoder.decodeRepeatedInt32Field(value: &self.exp)
       case 3: try decoder.decodeRepeatedInt32Field(value: &self.candy)
       case 4: try decoder.decodeRepeatedInt32Field(value: &self.stardust)
+      case 5: try decoder.decodeRepeatedInt32Field(value: &self.xlCandy)
+      case 6: try decoder.decodeSingularInt32Field(value: &self.candyFromActiveMega)
       default: break
       }
     }
@@ -75,6 +83,12 @@ extension POGOProtos_Data_Capture_CaptureScore: SwiftProtobuf.Message, SwiftProt
     if !self.stardust.isEmpty {
       try visitor.visitPackedInt32Field(value: self.stardust, fieldNumber: 4)
     }
+    if !self.xlCandy.isEmpty {
+      try visitor.visitPackedInt32Field(value: self.xlCandy, fieldNumber: 5)
+    }
+    if self.candyFromActiveMega != 0 {
+      try visitor.visitSingularInt32Field(value: self.candyFromActiveMega, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +97,8 @@ extension POGOProtos_Data_Capture_CaptureScore: SwiftProtobuf.Message, SwiftProt
     if lhs.exp != rhs.exp {return false}
     if lhs.candy != rhs.candy {return false}
     if lhs.stardust != rhs.stardust {return false}
+    if lhs.xlCandy != rhs.xlCandy {return false}
+    if lhs.candyFromActiveMega != rhs.candyFromActiveMega {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

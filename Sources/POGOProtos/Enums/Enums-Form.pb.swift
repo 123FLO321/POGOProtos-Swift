@@ -2106,10 +2106,87 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
   case sirfetchdNormal // = 2510
   case sirfetchdShadow // = 2511
   case sirfetchdPurified // = 2512
+  case runerigusNormal // = 2516
+  case runerigusShadow // = 2517
+  case runerigusPurified // = 2518
   case slowpokeGalarian // = 2582
   case slowbroGalarian // = 2583
   case laprasCostume2020 // = 2585
   case gengarCostume2020 // = 2586
+  case pyroarNormal // = 2587
+  case pyroarFemale // = 2588
+  case meowsticNormal // = 2589
+  case meowsticFemale // = 2590
+  case zygardeTenPercent // = 2591
+  case zygardeFiftyPercent // = 2592
+  case zygardeComplete // = 2593
+  case vivillonArchipelago // = 2594
+  case vivillonContinental // = 2595
+  case vivillonElegant // = 2596
+  case vivillonFancy // = 2597
+  case vivillonGarden // = 2598
+  case vivillonHighPlains // = 2599
+  case vivillonIcySnow // = 2600
+  case vivillonJungle // = 2601
+  case vivillonMarine // = 2602
+  case vivillonMeadow // = 2603
+  case vivillonModern // = 2604
+  case vivillonMonsoon // = 2605
+  case vivillonOcean // = 2606
+  case vivillonPokeball // = 2607
+  case vivillonPolar // = 2608
+  case vivillonRiver // = 2609
+  case vivillonSandstorm // = 2610
+  case vivillonSavanna // = 2611
+  case vivillonSun // = 2612
+  case vivillonTundra // = 2613
+  case flabebeRed // = 2614
+  case flabebeYellow // = 2615
+  case flabebeOrange // = 2616
+  case flabebeBlue // = 2617
+  case flabebeWhite // = 2618
+  case floetteRed // = 2619
+  case floetteYellow // = 2620
+  case floetteOrange // = 2621
+  case floetteBlue // = 2622
+  case floetteWhite // = 2623
+  case florgesRed // = 2624
+  case florgesYellow // = 2625
+  case florgesOrange // = 2626
+  case florgesBlue // = 2627
+  case florgesWhite // = 2628
+  case furfrouNatural // = 2629
+  case furfrouHeart // = 2630
+  case furfrouStar // = 2631
+  case furfrouDiamond // = 2632
+  case furfrouDebutante // = 2633
+  case furfrouMatron // = 2634
+  case furfrouDandy // = 2635
+  case furfrouLaReine // = 2636
+  case furfrouKabuki // = 2637
+  case furfrouPharaoh // = 2638
+  case aegislashShield // = 2639
+  case aegislashBlade // = 2640
+  case pumpkabooSmall // = 2641
+  case pumpkabooAverage // = 2642
+  case pumpkabooLarge // = 2643
+  case pumpkabooSuper // = 2644
+  case gourgeistSmall // = 2645
+  case gourgeistAverage // = 2646
+  case gourgeistLarge // = 2647
+  case gourgeistSuper // = 2648
+  case xerneasNeutral // = 2649
+  case xerneasActive // = 2650
+  case hoopaConfined // = 2651
+  case hoopaUnbound // = 2652
+  case sableyeCostume2020Deprecated // = 2666
+  case sableyeCostume2020 // = 2668
+  case pikachuAdventureHat2020 // = 2669
+  case pikachuWinter2020 // = 2670
+  case delibirdWinter2020 // = 2671
+  case cubchooWinter2020 // = 2672
+  case slowpoke2020 // = 2673
+  case slowbro2021 // = 2674
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -4203,10 +4280,87 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case 2510: self = .sirfetchdNormal
     case 2511: self = .sirfetchdShadow
     case 2512: self = .sirfetchdPurified
+    case 2516: self = .runerigusNormal
+    case 2517: self = .runerigusShadow
+    case 2518: self = .runerigusPurified
     case 2582: self = .slowpokeGalarian
     case 2583: self = .slowbroGalarian
     case 2585: self = .laprasCostume2020
     case 2586: self = .gengarCostume2020
+    case 2587: self = .pyroarNormal
+    case 2588: self = .pyroarFemale
+    case 2589: self = .meowsticNormal
+    case 2590: self = .meowsticFemale
+    case 2591: self = .zygardeTenPercent
+    case 2592: self = .zygardeFiftyPercent
+    case 2593: self = .zygardeComplete
+    case 2594: self = .vivillonArchipelago
+    case 2595: self = .vivillonContinental
+    case 2596: self = .vivillonElegant
+    case 2597: self = .vivillonFancy
+    case 2598: self = .vivillonGarden
+    case 2599: self = .vivillonHighPlains
+    case 2600: self = .vivillonIcySnow
+    case 2601: self = .vivillonJungle
+    case 2602: self = .vivillonMarine
+    case 2603: self = .vivillonMeadow
+    case 2604: self = .vivillonModern
+    case 2605: self = .vivillonMonsoon
+    case 2606: self = .vivillonOcean
+    case 2607: self = .vivillonPokeball
+    case 2608: self = .vivillonPolar
+    case 2609: self = .vivillonRiver
+    case 2610: self = .vivillonSandstorm
+    case 2611: self = .vivillonSavanna
+    case 2612: self = .vivillonSun
+    case 2613: self = .vivillonTundra
+    case 2614: self = .flabebeRed
+    case 2615: self = .flabebeYellow
+    case 2616: self = .flabebeOrange
+    case 2617: self = .flabebeBlue
+    case 2618: self = .flabebeWhite
+    case 2619: self = .floetteRed
+    case 2620: self = .floetteYellow
+    case 2621: self = .floetteOrange
+    case 2622: self = .floetteBlue
+    case 2623: self = .floetteWhite
+    case 2624: self = .florgesRed
+    case 2625: self = .florgesYellow
+    case 2626: self = .florgesOrange
+    case 2627: self = .florgesBlue
+    case 2628: self = .florgesWhite
+    case 2629: self = .furfrouNatural
+    case 2630: self = .furfrouHeart
+    case 2631: self = .furfrouStar
+    case 2632: self = .furfrouDiamond
+    case 2633: self = .furfrouDebutante
+    case 2634: self = .furfrouMatron
+    case 2635: self = .furfrouDandy
+    case 2636: self = .furfrouLaReine
+    case 2637: self = .furfrouKabuki
+    case 2638: self = .furfrouPharaoh
+    case 2639: self = .aegislashShield
+    case 2640: self = .aegislashBlade
+    case 2641: self = .pumpkabooSmall
+    case 2642: self = .pumpkabooAverage
+    case 2643: self = .pumpkabooLarge
+    case 2644: self = .pumpkabooSuper
+    case 2645: self = .gourgeistSmall
+    case 2646: self = .gourgeistAverage
+    case 2647: self = .gourgeistLarge
+    case 2648: self = .gourgeistSuper
+    case 2649: self = .xerneasNeutral
+    case 2650: self = .xerneasActive
+    case 2651: self = .hoopaConfined
+    case 2652: self = .hoopaUnbound
+    case 2666: self = .sableyeCostume2020Deprecated
+    case 2668: self = .sableyeCostume2020
+    case 2669: self = .pikachuAdventureHat2020
+    case 2670: self = .pikachuWinter2020
+    case 2671: self = .delibirdWinter2020
+    case 2672: self = .cubchooWinter2020
+    case 2673: self = .slowpoke2020
+    case 2674: self = .slowbro2021
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -6310,10 +6464,87 @@ public enum POGOProtos_Enums_Form: SwiftProtobuf.Enum {
     case .sirfetchdNormal: return 2510
     case .sirfetchdShadow: return 2511
     case .sirfetchdPurified: return 2512
+    case .runerigusNormal: return 2516
+    case .runerigusShadow: return 2517
+    case .runerigusPurified: return 2518
     case .slowpokeGalarian: return 2582
     case .slowbroGalarian: return 2583
     case .laprasCostume2020: return 2585
     case .gengarCostume2020: return 2586
+    case .pyroarNormal: return 2587
+    case .pyroarFemale: return 2588
+    case .meowsticNormal: return 2589
+    case .meowsticFemale: return 2590
+    case .zygardeTenPercent: return 2591
+    case .zygardeFiftyPercent: return 2592
+    case .zygardeComplete: return 2593
+    case .vivillonArchipelago: return 2594
+    case .vivillonContinental: return 2595
+    case .vivillonElegant: return 2596
+    case .vivillonFancy: return 2597
+    case .vivillonGarden: return 2598
+    case .vivillonHighPlains: return 2599
+    case .vivillonIcySnow: return 2600
+    case .vivillonJungle: return 2601
+    case .vivillonMarine: return 2602
+    case .vivillonMeadow: return 2603
+    case .vivillonModern: return 2604
+    case .vivillonMonsoon: return 2605
+    case .vivillonOcean: return 2606
+    case .vivillonPokeball: return 2607
+    case .vivillonPolar: return 2608
+    case .vivillonRiver: return 2609
+    case .vivillonSandstorm: return 2610
+    case .vivillonSavanna: return 2611
+    case .vivillonSun: return 2612
+    case .vivillonTundra: return 2613
+    case .flabebeRed: return 2614
+    case .flabebeYellow: return 2615
+    case .flabebeOrange: return 2616
+    case .flabebeBlue: return 2617
+    case .flabebeWhite: return 2618
+    case .floetteRed: return 2619
+    case .floetteYellow: return 2620
+    case .floetteOrange: return 2621
+    case .floetteBlue: return 2622
+    case .floetteWhite: return 2623
+    case .florgesRed: return 2624
+    case .florgesYellow: return 2625
+    case .florgesOrange: return 2626
+    case .florgesBlue: return 2627
+    case .florgesWhite: return 2628
+    case .furfrouNatural: return 2629
+    case .furfrouHeart: return 2630
+    case .furfrouStar: return 2631
+    case .furfrouDiamond: return 2632
+    case .furfrouDebutante: return 2633
+    case .furfrouMatron: return 2634
+    case .furfrouDandy: return 2635
+    case .furfrouLaReine: return 2636
+    case .furfrouKabuki: return 2637
+    case .furfrouPharaoh: return 2638
+    case .aegislashShield: return 2639
+    case .aegislashBlade: return 2640
+    case .pumpkabooSmall: return 2641
+    case .pumpkabooAverage: return 2642
+    case .pumpkabooLarge: return 2643
+    case .pumpkabooSuper: return 2644
+    case .gourgeistSmall: return 2645
+    case .gourgeistAverage: return 2646
+    case .gourgeistLarge: return 2647
+    case .gourgeistSuper: return 2648
+    case .xerneasNeutral: return 2649
+    case .xerneasActive: return 2650
+    case .hoopaConfined: return 2651
+    case .hoopaUnbound: return 2652
+    case .sableyeCostume2020Deprecated: return 2666
+    case .sableyeCostume2020: return 2668
+    case .pikachuAdventureHat2020: return 2669
+    case .pikachuWinter2020: return 2670
+    case .delibirdWinter2020: return 2671
+    case .cubchooWinter2020: return 2672
+    case .slowpoke2020: return 2673
+    case .slowbro2021: return 2674
     case .UNRECOGNIZED(let i): return i
     default: break
     }
@@ -8415,10 +8646,87 @@ extension POGOProtos_Enums_Form: CaseIterable {
     .sirfetchdNormal,
     .sirfetchdShadow,
     .sirfetchdPurified,
+    .runerigusNormal,
+    .runerigusShadow,
+    .runerigusPurified,
     .slowpokeGalarian,
     .slowbroGalarian,
     .laprasCostume2020,
     .gengarCostume2020,
+    .pyroarNormal,
+    .pyroarFemale,
+    .meowsticNormal,
+    .meowsticFemale,
+    .zygardeTenPercent,
+    .zygardeFiftyPercent,
+    .zygardeComplete,
+    .vivillonArchipelago,
+    .vivillonContinental,
+    .vivillonElegant,
+    .vivillonFancy,
+    .vivillonGarden,
+    .vivillonHighPlains,
+    .vivillonIcySnow,
+    .vivillonJungle,
+    .vivillonMarine,
+    .vivillonMeadow,
+    .vivillonModern,
+    .vivillonMonsoon,
+    .vivillonOcean,
+    .vivillonPokeball,
+    .vivillonPolar,
+    .vivillonRiver,
+    .vivillonSandstorm,
+    .vivillonSavanna,
+    .vivillonSun,
+    .vivillonTundra,
+    .flabebeRed,
+    .flabebeYellow,
+    .flabebeOrange,
+    .flabebeBlue,
+    .flabebeWhite,
+    .floetteRed,
+    .floetteYellow,
+    .floetteOrange,
+    .floetteBlue,
+    .floetteWhite,
+    .florgesRed,
+    .florgesYellow,
+    .florgesOrange,
+    .florgesBlue,
+    .florgesWhite,
+    .furfrouNatural,
+    .furfrouHeart,
+    .furfrouStar,
+    .furfrouDiamond,
+    .furfrouDebutante,
+    .furfrouMatron,
+    .furfrouDandy,
+    .furfrouLaReine,
+    .furfrouKabuki,
+    .furfrouPharaoh,
+    .aegislashShield,
+    .aegislashBlade,
+    .pumpkabooSmall,
+    .pumpkabooAverage,
+    .pumpkabooLarge,
+    .pumpkabooSuper,
+    .gourgeistSmall,
+    .gourgeistAverage,
+    .gourgeistLarge,
+    .gourgeistSuper,
+    .xerneasNeutral,
+    .xerneasActive,
+    .hoopaConfined,
+    .hoopaUnbound,
+    .sableyeCostume2020Deprecated,
+    .sableyeCostume2020,
+    .pikachuAdventureHat2020,
+    .pikachuWinter2020,
+    .delibirdWinter2020,
+    .cubchooWinter2020,
+    .slowpoke2020,
+    .slowbro2021,
   ]
 }
 
@@ -10513,9 +10821,86 @@ extension POGOProtos_Enums_Form: SwiftProtobuf._ProtoNameProviding {
     2510: .same(proto: "SIRFETCHD_NORMAL"),
     2511: .same(proto: "SIRFETCHD_SHADOW"),
     2512: .same(proto: "SIRFETCHD_PURIFIED"),
+    2516: .same(proto: "RUNERIGUS_NORMAL"),
+    2517: .same(proto: "RUNERIGUS_SHADOW"),
+    2518: .same(proto: "RUNERIGUS_PURIFIED"),
     2582: .same(proto: "SLOWPOKE_GALARIAN"),
     2583: .same(proto: "SLOWBRO_GALARIAN"),
     2585: .same(proto: "LAPRAS_COSTUME_2020"),
     2586: .same(proto: "GENGAR_COSTUME_2020"),
+    2587: .same(proto: "PYROAR_NORMAL"),
+    2588: .same(proto: "PYROAR_FEMALE"),
+    2589: .same(proto: "MEOWSTIC_NORMAL"),
+    2590: .same(proto: "MEOWSTIC_FEMALE"),
+    2591: .same(proto: "ZYGARDE_TEN_PERCENT"),
+    2592: .same(proto: "ZYGARDE_FIFTY_PERCENT"),
+    2593: .same(proto: "ZYGARDE_COMPLETE"),
+    2594: .same(proto: "VIVILLON_ARCHIPELAGO"),
+    2595: .same(proto: "VIVILLON_CONTINENTAL"),
+    2596: .same(proto: "VIVILLON_ELEGANT"),
+    2597: .same(proto: "VIVILLON_FANCY"),
+    2598: .same(proto: "VIVILLON_GARDEN"),
+    2599: .same(proto: "VIVILLON_HIGH_PLAINS"),
+    2600: .same(proto: "VIVILLON_ICY_SNOW"),
+    2601: .same(proto: "VIVILLON_JUNGLE"),
+    2602: .same(proto: "VIVILLON_MARINE"),
+    2603: .same(proto: "VIVILLON_MEADOW"),
+    2604: .same(proto: "VIVILLON_MODERN"),
+    2605: .same(proto: "VIVILLON_MONSOON"),
+    2606: .same(proto: "VIVILLON_OCEAN"),
+    2607: .same(proto: "VIVILLON_POKEBALL"),
+    2608: .same(proto: "VIVILLON_POLAR"),
+    2609: .same(proto: "VIVILLON_RIVER"),
+    2610: .same(proto: "VIVILLON_SANDSTORM"),
+    2611: .same(proto: "VIVILLON_SAVANNA"),
+    2612: .same(proto: "VIVILLON_SUN"),
+    2613: .same(proto: "VIVILLON_TUNDRA"),
+    2614: .same(proto: "FLABEBE_RED"),
+    2615: .same(proto: "FLABEBE_YELLOW"),
+    2616: .same(proto: "FLABEBE_ORANGE"),
+    2617: .same(proto: "FLABEBE_BLUE"),
+    2618: .same(proto: "FLABEBE_WHITE"),
+    2619: .same(proto: "FLOETTE_RED"),
+    2620: .same(proto: "FLOETTE_YELLOW"),
+    2621: .same(proto: "FLOETTE_ORANGE"),
+    2622: .same(proto: "FLOETTE_BLUE"),
+    2623: .same(proto: "FLOETTE_WHITE"),
+    2624: .same(proto: "FLORGES_RED"),
+    2625: .same(proto: "FLORGES_YELLOW"),
+    2626: .same(proto: "FLORGES_ORANGE"),
+    2627: .same(proto: "FLORGES_BLUE"),
+    2628: .same(proto: "FLORGES_WHITE"),
+    2629: .same(proto: "FURFROU_NATURAL"),
+    2630: .same(proto: "FURFROU_HEART"),
+    2631: .same(proto: "FURFROU_STAR"),
+    2632: .same(proto: "FURFROU_DIAMOND"),
+    2633: .same(proto: "FURFROU_DEBUTANTE"),
+    2634: .same(proto: "FURFROU_MATRON"),
+    2635: .same(proto: "FURFROU_DANDY"),
+    2636: .same(proto: "FURFROU_LA_REINE"),
+    2637: .same(proto: "FURFROU_KABUKI"),
+    2638: .same(proto: "FURFROU_PHARAOH"),
+    2639: .same(proto: "AEGISLASH_SHIELD"),
+    2640: .same(proto: "AEGISLASH_BLADE"),
+    2641: .same(proto: "PUMPKABOO_SMALL"),
+    2642: .same(proto: "PUMPKABOO_AVERAGE"),
+    2643: .same(proto: "PUMPKABOO_LARGE"),
+    2644: .same(proto: "PUMPKABOO_SUPER"),
+    2645: .same(proto: "GOURGEIST_SMALL"),
+    2646: .same(proto: "GOURGEIST_AVERAGE"),
+    2647: .same(proto: "GOURGEIST_LARGE"),
+    2648: .same(proto: "GOURGEIST_SUPER"),
+    2649: .same(proto: "XERNEAS_NEUTRAL"),
+    2650: .same(proto: "XERNEAS_ACTIVE"),
+    2651: .same(proto: "HOOPA_CONFINED"),
+    2652: .same(proto: "HOOPA_UNBOUND"),
+    2666: .same(proto: "SABLEYE_COSTUME_2020_DEPRECATED"),
+    2668: .same(proto: "SABLEYE_COSTUME_2020"),
+    2669: .same(proto: "PIKACHU_ADVENTURE_HAT_2020"),
+    2670: .same(proto: "PIKACHU_WINTER_2020"),
+    2671: .same(proto: "DELIBIRD_WINTER_2020"),
+    2672: .same(proto: "CUBCHOO_WINTER_2020"),
+    2673: .same(proto: "SLOWPOKE_2020"),
+    2674: .same(proto: "SLOWBRO_2021"),
   ]
 }

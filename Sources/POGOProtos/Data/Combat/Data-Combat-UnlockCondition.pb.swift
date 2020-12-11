@@ -28,50 +28,102 @@ public struct POGOProtos_Data_Combat_UnlockCondition {
 
   public var minPokemonCount: Int32 = 0
 
+  public var condition: POGOProtos_Data_Combat_UnlockCondition.OneOf_Condition? = nil
+
   public var withPlayerLevel: POGOProtos_Data_Combat_WithPlayerLevel {
-    get {return _withPlayerLevel ?? POGOProtos_Data_Combat_WithPlayerLevel()}
-    set {_withPlayerLevel = newValue}
+    get {
+      if case .withPlayerLevel(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_WithPlayerLevel()
+    }
+    set {condition = .withPlayerLevel(newValue)}
   }
-  /// Returns true if `withPlayerLevel` has been explicitly set.
-  public var hasWithPlayerLevel: Bool {return self._withPlayerLevel != nil}
-  /// Clears the value of `withPlayerLevel`. Subsequent reads from it will return its default value.
-  public mutating func clearWithPlayerLevel() {self._withPlayerLevel = nil}
 
   public var withPokemonCpLimit: POGOProtos_Data_Combat_WithPokemonCpLimit {
-    get {return _withPokemonCpLimit ?? POGOProtos_Data_Combat_WithPokemonCpLimit()}
-    set {_withPokemonCpLimit = newValue}
+    get {
+      if case .withPokemonCpLimit(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_WithPokemonCpLimit()
+    }
+    set {condition = .withPokemonCpLimit(newValue)}
   }
-  /// Returns true if `withPokemonCpLimit` has been explicitly set.
-  public var hasWithPokemonCpLimit: Bool {return self._withPokemonCpLimit != nil}
-  /// Clears the value of `withPokemonCpLimit`. Subsequent reads from it will return its default value.
-  public mutating func clearWithPokemonCpLimit() {self._withPokemonCpLimit = nil}
 
   public var withPokemonType: POGOProtos_Data_Combat_WithPokemonType {
-    get {return _withPokemonType ?? POGOProtos_Data_Combat_WithPokemonType()}
-    set {_withPokemonType = newValue}
+    get {
+      if case .withPokemonType(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_WithPokemonType()
+    }
+    set {condition = .withPokemonType(newValue)}
   }
-  /// Returns true if `withPokemonType` has been explicitly set.
-  public var hasWithPokemonType: Bool {return self._withPokemonType != nil}
-  /// Clears the value of `withPokemonType`. Subsequent reads from it will return its default value.
-  public mutating func clearWithPokemonType() {self._withPokemonType = nil}
 
   public var withPokemonCategory: POGOProtos_Data_Combat_WithPokemonCategory {
-    get {return _withPokemonCategory ?? POGOProtos_Data_Combat_WithPokemonCategory()}
-    set {_withPokemonCategory = newValue}
+    get {
+      if case .withPokemonCategory(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_WithPokemonCategory()
+    }
+    set {condition = .withPokemonCategory(newValue)}
   }
-  /// Returns true if `withPokemonCategory` has been explicitly set.
-  public var hasWithPokemonCategory: Bool {return self._withPokemonCategory != nil}
-  /// Clears the value of `withPokemonCategory`. Subsequent reads from it will return its default value.
-  public mutating func clearWithPokemonCategory() {self._withPokemonCategory = nil}
+
+  public var pokemonWhitelist: POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist {
+    get {
+      if case .pokemonWhitelist(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist()
+    }
+    set {condition = .pokemonWhitelist(newValue)}
+  }
+
+  public var pokemonBanlist: POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist {
+    get {
+      if case .pokemonBanlist(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist()
+    }
+    set {condition = .pokemonBanlist(newValue)}
+  }
+
+  public var pokemonCaughtTimestamp: POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp {
+    get {
+      if case .pokemonCaughtTimestamp(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp()
+    }
+    set {condition = .pokemonCaughtTimestamp(newValue)}
+  }
+
+  public var pokemonLevelRange: POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange {
+    get {
+      if case .pokemonLevelRange(let v)? = condition {return v}
+      return POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange()
+    }
+    set {condition = .pokemonLevelRange(newValue)}
+  }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
-  public init() {}
+  public enum OneOf_Condition: Equatable {
+    case withPlayerLevel(POGOProtos_Data_Combat_WithPlayerLevel)
+    case withPokemonCpLimit(POGOProtos_Data_Combat_WithPokemonCpLimit)
+    case withPokemonType(POGOProtos_Data_Combat_WithPokemonType)
+    case withPokemonCategory(POGOProtos_Data_Combat_WithPokemonCategory)
+    case pokemonWhitelist(POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist)
+    case pokemonBanlist(POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist)
+    case pokemonCaughtTimestamp(POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp)
+    case pokemonLevelRange(POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange)
 
-  fileprivate var _withPlayerLevel: POGOProtos_Data_Combat_WithPlayerLevel? = nil
-  fileprivate var _withPokemonCpLimit: POGOProtos_Data_Combat_WithPokemonCpLimit? = nil
-  fileprivate var _withPokemonType: POGOProtos_Data_Combat_WithPokemonType? = nil
-  fileprivate var _withPokemonCategory: POGOProtos_Data_Combat_WithPokemonCategory? = nil
+  #if !swift(>=4.1)
+    public static func ==(lhs: POGOProtos_Data_Combat_UnlockCondition.OneOf_Condition, rhs: POGOProtos_Data_Combat_UnlockCondition.OneOf_Condition) -> Bool {
+      switch (lhs, rhs) {
+      case (.withPlayerLevel(let l), .withPlayerLevel(let r)): return l == r
+      case (.withPokemonCpLimit(let l), .withPokemonCpLimit(let r)): return l == r
+      case (.withPokemonType(let l), .withPokemonType(let r)): return l == r
+      case (.withPokemonCategory(let l), .withPokemonCategory(let r)): return l == r
+      case (.pokemonWhitelist(let l), .pokemonWhitelist(let r)): return l == r
+      case (.pokemonBanlist(let l), .pokemonBanlist(let r)): return l == r
+      case (.pokemonCaughtTimestamp(let l), .pokemonCaughtTimestamp(let r)): return l == r
+      case (.pokemonLevelRange(let l), .pokemonLevelRange(let r)): return l == r
+      default: return false
+      }
+    }
+  #endif
+  }
+
+  public init() {}
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -87,6 +139,10 @@ extension POGOProtos_Data_Combat_UnlockCondition: SwiftProtobuf.Message, SwiftPr
     4: .standard(proto: "with_pokemon_cp_limit"),
     5: .standard(proto: "with_pokemon_type"),
     6: .standard(proto: "with_pokemon_category"),
+    7: .standard(proto: "pokemon_whitelist"),
+    8: .standard(proto: "pokemon_banlist"),
+    9: .standard(proto: "pokemon_caught_timestamp"),
+    10: .standard(proto: "pokemon_level_range"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -94,10 +150,70 @@ extension POGOProtos_Data_Combat_UnlockCondition: SwiftProtobuf.Message, SwiftPr
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.type)
       case 2: try decoder.decodeSingularInt32Field(value: &self.minPokemonCount)
-      case 3: try decoder.decodeSingularMessageField(value: &self._withPlayerLevel)
-      case 4: try decoder.decodeSingularMessageField(value: &self._withPokemonCpLimit)
-      case 5: try decoder.decodeSingularMessageField(value: &self._withPokemonType)
-      case 6: try decoder.decodeSingularMessageField(value: &self._withPokemonCategory)
+      case 3:
+        var v: POGOProtos_Data_Combat_WithPlayerLevel?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .withPlayerLevel(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .withPlayerLevel(v)}
+      case 4:
+        var v: POGOProtos_Data_Combat_WithPokemonCpLimit?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .withPokemonCpLimit(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .withPokemonCpLimit(v)}
+      case 5:
+        var v: POGOProtos_Data_Combat_WithPokemonType?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .withPokemonType(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .withPokemonType(v)}
+      case 6:
+        var v: POGOProtos_Data_Combat_WithPokemonCategory?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .withPokemonCategory(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .withPokemonCategory(v)}
+      case 7:
+        var v: POGOProtos_Data_Combat_PokemonCondition.PokemonWhitelist?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .pokemonWhitelist(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .pokemonWhitelist(v)}
+      case 8:
+        var v: POGOProtos_Data_Combat_PokemonCondition.PokemonBanlist?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .pokemonBanlist(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .pokemonBanlist(v)}
+      case 9:
+        var v: POGOProtos_Data_Combat_PokemonCondition.PokemonCaughtTimestamp?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .pokemonCaughtTimestamp(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .pokemonCaughtTimestamp(v)}
+      case 10:
+        var v: POGOProtos_Data_Combat_PokemonCondition.PokemonLevelRange?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .pokemonLevelRange(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .pokemonLevelRange(v)}
       default: break
       }
     }
@@ -110,17 +226,24 @@ extension POGOProtos_Data_Combat_UnlockCondition: SwiftProtobuf.Message, SwiftPr
     if self.minPokemonCount != 0 {
       try visitor.visitSingularInt32Field(value: self.minPokemonCount, fieldNumber: 2)
     }
-    if let v = self._withPlayerLevel {
+    switch self.condition {
+    case .withPlayerLevel(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
-    }
-    if let v = self._withPokemonCpLimit {
+    case .withPokemonCpLimit(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
-    }
-    if let v = self._withPokemonType {
+    case .withPokemonType(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
-    }
-    if let v = self._withPokemonCategory {
+    case .withPokemonCategory(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+    case .pokemonWhitelist(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+    case .pokemonBanlist(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    case .pokemonCaughtTimestamp(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
+    case .pokemonLevelRange(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+    case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -128,10 +251,7 @@ extension POGOProtos_Data_Combat_UnlockCondition: SwiftProtobuf.Message, SwiftPr
   public static func ==(lhs: POGOProtos_Data_Combat_UnlockCondition, rhs: POGOProtos_Data_Combat_UnlockCondition) -> Bool {
     if lhs.type != rhs.type {return false}
     if lhs.minPokemonCount != rhs.minPokemonCount {return false}
-    if lhs._withPlayerLevel != rhs._withPlayerLevel {return false}
-    if lhs._withPokemonCpLimit != rhs._withPokemonCpLimit {return false}
-    if lhs._withPokemonType != rhs._withPokemonType {return false}
-    if lhs._withPokemonCategory != rhs._withPokemonCategory {return false}
+    if lhs.condition != rhs.condition {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

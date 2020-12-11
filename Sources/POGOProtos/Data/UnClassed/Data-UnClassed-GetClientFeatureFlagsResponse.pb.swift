@@ -33,6 +33,15 @@ public struct POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse {
   /// Clears the value of `featureFlags`. Subsequent reads from it will return its default value.
   public mutating func clearFeatureFlags() {self._featureFlags = nil}
 
+  public var globalSettings: POGOProtos_Settings_SocialClientGlobalSettings {
+    get {return _globalSettings ?? POGOProtos_Settings_SocialClientGlobalSettings()}
+    set {_globalSettings = newValue}
+  }
+  /// Returns true if `globalSettings` has been explicitly set.
+  public var hasGlobalSettings: Bool {return self._globalSettings != nil}
+  /// Clears the value of `globalSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearGlobalSettings() {self._globalSettings = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct SocialClientFeatures {
@@ -138,6 +147,7 @@ public struct POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse {
   public init() {}
 
   fileprivate var _featureFlags: POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse.SocialClientFeatures? = nil
+  fileprivate var _globalSettings: POGOProtos_Settings_SocialClientGlobalSettings? = nil
 }
 
 #if swift(>=4.2)
@@ -171,12 +181,14 @@ extension POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse: SwiftProtobuf
   public static let protoMessageName: String = _protobuf_package + ".GetClientFeatureFlagsResponse"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "feature_flags"),
+    2: .standard(proto: "global_settings"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeSingularMessageField(value: &self._featureFlags)
+      case 2: try decoder.decodeSingularMessageField(value: &self._globalSettings)
       default: break
       }
     }
@@ -186,11 +198,15 @@ extension POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse: SwiftProtobuf
     if let v = self._featureFlags {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
     }
+    if let v = self._globalSettings {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse, rhs: POGOProtos_Data_UnClassed_GetClientFeatureFlagsResponse) -> Bool {
     if lhs._featureFlags != rhs._featureFlags {return false}
+    if lhs._globalSettings != rhs._globalSettings {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -32,9 +32,20 @@ public struct POGOProtos_Networking_Requests_Messages_GetNpcCombatRewardsMessage
 
   public var combatID: String = String()
 
+  public var combatQuestUpdate: POGOProtos_Data_Combat_CombatQuestUpdate {
+    get {return _combatQuestUpdate ?? POGOProtos_Data_Combat_CombatQuestUpdate()}
+    set {_combatQuestUpdate = newValue}
+  }
+  /// Returns true if `combatQuestUpdate` has been explicitly set.
+  public var hasCombatQuestUpdate: Bool {return self._combatQuestUpdate != nil}
+  /// Clears the value of `combatQuestUpdate`. Subsequent reads from it will return its default value.
+  public mutating func clearCombatQuestUpdate() {self._combatQuestUpdate = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
+
+  fileprivate var _combatQuestUpdate: POGOProtos_Data_Combat_CombatQuestUpdate? = nil
 }
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
@@ -48,6 +59,7 @@ extension POGOProtos_Networking_Requests_Messages_GetNpcCombatRewardsMessage: Sw
     2: .standard(proto: "finish_state"),
     3: .standard(proto: "attacking_pokemon_id"),
     4: .standard(proto: "combat_id"),
+    5: .standard(proto: "combat_quest_update"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -57,6 +69,7 @@ extension POGOProtos_Networking_Requests_Messages_GetNpcCombatRewardsMessage: Sw
       case 2: try decoder.decodeSingularEnumField(value: &self.finishState)
       case 3: try decoder.decodeRepeatedFixed64Field(value: &self.attackingPokemonID)
       case 4: try decoder.decodeSingularStringField(value: &self.combatID)
+      case 5: try decoder.decodeSingularMessageField(value: &self._combatQuestUpdate)
       default: break
       }
     }
@@ -75,6 +88,9 @@ extension POGOProtos_Networking_Requests_Messages_GetNpcCombatRewardsMessage: Sw
     if !self.combatID.isEmpty {
       try visitor.visitSingularStringField(value: self.combatID, fieldNumber: 4)
     }
+    if let v = self._combatQuestUpdate {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -83,6 +99,7 @@ extension POGOProtos_Networking_Requests_Messages_GetNpcCombatRewardsMessage: Sw
     if lhs.finishState != rhs.finishState {return false}
     if lhs.attackingPokemonID != rhs.attackingPokemonID {return false}
     if lhs.combatID != rhs.combatID {return false}
+    if lhs._combatQuestUpdate != rhs._combatQuestUpdate {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

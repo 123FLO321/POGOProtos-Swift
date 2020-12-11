@@ -541,6 +541,54 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     set {_uniqueStorage()._telemetryData = .deviceOsTelemetry(newValue)}
   }
 
+  public var nianticProfileTelemetry: POGOProtos_Data_Telemetry_NianticProfileTelemetry {
+    get {
+      if case .nianticProfileTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_NianticProfileTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .nianticProfileTelemetry(newValue)}
+  }
+
+  public var changeOnlineStatusTelemetry: POGOProtos_Data_Telemetry_ChangeOnlineStatusTelemetry {
+    get {
+      if case .changeOnlineStatusTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ChangeOnlineStatusTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .changeOnlineStatusTelemetry(newValue)}
+  }
+
+  public var deepLinkingTelemetry: POGOProtos_Data_Telemetry_DeepLinkingTelemetry {
+    get {
+      if case .deepLinkingTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_DeepLinkingTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .deepLinkingTelemetry(newValue)}
+  }
+
+  public var arMappingSessionTelemetry: POGOProtos_Data_Telemetry_ArMappingSessionTelemetry {
+    get {
+      if case .arMappingSessionTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_ArMappingSessionTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .arMappingSessionTelemetry(newValue)}
+  }
+
+  public var pokemonHomeTelemetry: POGOProtos_Data_Telemetry_PokemonHomeTelemetry {
+    get {
+      if case .pokemonHomeTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PokemonHomeTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .pokemonHomeTelemetry(newValue)}
+  }
+
+  public var pokemonSearchTelemetry: POGOProtos_Data_Telemetry_PokemonSearchTelemetry {
+    get {
+      if case .pokemonSearchTelemetry(let v)? = _storage._telemetryData {return v}
+      return POGOProtos_Data_Telemetry_PokemonSearchTelemetry()
+    }
+    set {_uniqueStorage()._telemetryData = .pokemonSearchTelemetry(newValue)}
+  }
+
   public var serverData: POGOProtos_Data_Telemetry_PlatformServerData {
     get {return _storage._serverData ?? POGOProtos_Data_Telemetry_PlatformServerData()}
     set {_uniqueStorage()._serverData = newValue}
@@ -626,6 +674,12 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
     case arMappingTelemetry(POGOProtos_Data_Telemetry_ArMappingTelemetry)
     case remoteRaidTelemetry(POGOProtos_Data_Telemetry_RemoteRaidTelemetry)
     case deviceOsTelemetry(POGOProtos_Data_Telemetry_DeviceOSTelemetry)
+    case nianticProfileTelemetry(POGOProtos_Data_Telemetry_NianticProfileTelemetry)
+    case changeOnlineStatusTelemetry(POGOProtos_Data_Telemetry_ChangeOnlineStatusTelemetry)
+    case deepLinkingTelemetry(POGOProtos_Data_Telemetry_DeepLinkingTelemetry)
+    case arMappingSessionTelemetry(POGOProtos_Data_Telemetry_ArMappingSessionTelemetry)
+    case pokemonHomeTelemetry(POGOProtos_Data_Telemetry_PokemonHomeTelemetry)
+    case pokemonSearchTelemetry(POGOProtos_Data_Telemetry_PokemonSearchTelemetry)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData, rhs: POGOProtos_Data_Telemetry_ClientTelemetryOmni.OneOf_TelemetryData) -> Bool {
@@ -694,6 +748,12 @@ public struct POGOProtos_Data_Telemetry_ClientTelemetryOmni {
       case (.arMappingTelemetry(let l), .arMappingTelemetry(let r)): return l == r
       case (.remoteRaidTelemetry(let l), .remoteRaidTelemetry(let r)): return l == r
       case (.deviceOsTelemetry(let l), .deviceOsTelemetry(let r)): return l == r
+      case (.nianticProfileTelemetry(let l), .nianticProfileTelemetry(let r)): return l == r
+      case (.changeOnlineStatusTelemetry(let l), .changeOnlineStatusTelemetry(let r)): return l == r
+      case (.deepLinkingTelemetry(let l), .deepLinkingTelemetry(let r)): return l == r
+      case (.arMappingSessionTelemetry(let l), .arMappingSessionTelemetry(let r)): return l == r
+      case (.pokemonHomeTelemetry(let l), .pokemonHomeTelemetry(let r)): return l == r
+      case (.pokemonSearchTelemetry(let l), .pokemonSearchTelemetry(let r)): return l == r
       default: return false
       }
     }
@@ -776,6 +836,12 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
     62: .standard(proto: "ar_mapping_telemetry"),
     63: .standard(proto: "remote_raid_telemetry"),
     64: .standard(proto: "device_os_telemetry"),
+    65: .standard(proto: "niantic_profile_telemetry"),
+    66: .standard(proto: "change_online_status_telemetry"),
+    67: .standard(proto: "deep_linking_telemetry"),
+    68: .standard(proto: "ar_mapping_session_telemetry"),
+    69: .standard(proto: "pokemon_home_telemetry"),
+    70: .standard(proto: "pokemon_search_telemetry"),
     1001: .standard(proto: "server_data"),
     1002: .standard(proto: "common_filters"),
   ]
@@ -1320,6 +1386,54 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._telemetryData = .deviceOsTelemetry(v)}
+        case 65:
+          var v: POGOProtos_Data_Telemetry_NianticProfileTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .nianticProfileTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .nianticProfileTelemetry(v)}
+        case 66:
+          var v: POGOProtos_Data_Telemetry_ChangeOnlineStatusTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .changeOnlineStatusTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .changeOnlineStatusTelemetry(v)}
+        case 67:
+          var v: POGOProtos_Data_Telemetry_DeepLinkingTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .deepLinkingTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .deepLinkingTelemetry(v)}
+        case 68:
+          var v: POGOProtos_Data_Telemetry_ArMappingSessionTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .arMappingSessionTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .arMappingSessionTelemetry(v)}
+        case 69:
+          var v: POGOProtos_Data_Telemetry_PokemonHomeTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .pokemonHomeTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .pokemonHomeTelemetry(v)}
+        case 70:
+          var v: POGOProtos_Data_Telemetry_PokemonSearchTelemetry?
+          if let current = _storage._telemetryData {
+            try decoder.handleConflictingOneOf()
+            if case .pokemonSearchTelemetry(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._telemetryData = .pokemonSearchTelemetry(v)}
         case 1001: try decoder.decodeSingularMessageField(value: &_storage._serverData)
         case 1002: try decoder.decodeSingularMessageField(value: &_storage._commonFilters)
         default: break
@@ -1459,6 +1573,18 @@ extension POGOProtos_Data_Telemetry_ClientTelemetryOmni: SwiftProtobuf.Message, 
         try visitor.visitSingularMessageField(value: v, fieldNumber: 63)
       case .deviceOsTelemetry(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 64)
+      case .nianticProfileTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 65)
+      case .changeOnlineStatusTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 66)
+      case .deepLinkingTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 67)
+      case .arMappingSessionTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 68)
+      case .pokemonHomeTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 69)
+      case .pokemonSearchTelemetry(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 70)
       case nil: break
       }
       if let v = _storage._serverData {

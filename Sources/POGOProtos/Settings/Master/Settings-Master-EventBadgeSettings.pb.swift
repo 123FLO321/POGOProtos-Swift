@@ -30,6 +30,8 @@ public struct POGOProtos_Settings_Master_EventBadgeSettings {
 
   public var mutuallyExclusiveBadges: [POGOProtos_Enums_BadgeType] = []
 
+  public var automaticallyAwardBadge: Bool = false
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -45,6 +47,7 @@ extension POGOProtos_Settings_Master_EventBadgeSettings: SwiftProtobuf.Message, 
     1: .standard(proto: "valid_from_ms"),
     2: .standard(proto: "valid_to_ms"),
     3: .standard(proto: "mutually_exclusive_badges"),
+    4: .standard(proto: "automatically_award_badge"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -53,6 +56,7 @@ extension POGOProtos_Settings_Master_EventBadgeSettings: SwiftProtobuf.Message, 
       case 1: try decoder.decodeSingularInt64Field(value: &self.validFromMs)
       case 2: try decoder.decodeSingularInt64Field(value: &self.validToMs)
       case 3: try decoder.decodeRepeatedEnumField(value: &self.mutuallyExclusiveBadges)
+      case 4: try decoder.decodeSingularBoolField(value: &self.automaticallyAwardBadge)
       default: break
       }
     }
@@ -68,6 +72,9 @@ extension POGOProtos_Settings_Master_EventBadgeSettings: SwiftProtobuf.Message, 
     if !self.mutuallyExclusiveBadges.isEmpty {
       try visitor.visitPackedEnumField(value: self.mutuallyExclusiveBadges, fieldNumber: 3)
     }
+    if self.automaticallyAwardBadge != false {
+      try visitor.visitSingularBoolField(value: self.automaticallyAwardBadge, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -75,6 +82,7 @@ extension POGOProtos_Settings_Master_EventBadgeSettings: SwiftProtobuf.Message, 
     if lhs.validFromMs != rhs.validFromMs {return false}
     if lhs.validToMs != rhs.validToMs {return false}
     if lhs.mutuallyExclusiveBadges != rhs.mutuallyExclusiveBadges {return false}
+    if lhs.automaticallyAwardBadge != rhs.automaticallyAwardBadge {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

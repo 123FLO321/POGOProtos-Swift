@@ -224,6 +224,12 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case redeemPoiPasscode // = 170
 
   /// Implemented
+  case convertCandyToXlCandy // = 171
+
+  /// Implemented
+  case isSkuAvailable // = 172
+
+  /// Implemented
   case getAssetDigest // = 300
 
   /// Implemented
@@ -333,6 +339,9 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
 
   /// Implemented
   case completeQuestStampCard // = 905
+
+  /// Implemented
+  case progressQuest // = 906
 
   /// Implemented
   case sendGift // = 950
@@ -569,6 +578,9 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   case getTodayView // = 1501
 
   /// Implemented
+  case megaEvolvePokemon // = 1502
+
+  /// Implemented
   case remoteGiftPing // = 1503
 
   /// Implemented
@@ -589,8 +601,41 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
   /// Implemented
   case savePlayerPreferences // = 1652
 
+  /// ???
+  case profanityCheck // = 1653
+
   /// Implemented
   case getTimedGroupChallenge // = 1700
+
+  /// Implemented
+  case getNintendoAccount // = 1710
+
+  /// Implemented
+  case unlinkNintendoAccount // = 1711
+
+  /// Implemented
+  case getNintendoOauth2URL // = 1712
+
+  /// Implemented
+  case transferToPokemonHome // = 1713
+
+  /// Implemented
+  case reportAdFeedback // = 1716
+
+  /// Implemented
+  case createPokemonTag // = 1717
+
+  /// Implemented
+  case deletePokemonTag // = 1718
+
+  /// Implemented
+  case editPokemonTag // = 1719
+
+  /// Implemented
+  case setPokemonTagsForPokemon // = 1720
+
+  /// Implemented
+  case getPokemonTags // = 1721
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -666,6 +711,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 168: self = .useItemStardustBoost
     case 169: self = .reassignPlayer
     case 170: self = .redeemPoiPasscode
+    case 171: self = .convertCandyToXlCandy
+    case 172: self = .isSkuAvailable
     case 300: self = .getAssetDigest
     case 301: self = .getDownloadUrls
     case 302: self = .getAssetVersion
@@ -703,6 +750,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 903: self = .removeQuest
     case 904: self = .questEncounter
     case 905: self = .completeQuestStampCard
+    case 906: self = .progressQuest
     case 950: self = .sendGift
     case 951: self = .openGift
     case 952: self = .giftDetails
@@ -781,6 +829,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1457: self = .joinBuddyMultiplayerSession
     case 1458: self = .leaveBuddyMultiplayerSession
     case 1501: self = .getTodayView
+    case 1502: self = .megaEvolvePokemon
     case 1503: self = .remoteGiftPing
     case 1504: self = .sendRaidInvitation
     case 1601: self = .getDailyEncounter
@@ -788,7 +837,18 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case 1650: self = .openSponsoredGift
     case 1651: self = .sponsoredGiftReportInteraction
     case 1652: self = .savePlayerPreferences
+    case 1653: self = .profanityCheck
     case 1700: self = .getTimedGroupChallenge
+    case 1710: self = .getNintendoAccount
+    case 1711: self = .unlinkNintendoAccount
+    case 1712: self = .getNintendoOauth2URL
+    case 1713: self = .transferToPokemonHome
+    case 1716: self = .reportAdFeedback
+    case 1717: self = .createPokemonTag
+    case 1718: self = .deletePokemonTag
+    case 1719: self = .editPokemonTag
+    case 1720: self = .setPokemonTagsForPokemon
+    case 1721: self = .getPokemonTags
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -862,6 +922,8 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .useItemStardustBoost: return 168
     case .reassignPlayer: return 169
     case .redeemPoiPasscode: return 170
+    case .convertCandyToXlCandy: return 171
+    case .isSkuAvailable: return 172
     case .getAssetDigest: return 300
     case .getDownloadUrls: return 301
     case .getAssetVersion: return 302
@@ -899,6 +961,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .removeQuest: return 903
     case .questEncounter: return 904
     case .completeQuestStampCard: return 905
+    case .progressQuest: return 906
     case .sendGift: return 950
     case .openGift: return 951
     case .giftDetails: return 952
@@ -977,6 +1040,7 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .joinBuddyMultiplayerSession: return 1457
     case .leaveBuddyMultiplayerSession: return 1458
     case .getTodayView: return 1501
+    case .megaEvolvePokemon: return 1502
     case .remoteGiftPing: return 1503
     case .sendRaidInvitation: return 1504
     case .getDailyEncounter: return 1601
@@ -984,7 +1048,18 @@ public enum POGOProtos_Networking_Requests_RequestType: SwiftProtobuf.Enum {
     case .openSponsoredGift: return 1650
     case .sponsoredGiftReportInteraction: return 1651
     case .savePlayerPreferences: return 1652
+    case .profanityCheck: return 1653
     case .getTimedGroupChallenge: return 1700
+    case .getNintendoAccount: return 1710
+    case .unlinkNintendoAccount: return 1711
+    case .getNintendoOauth2URL: return 1712
+    case .transferToPokemonHome: return 1713
+    case .reportAdFeedback: return 1716
+    case .createPokemonTag: return 1717
+    case .deletePokemonTag: return 1718
+    case .editPokemonTag: return 1719
+    case .setPokemonTagsForPokemon: return 1720
+    case .getPokemonTags: return 1721
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -1063,6 +1138,8 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .useItemStardustBoost,
     .reassignPlayer,
     .redeemPoiPasscode,
+    .convertCandyToXlCandy,
+    .isSkuAvailable,
     .getAssetDigest,
     .getDownloadUrls,
     .getAssetVersion,
@@ -1100,6 +1177,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .removeQuest,
     .questEncounter,
     .completeQuestStampCard,
+    .progressQuest,
     .sendGift,
     .openGift,
     .giftDetails,
@@ -1178,6 +1256,7 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .joinBuddyMultiplayerSession,
     .leaveBuddyMultiplayerSession,
     .getTodayView,
+    .megaEvolvePokemon,
     .remoteGiftPing,
     .sendRaidInvitation,
     .getDailyEncounter,
@@ -1185,7 +1264,18 @@ extension POGOProtos_Networking_Requests_RequestType: CaseIterable {
     .openSponsoredGift,
     .sponsoredGiftReportInteraction,
     .savePlayerPreferences,
+    .profanityCheck,
     .getTimedGroupChallenge,
+    .getNintendoAccount,
+    .unlinkNintendoAccount,
+    .getNintendoOauth2URL,
+    .transferToPokemonHome,
+    .reportAdFeedback,
+    .createPokemonTag,
+    .deletePokemonTag,
+    .editPokemonTag,
+    .setPokemonTagsForPokemon,
+    .getPokemonTags,
   ]
 }
 
@@ -1262,6 +1352,8 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     168: .same(proto: "USE_ITEM_STARDUST_BOOST"),
     169: .same(proto: "REASSIGN_PLAYER"),
     170: .same(proto: "REDEEM_POI_PASSCODE"),
+    171: .same(proto: "CONVERT_CANDY_TO_XL_CANDY"),
+    172: .same(proto: "IS_SKU_AVAILABLE"),
     300: .same(proto: "GET_ASSET_DIGEST"),
     301: .same(proto: "GET_DOWNLOAD_URLS"),
     302: .same(proto: "GET_ASSET_VERSION"),
@@ -1299,6 +1391,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     903: .same(proto: "REMOVE_QUEST"),
     904: .same(proto: "QUEST_ENCOUNTER"),
     905: .same(proto: "COMPLETE_QUEST_STAMP_CARD"),
+    906: .same(proto: "PROGRESS_QUEST"),
     950: .same(proto: "SEND_GIFT"),
     951: .same(proto: "OPEN_GIFT"),
     952: .same(proto: "GIFT_DETAILS"),
@@ -1377,6 +1470,7 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1457: .same(proto: "JOIN_BUDDY_MULTIPLAYER_SESSION"),
     1458: .same(proto: "LEAVE_BUDDY_MULTIPLAYER_SESSION"),
     1501: .same(proto: "GET_TODAY_VIEW"),
+    1502: .same(proto: "MEGA_EVOLVE_POKEMON"),
     1503: .same(proto: "REMOTE_GIFT_PING"),
     1504: .same(proto: "SEND_RAID_INVITATION"),
     1601: .same(proto: "GET_DAILY_ENCOUNTER"),
@@ -1384,6 +1478,17 @@ extension POGOProtos_Networking_Requests_RequestType: SwiftProtobuf._ProtoNamePr
     1650: .same(proto: "OPEN_SPONSORED_GIFT"),
     1651: .same(proto: "SPONSORED_GIFT_REPORT_INTERACTION"),
     1652: .same(proto: "SAVE_PLAYER_PREFERENCES"),
+    1653: .same(proto: "PROFANITY_CHECK"),
     1700: .same(proto: "GET_TIMED_GROUP_CHALLENGE"),
+    1710: .same(proto: "GET_NINTENDO_ACCOUNT"),
+    1711: .same(proto: "UNLINK_NINTENDO_ACCOUNT"),
+    1712: .same(proto: "GET_NINTENDO_OAUTH2_URL"),
+    1713: .same(proto: "TRANSFER_TO_POKEMON_HOME"),
+    1716: .same(proto: "REPORT_AD_FEEDBACK"),
+    1717: .same(proto: "CREATE_POKEMON_TAG"),
+    1718: .same(proto: "DELETE_POKEMON_TAG"),
+    1719: .same(proto: "EDIT_POKEMON_TAG"),
+    1720: .same(proto: "SET_POKEMON_TAGS_FOR_POKEMON"),
+    1721: .same(proto: "GET_POKEMON_TAGS"),
   ]
 }

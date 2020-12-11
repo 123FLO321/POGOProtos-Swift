@@ -37,6 +37,7 @@ public struct POGOProtos_Settings_FestivalSettings {
     case none // = 0
     case halloween // = 1
     case holiday // = 2
+    case rocket // = 3
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -48,6 +49,7 @@ public struct POGOProtos_Settings_FestivalSettings {
       case 0: self = .none
       case 1: self = .halloween
       case 2: self = .holiday
+      case 3: self = .rocket
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -57,6 +59,7 @@ public struct POGOProtos_Settings_FestivalSettings {
       case .none: return 0
       case .halloween: return 1
       case .holiday: return 2
+      case .rocket: return 3
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -74,6 +77,7 @@ extension POGOProtos_Settings_FestivalSettings.FestivalType: CaseIterable {
     .none,
     .halloween,
     .holiday,
+    .rocket,
   ]
 }
 
@@ -129,5 +133,6 @@ extension POGOProtos_Settings_FestivalSettings.FestivalType: SwiftProtobuf._Prot
     0: .same(proto: "NONE"),
     1: .same(proto: "HALLOWEEN"),
     2: .same(proto: "HOLIDAY"),
+    3: .same(proto: "ROCKET"),
   ]
 }

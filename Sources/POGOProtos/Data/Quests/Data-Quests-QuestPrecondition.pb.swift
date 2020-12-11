@@ -76,6 +76,14 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
     set {condition = .group(newValue)}
   }
 
+  public var storyLine: POGOProtos_Data_Quests_QuestPrecondition.StoryLine {
+    get {
+      if case .storyLine(let v)? = condition {return v}
+      return POGOProtos_Data_Quests_QuestPrecondition.StoryLine()
+    }
+    set {condition = .storyLine(newValue)}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Condition: Equatable {
@@ -85,6 +93,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
     case quests(POGOProtos_Data_Quests_QuestPrecondition.Quests)
     case monthYearBucket(POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket)
     case group(POGOProtos_Data_Quests_QuestPrecondition.Group)
+    case storyLine(POGOProtos_Data_Quests_QuestPrecondition.StoryLine)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.OneOf_Condition, rhs: POGOProtos_Data_Quests_QuestPrecondition.OneOf_Condition) -> Bool {
@@ -95,6 +104,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
       case (.quests(let l), .quests(let r)): return l == r
       case (.monthYearBucket(let l), .monthYearBucket(let r)): return l == r
       case (.group(let l), .group(let r)): return l == r
+      case (.storyLine(let l), .storyLine(let r)): return l == r
       default: return false
       }
     }
@@ -147,6 +157,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
     case questPreconditionReceivedAnyListedQuest // = 7
     case questPreconditionMonthYearBucket // = 8
     case questPreconditionExclusiveInProgressGroup // = 9
+    case questPreconditionStorylineProgress // = 10
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -165,6 +176,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
       case 7: self = .questPreconditionReceivedAnyListedQuest
       case 8: self = .questPreconditionMonthYearBucket
       case 9: self = .questPreconditionExclusiveInProgressGroup
+      case 10: self = .questPreconditionStorylineProgress
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -181,6 +193,7 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
       case .questPreconditionReceivedAnyListedQuest: return 7
       case .questPreconditionMonthYearBucket: return 8
       case .questPreconditionExclusiveInProgressGroup: return 9
+      case .questPreconditionStorylineProgress: return 10
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -235,6 +248,24 @@ public struct POGOProtos_Data_Quests_QuestPrecondition {
     public var year: Int32 = 0
 
     public var month: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct StoryLine {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var mandatoryQuestTemplateID: [String] = []
+
+    public var optionalQuestTemplateID: [String] = []
+
+    public var optionalQuestsCompletedMin: Int32 = 0
+
+    public var optionalQuestsCompletedMax: Int32 = 0
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -311,6 +342,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType: CaseIt
     .questPreconditionReceivedAnyListedQuest,
     .questPreconditionMonthYearBucket,
     .questPreconditionExclusiveInProgressGroup,
+    .questPreconditionStorylineProgress,
   ]
 }
 
@@ -338,6 +370,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
     5: .same(proto: "quests"),
     6: .standard(proto: "month_year_bucket"),
     7: .same(proto: "group"),
+    8: .standard(proto: "story_line"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -389,6 +422,14 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
         }
         try decoder.decodeSingularMessageField(value: &v)
         if let v = v {self.condition = .group(v)}
+      case 8:
+        var v: POGOProtos_Data_Quests_QuestPrecondition.StoryLine?
+        if let current = self.condition {
+          try decoder.handleConflictingOneOf()
+          if case .storyLine(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.condition = .storyLine(v)}
       default: break
       }
     }
@@ -411,6 +452,8 @@ extension POGOProtos_Data_Quests_QuestPrecondition: SwiftProtobuf.Message, Swift
       try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
     case .group(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+    case .storyLine(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
     case nil: break
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -445,6 +488,7 @@ extension POGOProtos_Data_Quests_QuestPrecondition.QuestPreconditionType: SwiftP
     7: .same(proto: "QUEST_PRECONDITION_RECEIVED_ANY_LISTED_QUEST"),
     8: .same(proto: "QUEST_PRECONDITION_MONTH_YEAR_BUCKET"),
     9: .same(proto: "QUEST_PRECONDITION_EXCLUSIVE_IN_PROGRESS_GROUP"),
+    10: .same(proto: "QUEST_PRECONDITION_STORYLINE_PROGRESS"),
   ]
 }
 
@@ -514,6 +558,53 @@ extension POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket: SwiftProtobu
   public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket, rhs: POGOProtos_Data_Quests_QuestPrecondition.MonthYearBucket) -> Bool {
     if lhs.year != rhs.year {return false}
     if lhs.month != rhs.month {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_QuestPrecondition.StoryLine: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_QuestPrecondition.protoMessageName + ".StoryLine"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "mandatory_quest_template_id"),
+    2: .standard(proto: "optional_quest_template_id"),
+    3: .standard(proto: "optional_quests_completed_min"),
+    4: .standard(proto: "optional_quests_completed_max"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedStringField(value: &self.mandatoryQuestTemplateID)
+      case 2: try decoder.decodeRepeatedStringField(value: &self.optionalQuestTemplateID)
+      case 3: try decoder.decodeSingularInt32Field(value: &self.optionalQuestsCompletedMin)
+      case 4: try decoder.decodeSingularInt32Field(value: &self.optionalQuestsCompletedMax)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.mandatoryQuestTemplateID.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.mandatoryQuestTemplateID, fieldNumber: 1)
+    }
+    if !self.optionalQuestTemplateID.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.optionalQuestTemplateID, fieldNumber: 2)
+    }
+    if self.optionalQuestsCompletedMin != 0 {
+      try visitor.visitSingularInt32Field(value: self.optionalQuestsCompletedMin, fieldNumber: 3)
+    }
+    if self.optionalQuestsCompletedMax != 0 {
+      try visitor.visitSingularInt32Field(value: self.optionalQuestsCompletedMax, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_QuestPrecondition.StoryLine, rhs: POGOProtos_Data_Quests_QuestPrecondition.StoryLine) -> Bool {
+    if lhs.mandatoryQuestTemplateID != rhs.mandatoryQuestTemplateID {return false}
+    if lhs.optionalQuestTemplateID != rhs.optionalQuestTemplateID {return false}
+    if lhs.optionalQuestsCompletedMin != rhs.optionalQuestsCompletedMin {return false}
+    if lhs.optionalQuestsCompletedMax != rhs.optionalQuestsCompletedMax {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

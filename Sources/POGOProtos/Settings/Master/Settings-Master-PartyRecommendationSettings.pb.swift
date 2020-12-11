@@ -30,6 +30,8 @@ public struct POGOProtos_Settings_Master_PartyRecommendationSettings {
 
   public var thirdMoveWeight: Float = 0
 
+  public var megaEvoCombatRatingScale: Float = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum PartyRcommendationMode: SwiftProtobuf.Enum {
@@ -97,6 +99,7 @@ extension POGOProtos_Settings_Master_PartyRecommendationSettings: SwiftProtobuf.
     1: .same(proto: "mode"),
     2: .same(proto: "variance"),
     3: .standard(proto: "third_move_weight"),
+    4: .standard(proto: "mega_evo_combat_rating_scale"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -105,6 +108,7 @@ extension POGOProtos_Settings_Master_PartyRecommendationSettings: SwiftProtobuf.
       case 1: try decoder.decodeSingularEnumField(value: &self.mode)
       case 2: try decoder.decodeSingularFloatField(value: &self.variance)
       case 3: try decoder.decodeSingularFloatField(value: &self.thirdMoveWeight)
+      case 4: try decoder.decodeSingularFloatField(value: &self.megaEvoCombatRatingScale)
       default: break
       }
     }
@@ -120,6 +124,9 @@ extension POGOProtos_Settings_Master_PartyRecommendationSettings: SwiftProtobuf.
     if self.thirdMoveWeight != 0 {
       try visitor.visitSingularFloatField(value: self.thirdMoveWeight, fieldNumber: 3)
     }
+    if self.megaEvoCombatRatingScale != 0 {
+      try visitor.visitSingularFloatField(value: self.megaEvoCombatRatingScale, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -127,6 +134,7 @@ extension POGOProtos_Settings_Master_PartyRecommendationSettings: SwiftProtobuf.
     if lhs.mode != rhs.mode {return false}
     if lhs.variance != rhs.variance {return false}
     if lhs.thirdMoveWeight != rhs.thirdMoveWeight {return false}
+    if lhs.megaEvoCombatRatingScale != rhs.megaEvoCombatRatingScale {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

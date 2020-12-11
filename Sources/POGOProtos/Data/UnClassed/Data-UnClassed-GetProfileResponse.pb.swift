@@ -108,6 +108,8 @@ public struct POGOProtos_Data_UnClassed_GetProfileResponse {
 
     public var nickname: String = String()
 
+    public var profileName: String = String()
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -262,6 +264,7 @@ extension POGOProtos_Data_UnClassed_GetProfileResponse.ProfileDetails: SwiftProt
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "profile_name_app_key"),
     2: .same(proto: "nickname"),
+    3: .standard(proto: "profile_name"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -269,6 +272,7 @@ extension POGOProtos_Data_UnClassed_GetProfileResponse.ProfileDetails: SwiftProt
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.profileNameAppKey)
       case 2: try decoder.decodeSingularStringField(value: &self.nickname)
+      case 3: try decoder.decodeSingularStringField(value: &self.profileName)
       default: break
       }
     }
@@ -281,12 +285,16 @@ extension POGOProtos_Data_UnClassed_GetProfileResponse.ProfileDetails: SwiftProt
     if !self.nickname.isEmpty {
       try visitor.visitSingularStringField(value: self.nickname, fieldNumber: 2)
     }
+    if !self.profileName.isEmpty {
+      try visitor.visitSingularStringField(value: self.profileName, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_UnClassed_GetProfileResponse.ProfileDetails, rhs: POGOProtos_Data_UnClassed_GetProfileResponse.ProfileDetails) -> Bool {
     if lhs.profileNameAppKey != rhs.profileNameAppKey {return false}
     if lhs.nickname != rhs.nickname {return false}
+    if lhs.profileName != rhs.profileName {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -173,12 +173,44 @@ public struct POGOProtos_Inventory_InventoryKey {
     set {_uniqueStorage()._type = .limitedPurchaseSkuRecord(newValue)}
   }
 
+  public var megaEvoPokemonSpeciesID: Int32 {
+    get {
+      if case .megaEvoPokemonSpeciesID(let v)? = _storage._type {return v}
+      return 0
+    }
+    set {_uniqueStorage()._type = .megaEvoPokemonSpeciesID(newValue)}
+  }
+
   public var stickerID: String {
     get {
       if case .stickerID(let v)? = _storage._type {return v}
       return String()
     }
     set {_uniqueStorage()._type = .stickerID(newValue)}
+  }
+
+  public var pokemonHome: Bool {
+    get {
+      if case .pokemonHome(let v)? = _storage._type {return v}
+      return false
+    }
+    set {_uniqueStorage()._type = .pokemonHome(newValue)}
+  }
+
+  public var playerStatsSnapshot: Bool {
+    get {
+      if case .playerStatsSnapshot(let v)? = _storage._type {return v}
+      return false
+    }
+    set {_uniqueStorage()._type = .playerStatsSnapshot(newValue)}
+  }
+
+  public var unknownKey: Int64 {
+    get {
+      if case .unknownKey(let v)? = _storage._type {return v}
+      return 0
+    }
+    set {_uniqueStorage()._type = .unknownKey(newValue)}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -202,7 +234,11 @@ public struct POGOProtos_Inventory_InventoryKey {
     case belugaIncenseBox(Bool)
     case vsSeekerUpgrades(Bool)
     case limitedPurchaseSkuRecord(Bool)
+    case megaEvoPokemonSpeciesID(Int32)
     case stickerID(String)
+    case pokemonHome(Bool)
+    case playerStatsSnapshot(Bool)
+    case unknownKey(Int64)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Inventory_InventoryKey.OneOf_Type, rhs: POGOProtos_Inventory_InventoryKey.OneOf_Type) -> Bool {
@@ -225,7 +261,11 @@ public struct POGOProtos_Inventory_InventoryKey {
       case (.belugaIncenseBox(let l), .belugaIncenseBox(let r)): return l == r
       case (.vsSeekerUpgrades(let l), .vsSeekerUpgrades(let r)): return l == r
       case (.limitedPurchaseSkuRecord(let l), .limitedPurchaseSkuRecord(let r)): return l == r
+      case (.megaEvoPokemonSpeciesID(let l), .megaEvoPokemonSpeciesID(let r)): return l == r
       case (.stickerID(let l), .stickerID(let r)): return l == r
+      case (.pokemonHome(let l), .pokemonHome(let r)): return l == r
+      case (.playerStatsSnapshot(let l), .playerStatsSnapshot(let r)): return l == r
+      case (.unknownKey(let l), .unknownKey(let r)): return l == r
       default: return false
       }
     }
@@ -262,7 +302,11 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
     16: .standard(proto: "beluga_incense_box"),
     17: .standard(proto: "vs_seeker_upgrades"),
     19: .standard(proto: "limited_purchase_sku_record"),
+    21: .standard(proto: "mega_evo_pokemon_species_id"),
     22: .standard(proto: "sticker_id"),
+    23: .standard(proto: "pokemon_home"),
+    25: .standard(proto: "player_stats_snapshot"),
+    26: .standard(proto: "unknown_key"),
   ]
 
   fileprivate class _StorageClass {
@@ -379,11 +423,31 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
           var v: Bool?
           try decoder.decodeSingularBoolField(value: &v)
           if let v = v {_storage._type = .limitedPurchaseSkuRecord(v)}
+        case 21:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Int32?
+          try decoder.decodeSingularInt32Field(value: &v)
+          if let v = v {_storage._type = .megaEvoPokemonSpeciesID(v)}
         case 22:
           if _storage._type != nil {try decoder.handleConflictingOneOf()}
           var v: String?
           try decoder.decodeSingularStringField(value: &v)
           if let v = v {_storage._type = .stickerID(v)}
+        case 23:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .pokemonHome(v)}
+        case 25:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Bool?
+          try decoder.decodeSingularBoolField(value: &v)
+          if let v = v {_storage._type = .playerStatsSnapshot(v)}
+        case 26:
+          if _storage._type != nil {try decoder.handleConflictingOneOf()}
+          var v: Int64?
+          try decoder.decodeSingularInt64Field(value: &v)
+          if let v = v {_storage._type = .unknownKey(v)}
         default: break
         }
       }
@@ -429,8 +493,16 @@ extension POGOProtos_Inventory_InventoryKey: SwiftProtobuf.Message, SwiftProtobu
         try visitor.visitSingularBoolField(value: v, fieldNumber: 17)
       case .limitedPurchaseSkuRecord(let v)?:
         try visitor.visitSingularBoolField(value: v, fieldNumber: 19)
+      case .megaEvoPokemonSpeciesID(let v)?:
+        try visitor.visitSingularInt32Field(value: v, fieldNumber: 21)
       case .stickerID(let v)?:
         try visitor.visitSingularStringField(value: v, fieldNumber: 22)
+      case .pokemonHome(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 23)
+      case .playerStatsSnapshot(let v)?:
+        try visitor.visitSingularBoolField(value: v, fieldNumber: 25)
+      case .unknownKey(let v)?:
+        try visitor.visitSingularInt64Field(value: v, fieldNumber: 26)
       case nil: break
       }
     }

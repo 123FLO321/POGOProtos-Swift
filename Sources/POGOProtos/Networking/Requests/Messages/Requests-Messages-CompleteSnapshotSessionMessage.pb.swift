@@ -28,6 +28,8 @@ public struct POGOProtos_Networking_Requests_Messages_CompleteSnapshotSessionMes
 
   public var numPhotosTaken: Int32 = 0
 
+  public var snapshotSessionStartTime: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -42,6 +44,7 @@ extension POGOProtos_Networking_Requests_Messages_CompleteSnapshotSessionMessage
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "photo_pokemon_id"),
     2: .standard(proto: "num_photos_taken"),
+    3: .standard(proto: "snapshot_session_start_time"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -49,6 +52,7 @@ extension POGOProtos_Networking_Requests_Messages_CompleteSnapshotSessionMessage
       switch fieldNumber {
       case 1: try decoder.decodeSingularFixed64Field(value: &self.photoPokemonID)
       case 2: try decoder.decodeSingularInt32Field(value: &self.numPhotosTaken)
+      case 3: try decoder.decodeSingularInt64Field(value: &self.snapshotSessionStartTime)
       default: break
       }
     }
@@ -61,12 +65,16 @@ extension POGOProtos_Networking_Requests_Messages_CompleteSnapshotSessionMessage
     if self.numPhotosTaken != 0 {
       try visitor.visitSingularInt32Field(value: self.numPhotosTaken, fieldNumber: 2)
     }
+    if self.snapshotSessionStartTime != 0 {
+      try visitor.visitSingularInt64Field(value: self.snapshotSessionStartTime, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Networking_Requests_Messages_CompleteSnapshotSessionMessage, rhs: POGOProtos_Networking_Requests_Messages_CompleteSnapshotSessionMessage) -> Bool {
     if lhs.photoPokemonID != rhs.photoPokemonID {return false}
     if lhs.numPhotosTaken != rhs.numPhotosTaken {return false}
+    if lhs.snapshotSessionStartTime != rhs.snapshotSessionStartTime {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

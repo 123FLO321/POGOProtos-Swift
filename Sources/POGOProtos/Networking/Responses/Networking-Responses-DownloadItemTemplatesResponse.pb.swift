@@ -672,6 +672,24 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `projectVacation`. Subsequent reads from it will return its default value.
     public mutating func clearProjectVacation() {_uniqueStorage()._projectVacation = nil}
 
+    public var megaEvoSettings: POGOProtos_Settings_Master_MegaEvoSettings {
+      get {return _storage._megaEvoSettings ?? POGOProtos_Settings_Master_MegaEvoSettings()}
+      set {_uniqueStorage()._megaEvoSettings = newValue}
+    }
+    /// Returns true if `megaEvoSettings` has been explicitly set.
+    public var hasMegaEvoSettings: Bool {return _storage._megaEvoSettings != nil}
+    /// Clears the value of `megaEvoSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearMegaEvoSettings() {_uniqueStorage()._megaEvoSettings = nil}
+
+    public var temporaryEvolutionSettings: POGOProtos_Settings_Master_TemporaryEvolutionSettings {
+      get {return _storage._temporaryEvolutionSettings ?? POGOProtos_Settings_Master_TemporaryEvolutionSettings()}
+      set {_uniqueStorage()._temporaryEvolutionSettings = newValue}
+    }
+    /// Returns true if `temporaryEvolutionSettings` has been explicitly set.
+    public var hasTemporaryEvolutionSettings: Bool {return _storage._temporaryEvolutionSettings != nil}
+    /// Clears the value of `temporaryEvolutionSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearTemporaryEvolutionSettings() {_uniqueStorage()._temporaryEvolutionSettings = nil}
+
     public var avatarGroupOrderSettings: POGOProtos_Settings_Master_AvatarGroupOrderSettings {
       get {return _storage._avatarGroupOrderSettings ?? POGOProtos_Settings_Master_AvatarGroupOrderSettings()}
       set {_uniqueStorage()._avatarGroupOrderSettings = newValue}
@@ -681,6 +699,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `avatarGroupOrderSettings`. Subsequent reads from it will return its default value.
     public mutating func clearAvatarGroupOrderSettings() {_uniqueStorage()._avatarGroupOrderSettings = nil}
 
+    public var pokemonFamily: POGOProtos_Settings_Master_PokemonFamilySettings {
+      get {return _storage._pokemonFamily ?? POGOProtos_Settings_Master_PokemonFamilySettings()}
+      set {_uniqueStorage()._pokemonFamily = newValue}
+    }
+    /// Returns true if `pokemonFamily` has been explicitly set.
+    public var hasPokemonFamily: Bool {return _storage._pokemonFamily != nil}
+    /// Clears the value of `pokemonFamily`. Subsequent reads from it will return its default value.
+    public mutating func clearPokemonFamily() {_uniqueStorage()._pokemonFamily = nil}
+
     public var monodepthSettings: POGOProtos_Settings_Master_MonodepthSettings {
       get {return _storage._monodepthSettings ?? POGOProtos_Settings_Master_MonodepthSettings()}
       set {_uniqueStorage()._monodepthSettings = newValue}
@@ -689,6 +716,15 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     public var hasMonodepthSettings: Bool {return _storage._monodepthSettings != nil}
     /// Clears the value of `monodepthSettings`. Subsequent reads from it will return its default value.
     public mutating func clearMonodepthSettings() {_uniqueStorage()._monodepthSettings = nil}
+
+    public var levelUpRewards: POGOProtos_Settings_Master_LevelUpRewardsSettings {
+      get {return _storage._levelUpRewards ?? POGOProtos_Settings_Master_LevelUpRewardsSettings()}
+      set {_uniqueStorage()._levelUpRewards = newValue}
+    }
+    /// Returns true if `levelUpRewards` has been explicitly set.
+    public var hasLevelUpRewards: Bool {return _storage._levelUpRewards != nil}
+    /// Clears the value of `levelUpRewards`. Subsequent reads from it will return its default value.
+    public mutating func clearLevelUpRewards() {_uniqueStorage()._levelUpRewards = nil}
 
     public var raidSettingsProto: POGOProtos_Settings_Master_RaidClientSettings {
       get {return _storage._raidSettingsProto ?? POGOProtos_Settings_Master_RaidClientSettings()}
@@ -735,6 +771,24 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     /// Clears the value of `mapDisplaySettings`. Subsequent reads from it will return its default value.
     public mutating func clearMapDisplaySettings() {_uniqueStorage()._mapDisplaySettings = nil}
 
+    public var pokemonHomeEnergyCosts: POGOProtos_Settings_Master_PokemonHomeEnergyCosts {
+      get {return _storage._pokemonHomeEnergyCosts ?? POGOProtos_Settings_Master_PokemonHomeEnergyCosts()}
+      set {_uniqueStorage()._pokemonHomeEnergyCosts = newValue}
+    }
+    /// Returns true if `pokemonHomeEnergyCosts` has been explicitly set.
+    public var hasPokemonHomeEnergyCosts: Bool {return _storage._pokemonHomeEnergyCosts != nil}
+    /// Clears the value of `pokemonHomeEnergyCosts`. Subsequent reads from it will return its default value.
+    public mutating func clearPokemonHomeEnergyCosts() {_uniqueStorage()._pokemonHomeEnergyCosts = nil}
+
+    public var pokemonHomeSettings: POGOProtos_Settings_Master_PokemonHomeSettings {
+      get {return _storage._pokemonHomeSettings ?? POGOProtos_Settings_Master_PokemonHomeSettings()}
+      set {_uniqueStorage()._pokemonHomeSettings = newValue}
+    }
+    /// Returns true if `pokemonHomeSettings` has been explicitly set.
+    public var hasPokemonHomeSettings: Bool {return _storage._pokemonHomeSettings != nil}
+    /// Clears the value of `pokemonHomeSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearPokemonHomeSettings() {_uniqueStorage()._pokemonHomeSettings = nil}
+
     public var arTelemetrySettings: POGOProtos_Settings_Master_ArTelemetrySettings {
       get {return _storage._arTelemetrySettings ?? POGOProtos_Settings_Master_ArTelemetrySettings()}
       set {_uniqueStorage()._arTelemetrySettings = newValue}
@@ -743,6 +797,105 @@ public struct POGOProtos_Networking_Responses_DownloadItemTemplatesResponse {
     public var hasArTelemetrySettings: Bool {return _storage._arTelemetrySettings != nil}
     /// Clears the value of `arTelemetrySettings`. Subsequent reads from it will return its default value.
     public mutating func clearArTelemetrySettings() {_uniqueStorage()._arTelemetrySettings = nil}
+
+    public var battlePartySettings: POGOProtos_Settings_Master_BattlePartySettings {
+      get {return _storage._battlePartySettings ?? POGOProtos_Settings_Master_BattlePartySettings()}
+      set {_uniqueStorage()._battlePartySettings = newValue}
+    }
+    /// Returns true if `battlePartySettings` has been explicitly set.
+    public var hasBattlePartySettings: Bool {return _storage._battlePartySettings != nil}
+    /// Clears the value of `battlePartySettings`. Subsequent reads from it will return its default value.
+    public mutating func clearBattlePartySettings() {_uniqueStorage()._battlePartySettings = nil}
+
+    public var questEvolutionSettings: POGOProtos_Settings_Master_QuestEvolutionSettings {
+      get {return _storage._questEvolutionSettings ?? POGOProtos_Settings_Master_QuestEvolutionSettings()}
+      set {_uniqueStorage()._questEvolutionSettings = newValue}
+    }
+    /// Returns true if `questEvolutionSettings` has been explicitly set.
+    public var hasQuestEvolutionSettings: Bool {return _storage._questEvolutionSettings != nil}
+    /// Clears the value of `questEvolutionSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearQuestEvolutionSettings() {_uniqueStorage()._questEvolutionSettings = nil}
+
+    public var pokemonHomeFormReversion: POGOProtos_Settings_Master_PokemonHomeFormReversion {
+      get {return _storage._pokemonHomeFormReversion ?? POGOProtos_Settings_Master_PokemonHomeFormReversion()}
+      set {_uniqueStorage()._pokemonHomeFormReversion = newValue}
+    }
+    /// Returns true if `pokemonHomeFormReversion` has been explicitly set.
+    public var hasPokemonHomeFormReversion: Bool {return _storage._pokemonHomeFormReversion != nil}
+    /// Clears the value of `pokemonHomeFormReversion`. Subsequent reads from it will return its default value.
+    public mutating func clearPokemonHomeFormReversion() {_uniqueStorage()._pokemonHomeFormReversion = nil}
+
+    public var deepLinkingSettings: POGOProtos_Settings_Master_DeepLinkingSettings {
+      get {return _storage._deepLinkingSettings ?? POGOProtos_Settings_Master_DeepLinkingSettings()}
+      set {_uniqueStorage()._deepLinkingSettings = newValue}
+    }
+    /// Returns true if `deepLinkingSettings` has been explicitly set.
+    public var hasDeepLinkingSettings: Bool {return _storage._deepLinkingSettings != nil}
+    /// Clears the value of `deepLinkingSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearDeepLinkingSettings() {_uniqueStorage()._deepLinkingSettings = nil}
+
+    public var guiSearchSettings: POGOProtos_Settings_Master_GuiSearchSettings {
+      get {return _storage._guiSearchSettings ?? POGOProtos_Settings_Master_GuiSearchSettings()}
+      set {_uniqueStorage()._guiSearchSettings = newValue}
+    }
+    /// Returns true if `guiSearchSettings` has been explicitly set.
+    public var hasGuiSearchSettings: Bool {return _storage._guiSearchSettings != nil}
+    /// Clears the value of `guiSearchSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearGuiSearchSettings() {_uniqueStorage()._guiSearchSettings = nil}
+
+    public var evolutionQuestTemplate: POGOProtos_Settings_Master_ClientEvolutionQuestTemplate {
+      get {return _storage._evolutionQuestTemplate ?? POGOProtos_Settings_Master_ClientEvolutionQuestTemplate()}
+      set {_uniqueStorage()._evolutionQuestTemplate = newValue}
+    }
+    /// Returns true if `evolutionQuestTemplate` has been explicitly set.
+    public var hasEvolutionQuestTemplate: Bool {return _storage._evolutionQuestTemplate != nil}
+    /// Clears the value of `evolutionQuestTemplate`. Subsequent reads from it will return its default value.
+    public mutating func clearEvolutionQuestTemplate() {_uniqueStorage()._evolutionQuestTemplate = nil}
+
+    public var adFeedbackSettings: POGOProtos_Settings_Master_AdFeedbackSettings {
+      get {return _storage._adFeedbackSettings ?? POGOProtos_Settings_Master_AdFeedbackSettings()}
+      set {_uniqueStorage()._adFeedbackSettings = newValue}
+    }
+    /// Returns true if `adFeedbackSettings` has been explicitly set.
+    public var hasAdFeedbackSettings: Bool {return _storage._adFeedbackSettings != nil}
+    /// Clears the value of `adFeedbackSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearAdFeedbackSettings() {_uniqueStorage()._adFeedbackSettings = nil}
+
+    public var friendProfileSettings: POGOProtos_Settings_Master_FriendProfileSettings {
+      get {return _storage._friendProfileSettings ?? POGOProtos_Settings_Master_FriendProfileSettings()}
+      set {_uniqueStorage()._friendProfileSettings = newValue}
+    }
+    /// Returns true if `friendProfileSettings` has been explicitly set.
+    public var hasFriendProfileSettings: Bool {return _storage._friendProfileSettings != nil}
+    /// Clears the value of `friendProfileSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearFriendProfileSettings() {_uniqueStorage()._friendProfileSettings = nil}
+
+    public var geotargetedQuestSettings: POGOProtos_Settings_Master_GeotargetedQuestSettings {
+      get {return _storage._geotargetedQuestSettings ?? POGOProtos_Settings_Master_GeotargetedQuestSettings()}
+      set {_uniqueStorage()._geotargetedQuestSettings = newValue}
+    }
+    /// Returns true if `geotargetedQuestSettings` has been explicitly set.
+    public var hasGeotargetedQuestSettings: Bool {return _storage._geotargetedQuestSettings != nil}
+    /// Clears the value of `geotargetedQuestSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearGeotargetedQuestSettings() {_uniqueStorage()._geotargetedQuestSettings = nil}
+
+    public var pokemonTagSettings: POGOProtos_Settings_Master_PokemonTagSettings {
+      get {return _storage._pokemonTagSettings ?? POGOProtos_Settings_Master_PokemonTagSettings()}
+      set {_uniqueStorage()._pokemonTagSettings = newValue}
+    }
+    /// Returns true if `pokemonTagSettings` has been explicitly set.
+    public var hasPokemonTagSettings: Bool {return _storage._pokemonTagSettings != nil}
+    /// Clears the value of `pokemonTagSettings`. Subsequent reads from it will return its default value.
+    public mutating func clearPokemonTagSettings() {_uniqueStorage()._pokemonTagSettings = nil}
+
+    public var recommendedSearchProto: POGOProtos_Settings_Master_RecommendedSearch {
+      get {return _storage._recommendedSearchProto ?? POGOProtos_Settings_Master_RecommendedSearch()}
+      set {_uniqueStorage()._recommendedSearchProto = newValue}
+    }
+    /// Returns true if `recommendedSearchProto` has been explicitly set.
+    public var hasRecommendedSearchProto: Bool {return _storage._recommendedSearchProto != nil}
+    /// Clears the value of `recommendedSearchProto`. Subsequent reads from it will return its default value.
+    public mutating func clearRecommendedSearchProto() {_uniqueStorage()._recommendedSearchProto = nil}
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -910,14 +1063,31 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
     70: .standard(proto: "platypus_rollout_settings"),
     72: .standard(proto: "buddy_hunger_settings"),
     73: .standard(proto: "project_vacation"),
+    74: .standard(proto: "mega_evo_settings"),
+    75: .standard(proto: "temporary_evolution_settings"),
     76: .standard(proto: "avatar_group_order_settings"),
+    77: .standard(proto: "pokemon_family"),
     78: .standard(proto: "monodepth_settings"),
+    79: .standard(proto: "level_up_rewards"),
     81: .standard(proto: "raid_settings_proto"),
     84: .standard(proto: "sponsored_geofence_gift_settings"),
     85: .standard(proto: "sticker_metadata"),
     86: .standard(proto: "cross_game_social_settings"),
     87: .standard(proto: "map_display_settings"),
+    88: .standard(proto: "pokemon_home_energy_costs"),
+    89: .standard(proto: "pokemon_home_settings"),
     90: .standard(proto: "ar_telemetry_settings"),
+    91: .standard(proto: "battle_party_settings"),
+    93: .standard(proto: "quest_evolution_settings"),
+    94: .standard(proto: "pokemon_home_form_reversion"),
+    95: .standard(proto: "deep_linking_settings"),
+    96: .standard(proto: "gui_search_settings"),
+    97: .standard(proto: "evolution_quest_template"),
+    98: .standard(proto: "ad_feedback_settings"),
+    99: .standard(proto: "friend_profile_settings"),
+    100: .standard(proto: "geotargeted_quest_settings"),
+    101: .standard(proto: "pokemon_tag_settings"),
+    102: .standard(proto: "recommended_search_proto"),
   ]
 
   fileprivate class _StorageClass {
@@ -988,14 +1158,31 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
     var _platypusRolloutSettings: POGOProtos_Settings_Master_PlatypusRolloutSettings? = nil
     var _buddyHungerSettings: POGOProtos_Settings_Master_BuddyHungerSettings? = nil
     var _projectVacation: POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMasterClientTemplate.ProjectVacation? = nil
+    var _megaEvoSettings: POGOProtos_Settings_Master_MegaEvoSettings? = nil
+    var _temporaryEvolutionSettings: POGOProtos_Settings_Master_TemporaryEvolutionSettings? = nil
     var _avatarGroupOrderSettings: POGOProtos_Settings_Master_AvatarGroupOrderSettings? = nil
+    var _pokemonFamily: POGOProtos_Settings_Master_PokemonFamilySettings? = nil
     var _monodepthSettings: POGOProtos_Settings_Master_MonodepthSettings? = nil
+    var _levelUpRewards: POGOProtos_Settings_Master_LevelUpRewardsSettings? = nil
     var _raidSettingsProto: POGOProtos_Settings_Master_RaidClientSettings? = nil
     var _sponsoredGeofenceGiftSettings: POGOProtos_Settings_Master_SponsoredGeofenceGiftSettings? = nil
     var _stickerMetadata: POGOProtos_Data_Sticker_StickerMetadata? = nil
     var _crossGameSocialSettings: POGOProtos_Settings_Master_CrossGameSocialSettings? = nil
     var _mapDisplaySettings: POGOProtos_Settings_Master_MapDisplaySettings? = nil
+    var _pokemonHomeEnergyCosts: POGOProtos_Settings_Master_PokemonHomeEnergyCosts? = nil
+    var _pokemonHomeSettings: POGOProtos_Settings_Master_PokemonHomeSettings? = nil
     var _arTelemetrySettings: POGOProtos_Settings_Master_ArTelemetrySettings? = nil
+    var _battlePartySettings: POGOProtos_Settings_Master_BattlePartySettings? = nil
+    var _questEvolutionSettings: POGOProtos_Settings_Master_QuestEvolutionSettings? = nil
+    var _pokemonHomeFormReversion: POGOProtos_Settings_Master_PokemonHomeFormReversion? = nil
+    var _deepLinkingSettings: POGOProtos_Settings_Master_DeepLinkingSettings? = nil
+    var _guiSearchSettings: POGOProtos_Settings_Master_GuiSearchSettings? = nil
+    var _evolutionQuestTemplate: POGOProtos_Settings_Master_ClientEvolutionQuestTemplate? = nil
+    var _adFeedbackSettings: POGOProtos_Settings_Master_AdFeedbackSettings? = nil
+    var _friendProfileSettings: POGOProtos_Settings_Master_FriendProfileSettings? = nil
+    var _geotargetedQuestSettings: POGOProtos_Settings_Master_GeotargetedQuestSettings? = nil
+    var _pokemonTagSettings: POGOProtos_Settings_Master_PokemonTagSettings? = nil
+    var _recommendedSearchProto: POGOProtos_Settings_Master_RecommendedSearch? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -1069,14 +1256,31 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
       _platypusRolloutSettings = source._platypusRolloutSettings
       _buddyHungerSettings = source._buddyHungerSettings
       _projectVacation = source._projectVacation
+      _megaEvoSettings = source._megaEvoSettings
+      _temporaryEvolutionSettings = source._temporaryEvolutionSettings
       _avatarGroupOrderSettings = source._avatarGroupOrderSettings
+      _pokemonFamily = source._pokemonFamily
       _monodepthSettings = source._monodepthSettings
+      _levelUpRewards = source._levelUpRewards
       _raidSettingsProto = source._raidSettingsProto
       _sponsoredGeofenceGiftSettings = source._sponsoredGeofenceGiftSettings
       _stickerMetadata = source._stickerMetadata
       _crossGameSocialSettings = source._crossGameSocialSettings
       _mapDisplaySettings = source._mapDisplaySettings
+      _pokemonHomeEnergyCosts = source._pokemonHomeEnergyCosts
+      _pokemonHomeSettings = source._pokemonHomeSettings
       _arTelemetrySettings = source._arTelemetrySettings
+      _battlePartySettings = source._battlePartySettings
+      _questEvolutionSettings = source._questEvolutionSettings
+      _pokemonHomeFormReversion = source._pokemonHomeFormReversion
+      _deepLinkingSettings = source._deepLinkingSettings
+      _guiSearchSettings = source._guiSearchSettings
+      _evolutionQuestTemplate = source._evolutionQuestTemplate
+      _adFeedbackSettings = source._adFeedbackSettings
+      _friendProfileSettings = source._friendProfileSettings
+      _geotargetedQuestSettings = source._geotargetedQuestSettings
+      _pokemonTagSettings = source._pokemonTagSettings
+      _recommendedSearchProto = source._recommendedSearchProto
     }
   }
 
@@ -1159,14 +1363,31 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
         case 70: try decoder.decodeSingularMessageField(value: &_storage._platypusRolloutSettings)
         case 72: try decoder.decodeSingularMessageField(value: &_storage._buddyHungerSettings)
         case 73: try decoder.decodeSingularMessageField(value: &_storage._projectVacation)
+        case 74: try decoder.decodeSingularMessageField(value: &_storage._megaEvoSettings)
+        case 75: try decoder.decodeSingularMessageField(value: &_storage._temporaryEvolutionSettings)
         case 76: try decoder.decodeSingularMessageField(value: &_storage._avatarGroupOrderSettings)
+        case 77: try decoder.decodeSingularMessageField(value: &_storage._pokemonFamily)
         case 78: try decoder.decodeSingularMessageField(value: &_storage._monodepthSettings)
+        case 79: try decoder.decodeSingularMessageField(value: &_storage._levelUpRewards)
         case 81: try decoder.decodeSingularMessageField(value: &_storage._raidSettingsProto)
         case 84: try decoder.decodeSingularMessageField(value: &_storage._sponsoredGeofenceGiftSettings)
         case 85: try decoder.decodeSingularMessageField(value: &_storage._stickerMetadata)
         case 86: try decoder.decodeSingularMessageField(value: &_storage._crossGameSocialSettings)
         case 87: try decoder.decodeSingularMessageField(value: &_storage._mapDisplaySettings)
+        case 88: try decoder.decodeSingularMessageField(value: &_storage._pokemonHomeEnergyCosts)
+        case 89: try decoder.decodeSingularMessageField(value: &_storage._pokemonHomeSettings)
         case 90: try decoder.decodeSingularMessageField(value: &_storage._arTelemetrySettings)
+        case 91: try decoder.decodeSingularMessageField(value: &_storage._battlePartySettings)
+        case 93: try decoder.decodeSingularMessageField(value: &_storage._questEvolutionSettings)
+        case 94: try decoder.decodeSingularMessageField(value: &_storage._pokemonHomeFormReversion)
+        case 95: try decoder.decodeSingularMessageField(value: &_storage._deepLinkingSettings)
+        case 96: try decoder.decodeSingularMessageField(value: &_storage._guiSearchSettings)
+        case 97: try decoder.decodeSingularMessageField(value: &_storage._evolutionQuestTemplate)
+        case 98: try decoder.decodeSingularMessageField(value: &_storage._adFeedbackSettings)
+        case 99: try decoder.decodeSingularMessageField(value: &_storage._friendProfileSettings)
+        case 100: try decoder.decodeSingularMessageField(value: &_storage._geotargetedQuestSettings)
+        case 101: try decoder.decodeSingularMessageField(value: &_storage._pokemonTagSettings)
+        case 102: try decoder.decodeSingularMessageField(value: &_storage._recommendedSearchProto)
         default: break
         }
       }
@@ -1376,11 +1597,23 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
       if let v = _storage._projectVacation {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 73)
       }
+      if let v = _storage._megaEvoSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 74)
+      }
+      if let v = _storage._temporaryEvolutionSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 75)
+      }
       if let v = _storage._avatarGroupOrderSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 76)
       }
+      if let v = _storage._pokemonFamily {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 77)
+      }
       if let v = _storage._monodepthSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 78)
+      }
+      if let v = _storage._levelUpRewards {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 79)
       }
       if let v = _storage._raidSettingsProto {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 81)
@@ -1397,8 +1630,47 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
       if let v = _storage._mapDisplaySettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 87)
       }
+      if let v = _storage._pokemonHomeEnergyCosts {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 88)
+      }
+      if let v = _storage._pokemonHomeSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 89)
+      }
       if let v = _storage._arTelemetrySettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 90)
+      }
+      if let v = _storage._battlePartySettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 91)
+      }
+      if let v = _storage._questEvolutionSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 93)
+      }
+      if let v = _storage._pokemonHomeFormReversion {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 94)
+      }
+      if let v = _storage._deepLinkingSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 95)
+      }
+      if let v = _storage._guiSearchSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 96)
+      }
+      if let v = _storage._evolutionQuestTemplate {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 97)
+      }
+      if let v = _storage._adFeedbackSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 98)
+      }
+      if let v = _storage._friendProfileSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 99)
+      }
+      if let v = _storage._geotargetedQuestSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 100)
+      }
+      if let v = _storage._pokemonTagSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 101)
+      }
+      if let v = _storage._recommendedSearchProto {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 102)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -1476,14 +1748,31 @@ extension POGOProtos_Networking_Responses_DownloadItemTemplatesResponse.GameMast
         if _storage._platypusRolloutSettings != rhs_storage._platypusRolloutSettings {return false}
         if _storage._buddyHungerSettings != rhs_storage._buddyHungerSettings {return false}
         if _storage._projectVacation != rhs_storage._projectVacation {return false}
+        if _storage._megaEvoSettings != rhs_storage._megaEvoSettings {return false}
+        if _storage._temporaryEvolutionSettings != rhs_storage._temporaryEvolutionSettings {return false}
         if _storage._avatarGroupOrderSettings != rhs_storage._avatarGroupOrderSettings {return false}
+        if _storage._pokemonFamily != rhs_storage._pokemonFamily {return false}
         if _storage._monodepthSettings != rhs_storage._monodepthSettings {return false}
+        if _storage._levelUpRewards != rhs_storage._levelUpRewards {return false}
         if _storage._raidSettingsProto != rhs_storage._raidSettingsProto {return false}
         if _storage._sponsoredGeofenceGiftSettings != rhs_storage._sponsoredGeofenceGiftSettings {return false}
         if _storage._stickerMetadata != rhs_storage._stickerMetadata {return false}
         if _storage._crossGameSocialSettings != rhs_storage._crossGameSocialSettings {return false}
         if _storage._mapDisplaySettings != rhs_storage._mapDisplaySettings {return false}
+        if _storage._pokemonHomeEnergyCosts != rhs_storage._pokemonHomeEnergyCosts {return false}
+        if _storage._pokemonHomeSettings != rhs_storage._pokemonHomeSettings {return false}
         if _storage._arTelemetrySettings != rhs_storage._arTelemetrySettings {return false}
+        if _storage._battlePartySettings != rhs_storage._battlePartySettings {return false}
+        if _storage._questEvolutionSettings != rhs_storage._questEvolutionSettings {return false}
+        if _storage._pokemonHomeFormReversion != rhs_storage._pokemonHomeFormReversion {return false}
+        if _storage._deepLinkingSettings != rhs_storage._deepLinkingSettings {return false}
+        if _storage._guiSearchSettings != rhs_storage._guiSearchSettings {return false}
+        if _storage._evolutionQuestTemplate != rhs_storage._evolutionQuestTemplate {return false}
+        if _storage._adFeedbackSettings != rhs_storage._adFeedbackSettings {return false}
+        if _storage._friendProfileSettings != rhs_storage._friendProfileSettings {return false}
+        if _storage._geotargetedQuestSettings != rhs_storage._geotargetedQuestSettings {return false}
+        if _storage._pokemonTagSettings != rhs_storage._pokemonTagSettings {return false}
+        if _storage._recommendedSearchProto != rhs_storage._recommendedSearchProto {return false}
         return true
       }
       if !storagesAreEqual {return false}

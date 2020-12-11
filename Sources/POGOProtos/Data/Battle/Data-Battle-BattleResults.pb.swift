@@ -60,6 +60,8 @@ public struct POGOProtos_Data_Battle_BattleResults {
 
   public var defaultRaidItemRewards: [POGOProtos_Inventory_Loot] = []
 
+  public var battleDurationMs: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -86,6 +88,7 @@ extension POGOProtos_Data_Battle_BattleResults: SwiftProtobuf.Message, SwiftProt
     9: .standard(proto: "post_raid_encounter"),
     10: .standard(proto: "gym_badge"),
     11: .standard(proto: "default_raid_item_rewards"),
+    12: .standard(proto: "battle_duration_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -102,6 +105,7 @@ extension POGOProtos_Data_Battle_BattleResults: SwiftProtobuf.Message, SwiftProt
       case 9: try decoder.decodeRepeatedMessageField(value: &self.postRaidEncounter)
       case 10: try decoder.decodeRepeatedMessageField(value: &self.gymBadge)
       case 11: try decoder.decodeRepeatedMessageField(value: &self.defaultRaidItemRewards)
+      case 12: try decoder.decodeSingularInt64Field(value: &self.battleDurationMs)
       default: break
       }
     }
@@ -141,6 +145,9 @@ extension POGOProtos_Data_Battle_BattleResults: SwiftProtobuf.Message, SwiftProt
     if !self.defaultRaidItemRewards.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.defaultRaidItemRewards, fieldNumber: 11)
     }
+    if self.battleDurationMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.battleDurationMs, fieldNumber: 12)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -156,6 +163,7 @@ extension POGOProtos_Data_Battle_BattleResults: SwiftProtobuf.Message, SwiftProt
     if lhs.postRaidEncounter != rhs.postRaidEncounter {return false}
     if lhs.gymBadge != rhs.gymBadge {return false}
     if lhs.defaultRaidItemRewards != rhs.defaultRaidItemRewards {return false}
+    if lhs.battleDurationMs != rhs.battleDurationMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -210,6 +210,21 @@ public struct POGOProtos_Map_Fort_FortData {
     set {_uniqueStorage()._pokestopDisplays = newValue}
   }
 
+  public var isArScanEligible: Bool {
+    get {return _storage._isArScanEligible}
+    set {_uniqueStorage()._isArScanEligible = newValue}
+  }
+
+  public var geostoreTombstoneMessageKey: String {
+    get {return _storage._geostoreTombstoneMessageKey}
+    set {_uniqueStorage()._geostoreTombstoneMessageKey = newValue}
+  }
+
+  public var geostoreSuspensionMessageKey: String {
+    get {return _storage._geostoreSuspensionMessageKey}
+    set {_uniqueStorage()._geostoreSuspensionMessageKey = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct PokestopIncidentDisplay {
@@ -393,6 +408,9 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     31: .standard(proto: "is_ex_raid_eligible"),
     32: .standard(proto: "pokestop_display"),
     33: .standard(proto: "pokestop_displays"),
+    34: .standard(proto: "is_ar_scan_eligible"),
+    35: .standard(proto: "geostore_tombstone_message_key"),
+    36: .standard(proto: "geostore_suspension_message_key"),
   ]
 
   fileprivate class _StorageClass {
@@ -428,6 +446,9 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _isExRaidEligible: Bool = false
     var _pokestopDisplay: POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay? = nil
     var _pokestopDisplays: [POGOProtos_Map_Fort_FortData.PokestopIncidentDisplay] = []
+    var _isArScanEligible: Bool = false
+    var _geostoreTombstoneMessageKey: String = String()
+    var _geostoreSuspensionMessageKey: String = String()
 
     static let defaultInstance = _StorageClass()
 
@@ -466,6 +487,9 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       _isExRaidEligible = source._isExRaidEligible
       _pokestopDisplay = source._pokestopDisplay
       _pokestopDisplays = source._pokestopDisplays
+      _isArScanEligible = source._isArScanEligible
+      _geostoreTombstoneMessageKey = source._geostoreTombstoneMessageKey
+      _geostoreSuspensionMessageKey = source._geostoreSuspensionMessageKey
     }
   }
 
@@ -513,6 +537,9 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
         case 31: try decoder.decodeSingularBoolField(value: &_storage._isExRaidEligible)
         case 32: try decoder.decodeSingularMessageField(value: &_storage._pokestopDisplay)
         case 33: try decoder.decodeRepeatedMessageField(value: &_storage._pokestopDisplays)
+        case 34: try decoder.decodeSingularBoolField(value: &_storage._isArScanEligible)
+        case 35: try decoder.decodeSingularStringField(value: &_storage._geostoreTombstoneMessageKey)
+        case 36: try decoder.decodeSingularStringField(value: &_storage._geostoreSuspensionMessageKey)
         default: break
         }
       }
@@ -617,6 +644,15 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
       if !_storage._pokestopDisplays.isEmpty {
         try visitor.visitRepeatedMessageField(value: _storage._pokestopDisplays, fieldNumber: 33)
       }
+      if _storage._isArScanEligible != false {
+        try visitor.visitSingularBoolField(value: _storage._isArScanEligible, fieldNumber: 34)
+      }
+      if !_storage._geostoreTombstoneMessageKey.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._geostoreTombstoneMessageKey, fieldNumber: 35)
+      }
+      if !_storage._geostoreSuspensionMessageKey.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._geostoreSuspensionMessageKey, fieldNumber: 36)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -658,6 +694,9 @@ extension POGOProtos_Map_Fort_FortData: SwiftProtobuf.Message, SwiftProtobuf._Me
         if _storage._isExRaidEligible != rhs_storage._isExRaidEligible {return false}
         if _storage._pokestopDisplay != rhs_storage._pokestopDisplay {return false}
         if _storage._pokestopDisplays != rhs_storage._pokestopDisplays {return false}
+        if _storage._isArScanEligible != rhs_storage._isArScanEligible {return false}
+        if _storage._geostoreTombstoneMessageKey != rhs_storage._geostoreTombstoneMessageKey {return false}
+        if _storage._geostoreSuspensionMessageKey != rhs_storage._geostoreSuspensionMessageKey {return false}
         return true
       }
       if !storagesAreEqual {return false}

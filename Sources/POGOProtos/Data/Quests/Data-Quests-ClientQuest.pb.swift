@@ -73,6 +73,14 @@ public struct POGOProtos_Data_Quests_ClientQuest {
 
     public var partnerID: String = String()
 
+    public var iconName: String = String()
+
+    public var backgroundName: String = String()
+
+    public var foregroundName: String = String()
+
+    public var progressInterval: Int32 = 0
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -138,6 +146,10 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
     10: .standard(proto: "tag_string"),
     11: .standard(proto: "sponsor_string"),
     12: .standard(proto: "partner_id"),
+    13: .standard(proto: "icon_name"),
+    14: .standard(proto: "background_name"),
+    15: .standard(proto: "foreground_name"),
+    16: .standard(proto: "progress_interval"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -155,6 +167,10 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
       case 10: try decoder.decodeSingularStringField(value: &self.tagString)
       case 11: try decoder.decodeSingularStringField(value: &self.sponsorString)
       case 12: try decoder.decodeSingularStringField(value: &self.partnerID)
+      case 13: try decoder.decodeSingularStringField(value: &self.iconName)
+      case 14: try decoder.decodeSingularStringField(value: &self.backgroundName)
+      case 15: try decoder.decodeSingularStringField(value: &self.foregroundName)
+      case 16: try decoder.decodeSingularInt32Field(value: &self.progressInterval)
       default: break
       }
     }
@@ -197,6 +213,18 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
     if !self.partnerID.isEmpty {
       try visitor.visitSingularStringField(value: self.partnerID, fieldNumber: 12)
     }
+    if !self.iconName.isEmpty {
+      try visitor.visitSingularStringField(value: self.iconName, fieldNumber: 13)
+    }
+    if !self.backgroundName.isEmpty {
+      try visitor.visitSingularStringField(value: self.backgroundName, fieldNumber: 14)
+    }
+    if !self.foregroundName.isEmpty {
+      try visitor.visitSingularStringField(value: self.foregroundName, fieldNumber: 15)
+    }
+    if self.progressInterval != 0 {
+      try visitor.visitSingularInt32Field(value: self.progressInterval, fieldNumber: 16)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -213,6 +241,10 @@ extension POGOProtos_Data_Quests_ClientQuest.QuestDisplay: SwiftProtobuf.Message
     if lhs.tagString != rhs.tagString {return false}
     if lhs.sponsorString != rhs.sponsorString {return false}
     if lhs.partnerID != rhs.partnerID {return false}
+    if lhs.iconName != rhs.iconName {return false}
+    if lhs.backgroundName != rhs.backgroundName {return false}
+    if lhs.foregroundName != rhs.foregroundName {return false}
+    if lhs.progressInterval != rhs.progressInterval {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

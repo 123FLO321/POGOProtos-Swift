@@ -38,7 +38,17 @@ public struct POGOProtos_Data_PokemonDisplay {
 
   public var pokemonBadge: POGOProtos_Data_PokemonDisplay.PokemonBadge = .unset
 
-  public var pokemonEvolution: POGOProtos_Enums_PokemonEvolution = .evolutionUnset
+  public var currentTempEvolution: POGOProtos_Enums_TemporaryEvolutionId = .evolutionUnset
+
+  public var temporaryEvolutionFinishMs: Int64 = 0
+
+  public var tempEvolutionIsLocked: Bool = false
+
+  public var lockedTempEvolution: POGOProtos_Enums_TemporaryEvolutionId = .evolutionUnset
+
+  public var originalCostume: POGOProtos_Enums_Costume = .unset
+
+  public var displayID: Int64 = 0
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -139,7 +149,12 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     5: .standard(proto: "weather_boosted_condition"),
     6: .same(proto: "alignment"),
     7: .standard(proto: "pokemon_badge"),
-    8: .standard(proto: "pokemon_evolution"),
+    8: .standard(proto: "current_temp_evolution"),
+    9: .standard(proto: "temporary_evolution_finish_ms"),
+    10: .standard(proto: "temp_evolution_is_locked"),
+    11: .standard(proto: "locked_temp_evolution"),
+    12: .standard(proto: "original_costume"),
+    13: .standard(proto: "display_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -152,7 +167,12 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
       case 5: try decoder.decodeSingularEnumField(value: &self.weatherBoostedCondition)
       case 6: try decoder.decodeSingularEnumField(value: &self.alignment)
       case 7: try decoder.decodeSingularEnumField(value: &self.pokemonBadge)
-      case 8: try decoder.decodeSingularEnumField(value: &self.pokemonEvolution)
+      case 8: try decoder.decodeSingularEnumField(value: &self.currentTempEvolution)
+      case 9: try decoder.decodeSingularInt64Field(value: &self.temporaryEvolutionFinishMs)
+      case 10: try decoder.decodeSingularBoolField(value: &self.tempEvolutionIsLocked)
+      case 11: try decoder.decodeSingularEnumField(value: &self.lockedTempEvolution)
+      case 12: try decoder.decodeSingularEnumField(value: &self.originalCostume)
+      case 13: try decoder.decodeSingularInt64Field(value: &self.displayID)
       default: break
       }
     }
@@ -180,8 +200,23 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     if self.pokemonBadge != .unset {
       try visitor.visitSingularEnumField(value: self.pokemonBadge, fieldNumber: 7)
     }
-    if self.pokemonEvolution != .evolutionUnset {
-      try visitor.visitSingularEnumField(value: self.pokemonEvolution, fieldNumber: 8)
+    if self.currentTempEvolution != .evolutionUnset {
+      try visitor.visitSingularEnumField(value: self.currentTempEvolution, fieldNumber: 8)
+    }
+    if self.temporaryEvolutionFinishMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.temporaryEvolutionFinishMs, fieldNumber: 9)
+    }
+    if self.tempEvolutionIsLocked != false {
+      try visitor.visitSingularBoolField(value: self.tempEvolutionIsLocked, fieldNumber: 10)
+    }
+    if self.lockedTempEvolution != .evolutionUnset {
+      try visitor.visitSingularEnumField(value: self.lockedTempEvolution, fieldNumber: 11)
+    }
+    if self.originalCostume != .unset {
+      try visitor.visitSingularEnumField(value: self.originalCostume, fieldNumber: 12)
+    }
+    if self.displayID != 0 {
+      try visitor.visitSingularInt64Field(value: self.displayID, fieldNumber: 13)
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -194,7 +229,12 @@ extension POGOProtos_Data_PokemonDisplay: SwiftProtobuf.Message, SwiftProtobuf._
     if lhs.weatherBoostedCondition != rhs.weatherBoostedCondition {return false}
     if lhs.alignment != rhs.alignment {return false}
     if lhs.pokemonBadge != rhs.pokemonBadge {return false}
-    if lhs.pokemonEvolution != rhs.pokemonEvolution {return false}
+    if lhs.currentTempEvolution != rhs.currentTempEvolution {return false}
+    if lhs.temporaryEvolutionFinishMs != rhs.temporaryEvolutionFinishMs {return false}
+    if lhs.tempEvolutionIsLocked != rhs.tempEvolutionIsLocked {return false}
+    if lhs.lockedTempEvolution != rhs.lockedTempEvolution {return false}
+    if lhs.originalCostume != rhs.originalCostume {return false}
+    if lhs.displayID != rhs.displayID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

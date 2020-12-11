@@ -253,6 +253,36 @@ public struct POGOProtos_Data_Player_PlayerStats {
     set {_uniqueStorage()._numBestBuddies = newValue}
   }
 
+  public var levelCap: Int32 {
+    get {return _storage._levelCap}
+    set {_uniqueStorage()._levelCap = newValue}
+  }
+
+  public var sevenDayStreaks: Int32 {
+    get {return _storage._sevenDayStreaks}
+    set {_uniqueStorage()._sevenDayStreaks = newValue}
+  }
+
+  public var uniqueRaidBossesDefeated: Int32 {
+    get {return _storage._uniqueRaidBossesDefeated}
+    set {_uniqueStorage()._uniqueRaidBossesDefeated = newValue}
+  }
+
+  public var uniquePokestopsVisited: Int32 {
+    get {return _storage._uniquePokestopsVisited}
+    set {_uniqueStorage()._uniquePokestopsVisited = newValue}
+  }
+
+  public var raidsWonWithFriends: Int32 {
+    get {return _storage._raidsWonWithFriends}
+    set {_uniqueStorage()._raidsWonWithFriends = newValue}
+  }
+
+  public var pokemonCaughtAtYourLures: Int32 {
+    get {return _storage._pokemonCaughtAtYourLures}
+    set {_uniqueStorage()._pokemonCaughtAtYourLures = newValue}
+  }
+
   public var numWayfarerAgreement: Int32 {
     get {return _storage._numWayfarerAgreement}
     set {_uniqueStorage()._numWayfarerAgreement = newValue}
@@ -261,6 +291,16 @@ public struct POGOProtos_Data_Player_PlayerStats {
   public var wayfarerAgreementUpdateMs: Int64 {
     get {return _storage._wayfarerAgreementUpdateMs}
     set {_uniqueStorage()._wayfarerAgreementUpdateMs = newValue}
+  }
+
+  public var numTotalMegaEvolutions: Int32 {
+    get {return _storage._numTotalMegaEvolutions}
+    set {_uniqueStorage()._numTotalMegaEvolutions = newValue}
+  }
+
+  public var numUniqueMegaEvolutions: Int32 {
+    get {return _storage._numUniqueMegaEvolutions}
+    set {_uniqueStorage()._numUniqueMegaEvolutions = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -322,8 +362,16 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     43: .standard(proto: "num_pokemon_purified"),
     44: .standard(proto: "num_grunts_defeated"),
     47: .standard(proto: "num_best_buddies"),
+    48: .standard(proto: "level_cap"),
+    49: .standard(proto: "seven_day_streaks"),
+    50: .standard(proto: "unique_raid_bosses_defeated"),
+    51: .standard(proto: "unique_pokestops_visited"),
+    52: .standard(proto: "raids_won_with_friends"),
+    53: .standard(proto: "pokemon_caught_at_your_lures"),
     54: .standard(proto: "num_wayfarer_agreement"),
     55: .standard(proto: "wayfarer_agreement_update_ms"),
+    56: .standard(proto: "num_total_mega_evolutions"),
+    57: .standard(proto: "num_unique_mega_evolutions"),
   ]
 
   fileprivate class _StorageClass {
@@ -372,8 +420,16 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
     var _numPokemonPurified: Int32 = 0
     var _numGruntsDefeated: Int32 = 0
     var _numBestBuddies: Int32 = 0
+    var _levelCap: Int32 = 0
+    var _sevenDayStreaks: Int32 = 0
+    var _uniqueRaidBossesDefeated: Int32 = 0
+    var _uniquePokestopsVisited: Int32 = 0
+    var _raidsWonWithFriends: Int32 = 0
+    var _pokemonCaughtAtYourLures: Int32 = 0
     var _numWayfarerAgreement: Int32 = 0
     var _wayfarerAgreementUpdateMs: Int64 = 0
+    var _numTotalMegaEvolutions: Int32 = 0
+    var _numUniqueMegaEvolutions: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -425,8 +481,16 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       _numPokemonPurified = source._numPokemonPurified
       _numGruntsDefeated = source._numGruntsDefeated
       _numBestBuddies = source._numBestBuddies
+      _levelCap = source._levelCap
+      _sevenDayStreaks = source._sevenDayStreaks
+      _uniqueRaidBossesDefeated = source._uniqueRaidBossesDefeated
+      _uniquePokestopsVisited = source._uniquePokestopsVisited
+      _raidsWonWithFriends = source._raidsWonWithFriends
+      _pokemonCaughtAtYourLures = source._pokemonCaughtAtYourLures
       _numWayfarerAgreement = source._numWayfarerAgreement
       _wayfarerAgreementUpdateMs = source._wayfarerAgreementUpdateMs
+      _numTotalMegaEvolutions = source._numTotalMegaEvolutions
+      _numUniqueMegaEvolutions = source._numUniqueMegaEvolutions
     }
   }
 
@@ -487,8 +551,16 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         case 43: try decoder.decodeSingularInt32Field(value: &_storage._numPokemonPurified)
         case 44: try decoder.decodeSingularInt32Field(value: &_storage._numGruntsDefeated)
         case 47: try decoder.decodeSingularInt32Field(value: &_storage._numBestBuddies)
+        case 48: try decoder.decodeSingularInt32Field(value: &_storage._levelCap)
+        case 49: try decoder.decodeSingularInt32Field(value: &_storage._sevenDayStreaks)
+        case 50: try decoder.decodeSingularInt32Field(value: &_storage._uniqueRaidBossesDefeated)
+        case 51: try decoder.decodeSingularInt32Field(value: &_storage._uniquePokestopsVisited)
+        case 52: try decoder.decodeSingularInt32Field(value: &_storage._raidsWonWithFriends)
+        case 53: try decoder.decodeSingularInt32Field(value: &_storage._pokemonCaughtAtYourLures)
         case 54: try decoder.decodeSingularInt32Field(value: &_storage._numWayfarerAgreement)
         case 55: try decoder.decodeSingularInt64Field(value: &_storage._wayfarerAgreementUpdateMs)
+        case 56: try decoder.decodeSingularInt32Field(value: &_storage._numTotalMegaEvolutions)
+        case 57: try decoder.decodeSingularInt32Field(value: &_storage._numUniqueMegaEvolutions)
         default: break
         }
       }
@@ -632,11 +704,35 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
       if _storage._numBestBuddies != 0 {
         try visitor.visitSingularInt32Field(value: _storage._numBestBuddies, fieldNumber: 47)
       }
+      if _storage._levelCap != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._levelCap, fieldNumber: 48)
+      }
+      if _storage._sevenDayStreaks != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._sevenDayStreaks, fieldNumber: 49)
+      }
+      if _storage._uniqueRaidBossesDefeated != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._uniqueRaidBossesDefeated, fieldNumber: 50)
+      }
+      if _storage._uniquePokestopsVisited != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._uniquePokestopsVisited, fieldNumber: 51)
+      }
+      if _storage._raidsWonWithFriends != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._raidsWonWithFriends, fieldNumber: 52)
+      }
+      if _storage._pokemonCaughtAtYourLures != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._pokemonCaughtAtYourLures, fieldNumber: 53)
+      }
       if _storage._numWayfarerAgreement != 0 {
         try visitor.visitSingularInt32Field(value: _storage._numWayfarerAgreement, fieldNumber: 54)
       }
       if _storage._wayfarerAgreementUpdateMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._wayfarerAgreementUpdateMs, fieldNumber: 55)
+      }
+      if _storage._numTotalMegaEvolutions != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numTotalMegaEvolutions, fieldNumber: 56)
+      }
+      if _storage._numUniqueMegaEvolutions != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._numUniqueMegaEvolutions, fieldNumber: 57)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -692,8 +788,16 @@ extension POGOProtos_Data_Player_PlayerStats: SwiftProtobuf.Message, SwiftProtob
         if _storage._numPokemonPurified != rhs_storage._numPokemonPurified {return false}
         if _storage._numGruntsDefeated != rhs_storage._numGruntsDefeated {return false}
         if _storage._numBestBuddies != rhs_storage._numBestBuddies {return false}
+        if _storage._levelCap != rhs_storage._levelCap {return false}
+        if _storage._sevenDayStreaks != rhs_storage._sevenDayStreaks {return false}
+        if _storage._uniqueRaidBossesDefeated != rhs_storage._uniqueRaidBossesDefeated {return false}
+        if _storage._uniquePokestopsVisited != rhs_storage._uniquePokestopsVisited {return false}
+        if _storage._raidsWonWithFriends != rhs_storage._raidsWonWithFriends {return false}
+        if _storage._pokemonCaughtAtYourLures != rhs_storage._pokemonCaughtAtYourLures {return false}
         if _storage._numWayfarerAgreement != rhs_storage._numWayfarerAgreement {return false}
         if _storage._wayfarerAgreementUpdateMs != rhs_storage._wayfarerAgreementUpdateMs {return false}
+        if _storage._numTotalMegaEvolutions != rhs_storage._numTotalMegaEvolutions {return false}
+        if _storage._numUniqueMegaEvolutions != rhs_storage._numUniqueMegaEvolutions {return false}
         return true
       }
       if !storagesAreEqual {return false}

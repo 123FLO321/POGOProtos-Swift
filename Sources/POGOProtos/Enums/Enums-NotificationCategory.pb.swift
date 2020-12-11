@@ -71,6 +71,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
   case itemRewards // = 50
   case timedGroupChallengeStarted // = 51
   case timedGroupChallengeGoalMet // = 52
+  case deepLinking // = 53
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -129,6 +130,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case 50: self = .itemRewards
     case 51: self = .timedGroupChallengeStarted
     case 52: self = .timedGroupChallengeGoalMet
+    case 53: self = .deepLinking
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -185,6 +187,7 @@ public enum POGOProtos_Enums_NotificationCategory: SwiftProtobuf.Enum {
     case .itemRewards: return 50
     case .timedGroupChallengeStarted: return 51
     case .timedGroupChallengeGoalMet: return 52
+    case .deepLinking: return 53
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -246,6 +249,7 @@ extension POGOProtos_Enums_NotificationCategory: CaseIterable {
     .itemRewards,
     .timedGroupChallengeStarted,
     .timedGroupChallengeGoalMet,
+    .deepLinking,
   ]
 }
 
@@ -305,5 +309,6 @@ extension POGOProtos_Enums_NotificationCategory: SwiftProtobuf._ProtoNameProvidi
     50: .same(proto: "ITEM_REWARDS"),
     51: .same(proto: "TIMED_GROUP_CHALLENGE_STARTED"),
     52: .same(proto: "TIMED_GROUP_CHALLENGE_GOAL_MET"),
+    53: .same(proto: "DEEP_LINKING"),
   ]
 }

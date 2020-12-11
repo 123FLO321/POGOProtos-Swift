@@ -26,6 +26,8 @@ public struct POGOProtos_Data_Quests_CatchPokemonQuest {
 
   public var uniquePokemonID: [POGOProtos_Enums_PokemonId] = []
 
+  public var activeEncounterID: UInt64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -39,12 +41,14 @@ extension POGOProtos_Data_Quests_CatchPokemonQuest: SwiftProtobuf.Message, Swift
   public static let protoMessageName: String = _protobuf_package + ".CatchPokemonQuest"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "unique_pokemon_id"),
+    2: .standard(proto: "active_encounter_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
       case 1: try decoder.decodeRepeatedEnumField(value: &self.uniquePokemonID)
+      case 2: try decoder.decodeSingularFixed64Field(value: &self.activeEncounterID)
       default: break
       }
     }
@@ -54,11 +58,15 @@ extension POGOProtos_Data_Quests_CatchPokemonQuest: SwiftProtobuf.Message, Swift
     if !self.uniquePokemonID.isEmpty {
       try visitor.visitPackedEnumField(value: self.uniquePokemonID, fieldNumber: 1)
     }
+    if self.activeEncounterID != 0 {
+      try visitor.visitSingularFixed64Field(value: self.activeEncounterID, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Quests_CatchPokemonQuest, rhs: POGOProtos_Data_Quests_CatchPokemonQuest) -> Bool {
     if lhs.uniquePokemonID != rhs.uniquePokemonID {return false}
+    if lhs.activeEncounterID != rhs.activeEncounterID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

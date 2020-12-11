@@ -62,6 +62,12 @@ public struct POGOProtos_Data_Battle_BattleParticipant {
 
   public var isSocialInvite: Bool = false
 
+  public var hasActiveMegaEvolvedPokemon_p: Bool = false
+
+  public var lobbyJoinTimeMs: Int64 = 0
+
+  public var superEffectiveChargeAttacksUsed: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -89,6 +95,9 @@ extension POGOProtos_Data_Battle_BattleParticipant: SwiftProtobuf.Message, Swift
     10: .standard(proto: "friend_codename"),
     11: .standard(proto: "is_remote"),
     12: .standard(proto: "is_social_invite"),
+    13: .standard(proto: "has_active_mega_evolved_pokemon"),
+    14: .standard(proto: "lobby_join_time_ms"),
+    15: .standard(proto: "super_effective_charge_attacks_used"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -106,6 +115,9 @@ extension POGOProtos_Data_Battle_BattleParticipant: SwiftProtobuf.Message, Swift
       case 10: try decoder.decodeRepeatedStringField(value: &self.friendCodename)
       case 11: try decoder.decodeSingularBoolField(value: &self.isRemote)
       case 12: try decoder.decodeSingularBoolField(value: &self.isSocialInvite)
+      case 13: try decoder.decodeSingularBoolField(value: &self.hasActiveMegaEvolvedPokemon_p)
+      case 14: try decoder.decodeSingularInt64Field(value: &self.lobbyJoinTimeMs)
+      case 15: try decoder.decodeSingularInt32Field(value: &self.superEffectiveChargeAttacksUsed)
       default: break
       }
     }
@@ -148,6 +160,15 @@ extension POGOProtos_Data_Battle_BattleParticipant: SwiftProtobuf.Message, Swift
     if self.isSocialInvite != false {
       try visitor.visitSingularBoolField(value: self.isSocialInvite, fieldNumber: 12)
     }
+    if self.hasActiveMegaEvolvedPokemon_p != false {
+      try visitor.visitSingularBoolField(value: self.hasActiveMegaEvolvedPokemon_p, fieldNumber: 13)
+    }
+    if self.lobbyJoinTimeMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.lobbyJoinTimeMs, fieldNumber: 14)
+    }
+    if self.superEffectiveChargeAttacksUsed != 0 {
+      try visitor.visitSingularInt32Field(value: self.superEffectiveChargeAttacksUsed, fieldNumber: 15)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -164,6 +185,9 @@ extension POGOProtos_Data_Battle_BattleParticipant: SwiftProtobuf.Message, Swift
     if lhs.friendCodename != rhs.friendCodename {return false}
     if lhs.isRemote != rhs.isRemote {return false}
     if lhs.isSocialInvite != rhs.isSocialInvite {return false}
+    if lhs.hasActiveMegaEvolvedPokemon_p != rhs.hasActiveMegaEvolvedPokemon_p {return false}
+    if lhs.lobbyJoinTimeMs != rhs.lobbyJoinTimeMs {return false}
+    if lhs.superEffectiveChargeAttacksUsed != rhs.superEffectiveChargeAttacksUsed {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

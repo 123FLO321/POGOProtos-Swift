@@ -85,7 +85,15 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgePokedexEntriesGen6 // = 61
   case badgePokedexEntriesGen7 // = 62
   case badgePokedexEntriesGen8 // = 63
+  case badge7DayStreaks // = 64
+  case badgeUniqueRaidBossesDefeated // = 65
+  case badgeRaidsWithFriends // = 66
+  case badgePokemonCaughtAtYourLures // = 67
   case badgeWayfarer // = 68
+  case badgeTotalMegaEvos // = 69
+  case badgeUniqueMegaEvos // = 70
+  case deprecated0 // = 71
+  case badgeDynamicMin // = 1000
   case badgeEventMin // = 2000
   case badgeChicagoFestJuly2017 // = 2001
   case badgePikachuOutbreakYokohama2017 // = 2002
@@ -264,6 +272,29 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
   case badgeEvent0008 // = 5208
   case badgeEvent0009 // = 5209
   case badgeEvent0010 // = 5210
+  case badgeEvent0011 // = 5211
+  case badgeEvent0012 // = 5212
+  case badgeEvent0013 // = 5213
+  case badgeEvent0014 // = 5214
+  case badgeEvent0015 // = 5215
+  case badgeEvent0016 // = 5216
+  case badgeEvent0017 // = 5217
+  case badgeEvent0018 // = 5218
+  case badgeEvent0019 // = 5219
+  case badgeEvent0020 // = 5220
+  case badgeEvent0021 // = 5221
+  case badgeEvent0022 // = 5222
+  case badgeEvent0023 // = 5223
+  case badgeEvent0024 // = 5224
+  case badgeEvent0025 // = 5225
+  case badgeEvent0026 // = 5226
+  case badgeEvent0027 // = 5227
+  case badgeEvent0028 // = 5228
+  case badgeEvent0029 // = 5229
+  case badgeEvent0030 // = 5230
+  case badgeLevel40 // = 5231
+  case deprecated1 // = 5300
+  case deprecated2 // = 5301
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -336,7 +367,15 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 61: self = .badgePokedexEntriesGen6
     case 62: self = .badgePokedexEntriesGen7
     case 63: self = .badgePokedexEntriesGen8
+    case 64: self = .badge7DayStreaks
+    case 65: self = .badgeUniqueRaidBossesDefeated
+    case 66: self = .badgeRaidsWithFriends
+    case 67: self = .badgePokemonCaughtAtYourLures
     case 68: self = .badgeWayfarer
+    case 69: self = .badgeTotalMegaEvos
+    case 70: self = .badgeUniqueMegaEvos
+    case 71: self = .deprecated0
+    case 1000: self = .badgeDynamicMin
     case 2000: self = .badgeEventMin
     case 2001: self = .badgeChicagoFestJuly2017
     case 2002: self = .badgePikachuOutbreakYokohama2017
@@ -515,6 +554,29 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case 5208: self = .badgeEvent0008
     case 5209: self = .badgeEvent0009
     case 5210: self = .badgeEvent0010
+    case 5211: self = .badgeEvent0011
+    case 5212: self = .badgeEvent0012
+    case 5213: self = .badgeEvent0013
+    case 5214: self = .badgeEvent0014
+    case 5215: self = .badgeEvent0015
+    case 5216: self = .badgeEvent0016
+    case 5217: self = .badgeEvent0017
+    case 5218: self = .badgeEvent0018
+    case 5219: self = .badgeEvent0019
+    case 5220: self = .badgeEvent0020
+    case 5221: self = .badgeEvent0021
+    case 5222: self = .badgeEvent0022
+    case 5223: self = .badgeEvent0023
+    case 5224: self = .badgeEvent0024
+    case 5225: self = .badgeEvent0025
+    case 5226: self = .badgeEvent0026
+    case 5227: self = .badgeEvent0027
+    case 5228: self = .badgeEvent0028
+    case 5229: self = .badgeEvent0029
+    case 5230: self = .badgeEvent0030
+    case 5231: self = .badgeLevel40
+    case 5300: self = .deprecated1
+    case 5301: self = .deprecated2
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -585,7 +647,15 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgePokedexEntriesGen6: return 61
     case .badgePokedexEntriesGen7: return 62
     case .badgePokedexEntriesGen8: return 63
+    case .badge7DayStreaks: return 64
+    case .badgeUniqueRaidBossesDefeated: return 65
+    case .badgeRaidsWithFriends: return 66
+    case .badgePokemonCaughtAtYourLures: return 67
     case .badgeWayfarer: return 68
+    case .badgeTotalMegaEvos: return 69
+    case .badgeUniqueMegaEvos: return 70
+    case .deprecated0: return 71
+    case .badgeDynamicMin: return 1000
     case .badgeEventMin: return 2000
     case .badgeChicagoFestJuly2017: return 2001
     case .badgePikachuOutbreakYokohama2017: return 2002
@@ -764,6 +834,29 @@ public enum POGOProtos_Enums_BadgeType: SwiftProtobuf.Enum {
     case .badgeEvent0008: return 5208
     case .badgeEvent0009: return 5209
     case .badgeEvent0010: return 5210
+    case .badgeEvent0011: return 5211
+    case .badgeEvent0012: return 5212
+    case .badgeEvent0013: return 5213
+    case .badgeEvent0014: return 5214
+    case .badgeEvent0015: return 5215
+    case .badgeEvent0016: return 5216
+    case .badgeEvent0017: return 5217
+    case .badgeEvent0018: return 5218
+    case .badgeEvent0019: return 5219
+    case .badgeEvent0020: return 5220
+    case .badgeEvent0021: return 5221
+    case .badgeEvent0022: return 5222
+    case .badgeEvent0023: return 5223
+    case .badgeEvent0024: return 5224
+    case .badgeEvent0025: return 5225
+    case .badgeEvent0026: return 5226
+    case .badgeEvent0027: return 5227
+    case .badgeEvent0028: return 5228
+    case .badgeEvent0029: return 5229
+    case .badgeEvent0030: return 5230
+    case .badgeLevel40: return 5231
+    case .deprecated1: return 5300
+    case .deprecated2: return 5301
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -839,7 +932,15 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgePokedexEntriesGen6,
     .badgePokedexEntriesGen7,
     .badgePokedexEntriesGen8,
+    .badge7DayStreaks,
+    .badgeUniqueRaidBossesDefeated,
+    .badgeRaidsWithFriends,
+    .badgePokemonCaughtAtYourLures,
     .badgeWayfarer,
+    .badgeTotalMegaEvos,
+    .badgeUniqueMegaEvos,
+    .deprecated0,
+    .badgeDynamicMin,
     .badgeEventMin,
     .badgeChicagoFestJuly2017,
     .badgePikachuOutbreakYokohama2017,
@@ -1018,6 +1119,29 @@ extension POGOProtos_Enums_BadgeType: CaseIterable {
     .badgeEvent0008,
     .badgeEvent0009,
     .badgeEvent0010,
+    .badgeEvent0011,
+    .badgeEvent0012,
+    .badgeEvent0013,
+    .badgeEvent0014,
+    .badgeEvent0015,
+    .badgeEvent0016,
+    .badgeEvent0017,
+    .badgeEvent0018,
+    .badgeEvent0019,
+    .badgeEvent0020,
+    .badgeEvent0021,
+    .badgeEvent0022,
+    .badgeEvent0023,
+    .badgeEvent0024,
+    .badgeEvent0025,
+    .badgeEvent0026,
+    .badgeEvent0027,
+    .badgeEvent0028,
+    .badgeEvent0029,
+    .badgeEvent0030,
+    .badgeLevel40,
+    .deprecated1,
+    .deprecated2,
   ]
 }
 
@@ -1091,7 +1215,15 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     61: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN6"),
     62: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN7"),
     63: .same(proto: "BADGE_POKEDEX_ENTRIES_GEN8"),
+    64: .same(proto: "BADGE_7_DAY_STREAKS"),
+    65: .same(proto: "BADGE_UNIQUE_RAID_BOSSES_DEFEATED"),
+    66: .same(proto: "BADGE_RAIDS_WITH_FRIENDS"),
+    67: .same(proto: "BADGE_POKEMON_CAUGHT_AT_YOUR_LURES"),
     68: .same(proto: "BADGE_WAYFARER"),
+    69: .same(proto: "BADGE_TOTAL_MEGA_EVOS"),
+    70: .same(proto: "BADGE_UNIQUE_MEGA_EVOS"),
+    71: .same(proto: "DEPRECATED_0"),
+    1000: .same(proto: "BADGE_DYNAMIC_MIN"),
     2000: .same(proto: "BADGE_EVENT_MIN"),
     2001: .same(proto: "BADGE_CHICAGO_FEST_JULY_2017"),
     2002: .same(proto: "BADGE_PIKACHU_OUTBREAK_YOKOHAMA_2017"),
@@ -1270,5 +1402,28 @@ extension POGOProtos_Enums_BadgeType: SwiftProtobuf._ProtoNameProviding {
     5208: .same(proto: "BADGE_EVENT_0008"),
     5209: .same(proto: "BADGE_EVENT_0009"),
     5210: .same(proto: "BADGE_EVENT_0010"),
+    5211: .same(proto: "BADGE_EVENT_0011"),
+    5212: .same(proto: "BADGE_EVENT_0012"),
+    5213: .same(proto: "BADGE_EVENT_0013"),
+    5214: .same(proto: "BADGE_EVENT_0014"),
+    5215: .same(proto: "BADGE_EVENT_0015"),
+    5216: .same(proto: "BADGE_EVENT_0016"),
+    5217: .same(proto: "BADGE_EVENT_0017"),
+    5218: .same(proto: "BADGE_EVENT_0018"),
+    5219: .same(proto: "BADGE_EVENT_0019"),
+    5220: .same(proto: "BADGE_EVENT_0020"),
+    5221: .same(proto: "BADGE_EVENT_0021"),
+    5222: .same(proto: "BADGE_EVENT_0022"),
+    5223: .same(proto: "BADGE_EVENT_0023"),
+    5224: .same(proto: "BADGE_EVENT_0024"),
+    5225: .same(proto: "BADGE_EVENT_0025"),
+    5226: .same(proto: "BADGE_EVENT_0026"),
+    5227: .same(proto: "BADGE_EVENT_0027"),
+    5228: .same(proto: "BADGE_EVENT_0028"),
+    5229: .same(proto: "BADGE_EVENT_0029"),
+    5230: .same(proto: "BADGE_EVENT_0030"),
+    5231: .same(proto: "BADGE_LEVEL_40"),
+    5300: .same(proto: "DEPRECATED_1"),
+    5301: .same(proto: "DEPRECATED_2"),
   ]
 }

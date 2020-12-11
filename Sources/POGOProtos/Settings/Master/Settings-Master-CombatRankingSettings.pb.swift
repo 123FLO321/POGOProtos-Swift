@@ -37,6 +37,8 @@ public struct POGOProtos_Settings_Master_CombatRankingSettings {
 
   public var minRankToDisplayRating: Int32 = 0
 
+  public var seasonNumber: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public struct RankLevel {
@@ -72,6 +74,7 @@ extension POGOProtos_Settings_Master_CombatRankingSettings: SwiftProtobuf.Messag
     1: .standard(proto: "rank_level"),
     2: .standard(proto: "required_for_rewards"),
     3: .standard(proto: "min_rank_to_display_rating"),
+    4: .standard(proto: "season_number"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -80,6 +83,7 @@ extension POGOProtos_Settings_Master_CombatRankingSettings: SwiftProtobuf.Messag
       case 1: try decoder.decodeRepeatedMessageField(value: &self.rankLevel)
       case 2: try decoder.decodeSingularMessageField(value: &self._requiredForRewards)
       case 3: try decoder.decodeSingularInt32Field(value: &self.minRankToDisplayRating)
+      case 4: try decoder.decodeSingularInt32Field(value: &self.seasonNumber)
       default: break
       }
     }
@@ -95,6 +99,9 @@ extension POGOProtos_Settings_Master_CombatRankingSettings: SwiftProtobuf.Messag
     if self.minRankToDisplayRating != 0 {
       try visitor.visitSingularInt32Field(value: self.minRankToDisplayRating, fieldNumber: 3)
     }
+    if self.seasonNumber != 0 {
+      try visitor.visitSingularInt32Field(value: self.seasonNumber, fieldNumber: 4)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -102,6 +109,7 @@ extension POGOProtos_Settings_Master_CombatRankingSettings: SwiftProtobuf.Messag
     if lhs.rankLevel != rhs.rankLevel {return false}
     if lhs._requiredForRewards != rhs._requiredForRewards {return false}
     if lhs.minRankToDisplayRating != rhs.minRankToDisplayRating {return false}
+    if lhs.seasonNumber != rhs.seasonNumber {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

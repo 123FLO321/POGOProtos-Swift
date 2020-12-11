@@ -35,6 +35,8 @@ public struct POGOProtos_Data_Grapeshot_GrapeshotComposeData {
   /// Clears the value of `authentication`. Subsequent reads from it will return its default value.
   public mutating func clearAuthentication() {self._authentication = nil}
 
+  public var hash: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +53,7 @@ extension POGOProtos_Data_Grapeshot_GrapeshotComposeData: SwiftProtobuf.Message,
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "target_file_path"),
     2: .same(proto: "authentication"),
+    3: .same(proto: "hash"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -58,6 +61,7 @@ extension POGOProtos_Data_Grapeshot_GrapeshotComposeData: SwiftProtobuf.Message,
       switch fieldNumber {
       case 1: try decoder.decodeSingularStringField(value: &self.targetFilePath)
       case 2: try decoder.decodeSingularMessageField(value: &self._authentication)
+      case 3: try decoder.decodeSingularStringField(value: &self.hash)
       default: break
       }
     }
@@ -70,12 +74,16 @@ extension POGOProtos_Data_Grapeshot_GrapeshotComposeData: SwiftProtobuf.Message,
     if let v = self._authentication {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
     }
+    if !self.hash.isEmpty {
+      try visitor.visitSingularStringField(value: self.hash, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Data_Grapeshot_GrapeshotComposeData, rhs: POGOProtos_Data_Grapeshot_GrapeshotComposeData) -> Bool {
     if lhs.targetFilePath != rhs.targetFilePath {return false}
     if lhs._authentication != rhs._authentication {return false}
+    if lhs.hash != rhs.hash {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

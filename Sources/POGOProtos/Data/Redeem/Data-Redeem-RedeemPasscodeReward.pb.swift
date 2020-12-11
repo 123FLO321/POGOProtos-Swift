@@ -42,6 +42,8 @@ public struct POGOProtos_Data_Redeem_RedeemPasscodeReward {
 
   public var redeemedStickers: [POGOProtos_Data_Sticker_RedeemedSticker] = []
 
+  public var questIds: [String] = []
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -63,6 +65,7 @@ extension POGOProtos_Data_Redeem_RedeemPasscodeReward: SwiftProtobuf.Message, Sw
     7: .same(proto: "pokecoins"),
     8: .same(proto: "badges"),
     9: .standard(proto: "redeemed_stickers"),
+    10: .standard(proto: "quest_ids"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -77,6 +80,7 @@ extension POGOProtos_Data_Redeem_RedeemPasscodeReward: SwiftProtobuf.Message, Sw
       case 7: try decoder.decodeSingularInt32Field(value: &self.pokecoins)
       case 8: try decoder.decodeRepeatedEnumField(value: &self.badges)
       case 9: try decoder.decodeRepeatedMessageField(value: &self.redeemedStickers)
+      case 10: try decoder.decodeRepeatedStringField(value: &self.questIds)
       default: break
       }
     }
@@ -110,6 +114,9 @@ extension POGOProtos_Data_Redeem_RedeemPasscodeReward: SwiftProtobuf.Message, Sw
     if !self.redeemedStickers.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.redeemedStickers, fieldNumber: 9)
     }
+    if !self.questIds.isEmpty {
+      try visitor.visitRepeatedStringField(value: self.questIds, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -123,6 +130,7 @@ extension POGOProtos_Data_Redeem_RedeemPasscodeReward: SwiftProtobuf.Message, Sw
     if lhs.pokecoins != rhs.pokecoins {return false}
     if lhs.badges != rhs.badges {return false}
     if lhs.redeemedStickers != rhs.redeemedStickers {return false}
+    if lhs.questIds != rhs.questIds {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

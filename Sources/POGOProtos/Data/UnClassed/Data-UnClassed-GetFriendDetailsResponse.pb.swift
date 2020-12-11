@@ -129,6 +129,8 @@ public struct POGOProtos_Data_UnClassed_GetFriendDetailsResponse {
     /// Clears the value of `callingGameData`. Subsequent reads from it will return its default value.
     public mutating func clearCallingGameData() {self._callingGameData = nil}
 
+    public var invitationStatus: POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.InvitationStatus = .unset
+
     public var unknownFields = SwiftProtobuf.UnknownStorage()
 
     public init() {}
@@ -143,7 +145,7 @@ public struct POGOProtos_Data_UnClassed_GetFriendDetailsResponse {
     // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
     // methods supported on all messages.
 
-    public var distanceToPlayerKm: Double = 0
+    public var result: POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlayerStatusDetailsProto.Result = .unset
 
     public var locale: POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlatformPlayerLocale {
       get {return _locale ?? POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlatformPlayerLocale()}
@@ -208,6 +210,34 @@ public struct POGOProtos_Data_UnClassed_GetFriendDetailsResponse {
     // methods supported on all messages.
 
     public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public enum InvitationStatus: SwiftProtobuf.Enum {
+      public typealias RawValue = Int
+      case unset // = 0
+      case invited // = 1
+      case UNRECOGNIZED(Int)
+
+      public init() {
+        self = .unset
+      }
+
+      public init?(rawValue: Int) {
+        switch rawValue {
+        case 0: self = .unset
+        case 1: self = .invited
+        default: self = .UNRECOGNIZED(rawValue)
+        }
+      }
+
+      public var rawValue: Int {
+        switch self {
+        case .unset: return 0
+        case .invited: return 1
+        case .UNRECOGNIZED(let i): return i
+        }
+      }
+
+    }
 
     public enum OnlineStatus: SwiftProtobuf.Enum {
       public typealias RawValue = Int
@@ -297,6 +327,14 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlayerStatusDetails
   ]
 }
 
+extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.InvitationStatus: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.InvitationStatus] = [
+    .unset,
+    .invited,
+  ]
+}
+
 extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.OnlineStatus: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   public static var allCases: [POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.OnlineStatus] = [
@@ -372,6 +410,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
     2: .same(proto: "profile"),
     3: .standard(proto: "player_status"),
     4: .standard(proto: "calling_game_data"),
+    5: .standard(proto: "invitation_status"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -381,6 +420,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
       case 2: try decoder.decodeSingularMessageField(value: &self._profile)
       case 3: try decoder.decodeSingularMessageField(value: &self._playerStatus)
       case 4: try decoder.decodeSingularMessageField(value: &self._callingGameData)
+      case 5: try decoder.decodeSingularEnumField(value: &self.invitationStatus)
       default: break
       }
     }
@@ -399,6 +439,9 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
     if let v = self._callingGameData {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
     }
+    if self.invitationStatus != .unset {
+      try visitor.visitSingularEnumField(value: self.invitationStatus, fieldNumber: 5)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -407,6 +450,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
     if lhs._profile != rhs._profile {return false}
     if lhs._playerStatus != rhs._playerStatus {return false}
     if lhs._callingGameData != rhs._callingGameData {return false}
+    if lhs.invitationStatus != rhs.invitationStatus {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -415,7 +459,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.FriendDetailsEntryP
 extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlayerStatusDetailsProto: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = POGOProtos_Data_UnClassed_GetFriendDetailsResponse.protoMessageName + ".PlayerStatusDetailsProto"
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
-    1: .standard(proto: "distance_to_player_km"),
+    1: .same(proto: "result"),
     2: .same(proto: "locale"),
     3: .standard(proto: "online_status"),
     4: .standard(proto: "last_played_app_key"),
@@ -424,7 +468,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlayerStatusDetails
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
       switch fieldNumber {
-      case 1: try decoder.decodeSingularDoubleField(value: &self.distanceToPlayerKm)
+      case 1: try decoder.decodeSingularEnumField(value: &self.result)
       case 2: try decoder.decodeSingularMessageField(value: &self._locale)
       case 3: try decoder.decodeSingularEnumField(value: &self.onlineStatus)
       case 4: try decoder.decodeSingularStringField(value: &self.lastPlayedAppKey)
@@ -434,8 +478,8 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlayerStatusDetails
   }
 
   public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
-    if self.distanceToPlayerKm != 0 {
-      try visitor.visitSingularDoubleField(value: self.distanceToPlayerKm, fieldNumber: 1)
+    if self.result != .unset {
+      try visitor.visitSingularEnumField(value: self.result, fieldNumber: 1)
     }
     if let v = self._locale {
       try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
@@ -450,7 +494,7 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlayerStatusDetails
   }
 
   public static func ==(lhs: POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlayerStatusDetailsProto, rhs: POGOProtos_Data_UnClassed_GetFriendDetailsResponse.PlayerStatusDetailsProto) -> Bool {
-    if lhs.distanceToPlayerKm != rhs.distanceToPlayerKm {return false}
+    if lhs.result != rhs.result {return false}
     if lhs._locale != rhs._locale {return false}
     if lhs.onlineStatus != rhs.onlineStatus {return false}
     if lhs.lastPlayedAppKey != rhs.lastPlayedAppKey {return false}
@@ -486,6 +530,13 @@ extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum: Swift
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.InvitationStatus: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "INVITATION_STATUS_UNSET"),
+    1: .same(proto: "INVITED"),
+  ]
 }
 
 extension POGOProtos_Data_UnClassed_GetFriendDetailsResponse.SocialV2Enum.OnlineStatus: SwiftProtobuf._ProtoNameProviding {

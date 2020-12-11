@@ -36,7 +36,43 @@ public struct POGOProtos_Data_Telemetry_ArMappingTelemetry {
 
   public var dataSizeBytes: Int64 = 0
 
+  public var validationFailureReason: POGOProtos_Data_Telemetry_ArMappingTelemetry.ValidationFailureReason = .unknownReason
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum ValidationFailureReason: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unknownReason // = 0
+    case tooFast // = 1
+    case tooSlow // = 2
+    case tooDark // = 3
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unknownReason
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unknownReason
+      case 1: self = .tooFast
+      case 2: self = .tooSlow
+      case 3: self = .tooDark
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unknownReason: return 0
+      case .tooFast: return 1
+      case .tooSlow: return 2
+      case .tooDark: return 3
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+
+  }
 
   public enum ArMappingEntryPoint: SwiftProtobuf.Enum {
     public typealias RawValue = Int
@@ -177,6 +213,16 @@ public struct POGOProtos_Data_Telemetry_ArMappingTelemetry {
 
 #if swift(>=4.2)
 
+extension POGOProtos_Data_Telemetry_ArMappingTelemetry.ValidationFailureReason: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Data_Telemetry_ArMappingTelemetry.ValidationFailureReason] = [
+    .unknownReason,
+    .tooFast,
+    .tooSlow,
+    .tooDark,
+  ]
+}
+
 extension POGOProtos_Data_Telemetry_ArMappingTelemetry.ArMappingEntryPoint: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
   public static var allCases: [POGOProtos_Data_Telemetry_ArMappingTelemetry.ArMappingEntryPoint] = [
@@ -234,6 +280,7 @@ extension POGOProtos_Data_Telemetry_ArMappingTelemetry: SwiftProtobuf.Message, S
     4: .standard(proto: "time_elapsed_seconds"),
     5: .standard(proto: "percent_encoded"),
     6: .standard(proto: "data_size_bytes"),
+    7: .standard(proto: "validation_failure_reason"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -245,6 +292,7 @@ extension POGOProtos_Data_Telemetry_ArMappingTelemetry: SwiftProtobuf.Message, S
       case 4: try decoder.decodeSingularFloatField(value: &self.timeElapsedSeconds)
       case 5: try decoder.decodeSingularFloatField(value: &self.percentEncoded)
       case 6: try decoder.decodeSingularInt64Field(value: &self.dataSizeBytes)
+      case 7: try decoder.decodeSingularEnumField(value: &self.validationFailureReason)
       default: break
       }
     }
@@ -269,6 +317,9 @@ extension POGOProtos_Data_Telemetry_ArMappingTelemetry: SwiftProtobuf.Message, S
     if self.dataSizeBytes != 0 {
       try visitor.visitSingularInt64Field(value: self.dataSizeBytes, fieldNumber: 6)
     }
+    if self.validationFailureReason != .unknownReason {
+      try visitor.visitSingularEnumField(value: self.validationFailureReason, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -279,9 +330,19 @@ extension POGOProtos_Data_Telemetry_ArMappingTelemetry: SwiftProtobuf.Message, S
     if lhs.timeElapsedSeconds != rhs.timeElapsedSeconds {return false}
     if lhs.percentEncoded != rhs.percentEncoded {return false}
     if lhs.dataSizeBytes != rhs.dataSizeBytes {return false}
+    if lhs.validationFailureReason != rhs.validationFailureReason {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Data_Telemetry_ArMappingTelemetry.ValidationFailureReason: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNKNOWN_REASON"),
+    1: .same(proto: "TOO_FAST"),
+    2: .same(proto: "TOO_SLOW"),
+    3: .same(proto: "TOO_DARK"),
+  ]
 }
 
 extension POGOProtos_Data_Telemetry_ArMappingTelemetry.ArMappingEntryPoint: SwiftProtobuf._ProtoNameProviding {

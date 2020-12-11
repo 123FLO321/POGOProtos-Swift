@@ -34,6 +34,10 @@ public struct POGOProtos_Networking_Responses_GetBuddyWalkedResponse {
 
   public var lastKmAwarded: Double = 0
 
+  public var megaEnergyEarnedCount: Int32 = 0
+
+  public var megaPokemonID: POGOProtos_Enums_PokemonId = .missingno
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +55,8 @@ extension POGOProtos_Networking_Responses_GetBuddyWalkedResponse: SwiftProtobuf.
     3: .standard(proto: "candy_earned_count"),
     4: .standard(proto: "km_remaining"),
     5: .standard(proto: "last_km_awarded"),
+    6: .standard(proto: "mega_energy_earned_count"),
+    7: .standard(proto: "mega_pokemon_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -61,6 +67,8 @@ extension POGOProtos_Networking_Responses_GetBuddyWalkedResponse: SwiftProtobuf.
       case 3: try decoder.decodeSingularInt32Field(value: &self.candyEarnedCount)
       case 4: try decoder.decodeSingularDoubleField(value: &self.kmRemaining)
       case 5: try decoder.decodeSingularDoubleField(value: &self.lastKmAwarded)
+      case 6: try decoder.decodeSingularInt32Field(value: &self.megaEnergyEarnedCount)
+      case 7: try decoder.decodeSingularEnumField(value: &self.megaPokemonID)
       default: break
       }
     }
@@ -82,6 +90,12 @@ extension POGOProtos_Networking_Responses_GetBuddyWalkedResponse: SwiftProtobuf.
     if self.lastKmAwarded != 0 {
       try visitor.visitSingularDoubleField(value: self.lastKmAwarded, fieldNumber: 5)
     }
+    if self.megaEnergyEarnedCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.megaEnergyEarnedCount, fieldNumber: 6)
+    }
+    if self.megaPokemonID != .missingno {
+      try visitor.visitSingularEnumField(value: self.megaPokemonID, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -91,6 +105,8 @@ extension POGOProtos_Networking_Responses_GetBuddyWalkedResponse: SwiftProtobuf.
     if lhs.candyEarnedCount != rhs.candyEarnedCount {return false}
     if lhs.kmRemaining != rhs.kmRemaining {return false}
     if lhs.lastKmAwarded != rhs.lastKmAwarded {return false}
+    if lhs.megaEnergyEarnedCount != rhs.megaEnergyEarnedCount {return false}
+    if lhs.megaPokemonID != rhs.megaPokemonID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

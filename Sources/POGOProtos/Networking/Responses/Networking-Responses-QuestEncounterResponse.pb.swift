@@ -26,8 +26,8 @@ public struct POGOProtos_Networking_Responses_QuestEncounterResponse {
 
   public var result: POGOProtos_Networking_Responses_QuestEncounterResponse.Result = .questEncounterUnknown
 
-  public var pokemon: POGOProtos_Map_Pokemon_WildPokemon {
-    get {return _pokemon ?? POGOProtos_Map_Pokemon_WildPokemon()}
+  public var pokemon: POGOProtos_Data_PokemonData {
+    get {return _pokemon ?? POGOProtos_Data_PokemonData()}
     set {_pokemon = newValue}
   }
   /// Returns true if `pokemon` has been explicitly set.
@@ -87,7 +87,7 @@ public struct POGOProtos_Networking_Responses_QuestEncounterResponse {
 
   public init() {}
 
-  fileprivate var _pokemon: POGOProtos_Map_Pokemon_WildPokemon? = nil
+  fileprivate var _pokemon: POGOProtos_Data_PokemonData? = nil
   fileprivate var _captureProbability: POGOProtos_Data_Capture_CaptureProbability? = nil
 }
 

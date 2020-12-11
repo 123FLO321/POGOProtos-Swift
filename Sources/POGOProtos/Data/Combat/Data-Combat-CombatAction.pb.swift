@@ -40,7 +40,7 @@ public struct POGOProtos_Data_Combat_CombatAction {
 
   public var minigameScore: Float = 0
 
-  public var move: Int32 = 0
+  public var move: POGOProtos_Enums_PokemonMove = .moveUnset
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -148,7 +148,7 @@ extension POGOProtos_Data_Combat_CombatAction: SwiftProtobuf.Message, SwiftProto
       case 8: try decoder.decodeSingularFixed64Field(value: &self.activePokemonID)
       case 14: try decoder.decodeSingularFixed64Field(value: &self.targetPokemonID)
       case 15: try decoder.decodeSingularFloatField(value: &self.minigameScore)
-      case 16: try decoder.decodeSingularInt32Field(value: &self.move)
+      case 16: try decoder.decodeSingularEnumField(value: &self.move)
       default: break
       }
     }
@@ -179,8 +179,8 @@ extension POGOProtos_Data_Combat_CombatAction: SwiftProtobuf.Message, SwiftProto
     if self.minigameScore != 0 {
       try visitor.visitSingularFloatField(value: self.minigameScore, fieldNumber: 15)
     }
-    if self.move != 0 {
-      try visitor.visitSingularInt32Field(value: self.move, fieldNumber: 16)
+    if self.move != .moveUnset {
+      try visitor.visitSingularEnumField(value: self.move, fieldNumber: 16)
     }
     try unknownFields.traverse(visitor: &visitor)
   }

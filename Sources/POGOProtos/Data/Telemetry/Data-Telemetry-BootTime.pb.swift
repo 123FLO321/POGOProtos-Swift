@@ -57,6 +57,9 @@ public struct POGOProtos_Data_Telemetry_BootTime {
     case loginAuthentication // = 15
     case modalTime // = 16
     case initializeAdjust // = 17
+    case initializeFirebase // = 20
+    case initializeCrashlytics // = 21
+    case initializeBraze // = 22
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -83,6 +86,9 @@ public struct POGOProtos_Data_Telemetry_BootTime {
       case 15: self = .loginAuthentication
       case 16: self = .modalTime
       case 17: self = .initializeAdjust
+      case 20: self = .initializeFirebase
+      case 21: self = .initializeCrashlytics
+      case 22: self = .initializeBraze
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -107,6 +113,9 @@ public struct POGOProtos_Data_Telemetry_BootTime {
       case .loginAuthentication: return 15
       case .modalTime: return 16
       case .initializeAdjust: return 17
+      case .initializeFirebase: return 20
+      case .initializeCrashlytics: return 21
+      case .initializeBraze: return 22
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -141,6 +150,9 @@ extension POGOProtos_Data_Telemetry_BootTime.BootPhase: CaseIterable {
     .loginAuthentication,
     .modalTime,
     .initializeAdjust,
+    .initializeFirebase,
+    .initializeCrashlytics,
+    .initializeBraze,
   ]
 }
 
@@ -205,5 +217,8 @@ extension POGOProtos_Data_Telemetry_BootTime.BootPhase: SwiftProtobuf._ProtoName
     15: .same(proto: "LOGIN_AUTHENTICATION"),
     16: .same(proto: "MODAL_TIME"),
     17: .same(proto: "INITIALIZE_ADJUST"),
+    20: .same(proto: "INITIALIZE_FIREBASE"),
+    21: .same(proto: "INITIALIZE_CRASHLYTICS"),
+    22: .same(proto: "INITIALIZE_BRAZE"),
   ]
 }

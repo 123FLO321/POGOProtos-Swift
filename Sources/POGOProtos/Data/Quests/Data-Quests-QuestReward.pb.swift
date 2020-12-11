@@ -92,6 +92,22 @@ public struct POGOProtos_Data_Quests_QuestReward {
     set {reward = .pokecoin(newValue)}
   }
 
+  public var xlCandy: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward {
+    get {
+      if case .xlCandy(let v)? = reward {return v}
+      return POGOProtos_Data_Quests_QuestReward.PokemonCandyReward()
+    }
+    set {reward = .xlCandy(newValue)}
+  }
+
+  public var levelCap: Int32 {
+    get {
+      if case .levelCap(let v)? = reward {return v}
+      return 0
+    }
+    set {reward = .levelCap(newValue)}
+  }
+
   public var sticker: POGOProtos_Data_Quests_QuestReward.StickerReward {
     get {
       if case .sticker(let v)? = reward {return v}
@@ -119,6 +135,8 @@ public struct POGOProtos_Data_Quests_QuestReward {
     case questTemplateID(String)
     case pokemonEncounter(POGOProtos_Data_Quests_QuestReward.PokemonEncounterReward)
     case pokecoin(Int32)
+    case xlCandy(POGOProtos_Data_Quests_QuestReward.PokemonCandyReward)
+    case levelCap(Int32)
     case sticker(POGOProtos_Data_Quests_QuestReward.StickerReward)
     case megaResource(POGOProtos_Data_Quests_QuestReward.PokemonCandyReward)
 
@@ -133,6 +151,8 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case (.questTemplateID(let l), .questTemplateID(let r)): return l == r
       case (.pokemonEncounter(let l), .pokemonEncounter(let r)): return l == r
       case (.pokecoin(let l), .pokecoin(let r)): return l == r
+      case (.xlCandy(let l), .xlCandy(let r)): return l == r
+      case (.levelCap(let l), .levelCap(let r)): return l == r
       case (.sticker(let l), .sticker(let r)): return l == r
       case (.megaResource(let l), .megaResource(let r)): return l == r
       default: return false
@@ -152,6 +172,8 @@ public struct POGOProtos_Data_Quests_QuestReward {
     case quest // = 6
     case pokemonEncounter // = 7
     case pokecoin // = 8
+    case xlCandy // = 9
+    case levelCap // = 10
     case sticker // = 11
     case megaResource // = 12
     case UNRECOGNIZED(Int)
@@ -171,6 +193,8 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case 6: self = .quest
       case 7: self = .pokemonEncounter
       case 8: self = .pokecoin
+      case 9: self = .xlCandy
+      case 10: self = .levelCap
       case 11: self = .sticker
       case 12: self = .megaResource
       default: self = .UNRECOGNIZED(rawValue)
@@ -188,6 +212,8 @@ public struct POGOProtos_Data_Quests_QuestReward {
       case .quest: return 6
       case .pokemonEncounter: return 7
       case .pokecoin: return 8
+      case .xlCandy: return 9
+      case .levelCap: return 10
       case .sticker: return 11
       case .megaResource: return 12
       case .UNRECOGNIZED(let i): return i
@@ -321,6 +347,8 @@ extension POGOProtos_Data_Quests_QuestReward.TypeEnum: CaseIterable {
     .quest,
     .pokemonEncounter,
     .pokecoin,
+    .xlCandy,
+    .levelCap,
     .sticker,
     .megaResource,
   ]
@@ -344,6 +372,8 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
     7: .standard(proto: "quest_template_id"),
     8: .standard(proto: "pokemon_encounter"),
     9: .same(proto: "pokecoin"),
+    10: .standard(proto: "xl_candy"),
+    11: .standard(proto: "level_cap"),
     12: .same(proto: "sticker"),
     13: .standard(proto: "mega_resource"),
   ]
@@ -401,6 +431,19 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
         var v: Int32?
         try decoder.decodeSingularInt32Field(value: &v)
         if let v = v {self.reward = .pokecoin(v)}
+      case 10:
+        var v: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward?
+        if let current = self.reward {
+          try decoder.handleConflictingOneOf()
+          if case .xlCandy(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.reward = .xlCandy(v)}
+      case 11:
+        if self.reward != nil {try decoder.handleConflictingOneOf()}
+        var v: Int32?
+        try decoder.decodeSingularInt32Field(value: &v)
+        if let v = v {self.reward = .levelCap(v)}
       case 12:
         var v: POGOProtos_Data_Quests_QuestReward.StickerReward?
         if let current = self.reward {
@@ -443,6 +486,10 @@ extension POGOProtos_Data_Quests_QuestReward: SwiftProtobuf.Message, SwiftProtob
       try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
     case .pokecoin(let v)?:
       try visitor.visitSingularInt32Field(value: v, fieldNumber: 9)
+    case .xlCandy(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+    case .levelCap(let v)?:
+      try visitor.visitSingularInt32Field(value: v, fieldNumber: 11)
     case .sticker(let v)?:
       try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
     case .megaResource(let v)?:
@@ -471,6 +518,8 @@ extension POGOProtos_Data_Quests_QuestReward.TypeEnum: SwiftProtobuf._ProtoNameP
     6: .same(proto: "QUEST"),
     7: .same(proto: "POKEMON_ENCOUNTER"),
     8: .same(proto: "POKECOIN"),
+    9: .same(proto: "XL_CANDY"),
+    10: .same(proto: "LEVEL_CAP"),
     11: .same(proto: "STICKER"),
     12: .same(proto: "MEGA_RESOURCE"),
   ]

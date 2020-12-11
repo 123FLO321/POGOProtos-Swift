@@ -90,6 +90,22 @@ public struct POGOProtos_Inventory_LootItem {
     set {type = .stickerID(newValue)}
   }
 
+  public var megaEnergyPokemonID: POGOProtos_Enums_PokemonId {
+    get {
+      if case .megaEnergyPokemonID(let v)? = type {return v}
+      return .missingno
+    }
+    set {type = .megaEnergyPokemonID(newValue)}
+  }
+
+  public var xlCandy: POGOProtos_Enums_PokemonId {
+    get {
+      if case .xlCandy(let v)? = type {return v}
+      return .missingno
+    }
+    set {type = .xlCandy(newValue)}
+  }
+
   public var count: Int32 = 0
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -103,6 +119,8 @@ public struct POGOProtos_Inventory_LootItem {
     case pokemonEgg(POGOProtos_Data_PokemonData)
     case avatarTemplateID(String)
     case stickerID(String)
+    case megaEnergyPokemonID(POGOProtos_Enums_PokemonId)
+    case xlCandy(POGOProtos_Enums_PokemonId)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Inventory_LootItem.OneOf_Type, rhs: POGOProtos_Inventory_LootItem.OneOf_Type) -> Bool {
@@ -115,6 +133,8 @@ public struct POGOProtos_Inventory_LootItem {
       case (.pokemonEgg(let l), .pokemonEgg(let r)): return l == r
       case (.avatarTemplateID(let l), .avatarTemplateID(let r)): return l == r
       case (.stickerID(let l), .stickerID(let r)): return l == r
+      case (.megaEnergyPokemonID(let l), .megaEnergyPokemonID(let r)): return l == r
+      case (.xlCandy(let l), .xlCandy(let r)): return l == r
       default: return false
       }
     }
@@ -139,6 +159,8 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
     7: .standard(proto: "pokemon_egg"),
     8: .standard(proto: "avatar_template_id"),
     9: .standard(proto: "sticker_id"),
+    10: .standard(proto: "mega_energy_pokemon_id"),
+    11: .standard(proto: "xl_candy"),
     5: .same(proto: "count"),
   ]
 
@@ -189,6 +211,16 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
         var v: String?
         try decoder.decodeSingularStringField(value: &v)
         if let v = v {self.type = .stickerID(v)}
+      case 10:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: POGOProtos_Enums_PokemonId?
+        try decoder.decodeSingularEnumField(value: &v)
+        if let v = v {self.type = .megaEnergyPokemonID(v)}
+      case 11:
+        if self.type != nil {try decoder.handleConflictingOneOf()}
+        var v: POGOProtos_Enums_PokemonId?
+        try decoder.decodeSingularEnumField(value: &v)
+        if let v = v {self.type = .xlCandy(v)}
       default: break
       }
     }
@@ -219,6 +251,10 @@ extension POGOProtos_Inventory_LootItem: SwiftProtobuf.Message, SwiftProtobuf._M
       try visitor.visitSingularStringField(value: v, fieldNumber: 8)
     case .stickerID(let v)?:
       try visitor.visitSingularStringField(value: v, fieldNumber: 9)
+    case .megaEnergyPokemonID(let v)?:
+      try visitor.visitSingularEnumField(value: v, fieldNumber: 10)
+    case .xlCandy(let v)?:
+      try visitor.visitSingularEnumField(value: v, fieldNumber: 11)
     case nil: break
     default: break
     }

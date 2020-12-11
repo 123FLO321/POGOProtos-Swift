@@ -28,7 +28,43 @@ public struct POGOProtos_Settings_Master_MapDisplaySettings {
 
   public var researchIconURL: String = String()
 
+  public var bgm: POGOProtos_Settings_Master_MapDisplaySettings.BGM = .unset
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public enum BGM: SwiftProtobuf.Enum {
+    public typealias RawValue = Int
+    case unset // = 0
+    case event // = 101
+    case halloween // = 200
+    case teamRocketDefault // = 300
+    case UNRECOGNIZED(Int)
+
+    public init() {
+      self = .unset
+    }
+
+    public init?(rawValue: Int) {
+      switch rawValue {
+      case 0: self = .unset
+      case 101: self = .event
+      case 200: self = .halloween
+      case 300: self = .teamRocketDefault
+      default: self = .UNRECOGNIZED(rawValue)
+      }
+    }
+
+    public var rawValue: Int {
+      switch self {
+      case .unset: return 0
+      case .event: return 101
+      case .halloween: return 200
+      case .teamRocketDefault: return 300
+      case .UNRECOGNIZED(let i): return i
+      }
+    }
+
+  }
 
   public enum MapEffect: SwiftProtobuf.Enum {
     public typealias RawValue = Int
@@ -41,6 +77,7 @@ public struct POGOProtos_Settings_Master_MapDisplaySettings {
     case effectConfettiFriendship // = 6
     case effectConfettiRocket // = 7
     case effectFireworksPlain // = 8
+    case effectConfettiFlower // = 9
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -58,6 +95,7 @@ public struct POGOProtos_Settings_Master_MapDisplaySettings {
       case 6: self = .effectConfettiFriendship
       case 7: self = .effectConfettiRocket
       case 8: self = .effectFireworksPlain
+      case 9: self = .effectConfettiFlower
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -73,6 +111,7 @@ public struct POGOProtos_Settings_Master_MapDisplaySettings {
       case .effectConfettiFriendship: return 6
       case .effectConfettiRocket: return 7
       case .effectFireworksPlain: return 8
+      case .effectConfettiFlower: return 9
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -83,6 +122,16 @@ public struct POGOProtos_Settings_Master_MapDisplaySettings {
 }
 
 #if swift(>=4.2)
+
+extension POGOProtos_Settings_Master_MapDisplaySettings.BGM: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Settings_Master_MapDisplaySettings.BGM] = [
+    .unset,
+    .event,
+    .halloween,
+    .teamRocketDefault,
+  ]
+}
 
 extension POGOProtos_Settings_Master_MapDisplaySettings.MapEffect: CaseIterable {
   // The compiler won't synthesize support with the UNRECOGNIZED case.
@@ -96,6 +145,7 @@ extension POGOProtos_Settings_Master_MapDisplaySettings.MapEffect: CaseIterable 
     .effectConfettiFriendship,
     .effectConfettiRocket,
     .effectFireworksPlain,
+    .effectConfettiFlower,
   ]
 }
 
@@ -110,6 +160,7 @@ extension POGOProtos_Settings_Master_MapDisplaySettings: SwiftProtobuf.Message, 
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     1: .standard(proto: "map_effect"),
     2: .standard(proto: "research_icon_url"),
+    3: .same(proto: "bgm"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -117,6 +168,7 @@ extension POGOProtos_Settings_Master_MapDisplaySettings: SwiftProtobuf.Message, 
       switch fieldNumber {
       case 1: try decoder.decodeSingularEnumField(value: &self.mapEffect)
       case 2: try decoder.decodeSingularStringField(value: &self.researchIconURL)
+      case 3: try decoder.decodeSingularEnumField(value: &self.bgm)
       default: break
       }
     }
@@ -129,15 +181,28 @@ extension POGOProtos_Settings_Master_MapDisplaySettings: SwiftProtobuf.Message, 
     if !self.researchIconURL.isEmpty {
       try visitor.visitSingularStringField(value: self.researchIconURL, fieldNumber: 2)
     }
+    if self.bgm != .unset {
+      try visitor.visitSingularEnumField(value: self.bgm, fieldNumber: 3)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: POGOProtos_Settings_Master_MapDisplaySettings, rhs: POGOProtos_Settings_Master_MapDisplaySettings) -> Bool {
     if lhs.mapEffect != rhs.mapEffect {return false}
     if lhs.researchIconURL != rhs.researchIconURL {return false}
+    if lhs.bgm != rhs.bgm {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
+}
+
+extension POGOProtos_Settings_Master_MapDisplaySettings.BGM: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNSET"),
+    101: .same(proto: "EVENT"),
+    200: .same(proto: "HALLOWEEN"),
+    300: .same(proto: "TEAM_ROCKET_DEFAULT"),
+  ]
 }
 
 extension POGOProtos_Settings_Master_MapDisplaySettings.MapEffect: SwiftProtobuf._ProtoNameProviding {
@@ -151,5 +216,6 @@ extension POGOProtos_Settings_Master_MapDisplaySettings.MapEffect: SwiftProtobuf
     6: .same(proto: "EFFECT_CONFETTI_FRIENDSHIP"),
     7: .same(proto: "EFFECT_CONFETTI_ROCKET"),
     8: .same(proto: "EFFECT_FIREWORKS_PLAIN"),
+    9: .same(proto: "EFFECT_CONFETTI_FLOWER"),
   ]
 }

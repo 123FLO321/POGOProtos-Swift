@@ -34,6 +34,8 @@ public struct POGOProtos_Networking_Requests_Messages_GymStartSessionMessage {
 
   public var playerLngDegrees: Double = 0
 
+  public var lobbyJoinTimeMs: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -51,6 +53,7 @@ extension POGOProtos_Networking_Requests_Messages_GymStartSessionMessage: SwiftP
     3: .standard(proto: "defending_pokemon_id"),
     4: .standard(proto: "player_lat_degrees"),
     5: .standard(proto: "player_lng_degrees"),
+    6: .standard(proto: "lobby_join_time_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -61,6 +64,7 @@ extension POGOProtos_Networking_Requests_Messages_GymStartSessionMessage: SwiftP
       case 3: try decoder.decodeSingularFixed64Field(value: &self.defendingPokemonID)
       case 4: try decoder.decodeSingularDoubleField(value: &self.playerLatDegrees)
       case 5: try decoder.decodeSingularDoubleField(value: &self.playerLngDegrees)
+      case 6: try decoder.decodeSingularInt64Field(value: &self.lobbyJoinTimeMs)
       default: break
       }
     }
@@ -82,6 +86,9 @@ extension POGOProtos_Networking_Requests_Messages_GymStartSessionMessage: SwiftP
     if self.playerLngDegrees != 0 {
       try visitor.visitSingularDoubleField(value: self.playerLngDegrees, fieldNumber: 5)
     }
+    if self.lobbyJoinTimeMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.lobbyJoinTimeMs, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -91,6 +98,7 @@ extension POGOProtos_Networking_Requests_Messages_GymStartSessionMessage: SwiftP
     if lhs.defendingPokemonID != rhs.defendingPokemonID {return false}
     if lhs.playerLatDegrees != rhs.playerLatDegrees {return false}
     if lhs.playerLngDegrees != rhs.playerLngDegrees {return false}
+    if lhs.lobbyJoinTimeMs != rhs.lobbyJoinTimeMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

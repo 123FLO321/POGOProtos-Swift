@@ -306,17 +306,321 @@ public struct POGOProtos_Data_PokemonData {
     set {_uniqueStorage()._deployedGymLngDegree = newValue}
   }
 
+  public var hasMegaEvolved_p: Bool {
+    get {return _storage._hasMegaEvolved_p}
+    set {_uniqueStorage()._hasMegaEvolved_p = newValue}
+  }
+
   public var eggType: POGOProtos_Enums_HoloPokemonEggType {
     get {return _storage._eggType}
     set {_uniqueStorage()._eggType = newValue}
   }
 
-  public var questBuddyEvolutionRequirement: [POGOProtos_Data_Quests_ClientQuest] {
-    get {return _storage._questBuddyEvolutionRequirement}
-    set {_uniqueStorage()._questBuddyEvolutionRequirement = newValue}
+  public var tempEvoCp: Int32 {
+    get {return _storage._tempEvoCp}
+    set {_uniqueStorage()._tempEvoCp = newValue}
+  }
+
+  public var tempEvoStaminaModifier: Float {
+    get {return _storage._tempEvoStaminaModifier}
+    set {_uniqueStorage()._tempEvoStaminaModifier = newValue}
+  }
+
+  public var tempEvoCpMultiplier: Float {
+    get {return _storage._tempEvoCpMultiplier}
+    set {_uniqueStorage()._tempEvoCpMultiplier = newValue}
+  }
+
+  public var megaEvolvedForms: [POGOProtos_Enums_TemporaryEvolutionId] {
+    get {return _storage._megaEvolvedForms}
+    set {_uniqueStorage()._megaEvolvedForms = newValue}
+  }
+
+  public var evolutionQuestInfo: [POGOProtos_Data_PokemonData.PokemonEvolutionQuest] {
+    get {return _storage._evolutionQuestInfo}
+    set {_uniqueStorage()._evolutionQuestInfo = newValue}
+  }
+
+  public var originDetail: POGOProtos_Data_PokemonData.PokemonCreateDetail {
+    get {return _storage._originDetail ?? POGOProtos_Data_PokemonData.PokemonCreateDetail()}
+    set {_uniqueStorage()._originDetail = newValue}
+  }
+  /// Returns true if `originDetail` has been explicitly set.
+  public var hasOriginDetail: Bool {return _storage._originDetail != nil}
+  /// Clears the value of `originDetail`. Subsequent reads from it will return its default value.
+  public mutating func clearOriginDetail() {_uniqueStorage()._originDetail = nil}
+
+  public var pokemonTagIds: [UInt64] {
+    get {return _storage._pokemonTagIds}
+    set {_uniqueStorage()._pokemonTagIds = newValue}
+  }
+
+  public var originEvents: [String] {
+    get {return _storage._originEvents}
+    set {_uniqueStorage()._originEvents = newValue}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public struct PokemonEvolutionQuest {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var questRequirement: POGOProtos_Data_Quests_Quest {
+      get {return _questRequirement ?? POGOProtos_Data_Quests_Quest()}
+      set {_questRequirement = newValue}
+    }
+    /// Returns true if `questRequirement` has been explicitly set.
+    public var hasQuestRequirement: Bool {return self._questRequirement != nil}
+    /// Clears the value of `questRequirement`. Subsequent reads from it will return its default value.
+    public mutating func clearQuestRequirement() {self._questRequirement = nil}
+
+    public var questInfo: POGOProtos_Data_PokemonData.PokemonEvolutionQuest.EvolutionQuestInfo {
+      get {return _questInfo ?? POGOProtos_Data_PokemonData.PokemonEvolutionQuest.EvolutionQuestInfo()}
+      set {_questInfo = newValue}
+    }
+    /// Returns true if `questInfo` has been explicitly set.
+    public var hasQuestInfo: Bool {return self._questInfo != nil}
+    /// Clears the value of `questInfo`. Subsequent reads from it will return its default value.
+    public mutating func clearQuestInfo() {self._questInfo = nil}
+
+    public var evolution: POGOProtos_Enums_PokemonId = .missingno
+
+    public var form: POGOProtos_Enums_Form = .unset
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public struct EvolutionQuestInfo {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var questRequirementTemplateID: String = String()
+
+      public var description_p: String = String()
+
+      public var target: Int32 = 0
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
+    public init() {}
+
+    fileprivate var _questRequirement: POGOProtos_Data_Quests_Quest? = nil
+    fileprivate var _questInfo: POGOProtos_Data_PokemonData.PokemonEvolutionQuest.EvolutionQuestInfo? = nil
+  }
+
+  public struct PokemonCreateDetail {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var detail: POGOProtos_Data_PokemonData.PokemonCreateDetail.OneOf_Detail? = nil
+
+    public var wildDetail: POGOProtos_Data_PokemonData.PokemonCreateDetail.WildCreateDetail {
+      get {
+        if case .wildDetail(let v)? = detail {return v}
+        return POGOProtos_Data_PokemonData.PokemonCreateDetail.WildCreateDetail()
+      }
+      set {detail = .wildDetail(newValue)}
+    }
+
+    public var eggDetail: POGOProtos_Data_PokemonData.PokemonCreateDetail.EggCreateDetail {
+      get {
+        if case .eggDetail(let v)? = detail {return v}
+        return POGOProtos_Data_PokemonData.PokemonCreateDetail.EggCreateDetail()
+      }
+      set {detail = .eggDetail(newValue)}
+    }
+
+    public var raidDetail: POGOProtos_Data_PokemonData.PokemonCreateDetail.RaidCreateDetail {
+      get {
+        if case .raidDetail(let v)? = detail {return v}
+        return POGOProtos_Data_PokemonData.PokemonCreateDetail.RaidCreateDetail()
+      }
+      set {detail = .raidDetail(newValue)}
+    }
+
+    public var questDetail: POGOProtos_Data_PokemonData.PokemonCreateDetail.QuestCreateDetail {
+      get {
+        if case .questDetail(let v)? = detail {return v}
+        return POGOProtos_Data_PokemonData.PokemonCreateDetail.QuestCreateDetail()
+      }
+      set {detail = .questDetail(newValue)}
+    }
+
+    public var vsSeekerDetail: POGOProtos_Data_PokemonData.PokemonCreateDetail.VsSeekerCreateDetail {
+      get {
+        if case .vsSeekerDetail(let v)? = detail {return v}
+        return POGOProtos_Data_PokemonData.PokemonCreateDetail.VsSeekerCreateDetail()
+      }
+      set {detail = .vsSeekerDetail(newValue)}
+    }
+
+    public var invasionDetail: POGOProtos_Data_PokemonData.PokemonCreateDetail.InvasionCreateDetail {
+      get {
+        if case .invasionDetail(let v)? = detail {return v}
+        return POGOProtos_Data_PokemonData.PokemonCreateDetail.InvasionCreateDetail()
+      }
+      set {detail = .invasionDetail(newValue)}
+    }
+
+    public var photobombDetail: POGOProtos_Data_PokemonData.PokemonCreateDetail.PhotobombCreateDetail {
+      get {
+        if case .photobombDetail(let v)? = detail {return v}
+        return POGOProtos_Data_PokemonData.PokemonCreateDetail.PhotobombCreateDetail()
+      }
+      set {detail = .photobombDetail(newValue)}
+    }
+
+    public var tutorialDetail: POGOProtos_Data_PokemonData.PokemonCreateDetail.TutorialCreateDetail {
+      get {
+        if case .tutorialDetail(let v)? = detail {return v}
+        return POGOProtos_Data_PokemonData.PokemonCreateDetail.TutorialCreateDetail()
+      }
+      set {detail = .tutorialDetail(newValue)}
+    }
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public enum OneOf_Detail: Equatable {
+      case wildDetail(POGOProtos_Data_PokemonData.PokemonCreateDetail.WildCreateDetail)
+      case eggDetail(POGOProtos_Data_PokemonData.PokemonCreateDetail.EggCreateDetail)
+      case raidDetail(POGOProtos_Data_PokemonData.PokemonCreateDetail.RaidCreateDetail)
+      case questDetail(POGOProtos_Data_PokemonData.PokemonCreateDetail.QuestCreateDetail)
+      case vsSeekerDetail(POGOProtos_Data_PokemonData.PokemonCreateDetail.VsSeekerCreateDetail)
+      case invasionDetail(POGOProtos_Data_PokemonData.PokemonCreateDetail.InvasionCreateDetail)
+      case photobombDetail(POGOProtos_Data_PokemonData.PokemonCreateDetail.PhotobombCreateDetail)
+      case tutorialDetail(POGOProtos_Data_PokemonData.PokemonCreateDetail.TutorialCreateDetail)
+
+    #if !swift(>=4.1)
+      public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.OneOf_Detail, rhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.OneOf_Detail) -> Bool {
+        switch (lhs, rhs) {
+        case (.wildDetail(let l), .wildDetail(let r)): return l == r
+        case (.eggDetail(let l), .eggDetail(let r)): return l == r
+        case (.raidDetail(let l), .raidDetail(let r)): return l == r
+        case (.questDetail(let l), .questDetail(let r)): return l == r
+        case (.vsSeekerDetail(let l), .vsSeekerDetail(let r)): return l == r
+        case (.invasionDetail(let l), .invasionDetail(let r)): return l == r
+        case (.photobombDetail(let l), .photobombDetail(let r)): return l == r
+        case (.tutorialDetail(let l), .tutorialDetail(let r)): return l == r
+        default: return false
+        }
+      }
+    #endif
+    }
+
+    public struct WildCreateDetail {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var caughtInWild: Bool = false
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
+    public struct EggCreateDetail {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var hatchedTimeMs: Int64 = 0
+
+      public var playerHatchedS2CellID: Int64 = 0
+
+      public var receivedTimeMs: Int64 = 0
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
+    public struct RaidCreateDetail {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var isExclusive: Bool = false
+
+      public var isMega: Bool = false
+
+      public var playerCapturedS2CellID: Int64 = 0
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
+    public struct QuestCreateDetail {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var origin: POGOProtos_Enums_EncounterType = .spawnPoint
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
+    public struct VsSeekerCreateDetail {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var season: Int32 = 0
+
+      public var league: String = String()
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
+    public struct InvasionCreateDetail {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var origin: POGOProtos_Enums_EnumWrapper.InvasionCharacter = .characterUnset
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
+    public struct PhotobombCreateDetail {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var caughtInPhotobomb: Bool = false
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
+    public struct TutorialCreateDetail {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var caughtInWild: Bool = false
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public init() {}
+    }
+
+    public init() {}
+  }
 
   public init() {}
 
@@ -384,8 +688,16 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     53: .standard(proto: "pre_boosted_additional_cp_multiplier"),
     55: .standard(proto: "deployed_gym_lat_degree"),
     56: .standard(proto: "deployed_gym_lng_degree"),
+    57: .standard(proto: "has_mega_evolved"),
     58: .standard(proto: "egg_type"),
-    62: .standard(proto: "quest_buddy_evolution_requirement"),
+    59: .standard(proto: "temp_evo_cp"),
+    60: .standard(proto: "temp_evo_stamina_modifier"),
+    61: .standard(proto: "temp_evo_cp_multiplier"),
+    63: .standard(proto: "mega_evolved_forms"),
+    64: .standard(proto: "evolution_quest_info"),
+    66: .standard(proto: "origin_detail"),
+    67: .standard(proto: "pokemon_tag_ids"),
+    68: .standard(proto: "origin_events"),
   ]
 
   fileprivate class _StorageClass {
@@ -443,8 +755,16 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
     var _preBoostedAdditionalCpMultiplier: Float = 0
     var _deployedGymLatDegree: Double = 0
     var _deployedGymLngDegree: Double = 0
+    var _hasMegaEvolved_p: Bool = false
     var _eggType: POGOProtos_Enums_HoloPokemonEggType = .eggTypeUnset
-    var _questBuddyEvolutionRequirement: [POGOProtos_Data_Quests_ClientQuest] = []
+    var _tempEvoCp: Int32 = 0
+    var _tempEvoStaminaModifier: Float = 0
+    var _tempEvoCpMultiplier: Float = 0
+    var _megaEvolvedForms: [POGOProtos_Enums_TemporaryEvolutionId] = []
+    var _evolutionQuestInfo: [POGOProtos_Data_PokemonData.PokemonEvolutionQuest] = []
+    var _originDetail: POGOProtos_Data_PokemonData.PokemonCreateDetail? = nil
+    var _pokemonTagIds: [UInt64] = []
+    var _originEvents: [String] = []
 
     static let defaultInstance = _StorageClass()
 
@@ -505,8 +825,16 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       _preBoostedAdditionalCpMultiplier = source._preBoostedAdditionalCpMultiplier
       _deployedGymLatDegree = source._deployedGymLatDegree
       _deployedGymLngDegree = source._deployedGymLngDegree
+      _hasMegaEvolved_p = source._hasMegaEvolved_p
       _eggType = source._eggType
-      _questBuddyEvolutionRequirement = source._questBuddyEvolutionRequirement
+      _tempEvoCp = source._tempEvoCp
+      _tempEvoStaminaModifier = source._tempEvoStaminaModifier
+      _tempEvoCpMultiplier = source._tempEvoCpMultiplier
+      _megaEvolvedForms = source._megaEvolvedForms
+      _evolutionQuestInfo = source._evolutionQuestInfo
+      _originDetail = source._originDetail
+      _pokemonTagIds = source._pokemonTagIds
+      _originEvents = source._originEvents
     }
   }
 
@@ -576,8 +904,16 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         case 53: try decoder.decodeSingularFloatField(value: &_storage._preBoostedAdditionalCpMultiplier)
         case 55: try decoder.decodeSingularDoubleField(value: &_storage._deployedGymLatDegree)
         case 56: try decoder.decodeSingularDoubleField(value: &_storage._deployedGymLngDegree)
+        case 57: try decoder.decodeSingularBoolField(value: &_storage._hasMegaEvolved_p)
         case 58: try decoder.decodeSingularEnumField(value: &_storage._eggType)
-        case 62: try decoder.decodeRepeatedMessageField(value: &_storage._questBuddyEvolutionRequirement)
+        case 59: try decoder.decodeSingularInt32Field(value: &_storage._tempEvoCp)
+        case 60: try decoder.decodeSingularFloatField(value: &_storage._tempEvoStaminaModifier)
+        case 61: try decoder.decodeSingularFloatField(value: &_storage._tempEvoCpMultiplier)
+        case 63: try decoder.decodeRepeatedEnumField(value: &_storage._megaEvolvedForms)
+        case 64: try decoder.decodeRepeatedMessageField(value: &_storage._evolutionQuestInfo)
+        case 66: try decoder.decodeSingularMessageField(value: &_storage._originDetail)
+        case 67: try decoder.decodeRepeatedUInt64Field(value: &_storage._pokemonTagIds)
+        case 68: try decoder.decodeRepeatedStringField(value: &_storage._originEvents)
         default: break
         }
       }
@@ -748,11 +1084,35 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
       if _storage._deployedGymLngDegree != 0 {
         try visitor.visitSingularDoubleField(value: _storage._deployedGymLngDegree, fieldNumber: 56)
       }
+      if _storage._hasMegaEvolved_p != false {
+        try visitor.visitSingularBoolField(value: _storage._hasMegaEvolved_p, fieldNumber: 57)
+      }
       if _storage._eggType != .eggTypeUnset {
         try visitor.visitSingularEnumField(value: _storage._eggType, fieldNumber: 58)
       }
-      if !_storage._questBuddyEvolutionRequirement.isEmpty {
-        try visitor.visitRepeatedMessageField(value: _storage._questBuddyEvolutionRequirement, fieldNumber: 62)
+      if _storage._tempEvoCp != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._tempEvoCp, fieldNumber: 59)
+      }
+      if _storage._tempEvoStaminaModifier != 0 {
+        try visitor.visitSingularFloatField(value: _storage._tempEvoStaminaModifier, fieldNumber: 60)
+      }
+      if _storage._tempEvoCpMultiplier != 0 {
+        try visitor.visitSingularFloatField(value: _storage._tempEvoCpMultiplier, fieldNumber: 61)
+      }
+      if !_storage._megaEvolvedForms.isEmpty {
+        try visitor.visitPackedEnumField(value: _storage._megaEvolvedForms, fieldNumber: 63)
+      }
+      if !_storage._evolutionQuestInfo.isEmpty {
+        try visitor.visitRepeatedMessageField(value: _storage._evolutionQuestInfo, fieldNumber: 64)
+      }
+      if let v = _storage._originDetail {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 66)
+      }
+      if !_storage._pokemonTagIds.isEmpty {
+        try visitor.visitPackedUInt64Field(value: _storage._pokemonTagIds, fieldNumber: 67)
+      }
+      if !_storage._originEvents.isEmpty {
+        try visitor.visitRepeatedStringField(value: _storage._originEvents, fieldNumber: 68)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -817,12 +1177,485 @@ extension POGOProtos_Data_PokemonData: SwiftProtobuf.Message, SwiftProtobuf._Mes
         if _storage._preBoostedAdditionalCpMultiplier != rhs_storage._preBoostedAdditionalCpMultiplier {return false}
         if _storage._deployedGymLatDegree != rhs_storage._deployedGymLatDegree {return false}
         if _storage._deployedGymLngDegree != rhs_storage._deployedGymLngDegree {return false}
+        if _storage._hasMegaEvolved_p != rhs_storage._hasMegaEvolved_p {return false}
         if _storage._eggType != rhs_storage._eggType {return false}
-        if _storage._questBuddyEvolutionRequirement != rhs_storage._questBuddyEvolutionRequirement {return false}
+        if _storage._tempEvoCp != rhs_storage._tempEvoCp {return false}
+        if _storage._tempEvoStaminaModifier != rhs_storage._tempEvoStaminaModifier {return false}
+        if _storage._tempEvoCpMultiplier != rhs_storage._tempEvoCpMultiplier {return false}
+        if _storage._megaEvolvedForms != rhs_storage._megaEvolvedForms {return false}
+        if _storage._evolutionQuestInfo != rhs_storage._evolutionQuestInfo {return false}
+        if _storage._originDetail != rhs_storage._originDetail {return false}
+        if _storage._pokemonTagIds != rhs_storage._pokemonTagIds {return false}
+        if _storage._originEvents != rhs_storage._originEvents {return false}
         return true
       }
       if !storagesAreEqual {return false}
     }
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonEvolutionQuest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.protoMessageName + ".PokemonEvolutionQuest"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "quest_requirement"),
+    2: .standard(proto: "quest_info"),
+    3: .same(proto: "evolution"),
+    4: .same(proto: "form"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularMessageField(value: &self._questRequirement)
+      case 2: try decoder.decodeSingularMessageField(value: &self._questInfo)
+      case 3: try decoder.decodeSingularEnumField(value: &self.evolution)
+      case 4: try decoder.decodeSingularEnumField(value: &self.form)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if let v = self._questRequirement {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    }
+    if let v = self._questInfo {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    }
+    if self.evolution != .missingno {
+      try visitor.visitSingularEnumField(value: self.evolution, fieldNumber: 3)
+    }
+    if self.form != .unset {
+      try visitor.visitSingularEnumField(value: self.form, fieldNumber: 4)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonEvolutionQuest, rhs: POGOProtos_Data_PokemonData.PokemonEvolutionQuest) -> Bool {
+    if lhs._questRequirement != rhs._questRequirement {return false}
+    if lhs._questInfo != rhs._questInfo {return false}
+    if lhs.evolution != rhs.evolution {return false}
+    if lhs.form != rhs.form {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonEvolutionQuest.EvolutionQuestInfo: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.PokemonEvolutionQuest.protoMessageName + ".EvolutionQuestInfo"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "quest_requirement_template_id"),
+    2: .same(proto: "description"),
+    3: .same(proto: "target"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.questRequirementTemplateID)
+      case 2: try decoder.decodeSingularStringField(value: &self.description_p)
+      case 3: try decoder.decodeSingularInt32Field(value: &self.target)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.questRequirementTemplateID.isEmpty {
+      try visitor.visitSingularStringField(value: self.questRequirementTemplateID, fieldNumber: 1)
+    }
+    if !self.description_p.isEmpty {
+      try visitor.visitSingularStringField(value: self.description_p, fieldNumber: 2)
+    }
+    if self.target != 0 {
+      try visitor.visitSingularInt32Field(value: self.target, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonEvolutionQuest.EvolutionQuestInfo, rhs: POGOProtos_Data_PokemonData.PokemonEvolutionQuest.EvolutionQuestInfo) -> Bool {
+    if lhs.questRequirementTemplateID != rhs.questRequirementTemplateID {return false}
+    if lhs.description_p != rhs.description_p {return false}
+    if lhs.target != rhs.target {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonCreateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.protoMessageName + ".PokemonCreateDetail"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "wild_detail"),
+    2: .standard(proto: "egg_detail"),
+    3: .standard(proto: "raid_detail"),
+    4: .standard(proto: "quest_detail"),
+    5: .standard(proto: "vs_seeker_detail"),
+    6: .standard(proto: "invasion_detail"),
+    7: .standard(proto: "photobomb_detail"),
+    8: .standard(proto: "tutorial_detail"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1:
+        var v: POGOProtos_Data_PokemonData.PokemonCreateDetail.WildCreateDetail?
+        if let current = self.detail {
+          try decoder.handleConflictingOneOf()
+          if case .wildDetail(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.detail = .wildDetail(v)}
+      case 2:
+        var v: POGOProtos_Data_PokemonData.PokemonCreateDetail.EggCreateDetail?
+        if let current = self.detail {
+          try decoder.handleConflictingOneOf()
+          if case .eggDetail(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.detail = .eggDetail(v)}
+      case 3:
+        var v: POGOProtos_Data_PokemonData.PokemonCreateDetail.RaidCreateDetail?
+        if let current = self.detail {
+          try decoder.handleConflictingOneOf()
+          if case .raidDetail(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.detail = .raidDetail(v)}
+      case 4:
+        var v: POGOProtos_Data_PokemonData.PokemonCreateDetail.QuestCreateDetail?
+        if let current = self.detail {
+          try decoder.handleConflictingOneOf()
+          if case .questDetail(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.detail = .questDetail(v)}
+      case 5:
+        var v: POGOProtos_Data_PokemonData.PokemonCreateDetail.VsSeekerCreateDetail?
+        if let current = self.detail {
+          try decoder.handleConflictingOneOf()
+          if case .vsSeekerDetail(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.detail = .vsSeekerDetail(v)}
+      case 6:
+        var v: POGOProtos_Data_PokemonData.PokemonCreateDetail.InvasionCreateDetail?
+        if let current = self.detail {
+          try decoder.handleConflictingOneOf()
+          if case .invasionDetail(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.detail = .invasionDetail(v)}
+      case 7:
+        var v: POGOProtos_Data_PokemonData.PokemonCreateDetail.PhotobombCreateDetail?
+        if let current = self.detail {
+          try decoder.handleConflictingOneOf()
+          if case .photobombDetail(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.detail = .photobombDetail(v)}
+      case 8:
+        var v: POGOProtos_Data_PokemonData.PokemonCreateDetail.TutorialCreateDetail?
+        if let current = self.detail {
+          try decoder.handleConflictingOneOf()
+          if case .tutorialDetail(let m) = current {v = m}
+        }
+        try decoder.decodeSingularMessageField(value: &v)
+        if let v = v {self.detail = .tutorialDetail(v)}
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    switch self.detail {
+    case .wildDetail(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    case .eggDetail(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    case .raidDetail(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 3)
+    case .questDetail(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 4)
+    case .vsSeekerDetail(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 5)
+    case .invasionDetail(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 6)
+    case .photobombDetail(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+    case .tutorialDetail(let v)?:
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    case nil: break
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonCreateDetail, rhs: POGOProtos_Data_PokemonData.PokemonCreateDetail) -> Bool {
+    if lhs.detail != rhs.detail {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonCreateDetail.WildCreateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.PokemonCreateDetail.protoMessageName + ".WildCreateDetail"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "caught_in_wild"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.caughtInWild)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.caughtInWild != false {
+      try visitor.visitSingularBoolField(value: self.caughtInWild, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.WildCreateDetail, rhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.WildCreateDetail) -> Bool {
+    if lhs.caughtInWild != rhs.caughtInWild {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonCreateDetail.EggCreateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.PokemonCreateDetail.protoMessageName + ".EggCreateDetail"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "hatched_time_ms"),
+    2: .standard(proto: "player_hatched_s2_cell_id"),
+    3: .standard(proto: "received_time_ms"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt64Field(value: &self.hatchedTimeMs)
+      case 2: try decoder.decodeSingularInt64Field(value: &self.playerHatchedS2CellID)
+      case 3: try decoder.decodeSingularInt64Field(value: &self.receivedTimeMs)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.hatchedTimeMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.hatchedTimeMs, fieldNumber: 1)
+    }
+    if self.playerHatchedS2CellID != 0 {
+      try visitor.visitSingularInt64Field(value: self.playerHatchedS2CellID, fieldNumber: 2)
+    }
+    if self.receivedTimeMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.receivedTimeMs, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.EggCreateDetail, rhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.EggCreateDetail) -> Bool {
+    if lhs.hatchedTimeMs != rhs.hatchedTimeMs {return false}
+    if lhs.playerHatchedS2CellID != rhs.playerHatchedS2CellID {return false}
+    if lhs.receivedTimeMs != rhs.receivedTimeMs {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonCreateDetail.RaidCreateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.PokemonCreateDetail.protoMessageName + ".RaidCreateDetail"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "is_exclusive"),
+    2: .standard(proto: "is_mega"),
+    3: .standard(proto: "player_captured_s2_cell_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.isExclusive)
+      case 2: try decoder.decodeSingularBoolField(value: &self.isMega)
+      case 3: try decoder.decodeSingularInt64Field(value: &self.playerCapturedS2CellID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.isExclusive != false {
+      try visitor.visitSingularBoolField(value: self.isExclusive, fieldNumber: 1)
+    }
+    if self.isMega != false {
+      try visitor.visitSingularBoolField(value: self.isMega, fieldNumber: 2)
+    }
+    if self.playerCapturedS2CellID != 0 {
+      try visitor.visitSingularInt64Field(value: self.playerCapturedS2CellID, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.RaidCreateDetail, rhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.RaidCreateDetail) -> Bool {
+    if lhs.isExclusive != rhs.isExclusive {return false}
+    if lhs.isMega != rhs.isMega {return false}
+    if lhs.playerCapturedS2CellID != rhs.playerCapturedS2CellID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonCreateDetail.QuestCreateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.PokemonCreateDetail.protoMessageName + ".QuestCreateDetail"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "origin"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.origin)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.origin != .spawnPoint {
+      try visitor.visitSingularEnumField(value: self.origin, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.QuestCreateDetail, rhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.QuestCreateDetail) -> Bool {
+    if lhs.origin != rhs.origin {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonCreateDetail.VsSeekerCreateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.PokemonCreateDetail.protoMessageName + ".VsSeekerCreateDetail"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "season"),
+    2: .same(proto: "league"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.season)
+      case 2: try decoder.decodeSingularStringField(value: &self.league)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.season != 0 {
+      try visitor.visitSingularInt32Field(value: self.season, fieldNumber: 1)
+    }
+    if !self.league.isEmpty {
+      try visitor.visitSingularStringField(value: self.league, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.VsSeekerCreateDetail, rhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.VsSeekerCreateDetail) -> Bool {
+    if lhs.season != rhs.season {return false}
+    if lhs.league != rhs.league {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonCreateDetail.InvasionCreateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.PokemonCreateDetail.protoMessageName + ".InvasionCreateDetail"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "origin"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.origin)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.origin != .characterUnset {
+      try visitor.visitSingularEnumField(value: self.origin, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.InvasionCreateDetail, rhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.InvasionCreateDetail) -> Bool {
+    if lhs.origin != rhs.origin {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonCreateDetail.PhotobombCreateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.PokemonCreateDetail.protoMessageName + ".PhotobombCreateDetail"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "caught_in_photobomb"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.caughtInPhotobomb)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.caughtInPhotobomb != false {
+      try visitor.visitSingularBoolField(value: self.caughtInPhotobomb, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.PhotobombCreateDetail, rhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.PhotobombCreateDetail) -> Bool {
+    if lhs.caughtInPhotobomb != rhs.caughtInPhotobomb {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_PokemonData.PokemonCreateDetail.TutorialCreateDetail: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_PokemonData.PokemonCreateDetail.protoMessageName + ".TutorialCreateDetail"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "caught_in_wild"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularBoolField(value: &self.caughtInWild)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.caughtInWild != false {
+      try visitor.visitSingularBoolField(value: self.caughtInWild, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.TutorialCreateDetail, rhs: POGOProtos_Data_PokemonData.PokemonCreateDetail.TutorialCreateDetail) -> Bool {
+    if lhs.caughtInWild != rhs.caughtInWild {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -30,6 +30,12 @@ public struct POGOProtos_Settings_Master_MonodepthSettings {
 
   public var occlusionsToggleVisible: Bool = false
 
+  public var enableGroundSuppression: Bool = false
+
+  public var minGroundSuppressionThresh: Float = 0
+
+  public var suppressionChannelID: UInt32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -45,6 +51,9 @@ extension POGOProtos_Settings_Master_MonodepthSettings: SwiftProtobuf.Message, S
     1: .standard(proto: "enable_occlusions"),
     2: .standard(proto: "occlusions_default_on"),
     3: .standard(proto: "occlusions_toggle_visible"),
+    4: .standard(proto: "enable_ground_suppression"),
+    5: .standard(proto: "min_ground_suppression_thresh"),
+    6: .standard(proto: "suppression_channel_id"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -53,6 +62,9 @@ extension POGOProtos_Settings_Master_MonodepthSettings: SwiftProtobuf.Message, S
       case 1: try decoder.decodeSingularBoolField(value: &self.enableOcclusions)
       case 2: try decoder.decodeSingularBoolField(value: &self.occlusionsDefaultOn)
       case 3: try decoder.decodeSingularBoolField(value: &self.occlusionsToggleVisible)
+      case 4: try decoder.decodeSingularBoolField(value: &self.enableGroundSuppression)
+      case 5: try decoder.decodeSingularFloatField(value: &self.minGroundSuppressionThresh)
+      case 6: try decoder.decodeSingularUInt32Field(value: &self.suppressionChannelID)
       default: break
       }
     }
@@ -68,6 +80,15 @@ extension POGOProtos_Settings_Master_MonodepthSettings: SwiftProtobuf.Message, S
     if self.occlusionsToggleVisible != false {
       try visitor.visitSingularBoolField(value: self.occlusionsToggleVisible, fieldNumber: 3)
     }
+    if self.enableGroundSuppression != false {
+      try visitor.visitSingularBoolField(value: self.enableGroundSuppression, fieldNumber: 4)
+    }
+    if self.minGroundSuppressionThresh != 0 {
+      try visitor.visitSingularFloatField(value: self.minGroundSuppressionThresh, fieldNumber: 5)
+    }
+    if self.suppressionChannelID != 0 {
+      try visitor.visitSingularUInt32Field(value: self.suppressionChannelID, fieldNumber: 6)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -75,6 +96,9 @@ extension POGOProtos_Settings_Master_MonodepthSettings: SwiftProtobuf.Message, S
     if lhs.enableOcclusions != rhs.enableOcclusions {return false}
     if lhs.occlusionsDefaultOn != rhs.occlusionsDefaultOn {return false}
     if lhs.occlusionsToggleVisible != rhs.occlusionsToggleVisible {return false}
+    if lhs.enableGroundSuppression != rhs.enableGroundSuppression {return false}
+    if lhs.minGroundSuppressionThresh != rhs.minGroundSuppressionThresh {return false}
+    if lhs.suppressionChannelID != rhs.suppressionChannelID {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

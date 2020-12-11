@@ -165,12 +165,36 @@ public struct POGOProtos_Inventory_InventoryItemData {
     set {_uniqueStorage()._type = .limitedPurchaseSkuRecord(newValue)}
   }
 
+  public var megaEvolveSpecies: POGOProtos_Inventory_InventoryItemData.MegaEvolvePokemonSpecies {
+    get {
+      if case .megaEvolveSpecies(let v)? = _storage._type {return v}
+      return POGOProtos_Inventory_InventoryItemData.MegaEvolvePokemonSpecies()
+    }
+    set {_uniqueStorage()._type = .megaEvolveSpecies(newValue)}
+  }
+
   public var sticker: POGOProtos_Data_Sticker_Sticker {
     get {
       if case .sticker(let v)? = _storage._type {return v}
       return POGOProtos_Data_Sticker_Sticker()
     }
     set {_uniqueStorage()._type = .sticker(newValue)}
+  }
+
+  public var pokemonHome: POGOProtos_Inventory_InventoryItemData.PokemonHome {
+    get {
+      if case .pokemonHome(let v)? = _storage._type {return v}
+      return POGOProtos_Inventory_InventoryItemData.PokemonHome()
+    }
+    set {_uniqueStorage()._type = .pokemonHome(newValue)}
+  }
+
+  public var playerStatsSnapshots: POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots {
+    get {
+      if case .playerStatsSnapshots(let v)? = _storage._type {return v}
+      return POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots()
+    }
+    set {_uniqueStorage()._type = .playerStatsSnapshots(newValue)}
   }
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
@@ -193,7 +217,10 @@ public struct POGOProtos_Inventory_InventoryItemData {
     case giftBoxes(POGOProtos_Data_Gift_GiftBoxes)
     case belugaIncense(POGOProtos_Data_Beluga_BelugaIncenseBox)
     case limitedPurchaseSkuRecord(POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord)
+    case megaEvolveSpecies(POGOProtos_Inventory_InventoryItemData.MegaEvolvePokemonSpecies)
     case sticker(POGOProtos_Data_Sticker_Sticker)
+    case pokemonHome(POGOProtos_Inventory_InventoryItemData.PokemonHome)
+    case playerStatsSnapshots(POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.OneOf_Type, rhs: POGOProtos_Inventory_InventoryItemData.OneOf_Type) -> Bool {
@@ -215,7 +242,10 @@ public struct POGOProtos_Inventory_InventoryItemData {
       case (.giftBoxes(let l), .giftBoxes(let r)): return l == r
       case (.belugaIncense(let l), .belugaIncense(let r)): return l == r
       case (.limitedPurchaseSkuRecord(let l), .limitedPurchaseSkuRecord(let r)): return l == r
+      case (.megaEvolveSpecies(let l), .megaEvolveSpecies(let r)): return l == r
       case (.sticker(let l), .sticker(let r)): return l == r
+      case (.pokemonHome(let l), .pokemonHome(let r)): return l == r
+      case (.playerStatsSnapshots(let l), .playerStatsSnapshots(let r)): return l == r
       default: return false
       }
     }
@@ -252,10 +282,115 @@ public struct POGOProtos_Inventory_InventoryItemData {
     public init() {}
   }
 
+  public struct PlayerStatsSnapshots {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var snapShot: [POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots.SnapshotData] = []
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public struct SnapshotData {
+      // SwiftProtobuf.Message conformance is added in an extension below. See the
+      // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+      // methods supported on all messages.
+
+      public var reason: POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots.SnapshotData.Reason = .unset
+
+      public var stats: POGOProtos_Data_Player_PlayerStats {
+        get {return _stats ?? POGOProtos_Data_Player_PlayerStats()}
+        set {_stats = newValue}
+      }
+      /// Returns true if `stats` has been explicitly set.
+      public var hasStats: Bool {return self._stats != nil}
+      /// Clears the value of `stats`. Subsequent reads from it will return its default value.
+      public mutating func clearStats() {self._stats = nil}
+
+      public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+      public enum Reason: SwiftProtobuf.Enum {
+        public typealias RawValue = Int
+        case unset // = 0
+        case levelUp // = 1
+        case UNRECOGNIZED(Int)
+
+        public init() {
+          self = .unset
+        }
+
+        public init?(rawValue: Int) {
+          switch rawValue {
+          case 0: self = .unset
+          case 1: self = .levelUp
+          default: self = .UNRECOGNIZED(rawValue)
+          }
+        }
+
+        public var rawValue: Int {
+          switch self {
+          case .unset: return 0
+          case .levelUp: return 1
+          case .UNRECOGNIZED(let i): return i
+          }
+        }
+
+      }
+
+      public init() {}
+
+      fileprivate var _stats: POGOProtos_Data_Player_PlayerStats? = nil
+    }
+
+    public init() {}
+  }
+
+  public struct MegaEvolvePokemonSpecies {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var energyCount: Int32 = 0
+
+    public var pokemonSpeciesID: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct PokemonHome {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var transporterEnergy: Int32 = 0
+
+    public var transporterFullyChargedMs: Int64 = 0
+
+    public var lastPassiveTransporterEnergyGainHour: Int64 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
   public init() {}
 
   fileprivate var _storage = _StorageClass.defaultInstance
 }
+
+#if swift(>=4.2)
+
+extension POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots.SnapshotData.Reason: CaseIterable {
+  // The compiler won't synthesize support with the UNRECOGNIZED case.
+  public static var allCases: [POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots.SnapshotData.Reason] = [
+    .unset,
+    .levelUp,
+  ]
+}
+
+#endif  // swift(>=4.2)
 
 // MARK: - Code below here is support for the SwiftProtobuf runtime.
 
@@ -281,7 +416,10 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
     15: .standard(proto: "gift_boxes"),
     16: .standard(proto: "beluga_incense"),
     19: .standard(proto: "limited_purchase_sku_record"),
+    21: .standard(proto: "mega_evolve_species"),
     22: .same(proto: "sticker"),
+    23: .standard(proto: "pokemon_home"),
+    25: .standard(proto: "player_stats_snapshots"),
   ]
 
   fileprivate class _StorageClass {
@@ -444,6 +582,14 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._type = .limitedPurchaseSkuRecord(v)}
+        case 21:
+          var v: POGOProtos_Inventory_InventoryItemData.MegaEvolvePokemonSpecies?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .megaEvolveSpecies(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .megaEvolveSpecies(v)}
         case 22:
           var v: POGOProtos_Data_Sticker_Sticker?
           if let current = _storage._type {
@@ -452,6 +598,22 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._type = .sticker(v)}
+        case 23:
+          var v: POGOProtos_Inventory_InventoryItemData.PokemonHome?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .pokemonHome(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .pokemonHome(v)}
+        case 25:
+          var v: POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots?
+          if let current = _storage._type {
+            try decoder.handleConflictingOneOf()
+            if case .playerStatsSnapshots(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._type = .playerStatsSnapshots(v)}
         default: break
         }
       }
@@ -495,8 +657,14 @@ extension POGOProtos_Inventory_InventoryItemData: SwiftProtobuf.Message, SwiftPr
         try visitor.visitSingularMessageField(value: v, fieldNumber: 16)
       case .limitedPurchaseSkuRecord(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
+      case .megaEvolveSpecies(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 21)
       case .sticker(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 22)
+      case .pokemonHome(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 23)
+      case .playerStatsSnapshots(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 25)
       case nil: break
       }
     }
@@ -589,6 +757,153 @@ extension POGOProtos_Inventory_InventoryItemData.LimitedPurchaseSkuRecord.Purcha
     if lhs.numPurchases != rhs.numPurchases {return false}
     if lhs.lastPurchaseMs != rhs.lastPurchaseMs {return false}
     if lhs.totalNumPurchases != rhs.totalNumPurchases {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Inventory_InventoryItemData.protoMessageName + ".PlayerStatsSnapshots"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "snap_shot"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeRepeatedMessageField(value: &self.snapShot)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.snapShot.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.snapShot, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots, rhs: POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots) -> Bool {
+    if lhs.snapShot != rhs.snapShot {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots.SnapshotData: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots.protoMessageName + ".SnapshotData"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "reason"),
+    2: .same(proto: "stats"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularEnumField(value: &self.reason)
+      case 2: try decoder.decodeSingularMessageField(value: &self._stats)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.reason != .unset {
+      try visitor.visitSingularEnumField(value: self.reason, fieldNumber: 1)
+    }
+    if let v = self._stats {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots.SnapshotData, rhs: POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots.SnapshotData) -> Bool {
+    if lhs.reason != rhs.reason {return false}
+    if lhs._stats != rhs._stats {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Inventory_InventoryItemData.PlayerStatsSnapshots.SnapshotData.Reason: SwiftProtobuf._ProtoNameProviding {
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    0: .same(proto: "UNSET"),
+    1: .same(proto: "LEVEL_UP"),
+  ]
+}
+
+extension POGOProtos_Inventory_InventoryItemData.MegaEvolvePokemonSpecies: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Inventory_InventoryItemData.protoMessageName + ".MegaEvolvePokemonSpecies"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "energy_count"),
+    2: .standard(proto: "pokemon_species_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.energyCount)
+      case 2: try decoder.decodeSingularInt32Field(value: &self.pokemonSpeciesID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.energyCount != 0 {
+      try visitor.visitSingularInt32Field(value: self.energyCount, fieldNumber: 1)
+    }
+    if self.pokemonSpeciesID != 0 {
+      try visitor.visitSingularInt32Field(value: self.pokemonSpeciesID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.MegaEvolvePokemonSpecies, rhs: POGOProtos_Inventory_InventoryItemData.MegaEvolvePokemonSpecies) -> Bool {
+    if lhs.energyCount != rhs.energyCount {return false}
+    if lhs.pokemonSpeciesID != rhs.pokemonSpeciesID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Inventory_InventoryItemData.PokemonHome: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Inventory_InventoryItemData.protoMessageName + ".PokemonHome"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "transporter_energy"),
+    2: .standard(proto: "transporter_fully_charged_ms"),
+    3: .standard(proto: "last_passive_transporter_energy_gain_hour"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.transporterEnergy)
+      case 2: try decoder.decodeSingularInt64Field(value: &self.transporterFullyChargedMs)
+      case 3: try decoder.decodeSingularInt64Field(value: &self.lastPassiveTransporterEnergyGainHour)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.transporterEnergy != 0 {
+      try visitor.visitSingularInt32Field(value: self.transporterEnergy, fieldNumber: 1)
+    }
+    if self.transporterFullyChargedMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.transporterFullyChargedMs, fieldNumber: 2)
+    }
+    if self.lastPassiveTransporterEnergyGainHour != 0 {
+      try visitor.visitSingularInt64Field(value: self.lastPassiveTransporterEnergyGainHour, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Inventory_InventoryItemData.PokemonHome, rhs: POGOProtos_Inventory_InventoryItemData.PokemonHome) -> Bool {
+    if lhs.transporterEnergy != rhs.transporterEnergy {return false}
+    if lhs.transporterFullyChargedMs != rhs.transporterFullyChargedMs {return false}
+    if lhs.lastPassiveTransporterEnergyGainHour != rhs.lastPassiveTransporterEnergyGainHour {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

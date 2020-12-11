@@ -54,6 +54,7 @@ public struct POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry {
     case sourceAvatarCustomizationAward // = 13
     case sourceFirstTimeUserFlow // = 14
     case sourceBadgeDetailAvatarReward // = 15
+    case sourceDeepLink // = 16
     case sourceQuickShopBuddyInteractionPoffin // = 100
     case sourceQuickShopBuddyQuickFeedPoffin // = 101
     case UNRECOGNIZED(Int)
@@ -80,6 +81,7 @@ public struct POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry {
       case 13: self = .sourceAvatarCustomizationAward
       case 14: self = .sourceFirstTimeUserFlow
       case 15: self = .sourceBadgeDetailAvatarReward
+      case 16: self = .sourceDeepLink
       case 100: self = .sourceQuickShopBuddyInteractionPoffin
       case 101: self = .sourceQuickShopBuddyQuickFeedPoffin
       default: self = .UNRECOGNIZED(rawValue)
@@ -104,6 +106,7 @@ public struct POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry {
       case .sourceAvatarCustomizationAward: return 13
       case .sourceFirstTimeUserFlow: return 14
       case .sourceBadgeDetailAvatarReward: return 15
+      case .sourceDeepLink: return 16
       case .sourceQuickShopBuddyInteractionPoffin: return 100
       case .sourceQuickShopBuddyQuickFeedPoffin: return 101
       case .UNRECOGNIZED(let i): return i
@@ -136,6 +139,7 @@ extension POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry.ShoppingPageTelem
     .sourceAvatarCustomizationAward,
     .sourceFirstTimeUserFlow,
     .sourceBadgeDetailAvatarReward,
+    .sourceDeepLink,
     .sourceQuickShopBuddyInteractionPoffin,
     .sourceQuickShopBuddyQuickFeedPoffin,
   ]
@@ -218,6 +222,7 @@ extension POGOProtos_Data_Telemetry_ShoppingPageClickTelemetry.ShoppingPageTelem
     13: .same(proto: "SOURCE_AVATAR_CUSTOMIZATION_AWARD"),
     14: .same(proto: "SOURCE_FIRST_TIME_USER_FLOW"),
     15: .same(proto: "SOURCE_BADGE_DETAIL_AVATAR_REWARD"),
+    16: .same(proto: "SOURCE_DEEP_LINK"),
     100: .same(proto: "SOURCE_QUICK_SHOP_BUDDY_INTERACTION_POFFIN"),
     101: .same(proto: "SOURCE_QUICK_SHOP_BUDDY_QUICK_FEED_POFFIN"),
   ]

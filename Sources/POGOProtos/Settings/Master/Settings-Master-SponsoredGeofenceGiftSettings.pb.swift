@@ -40,6 +40,8 @@ public struct POGOProtos_Settings_Master_SponsoredGeofenceGiftSettings {
 
   public var enableIncidentGift: Bool = false
 
+  public var fullscreenDisableExitButtonTimeMs: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -60,6 +62,7 @@ extension POGOProtos_Settings_Master_SponsoredGeofenceGiftSettings: SwiftProtobu
     6: .standard(proto: "enable_poi_gift"),
     7: .standard(proto: "enable_raid_gift"),
     8: .standard(proto: "enable_incident_gift"),
+    9: .standard(proto: "fullscreen_disable_exit_button_time_ms"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -73,6 +76,7 @@ extension POGOProtos_Settings_Master_SponsoredGeofenceGiftSettings: SwiftProtobu
       case 6: try decoder.decodeSingularBoolField(value: &self.enablePoiGift)
       case 7: try decoder.decodeSingularBoolField(value: &self.enableRaidGift)
       case 8: try decoder.decodeSingularBoolField(value: &self.enableIncidentGift)
+      case 9: try decoder.decodeSingularInt32Field(value: &self.fullscreenDisableExitButtonTimeMs)
       default: break
       }
     }
@@ -103,6 +107,9 @@ extension POGOProtos_Settings_Master_SponsoredGeofenceGiftSettings: SwiftProtobu
     if self.enableIncidentGift != false {
       try visitor.visitSingularBoolField(value: self.enableIncidentGift, fieldNumber: 8)
     }
+    if self.fullscreenDisableExitButtonTimeMs != 0 {
+      try visitor.visitSingularInt32Field(value: self.fullscreenDisableExitButtonTimeMs, fieldNumber: 9)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -115,6 +122,7 @@ extension POGOProtos_Settings_Master_SponsoredGeofenceGiftSettings: SwiftProtobu
     if lhs.enablePoiGift != rhs.enablePoiGift {return false}
     if lhs.enableRaidGift != rhs.enableRaidGift {return false}
     if lhs.enableIncidentGift != rhs.enableIncidentGift {return false}
+    if lhs.fullscreenDisableExitButtonTimeMs != rhs.fullscreenDisableExitButtonTimeMs {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

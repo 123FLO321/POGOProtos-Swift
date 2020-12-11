@@ -74,6 +74,12 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
   case raidInvitationDetails // = 1041
   case lootItems // = 1042
   case eventIconURL // = 1043
+  case dlAction // = 1100
+  case dlCategory // = 1101
+  case dlTab // = 1102
+  case dlSku // = 1103
+  case dlIcon // = 1104
+  case dlID // = 1105
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -135,6 +141,12 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case 1041: self = .raidInvitationDetails
     case 1042: self = .lootItems
     case 1043: self = .eventIconURL
+    case 1100: self = .dlAction
+    case 1101: self = .dlCategory
+    case 1102: self = .dlTab
+    case 1103: self = .dlSku
+    case 1104: self = .dlIcon
+    case 1105: self = .dlID
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -194,6 +206,12 @@ public enum POGOProtos_Enums_VariableName: SwiftProtobuf.Enum {
     case .raidInvitationDetails: return 1041
     case .lootItems: return 1042
     case .eventIconURL: return 1043
+    case .dlAction: return 1100
+    case .dlCategory: return 1101
+    case .dlTab: return 1102
+    case .dlSku: return 1103
+    case .dlIcon: return 1104
+    case .dlID: return 1105
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -258,6 +276,12 @@ extension POGOProtos_Enums_VariableName: CaseIterable {
     .raidInvitationDetails,
     .lootItems,
     .eventIconURL,
+    .dlAction,
+    .dlCategory,
+    .dlTab,
+    .dlSku,
+    .dlIcon,
+    .dlID,
   ]
 }
 
@@ -320,5 +344,11 @@ extension POGOProtos_Enums_VariableName: SwiftProtobuf._ProtoNameProviding {
     1041: .same(proto: "RAID_INVITATION_DETAILS"),
     1042: .same(proto: "LOOT_ITEMS"),
     1043: .same(proto: "EVENT_ICON_URL"),
+    1100: .same(proto: "DL_ACTION"),
+    1101: .same(proto: "DL_CATEGORY"),
+    1102: .same(proto: "DL_TAB"),
+    1103: .same(proto: "DL_SKU"),
+    1104: .same(proto: "DL_ICON"),
+    1105: .same(proto: "DL_ID"),
   ]
 }

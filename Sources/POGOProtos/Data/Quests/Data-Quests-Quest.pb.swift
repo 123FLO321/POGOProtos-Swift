@@ -98,6 +98,39 @@ public struct POGOProtos_Data_Quests_Quest {
     set {_uniqueStorage()._quest = .evolveIntoPokemon(newValue)}
   }
 
+  public var getStardust: POGOProtos_Data_Quests_Quest.GetStardustQuest {
+    get {
+      if case .getStardust(let v)? = _storage._quest {return v}
+      return POGOProtos_Data_Quests_Quest.GetStardustQuest()
+    }
+    set {_uniqueStorage()._quest = .getStardust(newValue)}
+  }
+
+  public var geotargetedQuest: POGOProtos_Data_Quests_Quest.GeotargetedQuest {
+    get {
+      if case .geotargetedQuest(let v)? = _storage._quest {return v}
+      return POGOProtos_Data_Quests_Quest.GeotargetedQuest()
+    }
+    set {_uniqueStorage()._quest = .geotargetedQuest(newValue)}
+  }
+
+  public var buddyEvolutionWalk: POGOProtos_Data_Quests_Quest.BuddyEvolutionWalkQuest {
+    get {
+      if case .buddyEvolutionWalk(let v)? = _storage._quest {return v}
+      return POGOProtos_Data_Quests_Quest.BuddyEvolutionWalkQuest()
+    }
+    set {_uniqueStorage()._quest = .buddyEvolutionWalk(newValue)}
+  }
+
+  public var withSingleDay: POGOProtos_Data_Quests_Quest.WithSingleDay {
+    get {return _storage._withSingleDay ?? POGOProtos_Data_Quests_Quest.WithSingleDay()}
+    set {_uniqueStorage()._withSingleDay = newValue}
+  }
+  /// Returns true if `withSingleDay` has been explicitly set.
+  public var hasWithSingleDay: Bool {return _storage._withSingleDay != nil}
+  /// Clears the value of `withSingleDay`. Subsequent reads from it will return its default value.
+  public mutating func clearWithSingleDay() {_uniqueStorage()._withSingleDay = nil}
+
   public var daysInArow: POGOProtos_Data_Quests_Quest.DaysWithARowQuest {
     get {return _storage._daysInArow ?? POGOProtos_Data_Quests_Quest.DaysWithARowQuest()}
     set {_uniqueStorage()._daysInArow = newValue}
@@ -161,9 +194,9 @@ public struct POGOProtos_Data_Quests_Quest {
     set {_uniqueStorage()._lastUpdateTimestampMs = newValue}
   }
 
-  public var compeletionTimestampMs: Int64 {
-    get {return _storage._compeletionTimestampMs}
-    set {_uniqueStorage()._compeletionTimestampMs = newValue}
+  public var completionTimestampMs: Int64 {
+    get {return _storage._completionTimestampMs}
+    set {_uniqueStorage()._completionTimestampMs = newValue}
   }
 
   public var fortID: String {
@@ -215,6 +248,11 @@ public struct POGOProtos_Data_Quests_Quest {
     set {_uniqueStorage()._endTimestampMs = newValue}
   }
 
+  public var isBonusChallenge: Bool {
+    get {return _storage._isBonusChallenge}
+    set {_uniqueStorage()._isBonusChallenge = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum OneOf_Quest: Equatable {
@@ -226,6 +264,9 @@ public struct POGOProtos_Data_Quests_Quest {
     case dailyBuddyAffection(POGOProtos_Data_Quests_Quest.DailyBuddyAffectionQuest)
     case questWalk(POGOProtos_Data_Quests_Quest.QuestWalk)
     case evolveIntoPokemon(POGOProtos_Data_Quests_Quest.EvolveIntoPokemonQuest)
+    case getStardust(POGOProtos_Data_Quests_Quest.GetStardustQuest)
+    case geotargetedQuest(POGOProtos_Data_Quests_Quest.GeotargetedQuest)
+    case buddyEvolutionWalk(POGOProtos_Data_Quests_Quest.BuddyEvolutionWalkQuest)
 
   #if !swift(>=4.1)
     public static func ==(lhs: POGOProtos_Data_Quests_Quest.OneOf_Quest, rhs: POGOProtos_Data_Quests_Quest.OneOf_Quest) -> Bool {
@@ -238,6 +279,9 @@ public struct POGOProtos_Data_Quests_Quest {
       case (.dailyBuddyAffection(let l), .dailyBuddyAffection(let r)): return l == r
       case (.questWalk(let l), .questWalk(let r)): return l == r
       case (.evolveIntoPokemon(let l), .evolveIntoPokemon(let r)): return l == r
+      case (.getStardust(let l), .getStardust(let r)): return l == r
+      case (.geotargetedQuest(let l), .geotargetedQuest(let r)): return l == r
+      case (.buddyEvolutionWalk(let l), .buddyEvolutionWalk(let r)): return l == r
       default: return false
       }
     }
@@ -252,6 +296,7 @@ public struct POGOProtos_Data_Quests_Quest {
     case dailyCoinQuest // = 3
     case timedStoryQuest // = 4
     case tgcTrackingQuest // = 7
+    case evolutionQuest // = 8
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -266,6 +311,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case 3: self = .dailyCoinQuest
       case 4: self = .timedStoryQuest
       case 7: self = .tgcTrackingQuest
+      case 8: self = .evolutionQuest
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -278,6 +324,7 @@ public struct POGOProtos_Data_Quests_Quest {
       case .dailyCoinQuest: return 3
       case .timedStoryQuest: return 4
       case .tgcTrackingQuest: return 7
+      case .evolutionQuest: return 8
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -313,6 +360,64 @@ public struct POGOProtos_Data_Quests_Quest {
       }
     }
 
+  }
+
+  public struct BuddyEvolutionWalkQuest {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var lastKmRecorded: Float = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct GeotargetedQuest {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var name: String = String()
+
+    public var callToActionLink: String = String()
+
+    public var imageURL: String = String()
+
+    public var latitude: Double = 0
+
+    public var longitude: Double = 0
+
+    public var fortID: String = String()
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct GetStardustQuest {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var stardust: Int32 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
+  }
+
+  public struct WithSingleDay {
+    // SwiftProtobuf.Message conformance is added in an extension below. See the
+    // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+    // methods supported on all messages.
+
+    public var lastWindow: Int64 = 0
+
+    public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+    public init() {}
   }
 
   public struct QuestWalk {
@@ -430,6 +535,7 @@ extension POGOProtos_Data_Quests_Quest.Context: CaseIterable {
     .dailyCoinQuest,
     .timedStoryQuest,
     .tgcTrackingQuest,
+    .evolutionQuest,
   ]
 }
 
@@ -460,6 +566,10 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
     7: .standard(proto: "daily_buddy_affection"),
     8: .standard(proto: "quest_walk"),
     9: .standard(proto: "evolve_into_pokemon"),
+    10: .standard(proto: "get_stardust"),
+    12: .standard(proto: "geotargeted_quest"),
+    13: .standard(proto: "buddy_evolution_walk"),
+    98: .standard(proto: "with_single_day"),
     99: .standard(proto: "days_in_arow"),
     100: .standard(proto: "quest_id"),
     101: .standard(proto: "quest_seed"),
@@ -471,7 +581,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
     107: .standard(proto: "quest_rewards"),
     108: .standard(proto: "creation_timestamp_ms"),
     109: .standard(proto: "last_update_timestamp_ms"),
-    110: .standard(proto: "compeletion_timestamp_ms"),
+    110: .standard(proto: "completion_timestamp_ms"),
     111: .standard(proto: "fort_id"),
     112: .standard(proto: "admin_generated"),
     113: .standard(proto: "stamp_count_override_enabled"),
@@ -481,11 +591,13 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
     117: .standard(proto: "daily_counter"),
     118: .standard(proto: "reward_pokemon_icon_url"),
     119: .standard(proto: "end_timestamp_ms"),
+    120: .standard(proto: "is_bonus_challenge"),
   ]
 
   fileprivate class _StorageClass {
     var _questType: POGOProtos_Enums_QuestType = .questUnknownType
     var _quest: POGOProtos_Data_Quests_Quest.OneOf_Quest?
+    var _withSingleDay: POGOProtos_Data_Quests_Quest.WithSingleDay? = nil
     var _daysInArow: POGOProtos_Data_Quests_Quest.DaysWithARowQuest? = nil
     var _questID: String = String()
     var _questSeed: Int64 = 0
@@ -497,7 +609,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _questRewards: [POGOProtos_Data_Quests_QuestReward] = []
     var _creationTimestampMs: Int64 = 0
     var _lastUpdateTimestampMs: Int64 = 0
-    var _compeletionTimestampMs: Int64 = 0
+    var _completionTimestampMs: Int64 = 0
     var _fortID: String = String()
     var _adminGenerated: Bool = false
     var _stampCountOverrideEnabled: Bool = false
@@ -507,6 +619,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
     var _dailyCounter: POGOProtos_Data_Quests_Quest.DailyCounter? = nil
     var _rewardPokemonIconURL: String = String()
     var _endTimestampMs: Int64 = 0
+    var _isBonusChallenge: Bool = false
 
     static let defaultInstance = _StorageClass()
 
@@ -515,6 +628,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
     init(copying source: _StorageClass) {
       _questType = source._questType
       _quest = source._quest
+      _withSingleDay = source._withSingleDay
       _daysInArow = source._daysInArow
       _questID = source._questID
       _questSeed = source._questSeed
@@ -526,7 +640,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
       _questRewards = source._questRewards
       _creationTimestampMs = source._creationTimestampMs
       _lastUpdateTimestampMs = source._lastUpdateTimestampMs
-      _compeletionTimestampMs = source._compeletionTimestampMs
+      _completionTimestampMs = source._completionTimestampMs
       _fortID = source._fortID
       _adminGenerated = source._adminGenerated
       _stampCountOverrideEnabled = source._stampCountOverrideEnabled
@@ -536,6 +650,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
       _dailyCounter = source._dailyCounter
       _rewardPokemonIconURL = source._rewardPokemonIconURL
       _endTimestampMs = source._endTimestampMs
+      _isBonusChallenge = source._isBonusChallenge
     }
   }
 
@@ -616,6 +731,31 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
           }
           try decoder.decodeSingularMessageField(value: &v)
           if let v = v {_storage._quest = .evolveIntoPokemon(v)}
+        case 10:
+          var v: POGOProtos_Data_Quests_Quest.GetStardustQuest?
+          if let current = _storage._quest {
+            try decoder.handleConflictingOneOf()
+            if case .getStardust(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._quest = .getStardust(v)}
+        case 12:
+          var v: POGOProtos_Data_Quests_Quest.GeotargetedQuest?
+          if let current = _storage._quest {
+            try decoder.handleConflictingOneOf()
+            if case .geotargetedQuest(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._quest = .geotargetedQuest(v)}
+        case 13:
+          var v: POGOProtos_Data_Quests_Quest.BuddyEvolutionWalkQuest?
+          if let current = _storage._quest {
+            try decoder.handleConflictingOneOf()
+            if case .buddyEvolutionWalk(let m) = current {v = m}
+          }
+          try decoder.decodeSingularMessageField(value: &v)
+          if let v = v {_storage._quest = .buddyEvolutionWalk(v)}
+        case 98: try decoder.decodeSingularMessageField(value: &_storage._withSingleDay)
         case 99: try decoder.decodeSingularMessageField(value: &_storage._daysInArow)
         case 100: try decoder.decodeSingularStringField(value: &_storage._questID)
         case 101: try decoder.decodeSingularInt64Field(value: &_storage._questSeed)
@@ -627,7 +767,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
         case 107: try decoder.decodeRepeatedMessageField(value: &_storage._questRewards)
         case 108: try decoder.decodeSingularInt64Field(value: &_storage._creationTimestampMs)
         case 109: try decoder.decodeSingularInt64Field(value: &_storage._lastUpdateTimestampMs)
-        case 110: try decoder.decodeSingularInt64Field(value: &_storage._compeletionTimestampMs)
+        case 110: try decoder.decodeSingularInt64Field(value: &_storage._completionTimestampMs)
         case 111: try decoder.decodeSingularStringField(value: &_storage._fortID)
         case 112: try decoder.decodeSingularBoolField(value: &_storage._adminGenerated)
         case 113: try decoder.decodeSingularBoolField(value: &_storage._stampCountOverrideEnabled)
@@ -637,6 +777,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
         case 117: try decoder.decodeSingularMessageField(value: &_storage._dailyCounter)
         case 118: try decoder.decodeSingularStringField(value: &_storage._rewardPokemonIconURL)
         case 119: try decoder.decodeSingularInt64Field(value: &_storage._endTimestampMs)
+        case 120: try decoder.decodeSingularBoolField(value: &_storage._isBonusChallenge)
         default: break
         }
       }
@@ -665,7 +806,16 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
         try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
       case .evolveIntoPokemon(let v)?:
         try visitor.visitSingularMessageField(value: v, fieldNumber: 9)
+      case .getStardust(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 10)
+      case .geotargetedQuest(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 12)
+      case .buddyEvolutionWalk(let v)?:
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 13)
       case nil: break
+      }
+      if let v = _storage._withSingleDay {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 98)
       }
       if let v = _storage._daysInArow {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 99)
@@ -700,8 +850,8 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
       if _storage._lastUpdateTimestampMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._lastUpdateTimestampMs, fieldNumber: 109)
       }
-      if _storage._compeletionTimestampMs != 0 {
-        try visitor.visitSingularInt64Field(value: _storage._compeletionTimestampMs, fieldNumber: 110)
+      if _storage._completionTimestampMs != 0 {
+        try visitor.visitSingularInt64Field(value: _storage._completionTimestampMs, fieldNumber: 110)
       }
       if !_storage._fortID.isEmpty {
         try visitor.visitSingularStringField(value: _storage._fortID, fieldNumber: 111)
@@ -730,6 +880,9 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
       if _storage._endTimestampMs != 0 {
         try visitor.visitSingularInt64Field(value: _storage._endTimestampMs, fieldNumber: 119)
       }
+      if _storage._isBonusChallenge != false {
+        try visitor.visitSingularBoolField(value: _storage._isBonusChallenge, fieldNumber: 120)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -741,6 +894,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
         let rhs_storage = _args.1
         if _storage._questType != rhs_storage._questType {return false}
         if _storage._quest != rhs_storage._quest {return false}
+        if _storage._withSingleDay != rhs_storage._withSingleDay {return false}
         if _storage._daysInArow != rhs_storage._daysInArow {return false}
         if _storage._questID != rhs_storage._questID {return false}
         if _storage._questSeed != rhs_storage._questSeed {return false}
@@ -752,7 +906,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
         if _storage._questRewards != rhs_storage._questRewards {return false}
         if _storage._creationTimestampMs != rhs_storage._creationTimestampMs {return false}
         if _storage._lastUpdateTimestampMs != rhs_storage._lastUpdateTimestampMs {return false}
-        if _storage._compeletionTimestampMs != rhs_storage._compeletionTimestampMs {return false}
+        if _storage._completionTimestampMs != rhs_storage._completionTimestampMs {return false}
         if _storage._fortID != rhs_storage._fortID {return false}
         if _storage._adminGenerated != rhs_storage._adminGenerated {return false}
         if _storage._stampCountOverrideEnabled != rhs_storage._stampCountOverrideEnabled {return false}
@@ -762,6 +916,7 @@ extension POGOProtos_Data_Quests_Quest: SwiftProtobuf.Message, SwiftProtobuf._Me
         if _storage._dailyCounter != rhs_storage._dailyCounter {return false}
         if _storage._rewardPokemonIconURL != rhs_storage._rewardPokemonIconURL {return false}
         if _storage._endTimestampMs != rhs_storage._endTimestampMs {return false}
+        if _storage._isBonusChallenge != rhs_storage._isBonusChallenge {return false}
         return true
       }
       if !storagesAreEqual {return false}
@@ -779,6 +934,7 @@ extension POGOProtos_Data_Quests_Quest.Context: SwiftProtobuf._ProtoNameProvidin
     3: .same(proto: "DAILY_COIN_QUEST"),
     4: .same(proto: "TIMED_STORY_QUEST"),
     7: .same(proto: "TGC_TRACKING_QUEST"),
+    8: .same(proto: "EVOLUTION_QUEST"),
   ]
 }
 
@@ -788,6 +944,152 @@ extension POGOProtos_Data_Quests_Quest.Status: SwiftProtobuf._ProtoNameProviding
     1: .same(proto: "STATUS_ACTIVE"),
     2: .same(proto: "STATUS_COMPLETED"),
   ]
+}
+
+extension POGOProtos_Data_Quests_Quest.BuddyEvolutionWalkQuest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_Quest.protoMessageName + ".BuddyEvolutionWalkQuest"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "last_km_recorded"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularFloatField(value: &self.lastKmRecorded)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.lastKmRecorded != 0 {
+      try visitor.visitSingularFloatField(value: self.lastKmRecorded, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_Quest.BuddyEvolutionWalkQuest, rhs: POGOProtos_Data_Quests_Quest.BuddyEvolutionWalkQuest) -> Bool {
+    if lhs.lastKmRecorded != rhs.lastKmRecorded {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_Quest.GeotargetedQuest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_Quest.protoMessageName + ".GeotargetedQuest"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "name"),
+    2: .standard(proto: "call_to_action_link"),
+    3: .standard(proto: "image_url"),
+    4: .same(proto: "latitude"),
+    5: .same(proto: "longitude"),
+    6: .standard(proto: "fort_id"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularStringField(value: &self.name)
+      case 2: try decoder.decodeSingularStringField(value: &self.callToActionLink)
+      case 3: try decoder.decodeSingularStringField(value: &self.imageURL)
+      case 4: try decoder.decodeSingularDoubleField(value: &self.latitude)
+      case 5: try decoder.decodeSingularDoubleField(value: &self.longitude)
+      case 6: try decoder.decodeSingularStringField(value: &self.fortID)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 1)
+    }
+    if !self.callToActionLink.isEmpty {
+      try visitor.visitSingularStringField(value: self.callToActionLink, fieldNumber: 2)
+    }
+    if !self.imageURL.isEmpty {
+      try visitor.visitSingularStringField(value: self.imageURL, fieldNumber: 3)
+    }
+    if self.latitude != 0 {
+      try visitor.visitSingularDoubleField(value: self.latitude, fieldNumber: 4)
+    }
+    if self.longitude != 0 {
+      try visitor.visitSingularDoubleField(value: self.longitude, fieldNumber: 5)
+    }
+    if !self.fortID.isEmpty {
+      try visitor.visitSingularStringField(value: self.fortID, fieldNumber: 6)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_Quest.GeotargetedQuest, rhs: POGOProtos_Data_Quests_Quest.GeotargetedQuest) -> Bool {
+    if lhs.name != rhs.name {return false}
+    if lhs.callToActionLink != rhs.callToActionLink {return false}
+    if lhs.imageURL != rhs.imageURL {return false}
+    if lhs.latitude != rhs.latitude {return false}
+    if lhs.longitude != rhs.longitude {return false}
+    if lhs.fortID != rhs.fortID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_Quest.GetStardustQuest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_Quest.protoMessageName + ".GetStardustQuest"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .same(proto: "stardust"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt32Field(value: &self.stardust)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.stardust != 0 {
+      try visitor.visitSingularInt32Field(value: self.stardust, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_Quest.GetStardustQuest, rhs: POGOProtos_Data_Quests_Quest.GetStardustQuest) -> Bool {
+    if lhs.stardust != rhs.stardust {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+extension POGOProtos_Data_Quests_Quest.WithSingleDay: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = POGOProtos_Data_Quests_Quest.protoMessageName + ".WithSingleDay"
+  public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
+    1: .standard(proto: "last_window"),
+  ]
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      switch fieldNumber {
+      case 1: try decoder.decodeSingularInt64Field(value: &self.lastWindow)
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if self.lastWindow != 0 {
+      try visitor.visitSingularInt64Field(value: self.lastWindow, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: POGOProtos_Data_Quests_Quest.WithSingleDay, rhs: POGOProtos_Data_Quests_Quest.WithSingleDay) -> Bool {
+    if lhs.lastWindow != rhs.lastWindow {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
 }
 
 extension POGOProtos_Data_Quests_Quest.QuestWalk: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {

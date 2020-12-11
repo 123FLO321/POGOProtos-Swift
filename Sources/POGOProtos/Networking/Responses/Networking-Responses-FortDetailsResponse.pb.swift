@@ -131,6 +131,21 @@ public struct POGOProtos_Networking_Responses_FortDetailsResponse {
   /// Clears the value of `sponsoredDetails`. Subsequent reads from it will return its default value.
   public mutating func clearSponsoredDetails() {_uniqueStorage()._sponsoredDetails = nil}
 
+  public var geostoreTombstoneMessageKey: String {
+    get {return _storage._geostoreTombstoneMessageKey}
+    set {_uniqueStorage()._geostoreTombstoneMessageKey = newValue}
+  }
+
+  public var geostoreSuspensionMessageKey: String {
+    get {return _storage._geostoreSuspensionMessageKey}
+    set {_uniqueStorage()._geostoreSuspensionMessageKey = newValue}
+  }
+
+  public var poiImagesCount: Int32 {
+    get {return _storage._poiImagesCount}
+    set {_uniqueStorage()._poiImagesCount = newValue}
+  }
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -164,6 +179,9 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
     17: .standard(proto: "promo_description"),
     18: .standard(proto: "call_to_action_link"),
     19: .standard(proto: "sponsored_details"),
+    20: .standard(proto: "geostore_tombstone_message_key"),
+    21: .standard(proto: "geostore_suspension_message_key"),
+    22: .standard(proto: "poi_images_count"),
   ]
 
   fileprivate class _StorageClass {
@@ -186,6 +204,9 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
     var _promoDescription: [String] = []
     var _callToActionLink: String = String()
     var _sponsoredDetails: POGOProtos_Map_Fort_SponsoredDetails? = nil
+    var _geostoreTombstoneMessageKey: String = String()
+    var _geostoreSuspensionMessageKey: String = String()
+    var _poiImagesCount: Int32 = 0
 
     static let defaultInstance = _StorageClass()
 
@@ -211,6 +232,9 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
       _promoDescription = source._promoDescription
       _callToActionLink = source._callToActionLink
       _sponsoredDetails = source._sponsoredDetails
+      _geostoreTombstoneMessageKey = source._geostoreTombstoneMessageKey
+      _geostoreSuspensionMessageKey = source._geostoreSuspensionMessageKey
+      _poiImagesCount = source._poiImagesCount
     }
   }
 
@@ -245,6 +269,9 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
         case 17: try decoder.decodeRepeatedStringField(value: &_storage._promoDescription)
         case 18: try decoder.decodeSingularStringField(value: &_storage._callToActionLink)
         case 19: try decoder.decodeSingularMessageField(value: &_storage._sponsoredDetails)
+        case 20: try decoder.decodeSingularStringField(value: &_storage._geostoreTombstoneMessageKey)
+        case 21: try decoder.decodeSingularStringField(value: &_storage._geostoreSuspensionMessageKey)
+        case 22: try decoder.decodeSingularInt32Field(value: &_storage._poiImagesCount)
         default: break
         }
       }
@@ -310,6 +337,15 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
       if let v = _storage._sponsoredDetails {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 19)
       }
+      if !_storage._geostoreTombstoneMessageKey.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._geostoreTombstoneMessageKey, fieldNumber: 20)
+      }
+      if !_storage._geostoreSuspensionMessageKey.isEmpty {
+        try visitor.visitSingularStringField(value: _storage._geostoreSuspensionMessageKey, fieldNumber: 21)
+      }
+      if _storage._poiImagesCount != 0 {
+        try visitor.visitSingularInt32Field(value: _storage._poiImagesCount, fieldNumber: 22)
+      }
     }
     try unknownFields.traverse(visitor: &visitor)
   }
@@ -338,6 +374,9 @@ extension POGOProtos_Networking_Responses_FortDetailsResponse: SwiftProtobuf.Mes
         if _storage._promoDescription != rhs_storage._promoDescription {return false}
         if _storage._callToActionLink != rhs_storage._callToActionLink {return false}
         if _storage._sponsoredDetails != rhs_storage._sponsoredDetails {return false}
+        if _storage._geostoreTombstoneMessageKey != rhs_storage._geostoreTombstoneMessageKey {return false}
+        if _storage._geostoreSuspensionMessageKey != rhs_storage._geostoreSuspensionMessageKey {return false}
+        if _storage._poiImagesCount != rhs_storage._poiImagesCount {return false}
         return true
       }
       if !storagesAreEqual {return false}

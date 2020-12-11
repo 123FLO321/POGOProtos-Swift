@@ -42,6 +42,8 @@ public struct POGOProtos_Networking_Responses_Platform_Responses_GetAvailableSub
 
   public var blacklistedDeviceID: [String] = []
 
+  public var maxPoiLocationEditMoveDistanceMeters: Int32 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -63,6 +65,7 @@ extension POGOProtos_Networking_Responses_Platform_Responses_GetAvailableSubmiss
     7: .standard(proto: "blacklisted_os"),
     8: .standard(proto: "availability_result_per_type"),
     9: .standard(proto: "blacklisted_device_id"),
+    10: .standard(proto: "max_poi_location_edit_move_distance_meters"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -77,6 +80,7 @@ extension POGOProtos_Networking_Responses_Platform_Responses_GetAvailableSubmiss
       case 7: try decoder.decodeRepeatedStringField(value: &self.blacklistedOs)
       case 8: try decoder.decodeRepeatedMessageField(value: &self.availabilityResultPerType)
       case 9: try decoder.decodeRepeatedStringField(value: &self.blacklistedDeviceID)
+      case 10: try decoder.decodeSingularInt32Field(value: &self.maxPoiLocationEditMoveDistanceMeters)
       default: break
       }
     }
@@ -110,6 +114,9 @@ extension POGOProtos_Networking_Responses_Platform_Responses_GetAvailableSubmiss
     if !self.blacklistedDeviceID.isEmpty {
       try visitor.visitRepeatedStringField(value: self.blacklistedDeviceID, fieldNumber: 9)
     }
+    if self.maxPoiLocationEditMoveDistanceMeters != 0 {
+      try visitor.visitSingularInt32Field(value: self.maxPoiLocationEditMoveDistanceMeters, fieldNumber: 10)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -123,6 +130,7 @@ extension POGOProtos_Networking_Responses_Platform_Responses_GetAvailableSubmiss
     if lhs.blacklistedOs != rhs.blacklistedOs {return false}
     if lhs.availabilityResultPerType != rhs.availabilityResultPerType {return false}
     if lhs.blacklistedDeviceID != rhs.blacklistedDeviceID {return false}
+    if lhs.maxPoiLocationEditMoveDistanceMeters != rhs.maxPoiLocationEditMoveDistanceMeters {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

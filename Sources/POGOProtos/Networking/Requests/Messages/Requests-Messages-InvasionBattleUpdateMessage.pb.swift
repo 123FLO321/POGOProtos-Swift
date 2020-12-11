@@ -41,6 +41,17 @@ public struct POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessag
 
   public var updateType: POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage.UpdateType = .pokemonHealth
 
+  public var lobbyJoinTimeMs: Int64 = 0
+
+  public var combatQuestUpdate: POGOProtos_Data_Combat_CombatQuestUpdate {
+    get {return _combatQuestUpdate ?? POGOProtos_Data_Combat_CombatQuestUpdate()}
+    set {_combatQuestUpdate = newValue}
+  }
+  /// Returns true if `combatQuestUpdate` has been explicitly set.
+  public var hasCombatQuestUpdate: Bool {return self._combatQuestUpdate != nil}
+  /// Clears the value of `combatQuestUpdate`. Subsequent reads from it will return its default value.
+  public mutating func clearCombatQuestUpdate() {self._combatQuestUpdate = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum UpdateType: SwiftProtobuf.Enum {
@@ -91,6 +102,7 @@ public struct POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessag
   public init() {}
 
   fileprivate var _incidentLookup: POGOProtos_Map_Fort_IncidentLookup? = nil
+  fileprivate var _combatQuestUpdate: POGOProtos_Data_Combat_CombatQuestUpdate? = nil
 }
 
 #if swift(>=4.2)
@@ -118,6 +130,8 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
     3: .standard(proto: "health_update"),
     4: .standard(proto: "complete_battle"),
     5: .standard(proto: "update_type"),
+    6: .standard(proto: "lobby_join_time_ms"),
+    7: .standard(proto: "combat_quest_update"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -128,6 +142,8 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
       case 3: try decoder.decodeRepeatedMessageField(value: &self.healthUpdate)
       case 4: try decoder.decodeSingularBoolField(value: &self.completeBattle)
       case 5: try decoder.decodeSingularEnumField(value: &self.updateType)
+      case 6: try decoder.decodeSingularInt64Field(value: &self.lobbyJoinTimeMs)
+      case 7: try decoder.decodeSingularMessageField(value: &self._combatQuestUpdate)
       default: break
       }
     }
@@ -149,6 +165,12 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
     if self.updateType != .pokemonHealth {
       try visitor.visitSingularEnumField(value: self.updateType, fieldNumber: 5)
     }
+    if self.lobbyJoinTimeMs != 0 {
+      try visitor.visitSingularInt64Field(value: self.lobbyJoinTimeMs, fieldNumber: 6)
+    }
+    if let v = self._combatQuestUpdate {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -158,6 +180,8 @@ extension POGOProtos_Networking_Requests_Messages_InvasionBattleUpdateMessage: S
     if lhs.healthUpdate != rhs.healthUpdate {return false}
     if lhs.completeBattle != rhs.completeBattle {return false}
     if lhs.updateType != rhs.updateType {return false}
+    if lhs.lobbyJoinTimeMs != rhs.lobbyJoinTimeMs {return false}
+    if lhs._combatQuestUpdate != rhs._combatQuestUpdate {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

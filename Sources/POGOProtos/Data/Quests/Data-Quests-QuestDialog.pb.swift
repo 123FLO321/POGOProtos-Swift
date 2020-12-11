@@ -32,6 +32,12 @@ public struct POGOProtos_Data_Quests_QuestDialog {
 
   public var character: POGOProtos_Data_Quests_QuestDialog.Character = .unset
 
+  public var characterOffset: [Float] = []
+
+  public var textBackgroundColor: String = String()
+
+  public var characterTint: String = String()
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum CharacterExpression: SwiftProtobuf.Enum {
@@ -43,6 +49,18 @@ public struct POGOProtos_Data_Quests_QuestDialog {
     case pushy // = 4
     case impatient // = 5
     case admiration // = 6
+    case sad // = 7
+    case idle // = 8
+    case idleB // = 9
+    case greeting // = 10
+    case greetingB // = 11
+    case reactAngry // = 12
+    case reactCelebration // = 13
+    case reactHappy // = 14
+    case reactLaugh // = 15
+    case reactSad // = 16
+    case reactScared // = 17
+    case reactSurprised // = 18
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -58,6 +76,18 @@ public struct POGOProtos_Data_Quests_QuestDialog {
       case 4: self = .pushy
       case 5: self = .impatient
       case 6: self = .admiration
+      case 7: self = .sad
+      case 8: self = .idle
+      case 9: self = .idleB
+      case 10: self = .greeting
+      case 11: self = .greetingB
+      case 12: self = .reactAngry
+      case 13: self = .reactCelebration
+      case 14: self = .reactHappy
+      case 15: self = .reactLaugh
+      case 16: self = .reactSad
+      case 17: self = .reactScared
+      case 18: self = .reactSurprised
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -71,6 +101,18 @@ public struct POGOProtos_Data_Quests_QuestDialog {
       case .pushy: return 4
       case .impatient: return 5
       case .admiration: return 6
+      case .sad: return 7
+      case .idle: return 8
+      case .idleB: return 9
+      case .greeting: return 10
+      case .greetingB: return 11
+      case .reactAngry: return 12
+      case .reactCelebration: return 13
+      case .reactHappy: return 14
+      case .reactLaugh: return 15
+      case .reactSad: return 16
+      case .reactScared: return 17
+      case .reactSurprised: return 18
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -81,6 +123,11 @@ public struct POGOProtos_Data_Quests_QuestDialog {
     public typealias RawValue = Int
     case unset // = 0
     case professorWillow // = 1
+    case specialGuest1 // = 2
+    case specialGuest2 // = 3
+    case specialGuest3 // = 4
+    case specialGuest4 // = 5
+    case specialGuest5 // = 6
     case UNRECOGNIZED(Int)
 
     public init() {
@@ -91,6 +138,11 @@ public struct POGOProtos_Data_Quests_QuestDialog {
       switch rawValue {
       case 0: self = .unset
       case 1: self = .professorWillow
+      case 2: self = .specialGuest1
+      case 3: self = .specialGuest2
+      case 4: self = .specialGuest3
+      case 5: self = .specialGuest4
+      case 6: self = .specialGuest5
       default: self = .UNRECOGNIZED(rawValue)
       }
     }
@@ -99,6 +151,11 @@ public struct POGOProtos_Data_Quests_QuestDialog {
       switch self {
       case .unset: return 0
       case .professorWillow: return 1
+      case .specialGuest1: return 2
+      case .specialGuest2: return 3
+      case .specialGuest3: return 4
+      case .specialGuest4: return 5
+      case .specialGuest5: return 6
       case .UNRECOGNIZED(let i): return i
       }
     }
@@ -120,6 +177,18 @@ extension POGOProtos_Data_Quests_QuestDialog.CharacterExpression: CaseIterable {
     .pushy,
     .impatient,
     .admiration,
+    .sad,
+    .idle,
+    .idleB,
+    .greeting,
+    .greetingB,
+    .reactAngry,
+    .reactCelebration,
+    .reactHappy,
+    .reactLaugh,
+    .reactSad,
+    .reactScared,
+    .reactSurprised,
   ]
 }
 
@@ -128,6 +197,11 @@ extension POGOProtos_Data_Quests_QuestDialog.Character: CaseIterable {
   public static var allCases: [POGOProtos_Data_Quests_QuestDialog.Character] = [
     .unset,
     .professorWillow,
+    .specialGuest1,
+    .specialGuest2,
+    .specialGuest3,
+    .specialGuest4,
+    .specialGuest5,
   ]
 }
 
@@ -144,6 +218,9 @@ extension POGOProtos_Data_Quests_QuestDialog: SwiftProtobuf.Message, SwiftProtob
     2: .same(proto: "expression"),
     3: .standard(proto: "image_uri"),
     4: .same(proto: "character"),
+    5: .standard(proto: "character_offset"),
+    6: .standard(proto: "text_background_color"),
+    7: .standard(proto: "character_tint"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -153,6 +230,9 @@ extension POGOProtos_Data_Quests_QuestDialog: SwiftProtobuf.Message, SwiftProtob
       case 2: try decoder.decodeSingularEnumField(value: &self.expression)
       case 3: try decoder.decodeSingularStringField(value: &self.imageUri)
       case 4: try decoder.decodeSingularEnumField(value: &self.character)
+      case 5: try decoder.decodeRepeatedFloatField(value: &self.characterOffset)
+      case 6: try decoder.decodeSingularStringField(value: &self.textBackgroundColor)
+      case 7: try decoder.decodeSingularStringField(value: &self.characterTint)
       default: break
       }
     }
@@ -171,6 +251,15 @@ extension POGOProtos_Data_Quests_QuestDialog: SwiftProtobuf.Message, SwiftProtob
     if self.character != .unset {
       try visitor.visitSingularEnumField(value: self.character, fieldNumber: 4)
     }
+    if !self.characterOffset.isEmpty {
+      try visitor.visitPackedFloatField(value: self.characterOffset, fieldNumber: 5)
+    }
+    if !self.textBackgroundColor.isEmpty {
+      try visitor.visitSingularStringField(value: self.textBackgroundColor, fieldNumber: 6)
+    }
+    if !self.characterTint.isEmpty {
+      try visitor.visitSingularStringField(value: self.characterTint, fieldNumber: 7)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -179,6 +268,9 @@ extension POGOProtos_Data_Quests_QuestDialog: SwiftProtobuf.Message, SwiftProtob
     if lhs.expression != rhs.expression {return false}
     if lhs.imageUri != rhs.imageUri {return false}
     if lhs.character != rhs.character {return false}
+    if lhs.characterOffset != rhs.characterOffset {return false}
+    if lhs.textBackgroundColor != rhs.textBackgroundColor {return false}
+    if lhs.characterTint != rhs.characterTint {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
@@ -193,6 +285,18 @@ extension POGOProtos_Data_Quests_QuestDialog.CharacterExpression: SwiftProtobuf.
     4: .same(proto: "PUSHY"),
     5: .same(proto: "IMPATIENT"),
     6: .same(proto: "ADMIRATION"),
+    7: .same(proto: "SAD"),
+    8: .same(proto: "IDLE"),
+    9: .same(proto: "IDLE_B"),
+    10: .same(proto: "GREETING"),
+    11: .same(proto: "GREETING_B"),
+    12: .same(proto: "REACT_ANGRY"),
+    13: .same(proto: "REACT_CELEBRATION"),
+    14: .same(proto: "REACT_HAPPY"),
+    15: .same(proto: "REACT_LAUGH"),
+    16: .same(proto: "REACT_SAD"),
+    17: .same(proto: "REACT_SCARED"),
+    18: .same(proto: "REACT_SURPRISED"),
   ]
 }
 
@@ -200,5 +304,10 @@ extension POGOProtos_Data_Quests_QuestDialog.Character: SwiftProtobuf._ProtoName
   public static let _protobuf_nameMap: SwiftProtobuf._NameMap = [
     0: .same(proto: "CHARACTER_UNSET"),
     1: .same(proto: "PROFESSOR_WILLOW"),
+    2: .same(proto: "SPECIAL_GUEST_1"),
+    3: .same(proto: "SPECIAL_GUEST_2"),
+    4: .same(proto: "SPECIAL_GUEST_3"),
+    5: .same(proto: "SPECIAL_GUEST_4"),
+    6: .same(proto: "SPECIAL_GUEST_5"),
   ]
 }

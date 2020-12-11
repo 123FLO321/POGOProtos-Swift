@@ -72,6 +72,18 @@ public enum POGOProtos_Networking_Requests_Game_GamePoi_GamePoiAction: SwiftProt
 
   /// Implemented
   case asyncFileUploadComplete // = 620402
+
+  /// Implemented
+  case getArMappingSettings // = 620403
+
+  /// Implemented
+  case getImagesForPoi // = 620500
+
+  /// Implemented
+  case submitPlayerImageVoteForPoi // = 620501
+
+  /// Implemented
+  case isImageGalleryEnabled // = 620502
   case UNRECOGNIZED(Int)
 
   public init() {
@@ -97,6 +109,10 @@ public enum POGOProtos_Networking_Requests_Game_GamePoi_GamePoiAction: SwiftProt
     case 620400: self = .submitPoiArVideoMetadata
     case 620401: self = .getGrapeshotFileUploadURL
     case 620402: self = .asyncFileUploadComplete
+    case 620403: self = .getArMappingSettings
+    case 620500: self = .getImagesForPoi
+    case 620501: self = .submitPlayerImageVoteForPoi
+    case 620502: self = .isImageGalleryEnabled
     default: self = .UNRECOGNIZED(rawValue)
     }
   }
@@ -120,6 +136,10 @@ public enum POGOProtos_Networking_Requests_Game_GamePoi_GamePoiAction: SwiftProt
     case .submitPoiArVideoMetadata: return 620400
     case .getGrapeshotFileUploadURL: return 620401
     case .asyncFileUploadComplete: return 620402
+    case .getArMappingSettings: return 620403
+    case .getImagesForPoi: return 620500
+    case .submitPlayerImageVoteForPoi: return 620501
+    case .isImageGalleryEnabled: return 620502
     case .UNRECOGNIZED(let i): return i
     }
   }
@@ -148,6 +168,10 @@ extension POGOProtos_Networking_Requests_Game_GamePoi_GamePoiAction: CaseIterabl
     .submitPoiArVideoMetadata,
     .getGrapeshotFileUploadURL,
     .asyncFileUploadComplete,
+    .getArMappingSettings,
+    .getImagesForPoi,
+    .submitPlayerImageVoteForPoi,
+    .isImageGalleryEnabled,
   ]
 }
 
@@ -174,5 +198,9 @@ extension POGOProtos_Networking_Requests_Game_GamePoi_GamePoiAction: SwiftProtob
     620400: .same(proto: "SUBMIT_POI_AR_VIDEO_METADATA"),
     620401: .same(proto: "GET_GRAPESHOT_FILE_UPLOAD_URL"),
     620402: .same(proto: "ASYNC_FILE_UPLOAD_COMPLETE"),
+    620403: .same(proto: "GET_AR_MAPPING_SETTINGS"),
+    620500: .same(proto: "GET_IMAGES_FOR_POI"),
+    620501: .same(proto: "SUBMIT_PLAYER_IMAGE_VOTE_FOR_POI"),
+    620502: .same(proto: "IS_IMAGE_GALLERY_ENABLED"),
   ]
 }

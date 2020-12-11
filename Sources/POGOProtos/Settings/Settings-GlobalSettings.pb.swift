@@ -490,6 +490,15 @@ public struct POGOProtos_Settings_GlobalSettings {
   /// Clears the value of `timedGroupChallengeSettings`. Subsequent reads from it will return its default value.
   public mutating func clearTimedGroupChallengeSettings() {_uniqueStorage()._timedGroupChallengeSettings = nil}
 
+  public var megaEvoSettings: POGOProtos_Settings_MegaEvoGlobalSettings {
+    get {return _storage._megaEvoSettings ?? POGOProtos_Settings_MegaEvoGlobalSettings()}
+    set {_uniqueStorage()._megaEvoSettings = newValue}
+  }
+  /// Returns true if `megaEvoSettings` has been explicitly set.
+  public var hasMegaEvoSettings: Bool {return _storage._megaEvoSettings != nil}
+  /// Clears the value of `megaEvoSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearMegaEvoSettings() {_uniqueStorage()._megaEvoSettings = nil}
+
   public var lobbyClientSettings: POGOProtos_Settings_LobbyClientSettings {
     get {return _storage._lobbyClientSettings ?? POGOProtos_Settings_LobbyClientSettings()}
     set {_uniqueStorage()._lobbyClientSettings = newValue}
@@ -498,6 +507,51 @@ public struct POGOProtos_Settings_GlobalSettings {
   public var hasLobbyClientSettings: Bool {return _storage._lobbyClientSettings != nil}
   /// Clears the value of `lobbyClientSettings`. Subsequent reads from it will return its default value.
   public mutating func clearLobbyClientSettings() {_uniqueStorage()._lobbyClientSettings = nil}
+
+  public var questEvolutionSettings: POGOProtos_Settings_QuestEvolutionGlobalSettings {
+    get {return _storage._questEvolutionSettings ?? POGOProtos_Settings_QuestEvolutionGlobalSettings()}
+    set {_uniqueStorage()._questEvolutionSettings = newValue}
+  }
+  /// Returns true if `questEvolutionSettings` has been explicitly set.
+  public var hasQuestEvolutionSettings: Bool {return _storage._questEvolutionSettings != nil}
+  /// Clears the value of `questEvolutionSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearQuestEvolutionSettings() {_uniqueStorage()._questEvolutionSettings = nil}
+
+  public var sponsoredPoiFeedbackSettings: POGOProtos_Settings_SponsoredPoiFeedbackSettings {
+    get {return _storage._sponsoredPoiFeedbackSettings ?? POGOProtos_Settings_SponsoredPoiFeedbackSettings()}
+    set {_uniqueStorage()._sponsoredPoiFeedbackSettings = newValue}
+  }
+  /// Returns true if `sponsoredPoiFeedbackSettings` has been explicitly set.
+  public var hasSponsoredPoiFeedbackSettings: Bool {return _storage._sponsoredPoiFeedbackSettings != nil}
+  /// Clears the value of `sponsoredPoiFeedbackSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearSponsoredPoiFeedbackSettings() {_uniqueStorage()._sponsoredPoiFeedbackSettings = nil}
+
+  public var crashlyticsSettings: POGOProtos_Settings_CrashlyticsSettings {
+    get {return _storage._crashlyticsSettings ?? POGOProtos_Settings_CrashlyticsSettings()}
+    set {_uniqueStorage()._crashlyticsSettings = newValue}
+  }
+  /// Returns true if `crashlyticsSettings` has been explicitly set.
+  public var hasCrashlyticsSettings: Bool {return _storage._crashlyticsSettings != nil}
+  /// Clears the value of `crashlyticsSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearCrashlyticsSettings() {_uniqueStorage()._crashlyticsSettings = nil}
+
+  public var catchPokemonSettings: POGOProtos_Settings_CatchPokemonGlobalSettings {
+    get {return _storage._catchPokemonSettings ?? POGOProtos_Settings_CatchPokemonGlobalSettings()}
+    set {_uniqueStorage()._catchPokemonSettings = newValue}
+  }
+  /// Returns true if `catchPokemonSettings` has been explicitly set.
+  public var hasCatchPokemonSettings: Bool {return _storage._catchPokemonSettings != nil}
+  /// Clears the value of `catchPokemonSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearCatchPokemonSettings() {_uniqueStorage()._catchPokemonSettings = nil}
+
+  public var idfaSettings: POGOProtos_Settings_IdfaSettings {
+    get {return _storage._idfaSettings ?? POGOProtos_Settings_IdfaSettings()}
+    set {_uniqueStorage()._idfaSettings = newValue}
+  }
+  /// Returns true if `idfaSettings` has been explicitly set.
+  public var hasIdfaSettings: Bool {return _storage._idfaSettings != nil}
+  /// Clears the value of `idfaSettings`. Subsequent reads from it will return its default value.
+  public mutating func clearIdfaSettings() {_uniqueStorage()._idfaSettings = nil}
 
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
@@ -567,7 +621,13 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     55: .standard(proto: "raid_ticket_settings"),
     56: .standard(proto: "rocket_balloon_settings"),
     57: .standard(proto: "timed_group_challenge_settings"),
+    58: .standard(proto: "mega_evo_settings"),
     59: .standard(proto: "lobby_client_settings"),
+    61: .standard(proto: "quest_evolution_settings"),
+    62: .standard(proto: "sponsored_poi_feedback_settings"),
+    65: .standard(proto: "crashlytics_settings"),
+    66: .standard(proto: "catch_pokemon_settings"),
+    67: .standard(proto: "idfa_settings"),
   ]
 
   fileprivate class _StorageClass {
@@ -625,7 +685,13 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
     var _raidTicketSettings: POGOProtos_Settings_RaidTicketSettings? = nil
     var _rocketBalloonSettings: POGOProtos_Settings_RocketBalloonGlobalSettings? = nil
     var _timedGroupChallengeSettings: POGOProtos_Settings_TimedGroupChallengeSettings? = nil
+    var _megaEvoSettings: POGOProtos_Settings_MegaEvoGlobalSettings? = nil
     var _lobbyClientSettings: POGOProtos_Settings_LobbyClientSettings? = nil
+    var _questEvolutionSettings: POGOProtos_Settings_QuestEvolutionGlobalSettings? = nil
+    var _sponsoredPoiFeedbackSettings: POGOProtos_Settings_SponsoredPoiFeedbackSettings? = nil
+    var _crashlyticsSettings: POGOProtos_Settings_CrashlyticsSettings? = nil
+    var _catchPokemonSettings: POGOProtos_Settings_CatchPokemonGlobalSettings? = nil
+    var _idfaSettings: POGOProtos_Settings_IdfaSettings? = nil
 
     static let defaultInstance = _StorageClass()
 
@@ -686,7 +752,13 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       _raidTicketSettings = source._raidTicketSettings
       _rocketBalloonSettings = source._rocketBalloonSettings
       _timedGroupChallengeSettings = source._timedGroupChallengeSettings
+      _megaEvoSettings = source._megaEvoSettings
       _lobbyClientSettings = source._lobbyClientSettings
+      _questEvolutionSettings = source._questEvolutionSettings
+      _sponsoredPoiFeedbackSettings = source._sponsoredPoiFeedbackSettings
+      _crashlyticsSettings = source._crashlyticsSettings
+      _catchPokemonSettings = source._catchPokemonSettings
+      _idfaSettings = source._idfaSettings
     }
   }
 
@@ -756,7 +828,13 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         case 55: try decoder.decodeSingularMessageField(value: &_storage._raidTicketSettings)
         case 56: try decoder.decodeSingularMessageField(value: &_storage._rocketBalloonSettings)
         case 57: try decoder.decodeSingularMessageField(value: &_storage._timedGroupChallengeSettings)
+        case 58: try decoder.decodeSingularMessageField(value: &_storage._megaEvoSettings)
         case 59: try decoder.decodeSingularMessageField(value: &_storage._lobbyClientSettings)
+        case 61: try decoder.decodeSingularMessageField(value: &_storage._questEvolutionSettings)
+        case 62: try decoder.decodeSingularMessageField(value: &_storage._sponsoredPoiFeedbackSettings)
+        case 65: try decoder.decodeSingularMessageField(value: &_storage._crashlyticsSettings)
+        case 66: try decoder.decodeSingularMessageField(value: &_storage._catchPokemonSettings)
+        case 67: try decoder.decodeSingularMessageField(value: &_storage._idfaSettings)
         default: break
         }
       }
@@ -927,8 +1005,26 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
       if let v = _storage._timedGroupChallengeSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 57)
       }
+      if let v = _storage._megaEvoSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 58)
+      }
       if let v = _storage._lobbyClientSettings {
         try visitor.visitSingularMessageField(value: v, fieldNumber: 59)
+      }
+      if let v = _storage._questEvolutionSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 61)
+      }
+      if let v = _storage._sponsoredPoiFeedbackSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 62)
+      }
+      if let v = _storage._crashlyticsSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 65)
+      }
+      if let v = _storage._catchPokemonSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 66)
+      }
+      if let v = _storage._idfaSettings {
+        try visitor.visitSingularMessageField(value: v, fieldNumber: 67)
       }
     }
     try unknownFields.traverse(visitor: &visitor)
@@ -993,7 +1089,13 @@ extension POGOProtos_Settings_GlobalSettings: SwiftProtobuf.Message, SwiftProtob
         if _storage._raidTicketSettings != rhs_storage._raidTicketSettings {return false}
         if _storage._rocketBalloonSettings != rhs_storage._rocketBalloonSettings {return false}
         if _storage._timedGroupChallengeSettings != rhs_storage._timedGroupChallengeSettings {return false}
+        if _storage._megaEvoSettings != rhs_storage._megaEvoSettings {return false}
         if _storage._lobbyClientSettings != rhs_storage._lobbyClientSettings {return false}
+        if _storage._questEvolutionSettings != rhs_storage._questEvolutionSettings {return false}
+        if _storage._sponsoredPoiFeedbackSettings != rhs_storage._sponsoredPoiFeedbackSettings {return false}
+        if _storage._crashlyticsSettings != rhs_storage._crashlyticsSettings {return false}
+        if _storage._catchPokemonSettings != rhs_storage._catchPokemonSettings {return false}
+        if _storage._idfaSettings != rhs_storage._idfaSettings {return false}
         return true
       }
       if !storagesAreEqual {return false}

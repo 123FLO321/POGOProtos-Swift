@@ -36,6 +36,17 @@ public struct POGOProtos_Data_Logs_RaidRewardsLogEntry {
 
   public var stickers: [POGOProtos_Inventory_LootItem] = []
 
+  public var isMega: Bool = false
+
+  public var megaResource: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward {
+    get {return _megaResource ?? POGOProtos_Data_Quests_QuestReward.PokemonCandyReward()}
+    set {_megaResource = newValue}
+  }
+  /// Returns true if `megaResource` has been explicitly set.
+  public var hasMegaResource: Bool {return self._megaResource != nil}
+  /// Clears the value of `megaResource`. Subsequent reads from it will return its default value.
+  public mutating func clearMegaResource() {self._megaResource = nil}
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public enum Result: SwiftProtobuf.Enum {
@@ -67,6 +78,8 @@ public struct POGOProtos_Data_Logs_RaidRewardsLogEntry {
   }
 
   public init() {}
+
+  fileprivate var _megaResource: POGOProtos_Data_Quests_QuestReward.PokemonCandyReward? = nil
 }
 
 #if swift(>=4.2)
@@ -94,6 +107,8 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
     4: .standard(proto: "default_rewards"),
     5: .same(proto: "stardust"),
     6: .same(proto: "stickers"),
+    7: .standard(proto: "is_mega"),
+    8: .standard(proto: "mega_resource"),
   ]
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
@@ -105,6 +120,8 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
       case 4: try decoder.decodeRepeatedMessageField(value: &self.defaultRewards)
       case 5: try decoder.decodeSingularInt32Field(value: &self.stardust)
       case 6: try decoder.decodeRepeatedMessageField(value: &self.stickers)
+      case 7: try decoder.decodeSingularBoolField(value: &self.isMega)
+      case 8: try decoder.decodeSingularMessageField(value: &self._megaResource)
       default: break
       }
     }
@@ -129,6 +146,12 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
     if !self.stickers.isEmpty {
       try visitor.visitRepeatedMessageField(value: self.stickers, fieldNumber: 6)
     }
+    if self.isMega != false {
+      try visitor.visitSingularBoolField(value: self.isMega, fieldNumber: 7)
+    }
+    if let v = self._megaResource {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 8)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
@@ -139,6 +162,8 @@ extension POGOProtos_Data_Logs_RaidRewardsLogEntry: SwiftProtobuf.Message, Swift
     if lhs.defaultRewards != rhs.defaultRewards {return false}
     if lhs.stardust != rhs.stardust {return false}
     if lhs.stickers != rhs.stickers {return false}
+    if lhs.isMega != rhs.isMega {return false}
+    if lhs._megaResource != rhs._megaResource {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }
