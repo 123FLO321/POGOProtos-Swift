@@ -1,35 +1,36 @@
 #!/bin/bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+echo "Removing old dir"
 rm -rf $DIR/../Sources/POGOProtos
-cd $DIR/../../POGOProtos/src/
+mkdir $DIR/../Sources/POGOProtos/
+cd $DIR/../../POGOProtos
+echo "Updating base repo"
 git pull
-FILES=$(find . -type f \( -iname "*.proto" \))
-protoc --swift_out=$DIR/../Sources --swift_opt=Visibility=Public $FILES
-cd $DIR/../Sources/POGOProtos
+python compile_base.py -l swift
+mv out/single_file/swift/POGOProtos.Rpc.pb.swift $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
+#if need *.desc need one other folder as POGOProtos swift build bugs or need ignore compile it in package conf.
+#note all data in desc file refer to POGOProtos.Rpc but this need here cleaned for good package.
+#mv out/single_file/swift/POGOProtos.Rpc.desc $DIR/../Sources/POGOProtos/POGOProtos.desc
+sed -i '' -e 's/POGOProtos_Rpc_//g' $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
 
-find . -name "*.swift" -print0 | while read -d $'\0' file
-do
-    filename=$(basename $file)
-    fulldir=$(dirname $file)
-    dirname=$(basename $fulldir)
-    dirname2=$(basename $(dirname $fulldir))
-    if [ "$dirname" == "." ]
-    then
-        dest="$fulldir/$filename"
-    elif [ "$dirname2" == "." ]
-    then
-        dest="$fulldir/$dirname-$filename"
-    else
-        dest="$fulldir/$dirname2-$dirname-$filename"
-    fi
-    mv $file $dest
-done
+##clean up tiers repo..
+# Set the filename generated
+filename=$DIR/../../POGOProtos/base/POGOProtos.Rpc.proto
+# Create an empty file
+touch $filename
+# Check the file is exists or not
+if [ -f $filename ]; then
+  rm $filename
+fi
+##
 
+#back to home
 cd $DIR
+echo "Starting Swift Build"
 swift build
 if [ $? -eq 0 ]; then
-    echo Success!
+  echo Success!
 else
-    echo Failed!
+  echo Failed!
 fi
