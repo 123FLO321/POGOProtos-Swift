@@ -1,32 +1,19 @@
 #!/bin/bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+echo "Removing old dir"
 rm -rf $DIR/../Sources/POGOProtos
-cd $DIR/../../POGOProtos/src/
+mkdir $DIR/../Sources/POGOProtos/
+cd $DIR/../../POGOProtos
+echo "Updating base repo"
 git pull
-FILES=$(find . -type f \( -iname "*.proto" \))
-protoc --swift_out=$DIR/../Sources --swift_opt=Visibility=Public $FILES
-cd $DIR/../Sources/POGOProtos
-
-find . -name "*.swift" -print0 | while read -d $'\0' file
-do
-    filename=$(basename $file)
-    fulldir=$(dirname $file)
-    dirname=$(basename $fulldir)
-    dirname2=$(basename $(dirname $fulldir))
-    if [ "$dirname" == "." ]
-    then
-        dest="$fulldir/$filename"
-    elif [ "$dirname2" == "." ]
-    then
-        dest="$fulldir/$dirname-$filename"
-    else
-        dest="$fulldir/$dirname2-$dirname-$filename"
-    fi
-    mv $file $dest
-done
+echo "Generating .swift file"
+python compile_base.py -l swift #-o $DIR/../Sources/POGOProtos/
+mv out/single_file/swift/POGOProtos.Rpc.pb.swift $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
+sed -i '' -e 's/POGOProtos_Rpc_//g' $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
 
 cd $DIR
+echo "Starting Swift Build"
 swift build
 if [ $? -eq 0 ]; then
     echo Success!
