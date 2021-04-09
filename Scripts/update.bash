@@ -14,7 +14,7 @@ mv out/single_file/swift/POGOProtos.Rpc.pb.swift $DIR/../Sources/POGOProtos/POGO
 #mv out/single_file/swift/POGOProtos.Rpc.desc $DIR/../Sources/POGOProtos/POGOProtos.desc
 sed -i '' -e 's/POGOProtos_Rpc_//g' $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
 
-##clean up
+##clean up tiers repo..
 # Set the filename generated
 filename=$DIR/../../POGOProtos/base/POGOProtos.Rpc.proto
 # Create an empty file
