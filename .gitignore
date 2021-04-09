@@ -3,3 +3,4 @@
 .swiftpm/
 Package.resolved
 POGOProtos.xcodeproj/
+/.idea/
