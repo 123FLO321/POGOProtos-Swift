@@ -13,6 +13,10 @@ mv out/single_file/swift/POGOProtos.Rpc.pb.swift $DIR/../Sources/POGOProtos/POGO
 #note all data in desc file refer to POGOProtos.Rpc but this need here cleaned for good package.
 #mv out/single_file/swift/POGOProtos.Rpc.desc $DIR/../Sources/POGOProtos/POGOProtos.desc
 sed -i '' -e 's/POGOProtos_Rpc_//g' $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
+##clean up
+cd $DIR/../../POGOProtos/base
+rm POGOProtos.Rpc.proto
+##
 
 cd $DIR
 echo "Starting Swift Build"
