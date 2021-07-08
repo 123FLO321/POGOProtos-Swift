@@ -5,11 +5,8 @@ echo "Removing old dir"
 rm -rf $DIR/../Sources/POGOProtos
 mkdir $DIR/../Sources/POGOProtos/
 cd $DIR/../../POGOProtos
-#not needed updates repo of private repos
 echo "Updating base repo"
 git pull
-#set path's of protoc and protoc-gen-swift
-#export PATH=$PATH:/Users/use_name/protoc-3/bin
 python compile_base.py -l swift
 mv out/single_file/swift/POGOProtos.Rpc.pb.swift $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
 #if need *.desc need one other folder as POGOProtos swift build bugs or need ignore compile it in package conf.
