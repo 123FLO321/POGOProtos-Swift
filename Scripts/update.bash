@@ -7,7 +7,7 @@ mkdir $DIR/../Sources/POGOProtos/
 cd $DIR/../../POGOProtos
 echo "Updating base repo"
 git pull
-python compile_base.py -l swift
+python compile_base.py -l swift -v base_proto2
 mv out/single_file/swift/POGOProtos.Rpc.pb.swift $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
 #if need *.desc need one other folder as POGOProtos swift build bugs or need ignore compile it in package conf.
 #note all data in desc file refer to POGOProtos.Rpc but this need here cleaned for good package.
