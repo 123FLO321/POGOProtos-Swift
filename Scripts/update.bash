@@ -8,6 +8,10 @@ cd $DIR/../../POGOProtos
 #private mode 'git pull' bad get err...
 #echo "Updating base repo"
 #git pull
+## for perso paths
+# chmod +x /Users/xxxxx/protoc-3/bin/protoc
+# PATH="/Users/xxxxx/protoc-3/bin:${PATH}"
+# export PATH
 python3 compile_base.py -l swift
 mv out/single_file/swift/POGOProtos.Rpc.pb.swift $DIR/../Sources/POGOProtos/POGOProtos.pb.swift
 #if need *.desc need one other folder as POGOProtos swift build bugs or need ignore compile it in package conf.
