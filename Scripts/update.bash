@@ -4,7 +4,7 @@ DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 # Deps for build all this.
 echo "Update and uses last or specific version of protoc."
-PROTO="21.12"
+PROTO="22.3"
 # Tag of generator this is same of Package.swift.
 GEN_TAG="1.19.0"
 # Dir of put deps.
