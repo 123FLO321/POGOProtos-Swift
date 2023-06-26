@@ -1,0 +1,21 @@
+name: Release
+on:
+  workflow_run:
+    workflows:
+      - Test
+    branches:
+      - master
+    types:
+      - completed
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - run: npm install --no-save semantic-release @semantic-release/github
+      - run: npx semantic-release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
