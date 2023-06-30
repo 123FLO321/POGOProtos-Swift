@@ -61,12 +61,4 @@ if [ -f $filename ]; then
 fi
 ##
 
-#back to home
-cd $DIR
-echo "Starting Swift Build"
-swift build
-if [ $? -eq 0 ]; then
-  echo Success!
-else
-  echo Failed!
-fi
+echo "Done!"
